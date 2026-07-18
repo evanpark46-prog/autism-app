@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Parents &amp; Educators — Safety Library</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&family=Quicksand:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body data-page="parents">
+  <a href="#main" class="skip-link">Skip to content</a>
+
+  <header class="site-header">
+    <div class="site-header__bar">
+      <a href="index.html" class="brand">
+        <span class="brand__badge" aria-hidden="true">🛟</span>
+        <span data-i18n="brand">Safety Library</span>
+      </a>
+      <nav class="site-nav" aria-label="Main">
+        <a href="index.html" data-i18n="nav_library">Safety Library</a>
+        <a href="parents.html" aria-current="page" data-i18n="nav_parents">Parents &amp; Educators</a>
+      </nav>
+      <div class="lang-switch">
+        <label class="visually-hidden" for="lang-select" data-i18n="lang_label">Language</label>
+        <select id="lang-select" data-lang-select></select>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero">
+      <h1 data-i18n="parents_title">For Parents &amp; Educators</h1>
+      <p data-i18n="parents_lead">Background on this library and how to use it.</p>
+    </section>
+
+    <section class="section">
+      <h2 data-i18n="parents_about_heading">About this library</h2>
+      <p data-i18n="parents_about_body"></p>
+    </section>
+
+    <section class="section">
+      <h2 data-i18n="parents_how_heading">How to use it with a learner</h2>
+      <p data-i18n="parents_how_body"></p>
+    </section>
+
+    <section class="section">
+      <h2 data-i18n="parents_resources_heading">Resources &amp; further reading</h2>
+      <ul class="resource-list">
+        <li><span>Speech-language pathologists and BCBAs at your learner's school or clinic are often the best first stop for pairing this library with their existing goals.</span></li>
+      </ul>
+      <p class="note-box mt-lg">This section is a placeholder. Add links to organizations, articles, or videos you trust by editing the <code>&lt;ul class="resource-list"&gt;</code> in parents.html.</p>
+    </section>
+
+    <section class="section">
+      <h2 data-i18n="parents_curriculum_heading">Tentative curriculum &amp; teaching activities</h2>
+      <p data-i18n="parents_curriculum_lead"></p>
+      <table class="curriculum-table">
+        <thead>
+          <tr><th>Topic</th><th>Suggested offline activity</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Someone I Don't Know</td>
+            <td>Role-play a few "someone I don't know" scenarios at home with a trusted adult playing different roles, then measure out an arm's length together so the distance is concrete.</td>
+          </tr>
+          <tr>
+            <td>Crossing the Street Safely</td>
+            <td>Practice the look-left, look-right, look-left-again routine on a driveway or empty lot before trying it together at a real crosswalk.</td>
+          </tr>
+          <tr>
+            <td>If I Get Separated</td>
+            <td>Agree on a "meeting spot" before entering any store, and rehearse saying the help phrase out loud a few times so it's ready if needed.</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="section">
+      <h2 data-i18n="parents_feedback_heading">Have feedback?</h2>
+      <p data-i18n="parents_feedback_body"></p>
+      <p class="note-box" data-i18n="parents_feedback_note"></p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p data-i18n="footer_note">Safety Library — a free resource.</p>
+    <p>Illustrations by <a href="https://storyset.com/" target="_blank" rel="noopener">Storyset</a></p>
+  </footer>
+
+  <script src="js/i18n.js"></script>
+  <script src="js/data.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

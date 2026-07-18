@@ -1,0 +1,15 @@
+Illustrations sourced from Storyset (https://storyset.com), a Freepik product.
+Free to use with attribution — see the "Illustrations by Storyset" credit
+linked in the footer of every page.
+
+Files currently in use:
+  hello-amico.svg               - "Hello" (Amico style)
+  volunteering-amico.svg        - "Volunteering" (Amico style)
+  pedestrian-crossing-amico.svg - "Pedestrian Crossing" (Amico style)
+  grocery-shopping-rafiki.svg   - "Grocery Shopping" (Rafiki style)
+  supermarket-workers-rafiki.svg- "Supermarket Workers" (Rafiki style)
+
+The 5 newer topics (emergency, fire, earthquake, rainy weather,
+self-advocacy) currently reuse hello-amico.svg / volunteering-amico.svg as
+generic placeholders — swap in topic-specific illustrations in js/story.js
+whenever you find or make better ones.

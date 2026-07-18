@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Safety Library</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&family=Quicksand:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body data-page="topic">
+  <a href="#main" class="skip-link">Skip to content</a>
+
+  <header class="site-header">
+    <div class="site-header__bar">
+      <a href="index.html" class="brand">
+        <span class="brand__badge" aria-hidden="true">🛟</span>
+        <span data-i18n="brand">Safety Library</span>
+      </a>
+      <nav class="site-nav" aria-label="Main">
+        <a href="index.html" aria-current="page" data-i18n="nav_library">Safety Library</a>
+        <a href="parents.html" data-i18n="nav_parents">Parents &amp; Educators</a>
+      </nav>
+      <div class="lang-switch">
+        <label class="visually-hidden" for="lang-select" data-i18n="lang_label">Language</label>
+        <select id="lang-select" data-lang-select></select>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <div class="topic-hero" data-topic-hero>
+      <h1 data-topic-title>&nbsp;</h1>
+      <p data-topic-tagline>&nbsp;</p>
+    </div>
+
+    <div class="mode-tabs" role="tablist" aria-label="Lesson mode">
+      <button type="button" class="mode-tab" role="tab" id="tab-video" aria-controls="panel-video" aria-selected="true" tabindex="0" data-mode="video">
+        <span data-i18n="mode_video">Video</span>
+      </button>
+      <button type="button" class="mode-tab" role="tab" id="tab-flashcards" aria-controls="panel-flashcards" aria-selected="false" tabindex="-1" data-mode="flashcards">
+        <span data-i18n="mode_flashcards">Flashcards</span>
+      </button>
+      <button type="button" class="mode-tab" role="tab" id="tab-story" aria-controls="panel-story" aria-selected="false" tabindex="-1" data-mode="story">
+        <span data-i18n="mode_story">Story</span>
+      </button>
+    </div>
+
+    <div class="mode-panel" id="panel-video" role="tabpanel" aria-labelledby="tab-video" data-panel="video"></div>
+    <div class="mode-panel" id="panel-flashcards" role="tabpanel" aria-labelledby="tab-flashcards" data-panel="flashcards"></div>
+    <div class="mode-panel active" id="panel-story" role="tabpanel" aria-labelledby="tab-story" data-panel="story"></div>
+
+    <p class="mt-lg"><a href="index.html" data-i18n="story_back_to_topics">← Back to Safety Library</a></p>
+  </main>
+
+  <footer class="site-footer">
+    <p data-i18n="footer_note">Safety Library — a free resource.</p>
+    <p>Illustrations by <a href="https://storyset.com/" target="_blank" rel="noopener">Storyset</a></p>
+  </footer>
+
+  <script src="js/i18n.js"></script>
+  <script src="js/data.js"></script>
+  <script src="js/story.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
