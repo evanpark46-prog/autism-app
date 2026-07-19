@@ -280,10 +280,22 @@ function initTopicPage(){
   trackEvent(meta.id, 'topic_open');
 
   let mode = 'story';
-  const storyState = { level: null, index: 0, answered: false, lastCorrect: false, trackedComplete: false };
+  const storyState = {
+    level: null, index: 0, answered: false, lastCorrect: false, trackedComplete: false,
+    missed: [], missedSteps: new Set(),
+  };
   let activeTypewriterClear = null;
   function stopActiveTypewriter(){
     if (activeTypewriterClear){ activeTypewriterClear(); activeTypewriterClear = null; }
+  }
+
+  // Records a question the learner got wrong on their first attempt at a given
+  // step (deduped per step object), so it can be re-shown as a review flashcard
+  // on the level-complete screen. Doesn't fire again on repeat wrong attempts.
+  function recordMiss(step, front, back){
+    if (storyState.missedSteps.has(step)) return;
+    storyState.missedSteps.add(step);
+    storyState.missed.push({ front, back });
   }
   const flashState = { index: 0, flipped: false };
   const videoState = { previewing: false, previewIndex: 0, previewAnswered: false, player: null, nextCheckpoint: 0, awaitingAnswer: false };
@@ -353,10 +365,35 @@ function initTopicPage(){
         storyState.answered = false;
         storyState.chosenIndex = undefined;
         storyState.trackedComplete = false;
+        storyState.missed = [];
+        storyState.missedSteps = new Set();
         trackEvent(meta.id, 'level_start', { level: storyState.level });
         renderStory();
       });
     });
+  }
+
+  // Builds the "review what tripped you up" section shown on the level-complete
+  // screen: one flip-card per question missed on its first attempt this
+  // playthrough (front = the question, back = the correct answer + why).
+  function renderReviewSectionHtml(missed){
+    if (!missed.length){
+      return `<p class="story-feedback good mt-lg">${t('story_review_empty')}</p>`;
+    }
+    return `
+      <div class="mt-lg">
+        <h3>${t('story_review_heading')}</h3>
+        <p class="story-text">${t('story_review_lead')}</p>
+        <div class="review-grid">
+          ${missed.map(m => `
+            <div class="review-card" data-review-card tabindex="0" role="button" aria-label="${t('flash_flip')}">
+              <div class="review-card__inner">
+                <div class="review-card__face review-card__face--front">${escapeHtml(m.front)}</div>
+                <div class="review-card__face review-card__face--back">${escapeHtml(m.back)}</div>
+              </div>
+            </div>`).join('')}
+        </div>
+      </div>`;
   }
 
   function renderStory(){
@@ -390,6 +427,7 @@ function initTopicPage(){
               ${speakButtonHtml()}
             </div>
             <ul class="recap-list">${level.recap.map(r => `<li>${escapeHtml(r)}</li>`).join('')}</ul>
+            ${renderReviewSectionHtml(storyState.missed)}
             <div class="hero-actions mt-lg">
               <button type="button" class="btn btn-primary" data-story-replay>${t('story_replay')}</button>
               ${changeLevelBtn}
@@ -401,11 +439,18 @@ function initTopicPage(){
         storyState.index = 0;
         storyState.answered = false;
         storyState.trackedComplete = false;
+        storyState.missed = [];
+        storyState.missedSteps = new Set();
         renderStory();
       });
       panel.querySelector('[data-change-level]').addEventListener('click', () => {
         storyState.level = null;
         renderStory();
+      });
+      panel.querySelectorAll('[data-review-card]').forEach(card => {
+        const toggle = () => card.classList.toggle('flipped');
+        card.addEventListener('click', toggle);
+        card.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' '){ e.preventDefault(); toggle(); } });
       });
       wireSpeakButton(panel, `${t('story_complete_lead')} ${level.recap.join('. ')}`);
       return;
@@ -421,12 +466,20 @@ function initTopicPage(){
       renderDialogueStep(panel, step, steps, dots, changeLevelBtn);
       return;
     }
+    if (step.type === 'matching'){
+      renderMatchingStep(panel, step, steps, dots, changeLevelBtn);
+      return;
+    }
 
+    const isChoiceStep = step.type === 'decision' || step.type === 'sequence';
     let choicesHtml = '';
     let footerHtml = '';
     let feedbackHtml = '';
+    const sequenceHtml = step.type === 'sequence' && step.stepsSoFar
+      ? `<ol class="sequence-list">${step.stepsSoFar.map(s => `<li>${escapeHtml(s)}</li>`).join('')}</ol>`
+      : '';
 
-    if (step.type === 'decision'){
+    if (isChoiceStep){
       choicesHtml = `<div class="story-choices">${step.choices.map((choice, i) => {
         let cls = 'choice-btn';
         if (storyState.answered && i === storyState.chosenIndex){
@@ -453,6 +506,7 @@ function initTopicPage(){
         <div class="story-illustration">${getIllustration(step.illustration)}</div>
         <div class="story-body">
           <div class="story-kicker">${escapeHtml(step.kicker)}</div>
+          ${sequenceHtml}
           <div class="speak-row">
             <p class="story-text">${escapeHtml(step.text)}</p>
             ${speakButtonHtml()}
@@ -471,11 +525,16 @@ function initTopicPage(){
       renderStory();
     });
 
-    if (step.type === 'decision'){
+    if (isChoiceStep){
       panel.querySelectorAll('[data-choice]').forEach(btn => {
         btn.addEventListener('click', () => {
           storyState.answered = true;
           storyState.chosenIndex = Number(btn.dataset.choice);
+          const chosen = step.choices[storyState.chosenIndex];
+          if (!chosen.correct){
+            const correctChoice = step.choices.find(c => c.correct);
+            recordMiss(step, step.text, correctChoice.feedback || correctChoice.text);
+          }
           renderStory();
         });
       });
@@ -486,7 +545,7 @@ function initTopicPage(){
         renderStory();
       });
     }
-    wireSpeakButton(panel, step.type === 'decision'
+    wireSpeakButton(panel, isChoiceStep
       ? `${step.text} ${step.choices.map(c => c.text).join('. ')}`
       : step.text);
     const next = panel.querySelector('[data-story-next]');
@@ -496,6 +555,111 @@ function initTopicPage(){
       storyState.chosenIndex = undefined;
       renderStory();
     });
+  }
+
+  /* ---------------- Matching step (tap-to-pair) ---------------- */
+
+  function renderMatchingStep(panel, step, steps, dots, changeLevelBtn){
+    const pairs = step.pairs;
+    const rightOrder = pairs.map((_, i) => i);
+    for (let i = rightOrder.length - 1; i > 0; i--){
+      const j = Math.floor(Math.random() * (i + 1));
+      const tmp = rightOrder[i]; rightOrder[i] = rightOrder[j]; rightOrder[j] = tmp;
+    }
+    let selectedLeft = null;
+    const matchedLeft = new Set();
+    const matchedRight = new Set();
+    let missRecorded = false;
+
+    function allMatched(){ return matchedLeft.size === pairs.length; }
+
+    function render(){
+      const leftHtml = pairs.map((p, i) => {
+        let cls = 'matching-item';
+        if (matchedLeft.has(i)) cls += ' matched';
+        else if (selectedLeft === i) cls += ' selected';
+        return `<button type="button" class="${cls}" data-left="${i}" ${matchedLeft.has(i) ? 'disabled' : ''}>${escapeHtml(p.left)}</button>`;
+      }).join('');
+      const rightHtml = rightOrder.map((origIdx, slot) => {
+        let cls = 'matching-item';
+        if (matchedRight.has(slot)) cls += ' matched';
+        return `<button type="button" class="${cls}" data-right="${slot}" ${matchedRight.has(slot) ? 'disabled' : ''}>${escapeHtml(pairs[origIdx].right)}</button>`;
+      }).join('');
+      const footerHtml = allMatched()
+        ? `<button type="button" class="btn btn-primary" data-story-next>${t('story_continue')}</button>`
+        : '';
+
+      panel.innerHTML = `
+        <div class="story-stage">
+          <div class="story-level-bar">${changeLevelBtn}</div>
+          <div class="story-progress">${dots}</div>
+          <div class="story-illustration">${getIllustration(step.illustration)}</div>
+          <div class="story-body">
+            <div class="story-kicker">${escapeHtml(step.kicker || '')}</div>
+            <div class="speak-row">
+              <p class="story-text">${escapeHtml(step.text)}</p>
+              ${speakButtonHtml()}
+            </div>
+            <div class="matching-grid">
+              <div class="matching-col">${leftHtml}</div>
+              <div class="matching-col">${rightHtml}</div>
+            </div>
+            <div class="story-footer">
+              <span class="visually-hidden">${t('story_of', { current: storyState.index + 1, total: steps.length })}</span>
+              ${footerHtml}
+            </div>
+          </div>
+        </div>`;
+
+      panel.querySelector('[data-change-level]').addEventListener('click', () => {
+        storyState.level = null;
+        renderStory();
+      });
+      wireSpeakButton(panel, step.text);
+
+      panel.querySelectorAll('[data-left]').forEach(btn => {
+        btn.addEventListener('click', () => {
+          selectedLeft = selectedLeft === Number(btn.dataset.left) ? null : Number(btn.dataset.left);
+          render();
+        });
+      });
+      panel.querySelectorAll('[data-right]').forEach(btn => {
+        btn.addEventListener('click', () => {
+          if (selectedLeft === null) return;
+          const slot = Number(btn.dataset.right);
+          const origIdx = rightOrder[slot];
+          if (origIdx === selectedLeft){
+            matchedLeft.add(selectedLeft);
+            matchedRight.add(slot);
+            selectedLeft = null;
+            render();
+            return;
+          }
+          btn.classList.add('wrong');
+          const leftBtn = panel.querySelector(`[data-left="${selectedLeft}"]`);
+          if (leftBtn) leftBtn.classList.add('wrong');
+          if (!missRecorded){
+            missRecorded = true;
+            const correctSummary = pairs.map(p => `${p.left} → ${p.right}`).join(' · ');
+            recordMiss(step, step.text, correctSummary);
+          }
+          setTimeout(() => {
+            selectedLeft = null;
+            render();
+          }, 700);
+        });
+      });
+
+      const next = panel.querySelector('[data-story-next]');
+      if (next) next.addEventListener('click', () => {
+        storyState.index += 1;
+        storyState.answered = false;
+        storyState.chosenIndex = undefined;
+        renderStory();
+      });
+    }
+
+    render();
   }
 
   /* ---------------- Dialogue mode (talk-to-a-character steps) ---------------- */
@@ -540,6 +704,11 @@ function initTopicPage(){
           answered = true;
           choicesEl.querySelectorAll('[data-choice]').forEach(b => { b.disabled = true; });
           btn.classList.add(choice.correct ? 'correct' : 'incorrect');
+          if (!choice.correct){
+            const correctChoice = step.choices.find(c => c.correct);
+            const lastLine = step.lines[step.lines.length - 1];
+            recordMiss(step, lastLine.text, correctChoice.feedback || correctChoice.text);
+          }
           showReplyLine(choice);
         });
       });

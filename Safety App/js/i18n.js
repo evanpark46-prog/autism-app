@@ -47,6 +47,10 @@ const UI_STRINGS = {
     feedback_good_default: 'Good choice — that keeps you safe!',
     feedback_bad_default: 'Let’s think about that one again.',
 
+    story_review_heading: 'Let’s review what tripped you up',
+    story_review_lead: 'Tap a card to see the answer again.',
+    story_review_empty: 'Great job — you got every question right on the first try!',
+
     level_select_heading: 'Choose a level',
     level_select_lead: 'Pick how much of a challenge you want for this scenario.',
     level1_label: 'Level 1',
@@ -160,6 +164,10 @@ const UI_STRINGS = {
     story_replay: 'Ver la historia de nuevo',
     feedback_good_default: '¡Buena elección! Eso te mantiene seguro.',
     feedback_bad_default: 'Pensemos en esa opción otra vez.',
+
+    story_review_heading: 'Repasemos lo que se te hizo difícil',
+    story_review_lead: 'Toca una tarjeta para ver la respuesta otra vez.',
+    story_review_empty: '¡Buen trabajo! Respondiste todo bien en el primer intento.',
 
     level_select_heading: 'Elige un nivel',
     level_select_lead: 'Elige cuánto reto quieres para este escenario.',
