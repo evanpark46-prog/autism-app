@@ -3,6 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script>(function(){try{var s=localStorage.getItem('safetylib_skin');if(s)document.documentElement.setAttribute('data-skin', s);}catch(e){}})();</script>
   <title>Parents &amp; Educators — Safety Scouts</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -22,6 +23,7 @@
         <a href="index.html" data-i18n="nav_library">Home</a>
         <a href="parents.html" aria-current="page" data-i18n="nav_parents">Parents &amp; Educators</a>
       </nav>
+      <div class="skin-switch" data-skin-switch role="group" aria-label="Color theme"></div>
       <div class="lang-switch">
         <label class="visually-hidden" for="lang-select" data-i18n="lang_label">Language</label>
         <select id="lang-select" data-lang-select></select>
@@ -82,6 +84,12 @@
       <p data-i18n="parents_feedback_body"></p>
       <p class="note-box" data-i18n="parents_feedback_note"></p>
     </section>
+
+    <section class="section">
+      <h2 data-i18n="parents_analytics_heading">Usage insights (this device only)</h2>
+      <p data-i18n="parents_analytics_body"></p>
+      <p><a href="analytics.html" class="btn btn-secondary" data-i18n="parents_analytics_link">Open usage insights →</a></p>
+    </section>
   </main>
 
   <footer class="site-footer">
@@ -90,6 +98,8 @@
   </footer>
 
   <script src="js/i18n.js"></script>
+  <script src="js/theme.js"></script>
+  <script src="js/analytics.js"></script>
   <script src="js/data.js"></script>
   <script src="js/app.js"></script>
 </body>

@@ -3,6 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script>(function(){try{var s=localStorage.getItem('safetylib_skin');if(s)document.documentElement.setAttribute('data-skin', s);}catch(e){}})();</script>
   <title>Safety Scouts</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -22,6 +23,7 @@
         <a href="index.html" aria-current="page" data-i18n="nav_library">Home</a>
         <a href="parents.html" data-i18n="nav_parents">Parents &amp; Educators</a>
       </nav>
+      <div class="skin-switch" data-skin-switch role="group" aria-label="Color theme"></div>
       <div class="lang-switch">
         <label class="visually-hidden" for="lang-select" data-i18n="lang_label">Language</label>
         <select id="lang-select" data-lang-select></select>
@@ -60,6 +62,8 @@
   </footer>
 
   <script src="js/i18n.js"></script>
+  <script src="js/theme.js"></script>
+  <script src="js/analytics.js"></script>
   <script src="js/data.js"></script>
   <script src="js/story.js"></script>
   <script src="js/app.js"></script>
