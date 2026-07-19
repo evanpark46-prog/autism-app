@@ -49,6 +49,50 @@ function wireSpeakButton(root, text){
   if (btn) btn.addEventListener('click', () => speak(text));
 }
 
+function wireDialogueSpeak(root, text){
+  if (!SPEECH_SUPPORTED) return;
+  const btn = root.querySelector('[data-speak-btn]');
+  if (btn) btn.onclick = (e) => { e.stopPropagation(); speak(text); };
+}
+
+/* ---------------------------------------------------------------------- */
+/* Typewriter effect (for dialogue-mode text boxes)                       */
+/* ---------------------------------------------------------------------- */
+
+function typeWriter(el, text, onDone, opts){
+  const reduceMotion = typeof window !== 'undefined' && window.matchMedia
+    && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const instant = (opts && opts.instant) || reduceMotion || !text;
+  let done = false;
+  if (instant){
+    el.textContent = text || '';
+    done = true;
+    if (onDone) onDone();
+    return { finish(){}, isDone(){ return true; } };
+  }
+  let i = 0;
+  el.textContent = '';
+  const id = setInterval(() => {
+    i += 1;
+    el.textContent = text.slice(0, i);
+    if (i >= text.length){
+      clearInterval(id);
+      done = true;
+      if (onDone) onDone();
+    }
+  }, 22);
+  return {
+    finish(){
+      if (done) return;
+      clearInterval(id);
+      el.textContent = text;
+      done = true;
+      if (onDone) onDone();
+    },
+    isDone(){ return done; },
+  };
+}
+
 /* ---------------------------------------------------------------------- */
 /* Home page: topic grid                                                  */
 /* ---------------------------------------------------------------------- */
@@ -97,6 +141,10 @@ function initTopicPage(){
 
   let mode = 'story';
   const storyState = { level: null, index: 0, answered: false, lastCorrect: false };
+  let activeTypewriterClear = null;
+  function stopActiveTypewriter(){
+    if (activeTypewriterClear){ activeTypewriterClear(); activeTypewriterClear = null; }
+  }
   const flashState = { index: 0, flipped: false };
   const videoState = { previewing: false, previewIndex: 0, previewAnswered: false, player: null, nextCheckpoint: 0, awaitingAnswer: false };
 
@@ -114,6 +162,7 @@ function initTopicPage(){
 
   function setActiveTab(nextMode){
     stopSpeaking();
+    stopActiveTypewriter();
     mode = nextMode;
     document.querySelectorAll('.mode-tab').forEach(tab => {
       const isActive = tab.dataset.mode === mode;
@@ -170,6 +219,7 @@ function initTopicPage(){
     const panel = document.querySelector('[data-panel="story"]');
     if (!panel) return;
     stopSpeaking();
+    stopActiveTypewriter();
 
     if (storyState.level === null){
       renderLevelChooser(panel);
@@ -217,6 +267,11 @@ function initTopicPage(){
       const cls = i < storyState.index ? 'done' : (i === storyState.index ? 'current' : '');
       return `<span class="story-progress__dot ${cls}"></span>`;
     }).join('');
+
+    if (step.type === 'dialogue'){
+      renderDialogueStep(panel, step, steps, dots, changeLevelBtn);
+      return;
+    }
 
     let choicesHtml = '';
     let footerHtml = '';
@@ -292,6 +347,137 @@ function initTopicPage(){
       storyState.chosenIndex = undefined;
       renderStory();
     });
+  }
+
+  /* ---------------- Dialogue mode (talk-to-a-character steps) ---------------- */
+
+  function renderDialogueStep(panel, step, steps, dots, changeLevelBtn){
+    let lineIndex = 0;
+    let answered = false;
+
+    function goToNextStep(){
+      storyState.index += 1;
+      storyState.answered = false;
+      storyState.chosenIndex = undefined;
+      renderStory();
+    }
+
+    function setFooter(html){
+      panel.querySelector('[data-dialogue-footer]').innerHTML = html;
+    }
+
+    function showNextFooter(label){
+      setFooter(`<button type="button" class="btn btn-primary" data-dialogue-go-next>${label}</button>`);
+      panel.querySelector('[data-dialogue-go-next]').addEventListener('click', goToNextStep);
+    }
+
+    function showRetryFooter(){
+      setFooter(`<button type="button" class="btn btn-secondary" data-dialogue-retry>${t('story_try_again')}</button>`);
+      panel.querySelector('[data-dialogue-retry]').addEventListener('click', () => {
+        answered = false;
+        setFooter('');
+        showLine(step.lines.length - 1, { instant: true });
+      });
+    }
+
+    function revealChoices(){
+      const choicesEl = panel.querySelector('[data-dialogue-choices]');
+      choicesEl.hidden = false;
+      choicesEl.innerHTML = step.choices.map((c, i) =>
+        `<button type="button" class="choice-btn" data-choice="${i}">${escapeHtml(c.text)}</button>`).join('');
+      choicesEl.querySelectorAll('[data-choice]').forEach(btn => {
+        btn.addEventListener('click', () => {
+          const choice = step.choices[Number(btn.dataset.choice)];
+          answered = true;
+          choicesEl.querySelectorAll('[data-choice]').forEach(b => { b.disabled = true; });
+          btn.classList.add(choice.correct ? 'correct' : 'incorrect');
+          showReplyLine(choice);
+        });
+      });
+    }
+
+    function showReplyLine(choice){
+      const text = choice.feedback || (choice.correct ? t('feedback_good_default') : t('feedback_bad_default'));
+      const speakerEl = panel.querySelector('[data-dialogue-speaker]');
+      const textEl = panel.querySelector('[data-dialogue-text]');
+      const advanceEl = panel.querySelector('[data-dialogue-advance]');
+      speakerEl.textContent = step.replySpeaker || step.lines[step.lines.length - 1].speaker || '';
+      advanceEl.style.visibility = 'hidden';
+      wireDialogueSpeak(panel, text);
+      const controller = typeWriter(textEl, text, () => {
+        activeTypewriterClear = null;
+        if (choice.correct) showNextFooter(t('story_continue'));
+        else showRetryFooter();
+      });
+      activeTypewriterClear = () => controller.finish();
+    }
+
+    function showLine(idx, opts){
+      lineIndex = idx;
+      const line = step.lines[idx];
+      const speakerEl = panel.querySelector('[data-dialogue-speaker]');
+      const textEl = panel.querySelector('[data-dialogue-text]');
+      const advanceEl = panel.querySelector('[data-dialogue-advance]');
+      const choicesEl = panel.querySelector('[data-dialogue-choices]');
+      choicesEl.hidden = true;
+      choicesEl.innerHTML = '';
+      setFooter('');
+      speakerEl.textContent = line.speaker || '';
+      advanceEl.style.visibility = 'hidden';
+      wireDialogueSpeak(panel, line.text);
+      const controller = typeWriter(textEl, line.text, () => {
+        activeTypewriterClear = null;
+        const isLast = idx === step.lines.length - 1;
+        if (isLast && step.choices && !answered){
+          revealChoices();
+        } else if (isLast && !step.choices){
+          showNextFooter(t('story_next'));
+        } else {
+          advanceEl.style.visibility = 'visible';
+        }
+      }, { instant: opts && opts.instant });
+      activeTypewriterClear = () => controller.finish();
+    }
+
+    function handleBoxActivate(){
+      if (activeTypewriterClear){ activeTypewriterClear(); return; }
+      const isLast = lineIndex === step.lines.length - 1;
+      if (!isLast) showLine(lineIndex + 1);
+    }
+
+    panel.innerHTML = `
+      <div class="story-stage">
+        <div class="story-level-bar">${changeLevelBtn}</div>
+        <div class="story-progress">${dots}</div>
+        <div class="story-illustration dialogue-scene">${getIllustration(step.illustration)}</div>
+        <div class="dialogue-box" data-dialogue-box tabindex="0" role="button" aria-label="${t('story_next')}">
+          <div class="dialogue-speaker" data-dialogue-speaker></div>
+          <div class="speak-row">
+            <p class="dialogue-text" data-dialogue-text></p>
+            ${speakButtonHtml()}
+          </div>
+          <span class="dialogue-advance" data-dialogue-advance aria-hidden="true">▼</span>
+        </div>
+        <div class="story-body">
+          <div class="story-choices" data-dialogue-choices hidden></div>
+          <div class="story-footer">
+            <span class="visually-hidden">${t('story_of', { current: storyState.index + 1, total: steps.length })}</span>
+            <div data-dialogue-footer></div>
+          </div>
+        </div>
+      </div>`;
+
+    panel.querySelector('[data-change-level]').addEventListener('click', () => {
+      storyState.level = null;
+      renderStory();
+    });
+    const box = panel.querySelector('[data-dialogue-box]');
+    box.addEventListener('click', handleBoxActivate);
+    box.addEventListener('keydown', e => {
+      if (e.key === 'Enter' || e.key === ' '){ e.preventDefault(); handleBoxActivate(); }
+    });
+
+    showLine(0);
   }
 
   /* ---------------- Flashcards mode ---------------- */
