@@ -375,6 +375,7 @@ main{max-width:1080px; margin:0 auto; padding:28px 20px 64px;}
 
 /* ---------- Flashcards ---------- */
 .flashcard-wrap{display:flex; flex-direction:column; align-items:center; gap:18px;}
+.flash-level-bar{width:100%; max-width:480px; display:flex; justify-content:flex-end;}
 .flashcard{
   width:100%; max-width:480px; height:260px; perspective:1200px; cursor:pointer;
 }

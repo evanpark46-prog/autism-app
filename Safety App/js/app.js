@@ -297,7 +297,7 @@ function initTopicPage(){
     storyState.missedSteps.add(step);
     storyState.missed.push({ front, back });
   }
-  const flashState = { index: 0, flipped: false };
+  const flashState = { level: null, index: 0, flipped: false };
   const videoState = { previewing: false, previewIndex: 0, previewAnswered: false, player: null, nextCheckpoint: 0, awaitingAnswer: false };
 
   function currentContent(){
@@ -430,6 +430,7 @@ function initTopicPage(){
             ${renderReviewSectionHtml(storyState.missed)}
             <div class="hero-actions mt-lg">
               <button type="button" class="btn btn-primary" data-story-replay>${t('story_replay')}</button>
+              <button type="button" class="btn btn-secondary" data-story-review-flashcards>${t('story_review_flashcards_btn')}</button>
               ${changeLevelBtn}
               <a class="btn btn-secondary" href="index.html">${t('story_back_to_topics')}</a>
             </div>
@@ -446,6 +447,12 @@ function initTopicPage(){
       panel.querySelector('[data-change-level]').addEventListener('click', () => {
         storyState.level = null;
         renderStory();
+      });
+      panel.querySelector('[data-story-review-flashcards]').addEventListener('click', () => {
+        flashState.level = storyState.level;
+        flashState.index = 0;
+        flashState.flipped = false;
+        document.querySelector('[data-mode="flashcards"]').click();
       });
       panel.querySelectorAll('[data-review-card]').forEach(card => {
         const toggle = () => card.classList.toggle('flipped');
@@ -801,15 +808,61 @@ function initTopicPage(){
 
   /* ---------------- Flashcards mode ---------------- */
 
+  // Topics migrated to level-specific flashcards store them on
+  // story.levels[i].flashcards; topics not yet migrated only have one flat
+  // topic-level flashcards array, which is used for every level as a fallback.
+  function getFlashcardsForLevel(content, levelIdx){
+    const level = content.story.levels[levelIdx];
+    if (level && level.flashcards && level.flashcards.length) return level.flashcards;
+    return content.flashcards || [];
+  }
+
+  function renderFlashLevelChooser(panel){
+    const levelKeys = [
+      ['level1_label', 'level1_desc'],
+      ['level2_label', 'level2_desc'],
+      ['level3_label', 'level3_desc'],
+    ];
+    panel.innerHTML = `
+      <div class="flashcard-wrap">
+        <h2>${t('flash_level_select_heading')}</h2>
+        <p class="story-text">${t('flash_level_select_lead')}</p>
+        <div class="level-grid">
+          ${levelKeys.map(([labelKey, descKey], i) => `
+            <button type="button" class="level-card" data-flash-level="${i}">
+              <span class="level-card__num">${i + 1}</span>
+              <span class="level-card__label">${t(labelKey)}</span>
+              <span class="level-card__desc">${t(descKey)}</span>
+            </button>`).join('')}
+        </div>
+      </div>`;
+    panel.querySelectorAll('[data-flash-level]').forEach(btn => {
+      btn.addEventListener('click', () => {
+        flashState.level = Number(btn.dataset.flashLevel);
+        flashState.index = 0;
+        flashState.flipped = false;
+        renderFlashcards();
+      });
+    });
+  }
+
   function renderFlashcards(){
     const panel = document.querySelector('[data-panel="flashcards"]');
     if (!panel) return;
     stopSpeaking();
-    const cards = currentContent().flashcards;
+
+    if (flashState.level === null){
+      renderFlashLevelChooser(panel);
+      return;
+    }
+
+    const cards = getFlashcardsForLevel(currentContent(), flashState.level);
     const card = cards[flashState.index];
+    const changeLevelBtn = `<button type="button" class="btn btn-ghost" data-flash-change-level>${t('level_change')}</button>`;
 
     panel.innerHTML = `
       <div class="flashcard-wrap">
+        <div class="flash-level-bar">${changeLevelBtn}</div>
         <div class="flashcard ${flashState.flipped ? 'flipped' : ''}" data-flashcard tabindex="0" role="button"
              aria-pressed="${flashState.flipped}" aria-label="${t('flash_flip')}">
           <div class="flashcard__inner">
@@ -833,6 +886,11 @@ function initTopicPage(){
       </div>`;
 
     wireSpeakButton(panel, flashState.flipped ? card.back : card.front);
+
+    panel.querySelector('[data-flash-change-level]').addEventListener('click', () => {
+      flashState.level = null;
+      renderFlashcards();
+    });
 
     const flip = () => { flashState.flipped = !flashState.flipped; renderFlashcards(); };
     const cardEl = panel.querySelector('[data-flashcard]');

@@ -50,6 +50,10 @@ const UI_STRINGS = {
     story_review_heading: 'Let’s review what tripped you up',
     story_review_lead: 'Tap a card to see the answer again.',
     story_review_empty: 'Great job — you got every question right on the first try!',
+    story_review_flashcards_btn: 'Review this level’s flashcards →',
+
+    flash_level_select_heading: 'Choose a level to review',
+    flash_level_select_lead: 'Pick which level’s flashcards you want to practice.',
 
     level_select_heading: 'Choose a level',
     level_select_lead: 'Pick how much of a challenge you want for this scenario.',
@@ -168,6 +172,10 @@ const UI_STRINGS = {
     story_review_heading: 'Repasemos lo que se te hizo difícil',
     story_review_lead: 'Toca una tarjeta para ver la respuesta otra vez.',
     story_review_empty: '¡Buen trabajo! Respondiste todo bien en el primer intento.',
+    story_review_flashcards_btn: 'Repasar las tarjetas de este nivel →',
+
+    flash_level_select_heading: 'Elige un nivel para repasar',
+    flash_level_select_lead: 'Elige las tarjetas de qué nivel quieres practicar.',
 
     level_select_heading: 'Elige un nivel',
     level_select_lead: 'Elige cuánto reto quieres para este escenario.',
