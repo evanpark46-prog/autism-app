@@ -24,12 +24,63 @@ function escapeHtml(str){
 
 const SPEECH_SUPPORTED = typeof window !== 'undefined' && 'speechSynthesis' in window;
 
-function speak(text){
+let cachedVoices = [];
+function refreshVoiceCache(){
+  if (!SPEECH_SUPPORTED) return;
+  cachedVoices = window.speechSynthesis.getVoices() || [];
+}
+if (SPEECH_SUPPORTED){
+  refreshVoiceCache();
+  window.speechSynthesis.addEventListener('voiceschanged', refreshVoiceCache);
+}
+
+function hashStr(s){
+  let h = 0;
+  for (let i = 0; i < s.length; i++){ h = (h * 31 + s.charCodeAt(i)) | 0; }
+  return Math.abs(h);
+}
+
+// Prefer higher-quality network voices (e.g. Chrome's "Google" voices) over
+// the default, more robotic-sounding local OS voices, when both are present.
+function rankVoice(v){
+  if (/google/i.test(v.name)) return 0;
+  if (/natural|online|neural/i.test(v.name)) return 1;
+  return 2;
+}
+
+function voicesForLang(lang){
+  const prefix = lang === 'es' ? 'es' : 'en';
+  return cachedVoices
+    .filter(v => v.lang && v.lang.toLowerCase().startsWith(prefix))
+    .sort((a, b) => rankVoice(a) - rankVoice(b));
+}
+
+// Gives each named character a consistent voice + pitch across the app,
+// without needing every line of content tagged with age/gender metadata.
+function voiceProfileFor(speaker){
+  const pool = voicesForLang(getLang());
+  if (!speaker || speaker === 'Narrator' || !pool.length){
+    return { voice: pool[0] || null, pitch: 1, rate: 0.95 };
+  }
+  const isChild = /alex/i.test(speaker);
+  const idx = pool.length > 1 ? hashStr(speaker) % pool.length : 0;
+  const voice = pool[idx];
+  return {
+    voice,
+    pitch: isChild ? 1.35 : 0.9 + (hashStr(speaker) % 20) / 100, // adults: ~0.90-1.09
+    rate: isChild ? 1.05 : 0.93,
+  };
+}
+
+function speak(text, speaker){
   if (!SPEECH_SUPPORTED || !text) return;
   window.speechSynthesis.cancel();
   const utter = new SpeechSynthesisUtterance(text);
   utter.lang = getLang() === 'es' ? 'es-ES' : 'en-US';
-  utter.rate = 0.95;
+  const profile = voiceProfileFor(speaker);
+  if (profile.voice) utter.voice = profile.voice;
+  utter.pitch = profile.pitch;
+  utter.rate = profile.rate;
   window.speechSynthesis.speak(utter);
 }
 
@@ -43,16 +94,16 @@ function speakButtonHtml(){
     : '';
 }
 
-function wireSpeakButton(root, text){
+function wireSpeakButton(root, text, speaker){
   if (!SPEECH_SUPPORTED) return;
   const btn = root.querySelector('[data-speak-btn]');
-  if (btn) btn.addEventListener('click', () => speak(text));
+  if (btn) btn.addEventListener('click', () => speak(text, speaker));
 }
 
-function wireDialogueSpeak(root, text){
+function wireDialogueSpeak(root, text, speaker){
   if (!SPEECH_SUPPORTED) return;
   const btn = root.querySelector('[data-speak-btn]');
-  if (btn) btn.onclick = (e) => { e.stopPropagation(); speak(text); };
+  if (btn) btn.onclick = (e) => { e.stopPropagation(); speak(text, speaker); };
 }
 
 /* ---------------------------------------------------------------------- */
@@ -401,9 +452,10 @@ function initTopicPage(){
       const speakerEl = panel.querySelector('[data-dialogue-speaker]');
       const textEl = panel.querySelector('[data-dialogue-text]');
       const advanceEl = panel.querySelector('[data-dialogue-advance]');
-      speakerEl.textContent = step.replySpeaker || step.lines[step.lines.length - 1].speaker || '';
+      const replySpeaker = step.replySpeaker || step.lines[step.lines.length - 1].speaker || '';
+      speakerEl.textContent = replySpeaker;
       advanceEl.style.visibility = 'hidden';
-      wireDialogueSpeak(panel, text);
+      wireDialogueSpeak(panel, text, replySpeaker);
       const controller = typeWriter(textEl, text, () => {
         activeTypewriterClear = null;
         if (choice.correct) showNextFooter(t('story_continue'));
@@ -424,7 +476,7 @@ function initTopicPage(){
       setFooter('');
       speakerEl.textContent = line.speaker || '';
       advanceEl.style.visibility = 'hidden';
-      wireDialogueSpeak(panel, line.text);
+      wireDialogueSpeak(panel, line.text, line.speaker);
       const controller = typeWriter(textEl, line.text, () => {
         activeTypewriterClear = null;
         const isLast = idx === step.lines.length - 1;
