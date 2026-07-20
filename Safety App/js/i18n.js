@@ -66,8 +66,8 @@ const UI_STRINGS = {
     level_change: '← Change level',
     level_start: 'Start',
 
-    flash_front_label: 'Question',
-    flash_back_label: 'Key point',
+    flash_front_label: 'Practice',
+    flash_back_label: 'Like this',
     flash_flip: 'Flip card',
     flash_prev: '← Previous',
     flash_next: 'Next →',
@@ -188,8 +188,8 @@ const UI_STRINGS = {
     level_change: '← Cambiar de nivel',
     level_start: 'Empezar',
 
-    flash_front_label: 'Pregunta',
-    flash_back_label: 'Idea clave',
+    flash_front_label: 'Practica',
+    flash_back_label: 'Así',
     flash_flip: 'Girar tarjeta',
     flash_prev: '← Anterior',
     flash_next: 'Siguiente →',
