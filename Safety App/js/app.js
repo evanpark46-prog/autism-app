@@ -107,6 +107,39 @@ function wireDialogueSpeak(root, text, speaker){
 }
 
 /* ---------------------------------------------------------------------- */
+/* Speak-it-back practice (Web Speech API speech recognition)            */
+/* ---------------------------------------------------------------------- */
+
+const SpeechRecognitionCtor = typeof window !== 'undefined'
+  ? (window.SpeechRecognition || window.webkitSpeechRecognition)
+  : null;
+const SPEECH_RECOGNITION_SUPPORTED = !!SpeechRecognitionCtor;
+
+function normalizeForCompare(str){
+  return String(str)
+    .toLowerCase()
+    .replace(/[“”"‘’.,!?¡¿]/g, '')
+    .replace(/\s+/g, ' ')
+    .trim();
+}
+
+// Short phrases rarely come back word-for-word from speech recognition
+// (especially with atypical prosody/articulation), so this checks for a
+// substring match either direction, or a generous word-overlap ratio,
+// rather than requiring an exact match.
+function speechMatches(transcript, target){
+  const heard = normalizeForCompare(transcript);
+  const goal = normalizeForCompare(target);
+  if (!heard || !goal) return false;
+  if (heard === goal || heard.includes(goal) || goal.includes(heard)) return true;
+  const heardWords = new Set(heard.split(' '));
+  const goalWords = goal.split(' ').filter(Boolean);
+  if (!goalWords.length) return false;
+  const hits = goalWords.filter(w => heardWords.has(w)).length;
+  return hits / goalWords.length >= 0.6;
+}
+
+/* ---------------------------------------------------------------------- */
 /* Typewriter effect (for dialogue-mode text boxes)                       */
 /* ---------------------------------------------------------------------- */
 
@@ -298,6 +331,23 @@ function initTopicPage(){
     storyState.missed.push({ front, back });
   }
   const flashState = { level: null, index: 0, flipped: false };
+  let flashMode = 'flip';
+  const speakState = {
+    level: null, index: 0, manual: false, listening: false, revealed: false,
+    feedback: null, transcript: '', correctCount: 0, micAttempts: 0,
+    activeRecognition: null,
+  };
+  function resetSpeakProgress(){
+    speakState.index = 0;
+    speakState.manual = false;
+    speakState.listening = false;
+    speakState.revealed = false;
+    speakState.feedback = null;
+    speakState.transcript = '';
+    speakState.correctCount = 0;
+    speakState.micAttempts = 0;
+    speakState.activeRecognition = null;
+  }
   const videoState = { previewing: false, previewIndex: 0, previewAnswered: false, player: null, nextCheckpoint: 0, awaitingAnswer: false };
 
   function currentContent(){
@@ -452,6 +502,7 @@ function initTopicPage(){
         flashState.level = storyState.level;
         flashState.index = 0;
         flashState.flipped = false;
+        flashMode = 'flip';
         document.querySelector('[data-mode="flashcards"]').click();
       });
       panel.querySelectorAll('[data-review-card]').forEach(card => {
@@ -846,6 +897,29 @@ function initTopicPage(){
     });
   }
 
+  function flashModeToggleHtml(active){
+    return `
+      <div class="flash-mode-toggle" role="group" aria-label="${t('flash_mode_group_label')}">
+        <button type="button" class="flash-mode-btn ${active === 'flip' ? 'is-active' : ''}" data-flash-mode="flip" aria-pressed="${active === 'flip'}">${t('flash_mode_flip')}</button>
+        <button type="button" class="flash-mode-btn ${active === 'speak' ? 'is-active' : ''}" data-flash-mode="speak" aria-pressed="${active === 'speak'}">${t('flash_mode_speak')}</button>
+      </div>`;
+  }
+
+  function wireFlashChrome(panel){
+    const changeLevelBtn = panel.querySelector('[data-flash-change-level]');
+    if (changeLevelBtn) changeLevelBtn.addEventListener('click', () => {
+      flashState.level = null;
+      renderFlashcards();
+    });
+    panel.querySelectorAll('[data-flash-mode]').forEach(btn => {
+      btn.addEventListener('click', () => {
+        if (btn.dataset.flashMode === flashMode) return;
+        flashMode = btn.dataset.flashMode;
+        renderFlashcards();
+      });
+    });
+  }
+
   function renderFlashcards(){
     const panel = document.querySelector('[data-panel="flashcards"]');
     if (!panel) return;
@@ -856,6 +930,11 @@ function initTopicPage(){
       return;
     }
 
+    if (flashMode === 'speak'){
+      renderSpeakQuiz(panel);
+      return;
+    }
+
     const cards = getFlashcardsForLevel(currentContent(), flashState.level);
     const card = cards[flashState.index];
     const changeLevelBtn = `<button type="button" class="btn btn-ghost" data-flash-change-level>${t('level_change')}</button>`;
@@ -863,6 +942,7 @@ function initTopicPage(){
     panel.innerHTML = `
       <div class="flashcard-wrap">
         <div class="flash-level-bar">${changeLevelBtn}</div>
+        ${flashModeToggleHtml('flip')}
         <div class="flashcard ${flashState.flipped ? 'flipped' : ''}" data-flashcard tabindex="0" role="button"
              aria-pressed="${flashState.flipped}" aria-label="${t('flash_flip')}">
           <div class="flashcard__inner">
@@ -886,11 +966,7 @@ function initTopicPage(){
       </div>`;
 
     wireSpeakButton(panel, flashState.flipped ? card.back : card.front);
-
-    panel.querySelector('[data-flash-change-level]').addEventListener('click', () => {
-      flashState.level = null;
-      renderFlashcards();
-    });
+    wireFlashChrome(panel);
 
     const flip = () => { flashState.flipped = !flashState.flipped; renderFlashcards(); };
     const cardEl = panel.querySelector('[data-flashcard]');
@@ -906,6 +982,177 @@ function initTopicPage(){
     });
     panel.querySelector('[data-flash-restart]').addEventListener('click', () => {
       flashState.index = 0; flashState.flipped = false; renderFlashcards();
+    });
+  }
+
+  function stopSpeakListening(){
+    if (speakState.activeRecognition){
+      try { speakState.activeRecognition.abort(); } catch (err) { /* already stopped */ }
+      speakState.activeRecognition = null;
+    }
+    speakState.listening = false;
+  }
+
+  function startSpeakListening(card){
+    if (!SPEECH_RECOGNITION_SUPPORTED){
+      speakState.manual = true;
+      renderFlashcards();
+      return;
+    }
+    const recognition = new SpeechRecognitionCtor();
+    recognition.lang = getLang() === 'es' ? 'es-ES' : 'en-US';
+    recognition.interimResults = false;
+    recognition.maxAlternatives = 1;
+    speakState.activeRecognition = recognition;
+    speakState.listening = true;
+    speakState.feedback = null;
+    speakState.transcript = '';
+    renderFlashcards();
+
+    recognition.onresult = (e) => {
+      const transcript = e.results[0][0].transcript;
+      speakState.activeRecognition = null;
+      speakState.listening = false;
+      speakState.transcript = transcript;
+      speakState.micAttempts += 1;
+      if (speechMatches(transcript, card.back)){
+        speakState.feedback = 'correct';
+        speakState.correctCount += 1;
+      } else {
+        speakState.feedback = 'retry';
+      }
+      renderFlashcards();
+    };
+    recognition.onerror = (e) => {
+      speakState.activeRecognition = null;
+      speakState.listening = false;
+      if (e.error === 'not-allowed' || e.error === 'service-not-allowed' || e.error === 'permission-denied'){
+        speakState.manual = true;
+      }
+      renderFlashcards();
+    };
+    recognition.onend = () => {
+      if (speakState.listening){
+        speakState.activeRecognition = null;
+        speakState.listening = false;
+        renderFlashcards();
+      }
+    };
+    try {
+      recognition.start();
+    } catch (err){
+      speakState.activeRecognition = null;
+      speakState.listening = false;
+      speakState.manual = true;
+      renderFlashcards();
+    }
+  }
+
+  function renderSpeakQuiz(panel){
+    stopSpeaking();
+    const cards = getFlashcardsForLevel(currentContent(), flashState.level);
+    if (speakState.level !== flashState.level){
+      speakState.level = flashState.level;
+      resetSpeakProgress();
+    }
+    const changeLevelBtn = `<button type="button" class="btn btn-ghost" data-flash-change-level>${t('level_change')}</button>`;
+
+    if (speakState.index >= cards.length){
+      panel.innerHTML = `
+        <div class="flashcard-wrap">
+          <div class="flash-level-bar">${changeLevelBtn}</div>
+          ${flashModeToggleHtml('speak')}
+          <div class="speak-summary">
+            <div class="story-complete__badge">🎉</div>
+            <h2>${t('speak_summary_heading')}</h2>
+            <p>${t('speak_summary_body', { total: cards.length })}</p>
+            ${speakState.micAttempts > 0 ? `<p>${t('speak_summary_match_note', { correct: speakState.correctCount, total: speakState.micAttempts })}</p>` : ''}
+            <button type="button" class="btn btn-primary" data-speak-restart>${t('flash_restart')}</button>
+          </div>
+        </div>`;
+      wireFlashChrome(panel);
+      panel.querySelector('[data-speak-restart]').addEventListener('click', () => {
+        resetSpeakProgress();
+        renderFlashcards();
+      });
+      return;
+    }
+
+    const card = cards[speakState.index];
+    const showManual = speakState.manual || !SPEECH_RECOGNITION_SUPPORTED;
+
+    let feedbackHtml = '';
+    if (speakState.feedback){
+      feedbackHtml = `
+        <div class="story-feedback ${speakState.feedback === 'correct' ? 'good' : 'bad'}">
+          ${speakState.feedback === 'correct' ? t('speak_feedback_correct') : t('speak_feedback_retry')}
+        </div>
+        <p class="speak-transcript">${t('speak_you_said_label')} “${escapeHtml(speakState.transcript)}”</p>`;
+    }
+
+    let controlsHtml;
+    if (showManual){
+      controlsHtml = `
+        <p class="speak-manual-note">${SPEECH_RECOGNITION_SUPPORTED ? t('speak_manual_note') : t('speak_no_mic_note')}</p>
+        ${speakState.revealed
+          ? `<div class="speak-answer">${escapeHtml(card.back)}</div>`
+          : `<button type="button" class="btn btn-secondary" data-speak-reveal>${t('speak_reveal_btn')}</button>`}
+        ${SPEECH_RECOGNITION_SUPPORTED ? `<button type="button" class="btn btn-ghost" data-speak-mic-retry>${t('speak_mic_retry_toggle')}</button>` : ''}
+      `;
+    } else if (speakState.listening){
+      controlsHtml = `
+        <button type="button" class="mic-btn is-listening" data-speak-cancel aria-label="${t('speak_cancel_btn')}">🎤</button>
+        <p class="speak-hint">${t('speak_listening')}</p>
+      `;
+    } else {
+      controlsHtml = `
+        <button type="button" class="mic-btn" data-speak-mic aria-label="${t('speak_mic_btn')}">🎤</button>
+        <p class="speak-hint">${t('speak_tap_to_speak')}</p>
+        <button type="button" class="btn btn-ghost" data-speak-manual-toggle>${t('speak_manual_toggle')}</button>
+      `;
+    }
+
+    const canAdvance = speakState.feedback !== null || (showManual && speakState.revealed);
+
+    panel.innerHTML = `
+      <div class="flashcard-wrap">
+        <div class="flash-level-bar">${changeLevelBtn}</div>
+        ${flashModeToggleHtml('speak')}
+        <div class="speak-quiz-card">
+          <div class="flashcard__label">${t('speak_prompt_label')}</div>
+          <div class="flashcard__text">${escapeHtml(card.front)}</div>
+          ${speakButtonHtml()}
+        </div>
+        <div class="speak-controls">${controlsHtml}</div>
+        ${feedbackHtml}
+        <div class="flashcard-controls">
+          <span class="flashcard-counter">${t('flash_counter', { current: speakState.index + 1, total: cards.length })}</span>
+          ${canAdvance ? `<button type="button" class="btn btn-primary" data-speak-next>${t('flash_next')}</button>` : ''}
+        </div>
+      </div>`;
+
+    wireSpeakButton(panel, card.front);
+    wireFlashChrome(panel);
+
+    const micBtn = panel.querySelector('[data-speak-mic]');
+    if (micBtn) micBtn.addEventListener('click', () => startSpeakListening(card));
+    const cancelBtn = panel.querySelector('[data-speak-cancel]');
+    if (cancelBtn) cancelBtn.addEventListener('click', () => { stopSpeakListening(); renderFlashcards(); });
+    const manualToggle = panel.querySelector('[data-speak-manual-toggle]');
+    if (manualToggle) manualToggle.addEventListener('click', () => { speakState.manual = true; renderFlashcards(); });
+    const micRetry = panel.querySelector('[data-speak-mic-retry]');
+    if (micRetry) micRetry.addEventListener('click', () => {
+      speakState.manual = false; speakState.revealed = false; renderFlashcards();
+    });
+    const revealBtn = panel.querySelector('[data-speak-reveal]');
+    if (revealBtn) revealBtn.addEventListener('click', () => { speakState.revealed = true; renderFlashcards(); });
+    const nextBtn = panel.querySelector('[data-speak-next]');
+    if (nextBtn) nextBtn.addEventListener('click', () => {
+      speakState.index += 1;
+      speakState.feedback = null;
+      speakState.transcript = '';
+      speakState.revealed = false;
+      renderFlashcards();
     });
   }
 

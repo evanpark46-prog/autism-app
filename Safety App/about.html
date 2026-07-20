@@ -4,13 +4,13 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <script>(function(){try{var s=localStorage.getItem('safetylib_skin');if(s)document.documentElement.setAttribute('data-skin', s);}catch(e){}})();</script>
-  <title>Safety Scouts</title>
+  <title>About — Safety Scouts</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&family=Quicksand:wght@500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/styles.css">
 </head>
-<body data-page="home">
+<body data-page="about">
   <a href="#main" class="skip-link">Skip to content</a>
 
   <header class="site-header">
@@ -20,9 +20,9 @@
         <span data-i18n="brand">Safety Scouts</span>
       </a>
       <nav class="site-nav" aria-label="Main">
-        <a href="index.html" aria-current="page" data-i18n="nav_library">Home</a>
+        <a href="index.html" data-i18n="nav_library">Home</a>
         <a href="parents.html" data-i18n="nav_parents">Parents &amp; Educators</a>
-        <a href="about.html" data-i18n="nav_about">About</a>
+        <a href="about.html" aria-current="page" data-i18n="nav_about">About</a>
       </nav>
       <div class="skin-switch" data-skin-switch role="group" aria-label="Color theme"></div>
       <div class="lang-switch">
@@ -34,19 +34,25 @@
 
   <main id="main">
     <section class="hero">
-      <h1 data-i18n="home_title">A calm place to practice staying safe</h1>
-      <p data-i18n="home_lead">Pick a topic below.</p>
+      <h1 data-i18n="about_title">About Safety Scouts</h1>
+      <p data-i18n="about_lead">Who built this app, and why.</p>
     </section>
 
-    <section>
-      <h2 class="visually-hidden" data-i18n="home_topics_heading">Choose a topic</h2>
-      <div class="grid grid-topics" data-topic-grid></div>
+    <section class="section">
+      <h2 data-i18n="about_creator_heading">About the creator</h2>
+      <p data-i18n="about_creator_body"></p>
     </section>
 
-    <p class="center mt-lg">
-      <span data-i18n="home_for_families">Looking for the parent &amp; educator resources?</span>
-      &nbsp;<a href="parents.html" data-i18n="home_for_families_link">Go to Parents &amp; Educators →</a>
-    </p>
+    <section class="section">
+      <h2 data-i18n="about_why_heading">Why I built this</h2>
+      <p data-i18n="about_why_body"></p>
+    </section>
+
+    <section class="section">
+      <h2 data-i18n="about_contact_heading">Questions or feedback?</h2>
+      <p data-i18n="about_contact_body"></p>
+      <p><a class="btn btn-secondary" href="mailto:evanp819@stanford.edu">evanp819@stanford.edu</a></p>
+    </section>
   </main>
 
   <footer class="site-footer">
@@ -58,7 +64,6 @@
   <script src="js/theme.js"></script>
   <script src="js/analytics.js"></script>
   <script src="js/data.js"></script>
-  <script src="js/story.js"></script>
   <script src="js/app.js"></script>
 </body>
 </html>
