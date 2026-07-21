@@ -91,8 +91,9 @@ const UI_STRINGS = {
     speak_no_mic_note: 'Speech practice isn’t available in this browser — that’s okay! Say the phrase out loud yourself, then tap “Show me” when you’re ready to check.',
     speak_manual_note: 'Practicing without the mic — say the phrase out loud yourself, then tap “Show me” when you’re ready to check.',
     speak_reveal_btn: 'Show me the phrase',
+    speak_round_indicator: 'Round {round} of {total}',
     speak_summary_heading: 'Great speaking practice!',
-    speak_summary_body: 'You practiced saying all {total} phrases out loud.',
+    speak_summary_body: 'You practiced saying all {total} phrases out loud, {rounds} times through.',
     speak_summary_match_note: '{correct} of {total} were a clear match for the mic — nice work!',
 
     video_checkpoints_heading: 'Questions in this video',
@@ -243,8 +244,9 @@ const UI_STRINGS = {
     speak_no_mic_note: 'La práctica de habla no está disponible en este navegador — ¡está bien! Di la frase en voz alta tú mismo, y toca “Muéstrame” cuando quieras revisarla.',
     speak_manual_note: 'Practicando sin micrófono — di la frase en voz alta tú mismo, y toca “Muéstrame” cuando quieras revisarla.',
     speak_reveal_btn: 'Muéstrame la frase',
+    speak_round_indicator: 'Ronda {round} de {total}',
     speak_summary_heading: '¡Buena práctica de habla!',
-    speak_summary_body: 'Practicaste diciendo las {total} frases en voz alta.',
+    speak_summary_body: 'Practicaste diciendo las {total} frases en voz alta, {rounds} veces.',
     speak_summary_match_note: '{correct} de {total} coincidieron con el micrófono — ¡buen trabajo!',
 
     video_checkpoints_heading: 'Preguntas en este video',

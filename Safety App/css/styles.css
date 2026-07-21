@@ -428,6 +428,10 @@ main{max-width:1080px; margin:0 auto; padding:28px 20px 64px;}
   0%, 100%{box-shadow:0 0 0 0 rgba(214,120,159,.45);}
   50%{box-shadow:0 0 0 14px rgba(214,120,159,0);}
 }
+.speak-round-indicator{
+  font-size:.85rem; font-weight:800; text-transform:uppercase; letter-spacing:.03em;
+  padding:4px 12px; border-radius:20px; background:var(--rose-tint); color:var(--rose-dark); margin:0;
+}
 .speak-hint{color:var(--ink-soft); font-weight:700; margin:0;}
 .speak-transcript{color:var(--ink-soft); font-style:italic; text-align:center;}
 .speak-answer{

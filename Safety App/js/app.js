@@ -335,9 +335,23 @@ function initTopicPage(){
   const speakState = {
     level: null, index: 0, manual: false, listening: false, revealed: false,
     feedback: null, transcript: '', correctCount: 0, micAttempts: 0,
-    activeRecognition: null,
+    activeRecognition: null, round: 1, totalRounds: 1, order: [],
   };
-  function resetSpeakProgress(){
+  // Repetition matters most for younger/less-verbal learners, so earlier
+  // levels cycle through the deck more times before the quiz is "done."
+  function roundsForLevel(levelIdx){
+    const rounds = [5, 3, 2];
+    return rounds[levelIdx] || 2;
+  }
+  function shuffledOrder(n){
+    const arr = Array.from({ length: n }, (_, i) => i);
+    for (let i = arr.length - 1; i > 0; i--){
+      const j = Math.floor(Math.random() * (i + 1));
+      [arr[i], arr[j]] = [arr[j], arr[i]];
+    }
+    return arr;
+  }
+  function resetSpeakProgress(levelIdx, cardCount){
     speakState.index = 0;
     speakState.manual = false;
     speakState.listening = false;
@@ -347,6 +361,9 @@ function initTopicPage(){
     speakState.correctCount = 0;
     speakState.micAttempts = 0;
     speakState.activeRecognition = null;
+    speakState.round = 1;
+    speakState.totalRounds = roundsForLevel(levelIdx);
+    speakState.order = shuffledOrder(cardCount);
   }
   const videoState = { previewing: false, previewIndex: 0, previewAnswered: false, player: null, nextCheckpoint: 0, awaitingAnswer: false };
 
@@ -1053,32 +1070,41 @@ function initTopicPage(){
     const cards = getFlashcardsForLevel(currentContent(), flashState.level);
     if (speakState.level !== flashState.level){
       speakState.level = flashState.level;
-      resetSpeakProgress();
+      resetSpeakProgress(flashState.level, cards.length);
     }
     const changeLevelBtn = `<button type="button" class="btn btn-ghost" data-flash-change-level>${t('level_change')}</button>`;
 
     if (speakState.index >= cards.length){
-      panel.innerHTML = `
-        <div class="flashcard-wrap">
-          <div class="flash-level-bar">${changeLevelBtn}</div>
-          ${flashModeToggleHtml('speak')}
-          <div class="speak-summary">
-            <div class="story-complete__badge">🎉</div>
-            <h2>${t('speak_summary_heading')}</h2>
-            <p>${t('speak_summary_body', { total: cards.length })}</p>
-            ${speakState.micAttempts > 0 ? `<p>${t('speak_summary_match_note', { correct: speakState.correctCount, total: speakState.micAttempts })}</p>` : ''}
-            <button type="button" class="btn btn-primary" data-speak-restart>${t('flash_restart')}</button>
-          </div>
-        </div>`;
-      wireFlashChrome(panel);
-      panel.querySelector('[data-speak-restart]').addEventListener('click', () => {
-        resetSpeakProgress();
-        renderFlashcards();
-      });
-      return;
+      if (speakState.round < speakState.totalRounds){
+        speakState.round += 1;
+        speakState.index = 0;
+        speakState.order = shuffledOrder(cards.length);
+      } else {
+        panel.innerHTML = `
+          <div class="flashcard-wrap">
+            <div class="flash-level-bar">${changeLevelBtn}</div>
+            ${flashModeToggleHtml('speak')}
+            <div class="speak-summary">
+              <div class="story-complete__badge">🎉</div>
+              <h2>${t('speak_summary_heading')}</h2>
+              <p>${t('speak_summary_body', { total: cards.length, rounds: speakState.totalRounds })}</p>
+              ${speakState.micAttempts > 0 ? `<p>${t('speak_summary_match_note', { correct: speakState.correctCount, total: speakState.micAttempts })}</p>` : ''}
+              <button type="button" class="btn btn-primary" data-speak-restart>${t('flash_restart')}</button>
+            </div>
+          </div>`;
+        wireFlashChrome(panel);
+        panel.querySelector('[data-speak-restart]').addEventListener('click', () => {
+          resetSpeakProgress(flashState.level, cards.length);
+          renderFlashcards();
+        });
+        return;
+      }
     }
 
-    const card = cards[speakState.index];
+    const card = cards[speakState.order[speakState.index]];
+    const roundIndicatorHtml = speakState.totalRounds > 1
+      ? `<p class="speak-round-indicator">${t('speak_round_indicator', { round: speakState.round, total: speakState.totalRounds })}</p>`
+      : '';
     const showManual = speakState.manual || !SPEECH_RECOGNITION_SUPPORTED;
 
     let feedbackHtml = '';
@@ -1118,6 +1144,7 @@ function initTopicPage(){
       <div class="flashcard-wrap">
         <div class="flash-level-bar">${changeLevelBtn}</div>
         ${flashModeToggleHtml('speak')}
+        ${roundIndicatorHtml}
         <div class="speak-quiz-card">
           <div class="flashcard__label">${t('speak_prompt_label')}</div>
           <div class="flashcard__text">${escapeHtml(card.front)}</div>
