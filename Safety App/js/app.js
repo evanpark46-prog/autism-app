@@ -1573,9 +1573,31 @@ function initTopicPage(){
               startCheckpointWatch(panel, video);
             }
           },
+          onError(){
+            // Some browsers/extensions strip the referrer YouTube needs to
+            // confirm the embed, which surfaces as a raw, jarring error
+            // screen inside the player — fall back to a calm message with
+            // a direct link instead of leaving that showing.
+            renderVideoEmbedError(panel, video);
+          },
         },
       });
     });
+  }
+
+  function renderVideoEmbedError(panel, video){
+    const frameWrap = panel.querySelector('.video-frame-wrap');
+    if (!frameWrap) return;
+    const watchUrl = `https://www.youtube.com/watch?v=${encodeURIComponent(video.youtubeId)}`;
+    frameWrap.innerHTML = `
+      <div class="story-stage">
+        <div class="story-body center">
+          <div style="font-size:2.4rem">🎬</div>
+          <h3>${t('video_embed_error_title')}</h3>
+          <p>${t('video_embed_error_body')}</p>
+          <a class="btn btn-primary" href="${watchUrl}" target="_blank" rel="noopener">${t('video_watch_on_youtube_btn')}</a>
+        </div>
+      </div>`;
   }
 
   function startCheckpointWatch(panel, video){

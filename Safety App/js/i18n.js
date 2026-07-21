@@ -111,6 +111,9 @@ const UI_STRINGS = {
     video_resume: 'Resume video',
     video_setup_note: 'Educators: add a real YouTube video ID and adjust checkpoint timestamps in js/data.js — see the README.',
     video_worksheet_btn: '🖨️ Print a worksheet for this topic',
+    video_embed_error_title: '🎬 This video can’t play here right now',
+    video_embed_error_body: 'A browser privacy setting or extension is likely blocking it. You can still watch it directly on YouTube, or use the checkpoint questions below and the printable worksheet for practice.',
+    video_watch_on_youtube_btn: '▶️ Watch on YouTube ↗',
 
     worksheet_chooser_title: 'Printable Worksheets',
     worksheet_chooser_lead: 'Pick a topic to print a companion worksheet for its video questions.',
@@ -289,6 +292,9 @@ const UI_STRINGS = {
     video_resume: 'Continuar el video',
     video_setup_note: 'Educadores: agreguen un ID real de video de YouTube y ajusten los tiempos de pausa en js/data.js — vean el README.',
     video_worksheet_btn: '🖨️ Imprimir una hoja de trabajo para este tema',
+    video_embed_error_title: '🎬 Este video no se puede reproducir aquí ahora',
+    video_embed_error_body: 'Probablemente una configuración de privacidad del navegador o una extensión lo esté bloqueando. Todavía puedes verlo directamente en YouTube, o usar las preguntas del video y la hoja de trabajo imprimible para practicar.',
+    video_watch_on_youtube_btn: '▶️ Ver en YouTube ↗',
 
     worksheet_chooser_title: 'Hojas de trabajo imprimibles',
     worksheet_chooser_lead: 'Elige un tema para imprimir una hoja de trabajo basada en sus preguntas de video.',
