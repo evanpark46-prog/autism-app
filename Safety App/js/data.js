@@ -18,30 +18,30 @@
    ========================================================================== */
 
 const TOPICS = [
-  { id: 'stranger-safety',     theme: 'blue',   image: 'img/hello-amico.svg' },
-  { id: 'street-safety',       theme: 'green',  image: 'img/pedestrian-crossing-amico.svg' },
-  { id: 'lost-safety',         theme: 'purple', image: 'img/grocery-shopping-rafiki.svg' },
-  { id: 'emergency-safety',    theme: 'red',    image: 'img/ambulance-pana.svg' },
-  { id: 'fire-safety',         theme: 'red',    image: 'img/fire-prevention-amico.svg' },
-  { id: 'earthquake-safety',   theme: 'amber',  image: 'img/warning-rafiki.svg' },
-  { id: 'rainyweather-safety', theme: 'amber',  image: 'img/storm-amico.svg' },
-  { id: 'selfadvocacy-safety', theme: 'blue',   image: 'img/self-confidence-amico.svg' },
+  { id: 'stranger-safety',     theme: 'blue',   image: 'img/generated/park-safe.webp' },
+  { id: 'street-safety',       theme: 'green',  image: 'img/generated/street-crossing.webp' },
+  { id: 'lost-safety',         theme: 'purple', image: 'img/generated/store-helper.webp' },
+  { id: 'emergency-safety',    theme: 'red',    image: 'img/generated/emergency-safety.webp' },
+  { id: 'fire-safety',         theme: 'red',    image: 'img/generated/fire-safety.webp' },
+  { id: 'earthquake-safety',   theme: 'amber',  image: 'img/generated/earthquake-safety.webp' },
+  { id: 'rainyweather-safety', theme: 'amber',  image: 'img/generated/rainyweather-safety.webp' },
+  { id: 'selfadvocacy-safety', theme: 'blue',   image: 'img/generated/selfadvocacy-safety.webp' },
 
-  { id: 'body-boundaries-safety', theme: 'purple', image: 'img/consent-amico.svg' },
-  { id: 'secrets-safety',         theme: 'purple', image: 'img/top-secret-amico.svg' },
-  { id: 'reporting-safety',       theme: 'blue',   image: 'img/conversation-bro.svg' },
-  { id: 'awareness-safety',       theme: 'green',  image: 'img/location-search-amico.svg' },
-  { id: 'plan-safety',            theme: 'green',  image: 'img/checklist-amico.svg' },
-  { id: 'privacy-safety',         theme: 'purple', image: 'img/dressing-room-amico.svg' },
-  { id: 'bullying-safety',        theme: 'red',    image: 'img/bullying-rafiki.svg' },
-  { id: 'online-safety',          theme: 'blue',   image: 'img/security-on-amico.svg' },
-  { id: 'cyberbullying-safety',   theme: 'red',    image: 'img/cyber-bullying-amico.svg' },
-  { id: 'citizenship-safety',     theme: 'green',  image: 'img/community-bro.svg' },
-  { id: 'rights-safety',          theme: 'blue',   image: 'img/group-discussion-rafiki.svg' },
-  { id: 'water-safety',           theme: 'amber',  image: 'img/children-playing-in-the-pool-pana.svg' },
-  { id: 'home-safety',            theme: 'purple', image: 'img/cooking-pana.svg' },
-  { id: 'bike-safety',            theme: 'green',  image: 'img/road-cycling-amico.svg' },
-  { id: 'peer-pressure-safety',   theme: 'red',    image: 'img/group-amico.svg' },
+  { id: 'body-boundaries-safety', theme: 'purple', image: 'img/generated/body-boundaries-safety.webp' },
+  { id: 'secrets-safety',         theme: 'purple', image: 'img/generated/secrets-safety.webp' },
+  { id: 'reporting-safety',       theme: 'blue',   image: 'img/generated/reporting-safety.webp' },
+  { id: 'awareness-safety',       theme: 'green',  image: 'img/generated/awareness-safety.webp' },
+  { id: 'plan-safety',            theme: 'green',  image: 'img/generated/plan-safety.webp' },
+  { id: 'privacy-safety',         theme: 'purple', image: 'img/generated/privacy-safety.webp' },
+  { id: 'bullying-safety',        theme: 'red',    image: 'img/generated/bullying-safety.webp' },
+  { id: 'online-safety',          theme: 'blue',   image: 'img/generated/online-safety.webp' },
+  { id: 'cyberbullying-safety',   theme: 'red',    image: 'img/generated/cyberbullying-safety.webp' },
+  { id: 'citizenship-safety',     theme: 'green',  image: 'img/generated/citizenship-safety.webp' },
+  { id: 'rights-safety',          theme: 'blue',   image: 'img/generated/rights-safety.webp' },
+  { id: 'water-safety',           theme: 'amber',  image: 'img/generated/water-safety.webp' },
+  { id: 'home-safety',            theme: 'purple', image: 'img/generated/home-safety.webp' },
+  { id: 'bike-safety',            theme: 'green',  image: 'img/generated/bike-safety.webp' },
+  { id: 'peer-pressure-safety',   theme: 'red',    image: 'img/generated/peer-pressure-safety.webp' },
 ];
 
 const CONTENT = {
@@ -5495,7 +5495,7 @@ const CONTENT = {
         { front: 'Is it okay if your choice is different from what the group is doing?', back: 'Yes — it’s always okay to make your own safe choice.' },
       ],
       video: {
-        youtubeId: 'FGv6sx0gOcc',
+        youtubeId: '',
         title: 'Handling peer pressure',
         checkpoints: [
           { time: 20, question: 'Friends want the character to climb somewhere unsafe. What should they do?',
@@ -10962,7 +10962,7 @@ const CONTENT = {
         { front: '¿Está bien si tu decisión es diferente a lo que está haciendo el grupo?', back: 'Sí — siempre está bien tomar tu propia decisión segura.' },
       ],
       video: {
-        youtubeId: 'FGv6sx0gOcc',
+        youtubeId: '',
         title: 'Manejar la presión de grupo',
         checkpoints: [
           { time: 20, question: 'Unos amigos quieren que el personaje suba a un lugar inseguro. ¿Qué debería hacer?',
