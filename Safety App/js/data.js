@@ -463,7 +463,7 @@ const CONTENT = {
         ],
       },
       video: {
-        youtubeId: '',
+        youtubeId: '5S8-Evqzn7E',
         title: 'Stranger safety basics',
         checkpoints: [
           { time: 30, question: 'A friendly stranger waves and starts walking toward the character. What should happen first?',
@@ -694,7 +694,7 @@ const CONTENT = {
         { front: 'Should you run across the street?', back: 'No — walk calmly so you can see and hear traffic clearly.' },
       ],
       video: {
-        youtubeId: '',
+        youtubeId: 'jpD2KixJwX4',
         title: 'Crosswalk safety basics',
         checkpoints: [
           { time: 20, question: 'The character reaches the corner. What should they look for first?',
@@ -926,7 +926,7 @@ const CONTENT = {
         { front: 'Who should you ask for help first — a shopper or a staff member?', back: 'A staff member wearing a uniform or name tag is the safer first choice.' },
       ],
       video: {
-        youtubeId: '',
+        youtubeId: '_G_t3jMTADg',
         title: 'What to do if you get separated',
         checkpoints: [
           { time: 25, question: 'The character can’t find their parent in the store. What should they do first?',
@@ -1158,7 +1158,7 @@ const CONTENT = {
         { front: 'Is it okay to call 911 even if you’re not totally sure it’s a real emergency?', back: 'Yes — it’s always okay to ask for help when you’re unsure.' },
       ],
       video: {
-        youtubeId: '',
+        youtubeId: 'xP8zM-EW7qY',
         title: 'Getting help in an emergency',
         checkpoints: [
           { time: 30, question: 'An alarm starts going off in the character’s house. What should happen first?',
@@ -1389,7 +1389,7 @@ const CONTENT = {
         { front: 'Why should every family know two ways out of their home?', back: 'Because a fire could block one path, so a second way out is a backup.' },
       ],
       video: {
-        youtubeId: '',
+        youtubeId: '0jvgWghAagI',
         title: 'Fire safety basics',
         checkpoints: [
           { time: 25, question: 'The fire alarm rings during class. What should the character do?',
@@ -1620,7 +1620,7 @@ const CONTENT = {
         { front: 'What is an aftershock?', back: 'A smaller shake that can happen after the first, bigger earthquake.' },
       ],
       video: {
-        youtubeId: '',
+        youtubeId: 'r_MWpZtsD3M',
         title: 'Earthquake safety basics',
         checkpoints: [
           { time: 20, question: 'Shaking suddenly starts. What should the character do?',
@@ -1851,7 +1851,7 @@ const CONTENT = {
         { front: 'Why can floodwater be more dangerous than it looks?', back: 'It can be deeper, faster, or hide hazards you can’t see.' },
       ],
       video: {
-        youtubeId: '',
+        youtubeId: 'aCdLPJqAoUw',
         title: 'Staying safe in storms',
         checkpoints: [
           { time: 20, question: 'The character hears thunder while playing outside. What should they do?',
@@ -2082,7 +2082,7 @@ const CONTENT = {
         { front: 'What is self-advocacy?', back: 'Speaking up for your own needs and feelings.' },
       ],
       video: {
-        youtubeId: '',
+        youtubeId: 'plU2JksBYV0',
         title: 'Speaking up for yourself',
         checkpoints: [
           { time: 25, question: 'The character feels overwhelmed in a loud classroom. What should they do?',
@@ -2313,7 +2313,7 @@ const CONTENT = {
         { front: 'Are all secrets unsafe?', back: 'No — but secrets about your body or safety that you’re told to hide from parents are a warning sign.' },
       ],
       video: {
-        youtubeId: '',
+        youtubeId: 'a-5mdt9YN6I',
         title: 'Understanding body boundaries',
         checkpoints: [
           { time: 25, question: 'A relative wants a hug but the character doesn’t feel like it. What can they do?',
@@ -2541,7 +2541,7 @@ const CONTENT = {
         { front: 'Are you ever in trouble for telling a trusted adult about an unsafe secret?', back: 'No — you are never in trouble for telling.' },
       ],
       video: {
-        youtubeId: '',
+        youtubeId: 'UWkm1Ou9wEw',
         title: 'Safe and unsafe secrets',
         checkpoints: [
           { time: 20, question: 'Someone shares a surprise-party secret with the character. Is that safe to keep?',
@@ -2770,7 +2770,7 @@ const CONTENT = {
         { front: 'Do you need proof before telling a trusted adult about a worry?', back: 'No — trusted adults are trained to look into concerns carefully.' },
       ],
       video: {
-        youtubeId: '',
+        youtubeId: 'iQjQKyrjlys',
         title: 'Tattling vs. telling',
         checkpoints: [
           { time: 20, question: 'A classmate takes a longer turn on the swing. What should the character try first?',
@@ -3222,7 +3222,7 @@ const CONTENT = {
         { front: 'Does P.L.A.N. stop mattering once you’re older?', back: 'No — it still matters, it might just look like a shorter check-in.' },
       ],
       video: {
-        youtubeId: '',
+        youtubeId: '5S8-Evqzn7E',
         title: 'Making a safety P.L.A.N.',
         checkpoints: [
           { time: 20, question: 'The character wants to change plans suddenly after school. What should they do first?',
@@ -3449,7 +3449,7 @@ const CONTENT = {
         { front: 'Does privacy only apply to strangers?', back: 'No — it applies to family and friends too.' },
       ],
       video: {
-        youtubeId: '',
+        youtubeId: 'MjPpG2e71Ec',
         title: 'Understanding privacy',
         checkpoints: [
           { time: 20, question: 'Someone tries to walk in while the character is changing. What should the character say?',
@@ -3678,7 +3678,7 @@ const CONTENT = {
         { front: 'Do bystanders have real power to help reduce bullying?', back: 'Yes — speaking up or supporting the target can make a real difference.' },
       ],
       video: {
-        youtubeId: '',
+        youtubeId: 'EepR7veMVKU',
         title: 'Dealing with bullying',
         checkpoints: [
           { time: 25, question: 'A classmate keeps calling the character a mean name. What should they do?',
@@ -3905,7 +3905,7 @@ const CONTENT = {
         { front: 'What should you do if an online request makes you uncomfortable?', back: 'Stop responding and tell a trusted adult, with screenshots if possible.' },
       ],
       video: {
-        youtubeId: '',
+        youtubeId: 'kO7ObEah6rM',
         title: 'Staying safe online',
         checkpoints: [
           { time: 25, question: 'A stranger messages the character in a game. What should they do?',
@@ -4134,7 +4134,7 @@ const CONTENT = {
         { front: 'What should you do about an impersonating fake account?', back: 'Screenshot it, report it to the platform, and tell a trusted adult.' },
       ],
       video: {
-        youtubeId: '',
+        youtubeId: 'VBOiF4ius6A',
         title: 'Understanding cyberbullying',
         checkpoints: [
           { time: 25, question: 'Someone sends a mean message in a game chat. What should the character do?',
@@ -4361,7 +4361,7 @@ const CONTENT = {
         { front: 'Does a small action, like an invitation, really make a difference?', back: 'Yes — small actions can make a big difference to someone.' },
       ],
       video: {
-        youtubeId: '',
+        youtubeId: 'KF6Y3TiDtBQ',
         title: 'Being a good bystander',
         checkpoints: [
           { time: 20, question: 'A kid falls down at the playground and other kids just watch. What should the character do?',
@@ -4815,7 +4815,7 @@ const CONTENT = {
         { front: 'Even a good swimmer should follow which rule every time?', back: 'Always swim with a grown-up watching.' },
       ],
       video: {
-        youtubeId: '',
+        youtubeId: 'HStgV_701nA',
         title: 'Water safety basics',
         checkpoints: [
           { time: 20, question: 'The character wants to jump in a pool with no one watching. What should they do?',
@@ -5041,7 +5041,7 @@ const CONTENT = {
         { front: 'Are you ever wrong for calling 911, even if things turn out okay?', back: 'No — you’re never wrong for calling.' },
       ],
       video: {
-        youtubeId: '',
+        youtubeId: 'VNYI3JIrSeY',
         title: 'Staying safe at home',
         checkpoints: [
           { time: 20, question: 'Someone unfamiliar is at the door. What should the character do?',
@@ -5268,7 +5268,7 @@ const CONTENT = {
         { front: 'Why does signaling early matter more in real traffic than in an empty lot?', back: 'Drivers need advance warning to react safely.' },
       ],
       video: {
-        youtubeId: '',
+        youtubeId: 'uBGW8j__Jsg',
         title: 'Bicycle safety basics',
         checkpoints: [
           { time: 20, question: 'The character is about to ride without a helmet. What should they do?',
@@ -5495,7 +5495,7 @@ const CONTENT = {
         { front: 'Is it okay if your choice is different from what the group is doing?', back: 'Yes — it’s always okay to make your own safe choice.' },
       ],
       video: {
-        youtubeId: '',
+        youtubeId: 'FGv6sx0gOcc',
         title: 'Handling peer pressure',
         checkpoints: [
           { time: 20, question: 'Friends want the character to climb somewhere unsafe. What should they do?',
@@ -5930,7 +5930,7 @@ const CONTENT = {
         ],
       },
       video: {
-        youtubeId: '',
+        youtubeId: '5S8-Evqzn7E',
         title: 'Lo básico sobre la seguridad con desconocidos',
         checkpoints: [
           { time: 30, question: 'Un desconocido amigable saluda y camina hacia el personaje. ¿Qué debería pasar primero?',
@@ -6161,7 +6161,7 @@ const CONTENT = {
         { front: '¿Deberías correr al cruzar la calle?', back: 'No — camina con calma para poder ver y escuchar el tráfico claramente.' },
       ],
       video: {
-        youtubeId: '',
+        youtubeId: 'jpD2KixJwX4',
         title: 'Lo básico sobre cruces peatonales',
         checkpoints: [
           { time: 20, question: 'El personaje llega a la esquina. ¿Qué debería buscar primero?',
@@ -6393,7 +6393,7 @@ const CONTENT = {
         { front: '¿A quién debes pedirle ayuda primero, a otro cliente o a alguien del personal?', back: 'Alguien del personal con uniforme o gafete es la opción más segura primero.' },
       ],
       video: {
-        youtubeId: '',
+        youtubeId: '_G_t3jMTADg',
         title: 'Qué hacer si te separas de tu adulto',
         checkpoints: [
           { time: 25, question: 'El personaje no encuentra a su adulto en la tienda. ¿Qué debería hacer primero?',
@@ -6625,7 +6625,7 @@ const CONTENT = {
         { front: '¿Está bien llamar al 911 aunque no estés totalmente seguro de que es una emergencia real?', back: 'Sí — siempre está bien pedir ayuda cuando tienes dudas.' },
       ],
       video: {
-        youtubeId: '',
+        youtubeId: 'xP8zM-EW7qY',
         title: 'Pedir ayuda en una emergencia',
         checkpoints: [
           { time: 30, question: 'Una alarma comienza a sonar en la casa del personaje. ¿Qué debería pasar primero?',
@@ -6856,7 +6856,7 @@ const CONTENT = {
         { front: '¿Por qué debería cada familia conocer dos salidas de su casa?', back: 'Porque un incendio podría bloquear un camino, así que una segunda salida es un respaldo.' },
       ],
       video: {
-        youtubeId: '',
+        youtubeId: '0jvgWghAagI',
         title: 'Lo básico sobre seguridad contra incendios',
         checkpoints: [
           { time: 25, question: 'La alarma de incendios suena durante la clase. ¿Qué debería hacer el personaje?',
@@ -7087,7 +7087,7 @@ const CONTENT = {
         { front: '¿Qué es una réplica?', back: 'Un temblor más pequeño que puede ocurrir después del primer terremoto, más grande.' },
       ],
       video: {
-        youtubeId: '',
+        youtubeId: 'r_MWpZtsD3M',
         title: 'Lo básico sobre seguridad en terremotos',
         checkpoints: [
           { time: 20, question: 'El temblor empieza de repente. ¿Qué debería hacer el personaje?',
@@ -7318,7 +7318,7 @@ const CONTENT = {
         { front: '¿Por qué el agua de una inundación puede ser más peligrosa de lo que parece?', back: 'Puede ser más profunda, más rápida, u ocultar peligros que no puedes ver.' },
       ],
       video: {
-        youtubeId: '',
+        youtubeId: 'aCdLPJqAoUw',
         title: 'Cómo mantenerse seguro en tormentas',
         checkpoints: [
           { time: 20, question: 'El personaje escucha un trueno mientras juega afuera. ¿Qué debería hacer?',
@@ -7549,7 +7549,7 @@ const CONTENT = {
         { front: '¿Qué es la autodefensa?', back: 'Hablar por tus propias necesidades y sentimientos.' },
       ],
       video: {
-        youtubeId: '',
+        youtubeId: 'plU2JksBYV0',
         title: 'Hablar por ti mismo',
         checkpoints: [
           { time: 25, question: 'El personaje se siente abrumado en un salón ruidoso. ¿Qué debería hacer?',
@@ -7780,7 +7780,7 @@ const CONTENT = {
         { front: '¿Son todos los secretos peligrosos?', back: 'No — pero los secretos sobre tu cuerpo o seguridad que te dicen que ocultes de tus papás son una señal de advertencia.' },
       ],
       video: {
-        youtubeId: '',
+        youtubeId: 'a-5mdt9YN6I',
         title: 'Entendiendo los límites corporales',
         checkpoints: [
           { time: 25, question: 'Un familiar quiere un abrazo pero el personaje no tiene ganas. ¿Qué puede hacer?',
@@ -8008,7 +8008,7 @@ const CONTENT = {
         { front: '¿Estás alguna vez en problemas por contarle a un adulto de confianza sobre un secreto no seguro?', back: 'No — nunca estás en problemas por contarlo.' },
       ],
       video: {
-        youtubeId: '',
+        youtubeId: 'UWkm1Ou9wEw',
         title: 'Secretos seguros y no seguros',
         checkpoints: [
           { time: 20, question: 'Alguien comparte un secreto de fiesta sorpresa con el personaje. ¿Es seguro guardarlo?',
@@ -8237,7 +8237,7 @@ const CONTENT = {
         { front: '¿Necesitas pruebas antes de contarle a un adulto de confianza sobre una preocupación?', back: 'No — los adultos de confianza están entrenados para investigar preocupaciones con cuidado.' },
       ],
       video: {
-        youtubeId: '',
+        youtubeId: 'iQjQKyrjlys',
         title: 'Acusar vs. contar',
         checkpoints: [
           { time: 20, question: 'Un compañero se toma un turno más largo en el columpio. ¿Qué debería intentar el personaje primero?',
@@ -8689,7 +8689,7 @@ const CONTENT = {
         { front: '¿Deja de importar P.L.A.N. cuando eres mayor?', back: 'No — sigue importando, solo puede verse como un aviso más corto.' },
       ],
       video: {
-        youtubeId: '',
+        youtubeId: '5S8-Evqzn7E',
         title: 'Hacer un P.L.A.N. de seguridad',
         checkpoints: [
           { time: 20, question: 'El personaje quiere cambiar de planes de repente después de la escuela. ¿Qué debería hacer primero?',
@@ -8916,7 +8916,7 @@ const CONTENT = {
         { front: '¿La privacidad solo aplica a los desconocidos?', back: 'No — también aplica a familiares y amigos.' },
       ],
       video: {
-        youtubeId: '',
+        youtubeId: 'MjPpG2e71Ec',
         title: 'Entendiendo la privacidad',
         checkpoints: [
           { time: 20, question: 'Alguien intenta entrar mientras el personaje se está cambiando. ¿Qué debería decir el personaje?',
@@ -9145,7 +9145,7 @@ const CONTENT = {
         { front: '¿Tienen los testigos poder real para ayudar a reducir el acoso?', back: 'Sí — hablar o apoyar al objetivo puede hacer una diferencia real.' },
       ],
       video: {
-        youtubeId: '',
+        youtubeId: 'EepR7veMVKU',
         title: 'Enfrentar el acoso escolar',
         checkpoints: [
           { time: 25, question: 'Un compañero sigue llamando al personaje con un apodo feo. ¿Qué debería hacer?',
@@ -9372,7 +9372,7 @@ const CONTENT = {
         { front: '¿Qué debes hacer si una petición en línea te hace sentir incómodo?', back: 'Deja de responder y cuéntale a un adulto de confianza, con capturas de pantalla si es posible.' },
       ],
       video: {
-        youtubeId: '',
+        youtubeId: 'kO7ObEah6rM',
         title: 'Estar seguro en línea',
         checkpoints: [
           { time: 25, question: 'Un desconocido le envía un mensaje al personaje en un juego. ¿Qué debería hacer?',
@@ -9601,7 +9601,7 @@ const CONTENT = {
         { front: '¿Qué debes hacer sobre una cuenta falsa que te suplanta?', back: 'Tómale captura, repórtala a la plataforma, y cuéntale a un adulto de confianza.' },
       ],
       video: {
-        youtubeId: '',
+        youtubeId: 'VBOiF4ius6A',
         title: 'Entendiendo el ciberacoso',
         checkpoints: [
           { time: 25, question: 'Alguien envía un mensaje cruel en el chat de un juego. ¿Qué debería hacer el personaje?',
@@ -9828,7 +9828,7 @@ const CONTENT = {
         { front: '¿Realmente hace una diferencia una pequeña acción, como una invitación?', back: 'Sí — las pequeñas acciones pueden hacer una gran diferencia para alguien.' },
       ],
       video: {
-        youtubeId: '',
+        youtubeId: 'KF6Y3TiDtBQ',
         title: 'Ser un buen testigo',
         checkpoints: [
           { time: 20, question: 'Un niño se cae en el patio y otros niños solo miran. ¿Qué debería hacer el personaje?',
@@ -10282,7 +10282,7 @@ const CONTENT = {
         { front: '¿Qué regla debe seguir siempre incluso un buen nadador?', back: 'Siempre nadar con un adulto mirando.' },
       ],
       video: {
-        youtubeId: '',
+        youtubeId: 'HStgV_701nA',
         title: 'Lo básico sobre seguridad en el agua',
         checkpoints: [
           { time: 20, question: 'El personaje quiere saltar a una piscina sin nadie mirando. ¿Qué debería hacer?',
@@ -10508,7 +10508,7 @@ const CONTENT = {
         { front: '¿Te equivocas alguna vez por llamar al 911, aunque las cosas resulten bien?', back: 'No — nunca te equivocas por llamar.' },
       ],
       video: {
-        youtubeId: '',
+        youtubeId: 'VNYI3JIrSeY',
         title: 'Estar seguro en casa',
         checkpoints: [
           { time: 20, question: 'Alguien desconocido está en la puerta. ¿Qué debería hacer el personaje?',
@@ -10735,7 +10735,7 @@ const CONTENT = {
         { front: '¿Por qué importa más señalizar temprano en tráfico real que en un lote vacío?', back: 'Los conductores necesitan aviso anticipado para reaccionar de forma segura.' },
       ],
       video: {
-        youtubeId: '',
+        youtubeId: 'uBGW8j__Jsg',
         title: 'Lo básico sobre seguridad en bicicleta',
         checkpoints: [
           { time: 20, question: 'El personaje está a punto de andar sin casco. ¿Qué debería hacer?',
@@ -10962,7 +10962,7 @@ const CONTENT = {
         { front: '¿Está bien si tu decisión es diferente a lo que está haciendo el grupo?', back: 'Sí — siempre está bien tomar tu propia decisión segura.' },
       ],
       video: {
-        youtubeId: '',
+        youtubeId: 'FGv6sx0gOcc',
         title: 'Manejar la presión de grupo',
         checkpoints: [
           { time: 20, question: 'Unos amigos quieren que el personaje suba a un lugar inseguro. ¿Qué debería hacer?',

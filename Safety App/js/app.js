@@ -1529,7 +1529,9 @@ function initTopicPage(){
     videoState.awaitingAnswer = false;
 
     loadYouTubeApi().then(YT => {
-      videoState.player = new YT.Player(panel.querySelector('[data-yt-player]'), {
+      const target = panel.querySelector('[data-yt-player]');
+      if (!target) return;
+      videoState.player = new YT.Player(target, {
         videoId: video.youtubeId,
         playerVars: { rel: 0 },
         events: {
