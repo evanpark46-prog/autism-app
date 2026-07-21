@@ -445,6 +445,33 @@ main{max-width:1080px; margin:0 auto; padding:28px 20px 64px;}
   .mic-btn.is-listening{animation:none; box-shadow:0 0 0 6px rgba(214,120,159,.35);}
 }
 
+/* ---------- Printable worksheets ---------- */
+.worksheet-toolbar{display:flex; justify-content:space-between; gap:12px; margin-bottom:18px;}
+.worksheet-sheet{
+  background:var(--panel); border:1px solid var(--border); border-radius:var(--radius-lg);
+  box-shadow:var(--shadow); padding:32px; max-width:720px; margin:0 auto;
+}
+.worksheet-fields{display:flex; gap:32px; flex-wrap:wrap; font-weight:700; margin-bottom:20px;}
+.worksheet-sheet h1{margin-top:0;}
+.worksheet-instructions{color:var(--ink-soft); margin-bottom:24px;}
+.worksheet-question{margin-bottom:22px;}
+.worksheet-question__text{margin-bottom:8px;}
+.worksheet-choices{display:flex; flex-direction:column; gap:6px; padding-left:8px;}
+.worksheet-choice{display:flex; align-items:baseline; gap:8px;}
+.worksheet-checkbox{font-size:1.1rem;}
+.worksheet-writing-prompt{font-weight:700; margin-top:28px;}
+.worksheet-writing-lines{margin-top:10px;}
+.worksheet-line{border-bottom:1px solid var(--border); height:28px;}
+.worksheet-answer-key{max-width:720px; margin:24px auto 0; background:var(--amber-tint); border-radius:var(--radius-md); padding:18px 24px;}
+.worksheet-answer-key li{margin-bottom:6px;}
+.worksheet-empty{color:var(--ink-soft);}
+
+@media print{
+  .no-print{display:none !important;}
+  body{background:none !important;}
+  .worksheet-sheet{box-shadow:none; border:none; padding:0;}
+}
+
 /* ---------- Video checkpoints ---------- */
 .video-frame-wrap{
   position:relative; border-radius:var(--radius-lg); overflow:hidden; box-shadow:var(--shadow);
