@@ -432,17 +432,24 @@ function initTopicPage(){
     storyState.missed.push({ front, back });
   }
   const flashState = { level: null, index: 0, flipped: false };
-  let flashMode = 'flip';
-  const speakState = {
-    level: null, index: 0, manual: false, listening: false, revealed: false,
-    feedback: null, transcript: '', correctCount: 0, micAttempts: 0,
-    activeRecognition: null, round: 1, totalRounds: 1, order: [],
+  let flashMode = 'alone';
+
+  // "Guided" walks the learner through every card in two phases: (1) drill —
+  // repeat each phrase several times before moving to the next card, since
+  // repetition matters most for younger/less-verbal learners; then (2) a
+  // supportive, Quizlet-style multiple-choice quiz over the same deck.
+  const guidedState = {
+    level: null, phase: 'drill',
+    order: [], cardPos: 0, reps: 0, repsNeeded: 4,
+    listening: false, activeRecognition: null, manual: false,
+    lastHeardMatched: null, transcript: '',
+    quizOrder: [], quizIndex: 0, quizChoices: [],
+    quizWrongTries: 0, quizHint: false, quizRevealed: false,
+    quizCorrect: 0, quizTotal: 0,
   };
-  // Repetition matters most for younger/less-verbal learners, so earlier
-  // levels cycle through the deck more times before the quiz is "done."
-  function roundsForLevel(levelIdx){
-    const rounds = [5, 3, 2];
-    return rounds[levelIdx] || 2;
+  function repsForLevel(levelIdx){
+    const reps = [5, 4, 3];
+    return reps[levelIdx] || 3;
   }
   function shuffledOrder(n){
     const arr = Array.from({ length: n }, (_, i) => i);
@@ -452,19 +459,34 @@ function initTopicPage(){
     }
     return arr;
   }
-  function resetSpeakProgress(levelIdx, cardCount){
-    speakState.index = 0;
-    speakState.manual = false;
-    speakState.listening = false;
-    speakState.revealed = false;
-    speakState.feedback = null;
-    speakState.transcript = '';
-    speakState.correctCount = 0;
-    speakState.micAttempts = 0;
-    speakState.activeRecognition = null;
-    speakState.round = 1;
-    speakState.totalRounds = roundsForLevel(levelIdx);
-    speakState.order = shuffledOrder(cardCount);
+  function resetGuided(levelIdx, cardCount){
+    guidedState.phase = 'drill';
+    guidedState.order = shuffledOrder(cardCount);
+    guidedState.cardPos = 0;
+    guidedState.reps = 0;
+    guidedState.repsNeeded = repsForLevel(levelIdx);
+    guidedState.listening = false;
+    guidedState.activeRecognition = null;
+    guidedState.manual = false;
+    guidedState.lastHeardMatched = null;
+    guidedState.transcript = '';
+    guidedState.quizOrder = [];
+    guidedState.quizIndex = 0;
+    guidedState.quizChoices = [];
+    guidedState.quizWrongTries = 0;
+    guidedState.quizHint = false;
+    guidedState.quizRevealed = false;
+    guidedState.quizCorrect = 0;
+    guidedState.quizTotal = 0;
+  }
+  function buildQuizChoices(cards, correctIdx){
+    const correctCard = cards[correctIdx];
+    const otherIdxs = cards.map((_, i) => i).filter(i => i !== correctIdx);
+    const shuffledOthers = shuffledOrder(otherIdxs.length).map(i => otherIdxs[i]);
+    const distractors = shuffledOthers.slice(0, Math.min(3, shuffledOthers.length))
+      .map(i => ({ text: cards[i].back, correct: false, eliminated: false }));
+    const choices = [{ text: correctCard.back, correct: true, eliminated: false }, ...distractors];
+    return shuffledOrder(choices.length).map(i => choices[i]);
   }
   const videoState = { previewing: false, previewIndex: 0, previewAnswered: false, player: null, nextCheckpoint: 0, awaitingAnswer: false };
 
@@ -620,7 +642,7 @@ function initTopicPage(){
         flashState.level = storyState.level;
         flashState.index = 0;
         flashState.flipped = false;
-        flashMode = 'flip';
+        flashMode = 'alone';
         document.querySelector('[data-mode="flashcards"]').click();
       });
       panel.querySelectorAll('[data-review-card]').forEach(card => {
@@ -1018,8 +1040,8 @@ function initTopicPage(){
   function flashModeToggleHtml(active){
     return `
       <div class="flash-mode-toggle" role="group" aria-label="${t('flash_mode_group_label')}">
-        <button type="button" class="flash-mode-btn ${active === 'flip' ? 'is-active' : ''}" data-flash-mode="flip" aria-pressed="${active === 'flip'}">${t('flash_mode_flip')}</button>
-        <button type="button" class="flash-mode-btn ${active === 'speak' ? 'is-active' : ''}" data-flash-mode="speak" aria-pressed="${active === 'speak'}">${t('flash_mode_speak')}</button>
+        <button type="button" class="flash-mode-btn ${active === 'alone' ? 'is-active' : ''}" data-flash-mode="alone" aria-pressed="${active === 'alone'}">${t('flash_mode_alone')}</button>
+        <button type="button" class="flash-mode-btn ${active === 'guided' ? 'is-active' : ''}" data-flash-mode="guided" aria-pressed="${active === 'guided'}">${t('flash_mode_guided')}</button>
       </div>`;
   }
 
@@ -1048,8 +1070,8 @@ function initTopicPage(){
       return;
     }
 
-    if (flashMode === 'speak'){
-      renderSpeakQuiz(panel);
+    if (flashMode === 'guided'){
+      renderGuided(panel);
       return;
     }
 
@@ -1060,7 +1082,7 @@ function initTopicPage(){
     panel.innerHTML = `
       <div class="flashcard-wrap">
         <div class="flash-level-bar">${changeLevelBtn}</div>
-        ${flashModeToggleHtml('flip')}
+        ${flashModeToggleHtml('alone')}
         <div class="flashcard ${flashState.flipped ? 'flipped' : ''}" data-flashcard tabindex="0" role="button"
              aria-pressed="${flashState.flipped}" aria-label="${t('flash_flip')}">
           <div class="flashcard__inner">
@@ -1103,17 +1125,17 @@ function initTopicPage(){
     });
   }
 
-  function stopSpeakListening(){
-    if (speakState.activeRecognition){
-      try { speakState.activeRecognition.abort(); } catch (err) { /* already stopped */ }
-      speakState.activeRecognition = null;
+  function stopGuidedListening(){
+    if (guidedState.activeRecognition){
+      try { guidedState.activeRecognition.abort(); } catch (err) { /* already stopped */ }
+      guidedState.activeRecognition = null;
     }
-    speakState.listening = false;
+    guidedState.listening = false;
   }
 
-  function startSpeakListening(card){
+  function startGuidedListening(card, onHeard){
     if (!SPEECH_RECOGNITION_SUPPORTED){
-      speakState.manual = true;
+      guidedState.manual = true;
       renderFlashcards();
       return;
     }
@@ -1121,165 +1143,255 @@ function initTopicPage(){
     recognition.lang = getLang() === 'es' ? 'es-ES' : 'en-US';
     recognition.interimResults = false;
     recognition.maxAlternatives = 1;
-    speakState.activeRecognition = recognition;
-    speakState.listening = true;
-    speakState.feedback = null;
-    speakState.transcript = '';
+    guidedState.activeRecognition = recognition;
+    guidedState.listening = true;
     renderFlashcards();
 
     recognition.onresult = (e) => {
       const transcript = e.results[0][0].transcript;
-      speakState.activeRecognition = null;
-      speakState.listening = false;
-      speakState.transcript = transcript;
-      speakState.micAttempts += 1;
-      if (speechMatches(transcript, card.back)){
-        speakState.feedback = 'correct';
-        speakState.correctCount += 1;
-      } else {
-        speakState.feedback = 'retry';
-      }
-      renderFlashcards();
+      guidedState.activeRecognition = null;
+      guidedState.listening = false;
+      guidedState.transcript = transcript;
+      guidedState.lastHeardMatched = speechMatches(transcript, card.back);
+      onHeard();
     };
     recognition.onerror = (e) => {
-      speakState.activeRecognition = null;
-      speakState.listening = false;
+      guidedState.activeRecognition = null;
+      guidedState.listening = false;
       if (e.error === 'not-allowed' || e.error === 'service-not-allowed' || e.error === 'permission-denied'){
-        speakState.manual = true;
+        guidedState.manual = true;
       }
       renderFlashcards();
     };
     recognition.onend = () => {
-      if (speakState.listening){
-        speakState.activeRecognition = null;
-        speakState.listening = false;
+      if (guidedState.listening){
+        guidedState.activeRecognition = null;
+        guidedState.listening = false;
         renderFlashcards();
       }
     };
     try {
       recognition.start();
     } catch (err){
-      speakState.activeRecognition = null;
-      speakState.listening = false;
-      speakState.manual = true;
+      guidedState.activeRecognition = null;
+      guidedState.listening = false;
+      guidedState.manual = true;
       renderFlashcards();
     }
   }
 
-  function renderSpeakQuiz(panel){
+  function renderGuided(panel){
     stopSpeaking();
     const cards = getFlashcardsForLevel(currentContent(), flashState.level);
-    if (speakState.level !== flashState.level){
-      speakState.level = flashState.level;
-      resetSpeakProgress(flashState.level, cards.length);
+    if (guidedState.level !== flashState.level){
+      guidedState.level = flashState.level;
+      resetGuided(flashState.level, cards.length);
     }
+    if (guidedState.phase === 'drill') { renderGuidedDrill(panel, cards); return; }
+    if (guidedState.phase === 'quiz') { renderGuidedQuiz(panel, cards); return; }
+    renderGuidedDone(panel, cards);
+  }
+
+  function renderGuidedDrill(panel, cards){
     const changeLevelBtn = `<button type="button" class="btn btn-ghost" data-flash-change-level>${t('level_change')}</button>`;
+    const card = cards[guidedState.order[guidedState.cardPos]];
+    const showManual = guidedState.manual || !SPEECH_RECOGNITION_SUPPORTED;
 
-    if (speakState.index >= cards.length){
-      if (speakState.round < speakState.totalRounds){
-        speakState.round += 1;
-        speakState.index = 0;
-        speakState.order = shuffledOrder(cards.length);
-      } else {
-        panel.innerHTML = `
-          <div class="flashcard-wrap">
-            <div class="flash-level-bar">${changeLevelBtn}</div>
-            ${flashModeToggleHtml('speak')}
-            <div class="speak-summary">
-              <div class="story-complete__badge">🎉</div>
-              <h2>${t('speak_summary_heading')}</h2>
-              <p>${t('speak_summary_body', { total: cards.length, rounds: speakState.totalRounds })}</p>
-              ${speakState.micAttempts > 0 ? `<p>${t('speak_summary_match_note', { correct: speakState.correctCount, total: speakState.micAttempts })}</p>` : ''}
-              <button type="button" class="btn btn-primary" data-speak-restart>${t('flash_restart')}</button>
-            </div>
-          </div>`;
-        wireFlashChrome(panel);
-        panel.querySelector('[data-speak-restart]').addEventListener('click', () => {
-          resetSpeakProgress(flashState.level, cards.length);
-          renderFlashcards();
-        });
-        return;
-      }
-    }
-
-    const card = cards[speakState.order[speakState.index]];
-    const roundIndicatorHtml = speakState.totalRounds > 1
-      ? `<p class="speak-round-indicator">${t('speak_round_indicator', { round: speakState.round, total: speakState.totalRounds })}</p>`
-      : '';
-    const showManual = speakState.manual || !SPEECH_RECOGNITION_SUPPORTED;
-
-    let feedbackHtml = '';
-    if (speakState.feedback){
-      feedbackHtml = `
-        <div class="story-feedback ${speakState.feedback === 'correct' ? 'good' : 'bad'}">
-          ${speakState.feedback === 'correct' ? t('speak_feedback_correct') : t('speak_feedback_retry')}
-        </div>
-        <p class="speak-transcript">${t('speak_you_said_label')} “${escapeHtml(speakState.transcript)}”</p>`;
+    let matchNoteHtml = '';
+    if (guidedState.lastHeardMatched !== null){
+      matchNoteHtml = `<p class="speak-transcript">${guidedState.lastHeardMatched ? t('guided_drill_heard_match') : t('guided_drill_heard_note')} “${escapeHtml(guidedState.transcript)}”</p>`;
     }
 
     let controlsHtml;
     if (showManual){
       controlsHtml = `
-        <p class="speak-manual-note">${SPEECH_RECOGNITION_SUPPORTED ? t('speak_manual_note') : t('speak_no_mic_note')}</p>
-        ${speakState.revealed
-          ? `<div class="speak-answer">${escapeHtml(card.back)}</div>`
-          : `<button type="button" class="btn btn-secondary" data-speak-reveal>${t('speak_reveal_btn')}</button>`}
+        <p class="speak-manual-note">${SPEECH_RECOGNITION_SUPPORTED ? t('guided_manual_note') : t('guided_no_mic_note')}</p>
+        <button type="button" class="btn btn-primary" data-guided-manual-rep>${t('guided_said_it_btn')}</button>
         ${SPEECH_RECOGNITION_SUPPORTED ? `<button type="button" class="btn btn-ghost" data-speak-mic-retry>${t('speak_mic_retry_toggle')}</button>` : ''}
       `;
-    } else if (speakState.listening){
+    } else if (guidedState.listening){
       controlsHtml = `
-        <button type="button" class="mic-btn is-listening" data-speak-cancel aria-label="${t('speak_cancel_btn')}">🎤</button>
+        <button type="button" class="mic-btn is-listening" data-guided-cancel aria-label="${t('speak_cancel_btn')}">🎤</button>
         <p class="speak-hint">${t('speak_listening')}</p>
       `;
     } else {
       controlsHtml = `
-        <button type="button" class="mic-btn" data-speak-mic aria-label="${t('speak_mic_btn')}">🎤</button>
-        <p class="speak-hint">${t('speak_tap_to_speak')}</p>
+        <button type="button" class="mic-btn" data-guided-mic aria-label="${t('speak_mic_btn')}">🎤</button>
+        <p class="speak-hint">${t('guided_tap_to_repeat')}</p>
         <button type="button" class="btn btn-ghost" data-speak-manual-toggle>${t('speak_manual_toggle')}</button>
       `;
     }
 
-    const canAdvance = speakState.feedback !== null || (showManual && speakState.revealed);
+    const dots = Array.from({ length: guidedState.repsNeeded }, (_, i) =>
+      `<span class="rep-dot ${i < guidedState.reps ? 'done' : ''}"></span>`).join('');
 
     panel.innerHTML = `
       <div class="flashcard-wrap">
         <div class="flash-level-bar">${changeLevelBtn}</div>
-        ${flashModeToggleHtml('speak')}
-        ${roundIndicatorHtml}
+        ${flashModeToggleHtml('guided')}
+        <p class="guided-phase-label">${t('guided_drill_phase_label')}</p>
+        <div class="speak-quiz-card">
+          <div class="flashcard__label">${t('speak_prompt_label')}</div>
+          <div class="flashcard__text">${escapeHtml(card.front)}</div>
+          <div class="guided-target-phrase">${escapeHtml(card.back)}</div>
+          ${speakButtonHtml()}
+        </div>
+        <div class="rep-dots">${dots}</div>
+        <p class="speak-hint">${t('guided_rep_indicator', { done: guidedState.reps, total: guidedState.repsNeeded })}</p>
+        <div class="speak-controls">${controlsHtml}</div>
+        ${matchNoteHtml}
+        <div class="flashcard-controls">
+          <span class="flashcard-counter">${t('flash_counter', { current: guidedState.cardPos + 1, total: cards.length })}</span>
+        </div>
+      </div>`;
+
+    wireSpeakButton(panel, card.back);
+    wireFlashChrome(panel);
+
+    const advanceRep = () => {
+      guidedState.reps += 1;
+      if (guidedState.reps >= guidedState.repsNeeded){
+        guidedState.cardPos += 1;
+        guidedState.reps = 0;
+        guidedState.lastHeardMatched = null;
+        guidedState.transcript = '';
+        if (guidedState.cardPos >= cards.length){
+          guidedState.phase = 'quiz';
+          guidedState.quizOrder = shuffledOrder(cards.length);
+        }
+      }
+      renderFlashcards();
+    };
+
+    const manualRepBtn = panel.querySelector('[data-guided-manual-rep]');
+    if (manualRepBtn) manualRepBtn.addEventListener('click', advanceRep);
+    const micBtn = panel.querySelector('[data-guided-mic]');
+    if (micBtn) micBtn.addEventListener('click', () => startGuidedListening(card, advanceRep));
+    const cancelBtn = panel.querySelector('[data-guided-cancel]');
+    if (cancelBtn) cancelBtn.addEventListener('click', () => { stopGuidedListening(); renderFlashcards(); });
+    const manualToggle = panel.querySelector('[data-speak-manual-toggle]');
+    if (manualToggle) manualToggle.addEventListener('click', () => { guidedState.manual = true; renderFlashcards(); });
+    const micRetry = panel.querySelector('[data-speak-mic-retry]');
+    if (micRetry) micRetry.addEventListener('click', () => { guidedState.manual = false; renderFlashcards(); });
+  }
+
+  function renderGuidedQuiz(panel, cards){
+    const changeLevelBtn = `<button type="button" class="btn btn-ghost" data-flash-change-level>${t('level_change')}</button>`;
+
+    if (guidedState.quizIndex >= guidedState.quizOrder.length){
+      guidedState.phase = 'done';
+      renderGuidedDone(panel, cards);
+      return;
+    }
+
+    const cardIdx = guidedState.quizOrder[guidedState.quizIndex];
+    const card = cards[cardIdx];
+    if (!guidedState.quizChoices.length){
+      guidedState.quizChoices = buildQuizChoices(cards, cardIdx);
+    }
+
+    const gotItRight = guidedState.quizChoices.some(c => c.correct && c.picked);
+    const showNext = gotItRight || guidedState.quizRevealed;
+
+    const choicesHtml = guidedState.quizChoices.map((choice, i) => {
+      let cls = 'choice-btn';
+      if (choice.picked) cls += choice.correct ? ' correct' : ' incorrect';
+      else if (choice.correct && guidedState.quizRevealed) cls += ' correct';
+      const disabled = choice.eliminated || showNext;
+      return `<button type="button" class="${cls}" data-quiz-choice="${i}" ${disabled ? 'disabled' : ''}>${escapeHtml(choice.text)}</button>`;
+    }).join('');
+
+    let feedbackHtml = '';
+    if (gotItRight){
+      feedbackHtml = `<div class="story-feedback good">${t('feedback_good_default')}</div>`;
+    } else if (guidedState.quizWrongTries > 0 && !guidedState.quizRevealed){
+      feedbackHtml = `<div class="story-feedback bad">${t('guided_quiz_try_again')}</div>`;
+    }
+
+    const helpHtml = showNext ? '' : `
+      <div class="guided-quiz-help">
+        ${!guidedState.quizHint ? `<button type="button" class="btn btn-ghost" data-quiz-hint>${t('guided_quiz_hint_btn')}</button>` : ''}
+        <button type="button" class="btn btn-ghost" data-quiz-reveal>${t('guided_quiz_reveal_btn')}</button>
+      </div>`;
+
+    panel.innerHTML = `
+      <div class="flashcard-wrap">
+        <div class="flash-level-bar">${changeLevelBtn}</div>
+        ${flashModeToggleHtml('guided')}
+        <p class="guided-phase-label">${t('guided_quiz_phase_label')}</p>
         <div class="speak-quiz-card">
           <div class="flashcard__label">${t('speak_prompt_label')}</div>
           <div class="flashcard__text">${escapeHtml(card.front)}</div>
           ${speakButtonHtml()}
         </div>
-        <div class="speak-controls">${controlsHtml}</div>
+        <div class="story-choices">${choicesHtml}</div>
         ${feedbackHtml}
+        ${helpHtml}
         <div class="flashcard-controls">
-          <span class="flashcard-counter">${t('flash_counter', { current: speakState.index + 1, total: cards.length })}</span>
-          ${canAdvance ? `<button type="button" class="btn btn-primary" data-speak-next>${t('flash_next')}</button>` : ''}
+          <span class="flashcard-counter">${t('flash_counter', { current: guidedState.quizIndex + 1, total: guidedState.quizOrder.length })}</span>
+          ${showNext ? `<button type="button" class="btn btn-primary" data-quiz-next>${t('flash_next')}</button>` : ''}
         </div>
       </div>`;
 
     wireSpeakButton(panel, card.front);
     wireFlashChrome(panel);
 
-    const micBtn = panel.querySelector('[data-speak-mic]');
-    if (micBtn) micBtn.addEventListener('click', () => startSpeakListening(card));
-    const cancelBtn = panel.querySelector('[data-speak-cancel]');
-    if (cancelBtn) cancelBtn.addEventListener('click', () => { stopSpeakListening(); renderFlashcards(); });
-    const manualToggle = panel.querySelector('[data-speak-manual-toggle]');
-    if (manualToggle) manualToggle.addEventListener('click', () => { speakState.manual = true; renderFlashcards(); });
-    const micRetry = panel.querySelector('[data-speak-mic-retry]');
-    if (micRetry) micRetry.addEventListener('click', () => {
-      speakState.manual = false; speakState.revealed = false; renderFlashcards();
+    panel.querySelectorAll('[data-quiz-choice]').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const i = Number(btn.dataset.quizChoice);
+        const choice = guidedState.quizChoices[i];
+        choice.picked = true;
+        if (choice.correct){
+          guidedState.quizCorrect += 1;
+          guidedState.quizTotal += 1;
+        } else {
+          choice.eliminated = true;
+          guidedState.quizWrongTries += 1;
+        }
+        renderFlashcards();
+      });
     });
-    const revealBtn = panel.querySelector('[data-speak-reveal]');
-    if (revealBtn) revealBtn.addEventListener('click', () => { speakState.revealed = true; renderFlashcards(); });
-    const nextBtn = panel.querySelector('[data-speak-next]');
+    const hintBtn = panel.querySelector('[data-quiz-hint]');
+    if (hintBtn) hintBtn.addEventListener('click', () => {
+      guidedState.quizHint = true;
+      const remainingWrong = guidedState.quizChoices.filter(c => !c.correct && !c.eliminated);
+      if (remainingWrong.length > 1) remainingWrong[0].eliminated = true;
+      renderFlashcards();
+    });
+    const revealBtn = panel.querySelector('[data-quiz-reveal]');
+    if (revealBtn) revealBtn.addEventListener('click', () => {
+      guidedState.quizRevealed = true;
+      guidedState.quizTotal += 1;
+      renderFlashcards();
+    });
+    const nextBtn = panel.querySelector('[data-quiz-next]');
     if (nextBtn) nextBtn.addEventListener('click', () => {
-      speakState.index += 1;
-      speakState.feedback = null;
-      speakState.transcript = '';
-      speakState.revealed = false;
+      guidedState.quizIndex += 1;
+      guidedState.quizChoices = [];
+      guidedState.quizWrongTries = 0;
+      guidedState.quizHint = false;
+      guidedState.quizRevealed = false;
+      renderFlashcards();
+    });
+  }
+
+  function renderGuidedDone(panel, cards){
+    const changeLevelBtn = `<button type="button" class="btn btn-ghost" data-flash-change-level>${t('level_change')}</button>`;
+    panel.innerHTML = `
+      <div class="flashcard-wrap">
+        <div class="flash-level-bar">${changeLevelBtn}</div>
+        ${flashModeToggleHtml('guided')}
+        <div class="speak-summary">
+          <div class="story-complete__badge">🎉</div>
+          <h2>${t('guided_done_heading')}</h2>
+          <p>${t('guided_done_body', { total: cards.length })}</p>
+          ${guidedState.quizTotal > 0 ? `<p>${t('guided_done_quiz_note', { correct: guidedState.quizCorrect, total: guidedState.quizTotal })}</p>` : ''}
+          <button type="button" class="btn btn-primary" data-guided-restart>${t('flash_restart')}</button>
+        </div>
+      </div>`;
+    wireFlashChrome(panel);
+    panel.querySelector('[data-guided-restart]').addEventListener('click', () => {
+      resetGuided(flashState.level, cards.length);
       renderFlashcards();
     });
   }
