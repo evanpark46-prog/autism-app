@@ -278,12 +278,52 @@ main{max-width:1080px; margin:0 auto; padding:28px 20px 64px;}
 .level-card__label{font-weight:800; font-size:1.1rem;}
 .level-card__desc{color:var(--ink-soft); font-size:.92rem;}
 /* ---------- Dialogue mode (Pokémon-style text-box conversation) ---------- */
-.dialogue-scene{position:relative;}
+.dialogue-scene{
+  position:relative; display:block; min-height:500px; padding:18px;
+  overflow:hidden; background:linear-gradient(180deg,#e7f0ff,#f8fbff);
+}
+.dialogue-art{
+  width:100%; min-height:450px; display:grid; place-items:center;
+  transition:filter .2s ease, transform .2s ease;
+}
+.dialogue-art img{
+  width:auto; max-width:100%; max-height:450px; object-fit:contain;
+  border-radius:18px; border:2px solid rgba(36,55,82,.18);
+  box-shadow:0 12px 30px rgba(36,55,82,.16);
+}
+.dialogue-scene.is-consequence .dialogue-art{
+  filter:saturate(.82) sepia(.08); transform:scale(1.015);
+}
 .dialogue-box{
-  background:var(--panel); border:3px solid var(--ink); border-radius:var(--radius-md);
-  padding:16px 50px 18px 18px; margin:-18px 16px 0; position:relative;
-  box-shadow:var(--shadow-lift); cursor:pointer; z-index:2;
-  animation:dialogue-pop .18s ease-out;
+  background:rgba(255,255,255,.96); border:3px solid var(--ink); border-radius:var(--radius-md);
+  padding:16px 50px 18px 18px; margin:0; position:absolute;
+  left:clamp(14px,4vw,46px); right:clamp(14px,4vw,46px); bottom:16px;
+  box-shadow:0 12px 30px rgba(23,39,64,.24); cursor:pointer; z-index:2;
+  backdrop-filter:blur(5px); animation:dialogue-pop .18s ease-out;
+}
+.dialogue-box::before{
+  content:""; position:absolute; left:34px; top:-18px;
+  border-left:16px solid transparent; border-right:16px solid transparent;
+  border-bottom:18px solid var(--ink);
+}
+.dialogue-box::after{
+  content:""; position:absolute; left:38px; top:-12px;
+  border-left:12px solid transparent; border-right:12px solid transparent;
+  border-bottom:14px solid rgba(255,255,255,.98);
+}
+.dialogue-box.is-consequence{
+  border-color:#9a5d05; background:rgba(255,247,226,.97);
+  box-shadow:0 12px 30px rgba(122,74,6,.28);
+}
+.dialogue-box.is-consequence::before{border-bottom-color:#9a5d05;}
+.dialogue-box.is-consequence::after{border-bottom-color:rgba(255,247,226,.99);}
+.dialogue-box.is-consequence .dialogue-speaker{color:#7a4a06;}
+@media (max-width:600px){
+  .dialogue-scene{min-height:470px; padding:10px;}
+  .dialogue-art{min-height:430px;}
+  .dialogue-art img{max-height:430px; border-radius:14px;}
+  .dialogue-box{left:8px; right:8px; bottom:10px; padding:13px 46px 14px 14px;}
+  .dialogue-text{font-size:1rem;}
 }
 @keyframes dialogue-pop{ from{ transform:scale(.97); opacity:0; } to{ transform:scale(1); opacity:1; } }
 .dialogue-speaker{

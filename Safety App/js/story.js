@@ -1,67 +1,118 @@
 /* ==========================================================================
    Safety Library — story illustrations
-   Real illustrations from Storyset (Freepik) — see img/ATTRIBUTION.txt for
-   licensing. Each key below maps to a downloaded file in img/.
+   Original kid-friendly illustrations generated for this project. Each key
+   below maps to an optimized WebP file in img/generated/.
 
    TO ADD A NEW ILLUSTRATION:
-   Download an SVG into img/, add a key here pointing to it, then reference
+   Add an image to img/generated/, add a key here pointing to it, then reference
    that key from a step's "illustration" field in js/data.js.
    ========================================================================== */
 
 const ILLUSTRATIONS = {
-  'park-approach': { file: 'img/hello-amico.svg', alt: 'Illustration of someone waving hello.' },
-  'park-safe': { file: 'img/volunteering-amico.svg', alt: 'Illustration of people helping each other.' },
-  'street-corner': { file: 'img/pedestrian-crossing-amico.svg', alt: 'Illustration of people at a pedestrian crossing.' },
-  'street-crossing': { file: 'img/pedestrian-crossing-amico.svg', alt: 'Illustration of people crossing at a pedestrian crossing.' },
-  'store-lost': { file: 'img/grocery-shopping-rafiki.svg', alt: 'Illustration of a person grocery shopping.' },
-  'store-helper': { file: 'img/supermarket-workers-rafiki.svg', alt: 'Illustration of supermarket workers helping a customer.' },
+  'park-approach': { file: 'img/generated/park-approach.webp', alt: 'A child keeps a safe distance from an unfamiliar adult in a park.' },
+  'park-safe': { file: 'img/generated/park-safe.webp', alt: 'A child asks a uniformed park helper for help.' },
+  'street-corner': { file: 'img/generated/street-corner.webp', alt: 'A child waits safely at the corner before crossing the street.' },
+  'street-crossing': { file: 'img/generated/street-crossing.webp', alt: 'A child crosses calmly at a marked crosswalk with the walk signal.' },
+  'store-lost': { file: 'img/generated/store-lost.webp', alt: 'A child stays calm after becoming separated in a grocery store.' },
+  'store-helper': { file: 'img/generated/store-helper.webp', alt: 'A child asks a grocery store cashier for help.' },
 
-  /* Topic-specific illustrations sourced from Storyset (see img/ATTRIBUTION.txt). */
-  'emergency-call': { file: 'img/emergency-call-amico.svg', alt: 'Illustration of someone on the phone calling for emergency help.' },
-  'emergency-help': { file: 'img/ambulance-pana.svg', alt: 'Illustration of an ambulance responding to help.' },
-  'fire-alert': { file: 'img/warning-amico.svg', alt: 'Illustration of a warning alert going off.' },
-  'fire-safe': { file: 'img/fire-prevention-amico.svg', alt: 'Illustration of someone learning fire prevention and safety steps.' },
-  'earthquake-shake': { file: 'img/warning-rafiki.svg', alt: 'Illustration of someone reacting to a sudden warning alert.' },
-  'earthquake-safe': { file: 'img/family-amico.svg', alt: 'Illustration of a family staying safe together.' },
-  'storm-outside': { file: 'img/storm-amico.svg', alt: 'Illustration of a storm with wind and rain outside.' },
-  'storm-safe': { file: 'img/umbrella-pana.svg', alt: 'Illustration of someone sheltered safely from the rain.' },
-  'advocacy-uncomfortable': { file: 'img/self-confidence-rafiki.svg', alt: 'Illustration of someone building the confidence to speak up.' },
-  'advocacy-help': { file: 'img/self-confidence-amico.svg', alt: 'Illustration of someone speaking up with confidence.' },
+  /* Topic-specific original illustrations. */
+  'emergency-call': { file: 'img/generated/emergency-safety.webp', alt: 'A child alerts a grown-up after hearing a smoke alarm.' },
+  'emergency-help': { file: 'img/generated/emergency-safety.webp', alt: 'A grown-up safely turns off a smoking pan after a child speaks up.' },
+  'fire-alert': { file: 'img/generated/fire-safety.webp', alt: 'A class calmly follows its teacher during a fire drill.' },
+  'fire-safe': { file: 'img/generated/fire-safety.webp', alt: 'A class gathers at its outdoor meeting spot during a fire drill.' },
+  'earthquake-shake': { file: 'img/generated/earthquake-safety.webp', alt: 'Children drop, cover, and hold on under sturdy classroom desks.' },
+  'earthquake-safe': { file: 'img/generated/earthquake-safety.webp', alt: 'A child protects their head and neck under a desk during an earthquake drill.' },
+  'storm-outside': { file: 'img/generated/rainyweather-safety.webp', alt: 'A child stays safely indoors during a thunderstorm.' },
+  'storm-safe': { file: 'img/generated/rainyweather-safety.webp', alt: 'A child dries off and watches a storm safely from indoors.' },
+  'advocacy-uncomfortable': { file: 'img/generated/selfadvocacy-safety.webp', alt: 'A child uses headphones and asks a teacher for a sensory break.' },
+  'advocacy-help': { file: 'img/generated/selfadvocacy-safety.webp', alt: 'A teacher listens as a child calmly asks for a break.' },
 
-  'boundaries-uncomfortable': { file: 'img/consent-amico.svg', alt: 'Illustration of someone being asked before a hug or touch.' },
-  'boundaries-safe': { file: 'img/consent-pana.svg', alt: 'Illustration of two people respecting a personal boundary.' },
-  'secret-worried': { file: 'img/top-secret-amico.svg', alt: 'Illustration of someone holding onto a secret.' },
-  'secret-safe': { file: 'img/conversation-cuate.svg', alt: 'Illustration of someone talking openly with a trusted adult.' },
-  'report-unsure': { file: 'img/thinking-face-amico.svg', alt: 'Illustration of someone thinking about whether to tell an adult.' },
-  'report-help': { file: 'img/conversation-bro.svg', alt: 'Illustration of someone talking a problem through with another person.' },
-  'awareness-scan': { file: 'img/location-search-amico.svg', alt: 'Illustration of someone looking around and paying attention to their surroundings.' },
-  'awareness-safe': { file: 'img/paper-map-amico.svg', alt: 'Illustration of someone checking a map to stay aware of where they are.' },
-  'plan-before': { file: 'img/checklist-amico.svg', alt: 'Illustration of someone making a safety checklist before heading out.' },
-  'plan-safe': { file: 'img/to-do-list-pana.svg', alt: 'Illustration of someone following through on a safety plan.' },
-  'privacy-uncomfortable': { file: 'img/dressing-room-amico.svg', alt: 'Illustration of someone wanting privacy while changing.' },
-  'privacy-safe': { file: 'img/dressing-room-pana.svg', alt: 'Illustration of someone having their privacy respected.' },
-  'bully-uncomfortable': { file: 'img/bullying-rafiki.svg', alt: 'Illustration of someone being bullied and feeling upset.' },
-  'bully-help': { file: 'img/bullying-amico.svg', alt: 'Illustration of someone getting help after being bullied.' },
-  'online-screen': { file: 'img/devices-bro.svg', alt: 'Illustration of someone using a phone or computer screen.' },
-  'online-safe': { file: 'img/security-on-amico.svg', alt: 'Illustration of someone keeping their online accounts and information secure.' },
-  'cyberbully-uncomfortable': { file: 'img/cyber-bullying-rafiki.svg', alt: 'Illustration of someone feeling upset by a mean message online.' },
-  'cyberbully-help': { file: 'img/cyber-bullying-amico.svg', alt: 'Illustration of someone getting help after being cyberbullied.' },
-  'citizenship-bystander': { file: 'img/community-bro.svg', alt: 'Illustration of a group of people nearby while something happens.' },
-  'citizenship-help': { file: 'img/solidarity-amico.svg', alt: 'Illustration of people supporting and helping one another.' },
-  'rights-voice': { file: 'img/group-discussion-rafiki.svg', alt: 'Illustration of someone trying to be heard in a group discussion.' },
-  'rights-safe': { file: 'img/solidarity-pana.svg', alt: 'Illustration of people making sure everyone gets heard and included.' },
-  'water-play': { file: 'img/children-playing-in-the-pool-pana.svg', alt: 'Illustration of children playing in a swimming pool.' },
-  'water-safe': { file: 'img/beach-lifeguard-amico.svg', alt: 'Illustration of a lifeguard watching over people at the beach.' },
-  'home-alone': { file: 'img/warning-cuate.svg', alt: 'Illustration of someone noticing something unexpected at home and staying alert.' },
-  'home-safe': { file: 'img/cooking-pana.svg', alt: 'Illustration of someone being careful in the kitchen at home.' },
-  'bike-ride': { file: 'img/road-cycling-amico.svg', alt: 'Illustration of someone getting ready to ride a bicycle.' },
-  'bike-safe': { file: 'img/road-cycling-pana.svg', alt: 'Illustration of someone riding a bicycle safely.' },
-  'peer-pressure-moment': { file: 'img/group-amico.svg', alt: 'Illustration of a group of friends pressuring someone to join in.' },
-  'peer-pressure-safe': { file: 'img/team-spirit-amico.svg', alt: 'Illustration of a group supporting someone’s own safe choice.' },
+  'boundaries-uncomfortable': { file: 'img/generated/body-boundaries-safety.webp', alt: 'A child confidently offers a high-five instead of a hug.' },
+  'boundaries-safe': { file: 'img/generated/body-boundaries-safety.webp', alt: 'An adult warmly respects a child’s choice and returns a high-five.' },
+  'secret-worried': { file: 'img/generated/secrets-safety.webp', alt: 'Children share a happy birthday surprise with a parent.' },
+  'secret-safe': { file: 'img/generated/secrets-safety.webp', alt: 'A family enjoys a temporary birthday surprise together.' },
+  'report-unsure': { file: 'img/generated/reporting-safety.webp', alt: 'Two children calmly talk beside the playground swings.' },
+  'report-help': { file: 'img/generated/reporting-safety.webp', alt: 'A classmate makes room so another child can take a turn on the swing.' },
+  'awareness-scan': { file: 'img/generated/awareness-safety.webp', alt: 'A child puts away a toy and pays attention in a parking lot.' },
+  'awareness-safe': { file: 'img/generated/awareness-safety.webp', alt: 'A child looks both ways and holds a grown-up’s hand in a parking lot.' },
+  'plan-before': { file: 'img/generated/plan-safety.webp', alt: 'A child checks with a parent before visiting a friend.' },
+  'plan-safe': { file: 'img/generated/plan-safety.webp', alt: 'A family shares contact details before a child visits a friend.' },
+  'privacy-uncomfortable': { file: 'img/generated/privacy-safety.webp', alt: 'A child knocks and waits outside a closed bedroom door.' },
+  'privacy-safe': { file: 'img/generated/privacy-safety.webp', alt: 'Siblings smile after one knocks and waits before entering.' },
+  'bully-uncomfortable': { file: 'img/generated/bullying-safety.webp', alt: 'A child calmly tells a trusted teacher about a playground problem.' },
+  'bully-help': { file: 'img/generated/bullying-safety.webp', alt: 'A teacher listens closely and supports a child who reports bullying.' },
+  'online-screen': { file: 'img/generated/online-safety.webp', alt: 'A child shows an unfamiliar online request to a parent.' },
+  'online-safe': { file: 'img/generated/online-safety.webp', alt: 'A parent helps a child choose a safe response to an online request.' },
+  'cyberbully-uncomfortable': { file: 'img/generated/cyberbullying-safety.webp', alt: 'A child shows an upsetting online message to an older sibling.' },
+  'cyberbully-help': { file: 'img/generated/cyberbullying-safety.webp', alt: 'An older sibling helps a child block and report an unkind message.' },
+  'citizenship-bystander': { file: 'img/generated/citizenship-safety.webp', alt: 'A child checks on a classmate who fell at the playground.' },
+  'citizenship-help': { file: 'img/generated/citizenship-safety.webp', alt: 'A child calls a nearby playground supervisor to help a classmate.' },
+  'rights-voice': { file: 'img/generated/rights-safety.webp', alt: 'A child raises a hand and waits for a turn to speak in a class circle.' },
+  'rights-safe': { file: 'img/generated/rights-safety.webp', alt: 'A teacher makes sure every child gets a turn to share.' },
+  'water-play': { file: 'img/generated/water-safety.webp', alt: 'A child waits on the pool deck for a grown-up to supervise.' },
+  'water-safe': { file: 'img/generated/water-safety.webp', alt: 'A child fastens a life jacket while a grown-up supervises the pool.' },
+  'home-alone': { file: 'img/generated/home-safety.webp', alt: 'Two siblings keep the front door closed when an unfamiliar visitor arrives.' },
+  'home-safe': { file: 'img/generated/home-safety.webp', alt: 'Two siblings call a parent instead of opening the door.' },
+  'bike-ride': { file: 'img/generated/bike-safety.webp', alt: 'A child fastens a bicycle helmet before riding.' },
+  'bike-safe': { file: 'img/generated/bike-safety.webp', alt: 'A grown-up checks that a child’s bicycle helmet fits snugly.' },
+  'peer-pressure-moment': { file: 'img/generated/peer-pressure-safety.webp', alt: 'A child calmly declines an unsafe playground suggestion.' },
+  'peer-pressure-safe': { file: 'img/generated/peer-pressure-safety.webp', alt: 'A child and a supportive friend choose the safe play area.' },
 };
 
 function getIllustration(key){
   const pic = ILLUSTRATIONS[key];
   if (!pic) return '';
   return `<img src="${pic.file}" alt="${pic.alt}" loading="lazy">`;
+}
+
+/* Dialogue scenes use their own panel for every conversation instead of
+   reusing the topic card artwork. Four topics also have a second generated
+   panel that shows the immediate, kid-friendly consequence of a wrong answer. */
+const DIALOGUE_SCENE_COUNTS = {
+  'stranger-safety': 10,
+  'street-safety': 6,
+  'lost-safety': 6,
+  'emergency-safety': 6,
+  'fire-safety': 6,
+  'earthquake-safety': 6,
+  'rainyweather-safety': 6,
+  'selfadvocacy-safety': 6,
+  'body-boundaries-safety': 6,
+  'secrets-safety': 6,
+  'reporting-safety': 6,
+  'awareness-safety': 6,
+  'plan-safety': 6,
+  'privacy-safety': 6,
+  'bullying-safety': 6,
+  'online-safety': 6,
+  'cyberbullying-safety': 6,
+  'citizenship-safety': 6,
+  'rights-safety': 6,
+  'water-safety': 6,
+  'home-safety': 6,
+  'bike-safety': 6,
+  'peer-pressure-safety': 6,
+};
+
+const DIALOGUE_CONSEQUENCE_ART = new Set([
+  'street-safety',
+  'lost-safety',
+  'emergency-safety',
+  'fire-safety',
+]);
+
+function dialogueArtworkFile(topicId, sceneNumber, consequence){
+  const count = DIALOGUE_SCENE_COUNTS[topicId];
+  if (!count || sceneNumber < 1 || sceneNumber > count) return '';
+  const kind = consequence && DIALOGUE_CONSEQUENCE_ART.has(topicId)
+    ? 'consequence'
+    : 'dialogue';
+  return `img/generated/dialogue/${topicId}/${kind}-${String(sceneNumber).padStart(2, '0')}.jpg`;
+}
+
+function getDialogueIllustration(topicId, sceneNumber, alt){
+  const file = dialogueArtworkFile(topicId, sceneNumber, false);
+  if (!file) return '';
+  return `<img src="${file}" alt="${alt || ''}" loading="eager" data-dialogue-image>`;
 }

@@ -47,6 +47,8 @@ const UI_STRINGS = {
     story_replay: 'Play the story again',
     feedback_good_default: 'Good choice — that keeps you safe!',
     feedback_bad_default: 'Let’s think about that one again.',
+    story_consequence_label: 'What could happen',
+    story_dialogue_image_alt: 'Comic illustration of this safety conversation.',
 
     story_review_heading: 'Let’s review what tripped you up',
     story_review_lead: 'Tap a card to see the answer again.',
@@ -223,6 +225,8 @@ const UI_STRINGS = {
     story_replay: 'Ver la historia de nuevo',
     feedback_good_default: '¡Buena elección! Eso te mantiene seguro.',
     feedback_bad_default: 'Pensemos en esa opción otra vez.',
+    story_consequence_label: 'Lo que podría pasar',
+    story_dialogue_image_alt: 'Ilustración tipo cómic de esta conversación de seguridad.',
 
     story_review_heading: 'Repasemos lo que se te hizo difícil',
     story_review_lead: 'Toca una tarjeta para ver la respuesta otra vez.',

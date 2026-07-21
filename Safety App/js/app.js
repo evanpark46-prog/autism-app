@@ -862,9 +862,34 @@ function initTopicPage(){
 
   /* ---------------- Dialogue mode (talk-to-a-character steps) ---------------- */
 
+  function getDialogueSceneNumber(){
+    const levels = currentContent().story.levels;
+    let sceneNumber = 0;
+    for (let levelIndex = 0; levelIndex < levels.length; levelIndex++){
+      const levelSteps = levels[levelIndex].steps;
+      for (let stepIndex = 0; stepIndex < levelSteps.length; stepIndex++){
+        if (levelSteps[stepIndex].type !== 'dialogue') continue;
+        sceneNumber += 1;
+        if (levelIndex === storyState.level && stepIndex === storyState.index){
+          return sceneNumber;
+        }
+      }
+    }
+    return 1;
+  }
+
   function renderDialogueStep(panel, step, steps, dots, changeLevelBtn){
     let lineIndex = 0;
     let answered = false;
+    const dialogueSceneNumber = getDialogueSceneNumber();
+
+    function setConsequenceVisual(showConsequence){
+      const sceneEl = panel.querySelector('[data-dialogue-scene]');
+      const imageEl = panel.querySelector('[data-dialogue-image]');
+      const file = dialogueArtworkFile(meta.id, dialogueSceneNumber, showConsequence);
+      if (imageEl && file) imageEl.src = file;
+      if (sceneEl) sceneEl.classList.toggle('is-consequence', showConsequence);
+    }
 
     function goToNextStep(){
       storyState.index += 1;
@@ -886,6 +911,8 @@ function initTopicPage(){
       setFooter(`<button type="button" class="btn btn-secondary" data-dialogue-retry>${t('story_try_again')}</button>`);
       panel.querySelector('[data-dialogue-retry]').addEventListener('click', () => {
         answered = false;
+        setConsequenceVisual(false);
+        panel.querySelector('[data-dialogue-box]').classList.remove('is-consequence');
         setFooter('');
         showLine(step.lines.length - 1, { instant: true });
       });
@@ -918,9 +945,13 @@ function initTopicPage(){
       const textEl = panel.querySelector('[data-dialogue-text]');
       const advanceEl = panel.querySelector('[data-dialogue-advance]');
       const replySpeaker = step.replySpeaker || step.lines[step.lines.length - 1].speaker || '';
-      speakerEl.textContent = replySpeaker;
+      const showConsequence = !choice.correct;
+      const displayedSpeaker = showConsequence ? t('story_consequence_label') : replySpeaker;
+      setConsequenceVisual(showConsequence);
+      panel.querySelector('[data-dialogue-box]').classList.toggle('is-consequence', showConsequence);
+      speakerEl.textContent = displayedSpeaker;
       advanceEl.style.visibility = 'hidden';
-      wireDialogueSpeak(panel, text, replySpeaker);
+      wireDialogueSpeak(panel, text, displayedSpeaker);
       const controller = typeWriter(textEl, text, () => {
         activeTypewriterClear = null;
         if (choice.correct) showNextFooter(t('story_continue'));
@@ -966,7 +997,8 @@ function initTopicPage(){
       <div class="story-stage">
         <div class="story-level-bar">${changeLevelBtn}</div>
         <div class="story-progress">${dots}</div>
-        <div class="story-illustration dialogue-scene">${getIllustration(step.illustration)}</div>
+        <div class="story-illustration dialogue-scene" data-dialogue-scene>
+          <div class="dialogue-art">${getDialogueIllustration(meta.id, dialogueSceneNumber, t('story_dialogue_image_alt'))}</div>
         <div class="dialogue-box" data-dialogue-box tabindex="0" role="button" aria-label="${t('story_next')}">
           <div class="dialogue-speaker" data-dialogue-speaker></div>
           <div class="speak-row">
@@ -974,6 +1006,7 @@ function initTopicPage(){
             ${speakButtonHtml()}
           </div>
           <span class="dialogue-advance" data-dialogue-advance aria-hidden="true">▼</span>
+        </div>
         </div>
         <div class="story-body">
           <div class="story-choices" data-dialogue-choices hidden></div>
@@ -1533,7 +1566,7 @@ function initTopicPage(){
       if (!target) return;
       videoState.player = new YT.Player(target, {
         videoId: video.youtubeId,
-        playerVars: { rel: 0 },
+        playerVars: { rel: 0, origin: window.location.origin },
         events: {
           onStateChange(e){
             if (e.data === YT.PlayerState.PLAYING){
