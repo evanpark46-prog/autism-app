@@ -294,6 +294,38 @@ main{max-width:1080px; margin:0 auto; padding:28px 20px 64px;}
 .dialogue-scene.is-consequence .dialogue-art{
   filter:saturate(.82) sepia(.08); transform:scale(1.015);
 }
+.dialogue-art-inner{position:relative; display:inline-block; max-width:100%;}
+.dialogue-art-inner img{display:block;}
+.dialogue-hotspot{
+  position:absolute; transform:translate(-50%,-50%);
+  width:32px; height:32px; border-radius:50%; padding:0;
+  border:2px solid rgba(255,255,255,.9); cursor:pointer;
+  background:radial-gradient(circle, rgba(255,255,255,.55), rgba(255,255,255,.18));
+  box-shadow:0 0 0 0 rgba(255,255,255,.5);
+  animation:dialogue-hotspot-pulse 2.2s ease-in-out infinite;
+}
+.dialogue-hotspot.is-discovered{
+  background:radial-gradient(circle, var(--green), #1c8a5e);
+  border-color:#fff; animation:none;
+}
+.dialogue-hotspot::after{
+  content:"?"; display:block; text-align:center; line-height:28px;
+  font-weight:800; color:var(--ink);
+}
+.dialogue-hotspot.is-discovered::after{content:"✓"; color:#fff;}
+@keyframes dialogue-hotspot-pulse{
+  0%, 100%{box-shadow:0 0 0 0 rgba(255,255,255,.55);}
+  50%{box-shadow:0 0 0 9px rgba(255,255,255,0);}
+}
+.dialogue-hotspot-tip{
+  position:absolute; transform:translate(-50%,-115%);
+  max-width:200px; background:#fff; border:2px solid var(--ink); border-radius:12px;
+  padding:8px 12px; font-size:.85rem; font-weight:700; text-align:center;
+  box-shadow:0 8px 20px rgba(23,39,64,.22); z-index:5;
+}
+@media (prefers-reduced-motion: reduce){
+  .dialogue-hotspot{animation:none;}
+}
 .dialogue-box{
   background:rgba(255,255,255,.96); border:3px solid var(--ink); border-radius:var(--radius-md);
   padding:16px 50px 18px 18px; margin:0; position:absolute;

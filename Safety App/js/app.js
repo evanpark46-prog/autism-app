@@ -882,6 +882,10 @@ function initTopicPage(){
     let lineIndex = 0;
     let answered = false;
     const dialogueSceneNumber = getDialogueSceneNumber();
+    // Tappable exploration is an optional bonus layer, piloted at Level 1
+    // only — it never blocks the core lesson, which still advances by
+    // tapping the dialogue box regardless of whether a hotspot was found.
+    const hotspots = storyState.level === 0 ? getDialogueHotspots(meta.id, dialogueSceneNumber, getLang()) : [];
 
     function setConsequenceVisual(showConsequence){
       const sceneEl = panel.querySelector('[data-dialogue-scene]');
@@ -998,7 +1002,15 @@ function initTopicPage(){
         <div class="story-level-bar">${changeLevelBtn}</div>
         <div class="story-progress">${dots}</div>
         <div class="story-illustration dialogue-scene" data-dialogue-scene>
-          <div class="dialogue-art">${getDialogueIllustration(meta.id, dialogueSceneNumber, t('story_dialogue_image_alt'))}</div>
+          <div class="dialogue-art">
+            <div class="dialogue-art-inner">
+              ${getDialogueIllustration(meta.id, dialogueSceneNumber, t('story_dialogue_image_alt'))}
+              ${hotspots.map((h, i) => `
+                <button type="button" class="dialogue-hotspot" data-hotspot="${i}"
+                  style="left:${h.x}%; top:${h.y}%" aria-label="${escapeHtml(h.label)}"></button>`).join('')}
+              <div class="dialogue-hotspot-tip" data-hotspot-tip hidden></div>
+            </div>
+          </div>
         <div class="dialogue-box" data-dialogue-box tabindex="0" role="button" aria-label="${t('story_next')}">
           <div class="dialogue-speaker" data-dialogue-speaker></div>
           <div class="speak-row">
@@ -1025,6 +1037,28 @@ function initTopicPage(){
     box.addEventListener('click', handleBoxActivate);
     box.addEventListener('keydown', e => {
       if (e.key === 'Enter' || e.key === ' '){ e.preventDefault(); handleBoxActivate(); }
+    });
+
+    panel.querySelectorAll('[data-hotspot]').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const idx = Number(btn.dataset.hotspot);
+        const spot = hotspots[idx];
+        const tip = panel.querySelector('[data-hotspot-tip]');
+        const wasOpenOnThis = tip.dataset.openIdx === String(idx) && !tip.hidden;
+        btn.classList.add('is-discovered');
+        if (wasOpenOnThis){
+          tip.hidden = true;
+          tip.dataset.openIdx = '';
+          return;
+        }
+        tip.textContent = spot.text;
+        tip.style.left = `${spot.x}%`;
+        tip.style.top = `${spot.y}%`;
+        tip.hidden = false;
+        tip.dataset.openIdx = String(idx);
+        speak(spot.text);
+      });
     });
 
     showLine(0);

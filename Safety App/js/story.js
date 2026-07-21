@@ -116,3 +116,60 @@ function getDialogueIllustration(topicId, sceneNumber, alt){
   if (!file) return '';
   return `<img src="${file}" alt="${alt || ''}" loading="eager" data-dialogue-image>`;
 }
+
+/* Tappable exploration hotspots for Level 1 scenes — a low-stakes, optional
+   bonus layer on top of the core lesson. Each hotspot points at something
+   visible in that scene's artwork and reveals a short reinforcing phrase
+   (spoken aloud) when tapped. x/y are percentages within the rendered
+   image. Pilot: stranger-safety's three Level 1 scenes only. */
+const DIALOGUE_HOTSPOTS = {
+  'stranger-safety': {
+    1: [
+      {
+        x: 74, y: 46,
+        en: { label: 'How she feels', text: 'I’m not sure about this. It’s okay to feel unsure.' },
+        es: { label: 'Cómo se siente', text: 'No estoy segura de esto. Está bien sentirse insegura.' },
+      },
+      {
+        x: 24, y: 40,
+        en: { label: 'Stranger', text: 'Someone you don’t know is called a stranger.' },
+        es: { label: 'Desconocido', text: 'Alguien que no conoces se llama un desconocido.' },
+      },
+    ],
+    2: [
+      {
+        x: 27, y: 58,
+        en: { label: 'Telling a helper', text: 'It’s always okay to tell a helper what happened.' },
+        es: { label: 'Contarle a un ayudante', text: 'Siempre está bien contarle a un ayudante lo que pasó.' },
+      },
+      {
+        x: 70, y: 40,
+        en: { label: 'Lifeguard', text: 'A lifeguard is a helper you can trust.' },
+        es: { label: 'Salvavidas', text: 'Un salvavidas es un ayudante en quien puedes confiar.' },
+      },
+    ],
+    3: [
+      {
+        x: 28, y: 36,
+        en: { label: 'Staying near a helper', text: 'Staying near a helper keeps you safe.' },
+        es: { label: 'Quedarte cerca de un ayudante', text: 'Quedarte cerca de un ayudante te mantiene segura.' },
+      },
+      {
+        x: 72, y: 54,
+        en: { label: 'Feeling safe', text: 'It’s okay to feel better once you’re safe.' },
+        es: { label: 'Sentirse segura', text: 'Está bien sentirse mejor una vez que estás segura.' },
+      },
+    ],
+  },
+};
+
+function getDialogueHotspots(topicId, sceneNumber, lang){
+  const topicSpots = DIALOGUE_HOTSPOTS[topicId];
+  const spots = topicSpots && topicSpots[sceneNumber];
+  if (!spots) return [];
+  return spots.map(spot => ({
+    x: spot.x, y: spot.y,
+    label: (spot[lang] || spot.en).label,
+    text: (spot[lang] || spot.en).text,
+  }));
+}
