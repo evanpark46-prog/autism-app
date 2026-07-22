@@ -25,6 +25,11 @@
         <a href="about.html" data-i18n="nav_about">About</a>
       </nav>
       <div class="skin-switch" data-skin-switch role="group" aria-label="Color theme"></div>
+      <div class="rate-switch">
+        <span aria-hidden="true">🔊</span>
+        <label class="visually-hidden" for="rate-select" data-i18n="rate_label">Voice speed</label>
+        <select id="rate-select" data-rate-select></select>
+      </div>
       <div class="lang-switch">
         <label class="visually-hidden" for="lang-select" data-i18n="lang_label">Language</label>
         <select id="lang-select" data-lang-select></select>
@@ -153,6 +158,7 @@
 
   <script src="js/i18n.js"></script>
   <script src="js/theme.js"></script>
+  <script src="js/speechrate.js"></script>
   <script src="js/analytics.js"></script>
   <script src="js/data.js"></script>
   <script src="js/app.js"></script>

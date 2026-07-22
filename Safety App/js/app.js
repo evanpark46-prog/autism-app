@@ -80,7 +80,7 @@ function speak(text, speaker){
   const profile = voiceProfileFor(speaker);
   if (profile.voice) utter.voice = profile.voice;
   utter.pitch = profile.pitch;
-  utter.rate = profile.rate;
+  utter.rate = profile.rate * getSpeechRateMultiplier();
   window.speechSynthesis.speak(utter);
 }
 
@@ -1736,6 +1736,7 @@ document.addEventListener('DOMContentLoaded', () => {
   applyStaticI18n();
   initLangSwitcher();
   initSkinSwitcher();
+  initSpeechRateSwitcher();
 
   const page = document.body.dataset.page;
   if (page === 'home') initHomePage();

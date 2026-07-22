@@ -143,6 +143,12 @@ a:focus-visible, button:focus-visible, select:focus-visible, input:focus-visible
   font-weight:700; color:var(--ink); background:#fff; cursor:pointer;
 }
 
+.rate-switch{display:flex; align-items:center; gap:4px;}
+.rate-switch select{
+  border:2px solid var(--border); border-radius:10px; padding:7px 8px;
+  font-weight:700; color:var(--ink); background:#fff; cursor:pointer; font-size:.9rem;
+}
+
 .skin-switch{display:flex; align-items:center; gap:6px;}
 .skin-switch__swatch{
   width:28px; height:28px; border-radius:50%; border:2px solid var(--border);

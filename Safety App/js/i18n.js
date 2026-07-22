@@ -24,6 +24,11 @@ const UI_STRINGS = {
     skin_sunset: 'Sunset',
     skin_meadow: 'Meadow',
     skin_berry: 'Berry',
+    rate_label: 'Voice speed',
+    rate_slow: '🐢 Slow',
+    rate_medium: 'Medium',
+    rate_normal: 'Normal',
+    rate_fast: '🐇 Fast',
 
     home_title: 'A calm place to practice staying safe',
     home_lead: 'Pick a topic below. Each one has a story, flashcards, and a video with questions along the way. No sign-in needed — just click and start.',
@@ -205,6 +210,11 @@ const UI_STRINGS = {
     skin_sunset: 'Atardecer',
     skin_meadow: 'Pradera',
     skin_berry: 'Baya',
+    rate_label: 'Velocidad de voz',
+    rate_slow: '🐢 Lenta',
+    rate_medium: 'Media',
+    rate_normal: 'Normal',
+    rate_fast: '🐇 Rápida',
 
     home_title: 'Un lugar tranquilo para practicar cómo mantenerse seguro',
     home_lead: 'Elige un tema abajo. Cada uno tiene una historia, tarjetas de repaso y un video con preguntas en el camino. No necesitas iniciar sesión — solo haz clic y empieza.',
