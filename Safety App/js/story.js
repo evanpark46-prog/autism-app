@@ -95,19 +95,31 @@ const DIALOGUE_SCENE_COUNTS = {
   'peer-pressure-safety': 6,
 };
 
-const DIALOGUE_CONSEQUENCE_ART = new Set([
-  'street-safety',
-  'lost-safety',
-  'emergency-safety',
-  'fire-safety',
-]);
+// Per-scene, not per-topic: several topics only have consequence art for
+// SOME of their scenes (the ones where the wrong choice is an actual
+// depictable action, rather than a comprehension/belief question with
+// nothing physical to show). Falls back to the plain scene image for any
+// scene number not listed here.
+const DIALOGUE_CONSEQUENCE_SCENES = {
+  'street-safety': new Set([1, 2, 3, 4, 5, 6]),
+  'lost-safety': new Set([1, 2, 3, 4, 5, 6]),
+  'emergency-safety': new Set([1, 2, 3, 4, 5, 6]),
+  'fire-safety': new Set([1, 2, 3, 4, 5, 6]),
+  'stranger-safety': new Set([1, 4, 6, 7, 9]),
+  'earthquake-safety': new Set([1, 3, 4]),
+  'rainyweather-safety': new Set([1, 3]),
+  'home-safety': new Set([2, 5]),
+  'bike-safety': new Set([1, 3, 5]),
+  'body-boundaries-safety': new Set([5]),
+  'secrets-safety': new Set([2, 5]),
+  'water-safety': new Set([5]),
+};
 
 function dialogueArtworkFile(topicId, sceneNumber, consequence){
   const count = DIALOGUE_SCENE_COUNTS[topicId];
   if (!count || sceneNumber < 1 || sceneNumber > count) return '';
-  const kind = consequence && DIALOGUE_CONSEQUENCE_ART.has(topicId)
-    ? 'consequence'
-    : 'dialogue';
+  const hasConsequenceArt = DIALOGUE_CONSEQUENCE_SCENES[topicId] && DIALOGUE_CONSEQUENCE_SCENES[topicId].has(sceneNumber);
+  const kind = consequence && hasConsequenceArt ? 'consequence' : 'dialogue';
   return `img/generated/dialogue/${topicId}/${kind}-${String(sceneNumber).padStart(2, '0')}.jpg`;
 }
 
