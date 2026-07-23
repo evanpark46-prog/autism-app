@@ -112,7 +112,10 @@ const DIALOGUE_CONSEQUENCE_SCENES = {
   'bike-safety': new Set([1, 3, 5]),
   'body-boundaries-safety': new Set([5]),
   'secrets-safety': new Set([2, 5]),
-  'water-safety': new Set([5]),
+  'water-safety': new Set([1, 3, 5]),
+  'awareness-safety': new Set([3]),
+  'privacy-safety': new Set([3]),
+  'online-safety': new Set([3, 5]),
 };
 
 function dialogueArtworkFile(topicId, sceneNumber, consequence){
