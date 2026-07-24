@@ -4,6 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <script>(function(){try{var s=localStorage.getItem('safetylib_skin');if(s)document.documentElement.setAttribute('data-skin', s);}catch(e){}})();</script>
+  <script>(function(){try{var sizes=[87.5,100,115,130,145];var idx=parseInt(localStorage.getItem('safetylib_text_size_idx'),10);if(!(idx>=0&&idx<sizes.length))idx=1;document.documentElement.style.fontSize=sizes[idx]+'%';}catch(e){}})();</script>
   <title>About — Safety Scouts</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -25,6 +26,7 @@
         <a href="about.html" aria-current="page" data-i18n="nav_about">About</a>
       </nav>
       <div class="skin-switch" data-skin-switch role="group" aria-label="Color theme"></div>
+      <div class="text-size-switch" data-textsize-switch role="group" aria-label="Text size"></div>
       <div class="rate-switch">
         <span aria-hidden="true">🔊</span>
         <label class="visually-hidden" for="rate-select" data-i18n="rate_label">Voice speed</label>
@@ -67,6 +69,7 @@
 
   <script src="js/i18n.js"></script>
   <script src="js/theme.js"></script>
+  <script src="js/textsize.js"></script>
   <script src="js/speechrate.js"></script>
   <script src="js/analytics.js"></script>
   <script src="js/data.js"></script>

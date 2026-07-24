@@ -29,6 +29,9 @@ const UI_STRINGS = {
     rate_medium: 'Medium',
     rate_normal: 'Normal',
     rate_fast: '🐇 Fast',
+    textsize_label: 'Text size',
+    textsize_decrease: 'Decrease text size',
+    textsize_increase: 'Increase text size',
 
     home_title: 'A calm place to practice staying safe',
     home_lead: 'Pick a topic below. Each one has a story, flashcards, and a video with questions along the way. No sign-in needed — just click and start.',
@@ -167,11 +170,11 @@ const UI_STRINGS = {
     about_title: 'About Safety Scouts',
     about_lead: 'Who built this app, and why.',
     about_creator_heading: 'About the creator',
-    about_creator_body: 'Safety Scouts was built by Evan Park, a student at Stanford University. It started as a personal project to create something genuinely useful for learners on the autism spectrum, and has grown from there one topic and one feature at a time.',
+    about_creator_body: 'Safety Scouts was created by Evan Park, a student at Stanford University.',
     about_why_heading: 'Why I built this',
-    about_why_body: 'Most kids pick up everyday safety habits — like staying close to a trusted adult, or knowing what to say if they feel unsafe — just by absorbing the world around them. For autistic learners, whether minimally verbal or verbal, those same lessons often need to be taught more directly: broken into clear steps, practiced out loud, and repeated as many times as needed. Safety Scouts exists to do exactly that — turning core safety topics into short stories, flashcards, and practice activities that a learner can revisit at their own pace, in English or Spanish.',
+    about_why_body: 'This project was created for my twin brother, Sean, who is autistic. Growing up, Sean did not pick up everyday safety habits the way many children do simply by observing the people and world around him — knowing what to do around someone he doesn’t know, how to cross a street safely, or what to do in an emergency required direct, structured teaching and a great deal of repeated practice. Safety Scouts was built to meet that need: a free tool that breaks core safety skills into short stories, flashcards, and guided practice that can be revisited as many times as necessary, at a pace that fits the learner, in English or Spanish.',
     about_contact_heading: 'Questions or feedback?',
-    about_contact_body: 'If something isn’t working, a lesson doesn’t fit your learner, or you just want to share how it’s going, I’d genuinely like to hear about it.',
+    about_contact_body: 'If you’re using Safety Scouts with a learner and have feedback, questions, or a suggestion, I’d like to hear from you.',
 
     footer_note: 'Safety Scouts — a free resource. No accounts, no tracking beyond what your browser does by default.',
 
@@ -215,6 +218,9 @@ const UI_STRINGS = {
     rate_medium: 'Media',
     rate_normal: 'Normal',
     rate_fast: '🐇 Rápida',
+    textsize_label: 'Tamaño del texto',
+    textsize_decrease: 'Reducir el tamaño del texto',
+    textsize_increase: 'Aumentar el tamaño del texto',
 
     home_title: 'Un lugar tranquilo para practicar cómo mantenerse seguro',
     home_lead: 'Elige un tema abajo. Cada uno tiene una historia, tarjetas de repaso y un video con preguntas en el camino. No necesitas iniciar sesión — solo haz clic y empieza.',
@@ -353,11 +359,11 @@ const UI_STRINGS = {
     about_title: 'Acerca de Safety Scouts',
     about_lead: 'Quién creó esta aplicación, y por qué.',
     about_creator_heading: 'Sobre el creador',
-    about_creator_body: 'Safety Scouts fue creado por Evan Park, estudiante de la Universidad de Stanford. Comenzó como un proyecto personal para crear algo realmente útil para estudiantes dentro del espectro autista, y ha crecido desde entonces, un tema y una función a la vez.',
+    about_creator_body: 'Safety Scouts fue creado por Evan Park, estudiante de la Universidad de Stanford.',
     about_why_heading: 'Por qué creé esto',
-    about_why_body: 'La mayoría de los niños aprenden hábitos de seguridad cotidianos — como quedarse cerca de un adulto de confianza, o saber qué decir si se sienten inseguros — simplemente absorbiendo el mundo que los rodea. Para estudiantes autistas, ya sean mínimamente verbales o verbales, esas mismas lecciones a menudo necesitan enseñarse de forma más directa: divididas en pasos claros, practicadas en voz alta, y repetidas tantas veces como sea necesario. Safety Scouts existe justamente para eso — convirtiendo temas clave de seguridad en historias cortas, tarjetas de práctica, y actividades que un estudiante puede repasar a su propio ritmo, en inglés o español.',
+    about_why_body: 'Este proyecto fue creado para mi hermano gemelo, Sean, quien es autista. Mientras crecía, Sean no adquirió los hábitos de seguridad cotidianos de la misma manera en que muchos niños lo hacen, simplemente observando a las personas y el mundo a su alrededor — saber qué hacer frente a alguien que no conoce, cómo cruzar una calle de forma segura, o qué hacer en una emergencia requería una enseñanza directa y estructurada, y mucha práctica repetida. Safety Scouts fue creado para responder a esa necesidad: una herramienta gratuita que divide las habilidades de seguridad esenciales en historias cortas, tarjetas de práctica, y ejercicios guiados que se pueden repasar tantas veces como sea necesario, al ritmo que se ajuste al estudiante, en inglés o español.',
     about_contact_heading: '¿Preguntas o comentarios?',
-    about_contact_body: 'Si algo no funciona, una lección no se ajusta a tu estudiante, o simplemente quieres contarme cómo va, de verdad me gustaría saberlo.',
+    about_contact_body: 'Si usas Safety Scouts con un estudiante y tienes comentarios, preguntas, o una sugerencia, me gustaría saber de ti.',
 
     footer_note: 'Biblioteca de Seguridad — un recurso gratuito. Sin cuentas, sin rastreo más allá de lo que hace su navegador por defecto.',
 

@@ -1737,6 +1737,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initLangSwitcher();
   initSkinSwitcher();
   initSpeechRateSwitcher();
+  initTextSizeSwitcher();
 
   const page = document.body.dataset.page;
   if (page === 'home') initHomePage();
