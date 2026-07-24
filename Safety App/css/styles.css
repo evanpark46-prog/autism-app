@@ -236,12 +236,24 @@ main{max-width:1080px; margin:0 auto; padding:28px 20px 64px;}
 }
 
 .topic-card{
+  position:relative;
   display:flex; flex-direction:column; gap:10px; text-decoration:none; color:inherit;
   border-radius:var(--radius-lg); padding:22px; border:1px solid var(--border); border-top:4px solid var(--border);
   background:var(--panel); box-shadow:var(--shadow); transition:transform .15s ease, box-shadow .15s ease;
 }
 .topic-card:hover{transform:translateY(-4px); box-shadow:var(--shadow-lift);}
 .topic-card:hover .topic-card__icon img{transform:scale(1.08);}
+.topic-card__done{
+  position:absolute; top:14px; right:14px; width:26px; height:26px; border-radius:50%;
+  background:var(--green); color:#fff; display:flex; align-items:center; justify-content:center;
+  font-size:.9rem; font-weight:800; box-shadow:var(--shadow);
+}
+
+/* ---------- Home page: grouped topic sections + progress summary ---------- */
+.home-progress{text-align:center; color:var(--ink-soft); font-weight:700; margin-bottom:24px;}
+.topic-group{margin-bottom:36px;}
+.topic-group h3{font-size:1.3rem; margin-bottom:14px; color:var(--rose-dark);}
+.topic-group:last-child{margin-bottom:0;}
 .topic-card__icon{
   width:64px; height:64px; border-radius:14px; display:grid; place-items:center; overflow:hidden;
 }

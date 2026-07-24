@@ -6,7 +6,7 @@
   <script>(function(){try{var s=localStorage.getItem('safetylib_skin');if(s)document.documentElement.setAttribute('data-skin', s);}catch(e){}})();</script>
   <script>(function(){try{var sizes=[87.5,100,115,130,145];var idx=parseInt(localStorage.getItem('safetylib_text_size_idx'),10);if(!(idx>=0&&idx<sizes.length))idx=1;document.documentElement.style.fontSize=sizes[idx]+'%';}catch(e){}})();</script>
   <script>(function(){try{var f=localStorage.getItem('safetylib_heading_font');if(f==='cursive')document.documentElement.setAttribute('data-heading-font','cursive');}catch(e){}})();</script>
-  <title>Cumulative Review — Safety Scouts</title>
+  <title>Games — Safety Scouts</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Dancing+Script:wght@600;700&family=Quicksand:wght@500;600;700;800&display=swap" rel="stylesheet">
@@ -20,7 +20,7 @@
        ".goatcounter.com" in the dashboard URL you are given). -->
   <script data-goatcounter="https://REPLACE_ME.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 </head>
-<body data-page="review">
+<body data-page="games">
   <a href="#main" class="skip-link">Skip to content</a>
 
   <header class="site-header">
@@ -31,8 +31,8 @@
       </a>
       <nav class="site-nav" aria-label="Main">
         <a href="index.html" data-i18n="nav_library">Home</a>
-        <a href="review.html" aria-current="page" data-i18n="nav_review">Review</a>
-        <a href="games.html" data-i18n="nav_games">Games</a>
+        <a href="review.html" data-i18n="nav_review">Review</a>
+        <a href="games.html" aria-current="page" data-i18n="nav_games">Games</a>
         <a href="parents.html" data-i18n="nav_parents">Parents &amp; Educators</a>
         <a href="about.html" data-i18n="nav_about">About</a>
       </nav>
@@ -56,10 +56,51 @@
 
   <main id="main">
     <section class="hero">
-      <h1 data-i18n="review_title">Cumulative Review</h1>
-      <p data-i18n="review_lead">One question from every topic, shuffled together — see how much you remember!</p>
+      <h1 data-i18n="games_title">Safety Games</h1>
+      <p data-i18n="games_lead">A few well-made, free games from trusted organizations that reinforce safety skills in a playful way — a nice complement to the stories, flashcards, and videos here.</p>
     </section>
-    <div data-review-root></div>
+
+    <section class="section">
+      <h3 data-i18n="games_resources_internet_heading">Internet &amp; digital safety</h3>
+      <ul class="resource-list">
+        <li>
+          <a href="https://beinternetawesome.withgoogle.com/en_us/interland/" target="_blank" rel="noopener">Google — Be Internet Awesome: Interland</a>
+          <span data-i18n="games_resource_interland_desc"></span>
+        </li>
+        <li>
+          <a href="https://www.netsmartzkids.org/games/" target="_blank" rel="noopener">NCMEC — NetSmartz Kids Games</a>
+          <span data-i18n="games_resource_netsmartzkids_desc"></span>
+        </li>
+      </ul>
+
+      <h3 data-i18n="games_resources_body_heading">Body safety</h3>
+      <ul class="resource-list">
+        <li>
+          <a href="https://www.nspcc.org.uk/keeping-children-safe/support-for-parents/pants-underwear-rule/playtime-with-pantosaurus/" target="_blank" rel="noopener">NSPCC — Playtime with Pantosaurus</a>
+          <span data-i18n="games_resource_pantosaurus_desc"></span>
+        </li>
+      </ul>
+
+      <h3 data-i18n="games_resources_street_heading">Street &amp; pedestrian safety</h3>
+      <ul class="resource-list">
+        <li>
+          <a href="https://www.safekids.org/interactive/getting-school-safely" target="_blank" rel="noopener">Safe Kids Worldwide — Getting to School Safely</a>
+          <span data-i18n="games_resource_safekids_desc"></span>
+        </li>
+      </ul>
+
+      <h3 data-i18n="games_resources_emergency_heading">Emergency &amp; weather safety</h3>
+      <ul class="resource-list">
+        <li>
+          <a href="https://www.ready.gov/kids/games" target="_blank" rel="noopener">Ready.gov Kids — Disaster Master &amp; Build a Kit</a>
+          <span data-i18n="games_resource_readygov_desc"></span>
+        </li>
+      </ul>
+
+      <p class="note-box mt-lg" data-i18n="games_resources_note"></p>
+    </section>
+
+    <p class="mt-lg"><a href="index.html" data-i18n="story_back_to_topics">← Back to Safety Scouts</a></p>
   </main>
 
   <footer class="site-footer">
@@ -74,8 +115,6 @@
   <script src="js/speechrate.js"></script>
   <script src="js/analytics.js"></script>
   <script src="js/pwa.js"></script>
-  <script src="js/topics-index.js"></script>
-  <script src="js/page-review.js"></script>
   <script src="js/boot.js"></script>
 </body>
 </html>

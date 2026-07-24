@@ -1,7 +1,7 @@
 /* ==========================================================================
    Safety Scouts — read-aloud speed picker
    Purely a multiplier applied on top of each voice's own base rate in
-   js/app.js — never overrides the per-character pitch/voice profile.
+   js/speech.js — never overrides the per-character pitch/voice profile.
    ========================================================================== */
 
 const SPEECH_RATES = [

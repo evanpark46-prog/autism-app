@@ -18,6 +18,7 @@ const UI_STRINGS = {
     nav_parents: 'Parents & Educators',
     nav_about: 'About',
     nav_review: 'Review',
+    nav_games: 'Games',
     lang_label: 'Language',
     skin_label: 'Color theme',
     skin_rose: 'Rose (default)',
@@ -40,6 +41,13 @@ const UI_STRINGS = {
     home_title: 'A calm place to practice staying safe',
     home_lead: 'Pick a topic below. Each one has a story, flashcards, and a video with questions along the way. No sign-in needed — just click and start.',
     home_topics_heading: 'Choose a topic',
+    home_progress_summary: '{done} of {total} topics completed',
+    home_category_out_about: 'Out and about',
+    home_category_emergencies: 'Emergencies & home safety',
+    home_category_body: 'My body & relationships',
+    home_category_online: 'Online safety',
+    home_category_speaking_up: 'Speaking up & getting along',
+    topic_card_done_label: 'Completed',
     home_for_families: 'Looking for the parent & educator resources?',
     home_for_families_link: 'Go to Parents & Educators →',
 
@@ -47,9 +55,15 @@ const UI_STRINGS = {
     home_review_cta_lead: 'Try the cumulative review — one question from every topic, shuffled and mixed together.',
     home_review_cta_btn: 'Take the Cumulative Review →',
 
+    home_games_cta_title: 'Want to practice with a game instead?',
+    home_games_cta_lead: 'A curated list of free games from trusted organizations that reinforce safety skills in a playful way.',
+    home_games_cta_btn: 'Browse the Safety Games →',
+
     mode_story: 'Safety Scenario',
     mode_flashcards: 'Flashcards',
     mode_video: 'Video',
+    topic_loading: 'Loading this lesson…',
+    topic_load_error: 'This lesson couldn’t load. Check your connection and try refreshing the page.',
 
     read_aloud: 'Read aloud',
 
@@ -153,6 +167,19 @@ const UI_STRINGS = {
     review_perfect_note: 'Perfect score — every topic stuck! 🎉',
     review_restart_btn: 'Take it again',
 
+    games_title: 'Safety Games',
+    games_lead: 'A few well-made, free games from trusted organizations that reinforce safety skills in a playful way — a nice complement to the stories, flashcards, and videos here.',
+    games_resources_internet_heading: 'Internet & digital safety',
+    games_resource_interland_desc: 'A free, four-world adventure game from Google teaching kids to spot scams, guard secrets, and be kind online.',
+    games_resource_netsmartzkids_desc: 'Free games from the National Center for Missing & Exploited Children, built for younger kids learning online-safety basics.',
+    games_resources_body_heading: 'Body safety',
+    games_resource_pantosaurus_desc: 'A free app from the NSPCC that teaches the “PANTS” body-safety rule through simple mini-games, meant to be played alongside a trusted adult.',
+    games_resources_street_heading: 'Street & pedestrian safety',
+    games_resource_safekids_desc: 'An interactive from Safe Kids Worldwide about choosing safe ways to get to and from school on foot, by bike, or by bus.',
+    games_resources_emergency_heading: 'Emergency & weather safety',
+    games_resource_readygov_desc: 'Free games from the U.S. government’s Ready.gov Kids site, covering fire, severe weather, earthquakes, and building an emergency kit.',
+    games_resources_note: 'These games are hosted and run by outside organizations we don’t control — always preview one yourself before sharing it with a learner. If a link ever breaks or you find another game worth adding, let us know using the feedback section on the Parents & Educators page.',
+
     parents_worksheets_heading: 'Printable worksheets',
     parents_worksheets_body: 'Each topic’s video questions can also be printed as an offline worksheet — handy for practicing away from a screen, or for a classroom or homeschool binder.',
     parents_worksheets_link: 'Browse printable worksheets →',
@@ -193,15 +220,15 @@ const UI_STRINGS = {
     about_contact_heading: 'Questions or feedback?',
     about_contact_body: 'If you’re using Safety Scouts with a learner and have feedback, questions, or a suggestion, I’d like to hear from you.',
 
-    footer_note: 'Safety Scouts — a free resource. No accounts, no tracking beyond what your browser does by default.',
+    footer_note: 'Safety Scouts — a free resource. No accounts, no logins. We use a private, cookie-free visit counter to see how many people use the site — it does not collect names, exact locations, or anything that identifies an individual visitor.',
 
     parents_analytics_heading: 'Usage insights (this device only)',
-    parents_analytics_body: 'A private dashboard showing which lessons have been opened and completed on this specific browser/device. It reads only from this device’s local storage — nothing is uploaded or shared, and it won’t show activity from a learner’s device unless you check it on that same device.',
+    parents_analytics_body: 'A private dashboard showing which lessons have been opened and completed on this specific browser/device. It reads only from this device’s local storage — nothing is uploaded or shared, and it won’t show activity from a learner’s device unless you check it on that same device. It records only a topic name, an action (opened/started/completed), and a timestamp — never a name, photo, or anything else that identifies who was using the device.',
     parents_analytics_link: 'Open usage insights →',
 
     analytics_title: 'Usage Insights',
     analytics_lead: 'A private view of lesson activity recorded on this device. Nothing here is uploaded anywhere — it only reflects what has happened in this browser.',
-    analytics_note: 'This page is not linked from the main navigation. Data is stored only in this browser’s local storage; clearing your browser data will erase it, and it never syncs across devices.',
+    analytics_note: 'This page is not linked from the main navigation. Data is stored only in this browser’s local storage; clearing your browser data will erase it, and it never syncs across devices. The only fields recorded are a topic name, an action (opened/started/completed), and a timestamp — no names, photos, or other personal information are ever collected.',
     analytics_stat_total_opens: 'Topic opens',
     analytics_stat_total_completes: 'Levels completed',
     analytics_stat_topics_active: 'Topics visited',
@@ -224,6 +251,7 @@ const UI_STRINGS = {
     nav_parents: 'Padres y Educadores',
     nav_about: 'Acerca de',
     nav_review: 'Repaso',
+    nav_games: 'Juegos',
     lang_label: 'Idioma',
     skin_label: 'Color del tema',
     skin_rose: 'Rosa (predeterminado)',
@@ -246,6 +274,13 @@ const UI_STRINGS = {
     home_title: 'Un lugar tranquilo para practicar cómo mantenerse seguro',
     home_lead: 'Elige un tema abajo. Cada uno tiene una historia, tarjetas de repaso y un video con preguntas en el camino. No necesitas iniciar sesión — solo haz clic y empieza.',
     home_topics_heading: 'Elige un tema',
+    home_progress_summary: '{done} de {total} temas completados',
+    home_category_out_about: 'Fuera de casa',
+    home_category_emergencies: 'Emergencias y seguridad en el hogar',
+    home_category_body: 'Mi cuerpo y mis relaciones',
+    home_category_online: 'Seguridad en línea',
+    home_category_speaking_up: 'Hablar y llevarse bien con otros',
+    topic_card_done_label: 'Completado',
     home_for_families: '¿Buscas los recursos para padres y educadores?',
     home_for_families_link: 'Ir a Padres y Educadores →',
 
@@ -253,9 +288,15 @@ const UI_STRINGS = {
     home_review_cta_lead: 'Prueba el repaso acumulativo — una pregunta de cada tema, mezcladas entre sí.',
     home_review_cta_btn: 'Hacer el repaso acumulativo →',
 
+    home_games_cta_title: '¿Prefieres practicar con un juego?',
+    home_games_cta_lead: 'Una lista de juegos gratuitos de organizaciones confiables que refuerzan las habilidades de seguridad de forma divertida.',
+    home_games_cta_btn: 'Ver los juegos de seguridad →',
+
     mode_story: 'Escenario de seguridad',
     mode_flashcards: 'Tarjetas',
     mode_video: 'Video',
+    topic_loading: 'Cargando esta lección…',
+    topic_load_error: 'Esta lección no se pudo cargar. Revisa tu conexión e intenta actualizar la página.',
 
     read_aloud: 'Leer en voz alta',
 
@@ -359,6 +400,19 @@ const UI_STRINGS = {
     review_perfect_note: '¡Puntaje perfecto — se te quedó todo! 🎉',
     review_restart_btn: 'Hacerlo de nuevo',
 
+    games_title: 'Juegos de seguridad',
+    games_lead: 'Algunos juegos gratuitos y bien hechos de organizaciones confiables que refuerzan las habilidades de seguridad de forma divertida — un buen complemento a las historias, tarjetas y videos de aquí.',
+    games_resources_internet_heading: 'Seguridad en internet y digital',
+    games_resource_interland_desc: 'Un juego de aventura gratuito de Google con cuatro mundos que enseña a detectar estafas, proteger secretos y ser amable en línea.',
+    games_resource_netsmartzkids_desc: 'Juegos gratuitos del Centro Nacional para Niños Desaparecidos y Explotados, hechos para niños pequeños que aprenden lo básico de la seguridad en línea.',
+    games_resources_body_heading: 'Seguridad corporal',
+    games_resource_pantosaurus_desc: 'Una aplicación gratuita de NSPCC que enseña la regla de seguridad corporal “PANTS” con mini-juegos sencillos, pensada para jugarse junto a un adulto de confianza.',
+    games_resources_street_heading: 'Seguridad peatonal y en la calle',
+    games_resource_safekids_desc: 'Un recurso interactivo de Safe Kids Worldwide sobre cómo elegir formas seguras de ir y volver de la escuela a pie, en bicicleta o en autobús.',
+    games_resources_emergency_heading: 'Seguridad en emergencias y clima',
+    games_resource_readygov_desc: 'Juegos gratuitos del sitio Ready.gov Kids del gobierno de EE. UU., sobre incendios, clima severo, terremotos y cómo armar un kit de emergencia.',
+    games_resources_note: 'Estos juegos son alojados y administrados por organizaciones externas que no controlamos — siempre revisa uno tú mismo antes de compartirlo con un estudiante. Si algún enlace deja de funcionar o tienes otro juego para sugerir, avísanos usando la sección de comentarios en la página de Padres y Educadores.',
+
     parents_worksheets_heading: 'Hojas de trabajo imprimibles',
     parents_worksheets_body: 'Las preguntas de video de cada tema también se pueden imprimir como una hoja de trabajo — útil para practicar sin pantalla, o para una carpeta escolar o de educación en casa.',
     parents_worksheets_link: 'Ver hojas de trabajo imprimibles →',
@@ -399,15 +453,15 @@ const UI_STRINGS = {
     about_contact_heading: '¿Preguntas o comentarios?',
     about_contact_body: 'Si usas Safety Scouts con un estudiante y tienes comentarios, preguntas, o una sugerencia, me gustaría saber de ti.',
 
-    footer_note: 'Biblioteca de Seguridad — un recurso gratuito. Sin cuentas, sin rastreo más allá de lo que hace su navegador por defecto.',
+    footer_note: 'Exploradores de Seguridad — un recurso gratuito. Sin cuentas, sin inicios de sesión. Usamos un contador de visitas privado y sin cookies para saber cuántas personas usan el sitio — no recopila nombres, ubicaciones exactas, ni nada que identifique a una persona en particular.',
 
     parents_analytics_heading: 'Información de uso (solo este dispositivo)',
-    parents_analytics_body: 'Un panel privado que muestra qué lecciones se han abierto y completado en este navegador o dispositivo específico. Solo lee el almacenamiento local de este dispositivo — no se sube ni se comparte nada, y no mostrará la actividad del dispositivo de un estudiante a menos que lo revise en ese mismo dispositivo.',
+    parents_analytics_body: 'Un panel privado que muestra qué lecciones se han abierto y completado en este navegador o dispositivo específico. Solo lee el almacenamiento local de este dispositivo — no se sube ni se comparte nada, y no mostrará la actividad del dispositivo de un estudiante a menos que lo revise en ese mismo dispositivo. Solo registra el nombre de un tema, una acción (abierto/iniciado/completado) y la fecha y hora — nunca un nombre, foto, ni nada más que identifique a quién usó el dispositivo.',
     parents_analytics_link: 'Abrir información de uso →',
 
     analytics_title: 'Información de uso',
     analytics_lead: 'Una vista privada de la actividad de las lecciones registrada en este dispositivo. Nada de esto se sube a ningún lado — solo refleja lo que ha pasado en este navegador.',
-    analytics_note: 'Esta página no está enlazada desde la navegación principal. Los datos se guardan solo en el almacenamiento local de este navegador; borrar los datos de su navegador los eliminará, y nunca se sincronizan entre dispositivos.',
+    analytics_note: 'Esta página no está enlazada desde la navegación principal. Los datos se guardan solo en el almacenamiento local de este navegador; borrar los datos de su navegador los eliminará, y nunca se sincronizan entre dispositivos. Los únicos datos registrados son el nombre de un tema, una acción (abierto/iniciado/completado) y la fecha y hora — nunca se recopilan nombres, fotos, ni otra información personal.',
     analytics_stat_total_opens: 'Temas abiertos',
     analytics_stat_total_completes: 'Niveles completados',
     analytics_stat_topics_active: 'Temas visitados',
