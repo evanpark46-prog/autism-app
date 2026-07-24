@@ -5,10 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <script>(function(){try{var s=localStorage.getItem('safetylib_skin');if(s)document.documentElement.setAttribute('data-skin', s);}catch(e){}})();</script>
   <script>(function(){try{var sizes=[87.5,100,115,130,145];var idx=parseInt(localStorage.getItem('safetylib_text_size_idx'),10);if(!(idx>=0&&idx<sizes.length))idx=1;document.documentElement.style.fontSize=sizes[idx]+'%';}catch(e){}})();</script>
+  <script>(function(){try{var f=localStorage.getItem('safetylib_heading_font');if(f==='cursive')document.documentElement.setAttribute('data-heading-font','cursive');}catch(e){}})();</script>
   <title>Safety Scouts</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&family=Quicksand:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Dancing+Script:wght@600;700&family=Quicksand:wght@500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/styles.css">
 </head>
 <body data-page="home">
@@ -27,6 +28,10 @@
       </nav>
       <div class="skin-switch" data-skin-switch role="group" aria-label="Color theme"></div>
       <div class="text-size-switch" data-textsize-switch role="group" aria-label="Text size"></div>
+      <div class="headingfont-switch">
+        <label class="visually-hidden" for="headingfont-select" data-i18n="headingfont_label">Heading style</label>
+        <select id="headingfont-select" data-headingfont-select></select>
+      </div>
       <div class="rate-switch">
         <span aria-hidden="true">🔊</span>
         <label class="visually-hidden" for="rate-select" data-i18n="rate_label">Voice speed</label>
@@ -64,6 +69,7 @@
   <script src="js/i18n.js"></script>
   <script src="js/theme.js"></script>
   <script src="js/textsize.js"></script>
+  <script src="js/headingfont.js"></script>
   <script src="js/speechrate.js"></script>
   <script src="js/analytics.js"></script>
   <script src="js/data.js"></script>

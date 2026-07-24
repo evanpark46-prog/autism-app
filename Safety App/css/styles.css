@@ -36,7 +36,8 @@
   --shadow:0 10px 28px rgba(35,48,71,.08);
   --shadow-lift:0 16px 36px rgba(35,48,71,.14);
 
-  --font-display:'Dancing Script', 'Baloo 2', cursive, system-ui, sans-serif;
+  --font-display:'Baloo 2', 'Quicksand', system-ui, sans-serif;
+  --font-display-cursive:'Dancing Script', 'Baloo 2', cursive, system-ui, sans-serif;
   --font-body:'Quicksand', 'Nunito', system-ui, -apple-system, sans-serif;
 
   --focus-ring:0 0 0 3px rgba(47,111,237,.35);
@@ -56,6 +57,11 @@
 }
 :root[data-skin="berry"]{
   --rose:#9b5fe0; --rose-dark:#6a35a8; --rose-tint:#f1e8fb;
+}
+
+/* ---------- Heading font (readable by default; cursive is opt-in) ---------- */
+:root[data-heading-font="cursive"]{
+  --font-display: var(--font-display-cursive);
 }
 
 *{box-sizing:border-box;}
@@ -145,6 +151,11 @@ a:focus-visible, button:focus-visible, select:focus-visible, input:focus-visible
 
 .rate-switch{display:flex; align-items:center; gap:4px;}
 .rate-switch select{
+  border:2px solid var(--border); border-radius:10px; padding:7px 8px;
+  font-weight:700; color:var(--ink); background:#fff; cursor:pointer; font-size:.9rem;
+}
+
+.headingfont-switch select{
   border:2px solid var(--border); border-radius:10px; padding:7px 8px;
   font-weight:700; color:var(--ink); background:#fff; cursor:pointer; font-size:.9rem;
 }
@@ -582,9 +593,13 @@ main{max-width:1080px; margin:0 auto; padding:28px 20px 64px;}
 }
 .video-note{margin-top:14px; color:var(--ink-soft); font-size:.9rem;}
 
-/* ---------- Parents page ---------- */
-.section{margin-bottom:40px;}
-.section h2{font-size:1.5rem; margin-bottom:.4em;}
+/* ---------- Parents / About pages ---------- */
+.section{
+  margin-bottom:28px; background:var(--panel); border:1px solid var(--border);
+  border-radius:var(--radius-lg); padding:26px 28px; box-shadow:var(--shadow);
+}
+.section h2{font-size:1.4rem; margin-bottom:.5em; color:var(--rose-dark);}
+.section p:last-child, .section table:last-child, .section ul:last-child{margin-bottom:0;}
 .resource-list{list-style:none; padding:0; margin:0; display:grid; gap:12px;}
 .resource-list li{
   background:var(--panel); border:1px solid var(--border); border-radius:var(--radius-md);
