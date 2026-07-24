@@ -60,10 +60,17 @@ const ILLUSTRATIONS = {
   'peer-pressure-safe': { file: 'img/generated/peer-pressure-safety.webp', alt: 'A child and a supportive friend choose the safe play area.' },
 };
 
-function getIllustration(key){
+// Optional "wrong choice" variant per illustration key, shown when a
+// decision/sequence step's answer was incorrect. Falls back to the normal
+// scene image for any key without a distinct variant (the vast majority,
+// until art is generated for them).
+const ILLUSTRATION_WRONG_VARIANTS = {};
+
+function getIllustration(key, wrong){
   const pic = ILLUSTRATIONS[key];
   if (!pic) return '';
-  return `<img src="${pic.file}" alt="${pic.alt}" loading="lazy">`;
+  const file = (wrong && ILLUSTRATION_WRONG_VARIANTS[key]) || pic.file;
+  return `<img src="${file}" alt="${pic.alt}" loading="lazy">`;
 }
 
 /* Dialogue scenes use their own panel for every conversation instead of

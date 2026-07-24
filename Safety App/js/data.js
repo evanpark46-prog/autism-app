@@ -1402,6 +1402,16 @@ const CONTENT = {
               { text: 'Get down low and cover mouth and nose.', correct: true },
               { text: 'Stand up straight and keep walking normally.', correct: false },
             ] },
+          { time: 150, question: 'The class reaches the meeting spot outside. What should the character do while waiting?',
+            choices: [
+              { text: 'Stay with the class and wait to be counted by the teacher.', correct: true },
+              { text: 'Wander off to see what’s happening.', correct: false },
+            ] },
+          { time: 230, question: 'The character hears the fire drill is over. What’s the safest thing to remember?',
+            choices: [
+              { text: 'Treat every alarm like a real emergency until a grown-up says it’s safe.', correct: true },
+              { text: 'Alarms are usually just drills, so there’s no need to hurry next time.', correct: false },
+            ] },
         ],
       },
     },
@@ -2095,6 +2105,31 @@ const CONTENT = {
               { text: 'Tell them to stop and tell a trusted adult.', correct: true },
               { text: 'Say nothing and hope it stops.', correct: false },
             ] },
+          { time: 150, question: 'The character wants to share an idea but keeps getting talked over. What’s a good next step?',
+            choices: [
+              { text: 'Wait for a pause and say, “Can I share my idea?”', correct: true },
+              { text: 'Give up and stop trying to share ideas.', correct: false },
+            ] },
+          { time: 280, question: 'The character isn’t sure if their feelings are a “big enough deal” to mention. What should they remember?',
+            choices: [
+              { text: 'Any feeling that bothers them is worth telling a trusted adult about.', correct: true },
+              { text: 'Only huge problems are worth mentioning to an adult.', correct: false },
+            ] },
+          { time: 400, question: 'A trusted adult didn’t notice the character was overwhelmed. What’s the safest choice?',
+            choices: [
+              { text: 'Speak up and ask for help instead of waiting to be noticed.', correct: true },
+              { text: 'Wait quietly and hope someone eventually notices.', correct: false },
+            ] },
+          { time: 520, question: 'The character speaks up even though no one was being mean. Was that okay?',
+            choices: [
+              { text: 'Yes — it’s okay to speak up any time something feels wrong, not just when someone’s mean.', correct: true },
+              { text: 'No — speaking up is only okay when someone is being mean.', correct: false },
+            ] },
+          { time: 620, question: 'Looking back, why did telling a trusted adult help?',
+            choices: [
+              { text: 'Because trusted adults can help fix problems the character can’t fix alone.', correct: true },
+              { text: 'It didn’t really help — the character should have handled it alone.', correct: false },
+            ] },
         ],
       },
     },
@@ -2325,6 +2360,11 @@ const CONTENT = {
             choices: [
               { text: 'Say stop firmly and tell a trusted adult.', correct: true },
               { text: 'Just put up with it since it’s a friend.', correct: false },
+            ] },
+          { time: 180, question: 'Someone says a secret touch is “just between us.” What should the character remember?',
+            choices: [
+              { text: 'Secrets about touches should always be told to a trusted adult.', correct: true },
+              { text: 'It’s fine to keep it secret if the person seems nice.', correct: false },
             ] },
         ],
       },
@@ -2782,6 +2822,11 @@ const CONTENT = {
             choices: [
               { text: 'Check on them and tell a trusted adult.', correct: true },
               { text: 'Mind their own business.', correct: false },
+            ] },
+          { time: 140, question: 'The character isn’t totally sure if something is a big problem. What’s the safest choice?',
+            choices: [
+              { text: 'Tell a trusted adult anyway — it’s always okay to check.', correct: true },
+              { text: 'Only tell an adult if 100% sure it’s a big problem.', correct: false },
             ] },
         ],
       },
@@ -4147,6 +4192,21 @@ const CONTENT = {
               { text: 'Save screenshots and tell a trusted adult.', correct: true },
               { text: 'Argue back in the chat.', correct: false },
             ] },
+          { time: 160, question: 'Someone makes a fake account pretending to be the character. What should they do?',
+            choices: [
+              { text: 'Take a screenshot, report it, and tell a trusted adult.', correct: true },
+              { text: 'Make a fake account back to get even.', correct: false },
+            ] },
+          { time: 260, question: 'A friend says online meanness “doesn’t really count.” Is that true?',
+            choices: [
+              { text: 'No — being mean online can hurt just as much as in person.', correct: true },
+              { text: 'Yes — online meanness doesn’t count the same way.', correct: false },
+            ] },
+          { time: 350, question: 'After telling a trusted adult, the mean messages stop. What’s important to remember?',
+            choices: [
+              { text: 'It’s always okay to tell an adult again if something like this happens in the future.', correct: true },
+              { text: 'Once it’s reported, nothing like it will ever happen again.', correct: false },
+            ] },
         ],
       },
     },
@@ -5280,6 +5340,31 @@ const CONTENT = {
             choices: [
               { text: 'Slow down or stop until noticed.', correct: true },
               { text: 'Keep riding at the same speed.', correct: false },
+            ] },
+          { time: 150, question: 'The character comes to a stop sign while riding. What’s the safest choice?',
+            choices: [
+              { text: 'Come to a full stop and look both ways before continuing.', correct: true },
+              { text: 'Slow down a little and keep rolling through.', correct: false },
+            ] },
+          { time: 250, question: 'The character wants to turn left in traffic. What should they do first?',
+            choices: [
+              { text: 'Look back, signal with an arm, and check that it’s clear.', correct: true },
+              { text: 'Turn right away without looking back or signaling.', correct: false },
+            ] },
+          { time: 350, question: 'It’s getting dark while the character is still riding. What helps drivers see them?',
+            choices: [
+              { text: 'Wearing bright clothing and using bike lights or reflectors.', correct: true },
+              { text: 'Riding faster so the ride is over sooner.', correct: false },
+            ] },
+          { time: 450, question: 'The character’s chain comes loose while riding. What’s the safest choice?',
+            choices: [
+              { text: 'Stop safely, get off the bike, and tell a grown-up.', correct: true },
+              { text: 'Keep riding carefully and fix it later.', correct: false },
+            ] },
+          { time: 520, question: 'Looking back at the ride, why does wearing a helmet matter every time, even for short rides?',
+            choices: [
+              { text: 'Because accidents can happen anytime, even close to home.', correct: true },
+              { text: 'It only matters for long rides on busy streets.', correct: false },
             ] },
         ],
       },
@@ -6869,6 +6954,16 @@ const CONTENT = {
               { text: 'Agacharse y cubrirse la boca y la nariz.', correct: true },
               { text: 'Pararse derecho y seguir caminando normalmente.', correct: false },
             ] },
+          { time: 150, question: 'La clase llega al punto de encuentro afuera. ¿Qué debería hacer el personaje mientras espera?',
+            choices: [
+              { text: 'Quedarse con la clase y esperar a que el maestro pase lista.', correct: true },
+              { text: 'Alejarse para ver qué está pasando.', correct: false },
+            ] },
+          { time: 230, question: 'El personaje escucha que el simulacro terminó. ¿Qué es lo más seguro que debe recordar?',
+            choices: [
+              { text: 'Tratar cada alarma como una emergencia real hasta que un adulto diga que es seguro.', correct: true },
+              { text: 'Las alarmas casi siempre son simulacros, así que no hay que apurarse la próxima vez.', correct: false },
+            ] },
         ],
       },
     },
@@ -7562,6 +7657,31 @@ const CONTENT = {
               { text: 'Decirle que se detenga y contarle a un adulto de confianza.', correct: true },
               { text: 'No decir nada y esperar que se detenga.', correct: false },
             ] },
+          { time: 150, question: 'El personaje quiere compartir una idea pero siguen interrumpiéndolo. ¿Cuál es un buen siguiente paso?',
+            choices: [
+              { text: 'Esperar una pausa y decir: “¿Puedo compartir mi idea?”', correct: true },
+              { text: 'Rendirse y dejar de intentar compartir ideas.', correct: false },
+            ] },
+          { time: 280, question: 'El personaje no está seguro si sus sentimientos son “suficientemente importantes” para mencionarlos. ¿Qué debería recordar?',
+            choices: [
+              { text: 'Cualquier sentimiento que le moleste vale la pena contárselo a un adulto de confianza.', correct: true },
+              { text: 'Solo los problemas enormes valen la pena mencionarse a un adulto.', correct: false },
+            ] },
+          { time: 400, question: 'Un adulto de confianza no notó que el personaje estaba abrumado. ¿Cuál es la opción más segura?',
+            choices: [
+              { text: 'Hablar y pedir ayuda en lugar de esperar a que lo noten.', correct: true },
+              { text: 'Esperar en silencio y confiar en que alguien lo note eventualmente.', correct: false },
+            ] },
+          { time: 520, question: 'El personaje habla aunque nadie estaba siendo cruel. ¿Está bien eso?',
+            choices: [
+              { text: 'Sí — está bien hablar en cualquier momento que algo se sienta mal, no solo cuando alguien es cruel.', correct: true },
+              { text: 'No — hablar solo está bien cuando alguien está siendo cruel.', correct: false },
+            ] },
+          { time: 620, question: 'Pensando en todo esto, ¿por qué ayudó contarle a un adulto de confianza?',
+            choices: [
+              { text: 'Porque los adultos de confianza pueden ayudar a resolver problemas que el personaje no puede resolver solo.', correct: true },
+              { text: 'En realidad no ayudó — el personaje debió resolverlo solo.', correct: false },
+            ] },
         ],
       },
     },
@@ -7792,6 +7912,11 @@ const CONTENT = {
             choices: [
               { text: 'Decir basta firmemente y avisarle a un adulto de confianza.', correct: true },
               { text: 'Simplemente aguantarlo porque es un amigo.', correct: false },
+            ] },
+          { time: 180, question: 'Alguien dice que un toque secreto es “solo entre nosotros.” ¿Qué debería recordar el personaje?',
+            choices: [
+              { text: 'Los secretos sobre toques siempre deben contarse a un adulto de confianza.', correct: true },
+              { text: 'Está bien guardar el secreto si la persona parece agradable.', correct: false },
             ] },
         ],
       },
@@ -8249,6 +8374,11 @@ const CONTENT = {
             choices: [
               { text: 'Ver cómo está y contarle a un adulto de confianza.', correct: true },
               { text: 'No meterse en sus propios asuntos.', correct: false },
+            ] },
+          { time: 140, question: 'El personaje no está totalmente seguro si algo es un problema grande. ¿Cuál es la opción más segura?',
+            choices: [
+              { text: 'Contarle a un adulto de confianza de todos modos — siempre está bien verificar.', correct: true },
+              { text: 'Solo contarle a un adulto si está 100% seguro de que es un problema grande.', correct: false },
             ] },
         ],
       },
@@ -9614,6 +9744,21 @@ const CONTENT = {
               { text: 'Guardar capturas de pantalla y contarle a un adulto de confianza.', correct: true },
               { text: 'Discutir de vuelta en el chat.', correct: false },
             ] },
+          { time: 160, question: 'Alguien crea una cuenta falsa haciéndose pasar por el personaje. ¿Qué debería hacer?',
+            choices: [
+              { text: 'Tomar una captura de pantalla, reportarla, y contarle a un adulto de confianza.', correct: true },
+              { text: 'Crear una cuenta falsa de vuelta para desquitarse.', correct: false },
+            ] },
+          { time: 260, question: 'Un amigo dice que la maldad en línea “realmente no cuenta.” ¿Es eso cierto?',
+            choices: [
+              { text: 'No — ser cruel en línea puede doler tanto como en persona.', correct: true },
+              { text: 'Sí — la maldad en línea no cuenta de la misma manera.', correct: false },
+            ] },
+          { time: 350, question: 'Después de contarle a un adulto de confianza, los mensajes crueles se detienen. ¿Qué es importante recordar?',
+            choices: [
+              { text: 'Siempre está bien volver a contarle a un adulto si algo así pasa en el futuro.', correct: true },
+              { text: 'Una vez reportado, algo así nunca volverá a pasar.', correct: false },
+            ] },
         ],
       },
     },
@@ -10747,6 +10892,31 @@ const CONTENT = {
             choices: [
               { text: 'Reducir la velocidad o detenerse hasta ser notado.', correct: true },
               { text: 'Seguir andando a la misma velocidad.', correct: false },
+            ] },
+          { time: 150, question: 'El personaje llega a una señal de alto mientras anda en bicicleta. ¿Cuál es la opción más segura?',
+            choices: [
+              { text: 'Detenerse por completo y mirar en ambas direcciones antes de continuar.', correct: true },
+              { text: 'Reducir un poco la velocidad y seguir avanzando.', correct: false },
+            ] },
+          { time: 250, question: 'El personaje quiere girar a la izquierda entre el tráfico. ¿Qué debería hacer primero?',
+            choices: [
+              { text: 'Mirar hacia atrás, señalizar con el brazo, y verificar que esté despejado.', correct: true },
+              { text: 'Girar de inmediato sin mirar atrás ni señalizar.', correct: false },
+            ] },
+          { time: 350, question: 'Está oscureciendo mientras el personaje sigue andando en bicicleta. ¿Qué ayuda a que los conductores lo vean?',
+            choices: [
+              { text: 'Usar ropa brillante y luces o reflectores en la bicicleta.', correct: true },
+              { text: 'Andar más rápido para terminar el paseo antes.', correct: false },
+            ] },
+          { time: 450, question: 'La cadena del personaje se afloja mientras anda en bicicleta. ¿Cuál es la opción más segura?',
+            choices: [
+              { text: 'Detenerse de forma segura, bajarse de la bicicleta, y avisarle a un adulto.', correct: true },
+              { text: 'Seguir andando con cuidado y arreglarla después.', correct: false },
+            ] },
+          { time: 520, question: 'Pensando en todo el paseo, ¿por qué importa usar casco siempre, incluso en paseos cortos?',
+            choices: [
+              { text: 'Porque los accidentes pueden pasar en cualquier momento, incluso cerca de casa.', correct: true },
+              { text: 'Solo importa en paseos largos por calles con mucho tráfico.', correct: false },
             ] },
         ],
       },

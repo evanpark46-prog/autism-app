@@ -168,7 +168,7 @@ const UI_STRINGS = {
     parents_curriculum_lead: 'A few examples of how to pair a lesson with offline practice — the same approach works well for any topic. Adjust freely to the learner’s age and goals.',
     parents_feedback_heading: 'Have feedback?',
     parents_feedback_body: 'Safety Scouts is actively growing. If you are a special education specialist, therapist, or parent with suggestions for new topics, wording changes, or things that didn’t work for your learner, I’d like to hear it.',
-    parents_feedback_note: 'You can reach out anytime at evanp819@stanford.edu, or visit the About page to learn more about this project.',
+    parents_feedback_note: 'A feedback form will be available here soon — in the meantime, you can reach out anytime at evanp819@stanford.edu.',
 
     about_title: 'About Safety Scouts',
     about_lead: 'Who built this app, and why.',
@@ -360,7 +360,7 @@ const UI_STRINGS = {
     parents_curriculum_lead: 'Algunos ejemplos de cómo combinar una lección con práctica fuera de línea — el mismo enfoque funciona bien para cualquier tema. Ajústelo libremente según la edad y las metas del estudiante.',
     parents_feedback_heading: '¿Tiene comentarios?',
     parents_feedback_body: 'Esta biblioteca está en crecimiento activo. Si usted es especialista en educación especial, terapeuta o padre/madre con sugerencias sobre nuevos temas, cambios de redacción, o cosas que no funcionaron para su estudiante, me gustaría saberlo.',
-    parents_feedback_note: 'Puede contactarme en cualquier momento a evanp819@stanford.edu, o visitar la página Acerca de para conocer más sobre este proyecto.',
+    parents_feedback_note: 'Pronto habrá un formulario de comentarios aquí — mientras tanto, puede contactarme en cualquier momento a evanp819@stanford.edu.',
 
     about_title: 'Acerca de Safety Scouts',
     about_lead: 'Quién creó esta aplicación, y por qué.',
