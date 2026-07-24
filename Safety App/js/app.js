@@ -188,7 +188,7 @@ function renderTopicGrid(){
   grid.innerHTML = TOPICS.map(meta => {
     const content = getTopicContent(meta.id, lang);
     return `
-      <a class="topic-card" data-theme="${meta.theme}" href="topic.html?id=${encodeURIComponent(meta.id)}">
+      <a class="topic-card reveal-on-scroll" data-theme="${meta.theme}" href="topic.html?id=${encodeURIComponent(meta.id)}">
         <div class="topic-card__icon"><img src="${meta.image}" alt="" loading="lazy"></div>
         <h3>${escapeHtml(content.title)}</h3>
         <p>${escapeHtml(content.tagline)}</p>
@@ -199,6 +199,27 @@ function renderTopicGrid(){
         </div>
       </a>`;
   }).join('');
+  initScrollReveal(grid);
+}
+
+// Cards fade/rise into view the first time they scroll into the viewport,
+// instead of all being visible at once. One-time per card (never re-hides
+// on scrolling back up) to stay calm and predictable rather than flickering.
+function initScrollReveal(container){
+  const items = container.querySelectorAll('.reveal-on-scroll');
+  if (!items.length) return;
+  if (!('IntersectionObserver' in window) || window.matchMedia('(prefers-reduced-motion: reduce)').matches){
+    items.forEach(el => el.classList.add('is-visible'));
+    return;
+  }
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+      entry.target.classList.add('is-visible');
+      observer.unobserve(entry.target);
+    });
+  }, { threshold: 0.15, rootMargin: '0px 0px -10% 0px' });
+  items.forEach(el => observer.observe(el));
 }
 
 function initHomePage(){
@@ -697,11 +718,14 @@ function initTopicPage(){
       footerHtml = `<button type="button" class="btn btn-primary" data-story-next>${t('story_next')}</button>`;
     }
 
+    const chosenForIllustration = isChoiceStep && storyState.answered ? step.choices[storyState.chosenIndex] : null;
+    const showWrongIllustration = !!(chosenForIllustration && !chosenForIllustration.correct);
+
     panel.innerHTML = `
       <div class="story-stage">
         <div class="story-level-bar">${changeLevelBtn}</div>
         <div class="story-progress">${dots}</div>
-        <div class="story-illustration">${getIllustration(step.illustration)}</div>
+        <div class="story-illustration">${getIllustration(step.illustration, showWrongIllustration)}</div>
         <div class="story-body">
           <div class="story-kicker">${escapeHtml(step.kicker)}</div>
           ${sequenceHtml}
