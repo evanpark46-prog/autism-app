@@ -6,16 +6,16 @@
   <script>(function(){try{var s=localStorage.getItem('safetylib_skin');if(s)document.documentElement.setAttribute('data-skin', s);}catch(e){}})();</script>
   <script>(function(){try{var sizes=[87.5,100,115,130,145];var idx=parseInt(localStorage.getItem('safetylib_text_size_idx'),10);if(!(idx>=0&&idx<sizes.length))idx=1;document.documentElement.style.fontSize=sizes[idx]+'%';}catch(e){}})();</script>
   <script>(function(){try{var f=localStorage.getItem('safetylib_heading_font');if(f==='cursive')document.documentElement.setAttribute('data-heading-font','cursive');}catch(e){}})();</script>
-  <title>Printable Worksheets — Safety Scouts</title>
+  <title>Cumulative Review — Safety Scouts</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Dancing+Script:wght@600;700&family=Quicksand:wght@500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/styles.css">
 </head>
-<body data-page="worksheet">
+<body data-page="review">
   <a href="#main" class="skip-link">Skip to content</a>
 
-  <header class="site-header no-print">
+  <header class="site-header">
     <div class="site-header__bar">
       <a href="index.html" class="brand">
         <span class="brand__badge" aria-hidden="true">🧭</span>
@@ -23,7 +23,7 @@
       </a>
       <nav class="site-nav" aria-label="Main">
         <a href="index.html" data-i18n="nav_library">Home</a>
-        <a href="review.html" data-i18n="nav_review">Review</a>
+        <a href="review.html" aria-current="page" data-i18n="nav_review">Review</a>
         <a href="parents.html" data-i18n="nav_parents">Parents &amp; Educators</a>
         <a href="about.html" data-i18n="nav_about">About</a>
       </nav>
@@ -46,15 +46,14 @@
   </header>
 
   <main id="main">
-    <section class="hero" data-worksheet-intro>
-      <h1 data-i18n="worksheet_chooser_title">Printable Worksheets</h1>
-      <p data-i18n="worksheet_chooser_lead">Pick a topic to print a companion worksheet for its video questions.</p>
+    <section class="hero">
+      <h1 data-i18n="review_title">Cumulative Review</h1>
+      <p data-i18n="review_lead">One question from every topic, shuffled together — see how much you remember!</p>
     </section>
-    <div class="grid grid-topics" data-worksheet-grid></div>
-    <div data-worksheet-root></div>
+    <div data-review-root></div>
   </main>
 
-  <footer class="site-footer no-print">
+  <footer class="site-footer">
     <p data-i18n="footer_note">Safety Scouts — a free resource.</p>
     <p>Original illustrations created for Safety Scouts.</p>
   </footer>

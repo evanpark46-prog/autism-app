@@ -17,6 +17,7 @@ const UI_STRINGS = {
     nav_library: 'Home',
     nav_parents: 'Parents & Educators',
     nav_about: 'About',
+    nav_review: 'Review',
     lang_label: 'Language',
     skin_label: 'Color theme',
     skin_rose: 'Rose (default)',
@@ -41,6 +42,10 @@ const UI_STRINGS = {
     home_topics_heading: 'Choose a topic',
     home_for_families: 'Looking for the parent & educator resources?',
     home_for_families_link: 'Go to Parents & Educators →',
+
+    home_review_cta_title: 'Ready to test what you remember?',
+    home_review_cta_lead: 'Try the cumulative review — one question from every topic, shuffled and mixed together.',
+    home_review_cta_btn: 'Take the Cumulative Review →',
 
     mode_story: 'Safety Scenario',
     mode_flashcards: 'Flashcards',
@@ -139,6 +144,15 @@ const UI_STRINGS = {
     worksheet_writing_prompt: 'In your own words, what is the most important thing to remember from this lesson?',
     worksheet_answer_key_heading: 'Answer key (for grown-ups) — shown here, not on the printed page',
 
+    review_title: 'Cumulative Review',
+    review_lead: 'One question from every topic, shuffled together — see how much you remember!',
+    review_progress: 'Question {current} of {total}',
+    review_done_heading: 'Review complete!',
+    review_done_score: 'You got {correct} out of {total} correct.',
+    review_missed_heading: 'Worth another look:',
+    review_perfect_note: 'Perfect score — every topic stuck! 🎉',
+    review_restart_btn: 'Take it again',
+
     parents_worksheets_heading: 'Printable worksheets',
     parents_worksheets_body: 'Each topic’s video questions can also be printed as an offline worksheet — handy for practicing away from a screen, or for a classroom or homeschool binder.',
     parents_worksheets_link: 'Browse printable worksheets →',
@@ -209,6 +223,7 @@ const UI_STRINGS = {
     nav_library: 'Inicio',
     nav_parents: 'Padres y Educadores',
     nav_about: 'Acerca de',
+    nav_review: 'Repaso',
     lang_label: 'Idioma',
     skin_label: 'Color del tema',
     skin_rose: 'Rosa (predeterminado)',
@@ -233,6 +248,10 @@ const UI_STRINGS = {
     home_topics_heading: 'Elige un tema',
     home_for_families: '¿Buscas los recursos para padres y educadores?',
     home_for_families_link: 'Ir a Padres y Educadores →',
+
+    home_review_cta_title: '¿Listo para poner a prueba lo que recuerdas?',
+    home_review_cta_lead: 'Prueba el repaso acumulativo — una pregunta de cada tema, mezcladas entre sí.',
+    home_review_cta_btn: 'Hacer el repaso acumulativo →',
 
     mode_story: 'Escenario de seguridad',
     mode_flashcards: 'Tarjetas',
@@ -330,6 +349,15 @@ const UI_STRINGS = {
     worksheet_no_checkpoints: 'Este tema todavía no tiene preguntas de video — vuelve a revisar después de que se agregue un video, o usa los modos de Historia y Tarjetas para practicar mientras tanto.',
     worksheet_writing_prompt: 'En tus propias palabras, ¿cuál es lo más importante que debes recordar de esta lección?',
     worksheet_answer_key_heading: 'Clave de respuestas (para adultos) — se muestra aquí, no en la página impresa',
+
+    review_title: 'Repaso acumulativo',
+    review_lead: 'Una pregunta de cada tema, mezcladas entre sí — ¡mira cuánto recuerdas!',
+    review_progress: 'Pregunta {current} de {total}',
+    review_done_heading: '¡Repaso completo!',
+    review_done_score: 'Obtuviste {correct} de {total} correctas.',
+    review_missed_heading: 'Vale la pena repasar:',
+    review_perfect_note: '¡Puntaje perfecto — se te quedó todo! 🎉',
+    review_restart_btn: 'Hacerlo de nuevo',
 
     parents_worksheets_heading: 'Hojas de trabajo imprimibles',
     parents_worksheets_body: 'Las preguntas de video de cada tema también se pueden imprimir como una hoja de trabajo — útil para practicar sin pantalla, o para una carpeta escolar o de educación en casa.',

@@ -649,6 +649,23 @@ main{max-width:1080px; margin:0 auto; padding:28px 20px 64px;}
 .btn-danger:hover{border-color:var(--red); transform:translateY(-1px);}
 .analytics-empty{color:var(--ink-soft); font-style:italic;}
 
+/* ---------- Cumulative review ---------- */
+.home-review-cta{max-width:560px; margin-left:auto; margin-right:auto;}
+.home-review-cta h2{font-size:1.5rem; margin-bottom:6px;}
+.home-review-cta p{color:var(--ink-soft); margin-bottom:16px;}
+.review-card-wrap{max-width:640px; margin:0 auto;}
+.review-progress{color:var(--ink-soft); font-weight:700; font-size:.9rem; margin-bottom:4px;}
+.review-topic-tag{
+  display:inline-block; font-size:.78rem; font-weight:800; letter-spacing:.02em; text-transform:uppercase;
+  padding:4px 9px; border-radius:20px; background:var(--blue-tint); color:var(--blue-dark); margin-bottom:10px;
+}
+.review-question{font-size:1.3rem; margin-bottom:4px;}
+.review-missed{margin-top:18px; text-align:left;}
+.review-missed h3{font-size:1rem; margin-bottom:8px;}
+.review-missed-list a{color:inherit; text-decoration:none;}
+.review-missed-list a:hover{text-decoration:underline;}
+.review-perfect{font-weight:700; color:var(--green);}
+
 /* ---------- Utility ---------- */
 .visually-hidden{
   position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap;
