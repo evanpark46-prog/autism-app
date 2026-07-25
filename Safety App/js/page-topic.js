@@ -360,9 +360,13 @@ function initTopicPage(){
         renderStory();
       });
     }
-    wireSpeakButton(panel, isChoiceStep
-      ? `${step.text} ${step.choices.map(c => c.text).join('. ')}`
-      : step.text);
+    const speakSegments = [{ el: panel.querySelector('.story-text'), text: step.text }];
+    if (isChoiceStep){
+      panel.querySelectorAll('[data-choice]').forEach((btn, i) => {
+        speakSegments.push({ el: btn, text: step.choices[i].text });
+      });
+    }
+    wireSpeakButtonHighlighted(panel, speakSegments, null, '. ');
     const next = panel.querySelector('[data-story-next]');
     if (next) next.addEventListener('click', () => {
       storyState.index += 1;

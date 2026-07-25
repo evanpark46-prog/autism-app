@@ -463,6 +463,12 @@ main{max-width:1080px; margin:0 auto; padding:28px 20px 64px;}
   color:var(--blue-dark); margin-bottom:6px;
 }
 .story-text{font-size:1.15rem;}
+/* Word-by-word read-aloud highlight (desktop browsers mostly; silently
+   inert elsewhere -- see speakWithHighlight() in js/speech.js). */
+.read-highlight-word.is-speaking-word{
+  background:var(--rose-tint); color:var(--rose-dark); border-radius:4px; box-shadow:0 0 0 2px var(--rose-tint);
+}
+.choice-btn .read-highlight-word.is-speaking-word{background:var(--blue-tint); color:var(--blue-dark); box-shadow:none;}
 .speak-row{display:flex; align-items:flex-start; gap:10px;}
 .speak-row > *:first-child{flex:1; margin-bottom:0;}
 .speak-btn{

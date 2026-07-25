@@ -71,8 +71,80 @@ function speak(text, speaker){
   window.speechSynthesis.speak(utter);
 }
 
+let activeHighlightSpan = null;
+function clearActiveHighlight(){
+  if (activeHighlightSpan){
+    activeHighlightSpan.classList.remove('is-speaking-word');
+    activeHighlightSpan = null;
+  }
+}
+
 function stopSpeaking(){
   if (SPEECH_SUPPORTED) window.speechSynthesis.cancel();
+  clearActiveHighlight();
+}
+
+// Reads one or more elements aloud as a single utterance, highlighting the
+// word being spoken as it goes -- a progressive enhancement: it depends on
+// SpeechSynthesisUtterance's `onboundary` event, which reliably fires with
+// word offsets on desktop Chrome/Edge/Firefox/Safari but is inconsistent on
+// many mobile browsers. Where it doesn't fire, this silently falls back to
+// plain read-aloud with no highlighting -- never breaks speech itself.
+// `segments` is [{ el, text }]; each el's content is replaced with one
+// <span> per word so the matching word can be highlighted.
+function speakWithHighlight(segments, speaker, joiner){
+  if (!SPEECH_SUPPORTED) return;
+  window.speechSynthesis.cancel();
+  clearActiveHighlight();
+
+  let fullText = '';
+  const wordSpans = [];
+  segments.forEach((seg, si) => {
+    if (!seg.el) return;
+    if (si > 0) fullText += (joiner || ' ');
+    seg.el.innerHTML = '';
+    seg.text.split(/(\s+)/).forEach(token => {
+      if (token === '') return;
+      const start = fullText.length;
+      if (/^\s+$/.test(token)){
+        seg.el.appendChild(document.createTextNode(token));
+      } else {
+        const span = document.createElement('span');
+        span.className = 'read-highlight-word';
+        span.textContent = token;
+        seg.el.appendChild(span);
+        wordSpans.push({ span, start, end: start + token.length });
+      }
+      fullText += token;
+    });
+  });
+  if (!fullText) return;
+
+  const utter = new SpeechSynthesisUtterance(fullText);
+  utter.lang = getLang() === 'es' ? 'es-ES' : 'en-US';
+  const profile = voiceProfileFor(speaker);
+  if (profile.voice) utter.voice = profile.voice;
+  utter.pitch = profile.pitch;
+  utter.rate = profile.rate * getSpeechRateMultiplier();
+
+  utter.onboundary = (e) => {
+    if (e.name && e.name !== 'word') return;
+    const match = wordSpans.find(w => e.charIndex >= w.start && e.charIndex < w.end);
+    if (!match) return;
+    clearActiveHighlight();
+    match.span.classList.add('is-speaking-word');
+    activeHighlightSpan = match.span;
+  };
+  utter.onend = clearActiveHighlight;
+  utter.onerror = clearActiveHighlight;
+
+  window.speechSynthesis.speak(utter);
+}
+
+function wireSpeakButtonHighlighted(root, segments, speaker, joiner){
+  if (!SPEECH_SUPPORTED) return;
+  const btn = root.querySelector('[data-speak-btn]');
+  if (btn) btn.addEventListener('click', () => speakWithHighlight(segments, speaker, joiner));
 }
 
 function speakButtonHtml(){
