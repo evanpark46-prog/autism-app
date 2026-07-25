@@ -10,7 +10,7 @@
 const TOPICS = [
   {
     "id": "stranger-safety",
-    "theme": "blue",
+    "theme": "green",
     "image": "img/generated/park-safe.webp"
   },
   {
@@ -20,7 +20,7 @@ const TOPICS = [
   },
   {
     "id": "lost-safety",
-    "theme": "purple",
+    "theme": "green",
     "image": "img/generated/store-helper.webp"
   },
   {
@@ -35,17 +35,17 @@ const TOPICS = [
   },
   {
     "id": "earthquake-safety",
-    "theme": "amber",
+    "theme": "red",
     "image": "img/generated/earthquake-safety.webp"
   },
   {
     "id": "rainyweather-safety",
-    "theme": "amber",
+    "theme": "red",
     "image": "img/generated/rainyweather-safety.webp"
   },
   {
     "id": "selfadvocacy-safety",
-    "theme": "blue",
+    "theme": "amber",
     "image": "img/generated/selfadvocacy-safety.webp"
   },
   {
@@ -60,7 +60,7 @@ const TOPICS = [
   },
   {
     "id": "reporting-safety",
-    "theme": "blue",
+    "theme": "purple",
     "image": "img/generated/reporting-safety.webp"
   },
   {
@@ -70,7 +70,7 @@ const TOPICS = [
   },
   {
     "id": "plan-safety",
-    "theme": "green",
+    "theme": "red",
     "image": "img/generated/plan-safety.webp"
   },
   {
@@ -80,7 +80,7 @@ const TOPICS = [
   },
   {
     "id": "bullying-safety",
-    "theme": "red",
+    "theme": "amber",
     "image": "img/generated/bullying-safety.webp"
   },
   {
@@ -90,27 +90,27 @@ const TOPICS = [
   },
   {
     "id": "cyberbullying-safety",
-    "theme": "red",
+    "theme": "blue",
     "image": "img/generated/cyberbullying-safety.webp"
   },
   {
     "id": "citizenship-safety",
-    "theme": "green",
+    "theme": "blue",
     "image": "img/generated/citizenship-safety.webp"
   },
   {
     "id": "rights-safety",
-    "theme": "blue",
+    "theme": "amber",
     "image": "img/generated/rights-safety.webp"
   },
   {
     "id": "water-safety",
-    "theme": "amber",
+    "theme": "red",
     "image": "img/generated/water-safety.webp"
   },
   {
     "id": "home-safety",
-    "theme": "purple",
+    "theme": "red",
     "image": "img/generated/home-safety.webp"
   },
   {
@@ -120,7 +120,7 @@ const TOPICS = [
   },
   {
     "id": "peer-pressure-safety",
-    "theme": "red",
+    "theme": "amber",
     "image": "img/generated/peer-pressure-safety.webp"
   }
 ];

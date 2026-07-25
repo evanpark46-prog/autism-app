@@ -17,31 +17,37 @@
    the URL) and adjust each checkpoint's "time" (seconds) + question.
    ========================================================================== */
 
+// Theme is assigned per category, not per topic, so color carries one
+// consistent meaning everywhere it's used (topic hero, worksheet chooser,
+// home page cards): green = out in the community, red = emergencies/home
+// hazards, purple = body & relationships, blue = online, amber = speaking
+// up & getting along. Keep new topics aligned to their category's color --
+// see TOPIC_CATEGORIES in js/page-home.js for the category groupings.
 const TOPICS = [
-  { id: 'stranger-safety',     theme: 'blue',   image: 'img/generated/park-safe.webp' },
+  { id: 'stranger-safety',     theme: 'green',  image: 'img/generated/park-safe.webp' },
   { id: 'street-safety',       theme: 'green',  image: 'img/generated/street-crossing.webp' },
-  { id: 'lost-safety',         theme: 'purple', image: 'img/generated/store-helper.webp' },
+  { id: 'lost-safety',         theme: 'green',  image: 'img/generated/store-helper.webp' },
   { id: 'emergency-safety',    theme: 'red',    image: 'img/generated/emergency-safety.webp' },
   { id: 'fire-safety',         theme: 'red',    image: 'img/generated/fire-safety.webp' },
-  { id: 'earthquake-safety',   theme: 'amber',  image: 'img/generated/earthquake-safety.webp' },
-  { id: 'rainyweather-safety', theme: 'amber',  image: 'img/generated/rainyweather-safety.webp' },
-  { id: 'selfadvocacy-safety', theme: 'blue',   image: 'img/generated/selfadvocacy-safety.webp' },
+  { id: 'earthquake-safety',   theme: 'red',    image: 'img/generated/earthquake-safety.webp' },
+  { id: 'rainyweather-safety', theme: 'red',    image: 'img/generated/rainyweather-safety.webp' },
+  { id: 'selfadvocacy-safety', theme: 'amber',  image: 'img/generated/selfadvocacy-safety.webp' },
 
   { id: 'body-boundaries-safety', theme: 'purple', image: 'img/generated/body-boundaries-safety.webp' },
   { id: 'secrets-safety',         theme: 'purple', image: 'img/generated/secrets-safety.webp' },
-  { id: 'reporting-safety',       theme: 'blue',   image: 'img/generated/reporting-safety.webp' },
+  { id: 'reporting-safety',       theme: 'purple', image: 'img/generated/reporting-safety.webp' },
   { id: 'awareness-safety',       theme: 'green',  image: 'img/generated/awareness-safety.webp' },
-  { id: 'plan-safety',            theme: 'green',  image: 'img/generated/plan-safety.webp' },
+  { id: 'plan-safety',            theme: 'red',    image: 'img/generated/plan-safety.webp' },
   { id: 'privacy-safety',         theme: 'purple', image: 'img/generated/privacy-safety.webp' },
-  { id: 'bullying-safety',        theme: 'red',    image: 'img/generated/bullying-safety.webp' },
+  { id: 'bullying-safety',        theme: 'amber',  image: 'img/generated/bullying-safety.webp' },
   { id: 'online-safety',          theme: 'blue',   image: 'img/generated/online-safety.webp' },
-  { id: 'cyberbullying-safety',   theme: 'red',    image: 'img/generated/cyberbullying-safety.webp' },
-  { id: 'citizenship-safety',     theme: 'green',  image: 'img/generated/citizenship-safety.webp' },
-  { id: 'rights-safety',          theme: 'blue',   image: 'img/generated/rights-safety.webp' },
-  { id: 'water-safety',           theme: 'amber',  image: 'img/generated/water-safety.webp' },
-  { id: 'home-safety',            theme: 'purple', image: 'img/generated/home-safety.webp' },
+  { id: 'cyberbullying-safety',   theme: 'blue',   image: 'img/generated/cyberbullying-safety.webp' },
+  { id: 'citizenship-safety',     theme: 'blue',   image: 'img/generated/citizenship-safety.webp' },
+  { id: 'rights-safety',          theme: 'amber',  image: 'img/generated/rights-safety.webp' },
+  { id: 'water-safety',           theme: 'red',    image: 'img/generated/water-safety.webp' },
+  { id: 'home-safety',            theme: 'red',    image: 'img/generated/home-safety.webp' },
   { id: 'bike-safety',            theme: 'green',  image: 'img/generated/bike-safety.webp' },
-  { id: 'peer-pressure-safety',   theme: 'red',    image: 'img/generated/peer-pressure-safety.webp' },
+  { id: 'peer-pressure-safety',   theme: 'amber',  image: 'img/generated/peer-pressure-safety.webp' },
 ];
 
 const CONTENT = {

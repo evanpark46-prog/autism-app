@@ -14,6 +14,13 @@
   <link rel="manifest" href="manifest.json">
   <meta name="theme-color" content="#d6789f">
   <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+  <link rel="icon" type="image/png" href="img/icon-192.png">
+  <meta name="description" content="Who built Safety Scouts, and why.">
+  <meta property="og:title" content="About — Safety Scouts">
+  <meta property="og:description" content="Who built Safety Scouts, and why.">
+  <meta property="og:image" content="img/og-banner.png">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
   <!-- Site visitor counter (GoatCounter -- privacy-friendly, no cookies, no
        personal data). Sign up free at https://www.goatcounter.com, then
        replace REPLACE_ME below with your site code (the part before
@@ -36,16 +43,28 @@
         <a href="parents.html" data-i18n="nav_parents">Parents &amp; Educators</a>
         <a href="about.html" aria-current="page" data-i18n="nav_about">About</a>
       </nav>
-      <div class="skin-switch" data-skin-switch role="group" aria-label="Color theme"></div>
-      <div class="text-size-switch" data-textsize-switch role="group" aria-label="Text size"></div>
-      <div class="headingfont-switch">
-        <label class="visually-hidden" for="headingfont-select" data-i18n="headingfont_label">Heading style</label>
-        <select id="headingfont-select" data-headingfont-select></select>
-      </div>
-      <div class="rate-switch">
-        <span aria-hidden="true">🔊</span>
-        <label class="visually-hidden" for="rate-select" data-i18n="rate_label">Voice speed</label>
-        <select id="rate-select" data-rate-select></select>
+      <div class="display-settings">
+        <button type="button" class="display-settings__btn" data-display-toggle aria-expanded="false" aria-haspopup="true" aria-controls="display-panel">
+          <span aria-hidden="true">⚙️</span> <span data-i18n="display_settings_label">Display</span>
+        </button>
+        <div class="display-panel" id="display-panel" data-display-panel hidden>
+          <div class="display-panel__group">
+            <span class="display-panel__label" data-i18n="skin_label">Color theme</span>
+            <div class="skin-switch" data-skin-switch role="group" aria-label="Color theme"></div>
+          </div>
+          <div class="display-panel__group">
+            <span class="display-panel__label" data-i18n="textsize_label">Text size</span>
+            <div class="text-size-switch" data-textsize-switch role="group" aria-label="Text size"></div>
+          </div>
+          <div class="display-panel__group">
+            <label class="display-panel__label" for="headingfont-select" data-i18n="headingfont_label">Heading style</label>
+            <select id="headingfont-select" data-headingfont-select></select>
+          </div>
+          <div class="display-panel__group">
+            <label class="display-panel__label" for="rate-select" data-i18n="rate_label">Voice speed</label>
+            <select id="rate-select" data-rate-select></select>
+          </div>
+        </div>
       </div>
       <div class="lang-switch">
         <label class="visually-hidden" for="lang-select" data-i18n="lang_label">Language</label>

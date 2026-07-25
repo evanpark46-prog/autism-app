@@ -8,10 +8,9 @@
 
 // Groups the 23 topics into labeled sections instead of one flat grid --
 // same content, less scanning. Order here is display order on the page.
-// Each category gets one accent color from the site's existing palette so
-// a section reads as one visual unit -- individual topics keep their own
-// `theme` (used on topic.html itself) untouched; this override only
-// applies to how a card looks here, grouped on the home page.
+// Each topic's `theme` (js/data.js) is already assigned per category, so
+// every card in a section shares one accent color naturally -- no override
+// needed here, just a matching accent for the section heading/divider.
 const TOPIC_CATEGORIES = [
   { key: 'out_about', color: 'green', topics: ['stranger-safety', 'street-safety', 'lost-safety', 'bike-safety', 'awareness-safety'] },
   { key: 'emergencies', color: 'red', topics: ['emergency-safety', 'fire-safety', 'earthquake-safety', 'rainyweather-safety', 'water-safety', 'home-safety', 'plan-safety'] },
@@ -25,11 +24,11 @@ const CATEGORY_ACCENT_VAR = {
   red: 'var(--red)', amber: 'var(--amber)',
 };
 
-function topicCardHtml(meta, lang, completedIds, themeOverride){
+function topicCardHtml(meta, lang, completedIds){
   const content = getTopicSummary(meta.id, lang);
   const done = completedIds.has(meta.id);
   return `
-    <a class="topic-card reveal-on-scroll" data-theme="${themeOverride || meta.theme}" href="topic.html?id=${encodeURIComponent(meta.id)}">
+    <a class="topic-card reveal-on-scroll" data-theme="${meta.theme}" href="topic.html?id=${encodeURIComponent(meta.id)}">
       ${done ? `<span class="topic-card__done" title="${t('topic_card_done_label')}" aria-label="${t('topic_card_done_label')}">✓</span>` : ''}
       <div class="topic-card__icon"><img src="${meta.image}" alt="" loading="lazy"></div>
       <h3>${escapeHtml(content.title)}</h3>
@@ -54,7 +53,7 @@ function renderTopicGrid(){
     const cardsHtml = group.topics
       .map(id => getTopicMeta(id))
       .filter(Boolean)
-      .map(meta => topicCardHtml(meta, lang, completedIds, group.color))
+      .map(meta => topicCardHtml(meta, lang, completedIds))
       .join('');
     return `
       <div class="topic-group" style="--group-accent:${CATEGORY_ACCENT_VAR[group.color]}">

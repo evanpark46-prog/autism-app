@@ -10,7 +10,7 @@
    returning visitors pick up the change instead of an old cached copy.
    ========================================================================== */
 
-const CACHE_NAME = 'safety-scouts-shell-v2';
+const CACHE_NAME = 'safety-scouts-shell-v3';
 
 const SHELL_FILES = [
   'index.html',
@@ -21,6 +21,7 @@ const SHELL_FILES = [
   'parents.html',
   'about.html',
   'analytics.html',
+  '404.html',
   'manifest.json',
   'css/styles.css',
   'js/i18n.js',
@@ -43,6 +44,7 @@ const SHELL_FILES = [
   'img/icon-512.png',
   'img/icon-maskable-512.png',
   'img/apple-touch-icon.png',
+  'img/og-banner.png',
 ];
 
 self.addEventListener('install', event => {

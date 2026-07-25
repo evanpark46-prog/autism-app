@@ -37,6 +37,7 @@ const UI_STRINGS = {
     headingfont_label: 'Heading style',
     headingfont_readable: 'Readable',
     headingfont_cursive: 'Cursive',
+    display_settings_label: 'Display',
 
     home_title: 'A calm place to practice staying safe',
     home_lead: 'Pick a topic below. Each one has a story, flashcards, and a video with questions along the way. No sign-in needed — just click and start.',
@@ -50,6 +51,10 @@ const UI_STRINGS = {
     topic_card_done_label: 'Completed',
     home_for_families: 'Looking for the parent & educator resources?',
     home_for_families_link: 'Go to Parents & Educators →',
+
+    notfound_title: 'This page wandered off',
+    notfound_lead: 'The link you followed doesn’t match a page here — it may be old or mistyped.',
+    notfound_home_btn: '← Back to Safety Scouts',
 
     home_review_cta_title: 'Ready to test what you remember?',
     home_review_cta_lead: 'Try the cumulative review — one question from every topic, shuffled and mixed together.',
@@ -270,6 +275,7 @@ const UI_STRINGS = {
     headingfont_label: 'Estilo de los títulos',
     headingfont_readable: 'Legible',
     headingfont_cursive: 'Cursiva',
+    display_settings_label: 'Pantalla',
 
     home_title: 'Un lugar tranquilo para practicar cómo mantenerse seguro',
     home_lead: 'Elige un tema abajo. Cada uno tiene una historia, tarjetas de repaso y un video con preguntas en el camino. No necesitas iniciar sesión — solo haz clic y empieza.',
@@ -283,6 +289,10 @@ const UI_STRINGS = {
     topic_card_done_label: 'Completado',
     home_for_families: '¿Buscas los recursos para padres y educadores?',
     home_for_families_link: 'Ir a Padres y Educadores →',
+
+    notfound_title: 'Esta página se perdió',
+    notfound_lead: 'El enlace que seguiste no coincide con ninguna página aquí — puede estar desactualizado o mal escrito.',
+    notfound_home_btn: '← Volver a Exploradores de Seguridad',
 
     home_review_cta_title: '¿Listo para poner a prueba lo que recuerdas?',
     home_review_cta_lead: 'Prueba el repaso acumulativo — una pregunta de cada tema, mezcladas entre sí.',

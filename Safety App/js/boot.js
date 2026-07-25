@@ -20,6 +20,42 @@ function escapeHtml(str){
 }
 
 /* ---------------------------------------------------------------------- */
+/* Display settings popover (skin/text-size/heading-font/voice-speed,     */
+/* collapsed behind one header control) -- see js/theme.js etc. for the  */
+/* switchers themselves; this only shows/hides the panel they live in.   */
+/* ---------------------------------------------------------------------- */
+
+function initDisplayPanel(){
+  const toggle = document.querySelector('[data-display-toggle]');
+  const panel = document.querySelector('[data-display-panel]');
+  if (!toggle || !panel) return;
+
+  function close(){
+    panel.hidden = true;
+    toggle.setAttribute('aria-expanded', 'false');
+  }
+  function open(){
+    panel.hidden = false;
+    toggle.setAttribute('aria-expanded', 'true');
+  }
+
+  toggle.addEventListener('click', () => {
+    if (panel.hidden) open(); else close();
+  });
+  document.addEventListener('click', e => {
+    if (panel.hidden) return;
+    if (panel.contains(e.target) || toggle.contains(e.target)) return;
+    close();
+  });
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape' && !panel.hidden){
+      close();
+      toggle.focus();
+    }
+  });
+}
+
+/* ---------------------------------------------------------------------- */
 /* Boot                                                                    */
 /* ---------------------------------------------------------------------- */
 
@@ -30,6 +66,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initSpeechRateSwitcher();
   initTextSizeSwitcher();
   initHeadingFontSwitcher();
+  initDisplayPanel();
 
   const page = document.body.dataset.page;
   if (page === 'home') initHomePage();
