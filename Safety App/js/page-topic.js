@@ -9,7 +9,10 @@
 function initTopicPage(){
   const params = new URLSearchParams(window.location.search);
   const requestedId = params.get('id');
-  const meta = getTopicMeta(requestedId) || TOPICS[0];
+  // No id at all -> friendly default (first topic). An id that doesn't match
+  // any known topic is a broken/stale link -- redirect home instead of
+  // silently rendering an unrelated topic.
+  const meta = requestedId ? getTopicMeta(requestedId) : TOPICS[0];
   if (!meta){
     window.location.href = 'index.html';
     return;

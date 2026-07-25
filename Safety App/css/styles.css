@@ -251,8 +251,11 @@ main{max-width:1080px; margin:0 auto; padding:28px 20px 64px;}
 
 /* ---------- Home page: grouped topic sections + progress summary ---------- */
 .home-progress{text-align:center; color:var(--ink-soft); font-weight:700; margin-bottom:24px;}
-.topic-group{margin-bottom:36px;}
-.topic-group h3{font-size:1.3rem; margin-bottom:14px; color:var(--rose-dark);}
+.topic-group{
+  margin-bottom:36px; padding-top:16px;
+  border-top:3px solid var(--group-accent, var(--border));
+}
+.topic-group h3{font-size:1.3rem; margin-bottom:14px; color:var(--group-accent, var(--rose-dark));}
 .topic-group:last-child{margin-bottom:0;}
 .topic-card__icon{
   width:64px; height:64px; border-radius:14px; display:grid; place-items:center; overflow:hidden;

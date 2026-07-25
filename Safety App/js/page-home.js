@@ -8,19 +8,28 @@
 
 // Groups the 23 topics into labeled sections instead of one flat grid --
 // same content, less scanning. Order here is display order on the page.
+// Each category gets one accent color from the site's existing palette so
+// a section reads as one visual unit -- individual topics keep their own
+// `theme` (used on topic.html itself) untouched; this override only
+// applies to how a card looks here, grouped on the home page.
 const TOPIC_CATEGORIES = [
-  { key: 'out_about', topics: ['stranger-safety', 'street-safety', 'lost-safety', 'bike-safety', 'awareness-safety'] },
-  { key: 'emergencies', topics: ['emergency-safety', 'fire-safety', 'earthquake-safety', 'rainyweather-safety', 'water-safety', 'home-safety', 'plan-safety'] },
-  { key: 'body', topics: ['body-boundaries-safety', 'secrets-safety', 'reporting-safety', 'privacy-safety'] },
-  { key: 'online', topics: ['online-safety', 'cyberbullying-safety', 'citizenship-safety'] },
-  { key: 'speaking_up', topics: ['selfadvocacy-safety', 'rights-safety', 'bullying-safety', 'peer-pressure-safety'] },
+  { key: 'out_about', color: 'green', topics: ['stranger-safety', 'street-safety', 'lost-safety', 'bike-safety', 'awareness-safety'] },
+  { key: 'emergencies', color: 'red', topics: ['emergency-safety', 'fire-safety', 'earthquake-safety', 'rainyweather-safety', 'water-safety', 'home-safety', 'plan-safety'] },
+  { key: 'body', color: 'purple', topics: ['body-boundaries-safety', 'secrets-safety', 'reporting-safety', 'privacy-safety'] },
+  { key: 'online', color: 'blue', topics: ['online-safety', 'cyberbullying-safety', 'citizenship-safety'] },
+  { key: 'speaking_up', color: 'amber', topics: ['selfadvocacy-safety', 'rights-safety', 'bullying-safety', 'peer-pressure-safety'] },
 ];
 
-function topicCardHtml(meta, lang, completedIds){
+const CATEGORY_ACCENT_VAR = {
+  blue: 'var(--blue-dark)', green: 'var(--green)', purple: 'var(--purple)',
+  red: 'var(--red)', amber: 'var(--amber)',
+};
+
+function topicCardHtml(meta, lang, completedIds, themeOverride){
   const content = getTopicSummary(meta.id, lang);
   const done = completedIds.has(meta.id);
   return `
-    <a class="topic-card reveal-on-scroll" data-theme="${meta.theme}" href="topic.html?id=${encodeURIComponent(meta.id)}">
+    <a class="topic-card reveal-on-scroll" data-theme="${themeOverride || meta.theme}" href="topic.html?id=${encodeURIComponent(meta.id)}">
       ${done ? `<span class="topic-card__done" title="${t('topic_card_done_label')}" aria-label="${t('topic_card_done_label')}">✓</span>` : ''}
       <div class="topic-card__icon"><img src="${meta.image}" alt="" loading="lazy"></div>
       <h3>${escapeHtml(content.title)}</h3>
@@ -45,10 +54,10 @@ function renderTopicGrid(){
     const cardsHtml = group.topics
       .map(id => getTopicMeta(id))
       .filter(Boolean)
-      .map(meta => topicCardHtml(meta, lang, completedIds))
+      .map(meta => topicCardHtml(meta, lang, completedIds, group.color))
       .join('');
     return `
-      <div class="topic-group">
+      <div class="topic-group" style="--group-accent:${CATEGORY_ACCENT_VAR[group.color]}">
         <h3>${t('home_category_' + group.key)}</h3>
         <div class="grid grid-topics">${cardsHtml}</div>
       </div>`;
