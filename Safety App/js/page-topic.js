@@ -99,7 +99,7 @@ function initTopicPage(){
     const choices = [{ text: correctCard.back, correct: true, eliminated: false }, ...distractors];
     return shuffledOrder(choices.length).map(i => choices[i]);
   }
-  const videoState = { previewing: false, previewIndex: 0, previewAnswered: false, player: null, nextCheckpoint: 0, awaitingAnswer: false, checkpointTimer: null };
+  const videoState = { previewing: false, previewIndex: 0, previewAnswered: false, player: null, nextCheckpoint: 0, awaitingAnswer: false, checkpointTimer: null, embedRetried: false };
 
   function currentContent(){
     return getTopicContent(meta.id, getLang());
@@ -363,7 +363,7 @@ function initTopicPage(){
           ${sequenceHtml}
           ${typeof symbolRowHtml === 'function' ? symbolRowHtml(step.text, getLang()) : ''}
           <div class="speak-row">
-            <p class="story-text">${escapeHtml(step.text)}</p>
+            <p class="story-text">${typeof wrapGlossaryHtml === 'function' ? wrapGlossaryHtml(step.text, getLang()) : escapeHtml(step.text)}</p>
             ${speakButtonHtml()}
           </div>
           ${choicesHtml}
@@ -455,7 +455,7 @@ function initTopicPage(){
           <div class="story-body">
             <div class="story-kicker">${escapeHtml(step.kicker || '')}</div>
             <div class="speak-row">
-              <p class="story-text">${escapeHtml(step.text)}</p>
+              <p class="story-text">${typeof wrapGlossaryHtml === 'function' ? wrapGlossaryHtml(step.text, getLang()) : escapeHtml(step.text)}</p>
               ${speakButtonHtml()}
             </div>
             <div class="matching-grid">
@@ -614,13 +614,30 @@ function initTopicPage(){
       panel.querySelector('[data-dialogue-box]').classList.toggle('is-consequence', showConsequence);
       speakerEl.textContent = displayedSpeaker;
       advanceEl.style.visibility = 'hidden';
-      wireDialogueSpeak(panel, text, displayedSpeaker);
+      wireDialogueSpeakHighlighted(textEl, text, displayedSpeaker);
       const controller = typeWriter(textEl, text, () => {
         activeTypewriterClear = null;
         if (choice.correct) showNextFooter(t('story_continue'));
         else showRetryFooter();
       });
       activeTypewriterClear = () => controller.finish();
+    }
+
+    // Word-highlighted read-aloud for dialogue lines needs the typewriter
+    // reveal to be finished first -- both write into the same element, and
+    // the typewriter's own ticking would otherwise stomp the word <span>s
+    // this wraps the text in mid-speech. Clicking the speak button while a
+    // line is still revealing just finishes it instantly (the same thing
+    // that would happen a moment later anyway) before speaking it.
+    function wireDialogueSpeakHighlighted(textEl, text, speaker){
+      if (!SPEECH_SUPPORTED) return;
+      const btn = panel.querySelector('[data-speak-btn]');
+      if (!btn) return;
+      btn.onclick = (e) => {
+        e.stopPropagation();
+        if (activeTypewriterClear) activeTypewriterClear();
+        speakWithHighlight([{ el: textEl, text }], speaker);
+      };
     }
 
     function showLine(idx, opts){
@@ -635,7 +652,7 @@ function initTopicPage(){
       setFooter('');
       speakerEl.textContent = line.speaker || '';
       advanceEl.style.visibility = 'hidden';
-      wireDialogueSpeak(panel, line.text, line.speaker);
+      wireDialogueSpeakHighlighted(textEl, line.text, line.speaker);
       const controller = typeWriter(textEl, line.text, () => {
         activeTypewriterClear = null;
         const isLast = idx === step.lines.length - 1;
@@ -813,11 +830,11 @@ function initTopicPage(){
           <div class="flashcard__inner">
             <div class="flashcard__face flashcard__face--front">
               <div class="flashcard__label">${t('flash_front_label')}</div>
-              <div class="flashcard__text">${escapeHtml(card.front)}</div>
+              <div class="flashcard__text">${typeof wrapGlossaryHtml === 'function' ? wrapGlossaryHtml(card.front, getLang()) : escapeHtml(card.front)}</div>
             </div>
             <div class="flashcard__face flashcard__face--back">
               <div class="flashcard__label">${t('flash_back_label')}</div>
-              <div class="flashcard__text">${escapeHtml(card.back)}</div>
+              <div class="flashcard__text">${typeof wrapGlossaryHtml === 'function' ? wrapGlossaryHtml(card.back, getLang()) : escapeHtml(card.back)}</div>
             </div>
           </div>
         </div>
@@ -957,7 +974,7 @@ function initTopicPage(){
         <p class="guided-phase-label">${t('guided_drill_phase_label')}</p>
         <div class="speak-quiz-card">
           <div class="flashcard__label">${t('speak_prompt_label')}</div>
-          <div class="flashcard__text">${escapeHtml(card.front)}</div>
+          <div class="flashcard__text">${typeof wrapGlossaryHtml === 'function' ? wrapGlossaryHtml(card.front, getLang()) : escapeHtml(card.front)}</div>
           <div class="guided-target-phrase">${escapeHtml(card.back)}</div>
           ${speakButtonHtml()}
         </div>
@@ -1046,7 +1063,7 @@ function initTopicPage(){
         <p class="guided-phase-label">${t('guided_quiz_phase_label')}</p>
         <div class="speak-quiz-card">
           <div class="flashcard__label">${t('speak_prompt_label')}</div>
-          <div class="flashcard__text">${escapeHtml(card.front)}</div>
+          <div class="flashcard__text">${typeof wrapGlossaryHtml === 'function' ? wrapGlossaryHtml(card.front, getLang()) : escapeHtml(card.front)}</div>
           ${speakButtonHtml()}
         </div>
         <div class="story-choices">${choicesHtml}</div>
@@ -1235,9 +1252,13 @@ function initTopicPage(){
   // Shows a static thumbnail + play button instead of embedding the
   // YouTube player right away -- opening a topic (video is the default
   // tab) shouldn't eagerly load YouTube's iframe API and player for a
-  // video the learner may not even watch. The real embed (on the
-  // cookieless youtube-nocookie.com host) only loads once tapped.
+  // video the learner may not even watch. The real embed only loads once
+  // tapped. (Previously used the youtube-nocookie.com host for privacy,
+  // but removed it while chasing a real embed failure -- it wasn't the
+  // cause, so this stays on the default host until there's a reason to
+  // believe nocookie is safe to bring back.)
   function renderVideoPlayerMode(panel, video){
+    videoState.embedRetried = false;
     const chips = video.checkpoints.map(cp => `<span class="checkpoint-chip">${t('video_checkpoint_label', { time: formatTime(cp.time) })}</span>`).join('');
     const thumbUrl = `https://img.youtube.com/vi/${encodeURIComponent(video.youtubeId)}/hqdefault.jpg`;
     panel.innerHTML = `
@@ -1276,7 +1297,6 @@ function initTopicPage(){
       const target = panel.querySelector('[data-yt-player]');
       if (!target) return;
       videoState.player = new YT.Player(target, {
-        host: 'https://www.youtube-nocookie.com',
         videoId: video.youtubeId,
         playerVars: { rel: 0, origin: window.location.origin, autoplay: 1 },
         events: {
@@ -1287,9 +1307,18 @@ function initTopicPage(){
           },
           onError(){
             // Some browsers/extensions strip the referrer YouTube needs to
-            // confirm the embed, which surfaces as a raw, jarring error
-            // screen inside the player — fall back to a calm message with
-            // a direct link instead of leaving that showing.
+            // confirm the embed, or the first attempt is just a transient
+            // hiccup -- try once more (fresh player instance) before
+            // settling on the calm fallback with a direct YouTube link.
+            if (!videoState.embedRetried){
+              videoState.embedRetried = true;
+              if (videoState.player && typeof videoState.player.destroy === 'function'){
+                videoState.player.destroy();
+              }
+              videoState.player = null;
+              setTimeout(() => startVideoPlayer(panel, video), 400);
+              return;
+            }
             renderVideoEmbedError(panel, video);
           },
         },
@@ -1307,9 +1336,17 @@ function initTopicPage(){
           <div style="font-size:2.4rem">🎬</div>
           <h3>${t('video_embed_error_title')}</h3>
           <p>${t('video_embed_error_body')}</p>
-          <a class="btn btn-primary" href="${watchUrl}" target="_blank" rel="noopener">${t('video_watch_on_youtube_btn')}</a>
+          <div class="hero-actions">
+            <button type="button" class="btn btn-secondary" data-video-retry>${t('video_try_again_btn')}</button>
+            <a class="btn btn-primary" href="${watchUrl}" target="_blank" rel="noopener">${t('video_watch_on_youtube_btn')}</a>
+          </div>
         </div>
       </div>`;
+    const retryBtn = frameWrap.querySelector('[data-video-retry]');
+    if (retryBtn) retryBtn.addEventListener('click', () => {
+      videoState.embedRetried = false;
+      startVideoPlayer(panel, video);
+    });
   }
 
   // requestAnimationFrame is throttled or fully suspended by the browser

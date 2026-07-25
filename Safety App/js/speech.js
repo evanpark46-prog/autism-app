@@ -112,6 +112,15 @@ function speakWithHighlight(segments, speaker, joiner){
         const span = document.createElement('span');
         span.className = 'read-highlight-word';
         span.textContent = token;
+        if (typeof getGlossaryDefinition === 'function'){
+          const bare = token.replace(/[“”"‘’.,!?¡¿]/g, '');
+          const def = getGlossaryDefinition(bare, getLang());
+          if (def){
+            span.classList.add('glossary-term');
+            span.setAttribute('data-definition', def);
+            span.tabIndex = 0;
+          }
+        }
         seg.el.appendChild(span);
         wordSpans.push({ span, start, end: start + token.length });
       }
@@ -157,12 +166,6 @@ function wireSpeakButton(root, text, speaker){
   if (!SPEECH_SUPPORTED) return;
   const btn = root.querySelector('[data-speak-btn]');
   if (btn) btn.addEventListener('click', () => speak(text, speaker));
-}
-
-function wireDialogueSpeak(root, text, speaker){
-  if (!SPEECH_SUPPORTED) return;
-  const btn = root.querySelector('[data-speak-btn]');
-  if (btn) btn.onclick = (e) => { e.stopPropagation(); speak(text, speaker); };
 }
 
 /* ---------------------------------------------------------------------- */

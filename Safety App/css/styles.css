@@ -573,6 +573,25 @@ main{max-width:1080px; margin:0 auto; padding:28px 20px 64px;}
   background:var(--rose-tint); color:var(--rose-dark); border-radius:4px; box-shadow:0 0 0 2px var(--rose-tint);
 }
 .choice-btn .read-highlight-word.is-speaking-word{background:var(--blue-tint); color:var(--blue-dark); box-shadow:none;}
+
+/* ---------- Glossary terms (hover/focus for a short definition) ---------- */
+.glossary-term{
+  border-bottom:2px dotted var(--blue); cursor:help; position:relative; border-radius:2px;
+}
+.glossary-term:hover, .glossary-term:focus-visible{
+  background:var(--blue-tint);
+}
+.glossary-term:hover::after, .glossary-term:focus-visible::after{
+  content:attr(data-definition);
+  position:absolute; left:50%; bottom:100%; transform:translateX(-50%); margin-bottom:8px;
+  background:var(--ink); color:#fff; padding:8px 12px; border-radius:8px;
+  font-size:.85rem; font-weight:600; line-height:1.35; text-align:center;
+  width:max-content; max-width:220px; box-shadow:var(--shadow-lift); z-index:30; pointer-events:none;
+}
+.glossary-term:hover::before, .glossary-term:focus-visible::before{
+  content:''; position:absolute; left:50%; bottom:100%; transform:translateX(-50%); margin-bottom:2px;
+  border:6px solid transparent; border-top-color:var(--ink); z-index:30; pointer-events:none;
+}
 .speak-row{display:flex; align-items:flex-start; gap:10px;}
 .speak-row > *:first-child{flex:1; margin-bottom:0;}
 .speak-btn{
