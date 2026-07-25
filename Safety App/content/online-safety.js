@@ -5,6 +5,7 @@
   "en": {
     "title": "Staying Safe Online",
     "tagline": "Smart habits for using the internet, apps, and games.",
+    "practicePrompt": "This week, look at your privacy settings with a grown-up on one app or game you use.",
     "story": {
       "levels": [
         {
@@ -483,6 +484,7 @@
   "es": {
     "title": "Estar seguro en línea",
     "tagline": "Hábitos inteligentes para usar internet, apps, y videojuegos.",
+    "practicePrompt": "Esta semana, revisa la configuración de privacidad con un adulto en una app o juego que usas.",
     "story": {
       "levels": [
         {

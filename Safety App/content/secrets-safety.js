@@ -5,6 +5,7 @@
   "en": {
     "title": "Safe and Unsafe Secrets",
     "tagline": "Learning the difference between fun secrets and secrets that need to be told.",
+    "practicePrompt": "This week, ask a grown-up you trust: what's a secret I should always tell you about?",
     "story": {
       "levels": [
         {
@@ -487,6 +488,7 @@
   "es": {
     "title": "Secretos seguros y no seguros",
     "tagline": "Aprender la diferencia entre secretos divertidos y secretos que hay que contar.",
+    "practicePrompt": "Esta semana, preguntále a un adulto de confianza: ¿qué secreto debería contarte siempre?",
     "story": {
       "levels": [
         {

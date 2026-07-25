@@ -5,6 +5,7 @@
   "en": {
     "title": "Making a Safety P.L.A.N.",
     "tagline": "Permission, Location, Activity, and Names/Numbers before you go somewhere.",
+    "practicePrompt": "This week, fill out your safety P.L.A.N. with a grown-up before you go somewhere new.",
     "story": {
       "levels": [
         {
@@ -483,6 +484,7 @@
   "es": {
     "title": "Hacer un P.L.A.N. de seguridad",
     "tagline": "Permiso, Lugar, Actividad, y Nombres/Números antes de ir a algún lugar.",
+    "practicePrompt": "Esta semana, completa tu P.L.A.N. de seguridad con un adulto antes de ir a un lugar nuevo.",
     "story": {
       "levels": [
         {

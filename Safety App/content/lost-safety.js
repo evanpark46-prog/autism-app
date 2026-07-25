@@ -5,6 +5,7 @@
   "en": {
     "title": "If I Get Separated",
     "tagline": "What to do if you can’t find the adult you came with.",
+    "practicePrompt": "This week, pick a meeting spot with your grown-up for the next time you go somewhere new, in case you get separated.",
     "story": {
       "levels": [
         {
@@ -494,6 +495,7 @@
   "es": {
     "title": "Si me separo de mi adulto",
     "tagline": "Qué hacer si no encuentras al adulto con quien llegaste.",
+    "practicePrompt": "Esta semana, elige un punto de encuentro con tu adulto para la próxima vez que vayan a un lugar nuevo, en caso de que te separes.",
     "story": {
       "levels": [
         {

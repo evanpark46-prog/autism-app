@@ -5,6 +5,7 @@
   "en": {
     "title": "Staying Safe in Bad Weather",
     "tagline": "What to do during rain, thunder, and storms.",
+    "practicePrompt": "This week, talk with a grown-up about what to do if you hear thunder while you're outside.",
     "story": {
       "levels": [
         {
@@ -493,6 +494,7 @@
   "es": {
     "title": "Cómo mantenerse seguro en mal tiempo",
     "tagline": "Qué hacer durante lluvia, truenos y tormentas.",
+    "practicePrompt": "Esta semana, habla con un adulto sobre qué hacer si escuchas truenos mientras estás afuera.",
     "story": {
       "levels": [
         {

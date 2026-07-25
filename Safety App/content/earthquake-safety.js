@@ -5,6 +5,7 @@
   "en": {
     "title": "Earthquake Safety",
     "tagline": "What to do if the ground starts shaking.",
+    "practicePrompt": "This week, find the safest spot to drop, cover, and hold on in each room of your home.",
     "story": {
       "levels": [
         {
@@ -493,6 +494,7 @@
   "es": {
     "title": "Seguridad en terremotos",
     "tagline": "Qué hacer si la tierra empieza a temblar.",
+    "practicePrompt": "Esta semana, encuentra el lugar más seguro para agacharte, cubrirte y sujetarte en cada cuarto de tu casa.",
     "story": {
       "levels": [
         {

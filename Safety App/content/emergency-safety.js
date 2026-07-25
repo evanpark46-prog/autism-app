@@ -5,6 +5,7 @@
   "en": {
     "title": "Calling for Help in an Emergency",
     "tagline": "What to do and who to call when something serious happens.",
+    "practicePrompt": "This week, practice saying your address out loud, in case you ever need to tell it to a 911 operator.",
     "story": {
       "levels": [
         {
@@ -494,6 +495,7 @@
   "es": {
     "title": "Pedir ayuda en una emergencia",
     "tagline": "Qué hacer y a quién llamar cuando pasa algo serio.",
+    "practicePrompt": "Esta semana, practica decir tu dirección en voz alta, en caso de que alguna vez necesites decírsela a un operador del 911.",
     "story": {
       "levels": [
         {

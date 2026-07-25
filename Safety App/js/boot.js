@@ -67,6 +67,8 @@ document.addEventListener('DOMContentLoaded', () => {
   initTextSizeSwitcher();
   initHeadingFontSwitcher();
   initDisplayPanel();
+  if (typeof initCalmModeToggle === 'function') initCalmModeToggle();
+  if (typeof initSymbolModeToggle === 'function') initSymbolModeToggle();
   if (typeof initCalmSpace === 'function') initCalmSpace();
 
   const page = document.body.dataset.page;
@@ -75,6 +77,7 @@ document.addEventListener('DOMContentLoaded', () => {
   else if (page === 'analytics') initAnalyticsPage();
   else if (page === 'worksheet') initWorksheetPage();
   else if (page === 'review') initReviewPage();
+  else if (page === 'badges') initBadgesPage();
 
   window.addEventListener('safetylib:langchange', () => applyStaticI18n());
 });

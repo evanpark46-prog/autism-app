@@ -5,6 +5,7 @@
   "en": {
     "title": "Water Safety",
     "tagline": "Staying safe around pools, lakes, and the beach.",
+    "practicePrompt": "This week, ask a grown-up where the lifeguard or safe swimming area is before you go near water.",
     "story": {
       "levels": [
         {
@@ -482,6 +483,7 @@
   "es": {
     "title": "Seguridad en el agua",
     "tagline": "Mantenerse seguro en piscinas, lagos, y la playa.",
+    "practicePrompt": "Esta semana, preguntále a un adulto dónde está el salvavidas o el área segura para nadar antes de acercarte al agua.",
     "story": {
       "levels": [
         {

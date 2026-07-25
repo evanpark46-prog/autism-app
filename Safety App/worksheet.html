@@ -6,6 +6,7 @@
   <script>(function(){try{var s=localStorage.getItem('safetylib_skin');if(s)document.documentElement.setAttribute('data-skin', s);}catch(e){}})();</script>
   <script>(function(){try{var sizes=[87.5,100,115,130,145];var idx=parseInt(localStorage.getItem('safetylib_text_size_idx'),10);if(!(idx>=0&&idx<sizes.length))idx=1;document.documentElement.style.fontSize=sizes[idx]+'%';}catch(e){}})();</script>
   <script>(function(){try{var f=localStorage.getItem('safetylib_heading_font');if(f==='cursive')document.documentElement.setAttribute('data-heading-font','cursive');}catch(e){}})();</script>
+  <script>(function(){try{var c=localStorage.getItem('safetylib_calm_mode');document.documentElement.setAttribute('data-calm-mode', c==='on'?'on':'off');}catch(e){}})();</script>
   <title>Printable Worksheets — Safety Scouts</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -65,6 +66,14 @@
             <label class="display-panel__label" for="rate-select" data-i18n="rate_label">Voice speed</label>
             <select id="rate-select" data-rate-select></select>
           </div>
+          <div class="display-panel__group">
+            <span class="display-panel__label" data-i18n="calmmode_label">Calm Mode</span>
+            <div data-calmmode-switch></div>
+          </div>
+          <div class="display-panel__group">
+            <span class="display-panel__label" data-i18n="symbolmode_label">Symbol Support</span>
+            <div data-symbolmode-switch></div>
+          </div>
         </div>
       </div>
       <div class="lang-switch">
@@ -89,6 +98,8 @@
   </footer>
 
   <script src="js/i18n.js"></script>
+  <script src="js/calmmode.js"></script>
+  <script src="js/symbols.js"></script>
   <script src="js/theme.js"></script>
   <script src="js/textsize.js"></script>
   <script src="js/headingfont.js"></script>

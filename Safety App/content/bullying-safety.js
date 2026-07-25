@@ -5,6 +5,7 @@
   "en": {
     "title": "Dealing with Bullying",
     "tagline": "Recognizing bullying and knowing how to respond.",
+    "practicePrompt": "This week, practice telling a grown-up about something that happened, using calm, clear words.",
     "story": {
       "levels": [
         {
@@ -488,6 +489,7 @@
   "es": {
     "title": "Enfrentar el acoso escolar",
     "tagline": "Reconocer el acoso escolar y saber cómo responder.",
+    "practicePrompt": "Esta semana, practica contarle a un adulto lo que pasó, usando palabras claras y tranquilas.",
     "story": {
       "levels": [
         {

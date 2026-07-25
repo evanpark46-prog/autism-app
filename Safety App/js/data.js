@@ -55,6 +55,7 @@ const CONTENT = {
     'stranger-safety': {
       title: 'Someone I Don’t Know',
       tagline: 'What to do when a stranger talks to you or offers something.',
+      practicePrompt: 'This week, practice with a grown-up: point out a safe place to go if someone you don\'t know talks to you.',
       story: {
         levels: [
           {
@@ -489,6 +490,7 @@ const CONTENT = {
     'street-safety': {
       title: 'Crossing the Street Safely',
       tagline: 'Simple steps for crossing at a crosswalk, every time.',
+      practicePrompt: 'This week, practice crossing a real street with a grown-up — stop, look left, right, and left again.',
       story: {
         levels: [
           {
@@ -723,6 +725,7 @@ const CONTENT = {
     'lost-safety': {
       title: 'If I Get Separated',
       tagline: 'What to do if you can’t find the adult you came with.',
+      practicePrompt: 'This week, pick a meeting spot with your grown-up for the next time you go somewhere new, in case you get separated.',
       story: {
         levels: [
           {
@@ -958,6 +961,7 @@ const CONTENT = {
     'emergency-safety': {
       title: 'Calling for Help in an Emergency',
       tagline: 'What to do and who to call when something serious happens.',
+      practicePrompt: 'This week, practice saying your address out loud, in case you ever need to tell it to a 911 operator.',
       story: {
         levels: [
           {
@@ -1193,6 +1197,7 @@ const CONTENT = {
     'fire-safety': {
       title: 'Fire Safety',
       tagline: 'What to do if there’s a fire — at home or school.',
+      practicePrompt: 'This week, walk through your fire escape plan at home with a grown-up, and find two ways out of your bedroom.',
       story: {
         levels: [
           {
@@ -1437,6 +1442,7 @@ const CONTENT = {
     'earthquake-safety': {
       title: 'Earthquake Safety',
       tagline: 'What to do if the ground starts shaking.',
+      practicePrompt: 'This week, find the safest spot to drop, cover, and hold on in each room of your home.',
       story: {
         levels: [
           {
@@ -1671,6 +1677,7 @@ const CONTENT = {
     'rainyweather-safety': {
       title: 'Staying Safe in Bad Weather',
       tagline: 'What to do during rain, thunder, and storms.',
+      practicePrompt: 'This week, talk with a grown-up about what to do if you hear thunder while you\'re outside.',
       story: {
         levels: [
           {
@@ -1905,6 +1912,7 @@ const CONTENT = {
     'selfadvocacy-safety': {
       title: 'Speaking Up for Myself',
       tagline: 'It’s okay to say when something feels wrong or when you need help.',
+      practicePrompt: 'This week, practice saying “I need help” or “that doesn’t feel right” out loud with a grown-up.',
       story: {
         levels: [
           {
@@ -2164,6 +2172,7 @@ const CONTENT = {
     'body-boundaries-safety': {
       title: 'My Body Belongs to Me',
       tagline: 'Understanding safe and unsafe touches, and body boundaries.',
+      practicePrompt: 'This week, practice saying “No, thank you” to a hug or touch you don\'t want, even from someone you know.',
       story: {
         levels: [
           {
@@ -2403,6 +2412,7 @@ const CONTENT = {
     'secrets-safety': {
       title: 'Safe and Unsafe Secrets',
       tagline: 'Learning the difference between fun secrets and secrets that need to be told.',
+      practicePrompt: 'This week, ask a grown-up you trust: what\'s a secret I should always tell you about?',
       story: {
         levels: [
           {
@@ -2634,6 +2644,7 @@ const CONTENT = {
     'reporting-safety': {
       title: 'Tattling vs. Telling',
       tagline: 'Knowing when to get a grown-up’s help versus handling something small yourself.',
+      practicePrompt: 'This week, talk with a grown-up about the difference between tattling and telling someone is unsafe.',
       story: {
         levels: [
           {
@@ -2871,6 +2882,7 @@ const CONTENT = {
     'awareness-safety': {
       title: 'Paying Attention to My Surroundings',
       tagline: 'Noticing what’s happening around you to stay safe.',
+      practicePrompt: 'This week, practice noticing three things around you the next time you\'re out in public.',
       story: {
         levels: [
           {
@@ -3099,6 +3111,7 @@ const CONTENT = {
     'plan-safety': {
       title: 'Making a Safety P.L.A.N.',
       tagline: 'Permission, Location, Activity, and Names/Numbers before you go somewhere.',
+      practicePrompt: 'This week, fill out your safety P.L.A.N. with a grown-up before you go somewhere new.',
       story: {
         levels: [
           {
@@ -3329,6 +3342,7 @@ const CONTENT = {
     'privacy-safety': {
       title: 'Privacy',
       tagline: 'Understanding personal privacy — your body, your space, your information.',
+      practicePrompt: 'This week, talk with a grown-up about which parts of your life are private and who you share them with.',
       story: {
         levels: [
           {
@@ -3559,6 +3573,7 @@ const CONTENT = {
     'bullying-safety': {
       title: 'Dealing with Bullying',
       tagline: 'Recognizing bullying and knowing how to respond.',
+      practicePrompt: 'This week, practice telling a grown-up about something that happened, using calm, clear words.',
       story: {
         levels: [
           {
@@ -3791,6 +3806,7 @@ const CONTENT = {
     'online-safety': {
       title: 'Staying Safe Online',
       tagline: 'Smart habits for using the internet, apps, and games.',
+      practicePrompt: 'This week, look at your privacy settings with a grown-up on one app or game you use.',
       story: {
         levels: [
           {
@@ -4021,6 +4037,7 @@ const CONTENT = {
     'cyberbullying-safety': {
       title: 'Cyberbullying',
       tagline: 'Recognizing online meanness and knowing how to respond.',
+      practicePrompt: 'This week, practice showing a grown-up a screenshot of something mean, instead of responding to it.',
       story: {
         levels: [
           {
@@ -4268,6 +4285,7 @@ const CONTENT = {
     'citizenship-safety': {
       title: 'Being a Good Bystander',
       tagline: 'Helping instead of watching when something isn’t right.',
+      practicePrompt: 'This week, notice one time you could help someone instead of just watching, and tell a grown-up about it.',
       story: {
         levels: [
           {
@@ -4498,6 +4516,7 @@ const CONTENT = {
     'rights-safety': {
       title: 'Knowing My Rights',
       tagline: 'Every kid has the right to be safe, respected, and heard.',
+      practicePrompt: 'This week, talk with a grown-up about one right you have and what it means for you.',
       story: {
         levels: [
           {
@@ -4728,6 +4747,7 @@ const CONTENT = {
     'water-safety': {
       title: 'Water Safety',
       tagline: 'Staying safe around pools, lakes, and the beach.',
+      practicePrompt: 'This week, ask a grown-up where the lifeguard or safe swimming area is before you go near water.',
       story: {
         levels: [
           {
@@ -4957,6 +4977,7 @@ const CONTENT = {
     'home-safety': {
       title: 'Staying Safe at Home',
       tagline: 'Simple rules for being safe when you’re at home.',
+      practicePrompt: 'This week, walk through your home with a grown-up and find one thing to make safer.',
       story: {
         levels: [
           {
@@ -5186,6 +5207,7 @@ const CONTENT = {
     'bike-safety': {
       title: 'Bicycle Safety',
       tagline: 'Riding a bike safely — helmets, hand signals, and watching for traffic.',
+      practicePrompt: 'This week, check that your helmet fits before your next bike ride.',
       story: {
         levels: [
           {
@@ -5441,6 +5463,7 @@ const CONTENT = {
     'peer-pressure-safety': {
       title: 'Handling Peer Pressure',
       tagline: 'Finding the courage to make your own safe choices, even when others push back.',
+      practicePrompt: 'This week, practice a way to say no to a friend, like “no thanks, I don’t want to.”',
       story: {
         levels: [
           {
@@ -5672,6 +5695,7 @@ const CONTENT = {
     'stranger-safety': {
       title: 'Alguien que no conozco',
       tagline: 'Qué hacer cuando un desconocido te habla o te ofrece algo.',
+      practicePrompt: 'Esta semana, practica con un adulto: señala un lugar seguro adonde ir si alguien que no conoces te habla.',
       story: {
         levels: [
           {
@@ -6106,6 +6130,7 @@ const CONTENT = {
     'street-safety': {
       title: 'Cruzar la calle de forma segura',
       tagline: 'Pasos simples para cruzar en un cruce peatonal, siempre.',
+      practicePrompt: 'Esta semana, practica cruzar una calle real con un adulto — deténte, mira a la izquierda, a la derecha, y a la izquierda otra vez.',
       story: {
         levels: [
           {
@@ -6340,6 +6365,7 @@ const CONTENT = {
     'lost-safety': {
       title: 'Si me separo de mi adulto',
       tagline: 'Qué hacer si no encuentras al adulto con quien llegaste.',
+      practicePrompt: 'Esta semana, elige un punto de encuentro con tu adulto para la próxima vez que vayan a un lugar nuevo, en caso de que te separes.',
       story: {
         levels: [
           {
@@ -6575,6 +6601,7 @@ const CONTENT = {
     'emergency-safety': {
       title: 'Pedir ayuda en una emergencia',
       tagline: 'Qué hacer y a quién llamar cuando pasa algo serio.',
+      practicePrompt: 'Esta semana, practica decir tu dirección en voz alta, en caso de que alguna vez necesites decírsela a un operador del 911.',
       story: {
         levels: [
           {
@@ -6810,6 +6837,7 @@ const CONTENT = {
     'fire-safety': {
       title: 'Seguridad contra incendios',
       tagline: 'Qué hacer si hay un incendio — en casa o en la escuela.',
+      practicePrompt: 'Esta semana, repasa tu plan de escape de incendios en casa con un adulto, y encuentra dos salidas de tu habitación.',
       story: {
         levels: [
           {
@@ -7054,6 +7082,7 @@ const CONTENT = {
     'earthquake-safety': {
       title: 'Seguridad en terremotos',
       tagline: 'Qué hacer si la tierra empieza a temblar.',
+      practicePrompt: 'Esta semana, encuentra el lugar más seguro para agacharte, cubrirte y sujetarte en cada cuarto de tu casa.',
       story: {
         levels: [
           {
@@ -7288,6 +7317,7 @@ const CONTENT = {
     'rainyweather-safety': {
       title: 'Cómo mantenerse seguro en mal tiempo',
       tagline: 'Qué hacer durante lluvia, truenos y tormentas.',
+      practicePrompt: 'Esta semana, habla con un adulto sobre qué hacer si escuchas truenos mientras estás afuera.',
       story: {
         levels: [
           {
@@ -7522,6 +7552,7 @@ const CONTENT = {
     'selfadvocacy-safety': {
       title: 'Hablar por mí mismo',
       tagline: 'Está bien decir cuando algo se siente mal o cuando necesitas ayuda.',
+      practicePrompt: 'Esta semana, practica decir “necesito ayuda” o “eso no se siente bien” en voz alta con un adulto.',
       story: {
         levels: [
           {
@@ -7781,6 +7812,7 @@ const CONTENT = {
     'body-boundaries-safety': {
       title: 'Mi cuerpo me pertenece',
       tagline: 'Entender los toques seguros y no seguros, y los límites corporales.',
+      practicePrompt: 'Esta semana, practica decir “No, gracias” a un abrazo o toque que no quieres, incluso de alguien que conoces.',
       story: {
         levels: [
           {
@@ -8020,6 +8052,7 @@ const CONTENT = {
     'secrets-safety': {
       title: 'Secretos seguros y no seguros',
       tagline: 'Aprender la diferencia entre secretos divertidos y secretos que hay que contar.',
+      practicePrompt: 'Esta semana, preguntále a un adulto de confianza: ¿qué secreto debería contarte siempre?',
       story: {
         levels: [
           {
@@ -8251,6 +8284,7 @@ const CONTENT = {
     'reporting-safety': {
       title: 'Acusar vs. Contar',
       tagline: 'Saber cuándo pedir ayuda a un adulto y cuándo manejar algo pequeño tú mismo.',
+      practicePrompt: 'Esta semana, habla con un adulto sobre la diferencia entre acusar y avisar que algo no es seguro.',
       story: {
         levels: [
           {
@@ -8488,6 +8522,7 @@ const CONTENT = {
     'awareness-safety': {
       title: 'Prestar atención a mi alrededor',
       tagline: 'Notar lo que pasa a tu alrededor para mantenerte seguro.',
+      practicePrompt: 'Esta semana, practica notar tres cosas a tu alrededor la próxima vez que estés en un lugar público.',
       story: {
         levels: [
           {
@@ -8716,6 +8751,7 @@ const CONTENT = {
     'plan-safety': {
       title: 'Hacer un P.L.A.N. de seguridad',
       tagline: 'Permiso, Lugar, Actividad, y Nombres/Números antes de ir a algún lugar.',
+      practicePrompt: 'Esta semana, completa tu P.L.A.N. de seguridad con un adulto antes de ir a un lugar nuevo.',
       story: {
         levels: [
           {
@@ -8946,6 +8982,7 @@ const CONTENT = {
     'privacy-safety': {
       title: 'Privacidad',
       tagline: 'Entender la privacidad personal — tu cuerpo, tu espacio, tu información.',
+      practicePrompt: 'Esta semana, habla con un adulto sobre qué partes de tu vida son privadas y con quién las compartes.',
       story: {
         levels: [
           {
@@ -9176,6 +9213,7 @@ const CONTENT = {
     'bullying-safety': {
       title: 'Enfrentar el acoso escolar',
       tagline: 'Reconocer el acoso escolar y saber cómo responder.',
+      practicePrompt: 'Esta semana, practica contarle a un adulto lo que pasó, usando palabras claras y tranquilas.',
       story: {
         levels: [
           {
@@ -9408,6 +9446,7 @@ const CONTENT = {
     'online-safety': {
       title: 'Estar seguro en línea',
       tagline: 'Hábitos inteligentes para usar internet, apps, y videojuegos.',
+      practicePrompt: 'Esta semana, revisa la configuración de privacidad con un adulto en una app o juego que usas.',
       story: {
         levels: [
           {
@@ -9638,6 +9677,7 @@ const CONTENT = {
     'cyberbullying-safety': {
       title: 'Ciberacoso',
       tagline: 'Reconocer la crueldad en línea y saber cómo responder.',
+      practicePrompt: 'Esta semana, practica mostrarle a un adulto una captura de pantalla de algo cruel, en lugar de responder.',
       story: {
         levels: [
           {
@@ -9885,6 +9925,7 @@ const CONTENT = {
     'citizenship-safety': {
       title: 'Ser un buen testigo',
       tagline: 'Ayudar en lugar de mirar cuando algo no está bien.',
+      practicePrompt: 'Esta semana, nota una vez en que podrías ayudar a alguien en lugar de solo observar, y cuéntaselo a un adulto.',
       story: {
         levels: [
           {
@@ -10115,6 +10156,7 @@ const CONTENT = {
     'rights-safety': {
       title: 'Conocer mis derechos',
       tagline: 'Todo niño tiene el derecho de estar seguro, ser respetado, y ser escuchado.',
+      practicePrompt: 'Esta semana, habla con un adulto sobre uno de tus derechos y qué significa para ti.',
       story: {
         levels: [
           {
@@ -10345,6 +10387,7 @@ const CONTENT = {
     'water-safety': {
       title: 'Seguridad en el agua',
       tagline: 'Mantenerse seguro en piscinas, lagos, y la playa.',
+      practicePrompt: 'Esta semana, preguntále a un adulto dónde está el salvavidas o el área segura para nadar antes de acercarte al agua.',
       story: {
         levels: [
           {
@@ -10574,6 +10617,7 @@ const CONTENT = {
     'home-safety': {
       title: 'Estar seguro en casa',
       tagline: 'Reglas simples para estar seguro cuando estás en casa.',
+      practicePrompt: 'Esta semana, recorre tu casa con un adulto y encuentra algo que puedan hacer más seguro.',
       story: {
         levels: [
           {
@@ -10803,6 +10847,7 @@ const CONTENT = {
     'bike-safety': {
       title: 'Seguridad en bicicleta',
       tagline: 'Andar en bicicleta de forma segura — cascos, señales de mano, y vigilar el tráfico.',
+      practicePrompt: 'Esta semana, revisa que tu casco te quede bien antes de tu próximo paseo en bicicleta.',
       story: {
         levels: [
           {
@@ -11058,6 +11103,7 @@ const CONTENT = {
     'peer-pressure-safety': {
       title: 'Manejar la presión de grupo',
       tagline: 'Encontrar el valor para tomar tus propias decisiones seguras, aunque otros insistan.',
+      practicePrompt: 'Esta semana, practica una forma de decir que no a un amigo, como “no gracias, no quiero.”',
       story: {
         levels: [
           {

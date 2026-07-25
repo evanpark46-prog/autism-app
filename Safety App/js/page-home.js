@@ -6,39 +6,42 @@
 /* Home page: topic grid, grouped into categories with progress badges   */
 /* ---------------------------------------------------------------------- */
 
-// Groups the 23 topics into labeled sections instead of one flat grid --
-// same content, less scanning. Order here is display order on the page.
-// Each topic's `theme` (js/data.js) is already assigned per category, so
-// every card in a section shares one accent color naturally -- no override
-// needed here, just a matching accent for the section heading/divider.
-const TOPIC_CATEGORIES = [
-  { key: 'out_about', color: 'green', topics: ['stranger-safety', 'street-safety', 'lost-safety', 'bike-safety', 'awareness-safety'] },
-  { key: 'emergencies', color: 'red', topics: ['emergency-safety', 'fire-safety', 'earthquake-safety', 'rainyweather-safety', 'water-safety', 'home-safety', 'plan-safety'] },
-  { key: 'body', color: 'purple', topics: ['body-boundaries-safety', 'secrets-safety', 'reporting-safety', 'privacy-safety'] },
-  { key: 'online', color: 'blue', topics: ['online-safety', 'cyberbullying-safety', 'citizenship-safety'] },
-  { key: 'speaking_up', color: 'amber', topics: ['selfadvocacy-safety', 'rights-safety', 'bullying-safety', 'peer-pressure-safety'] },
-];
+// TOPIC_CATEGORIES / CATEGORY_ACCENT_VAR live in js/categories.js, shared
+// with the badge collection page.
 
-const CATEGORY_ACCENT_VAR = {
-  blue: 'var(--blue-dark)', green: 'var(--green)', purple: 'var(--purple)',
-  red: 'var(--red)', amber: 'var(--amber)',
-};
-
-function topicCardHtml(meta, lang, completedIds){
+function topicCardHtml(meta, lang, completedIds, opts){
   const content = getTopicSummary(meta.id, lang);
   const done = completedIds.has(meta.id);
+  const pinned = isFavorite(meta.id);
+  const reveal = (opts && opts.noReveal) ? '' : ' reveal-on-scroll';
   return `
-    <a class="topic-card reveal-on-scroll" data-theme="${meta.theme}" href="topic.html?id=${encodeURIComponent(meta.id)}">
-      ${done ? `<span class="topic-card__done" title="${t('topic_card_done_label')}" aria-label="${t('topic_card_done_label')}">✓</span>` : ''}
-      <div class="topic-card__icon"><img src="${meta.image}" alt="" loading="lazy" decoding="async" width="64" height="64"></div>
-      <h3>${escapeHtml(content.title)}</h3>
-      <p>${escapeHtml(content.tagline)}</p>
-      <div class="topic-card__tags">
-        <span class="tag">${t('mode_story')}</span>
-        <span class="tag">${t('mode_flashcards')}</span>
-        <span class="tag">${t('mode_video')}</span>
-      </div>
-    </a>`;
+    <div class="topic-card-wrap">
+      <button type="button" class="topic-card__pin ${pinned ? 'is-pinned' : ''}" data-pin-topic="${meta.id}"
+        aria-pressed="${pinned}" aria-label="${t(pinned ? 'topic_card_unpin_label' : 'topic_card_pin_label')}"
+        title="${t(pinned ? 'topic_card_unpin_label' : 'topic_card_pin_label')}">${pinned ? '★' : '☆'}</button>
+      <a class="topic-card${reveal}" data-theme="${meta.theme}" href="topic.html?id=${encodeURIComponent(meta.id)}">
+        ${done ? `<span class="topic-card__done" title="${t('topic_card_done_label')}" aria-label="${t('topic_card_done_label')}">✓</span>` : ''}
+        <div class="topic-card__icon"><img src="${meta.image}" alt="" loading="lazy" decoding="async" width="64" height="64"></div>
+        <h3>${escapeHtml(content.title)}</h3>
+        <p>${escapeHtml(content.tagline)}</p>
+        <div class="topic-card__tags">
+          <span class="tag">${t('mode_story')}</span>
+          <span class="tag">${t('mode_flashcards')}</span>
+          <span class="tag">${t('mode_video')}</span>
+        </div>
+      </a>
+    </div>`;
+}
+
+function wirePinButtons(container){
+  container.querySelectorAll('[data-pin-topic]').forEach(btn => {
+    btn.addEventListener('click', e => {
+      e.preventDefault();
+      e.stopPropagation();
+      toggleFavorite(btn.dataset.pinTopic);
+      renderTopicGrid();
+    });
+  });
 }
 
 function renderTopicGrid(){
@@ -48,6 +51,14 @@ function renderTopicGrid(){
 
   const analytics = loadAnalytics();
   const completedIds = new Set(Object.keys(analytics.topics).filter(id => analytics.topics[id].levelCompletes > 0));
+
+  const favoriteIds = getFavorites();
+  const favoritesHtml = favoriteIds.length ? `
+    <div class="topic-group" style="--group-accent:var(--rose-dark)">
+      <h3>${t('home_favorites_heading')}</h3>
+      <div class="grid grid-topics">${favoriteIds.map(id => getTopicMeta(id)).filter(Boolean)
+        .map(meta => topicCardHtml(meta, lang, completedIds, { noReveal: true })).join('')}</div>
+    </div>` : '';
 
   const groupsHtml = TOPIC_CATEGORIES.map(group => {
     const cardsHtml = group.topics
@@ -62,9 +73,11 @@ function renderTopicGrid(){
       </div>`;
   }).join('');
 
-  const progressHtml = `<p class="home-progress">${t('home_progress_summary', { done: completedIds.size, total: TOPICS.length })}</p>`;
+  const progressHtml = `<p class="home-progress">${t('home_progress_summary', { done: completedIds.size, total: TOPICS.length })}
+    &nbsp;<a href="badges.html">${t('home_badges_link')}</a></p>`;
 
-  grid.innerHTML = progressHtml + groupsHtml;
+  grid.innerHTML = progressHtml + favoritesHtml + groupsHtml;
+  wirePinButtons(grid);
   initScrollReveal(grid);
 }
 
@@ -91,5 +104,6 @@ function initScrollReveal(container){
 function initHomePage(){
   renderTopicGrid();
   window.addEventListener('safetylib:langchange', renderTopicGrid);
+  if (typeof initEmotionCheckin === 'function') initEmotionCheckin();
 }
 

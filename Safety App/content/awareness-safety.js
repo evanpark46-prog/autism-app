@@ -5,6 +5,7 @@
   "en": {
     "title": "Paying Attention to My Surroundings",
     "tagline": "Noticing what’s happening around you to stay safe.",
+    "practicePrompt": "This week, practice noticing three things around you the next time you're out in public.",
     "story": {
       "levels": [
         {
@@ -478,6 +479,7 @@
   "es": {
     "title": "Prestar atención a mi alrededor",
     "tagline": "Notar lo que pasa a tu alrededor para mantenerte seguro.",
+    "practicePrompt": "Esta semana, practica notar tres cosas a tu alrededor la próxima vez que estés en un lugar público.",
     "story": {
       "levels": [
         {

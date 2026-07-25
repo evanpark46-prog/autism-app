@@ -111,6 +111,24 @@ function initTopicPage(){
     if (titleEl) titleEl.textContent = content.title;
     if (taglineEl) taglineEl.textContent = content.tagline;
     document.title = `${content.title} — ${t('brand')}`;
+    renderHeroPin();
+  }
+
+  function renderHeroPin(){
+    const pinBtn = document.querySelector('[data-topic-hero-pin]');
+    if (!pinBtn || typeof isFavorite !== 'function') return;
+    const pinned = isFavorite(meta.id);
+    pinBtn.hidden = false;
+    pinBtn.classList.toggle('is-pinned', pinned);
+    pinBtn.textContent = pinned ? '★' : '☆';
+    pinBtn.setAttribute('aria-pressed', String(pinned));
+    const label = t(pinned ? 'topic_card_unpin_label' : 'topic_card_pin_label');
+    pinBtn.setAttribute('aria-label', label);
+    pinBtn.title = label;
+    pinBtn.onclick = () => {
+      toggleFavorite(meta.id);
+      renderHeroPin();
+    };
   }
 
   function setActiveTab(nextMode){
@@ -208,20 +226,31 @@ function initTopicPage(){
       return;
     }
 
-    const story = currentContent().story;
+    const content = currentContent();
+    const story = content.story;
     const level = story.levels[storyState.level];
     const steps = level.steps;
     const changeLevelBtn = `<button type="button" class="btn btn-ghost" data-change-level>${t('level_change')}</button>`;
 
     if (storyState.index >= steps.length){
+      let justCompleted = false;
       if (!storyState.trackedComplete){
         storyState.trackedComplete = true;
+        justCompleted = true;
         trackEvent(meta.id, 'level_complete', { level: storyState.level });
+        if (typeof playCompletionChime === 'function') playCompletionChime();
       }
+      const practiceHtml = content.practicePrompt ? `
+        <div class="practice-card">
+          <div class="practice-card__label">${t('story_practice_heading')}</div>
+          <p>${escapeHtml(content.practicePrompt)}</p>
+        </div>` : '';
       panel.innerHTML = `
         <div class="story-stage">
           <div class="story-complete">
-            <div class="story-complete__badge">🎉</div>
+            <div class="topic-badge ${justCompleted ? 'topic-badge--stamp' : ''}" data-theme="${meta.theme}">
+              <img src="${meta.image}" alt="" width="58" height="58">
+            </div>
             <h2>${t('story_complete_title')}</h2>
             <div class="speak-row center">
               <p style="margin:0">${t('story_complete_lead')}</p>
@@ -229,6 +258,7 @@ function initTopicPage(){
             </div>
             <ul class="recap-list">${level.recap.map(r => `<li>${escapeHtml(r)}</li>`).join('')}</ul>
             ${renderReviewSectionHtml(storyState.missed)}
+            ${practiceHtml}
             <div class="hero-actions mt-lg">
               <button type="button" class="btn btn-primary" data-story-replay>${t('story_replay')}</button>
               <button type="button" class="btn btn-secondary" data-story-review-flashcards>${t('story_review_flashcards_btn')}</button>
@@ -323,6 +353,7 @@ function initTopicPage(){
         <div class="story-body">
           <div class="story-kicker">${escapeHtml(step.kicker)}</div>
           ${sequenceHtml}
+          ${typeof symbolRowHtml === 'function' ? symbolRowHtml(step.text, getLang()) : ''}
           <div class="speak-row">
             <p class="story-text">${escapeHtml(step.text)}</p>
             ${speakButtonHtml()}
@@ -1361,6 +1392,9 @@ function initTopicPage(){
   window.addEventListener('safetylib:langchange', () => {
     renderHero();
     renderActivePanel();
+  });
+  window.addEventListener('safetylib:symbolmodechange', () => {
+    if (mode === 'story') renderActivePanel();
   });
 
   const storyPanel = document.querySelector('[data-panel="story"]');

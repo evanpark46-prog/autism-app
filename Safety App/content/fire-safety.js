@@ -5,6 +5,7 @@
   "en": {
     "title": "Fire Safety",
     "tagline": "What to do if there’s a fire — at home or school.",
+    "practicePrompt": "This week, walk through your fire escape plan at home with a grown-up, and find two ways out of your bedroom.",
     "story": {
       "levels": [
         {
@@ -521,6 +522,7 @@
   "es": {
     "title": "Seguridad contra incendios",
     "tagline": "Qué hacer si hay un incendio — en casa o en la escuela.",
+    "practicePrompt": "Esta semana, repasa tu plan de escape de incendios en casa con un adulto, y encuentra dos salidas de tu habitación.",
     "story": {
       "levels": [
         {

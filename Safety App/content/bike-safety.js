@@ -5,6 +5,7 @@
   "en": {
     "title": "Bicycle Safety",
     "tagline": "Riding a bike safely — helmets, hand signals, and watching for traffic.",
+    "practicePrompt": "This week, check that your helmet fits before your next bike ride.",
     "story": {
       "levels": [
         {
@@ -553,6 +554,7 @@
   "es": {
     "title": "Seguridad en bicicleta",
     "tagline": "Andar en bicicleta de forma segura — cascos, señales de mano, y vigilar el tráfico.",
+    "practicePrompt": "Esta semana, revisa que tu casco te quede bien antes de tu próximo paseo en bicicleta.",
     "story": {
       "levels": [
         {

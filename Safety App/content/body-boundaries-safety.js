@@ -5,6 +5,7 @@
   "en": {
     "title": "My Body Belongs to Me",
     "tagline": "Understanding safe and unsafe touches, and body boundaries.",
+    "practicePrompt": "This week, practice saying “No, thank you” to a hug or touch you don't want, even from someone you know.",
     "story": {
       "levels": [
         {
@@ -507,6 +508,7 @@
   "es": {
     "title": "Mi cuerpo me pertenece",
     "tagline": "Entender los toques seguros y no seguros, y los límites corporales.",
+    "practicePrompt": "Esta semana, practica decir “No, gracias” a un abrazo o toque que no quieres, incluso de alguien que conoces.",
     "story": {
       "levels": [
         {

@@ -5,6 +5,7 @@
   "en": {
     "title": "Crossing the Street Safely",
     "tagline": "Simple steps for crossing at a crosswalk, every time.",
+    "practicePrompt": "This week, practice crossing a real street with a grown-up — stop, look left, right, and left again.",
     "story": {
       "levels": [
         {
@@ -493,6 +494,7 @@
   "es": {
     "title": "Cruzar la calle de forma segura",
     "tagline": "Pasos simples para cruzar en un cruce peatonal, siempre.",
+    "practicePrompt": "Esta semana, practica cruzar una calle real con un adulto — deténte, mira a la izquierda, a la derecha, y a la izquierda otra vez.",
     "story": {
       "levels": [
         {

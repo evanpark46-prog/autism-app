@@ -5,6 +5,7 @@
   "en": {
     "title": "Staying Safe at Home",
     "tagline": "Simple rules for being safe when you’re at home.",
+    "practicePrompt": "This week, walk through your home with a grown-up and find one thing to make safer.",
     "story": {
       "levels": [
         {
@@ -482,6 +483,7 @@
   "es": {
     "title": "Estar seguro en casa",
     "tagline": "Reglas simples para estar seguro cuando estás en casa.",
+    "practicePrompt": "Esta semana, recorre tu casa con un adulto y encuentra algo que puedan hacer más seguro.",
     "story": {
       "levels": [
         {

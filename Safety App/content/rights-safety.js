@@ -5,6 +5,7 @@
   "en": {
     "title": "Knowing My Rights",
     "tagline": "Every kid has the right to be safe, respected, and heard.",
+    "practicePrompt": "This week, talk with a grown-up about one right you have and what it means for you.",
     "story": {
       "levels": [
         {
@@ -483,6 +484,7 @@
   "es": {
     "title": "Conocer mis derechos",
     "tagline": "Todo niño tiene el derecho de estar seguro, ser respetado, y ser escuchado.",
+    "practicePrompt": "Esta semana, habla con un adulto sobre uno de tus derechos y qué significa para ti.",
     "story": {
       "levels": [
         {

@@ -5,6 +5,7 @@
   "en": {
     "title": "Privacy",
     "tagline": "Understanding personal privacy — your body, your space, your information.",
+    "practicePrompt": "This week, talk with a grown-up about which parts of your life are private and who you share them with.",
     "story": {
       "levels": [
         {
@@ -483,6 +484,7 @@
   "es": {
     "title": "Privacidad",
     "tagline": "Entender la privacidad personal — tu cuerpo, tu espacio, tu información.",
+    "practicePrompt": "Esta semana, habla con un adulto sobre qué partes de tu vida son privadas y con quién las compartes.",
     "story": {
       "levels": [
         {

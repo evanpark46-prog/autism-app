@@ -5,6 +5,7 @@
   "en": {
     "title": "Someone I Don’t Know",
     "tagline": "What to do when a stranger talks to you or offers something.",
+    "practicePrompt": "This week, practice with a grown-up: point out a safe place to go if someone you don't know talks to you.",
     "story": {
       "levels": [
         {
@@ -959,6 +960,7 @@
   "es": {
     "title": "Alguien que no conozco",
     "tagline": "Qué hacer cuando un desconocido te habla o te ofrece algo.",
+    "practicePrompt": "Esta semana, practica con un adulto: señala un lugar seguro adonde ir si alguien que no conoces te habla.",
     "story": {
       "levels": [
         {

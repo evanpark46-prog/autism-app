@@ -10,7 +10,7 @@
    returning visitors pick up the change instead of an old cached copy.
    ========================================================================== */
 
-const CACHE_NAME = 'safety-scouts-shell-v4';
+const CACHE_NAME = 'safety-scouts-shell-v5';
 
 const SHELL_FILES = [
   'index.html',
@@ -21,6 +21,7 @@ const SHELL_FILES = [
   'parents.html',
   'about.html',
   'analytics.html',
+  'badges.html',
   '404.html',
   'manifest.json',
   'css/styles.css',
@@ -30,6 +31,12 @@ const SHELL_FILES = [
   'js/headingfont.js',
   'js/speechrate.js',
   'js/analytics.js',
+  'js/favorites.js',
+  'js/emotioncheckin.js',
+  'js/calmmode.js',
+  'js/symbols.js',
+  'js/soundfx.js',
+  'js/categories.js',
   'js/topics-index.js',
   'js/story.js',
   'js/speech.js',
@@ -38,6 +45,7 @@ const SHELL_FILES = [
   'js/page-review.js',
   'js/page-worksheet.js',
   'js/page-analytics.js',
+  'js/page-badges.js',
   'js/boot.js',
   'js/pwa.js',
   'js/calmspace.js',

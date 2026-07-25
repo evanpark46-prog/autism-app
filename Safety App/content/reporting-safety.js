@@ -5,6 +5,7 @@
   "en": {
     "title": "Tattling vs. Telling",
     "tagline": "Knowing when to get a grown-up’s help versus handling something small yourself.",
+    "practicePrompt": "This week, talk with a grown-up about the difference between tattling and telling someone is unsafe.",
     "story": {
       "levels": [
         {
@@ -502,6 +503,7 @@
   "es": {
     "title": "Acusar vs. Contar",
     "tagline": "Saber cuándo pedir ayuda a un adulto y cuándo manejar algo pequeño tú mismo.",
+    "practicePrompt": "Esta semana, habla con un adulto sobre la diferencia entre acusar y avisar que algo no es seguro.",
     "story": {
       "levels": [
         {

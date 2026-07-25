@@ -5,6 +5,7 @@
   "en": {
     "title": "Being a Good Bystander",
     "tagline": "Helping instead of watching when something isn’t right.",
+    "practicePrompt": "This week, notice one time you could help someone instead of just watching, and tell a grown-up about it.",
     "story": {
       "levels": [
         {
@@ -483,6 +484,7 @@
   "es": {
     "title": "Ser un buen testigo",
     "tagline": "Ayudar en lugar de mirar cuando algo no está bien.",
+    "practicePrompt": "Esta semana, nota una vez en que podrías ayudar a alguien en lugar de solo observar, y cuéntaselo a un adulto.",
     "story": {
       "levels": [
         {

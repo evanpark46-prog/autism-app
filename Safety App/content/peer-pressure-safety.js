@@ -5,6 +5,7 @@
   "en": {
     "title": "Handling Peer Pressure",
     "tagline": "Finding the courage to make your own safe choices, even when others push back.",
+    "practicePrompt": "This week, practice a way to say no to a friend, like “no thanks, I don’t want to.”",
     "story": {
       "levels": [
         {
@@ -483,6 +484,7 @@
   "es": {
     "title": "Manejar la presión de grupo",
     "tagline": "Encontrar el valor para tomar tus propias decisiones seguras, aunque otros insistan.",
+    "practicePrompt": "Esta semana, practica una forma de decir que no a un amigo, como “no gracias, no quiero.”",
     "story": {
       "levels": [
         {

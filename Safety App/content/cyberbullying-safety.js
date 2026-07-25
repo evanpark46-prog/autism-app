@@ -5,6 +5,7 @@
   "en": {
     "title": "Cyberbullying",
     "tagline": "Recognizing online meanness and knowing how to respond.",
+    "practicePrompt": "This week, practice showing a grown-up a screenshot of something mean, instead of responding to it.",
     "story": {
       "levels": [
         {
@@ -530,6 +531,7 @@
   "es": {
     "title": "Ciberacoso",
     "tagline": "Reconocer la crueldad en línea y saber cómo responder.",
+    "practicePrompt": "Esta semana, practica mostrarle a un adulto una captura de pantalla de algo cruel, en lugar de responder.",
     "story": {
       "levels": [
         {

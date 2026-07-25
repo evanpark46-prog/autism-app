@@ -5,6 +5,7 @@
   "en": {
     "title": "Speaking Up for Myself",
     "tagline": "It’s okay to say when something feels wrong or when you need help.",
+    "practicePrompt": "This week, practice saying “I need help” or “that doesn’t feel right” out loud with a grown-up.",
     "story": {
       "levels": [
         {
@@ -563,6 +564,7 @@
   "es": {
     "title": "Hablar por mí mismo",
     "tagline": "Está bien decir cuando algo se siente mal o cuando necesitas ayuda.",
+    "practicePrompt": "Esta semana, practica decir “necesito ayuda” o “eso no se siente bien” en voz alta con un adulto.",
     "story": {
       "levels": [
         {
