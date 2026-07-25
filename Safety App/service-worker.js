@@ -10,7 +10,7 @@
    returning visitors pick up the change instead of an old cached copy.
    ========================================================================== */
 
-const CACHE_NAME = 'safety-scouts-shell-v3';
+const CACHE_NAME = 'safety-scouts-shell-v4';
 
 const SHELL_FILES = [
   'index.html',
@@ -40,6 +40,7 @@ const SHELL_FILES = [
   'js/page-analytics.js',
   'js/boot.js',
   'js/pwa.js',
+  'js/calmspace.js',
   'img/icon-192.png',
   'img/icon-512.png',
   'img/icon-maskable-512.png',

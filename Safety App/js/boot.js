@@ -67,6 +67,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initTextSizeSwitcher();
   initHeadingFontSwitcher();
   initDisplayPanel();
+  if (typeof initCalmSpace === 'function') initCalmSpace();
 
   const page = document.body.dataset.page;
   if (page === 'home') initHomePage();

@@ -266,10 +266,14 @@ function initTopicPage(){
     }
 
     const step = steps[storyState.index];
-    const dots = steps.map((_, i) => {
-      const cls = i < storyState.index ? 'done' : (i === storyState.index ? 'current' : '');
-      return `<span class="story-progress__dot ${cls}"></span>`;
-    }).join('');
+    // Visible "Step X of Y" alongside the dot row -- so a learner always
+    // knows how much is left, not just relative progress from the dots.
+    const dots = `
+      <span class="story-progress__label">${t('story_of', { current: storyState.index + 1, total: steps.length })}</span>
+      <span class="story-progress__dots">${steps.map((_, i) => {
+        const cls = i < storyState.index ? 'done' : (i === storyState.index ? 'current' : '');
+        return `<span class="story-progress__dot ${cls}"></span>`;
+      }).join('')}</span>`;
 
     if (step.type === 'dialogue'){
       renderDialogueStep(panel, step, steps, dots, changeLevelBtn);
@@ -326,7 +330,6 @@ function initTopicPage(){
           ${choicesHtml}
           ${feedbackHtml}
           <div class="story-footer">
-            <span class="visually-hidden">${t('story_of', { current: storyState.index + 1, total: steps.length })}</span>
             ${footerHtml}
           </div>
         </div>
@@ -417,7 +420,6 @@ function initTopicPage(){
               <div class="matching-col">${rightHtml}</div>
             </div>
             <div class="story-footer">
-              <span class="visually-hidden">${t('story_of', { current: storyState.index + 1, total: steps.length })}</span>
               ${footerHtml}
             </div>
           </div>
@@ -637,7 +639,6 @@ function initTopicPage(){
         <div class="story-body">
           <div class="story-choices" data-dialogue-choices hidden></div>
           <div class="story-footer">
-            <span class="visually-hidden">${t('story_of', { current: storyState.index + 1, total: steps.length })}</span>
             <div data-dialogue-footer></div>
           </div>
         </div>

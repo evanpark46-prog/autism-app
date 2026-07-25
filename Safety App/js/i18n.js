@@ -56,6 +56,14 @@ const UI_STRINGS = {
     notfound_lead: 'The link you followed doesn’t match a page here — it may be old or mistyped.',
     notfound_home_btn: '← Back to Safety Scouts',
 
+    calmspace_btn: 'I need a break',
+    calmspace_title: 'Let’s take a calm moment',
+    calmspace_in: 'Breathe in…',
+    calmspace_out: 'Breathe out…',
+    calmspace_static: 'Take slow, calm breaths.',
+    calmspace_hint: 'Take your time. There’s nothing to answer here.',
+    calmspace_done_btn: 'I’m ready to continue',
+
     home_review_cta_title: 'Ready to test what you remember?',
     home_review_cta_lead: 'Try the cumulative review — one question from every topic, shuffled and mixed together.',
     home_review_cta_btn: 'Take the Cumulative Review →',
@@ -294,6 +302,14 @@ const UI_STRINGS = {
     notfound_title: 'Esta página se perdió',
     notfound_lead: 'El enlace que seguiste no coincide con ninguna página aquí — puede estar desactualizado o mal escrito.',
     notfound_home_btn: '← Volver a Exploradores de Seguridad',
+
+    calmspace_btn: 'Necesito un descanso',
+    calmspace_title: 'Tomemos un momento de calma',
+    calmspace_in: 'Inhala…',
+    calmspace_out: 'Exhala…',
+    calmspace_static: 'Respira lento y con calma.',
+    calmspace_hint: 'Tómate tu tiempo. No hay nada que responder aquí.',
+    calmspace_done_btn: 'Estoy listo para continuar',
 
     home_review_cta_title: '¿Listo para poner a prueba lo que recuerdas?',
     home_review_cta_lead: 'Prueba el repaso acumulativo — una pregunta de cada tema, mezcladas entre sí.',
