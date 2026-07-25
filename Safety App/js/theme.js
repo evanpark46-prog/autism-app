@@ -14,19 +14,32 @@ const SKINS = [
   { code: 'berry',  labelKey: 'skin_berry' },
 ];
 
+// Matches each skin's --rose value, so the mobile browser chrome / installed
+// PWA title bar tint follows the chosen skin instead of staying rose.
+const SKIN_THEME_COLORS = {
+  rose: '#d6789f', ocean: '#2dbfc7', sunset: '#f2994a', meadow: '#3fae6a', berry: '#9b5fe0',
+};
+
 function getSkin(){
   const saved = localStorage.getItem('safetylib_skin');
   return SKINS.some(s => s.code === saved) ? saved : 'rose';
+}
+
+function applyThemeColorMeta(code){
+  const meta = document.querySelector('meta[name="theme-color"]');
+  if (meta) meta.setAttribute('content', SKIN_THEME_COLORS[code] || SKIN_THEME_COLORS.rose);
 }
 
 function setSkin(code){
   if (!SKINS.some(s => s.code === code)) return;
   localStorage.setItem('safetylib_skin', code);
   document.documentElement.setAttribute('data-skin', code);
+  applyThemeColorMeta(code);
 }
 
 function initSkinSwitcher(){
   const wrap = document.querySelector('[data-skin-switch]');
+  applyThemeColorMeta(getSkin());
   if (!wrap) return;
   function render(){
     const current = getSkin();

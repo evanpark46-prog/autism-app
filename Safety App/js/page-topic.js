@@ -1188,23 +1188,42 @@ function initTopicPage(){
     });
   }
 
+  // Shows a static thumbnail + play button instead of embedding the
+  // YouTube player right away -- opening a topic (video is the default
+  // tab) shouldn't eagerly load YouTube's iframe API and player for a
+  // video the learner may not even watch. The real embed (on the
+  // cookieless youtube-nocookie.com host) only loads once tapped.
   function renderVideoPlayerMode(panel, video){
     const chips = video.checkpoints.map(cp => `<span class="checkpoint-chip">${t('video_checkpoint_label', { time: formatTime(cp.time) })}</span>`).join('');
+    const thumbUrl = `https://img.youtube.com/vi/${encodeURIComponent(video.youtubeId)}/hqdefault.jpg`;
     panel.innerHTML = `
       <div class="video-frame-wrap">
-        <div data-yt-player></div>
-        <div class="checkpoint-overlay" data-checkpoint-overlay>
-          <div class="speak-row" style="color:#fff">
-            <h3 data-checkpoint-question style="margin:0"></h3>
-            ${speakButtonHtml()}
-          </div>
-          <div class="story-choices" data-checkpoint-choices></div>
-          <button type="button" class="btn btn-primary" data-video-resume hidden>${t('video_resume')}</button>
-        </div>
+        <button type="button" class="video-play-facade" data-video-play aria-label="${t('video_play_label')}">
+          <img src="${thumbUrl}" alt="" loading="lazy" decoding="async">
+          <span class="video-play-facade__icon" aria-hidden="true">▶</span>
+        </button>
       </div>
       <p class="video-note" style="font-weight:800;">${t('video_checkpoints_heading')}</p>
       <div class="checkpoint-list">${chips}</div>
       <p><a class="btn btn-secondary mt-lg" href="worksheet.html?id=${encodeURIComponent(meta.id)}">${t('video_worksheet_btn')}</a></p>`;
+
+    const playBtn = panel.querySelector('[data-video-play]');
+    if (playBtn) playBtn.addEventListener('click', () => startVideoPlayer(panel, video), { once: true });
+  }
+
+  function startVideoPlayer(panel, video){
+    const frameWrap = panel.querySelector('.video-frame-wrap');
+    if (!frameWrap) return;
+    frameWrap.innerHTML = `
+      <div data-yt-player></div>
+      <div class="checkpoint-overlay" data-checkpoint-overlay>
+        <div class="speak-row" style="color:#fff">
+          <h3 data-checkpoint-question style="margin:0"></h3>
+          ${speakButtonHtml()}
+        </div>
+        <div class="story-choices" data-checkpoint-choices></div>
+        <button type="button" class="btn btn-primary" data-video-resume hidden>${t('video_resume')}</button>
+      </div>`;
 
     videoState.nextCheckpoint = 0;
     videoState.awaitingAnswer = false;
@@ -1213,8 +1232,9 @@ function initTopicPage(){
       const target = panel.querySelector('[data-yt-player]');
       if (!target) return;
       videoState.player = new YT.Player(target, {
+        host: 'https://www.youtube-nocookie.com',
         videoId: video.youtubeId,
-        playerVars: { rel: 0, origin: window.location.origin },
+        playerVars: { rel: 0, origin: window.location.origin, autoplay: 1 },
         events: {
           onStateChange(e){
             if (e.data === YT.PlayerState.PLAYING){

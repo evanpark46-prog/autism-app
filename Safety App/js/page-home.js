@@ -30,7 +30,7 @@ function topicCardHtml(meta, lang, completedIds){
   return `
     <a class="topic-card reveal-on-scroll" data-theme="${meta.theme}" href="topic.html?id=${encodeURIComponent(meta.id)}">
       ${done ? `<span class="topic-card__done" title="${t('topic_card_done_label')}" aria-label="${t('topic_card_done_label')}">✓</span>` : ''}
-      <div class="topic-card__icon"><img src="${meta.image}" alt="" loading="lazy"></div>
+      <div class="topic-card__icon"><img src="${meta.image}" alt="" loading="lazy" decoding="async" width="64" height="64"></div>
       <h3>${escapeHtml(content.title)}</h3>
       <p>${escapeHtml(content.tagline)}</p>
       <div class="topic-card__tags">

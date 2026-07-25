@@ -14,7 +14,7 @@ function renderWorksheetChooser(){
     const content = getTopicSummary(meta.id, lang);
     return `
       <a class="topic-card" data-theme="${meta.theme}" href="worksheet.html?id=${encodeURIComponent(meta.id)}">
-        <div class="topic-card__icon"><img src="${meta.image}" alt="" loading="lazy"></div>
+        <div class="topic-card__icon"><img src="${meta.image}" alt="" loading="lazy" decoding="async" width="64" height="64"></div>
         <h3>${escapeHtml(content.title)}</h3>
         <p>${escapeHtml(content.tagline)}</p>
       </a>`;
