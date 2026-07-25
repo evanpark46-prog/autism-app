@@ -99,7 +99,7 @@ function initTopicPage(){
     const choices = [{ text: correctCard.back, correct: true, eliminated: false }, ...distractors];
     return shuffledOrder(choices.length).map(i => choices[i]);
   }
-  const videoState = { previewing: false, previewIndex: 0, previewAnswered: false, player: null, nextCheckpoint: 0, awaitingAnswer: false };
+  const videoState = { previewing: false, previewIndex: 0, previewAnswered: false, player: null, nextCheckpoint: 0, awaitingAnswer: false, checkpointTimer: null };
 
   function currentContent(){
     return getTopicContent(meta.id, getLang());
@@ -134,6 +134,14 @@ function initTopicPage(){
   function setActiveTab(nextMode){
     stopSpeaking();
     stopActiveTypewriter();
+    if (mode === 'video' && nextMode !== 'video'){
+      // Switching away from the Video tab shouldn't leave the video playing
+      // (audio and checkpoint-skipping alike) somewhere the learner can't see it.
+      clearCheckpointWatch();
+      if (videoState.player && typeof videoState.player.pauseVideo === 'function'){
+        videoState.player.pauseVideo();
+      }
+    }
     mode = nextMode;
     document.querySelectorAll('.mode-tab').forEach(tab => {
       const isActive = tab.dataset.mode === mode;
@@ -1304,20 +1312,39 @@ function initTopicPage(){
       </div>`;
   }
 
+  // requestAnimationFrame is throttled or fully suspended by the browser
+  // while the tab isn't in the foreground, which used to let the video
+  // keep playing unnoticed past a checkpoint until the learner switched
+  // back -- setInterval keeps running (at worst throttled to ~1/sec) even
+  // in a background tab, so a checkpoint is never missed by more than a
+  // second or so. If we land past the checkpoint's time -- whether from
+  // that background drift or from someone dragging the YouTube seek bar
+  // forward to skip it -- snap back to the checkpoint's exact time before
+  // showing it, instead of leaving the video sitting mid-sentence past it.
+  // Seeking backward is never blocked, only forward drift/skips past an
+  // unanswered checkpoint.
   function startCheckpointWatch(panel, video){
-    const tick = () => {
+    clearCheckpointWatch();
+    videoState.checkpointTimer = setInterval(() => {
       if (!videoState.player || videoState.awaitingAnswer) return;
-      const t = videoState.player.getCurrentTime ? videoState.player.getCurrentTime() : 0;
+      if (typeof videoState.player.getCurrentTime !== 'function') return;
+      const t = videoState.player.getCurrentTime();
       const cp = video.checkpoints[videoState.nextCheckpoint];
-      if (cp && t >= cp.time){
-        videoState.awaitingAnswer = true;
-        videoState.player.pauseVideo();
-        showCheckpointOverlay(panel, cp);
-        return;
+      if (!cp || t < cp.time) return;
+      videoState.awaitingAnswer = true;
+      videoState.player.pauseVideo();
+      if (t > cp.time + 1 && typeof videoState.player.seekTo === 'function'){
+        videoState.player.seekTo(cp.time, true);
       }
-      requestAnimationFrame(tick);
-    };
-    requestAnimationFrame(tick);
+      showCheckpointOverlay(panel, cp);
+    }, 300);
+  }
+
+  function clearCheckpointWatch(){
+    if (videoState.checkpointTimer){
+      clearInterval(videoState.checkpointTimer);
+      videoState.checkpointTimer = null;
+    }
   }
 
   function showCheckpointOverlay(panel, cp){
