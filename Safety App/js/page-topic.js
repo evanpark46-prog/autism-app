@@ -261,10 +261,10 @@ function initTopicPage(){
             </div>
             <h2>${t('story_complete_title')}</h2>
             <div class="speak-row center">
-              <p style="margin:0">${t('story_complete_lead')}</p>
+              <p style="margin:0" data-recap-lead>${escapeHtml(t('story_complete_lead'))}</p>
               ${speakButtonHtml()}
             </div>
-            <ul class="recap-list">${level.recap.map(r => `<li>${escapeHtml(r)}</li>`).join('')}</ul>
+            <ul class="recap-list">${level.recap.map((r, i) => `<li data-recap-item="${i}">${typeof wrapGlossaryHtml === 'function' ? wrapGlossaryHtml(r, getLang()) : escapeHtml(r)}</li>`).join('')}</ul>
             ${renderReviewSectionHtml(storyState.missed)}
             ${practiceHtml}
             <div class="hero-actions mt-lg">
@@ -299,7 +299,9 @@ function initTopicPage(){
         card.addEventListener('click', toggle);
         card.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' '){ e.preventDefault(); toggle(); } });
       });
-      wireSpeakButton(panel, `${t('story_complete_lead')} ${level.recap.join('. ')}`);
+      const recapSegments = [{ el: panel.querySelector('[data-recap-lead]'), text: t('story_complete_lead') }]
+        .concat(level.recap.map((r, i) => ({ el: panel.querySelector(`[data-recap-item="${i}"]`), text: r })));
+      wireSpeakButtonHighlighted(panel, recapSegments, null, '. ');
       return;
     }
 
@@ -472,7 +474,7 @@ function initTopicPage(){
         storyState.level = null;
         renderStory();
       });
-      wireSpeakButton(panel, step.text);
+      wireSpeakButtonHighlighted(panel, [{ el: panel.querySelector('.story-text'), text: step.text }]);
 
       panel.querySelectorAll('[data-left]').forEach(btn => {
         btn.addEventListener('click', () => {
@@ -847,7 +849,8 @@ function initTopicPage(){
         <button type="button" class="btn btn-ghost" data-flash-restart>${t('flash_restart')}</button>
       </div>`;
 
-    wireSpeakButton(panel, flashState.flipped ? card.back : card.front);
+    const flashTextEl = panel.querySelector(flashState.flipped ? '.flashcard__face--back .flashcard__text' : '.flashcard__face--front .flashcard__text');
+    wireSpeakButtonHighlighted(panel, [{ el: flashTextEl, text: flashState.flipped ? card.back : card.front }]);
     wireFlashChrome(panel);
 
     const flip = () => { flashState.flipped = !flashState.flipped; renderFlashcards(); };
@@ -975,7 +978,7 @@ function initTopicPage(){
         <div class="speak-quiz-card">
           <div class="flashcard__label">${t('speak_prompt_label')}</div>
           <div class="flashcard__text">${typeof wrapGlossaryHtml === 'function' ? wrapGlossaryHtml(card.front, getLang()) : escapeHtml(card.front)}</div>
-          <div class="guided-target-phrase">${escapeHtml(card.back)}</div>
+          <div class="guided-target-phrase" data-guided-target>${typeof wrapGlossaryHtml === 'function' ? wrapGlossaryHtml(card.back, getLang()) : escapeHtml(card.back)}</div>
           ${speakButtonHtml()}
         </div>
         <div class="rep-dots">${dots}</div>
@@ -987,7 +990,7 @@ function initTopicPage(){
         </div>
       </div>`;
 
-    wireSpeakButton(panel, card.back);
+    wireSpeakButtonHighlighted(panel, [{ el: panel.querySelector('[data-guided-target]'), text: card.back }]);
     wireFlashChrome(panel);
 
     const advanceRep = () => {
@@ -1075,7 +1078,7 @@ function initTopicPage(){
         </div>
       </div>`;
 
-    wireSpeakButton(panel, card.front);
+    wireSpeakButtonHighlighted(panel, [{ el: panel.querySelector('.speak-quiz-card .flashcard__text'), text: card.front }]);
     wireFlashChrome(panel);
 
     panel.querySelectorAll('[data-quiz-choice]').forEach(btn => {
@@ -1196,7 +1199,7 @@ function initTopicPage(){
           <div class="story-body">
             <div class="story-kicker">${t('video_checkpoint_label', { time: formatTime(cp.time) })}</div>
             <div class="speak-row">
-              <p class="story-text">${escapeHtml(cp.question)}</p>
+              <p class="story-text">${typeof wrapGlossaryHtml === 'function' ? wrapGlossaryHtml(cp.question, getLang()) : escapeHtml(cp.question)}</p>
               ${speakButtonHtml()}
             </div>
             <div class="story-choices">${choicesHtml}</div>
@@ -1205,7 +1208,9 @@ function initTopicPage(){
           </div>
         </div>`;
 
-      wireSpeakButton(panel, `${cp.question} ${cp.choices.map(c => c.text).join('. ')}`);
+      const previewSegments = [{ el: panel.querySelector('.story-text'), text: cp.question }]
+        .concat([...panel.querySelectorAll('[data-choice]')].map((btn, i) => ({ el: btn, text: cp.choices[i].text })));
+      wireSpeakButtonHighlighted(panel, previewSegments, null, '. ');
       panel.querySelectorAll('[data-choice]').forEach(btn => {
         btn.addEventListener('click', () => {
           videoState.previewAnswered = true;
@@ -1392,12 +1397,17 @@ function initTopicPage(){
     const resumeBtn = panel.querySelector('[data-video-resume]');
     const speakBtn = panel.querySelector('[data-speak-btn]');
 
-    questionEl.textContent = cp.question;
-    if (speakBtn) speakBtn.onclick = () => speak(`${cp.question} ${cp.choices.map(c => c.text).join('. ')}`);
+    questionEl.innerHTML = typeof wrapGlossaryHtml === 'function' ? wrapGlossaryHtml(cp.question, getLang()) : escapeHtml(cp.question);
     choicesEl.innerHTML = cp.choices.map((choice, i) =>
       `<button type="button" class="choice-btn" data-choice="${i}">${escapeHtml(choice.text)}</button>`).join('');
     resumeBtn.hidden = true;
     overlay.classList.add('active');
+
+    if (speakBtn){
+      const checkpointSegments = [{ el: questionEl, text: cp.question }]
+        .concat([...choicesEl.querySelectorAll('[data-choice]')].map((btn, i) => ({ el: btn, text: cp.choices[i].text })));
+      speakBtn.onclick = () => speakWithHighlight(checkpointSegments, null, '. ');
+    }
 
     choicesEl.querySelectorAll('[data-choice]').forEach(btn => {
       btn.addEventListener('click', () => {

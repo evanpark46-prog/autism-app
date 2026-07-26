@@ -72,10 +72,15 @@ function speak(text, speaker){
 }
 
 let activeHighlightSpan = null;
+let activeFallbackTimer = null;
 function clearActiveHighlight(){
   if (activeHighlightSpan){
     activeHighlightSpan.classList.remove('is-speaking-word');
     activeHighlightSpan = null;
+  }
+  if (activeFallbackTimer){
+    clearInterval(activeFallbackTimer);
+    activeFallbackTimer = null;
   }
 }
 
@@ -136,13 +141,48 @@ function speakWithHighlight(segments, speaker, joiner){
   utter.pitch = profile.pitch;
   utter.rate = profile.rate * getSpeechRateMultiplier();
 
+  // onboundary is the accurate path, but plenty of mobile browsers never
+  // fire it at all, which used to mean no highlight ever appeared there --
+  // if no real boundary shows up shortly after speech starts, fall back to
+  // advancing through the words on an estimated per-word timer instead.
+  // Not perfectly in sync, but far better than nothing. A real boundary
+  // event arriving later (some engines fire it late/sparsely rather than
+  // never) always takes back over from the estimate.
+  let usedRealBoundary = false;
+  let fallbackIndex = 0;
+
+  // Swaps which word is highlighted without touching the fallback timer --
+  // clearActiveHighlight() (module-level) also stops that timer, which
+  // would be wrong to do from inside a tick of the timer itself.
+  function highlightSpan(span){
+    if (activeHighlightSpan) activeHighlightSpan.classList.remove('is-speaking-word');
+    span.classList.add('is-speaking-word');
+    activeHighlightSpan = span;
+  }
+
+  function stopFallback(){
+    if (activeFallbackTimer){ clearInterval(activeFallbackTimer); activeFallbackTimer = null; }
+  }
+
+  function startFallback(){
+    if (usedRealBoundary || activeFallbackTimer || !wordSpans.length) return;
+    const wordsPerMinute = 165 * (utter.rate || 1);
+    const msPerWord = Math.max(120, 60000 / wordsPerMinute);
+    activeFallbackTimer = setInterval(() => {
+      if (fallbackIndex >= wordSpans.length){ stopFallback(); return; }
+      highlightSpan(wordSpans[fallbackIndex].span);
+      fallbackIndex += 1;
+    }, msPerWord);
+  }
+
+  utter.onstart = () => setTimeout(() => { if (!usedRealBoundary) startFallback(); }, 350);
   utter.onboundary = (e) => {
     if (e.name && e.name !== 'word') return;
     const match = wordSpans.find(w => e.charIndex >= w.start && e.charIndex < w.end);
     if (!match) return;
-    clearActiveHighlight();
-    match.span.classList.add('is-speaking-word');
-    activeHighlightSpan = match.span;
+    usedRealBoundary = true;
+    stopFallback();
+    highlightSpan(match.span);
   };
   utter.onend = clearActiveHighlight;
   utter.onerror = clearActiveHighlight;
