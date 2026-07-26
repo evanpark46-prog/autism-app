@@ -7,7 +7,7 @@
   <script>(function(){try{var sizes=[87.5,100,115,130,145];var idx=parseInt(localStorage.getItem('safetylib_text_size_idx'),10);if(!(idx>=0&&idx<sizes.length))idx=1;document.documentElement.style.fontSize=sizes[idx]+'%';}catch(e){}})();</script>
   <script>(function(){try{var f=localStorage.getItem('safetylib_heading_font');if(f==='cursive')document.documentElement.setAttribute('data-heading-font','cursive');}catch(e){}})();</script>
   <script>(function(){try{var c=localStorage.getItem('safetylib_calm_mode');document.documentElement.setAttribute('data-calm-mode', c==='on'?'on':'off');}catch(e){}})();</script>
-  <title>Safety Scouts</title>
+  <title>The Safety Showdown — Safety Scouts</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Comic+Neue:wght@400;700&family=Dancing+Script:wght@600;700&family=Quicksand:wght@500;600;700;800&display=swap" rel="stylesheet">
@@ -16,19 +16,10 @@
   <meta name="theme-color" content="#c8460a">
   <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
   <link rel="icon" type="image/png" href="img/icon-192.png">
-  <meta name="description" content="A calm, free library of safety lessons for autistic learners — stories, flashcards, and videos in English and Spanish.">
-  <meta property="og:title" content="Safety Scouts">
-  <meta property="og:description" content="A calm, free library of safety lessons for autistic learners — stories, flashcards, and videos in English and Spanish.">
-  <meta property="og:image" content="img/og-banner.png">
-  <meta property="og:type" content="website">
-  <meta name="twitter:card" content="summary_large_image">
-  <!-- Site visitor counter (GoatCounter -- privacy-friendly, no cookies, no
-       personal data). Sign up free at https://www.goatcounter.com, then
-       replace REPLACE_ME below with your site code (the part before
-       ".goatcounter.com" in the dashboard URL you are given). -->
-  <script data-goatcounter="https://REPLACE_ME.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+  <meta name="robots" content="noindex">
+  <meta name="description" content="Team up with every superhero you've unlocked to face the Safety Monster -- a celebration for finishing every Safety Scouts lesson.">
 </head>
-<body data-page="home">
+<body data-page="boss-battle">
   <a href="#main" class="skip-link">Skip to content</a>
   <noscript><p class="note-box" style="margin:16px 20px;">Safety Scouts needs JavaScript turned on to show its lessons. Please enable JavaScript in your browser settings and reload the page.</p></noscript>
 
@@ -39,7 +30,7 @@
         <span data-i18n="brand">Safety Scouts</span>
       </a>
       <nav class="site-nav" aria-label="Main">
-        <a href="index.html" aria-current="page" data-i18n="nav_library">Home</a>
+        <a href="index.html" data-i18n="nav_library">Home</a>
         <a href="review.html" data-i18n="nav_review">Review</a>
         <a href="games.html" data-i18n="nav_games">Games</a>
         <a href="parents.html" data-i18n="nav_parents">Parents &amp; Educators</a>
@@ -84,39 +75,12 @@
   </header>
 
   <main id="main">
-    <section class="hero">
-      <h1 data-i18n="home_title">A calm place to practice staying safe</h1>
-      <p data-i18n="home_lead">Pick a topic below.</p>
-    </section>
-
-    <div data-emotion-checkin></div>
-
-    <section>
-      <h2 class="visually-hidden" data-i18n="home_topics_heading">Choose a topic</h2>
-      <div class="grid grid-topics" data-topic-grid></div>
-    </section>
-
-    <section class="card home-review-cta center mt-lg">
-      <h2 data-i18n="home_review_cta_title">Ready to test what you remember?</h2>
-      <p data-i18n="home_review_cta_lead">Try the cumulative review — one question from every topic, shuffled and mixed together.</p>
-      <a href="review.html" class="btn btn-primary btn-lg" data-i18n="home_review_cta_btn">Take the Cumulative Review →</a>
-    </section>
-
-    <section class="card home-review-cta center mt-lg">
-      <h2 data-i18n="home_games_cta_title">Want to practice with a game instead?</h2>
-      <p data-i18n="home_games_cta_lead">A curated list of free games from trusted organizations that reinforce safety skills in a playful way.</p>
-      <a href="games.html" class="btn btn-primary btn-lg" data-i18n="home_games_cta_btn">Browse the Safety Games →</a>
-    </section>
-
-    <p class="center mt-lg">
-      <span data-i18n="home_for_families">Looking for the parent &amp; educator resources?</span>
-      &nbsp;<a href="parents.html" data-i18n="home_for_families_link">Go to Parents &amp; Educators →</a>
-    </p>
+    <div data-battle-root></div>
+    <p class="mt-lg"><a href="badges.html" data-i18n="story_back_to_topics">← Back to Safety Scouts</a></p>
   </main>
 
   <footer class="site-footer">
     <p data-i18n="footer_note">Safety Scouts — a free resource.</p>
-    <p>Original illustrations created for Safety Scouts.</p>
   </footer>
 
   <script src="js/i18n.js"></script>
@@ -127,13 +91,11 @@
   <script src="js/headingfont.js"></script>
   <script src="js/speechrate.js"></script>
   <script src="js/analytics.js"></script>
-  <script src="js/favorites.js"></script>
-  <script src="js/emotioncheckin.js"></script>
   <script src="js/pwa.js"></script>
   <script src="js/calmspace.js"></script>
   <script src="js/topics-index.js"></script>
-  <script src="js/categories.js"></script>
-  <script src="js/page-home.js"></script>
+  <script src="js/heroes.js"></script>
+  <script src="js/page-boss-battle.js"></script>
   <script src="js/boot.js"></script>
 </body>
 </html>

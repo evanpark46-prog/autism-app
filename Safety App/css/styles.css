@@ -92,6 +92,23 @@ body{
 @media (prefers-reduced-motion: reduce){
   body{animation:none;}
 }
+
+/* A slow, CSS-only drifting-sky background for the boss-battle "arena" feel
+   -- deliberately not a WebGL/Three.js library (e.g. Vanta), since a
+   constantly-running animated background is exactly the kind of motion this
+   app's Calm Mode and reduced-motion support exist to let people turn off,
+   and a heavy always-on render loop isn't worth that tradeoff for one page. */
+body[data-page="boss-battle"]{
+  background-size:200% 200%;
+  animation:page-fade-in .35s ease, sky-drift 24s ease-in-out infinite;
+}
+@keyframes sky-drift{
+  0%, 100%{background-position:0% 0%, 100% 0%, 50% 100%, 0 0;}
+  50%{background-position:12% 6%, 88% 12%, 44% 94%, 0 0;}
+}
+@media (prefers-reduced-motion: reduce){
+  body[data-page="boss-battle"]{animation:page-fade-in .35s ease;}
+}
 h1,h2,h3,h4{
   font-family:var(--font-display);
   font-weight:700;
@@ -163,6 +180,82 @@ a:focus-visible, button:focus-visible, select:focus-visible, input:focus-visible
 @media (prefers-reduced-motion: reduce){
   .brand__badge svg{animation:none;}
 }
+
+/* ---------- Superhero buddies (one per topic, js/heroes.js) + comic accents
+   ---------- A distinct "comic panel" look (thick black borders, hard offset
+   shadows, slight rotation -- Neo-Brutalism/pop-art keywords) used just for
+   hero cards, the superpower-unlock reveal, and the final boss battle, so it
+   reads as an inset comic panel rather than re-skinning the whole calm app. */
+.font-comic{font-family:'Comic Neue', var(--font-body); font-weight:700;}
+
+.hero-badge{
+  display:inline-grid; place-items:center; border-radius:50%;
+  border:3px solid var(--ink); box-shadow:3px 3px 0 var(--ink);
+  flex-shrink:0;
+}
+.hero-badge[data-theme="blue"]{background:var(--blue);}
+.hero-badge[data-theme="green"]{background:var(--green);}
+.hero-badge[data-theme="purple"]{background:var(--purple);}
+.hero-badge[data-theme="red"]{background:var(--red);}
+.hero-badge[data-theme="amber"]{background:var(--amber);}
+
+.comic-panel{
+  background:var(--panel); border:3px solid var(--ink); border-radius:var(--radius-md);
+  box-shadow:6px 6px 0 var(--ink); position:relative;
+}
+.comic-panel--tilt{transform:rotate(-1.2deg);}
+
+.speech-bubble{
+  background:#fff; border:3px solid var(--ink); border-radius:16px;
+  padding:10px 16px; position:relative; box-shadow:3px 3px 0 var(--ink);
+}
+.speech-bubble::after{
+  content:''; position:absolute; left:22px; bottom:-11px;
+  width:0; height:0; border:9px solid transparent; border-top-color:#fff;
+}
+.speech-bubble::before{
+  content:''; position:absolute; left:19px; bottom:-15.5px;
+  width:0; height:0; border:11px solid transparent; border-top-color:var(--ink);
+}
+
+/* Starburst behind short "unlocked!" style callouts -- two overlapping
+   squares rotated into an 8-point star, pure CSS, no image asset. */
+.comic-burst{
+  position:relative; display:inline-grid; place-items:center;
+  width:1em; height:1em;
+}
+.comic-burst::before, .comic-burst::after{
+  content:''; position:absolute; inset:0; background:var(--amber);
+  border:3px solid var(--ink);
+}
+.comic-burst::after{transform:rotate(45deg);}
+
+@media (prefers-reduced-motion: reduce){
+  .comic-panel, .hero-badge, .speech-bubble{transition:none;}
+}
+
+/* Superpower-unlock reveal on the story-complete screen (page-topic.js) */
+.power-unlock{
+  display:flex; align-items:center; gap:18px; text-align:left;
+  padding:20px; margin:18px auto; max-width:480px;
+  animation:power-unlock-pop .4s var(--ease-bounce);
+}
+.power-unlock__burst{
+  position:absolute; top:-16px; left:-16px; width:64px; height:64px;
+  font-size:.62rem; text-align:center; line-height:1.15; color:var(--ink); z-index:1;
+}
+.power-unlock__burst span{position:relative; z-index:1;}
+.power-unlock__name{font-family:var(--font-display); font-weight:800; font-size:1.15rem; color:var(--ink);}
+.power-unlock__power{color:var(--rose-dark); font-size:1.05rem; margin:2px 0 4px;}
+.power-unlock__tagline{color:var(--ink-soft); font-size:.92rem; margin:0;}
+@keyframes power-unlock-pop{
+  0%{opacity:0; transform:scale(.7) rotate(-1.2deg);}
+  100%{opacity:1; transform:scale(1) rotate(-1.2deg);}
+}
+@media (prefers-reduced-motion: reduce){
+  .power-unlock{animation:none;}
+}
+
 .site-nav{
   display:flex; gap:6px; align-items:center; margin-left:auto; flex-wrap:wrap;
 }
@@ -439,6 +532,61 @@ main{max-width:1080px; margin:0 auto; padding:28px 20px 64px;}
   display:grid; grid-template-columns:repeat(auto-fill, minmax(120px,1fr)); gap:20px; text-align:center;
 }
 .badge-cell{display:flex; flex-direction:column; align-items:center;}
+.topic-badge-power{font-size:.82rem; color:var(--rose-dark); margin:2px 0 0;}
+.topic-badge-power--locked{color:var(--ink-soft); font-family:var(--font-body); font-weight:700;}
+
+/* Shown at the top of the badges page once every topic is complete */
+.battle-banner{
+  display:flex; flex-direction:column; align-items:center; gap:10px; text-align:center;
+  padding:28px 22px; margin:20px 0 28px;
+}
+.battle-banner h2{margin:0;}
+.battle-banner p{color:var(--ink-soft); max-width:480px; margin:0;}
+.battle-banner__burst{
+  position:absolute; top:-18px; left:20px; width:64px; height:64px;
+  font-size:.6rem; text-align:center; line-height:1.15; color:var(--ink);
+}
+.battle-banner__burst span{position:relative; z-index:1;}
+
+/* ---------- The Safety Showdown (boss-battle.html) ---------- */
+.battle-arena{display:flex; flex-direction:column; align-items:center; gap:12px; margin-bottom:22px;}
+.battle-monster{width:120px; height:120px; animation:monster-float 3s ease-in-out infinite;}
+.battle-monster--intro{width:140px; height:140px; margin:0 auto 8px;}
+.battle-monster--defeated{width:140px; height:140px; margin:0 auto 8px; animation:none; transform:rotate(8deg);}
+@keyframes monster-float{
+  0%, 100%{transform:translateY(0) rotate(-2deg);}
+  50%{transform:translateY(-10px) rotate(2deg);}
+}
+@media (prefers-reduced-motion: reduce){
+  .battle-monster{animation:none;}
+}
+.battle-health{
+  width:100%; max-width:320px; height:20px; border-radius:999px; border:3px solid var(--ink);
+  background:#fff; overflow:hidden;
+}
+.battle-health__bar{
+  height:100%; background:linear-gradient(90deg, var(--green), #6fd19a);
+  transition:width .4s var(--ease-bounce);
+}
+.power-hit{
+  display:flex; align-items:center; justify-content:center; text-align:center;
+  padding:16px 20px; margin-top:16px; animation:power-unlock-pop .35s var(--ease-bounce);
+}
+.power-hit__burst{position:absolute; top:-16px; left:-16px; width:56px; height:56px; font-size:.6rem; color:var(--ink);}
+.power-hit__burst span{position:relative; z-index:1;}
+.power-hit__text{margin:0; color:var(--ink);}
+@media (prefers-reduced-motion: reduce){
+  .power-hit{animation:none;}
+}
+.roster-grid{
+  display:grid; grid-template-columns:repeat(auto-fill, minmax(90px,1fr)); gap:16px;
+  margin:20px 0; text-align:center;
+}
+.roster-cell{display:flex; flex-direction:column; align-items:center; gap:6px;}
+.roster-cell span{font-size:.8rem; font-weight:700; color:var(--ink-soft);}
+.battle-question-row{display:flex; align-items:center; gap:12px; margin-bottom:10px;}
+.battle-question-row .hero-badge{flex-shrink:0;}
+.battle-question-row .review-question{margin:0;}
 
 /* ---------- Topic page layout ---------- */
 .topic-hero{
@@ -455,6 +603,16 @@ main{max-width:1080px; margin:0 auto; padding:28px 20px 64px;}
 .topic-hero__pin:hover{border-color:var(--rose); color:var(--rose-dark);}
 .topic-hero__pin.is-pinned{border-color:var(--rose); background:var(--rose-tint); color:var(--rose-dark);}
 .topic-hero__pin:active{transform:scale(.94);}
+
+/* The lesson's superhero buddy -- lives in topic-hero (js/heroes.js), which
+   stays visible above the Video/Flashcards/Story panels regardless of which
+   tab is active, so the buddy "accompanies" every part of the lesson for
+   free without needing to duplicate it into each panel. */
+.hero-buddy{
+  display:flex; align-items:center; gap:14px; margin-bottom:16px; max-width:520px;
+}
+.hero-buddy__name{font-family:var(--font-display); font-weight:800; color:var(--ink); display:block;}
+.hero-buddy__power{font-family:'Comic Neue', var(--font-body); font-weight:700; color:var(--rose-dark); font-size:.92rem;}
 
 .mode-tabs{
   display:inline-flex; gap:4px; margin-bottom:22px; flex-wrap:wrap;

@@ -21,6 +21,7 @@ function initTopicPage(){
   const heroEl = document.querySelector('[data-topic-hero]');
   const titleEl = document.querySelector('[data-topic-title]');
   const taglineEl = document.querySelector('[data-topic-tagline]');
+  const heroBuddyEl = document.querySelector('[data-hero-buddy]');
 
   trackEvent(meta.id, 'topic_open');
 
@@ -112,6 +113,25 @@ function initTopicPage(){
     if (taglineEl) taglineEl.textContent = content.tagline;
     document.title = `${content.title} — ${t('brand')}`;
     renderHeroPin();
+    renderHeroBuddy();
+  }
+
+  // The superhero buddy for this lesson -- shown once here in the always-
+  // visible topic-hero header, so it "accompanies" the learner across the
+  // Video/Flashcards/Story tabs without needing to be re-rendered per tab.
+  function renderHeroBuddy(){
+    if (!heroBuddyEl || typeof heroFor !== 'function') return;
+    const hero = heroFor(meta.id);
+    if (!hero){ heroBuddyEl.hidden = true; return; }
+    const lang = getLang();
+    const data = hero[lang] || hero.en;
+    heroBuddyEl.hidden = false;
+    heroBuddyEl.innerHTML = `
+      ${heroBadgeHtml(meta.id, lang, meta.theme, 56)}
+      <div class="speech-bubble">
+        <span class="hero-buddy__name">${escapeHtml(data.name)}</span>
+        <span class="hero-buddy__power font-comic">${escapeHtml(data.power)}</span>
+      </div>`;
   }
 
   function renderHeroPin(){
@@ -253,6 +273,18 @@ function initTopicPage(){
           <div class="practice-card__label">${t('story_practice_heading')}</div>
           <p>${escapeHtml(content.practicePrompt)}</p>
         </div>` : '';
+      const heroUnlock = typeof heroFor === 'function' ? heroFor(meta.id) : null;
+      const heroUnlockData = heroUnlock ? (heroUnlock[getLang()] || heroUnlock.en) : null;
+      const powerUnlockHtml = heroUnlockData ? `
+        <div class="comic-panel comic-panel--tilt power-unlock">
+          <div class="comic-burst power-unlock__burst"><span class="font-comic">${t('power_unlocked_label')}</span></div>
+          ${heroBadgeHtml(meta.id, getLang(), meta.theme, 72)}
+          <div>
+            <div class="power-unlock__name">${escapeHtml(heroUnlockData.name)}</div>
+            <div class="power-unlock__power font-comic">${escapeHtml(heroUnlockData.power)}</div>
+            <p class="power-unlock__tagline">${escapeHtml(heroUnlockData.tagline)}</p>
+          </div>
+        </div>` : '';
       panel.innerHTML = `
         <div class="story-stage">
           <div class="story-complete">
@@ -260,6 +292,7 @@ function initTopicPage(){
               <img src="${meta.image}" alt="" width="58" height="58">
             </div>
             <h2>${t('story_complete_title')}</h2>
+            ${powerUnlockHtml}
             <div class="speak-row center">
               <p style="margin:0" data-recap-lead>${escapeHtml(t('story_complete_lead'))}</p>
               ${speakButtonHtml()}

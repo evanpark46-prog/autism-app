@@ -93,6 +93,7 @@ document.addEventListener('DOMContentLoaded', () => {
   else if (page === 'worksheet') initWorksheetPage();
   else if (page === 'review') initReviewPage();
   else if (page === 'badges') initBadgesPage();
+  else if (page === 'boss-battle') initBossBattlePage();
 
   window.addEventListener('safetylib:langchange', () => applyStaticI18n());
 });
