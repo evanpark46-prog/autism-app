@@ -10,7 +10,7 @@
    returning visitors pick up the change instead of an old cached copy.
    ========================================================================== */
 
-const CACHE_NAME = 'safety-scouts-shell-v5';
+const CACHE_NAME = 'safety-scouts-shell-v6';
 
 const SHELL_FILES = [
   'index.html',
