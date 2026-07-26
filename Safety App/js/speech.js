@@ -175,7 +175,11 @@ function speakWithHighlight(segments, speaker, joiner){
     }, msPerWord);
   }
 
-  utter.onstart = () => setTimeout(() => { if (!usedRealBoundary) startFallback(); }, 350);
+  // Anchored to the speak() call itself, not the onstart event -- some
+  // browsers/OSes are flaky about firing onstart at all, which would
+  // otherwise mean the fallback never even gets a chance to kick in.
+  setTimeout(() => { if (!usedRealBoundary) startFallback(); }, 350);
+  utter.onstart = () => { if (!usedRealBoundary) startFallback(); };
   utter.onboundary = (e) => {
     if (e.name && e.name !== 'word') return;
     const match = wordSpans.find(w => e.charIndex >= w.start && e.charIndex < w.end);

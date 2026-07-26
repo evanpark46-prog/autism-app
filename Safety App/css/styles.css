@@ -568,11 +568,13 @@ main{max-width:1080px; margin:0 auto; padding:28px 20px 64px;}
   display:flex; align-items:center; justify-content:center;
 }
 /* Word-by-word read-aloud highlight (desktop browsers mostly; silently
-   inert elsewhere -- see speakWithHighlight() in js/speech.js). */
+   inert elsewhere -- see speakWithHighlight() in js/speech.js). A fixed
+   light-blue look (not the --rose skin color, which changes per theme and
+   can be too low-contrast to notice) so it's easy to spot in any context,
+   including on top of dark checkpoint-overlay buttons. */
 .read-highlight-word.is-speaking-word{
-  background:var(--rose-tint); color:var(--rose-dark); border-radius:4px; box-shadow:0 0 0 2px var(--rose-tint);
+  background:#7ec4ff; color:#0b2c52; border-radius:4px; box-shadow:0 0 0 3px #2f6fed; font-weight:800;
 }
-.choice-btn .read-highlight-word.is-speaking-word{background:var(--blue-tint); color:var(--blue-dark); box-shadow:none;}
 
 /* ---------- Glossary terms (hover/focus for a short definition) ---------- */
 .glossary-term{
