@@ -1472,7 +1472,11 @@ function initTopicPage(){
   });
 
   const storyPanel = document.querySelector('[data-panel="story"]');
-  if (storyPanel) storyPanel.innerHTML = `<p class="center">${t('topic_loading')}</p>`;
+  if (storyPanel) storyPanel.innerHTML = `
+    <div class="topic-loading">
+      <div class="topic-loading__mascot">${mascotSvg()}</div>
+      <p>${t('topic_loading')}</p>
+    </div>`;
 
   ensureTopicContentLoaded(meta.id).then(() => {
     renderHero();
