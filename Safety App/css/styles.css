@@ -4,11 +4,14 @@
    ========================================================================== */
 
 :root{
-  --bg:#f6f8fb;
+  /* Warm, appetizing base palette (cream + toasted-brown neutrals) instead
+     of the old cool blue-grey -- paired with chunkier radii and a soft
+     "double shadow" clay look below for a playful, cartoonish, tactile feel. */
+  --bg:#fff8f0;
   --panel:#ffffff;
-  --ink:#233047;
-  --ink-soft:#5b6b85;
-  --border:#dfe6f0;
+  --ink:#33261f;
+  --ink-soft:#6b5645;
+  --border:#f0dcc8;
 
   --blue:#2f6fed;
   --blue-dark:#1e4fbe;
@@ -26,15 +29,16 @@
   --purple:#6a4fd1;
   --purple-tint:#efe9ff;
 
-  --rose:#d6789f;
-  --rose-dark:#b85c82;
-  --rose-tint:#fdeef5;
+  --rose:#c8460a;
+  --rose-dark:#8f3208;
+  --rose-tint:#ffe8d9;
 
-  --radius-lg:20px;
-  --radius-md:14px;
-  --radius-sm:10px;
-  --shadow:0 10px 28px rgba(35,48,71,.08);
-  --shadow-lift:0 16px 36px rgba(35,48,71,.14);
+  --radius-lg:24px;
+  --radius-md:16px;
+  --radius-sm:12px;
+  --shadow:0 10px 28px rgba(140,70,20,.10), inset 0 1px 0 rgba(255,255,255,.5);
+  --shadow-lift:0 16px 36px rgba(140,70,20,.16), inset 0 1px 0 rgba(255,255,255,.5);
+  --ease-bounce:cubic-bezier(.34,1.56,.64,1);
 
   --font-display:'Baloo 2', 'Quicksand', system-ui, sans-serif;
   --font-display-cursive:'Dancing Script', 'Baloo 2', cursive, system-ui, sans-serif;
@@ -134,12 +138,14 @@ a:focus-visible, button:focus-visible, select:focus-visible, input:focus-visible
 .brand{
   display:flex; align-items:center; gap:10px;
   text-decoration:none; color:var(--rose-dark);
-  font-family:var(--font-display); font-weight:700; font-size:1.6rem;
+  font-family:var(--font-display); font-weight:800; font-size:1.6rem;
+  text-shadow:1.5px 2px 0 var(--rose-tint);
 }
 .brand__badge{
   display:inline-grid; place-items:center;
-  width:38px; height:38px; border-radius:12px; padding:5px; box-sizing:border-box;
+  width:38px; height:38px; border-radius:14px; padding:5px; box-sizing:border-box;
   background:linear-gradient(135deg, var(--rose), var(--rose-dark)); color:#fff; font-size:1.2rem;
+  box-shadow:0 3px 0 var(--rose-dark), inset 0 1px 0 rgba(255,255,255,.4);
 }
 /* Mascot: a friendly raccoon face, used as the site logo and as the topic
    loading animation below. Gives the app a distinct, recognizable identity
@@ -250,7 +256,7 @@ a:focus-visible, button:focus-visible, select:focus-visible, input:focus-visible
   cursor:pointer; padding:0; flex-shrink:0;
 }
 .skin-switch__swatch[aria-pressed="true"]{border-color:var(--ink); box-shadow:0 0 0 2px #fff inset;}
-.skin-swatch-rose{background:linear-gradient(135deg,#d6789f,#b85c82);}
+.skin-swatch-rose{background:linear-gradient(135deg,#c8460a,#8f3208);}
 .skin-swatch-ocean{background:linear-gradient(135deg,#2dbfc7,#12787e);}
 .skin-swatch-sunset{background:linear-gradient(135deg,#f2994a,#c9691b);}
 .skin-swatch-meadow{background:linear-gradient(135deg,#3fae6a,#1f7a45);}
@@ -268,34 +274,43 @@ main{max-width:1080px; margin:0 auto; padding:28px 20px 64px;}
 .hero{
   text-align:center; padding:36px 16px 12px;
 }
-.hero h1{font-size:2.6rem; color:var(--rose-dark);}
+.hero h1{font-size:2.6rem; color:var(--rose-dark); text-shadow:2px 3px 0 var(--rose-tint);}
 .hero p{color:var(--ink-soft); font-size:1.1rem; max-width:640px; margin:0 auto 1em;}
 .hero-actions{display:flex; gap:12px; justify-content:center; flex-wrap:wrap; margin-top:14px;}
 
 /* ---------- Buttons ---------- */
 .btn{
   display:inline-flex; align-items:center; justify-content:center; gap:8px;
-  border:2px solid transparent; border-radius:12px;
+  border:2px solid transparent; border-radius:16px;
   padding:12px 20px; font-weight:800; font-size:1rem;
   cursor:pointer; text-decoration:none; line-height:1.2;
-  transition:transform .12s ease, box-shadow .12s ease, background .12s ease, border-color .12s ease;
+  transition:transform .15s var(--ease-bounce), box-shadow .15s ease, background .12s ease, border-color .12s ease;
 }
-.btn-primary{background:linear-gradient(135deg, var(--blue), var(--blue-dark)); color:#fff; box-shadow:0 6px 16px rgba(47,111,237,.28);}
-.btn-primary:hover{transform:translateY(-1px); box-shadow:0 8px 20px rgba(47,111,237,.35);}
-.btn-secondary{background:var(--panel); color:var(--blue-dark); border-color:var(--border);}
-.btn-secondary:hover{border-color:var(--blue); transform:translateY(-1px);}
-.btn-ghost{background:transparent; color:var(--ink-soft); border-color:transparent;}
-.btn-ghost:hover{background:var(--blue-tint); color:var(--blue-dark);}
 .btn:disabled{opacity:.5; cursor:not-allowed; transform:none;}
 .btn:active:not(:disabled){transform:scale(.97);}
-.btn-lg{padding:16px 26px; font-size:1.1rem; border-radius:14px;}
+/* Chunky "pressable" bottom edge instead of a blurred drop-shadow -- reads
+   as a physical button you can push, and flattens realistically on click.
+   Declared after the generic :active rule above so it wins the tie in
+   specificity (same selector weight, later wins). */
+.btn-primary{
+  background:linear-gradient(135deg, var(--blue), var(--blue-dark)); color:#fff;
+  box-shadow:0 5px 0 var(--blue-dark);
+}
+.btn-primary:hover{transform:translateY(-1px);}
+.btn-primary:active:not(:disabled){transform:translateY(4px); box-shadow:0 0 0 var(--blue-dark);}
+.btn-secondary{background:var(--panel); color:var(--blue-dark); border-color:var(--border); border-width:3px; box-shadow:0 4px 0 var(--border);}
+.btn-secondary:hover{border-color:var(--blue); transform:translateY(-1px);}
+.btn-secondary:active:not(:disabled){transform:translateY(4px); box-shadow:0 0 0 var(--border);}
+.btn-ghost{background:transparent; color:var(--ink-soft); border-color:transparent;}
+.btn-ghost:hover{background:var(--blue-tint); color:var(--blue-dark);}
+.btn-lg{padding:16px 26px; font-size:1.1rem; border-radius:18px;}
 
 /* ---------- Cards / grids ---------- */
 .grid{display:grid; gap:20px;}
 .grid-topics{grid-template-columns:repeat(auto-fit, minmax(260px,1fr));}
 
 .card{
-  background:var(--panel); border:1px solid var(--border); border-radius:var(--radius-lg);
+  background:var(--panel); border:2px solid var(--border); border-radius:var(--radius-lg);
   box-shadow:var(--shadow); padding:22px;
 }
 
@@ -315,10 +330,10 @@ main{max-width:1080px; margin:0 auto; padding:28px 20px 64px;}
 .topic-card{
   position:relative;
   display:flex; flex-direction:column; gap:10px; text-decoration:none; color:inherit;
-  border-radius:var(--radius-lg); padding:22px; border:1px solid var(--border); border-top:4px solid var(--border);
-  background:var(--panel); box-shadow:var(--shadow); transition:transform .15s ease, box-shadow .15s ease;
+  border-radius:var(--radius-lg); padding:22px; border:2px solid var(--border); border-top:5px solid var(--border);
+  background:var(--panel); box-shadow:var(--shadow); transition:transform .18s var(--ease-bounce), box-shadow .18s ease;
 }
-.topic-card:hover{transform:translateY(-4px); box-shadow:var(--shadow-lift);}
+.topic-card:hover{transform:translateY(-6px); box-shadow:var(--shadow-lift);}
 .topic-card:active{transform:translateY(-1px) scale(.99);}
 .topic-card:hover .topic-card__icon img{transform:scale(1.08);}
 .topic-card__done{
@@ -430,7 +445,7 @@ main{max-width:1080px; margin:0 auto; padding:28px 20px 64px;}
   position:relative; border-radius:var(--radius-lg); padding:26px 24px; margin-bottom:22px;
   background:var(--blue-tint); border:1px solid var(--border);
 }
-.topic-hero h1{margin-bottom:.25em; color:var(--rose-dark); font-size:2.3rem;}
+.topic-hero h1{margin-bottom:.25em; color:var(--rose-dark); font-size:2.3rem; text-shadow:2px 3px 0 var(--rose-tint);}
 .topic-hero p{color:var(--ink-soft); margin-bottom:0;}
 .topic-hero__pin{
   position:absolute; top:16px; right:16px; width:38px; height:38px; border-radius:50%;
@@ -660,13 +675,15 @@ main{max-width:1080px; margin:0 auto; padding:28px 20px 64px;}
 .speak-btn.is-speaking{background:var(--rose); border-color:var(--rose); color:#fff;}
 .story-choices{display:flex; flex-direction:column; gap:10px; margin-top:14px;}
 .choice-btn{
-  text-align:left; border:2px solid var(--border); background:#fff; border-radius:var(--radius-md);
+  text-align:left; border:3px solid var(--border); background:#fff; border-radius:var(--radius-md);
   padding:14px 16px; font-size:1.02rem; font-weight:700; color:var(--ink); cursor:pointer;
+  box-shadow:0 4px 0 var(--border);
+  transition:transform .15s var(--ease-bounce), box-shadow .15s ease, border-color .12s ease, background .12s ease;
 }
-.choice-btn:hover{border-color:var(--blue);}
-.choice-btn:active:not(:disabled){transform:scale(.98); background:var(--blue-tint);}
-.choice-btn.correct{border-color:var(--green); background:var(--green-tint); color:#155a3c;}
-.choice-btn.incorrect{border-color:var(--red); background:var(--red-tint); color:#8a2e22;}
+.choice-btn:hover:not(:disabled){border-color:var(--blue); transform:translateY(-1px);}
+.choice-btn:active:not(:disabled){transform:translateY(4px); box-shadow:0 0 0 var(--border); background:var(--blue-tint);}
+.choice-btn.correct{border-color:var(--green); background:var(--green-tint); color:#155a3c; box-shadow:0 4px 0 var(--green);}
+.choice-btn.incorrect{border-color:var(--red); background:var(--red-tint); color:#8a2e22; box-shadow:0 4px 0 var(--red);}
 .choice-btn:disabled{cursor:default;}
 
 .story-feedback{

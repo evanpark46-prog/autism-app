@@ -17,7 +17,7 @@ const SKINS = [
 // Matches each skin's --rose value, so the mobile browser chrome / installed
 // PWA title bar tint follows the chosen skin instead of staying rose.
 const SKIN_THEME_COLORS = {
-  rose: '#d6789f', ocean: '#2dbfc7', sunset: '#f2994a', meadow: '#3fae6a', berry: '#9b5fe0',
+  rose: '#c8460a', ocean: '#2dbfc7', sunset: '#f2994a', meadow: '#3fae6a', berry: '#9b5fe0',
 };
 
 function getSkin(){
