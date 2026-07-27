@@ -7,7 +7,7 @@
   <script>(function(){try{var sizes=[87.5,100,115,130,145];var idx=parseInt(localStorage.getItem('safetylib_text_size_idx'),10);if(!(idx>=0&&idx<sizes.length))idx=1;document.documentElement.style.fontSize=sizes[idx]+'%';}catch(e){}})();</script>
   <script>(function(){try{var f=localStorage.getItem('safetylib_heading_font');if(f==='cursive')document.documentElement.setAttribute('data-heading-font','cursive');}catch(e){}})();</script>
   <script>(function(){try{var c=localStorage.getItem('safetylib_calm_mode');document.documentElement.setAttribute('data-calm-mode', c==='on'?'on':'off');}catch(e){}})();</script>
-  <title>Safety Scouts</title>
+  <title>Safety Superheroes</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Comic+Neue:wght@400;700&family=Dancing+Script:wght@600;700&family=Quicksand:wght@500;600;700;800&display=swap" rel="stylesheet">
@@ -17,7 +17,7 @@
   <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
   <link rel="icon" type="image/png" href="img/icon-192.png">
   <meta name="description" content="A calm, free library of safety lessons for autistic learners — stories, flashcards, and videos in English and Spanish.">
-  <meta property="og:title" content="Safety Scouts">
+  <meta property="og:title" content="Safety Superheroes">
   <meta property="og:description" content="A calm, free library of safety lessons for autistic learners — stories, flashcards, and videos in English and Spanish.">
   <meta property="og:image" content="img/og-banner.png">
   <meta property="og:type" content="website">
@@ -30,13 +30,35 @@
 </head>
 <body data-page="home">
   <a href="#main" class="skip-link">Skip to content</a>
-  <noscript><p class="note-box" style="margin:16px 20px;">Safety Scouts needs JavaScript turned on to show its lessons. Please enable JavaScript in your browser settings and reload the page.</p></noscript>
+  <noscript><p class="note-box" style="margin:16px 20px;">Safety Superheroes needs JavaScript turned on to show its lessons. Please enable JavaScript in your browser settings and reload the page.</p></noscript>
+
+  <div class="page-vanta-bg" id="hero-vanta" aria-hidden="true"></div>
+  <div class="page-flyhero" id="hero-flyhero" aria-hidden="true">
+    <svg viewBox="0 0 120 70" width="100%" height="100%" fill="none" xmlns="http://www.w3.org/2000/svg" focusable="false">
+      <g stroke="var(--ink)" stroke-opacity=".25" stroke-width="3" stroke-linecap="round">
+        <line x1="2" y1="20" x2="24" y2="20"/>
+        <line x1="0" y1="34" x2="28" y2="34"/>
+        <line x1="4" y1="48" x2="22" y2="48"/>
+      </g>
+      <path id="flyhero-cape" d="M52 18 C30 14 14 26 10 44 C24 40 40 40 54 34 Z" fill="var(--rose)"/>
+      <ellipse id="flyhero-body" cx="66" cy="36" rx="16" ry="14" fill="var(--rose-dark)"/>
+      <g id="flyhero-emblem" transform="translate(66,36) scale(0.62) translate(-12,-12)">
+        <path d="M12 2l2.9 6.3 6.9.7-5.2 4.7 1.5 6.8L12 17l-6.1 3.5 1.5-6.8L2.2 9l6.9-.7Z" fill="#fff"/>
+      </g>
+      <path id="flyhero-body2" d="M78 30c6-4 12-3 14 1s-2 8-8 8-9-5-6-9Z" fill="var(--rose-dark)"/>
+      <circle cx="88" cy="26" r="11" fill="#fff"/>
+      <circle cx="81" cy="17" r="4" fill="#fff"/><circle cx="93" cy="17" r="4" fill="#fff"/>
+      <circle cx="81" cy="18" r="2" fill="#3b3b3b" opacity=".5"/><circle cx="93" cy="18" r="2" fill="#3b3b3b" opacity=".5"/>
+      <path d="M79 24c4-4 14-4 18 0 0 4-4 6-9 6s-9-2-9-6Z" fill="#3b3b3b"/>
+      <circle cx="85" cy="25" r="1.4" fill="#fff"/><circle cx="91" cy="25" r="1.4" fill="#fff"/>
+    </svg>
+  </div>
 
   <header class="site-header">
     <div class="site-header__bar">
       <a href="index.html" class="brand">
-        <span class="brand__badge" aria-hidden="true"><svg viewBox="0 0 64 64" width="100%" height="100%" fill="none" xmlns="http://www.w3.org/2000/svg" focusable="false"><circle cx="16" cy="15" r="9" fill="#fff"/><circle cx="48" cy="15" r="9" fill="#fff"/><circle cx="16" cy="16" r="4.5" fill="#3b3b3b" opacity=".5"/><circle cx="48" cy="16" r="4.5" fill="#3b3b3b" opacity=".5"/><ellipse cx="32" cy="35" rx="21" ry="18" fill="#fff"/><path d="M12 29c6-7 34-7 40 0 0 9-9 12-20 12S12 38 12 29Z" fill="#3b3b3b"/><circle cx="24" cy="30" r="3.2" fill="#fff"/><circle cx="40" cy="30" r="3.2" fill="#fff"/><circle cx="24" cy="30.5" r="1.5" fill="#1a1a1a"/><circle cx="40" cy="30.5" r="1.5" fill="#1a1a1a"/><ellipse cx="32" cy="43" rx="7.5" ry="5.5" fill="#f4ede3"/><ellipse cx="32" cy="42" rx="2.2" ry="1.6" fill="#2b2b2b"/></svg></span>
-        <span data-i18n="brand">Safety Scouts</span>
+        <span class="brand__badge" aria-hidden="true"><svg viewBox="0 0 64 64" width="100%" height="100%" fill="none" xmlns="http://www.w3.org/2000/svg" focusable="false"><path d="M32 3 58 12v17c0 18-11 29-26 32C17 58 6 47 6 29V12Z" fill="#c8460a" stroke="#2b2b2b" stroke-width="3.5" stroke-linejoin="round"/><path d="M32 10 50 16v13.5c0 14-8.5 23-18 26-9.5-3-18-12-18-26V16Z" fill="#fff8f0" stroke="#2b2b2b" stroke-width="2.5" stroke-linejoin="round"/><text x="32" y="42" font-family="'Baloo 2', sans-serif" font-weight="800" font-size="28" text-anchor="middle" fill="#c8460a">S</text></svg></span>
+        <span data-i18n="brand">Safety Superheroes</span>
       </a>
       <nav class="site-nav" aria-label="Main">
         <a href="index.html" aria-current="page" data-i18n="nav_library">Home</a>
@@ -96,6 +118,12 @@
       <div class="grid grid-topics" data-topic-grid></div>
     </section>
 
+    <section class="hero-wall mt-lg">
+      <h2 data-i18n="home_heroes_heading">Meet your superheroes</h2>
+      <p class="hero-wall__lead" data-i18n="home_heroes_lead">Every topic has its own hero. Tap one to start their lesson.</p>
+      <div class="hero-wall__grid" data-hero-wall></div>
+    </section>
+
     <section class="card home-review-cta center mt-lg">
       <h2 data-i18n="home_review_cta_title">Ready to test what you remember?</h2>
       <p data-i18n="home_review_cta_lead">Try the cumulative review — one question from every topic, shuffled and mixed together.</p>
@@ -115,8 +143,8 @@
   </main>
 
   <footer class="site-footer">
-    <p data-i18n="footer_note">Safety Scouts — a free resource.</p>
-    <p>Original illustrations created for Safety Scouts.</p>
+    <p data-i18n="footer_note">Safety Superheroes — a free resource.</p>
+    <p>Original illustrations created for Safety Superheroes.</p>
   </footer>
 
   <script src="js/i18n.js"></script>
@@ -133,7 +161,12 @@
   <script src="js/calmspace.js"></script>
   <script src="js/topics-index.js"></script>
   <script src="js/categories.js"></script>
+  <script src="js/heroes.js"></script>
   <script src="js/page-home.js"></script>
   <script src="js/boot.js"></script>
+  <script src="js/vendor/three.r134.min.js"></script>
+  <script src="js/vendor/vanta.clouds2.min.js"></script>
+  <script src="js/vendor/gsap.min.js"></script>
+  <script src="js/herobg.js"></script>
 </body>
 </html>

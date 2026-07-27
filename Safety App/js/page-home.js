@@ -1,5 +1,5 @@
 /* ==========================================================================
-   Safety Scouts — Home page (index.html)
+   Safety Superheroes — Home page (index.html)
    ========================================================================== */
 
 /* ---------------------------------------------------------------------- */
@@ -31,6 +31,40 @@ function topicCardHtml(meta, lang, completedIds, opts){
         </div>
       </a>
     </div>`;
+}
+
+/* ---------------------------------------------------------------------- */
+/* Home page: "Meet your superheroes" wall -- one card per topic's hero,  */
+/* linking straight into that topic's lesson.                             */
+/* ---------------------------------------------------------------------- */
+
+// Not every card has to be a rectangle -- cycle a small set of superhero
+// badge shapes (see .shape-hex/.shape-shield/.shape-tag in styles.css) so
+// the wall reads as a collection of badges, not a plain grid.
+const HERO_CARD_SHAPES = ['', 'shape-hex', 'shape-shield', 'shape-tag'];
+
+function heroCardHtml(meta, lang, index){
+  const hero = heroFor(meta.id);
+  if (!hero) return '';
+  const data = hero[lang] || hero.en;
+  const tilt = index % 2 === 0 ? 'hero-card--tilt-a' : 'hero-card--tilt-b';
+  const shape = HERO_CARD_SHAPES[index % HERO_CARD_SHAPES.length];
+  return `
+    <a class="hero-card comic-panel ${tilt} ${shape} reveal-on-scroll" data-theme="${meta.theme}"
+      href="topic.html?id=${encodeURIComponent(meta.id)}">
+      ${heroBadgeHtml(meta.id, lang, meta.theme, 72)}
+      <h3>${escapeHtml(data.name)}</h3>
+      <span class="hero-card__power">${escapeHtml(data.power)}</span>
+      <p class="hero-card__tagline">${escapeHtml(data.tagline)}</p>
+    </a>`;
+}
+
+function renderHeroWall(){
+  const wall = document.querySelector('[data-hero-wall]');
+  if (!wall) return;
+  const lang = getLang();
+  wall.innerHTML = TOPICS.map((meta, i) => heroCardHtml(meta, lang, i)).join('');
+  initScrollReveal(wall);
 }
 
 function wirePinButtons(container){
@@ -103,7 +137,9 @@ function initScrollReveal(container){
 
 function initHomePage(){
   renderTopicGrid();
+  renderHeroWall();
   window.addEventListener('safetylib:langchange', renderTopicGrid);
+  window.addEventListener('safetylib:langchange', renderHeroWall);
   if (typeof initEmotionCheckin === 'function') initEmotionCheckin();
 }
 

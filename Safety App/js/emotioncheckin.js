@@ -1,5 +1,5 @@
 /* ==========================================================================
-   Safety Scouts — emotion check-in
+   Safety Superheroes — emotion check-in
    A small, optional, never-blocking "how are you feeling?" prompt on the
    home page. Seconds to use, teaches emotion labeling, and warms up a
    session -- shown at most once per day, always dismissible without

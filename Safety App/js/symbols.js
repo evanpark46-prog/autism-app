@@ -1,5 +1,5 @@
 /* ==========================================================================
-   Safety Scouts — symbol support (scoped version)
+   Safety Superheroes — symbol support (scoped version)
    Real AAC symbol sets (Widgit/PCS/etc.) are commercially licensed, so
    this uses a curated keyword-to-emoji dictionary instead -- not a full
    AAC system, but a lightweight visual-support layer over the existing

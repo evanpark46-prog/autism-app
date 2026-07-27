@@ -1,5 +1,5 @@
 /* ==========================================================================
-   Safety Scouts — cosmetic color skin picker
+   Safety Superheroes — cosmetic color skin picker
    Purely decorative: swaps the --rose/--rose-dark/--rose-tint accent used for
    the header brand, headings, and level-chip numbers. Never touches the
    --blue/--green/--red/--amber/--purple set, since those carry meaning

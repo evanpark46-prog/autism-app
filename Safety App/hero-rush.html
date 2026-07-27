@@ -3,12 +3,11 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="robots" content="noindex, nofollow">
   <script>(function(){try{var s=localStorage.getItem('safetylib_skin');if(s)document.documentElement.setAttribute('data-skin', s);}catch(e){}})();</script>
   <script>(function(){try{var sizes=[87.5,100,115,130,145];var idx=parseInt(localStorage.getItem('safetylib_text_size_idx'),10);if(!(idx>=0&&idx<sizes.length))idx=1;document.documentElement.style.fontSize=sizes[idx]+'%';}catch(e){}})();</script>
   <script>(function(){try{var f=localStorage.getItem('safetylib_heading_font');if(f==='cursive')document.documentElement.setAttribute('data-heading-font','cursive');}catch(e){}})();</script>
   <script>(function(){try{var c=localStorage.getItem('safetylib_calm_mode');document.documentElement.setAttribute('data-calm-mode', c==='on'?'on':'off');}catch(e){}})();</script>
-  <title>Usage Insights — Safety Superheroes</title>
+  <title>Hero Quiz Rush — Safety Superheroes</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Comic+Neue:wght@400;700&family=Dancing+Script:wght@600;700&family=Quicksand:wght@500;600;700;800&display=swap" rel="stylesheet">
@@ -17,19 +16,10 @@
   <meta name="theme-color" content="#c8460a">
   <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
   <link rel="icon" type="image/png" href="img/icon-192.png">
-  <meta name="description" content="A private, local-only view of lesson activity on this device.">
-  <meta property="og:title" content="Usage Insights — Safety Superheroes">
-  <meta property="og:description" content="A private, local-only view of lesson activity on this device.">
-  <meta property="og:image" content="img/og-banner.png">
-  <meta property="og:type" content="website">
-  <meta name="twitter:card" content="summary_large_image">
-  <!-- Site visitor counter (GoatCounter -- privacy-friendly, no cookies, no
-       personal data). Sign up free at https://www.goatcounter.com, then
-       replace REPLACE_ME below with your site code (the part before
-       ".goatcounter.com" in the dashboard URL you are given). -->
-  <script data-goatcounter="https://REPLACE_ME.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+  <meta name="robots" content="noindex">
+  <meta name="description" content="Answer safety questions from every lesson and keep your streak going, with the whole Safety Superheroes team cheering you on.">
 </head>
-<body data-page="analytics">
+<body data-page="hero-rush">
   <a href="#main" class="skip-link">Skip to content</a>
   <noscript><p class="note-box" style="margin:16px 20px;">Safety Superheroes needs JavaScript turned on to show its lessons. Please enable JavaScript in your browser settings and reload the page.</p></noscript>
 
@@ -42,7 +32,7 @@
       <nav class="site-nav" aria-label="Main">
         <a href="index.html" data-i18n="nav_library">Home</a>
         <a href="review.html" data-i18n="nav_review">Review</a>
-        <a href="games.html" data-i18n="nav_games">Games</a>
+        <a href="games.html" aria-current="page" data-i18n="nav_games">Games</a>
         <a href="parents.html" data-i18n="nav_parents">Parents &amp; Educators</a>
         <a href="about.html" data-i18n="nav_about">About</a>
       </nav>
@@ -85,15 +75,8 @@
   </header>
 
   <main id="main">
-    <section class="hero">
-      <h1 data-i18n="analytics_title">Usage Insights</h1>
-      <p data-i18n="analytics_lead">A private view of lesson activity recorded on this device.</p>
-    </section>
-
-    <section class="section">
-      <p class="note-box" data-i18n="analytics_note"></p>
-      <div data-analytics-root class="mt-lg"></div>
-    </section>
+    <div data-rush-root></div>
+    <p class="mt-lg"><a href="games.html" data-i18n="rush_back_btn">← Back to Games</a></p>
   </main>
 
   <footer class="site-footer">
@@ -111,7 +94,9 @@
   <script src="js/pwa.js"></script>
   <script src="js/calmspace.js"></script>
   <script src="js/topics-index.js"></script>
-  <script src="js/page-analytics.js"></script>
+  <script src="js/heroes.js"></script>
+  <script src="js/soundfx.js"></script>
+  <script src="js/page-hero-rush.js"></script>
   <script src="js/boot.js"></script>
 </body>
 </html>

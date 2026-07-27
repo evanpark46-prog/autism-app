@@ -1,5 +1,5 @@
 /* ==========================================================================
-   Safety Scouts — My Badges (badges.html)
+   Safety Superheroes — My Badges (badges.html)
    Shows one badge per topic, grouped the same way as the home page. A
    badge unlocks in full color once that topic's story has been completed
    at least once (same levelCompletes signal the home page checkmark

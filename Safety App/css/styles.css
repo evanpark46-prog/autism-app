@@ -232,7 +232,9 @@ a:focus-visible, button:focus-visible, select:focus-visible, input:focus-visible
 
 @media (prefers-reduced-motion: reduce){
   .comic-panel, .hero-badge, .speech-bubble{transition:none;}
+  .page-vanta-bg, .page-flyhero{display:none;}
 }
+[data-calm-mode="on"] .page-vanta-bg, [data-calm-mode="on"] .page-flyhero{display:none;}
 
 /* Superpower-unlock reveal on the story-complete screen (page-topic.js) */
 .power-unlock{
@@ -371,6 +373,25 @@ main{max-width:1080px; margin:0 auto; padding:28px 20px 64px;}
 .hero p{color:var(--ink-soft); font-size:1.1rem; max-width:640px; margin:0 auto 1em;}
 .hero-actions{display:flex; gap:12px; justify-content:center; flex-wrap:wrap; margin-top:14px;}
 
+/* ---------- Home-page sky (clouds background + flying mascot) ----------
+   Page-level, not hero-scoped -- covers the whole home page as a fixed
+   backdrop/overlay behind (resp. above) the normal content. Vanta mounts
+   its own <canvas> into .page-vanta-bg. Both are skipped entirely under
+   Calm Mode / prefers-reduced-motion (see js/herobg.js), same as every
+   other motion effect in this app. */
+.page-vanta-bg{position:fixed; inset:0; z-index:-1;}
+
+/* The site mascot in a cape, patrolling a slow lap around the whole screen.
+   Motion is driven by GSAP (js/herobg.js) -- this is just its resting
+   position/size before the timeline starts. Sits above page content but
+   below the sticky header/display panel/calm-space button so it never
+   competes with real UI. pointer-events:none so it can never block clicks. */
+.page-flyhero{
+  position:fixed; z-index:40; left:8%; top:14%;
+  width:76px; height:auto; pointer-events:none;
+  transform:rotate(-12deg);
+}
+
 /* ---------- Buttons ---------- */
 .btn{
   display:inline-flex; align-items:center; justify-content:center; gap:8px;
@@ -498,6 +519,79 @@ main{max-width:1080px; margin:0 auto; padding:28px 20px 64px;}
 .topic-card[data-theme="purple"]{border-top-color:var(--purple);}
 .topic-card[data-theme="red"]{border-top-color:var(--red);}
 .topic-card[data-theme="amber"]{border-top-color:var(--amber);}
+
+/* ---------- Home page: "Meet your superheroes" wall ---------- */
+.hero-wall{text-align:center;}
+.hero-wall h2{font-size:1.6rem; color:var(--rose-dark);}
+.hero-wall__lead{color:var(--ink-soft); margin:6px 0 22px;}
+.hero-wall__grid{
+  display:grid; gap:18px; grid-template-columns:repeat(auto-fit, minmax(180px,1fr));
+  text-align:left;
+}
+.hero-wall__grid .reveal-on-scroll:nth-child(4n+2){transition-delay:.06s;}
+.hero-wall__grid .reveal-on-scroll:nth-child(4n+3){transition-delay:.12s;}
+.hero-wall__grid .reveal-on-scroll:nth-child(4n+4){transition-delay:.18s;}
+
+.hero-card{
+  --tilt:-1deg;
+  display:flex; flex-direction:column; align-items:center; text-align:center; gap:8px;
+  padding:22px 16px 20px; text-decoration:none; color:inherit; cursor:pointer;
+  transform:rotate(var(--tilt)); transition:transform .18s var(--ease-bounce), box-shadow .18s ease;
+}
+.hero-card--tilt-b{--tilt:1deg;}
+.hero-card:hover{transform:rotate(0deg) translateY(-5px); box-shadow:8px 8px 0 var(--ink);}
+.hero-card:active{transform:rotate(0deg) translateY(-1px) scale(.97); box-shadow:4px 4px 0 var(--ink);}
+.hero-card h3{font-size:1.05rem; margin:2px 0 0;}
+.hero-card__power{
+  font-size:.75rem; font-weight:800; text-transform:uppercase; letter-spacing:.02em;
+  padding:3px 10px; border-radius:20px; background:var(--rose-tint); color:var(--rose-dark);
+}
+.hero-card__tagline{font-size:.85rem; color:var(--ink-soft); margin:0;}
+[data-theme="blue"] .hero-card__power{background:var(--blue-tint); color:var(--blue-dark);}
+[data-theme="green"] .hero-card__power{background:var(--green-tint); color:var(--green);}
+[data-theme="purple"] .hero-card__power{background:var(--purple-tint); color:var(--purple);}
+[data-theme="red"] .hero-card__power{background:var(--red-tint); color:var(--red);}
+[data-theme="amber"] .hero-card__power{background:var(--amber-tint); color:var(--amber);}
+@media (prefers-reduced-motion: reduce){
+  .hero-card{transition:none;}
+}
+
+/* Superhero-badge shape variety -- not every card has to be a rectangle.
+   Cycled across hero-wall/game cards (see js/page-home.js and games.html).
+   clip-path removes box-shadow's visible edge, so shaped cards swap to
+   filter:drop-shadow (which follows the clipped silhouette instead of the
+   original rectangular box) and fake their outline with a same-shape ::before
+   set 3px larger, since a plain CSS border can't follow a clip-path either. */
+.hero-card.shape-hex, .hero-card.shape-shield{
+  border:none; box-shadow:none; background:none;
+  filter:drop-shadow(6px 6px 0 var(--ink));
+  padding:34px 22px;
+}
+.hero-card.shape-shield{padding-bottom:44px;}
+.hero-card.shape-hex::before, .hero-card.shape-shield::before{
+  content:''; position:absolute; inset:-3px; z-index:-1; background:var(--panel);
+}
+/* Gentle pinch, not a sharp point -- the tagline text needs to survive
+   inside the narrowest part of the shape, so this stays wide (72%+) even
+   at the top/bottom edges instead of tapering to a point. */
+.hero-card.shape-hex, .hero-card.shape-hex::before{
+  clip-path:polygon(14% 2%, 86% 2%, 100% 50%, 86% 98%, 14% 98%, 0% 50%);
+}
+.hero-card.shape-shield, .hero-card.shape-shield::before{
+  clip-path:polygon(0% 0%, 100% 0%, 100% 78%, 50% 100%, 0% 78%);
+}
+.hero-card.shape-tag{
+  clip-path:polygon(0% 0%, 88% 0%, 100% 14%, 100% 100%, 0% 100%);
+}
+.hero-card.shape-hex .hero-card__tagline, .hero-card.shape-shield .hero-card__tagline{
+  max-width:88%;
+}
+.hero-card:hover.shape-hex, .hero-card:hover.shape-shield{
+  filter:drop-shadow(8px 8px 0 var(--ink)); box-shadow:none;
+}
+.hero-card:active.shape-hex, .hero-card:active.shape-shield{
+  filter:drop-shadow(4px 4px 0 var(--ink)); box-shadow:none;
+}
 
 /* ---------- Topic badges (completion moment + collection page) ---------- */
 .topic-badge{
@@ -1046,6 +1140,8 @@ main{max-width:1080px; margin:0 auto; padding:28px 20px 64px;}
 .section h2{font-size:1.4rem; margin-bottom:.5em; color:var(--rose-dark);}
 .section p:last-child, .section table:last-child, .section ul:last-child{margin-bottom:0;}
 .section > p, .section li{max-width:68ch;}
+.games-external-heading{font-size:1.15rem; color:var(--ink-soft); border-top:2px solid var(--border); padding-top:24px;}
+.games-external-lead{color:var(--ink-soft); font-size:.92rem; margin-top:-4px;}
 .resource-list{list-style:none; padding:0; margin:0; display:grid; gap:12px;}
 .resource-list li{
   background:var(--panel); border:1px solid var(--border); border-radius:var(--radius-md);
@@ -1088,6 +1184,60 @@ main{max-width:1080px; margin:0 auto; padding:28px 20px 64px;}
 .home-review-cta p{color:var(--ink-soft); margin-bottom:16px;}
 .review-card-wrap{max-width:640px; margin:0 auto;}
 .review-progress{color:var(--ink-soft); font-weight:700; font-size:.9rem; margin-bottom:4px;}
+.rush-status-row{display:flex; align-items:center; justify-content:space-between; gap:10px;}
+.rush-status-row .review-progress{margin-bottom:0;}
+.rush-streak{
+  font-weight:800; font-size:.95rem; padding:4px 12px; border-radius:20px;
+  background:var(--amber-tint); color:var(--amber);
+}
+.rush-alltime-best{color:var(--ink-soft); font-size:.9rem; font-weight:700;}
+
+/* ---------- Sort It Out ---------- */
+.sort-card-text{min-height:2.6em;}
+.sort-bins{display:grid; grid-template-columns:1fr 1fr; gap:14px; margin-top:16px;}
+.sort-bin{
+  border-radius:var(--radius-md); padding:22px 14px; text-align:center; font-weight:800; font-size:1rem;
+  border:3px solid var(--border); cursor:pointer; font-family:inherit; transition:transform .15s var(--ease-bounce), box-shadow .15s ease;
+}
+.sort-bin--safe{background:var(--green-tint); color:#155a3c; border-color:var(--green);}
+.sort-bin--rethink{background:var(--amber-tint); color:#8a5a10; border-color:var(--amber);}
+button.sort-bin:hover{transform:translateY(-3px); box-shadow:0 6px 0 rgba(0,0,0,.1);}
+button.sort-bin:active{transform:translateY(1px);}
+.sort-bin.is-answer{box-shadow:0 0 0 4px #fff, 0 0 0 7px currentColor;}
+div.sort-bin{cursor:default;}
+
+/* ---------- Word Power Quiz + Sky Chase bonus mission ---------- */
+.vocab-bonus-toggle{display:flex; align-items:center; justify-content:center; gap:10px; margin:16px 0; flex-wrap:wrap;}
+.vocab-bonus-toggle span{font-weight:700; color:var(--ink-soft);}
+.chase-hud{display:flex; align-items:center; gap:14px; max-width:420px; margin:0 auto 14px;}
+.chase-timer-track{flex:1; height:14px; border-radius:8px; background:var(--border); overflow:hidden; border:2px solid var(--ink);}
+.chase-timer-bar{height:100%; width:100%; background:linear-gradient(90deg, var(--green), var(--blue)); transition:width .1s linear;}
+.chase-field{
+  position:relative; max-width:420px; height:320px; margin:0 auto;
+  border-radius:var(--radius-lg); border:3px solid var(--ink); overflow:hidden;
+  background:linear-gradient(180deg, #cdeef7 0%, #eaf6ee 100%);
+}
+.chase-villain{
+  position:absolute; top:-14%; left:0; width:48px; height:48px; margin-left:-24px;
+  border:none; background:none; padding:0; cursor:pointer;
+  transition:top 3.1s linear, opacity .2s ease, transform .2s ease;
+}
+.chase-villain:active{transform:scale(.9);}
+.chase-villain.is-zapped{opacity:0; transform:scale(1.5);}
+/* Purely decorative -- the flying hero doesn't affect gameplay, it just
+   sells the "fly through the sky" framing while villains are zapped below. */
+.chase-hero{
+  position:absolute; top:4%; left:10%; width:64px; height:auto; z-index:2;
+  pointer-events:none; animation:chase-hero-fly 5s ease-in-out infinite;
+}
+@keyframes chase-hero-fly{
+  0%, 100%{left:6%; transform:rotate(-4deg);}
+  50%{left:62%; transform:rotate(4deg);}
+}
+@media (prefers-reduced-motion: reduce){
+  .chase-villain{transition:none;}
+  .chase-hero{animation:none; left:10%;}
+}
 .review-topic-tag{
   display:inline-block; font-size:.78rem; font-weight:800; letter-spacing:.02em; text-transform:uppercase;
   padding:4px 9px; border-radius:20px; background:var(--blue-tint); color:var(--blue-dark); margin-bottom:10px;
@@ -1122,15 +1272,21 @@ main{max-width:1080px; margin:0 auto; padding:28px 20px 64px;}
   padding:36px 28px; display:flex; flex-direction:column; align-items:center; gap:20px;
 }
 .calmspace-card h2{color:#12787e; font-size:1.5rem; margin:0;}
+/* A caped, meditating superhero -- our stand-in for the breathing prompt.
+   The whole figure grows gently on the in-breath and settles back on the
+   out-breath, paced by js/calmspace.js's 4s interval. Kept subtle (a small
+   scale, not a bounce) since this is the app's dedicated calm-down feature. */
 .calmspace-circle{
-  width:150px; height:150px; border-radius:50%;
-  background:radial-gradient(circle, #7fd8de 0%, #2dbfc7 100%);
+  width:170px; height:170px; border-radius:50%;
+  background:radial-gradient(circle, #e3f7f8 0%, #cdeef1 100%);
   display:flex; align-items:center; justify-content:center;
-  color:#fff; font-weight:800; font-size:1.05rem; text-align:center; padding:14px;
+  padding:10px;
   transform:scale(1); transition:transform 4s ease-in-out;
 }
-.calmspace-circle.is-inhale{transform:scale(1.3);}
+.calmspace-circle.is-inhale{transform:scale(1.07);}
 .calmspace-circle.is-exhale{transform:scale(1);}
+.calmspace-hero{width:78%; height:78%;}
+.calmspace-phase{color:#12787e; font-weight:800; font-size:1.1rem; margin:0;}
 .calmspace-hint{color:var(--ink-soft); margin:0; font-size:.95rem;}
 @media (prefers-reduced-motion: reduce){
   .calmspace-circle{transition:none;}

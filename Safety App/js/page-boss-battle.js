@@ -1,5 +1,5 @@
 /* ==========================================================================
-   Safety Scouts — The Safety Showdown (boss-battle.html)
+   Safety Superheroes — The Safety Showdown (boss-battle.html)
    Unlocks once every topic is complete (see js/page-badges.js banner).
    A celebratory capstone, not a test: every round always lands its "hit" on
    the monster regardless of the answer picked, consistent with the app's

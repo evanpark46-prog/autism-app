@@ -1,5 +1,5 @@
 /* ==========================================================================
-   Safety Scouts — service worker
+   Safety Superheroes — service worker
    Precaches the app shell (pages, styles, core scripts, icons) so the site
    opens offline once visited. Lesson content (content/<id>.js) and topic
    images are cached at runtime, the first time each topic is actually
@@ -10,7 +10,7 @@
    returning visitors pick up the change instead of an old cached copy.
    ========================================================================== */
 
-const CACHE_NAME = 'safety-scouts-shell-v7';
+const CACHE_NAME = 'safety-superheroes-shell-v15';
 
 const SHELL_FILES = [
   'index.html',
@@ -23,6 +23,9 @@ const SHELL_FILES = [
   'analytics.html',
   'badges.html',
   'boss-battle.html',
+  'hero-rush.html',
+  'vocab-quiz.html',
+  'sort-it-out.html',
   '404.html',
   'manifest.json',
   'css/styles.css',
@@ -50,14 +53,22 @@ const SHELL_FILES = [
   'js/page-analytics.js',
   'js/page-badges.js',
   'js/page-boss-battle.js',
+  'js/page-hero-rush.js',
+  'js/page-vocab-quiz.js',
+  'js/page-sort-it-out.js',
   'js/boot.js',
   'js/pwa.js',
   'js/calmspace.js',
+  'js/herobg.js',
+  'js/vendor/three.r134.min.js',
+  'js/vendor/vanta.clouds2.min.js',
+  'js/vendor/gsap.min.js',
   'img/icon-192.png',
   'img/icon-512.png',
   'img/icon-maskable-512.png',
   'img/apple-touch-icon.png',
   'img/og-banner.png',
+  'img/vanta/noise.png',
 ];
 
 self.addEventListener('install', event => {

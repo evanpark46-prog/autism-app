@@ -1,5 +1,5 @@
 /* ==========================================================================
-   Safety Scouts — superhero buddies
+   Safety Superheroes — superhero buddies
    One comic-style hero per topic, tied to that lesson's real safety skill.
    A hero "accompanies" a lesson simply by living in the topic-hero header
    (js/page-topic.js renderHero()), which stays visible across the Video/

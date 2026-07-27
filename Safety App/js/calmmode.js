@@ -1,5 +1,5 @@
 /* ==========================================================================
-   Safety Scouts — Calm Mode
+   Safety Superheroes — Calm Mode
    One toggle that: forces the same "no motion" behavior as
    prefers-reduced-motion (regardless of the OS setting), mutes the new
    sound effects this app adds (e.g. the completion chime -- never the

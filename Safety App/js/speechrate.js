@@ -1,5 +1,5 @@
 /* ==========================================================================
-   Safety Scouts — read-aloud speed picker
+   Safety Superheroes — read-aloud speed picker
    Purely a multiplier applied on top of each voice's own base rate in
    js/speech.js — never overrides the per-character pitch/voice profile.
    ========================================================================== */

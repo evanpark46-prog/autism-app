@@ -1,5 +1,5 @@
 /* ==========================================================================
-   Safety Scouts — glossary (hover/focus word definitions)
+   Safety Superheroes — glossary (hover/focus word definitions)
    A curated set of the more abstract vocabulary words used across the
    lessons -- not every word, just the ones a learner is less likely to
    already know (skips simple words like "help" or "car"). Matching words

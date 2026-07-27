@@ -1,5 +1,5 @@
 /* ==========================================================================
-   Safety Scouts — boot
+   Safety Superheroes — boot
    Tiny utilities used everywhere, plus the DOMContentLoaded dispatcher that
    wires up the universal switchers and calls the current page's init
    function (see js/page-*.js and js/speech.js for those). Loaded on every
@@ -19,18 +19,18 @@ function escapeHtml(str){
     .replace(/>/g, '&gt;');
 }
 
-// The site mascot -- a small friendly raccoon face, used as the header logo
+// The site mascot -- a bold superhero shield emblem, used as the header logo
 // (see .brand__badge in every page) and as the topic-loading animation
 // (js/page-topic.js). Kept as one shared function so both stay in sync.
+// The "S" stands in for both "Safety" and "Superheroes" -- a full "SAFE"
+// wordmark doesn't stay legible at the ~28px header badge size, so a single
+// bold glyph (same trick as most superhero chest emblems) reads better,
+// especially since the full wordmark already sits right next to the badge.
 function mascotSvg(){
   return '<svg viewBox="0 0 64 64" width="100%" height="100%" fill="none" xmlns="http://www.w3.org/2000/svg" focusable="false">'
-    + '<circle cx="16" cy="15" r="9" fill="#fff"/><circle cx="48" cy="15" r="9" fill="#fff"/>'
-    + '<circle cx="16" cy="16" r="4.5" fill="#3b3b3b" opacity=".5"/><circle cx="48" cy="16" r="4.5" fill="#3b3b3b" opacity=".5"/>'
-    + '<ellipse cx="32" cy="35" rx="21" ry="18" fill="#fff"/>'
-    + '<path d="M12 29c6-7 34-7 40 0 0 9-9 12-20 12S12 38 12 29Z" fill="#3b3b3b"/>'
-    + '<circle cx="24" cy="30" r="3.2" fill="#fff"/><circle cx="40" cy="30" r="3.2" fill="#fff"/>'
-    + '<circle cx="24" cy="30.5" r="1.5" fill="#1a1a1a"/><circle cx="40" cy="30.5" r="1.5" fill="#1a1a1a"/>'
-    + '<ellipse cx="32" cy="43" rx="7.5" ry="5.5" fill="#f4ede3"/><ellipse cx="32" cy="42" rx="2.2" ry="1.6" fill="#2b2b2b"/>'
+    + '<path d="M32 3 58 12v17c0 18-11 29-26 32C17 58 6 47 6 29V12Z" fill="#c8460a" stroke="#2b2b2b" stroke-width="3.5" stroke-linejoin="round"/>'
+    + '<path d="M32 10 50 16v13.5c0 14-8.5 23-18 26-9.5-3-18-12-18-26V16Z" fill="#fff8f0" stroke="#2b2b2b" stroke-width="2.5" stroke-linejoin="round"/>'
+    + '<text x="32" y="42" font-family="\'Baloo 2\', sans-serif" font-weight="800" font-size="28" text-anchor="middle" fill="#c8460a">S</text>'
     + '</svg>';
 }
 
@@ -94,6 +94,9 @@ document.addEventListener('DOMContentLoaded', () => {
   else if (page === 'review') initReviewPage();
   else if (page === 'badges') initBadgesPage();
   else if (page === 'boss-battle') initBossBattlePage();
+  else if (page === 'hero-rush') initHeroRushPage();
+  else if (page === 'vocab-quiz') initVocabQuizPage();
+  else if (page === 'sort-it-out') initSortItOutPage();
 
   window.addEventListener('safetylib:langchange', () => applyStaticI18n());
 });

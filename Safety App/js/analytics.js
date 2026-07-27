@@ -1,5 +1,5 @@
 /* ==========================================================================
-   Safety Scouts — local-only usage analytics
+   Safety Superheroes — local-only usage analytics
    Everything here reads/writes localStorage on the current browser only.
    Nothing is sent anywhere — there is no server. This exists so a parent
    checking this device can see which lessons a learner has been using.

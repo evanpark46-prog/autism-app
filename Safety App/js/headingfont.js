@@ -1,5 +1,5 @@
 /* ==========================================================================
-   Safety Scouts — heading font style picker
+   Safety Superheroes — heading font style picker
    "Readable" (Baloo 2) is the default for accessibility; the cursive
    Dancing Script look from earlier versions is kept as an opt-in style,
    never the default.

@@ -1,5 +1,5 @@
 /* ==========================================================================
-   Safety Scouts — favorites ("My Topics")
+   Safety Superheroes — favorites ("My Topics")
    A small localStorage-backed pin list so a learner or parent can jump
    straight back to specific topics instead of re-scanning the whole grid.
    Local-only, like everything else here.

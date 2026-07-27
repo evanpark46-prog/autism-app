@@ -1,5 +1,5 @@
 /* ==========================================================================
-   Safety Scouts — topic categories
+   Safety Superheroes — topic categories
    Shared by the home page grid and the badge collection page. Each
    topic's `theme` (js/data.js) is already assigned per category (see the
    comment there), so a category's color and its topics' card colors

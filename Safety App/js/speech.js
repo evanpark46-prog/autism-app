@@ -1,5 +1,5 @@
 /* ==========================================================================
-   Safety Scouts — speech (topic.html only)
+   Safety Superheroes — speech (topic.html only)
    Text-to-speech playback, speech-recognition matching for the guided
    flashcard drill, and the narrative typewriter effect. Nothing outside
    initTopicPage (js/page-topic.js) uses any of this.
@@ -27,11 +27,21 @@ function hashStr(s){
   return Math.abs(h);
 }
 
-// Prefer higher-quality network voices (e.g. Chrome's "Google" voices) over
-// the default, more robotic-sounding local OS voices, when both are present.
+// Prefer higher-quality network/neural voices over the default, more
+// robotic-sounding local OS voices, when both are present. The Web Speech
+// API only ever exposes whatever voices the browser/OS already ships --
+// this can only rank what's available, not add new voices. Tiers, best to
+// worst: Chrome's Google network voices and Edge/Windows' "Online" neural
+// voices (genuinely natural-sounding); Apple's enhanced/premium voices;
+// any other named voice; explicitly-known low-quality engines (eSpeak and
+// the old compact/robotic voices) always sort last even if nothing else
+// matches, since a browser will otherwise happily default to those.
 function rankVoice(v){
-  if (/google/i.test(v.name)) return 0;
-  if (/natural|online|neural/i.test(v.name)) return 1;
+  const name = v.name || '';
+  if (/google/i.test(name)) return 0;
+  if (/online|natural|neural/i.test(name)) return 0;
+  if (/enhanced|premium/i.test(name)) return 1;
+  if (/espeak|compact|pico/i.test(name)) return 3;
   return 2;
 }
 

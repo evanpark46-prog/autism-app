@@ -1,5 +1,5 @@
 /* ==========================================================================
-   Safety Scouts — text size (zoom) control
+   Safety Superheroes — text size (zoom) control
    Scales the root font-size, which every rem-based font-size in the site
    is relative to, so headings/body/buttons all zoom together consistently.
    ========================================================================== */
