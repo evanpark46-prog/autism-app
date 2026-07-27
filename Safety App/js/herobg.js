@@ -44,31 +44,38 @@
     if (cloudEffect){ cloudEffect.destroy(); cloudEffect = null; }
   }
 
-  /* ---------------- flying mascot (GSAP) ---------------- */
+  /* ---------------- flying squadron (GSAP) ---------------- */
 
-  const heroEl = document.getElementById('hero-flyhero');
-  const capeEl = document.getElementById('flyhero-cape');
-  const bodyEl = document.getElementById('flyhero-body');
-  const body2El = document.getElementById('flyhero-body2');
-  const emblemEl = document.getElementById('flyhero-emblem');
-  let heroTween = null;
+  // A small squadron, not a single mascot -- each flies the same patrol
+  // loop but phase-offset (started at a different waypoint) so they're
+  // spread around the screen instead of clumped together. See the
+  // matching page-flyhero-b/-c markup + CSS sizing in index.html/styles.css.
+  const SQUADRON_SUFFIXES = ['', '-b', '-c'];
+  const squadron = SQUADRON_SUFFIXES.map(suffix => ({
+    el: document.getElementById(`hero-flyhero${suffix}`),
+    capeEl: document.getElementById(`flyhero-cape${suffix}`),
+    bodyEl: document.getElementById(`flyhero-body${suffix}`),
+    body2El: document.getElementById(`flyhero-body2${suffix}`),
+    emblemEl: document.getElementById(`flyhero-emblem${suffix}`),
+    tween: null,
+  })).filter(hero => hero.el);
 
-  // Cycle through a random topic's colour + emblem each lap, so the flying
-  // mascot reads as "one of the 23 heroes" rather than always the same
-  // raccoon -- reuses the existing HEROES/HERO_EMBLEMS data (js/heroes.js),
-  // already loaded on this page for the "Meet your superheroes" wall.
-  function cycleHeroSkin(){
-    if (!capeEl || typeof TOPICS === 'undefined' || typeof HERO_EMBLEMS === 'undefined') return;
+  // Cycle through a random topic's colour + emblem each lap, so each flying
+  // hero reads as "one of the 23 heroes" rather than always the same look --
+  // reuses the existing HEROES/HERO_EMBLEMS data (js/heroes.js), already
+  // loaded on this page for the "Meet your superheroes" wall.
+  function cycleHeroSkin(hero){
+    if (!hero.capeEl || typeof TOPICS === 'undefined' || typeof HERO_EMBLEMS === 'undefined') return;
     const meta = TOPICS[Math.floor(Math.random() * TOPICS.length)];
     if (!meta) return;
-    const hero = typeof heroFor === 'function' ? heroFor(meta.id) : null;
+    const heroData = typeof heroFor === 'function' ? heroFor(meta.id) : null;
     const themeVar = `var(--${meta.theme})`;
     const themeDarkVar = `var(--${meta.theme}-dark, ${themeVar})`;
-    if (capeEl) capeEl.setAttribute('fill', themeVar);
-    if (bodyEl) bodyEl.setAttribute('fill', themeDarkVar);
-    if (body2El) body2El.setAttribute('fill', themeDarkVar);
-    if (emblemEl && hero){
-      emblemEl.innerHTML = HERO_EMBLEMS[hero.emblem] || HERO_EMBLEMS.star;
+    hero.capeEl.setAttribute('fill', themeVar);
+    if (hero.bodyEl) hero.bodyEl.setAttribute('fill', themeDarkVar);
+    if (hero.body2El) hero.body2El.setAttribute('fill', themeDarkVar);
+    if (hero.emblemEl && heroData){
+      hero.emblemEl.innerHTML = HERO_EMBLEMS[heroData.emblem] || HERO_EMBLEMS.star;
     }
   }
 
@@ -87,29 +94,49 @@
   ];
   const LEG_DURATION = 3.4;
 
-  function startHero(){
-    if (!heroEl || heroTween || typeof gsap === 'undefined' || !motionAllowed()) return;
-    cycleHeroSkin();
-    heroTween = gsap.timeline({ repeat: -1, onRepeat: cycleHeroSkin }).set(heroEl, WAYPOINTS[0]);
-    for (let i = 1; i <= WAYPOINTS.length; i++){
-      heroTween.to(heroEl, Object.assign({ duration: LEG_DURATION, ease: 'sine.inOut' }, WAYPOINTS[i % WAYPOINTS.length]));
+  /** Rotated copy of WAYPOINTS starting at `offset`, so a squadron member's
+   * lap begins partway around the same closed loop instead of at the top. */
+  function rotatedWaypoints(offset){
+    const n = WAYPOINTS.length;
+    return Array.from({ length: n }, (_, i) => WAYPOINTS[(offset + i) % n]);
+  }
+
+  function startHero(hero, index){
+    if (hero.tween || typeof gsap === 'undefined' || !motionAllowed()) return;
+    const offset = Math.round((index * WAYPOINTS.length) / squadron.length);
+    const points = rotatedWaypoints(offset);
+    const legDuration = LEG_DURATION * (1 + index * 0.12); // slightly different pace per hero
+    cycleHeroSkin(hero);
+    hero.tween = gsap.timeline({ repeat: -1, onRepeat: () => cycleHeroSkin(hero) }).set(hero.el, points[0]);
+    for (let i = 1; i <= points.length; i++){
+      hero.tween.to(hero.el, Object.assign({ duration: legDuration, ease: 'sine.inOut' }, points[i % points.length]));
     }
   }
 
-  function stopHero(){
-    if (heroTween){ heroTween.kill(); heroTween = null; }
-    if (heroEl && typeof gsap !== 'undefined') gsap.set(heroEl, WAYPOINTS[0]);
+  function stopHero(hero, index){
+    if (hero.tween){ hero.tween.kill(); hero.tween = null; }
+    if (hero.el && typeof gsap !== 'undefined'){
+      const offset = Math.round((index * WAYPOINTS.length) / squadron.length);
+      gsap.set(hero.el, WAYPOINTS[offset % WAYPOINTS.length]);
+    }
+  }
+
+  function startSquadron(){
+    squadron.forEach((hero, i) => startHero(hero, i));
+  }
+  function stopSquadron(){
+    squadron.forEach((hero, i) => stopHero(hero, i));
   }
 
   /* ---------------- wire up ---------------- */
 
   startClouds();
-  startHero();
+  startSquadron();
 
   // Calm Mode can be toggled on this same page via the display panel --
   // react immediately instead of waiting for a reload.
   new MutationObserver(() => {
-    if (motionAllowed()){ startClouds(); startHero(); }
-    else { stopClouds(); stopHero(); }
+    if (motionAllowed()){ startClouds(); startSquadron(); }
+    else { stopClouds(); stopSquadron(); }
   }).observe(document.documentElement, { attributes: true, attributeFilter: ['data-calm-mode'] });
 })();

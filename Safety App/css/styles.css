@@ -391,6 +391,11 @@ main{max-width:1080px; margin:0 auto; padding:28px 20px 64px;}
   width:76px; height:auto; pointer-events:none;
   transform:rotate(-12deg);
 }
+/* A small squadron, not a single mascot -- b/c fly the same patrol loop
+   phase-offset in js/herobg.js, sized down a touch so they read as
+   teammates at different distances rather than exact clones. */
+.page-flyhero--b{width:58px;}
+.page-flyhero--c{width:46px;}
 
 /* ---------- Buttons ---------- */
 .btn{
@@ -557,32 +562,40 @@ main{max-width:1080px; margin:0 auto; padding:28px 20px 64px;}
 }
 
 /* Superhero-badge shape variety -- not every card has to be a rectangle.
-   Cycled across hero-wall/game cards (see js/page-home.js and games.html).
-   clip-path removes box-shadow's visible edge, so shaped cards swap to
-   filter:drop-shadow (which follows the clipped silhouette instead of the
-   original rectangular box) and fake their outline with a same-shape ::before
-   set 3px larger, since a plain CSS border can't follow a clip-path either. */
+   Cycled across the hero-wall/game cards only (see js/page-home.js's
+   heroCardHtml and games.html) -- the 23-topic grid stays plain rectangles,
+   it's the primary daily-use navigation and has denser content (icon,
+   title, tagline, 3 tags, a pin button, a completion checkmark) that
+   isn't worth the clipping risk. Generic base rules here just do the
+   clipping; hero-card (below) supplies its own border/shadow-removal +
+   safe padding, since clip-path removes a plain box-shadow/border's
+   visible edge -- shaped cards swap to filter:drop-shadow (follows the
+   clipped silhouette) and fake their outline with a same-shape ::before
+   set 3px larger. Gentle pinch, not a sharp point -- text needs to
+   survive inside the narrowest part of the shape, so hex/shield stay wide
+   (72%+) even at their tightest instead of tapering to a point. */
+.shape-hex, .shape-shield{ position:relative; }
+.shape-hex::before, .shape-shield::before{
+  content:''; position:absolute; inset:-3px; z-index:-1; background:var(--panel);
+}
+.shape-hex, .shape-hex::before{
+  clip-path:polygon(14% 2%, 86% 2%, 100% 50%, 86% 98%, 14% 98%, 0% 50%);
+}
+.shape-shield, .shape-shield::before{
+  clip-path:polygon(0% 0%, 100% 0%, 100% 78%, 50% 100%, 0% 78%);
+}
+.shape-tag{
+  clip-path:polygon(0% 0%, 88% 0%, 100% 14%, 100% 100%, 0% 100%);
+}
+
+/* -- hero-wall / game cards (comic-panel look: hard offset shadow) -- */
 .hero-card.shape-hex, .hero-card.shape-shield{
   border:none; box-shadow:none; background:none;
   filter:drop-shadow(6px 6px 0 var(--ink));
   padding:34px 22px;
 }
 .hero-card.shape-shield{padding-bottom:44px;}
-.hero-card.shape-hex::before, .hero-card.shape-shield::before{
-  content:''; position:absolute; inset:-3px; z-index:-1; background:var(--panel);
-}
-/* Gentle pinch, not a sharp point -- the tagline text needs to survive
-   inside the narrowest part of the shape, so this stays wide (72%+) even
-   at the top/bottom edges instead of tapering to a point. */
-.hero-card.shape-hex, .hero-card.shape-hex::before{
-  clip-path:polygon(14% 2%, 86% 2%, 100% 50%, 86% 98%, 14% 98%, 0% 50%);
-}
-.hero-card.shape-shield, .hero-card.shape-shield::before{
-  clip-path:polygon(0% 0%, 100% 0%, 100% 78%, 50% 100%, 0% 78%);
-}
-.hero-card.shape-tag{
-  clip-path:polygon(0% 0%, 88% 0%, 100% 14%, 100% 100%, 0% 100%);
-}
+.hero-card.shape-hex::before, .hero-card.shape-shield::before{background:var(--panel);}
 .hero-card.shape-hex .hero-card__tagline, .hero-card.shape-shield .hero-card__tagline{
   max-width:88%;
 }
