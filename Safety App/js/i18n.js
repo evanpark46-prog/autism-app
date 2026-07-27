@@ -339,6 +339,7 @@ const UI_STRINGS = {
     about_why_body: 'This project was created for my twin brother, Sean, who is autistic. Growing up, Sean did not pick up everyday safety habits the way many children do simply by observing the people and world around him — knowing what to do around someone he doesn’t know, how to cross a street safely, or what to do in an emergency required direct, structured teaching and a great deal of repeated practice. Safety Superheroes was built to meet that need: a free tool that breaks core safety skills into short stories, flashcards, and guided practice that can be revisited as many times as necessary, at a pace that fits the learner, in English or Spanish.',
     about_contact_heading: 'Questions or feedback?',
     about_contact_body: 'If you’re using Safety Superheroes with a learner and have feedback, questions, or a suggestion, I’d like to hear from you.',
+    about_linkedin_btn: 'Connect on LinkedIn →',
 
     footer_note: 'Safety Superheroes — a free resource. No accounts, no logins. We use a private, cookie-free visit counter to see how many people use the site — it does not collect names, exact locations, or anything that identifies an individual visitor.',
 
@@ -693,6 +694,7 @@ const UI_STRINGS = {
     about_why_body: 'Este proyecto fue creado para mi hermano gemelo, Sean, quien es autista. Mientras crecía, Sean no adquirió los hábitos de seguridad cotidianos de la misma manera en que muchos niños lo hacen, simplemente observando a las personas y el mundo a su alrededor — saber qué hacer frente a alguien que no conoce, cómo cruzar una calle de forma segura, o qué hacer en una emergencia requería una enseñanza directa y estructurada, y mucha práctica repetida. Safety Superheroes fue creado para responder a esa necesidad: una herramienta gratuita que divide las habilidades de seguridad esenciales en historias cortas, tarjetas de práctica, y ejercicios guiados que se pueden repasar tantas veces como sea necesario, al ritmo que se ajuste al estudiante, en inglés o español.',
     about_contact_heading: '¿Preguntas o comentarios?',
     about_contact_body: 'Si usas Safety Superheroes con un estudiante y tienes comentarios, preguntas, o una sugerencia, me gustaría saber de ti.',
+    about_linkedin_btn: 'Conéctate en LinkedIn →',
 
     footer_note: 'Superhéroes de la Seguridad — un recurso gratuito. Sin cuentas, sin inicios de sesión. Usamos un contador de visitas privado y sin cookies para saber cuántas personas usan el sitio — no recopila nombres, ubicaciones exactas, ni nada que identifique a una persona en particular.',
 
