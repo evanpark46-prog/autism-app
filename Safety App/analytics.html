@@ -7,7 +7,7 @@
   <script>(function(){try{var s=localStorage.getItem('safetylib_skin');if(s)document.documentElement.setAttribute('data-skin', s);}catch(e){}})();</script>
   <script>(function(){try{var sizes=[87.5,100,115,130,145];var idx=parseInt(localStorage.getItem('safetylib_text_size_idx'),10);if(!(idx>=0&&idx<sizes.length))idx=1;document.documentElement.style.fontSize=sizes[idx]+'%';}catch(e){}})();</script>
   <script>(function(){try{var f=localStorage.getItem('safetylib_heading_font');if(f==='cursive')document.documentElement.setAttribute('data-heading-font','cursive');}catch(e){}})();</script>
-  <script>(function(){try{var c=localStorage.getItem('safetylib_calm_mode');document.documentElement.setAttribute('data-calm-mode', c==='on'?'on':'off');}catch(e){}})();</script>
+  <script>(function(){try{var c=localStorage.getItem('safetylib_calm_mode');document.documentElement.setAttribute('data-calm-mode', c==='off'?'off':'on');}catch(e){}})();</script>
   <title>Usage Insights — Safety Superheroes</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -23,11 +23,6 @@
   <meta property="og:image" content="img/og-banner.png">
   <meta property="og:type" content="website">
   <meta name="twitter:card" content="summary_large_image">
-  <!-- Site visitor counter (GoatCounter -- privacy-friendly, no cookies, no
-       personal data). Sign up free at https://www.goatcounter.com, then
-       replace REPLACE_ME below with your site code (the part before
-       ".goatcounter.com" in the dashboard URL you are given). -->
-  <script data-goatcounter="https://REPLACE_ME.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 </head>
 <body data-page="analytics">
   <a href="#main" class="skip-link">Skip to content</a>
@@ -98,6 +93,7 @@
 
   <footer class="site-footer">
     <p data-i18n="footer_note">Safety Superheroes — a free resource.</p>
+    <p><a href="privacy.html" data-i18n="footer_privacy_link">Privacy Policy</a></p>
   </footer>
 
   <script src="js/i18n.js"></script>

@@ -7,7 +7,7 @@
   <script>(function(){try{var sizes=[87.5,100,115,130,145];var idx=parseInt(localStorage.getItem('safetylib_text_size_idx'),10);if(!(idx>=0&&idx<sizes.length))idx=1;document.documentElement.style.fontSize=sizes[idx]+'%';}catch(e){}})();</script>
   <script>(function(){try{var f=localStorage.getItem('safetylib_heading_font');if(f==='cursive')document.documentElement.setAttribute('data-heading-font','cursive');}catch(e){}})();</script>
   <script>(function(){try{var c=localStorage.getItem('safetylib_calm_mode');document.documentElement.setAttribute('data-calm-mode', c==='off'?'off':'on');}catch(e){}})();</script>
-  <title>Word Power Quiz — Safety Superheroes</title>
+  <title>Privacy Policy — Safety Superheroes</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Comic+Neue:wght@400;700&family=Dancing+Script:wght@600;700&family=Quicksand:wght@500;600;700;800&display=swap" rel="stylesheet">
@@ -16,10 +16,14 @@
   <meta name="theme-color" content="#c8460a">
   <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
   <link rel="icon" type="image/png" href="img/icon-192.png">
-  <meta name="robots" content="noindex">
-  <meta name="description" content="Match safety vocabulary words to their meanings, with an optional bonus flying mission every 5 in a row.">
+  <meta name="description" content="What Safety Superheroes does and does not collect, and why.">
+  <meta property="og:title" content="Privacy Policy — Safety Superheroes">
+  <meta property="og:description" content="What Safety Superheroes does and does not collect, and why.">
+  <meta property="og:image" content="img/og-banner.png">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
 </head>
-<body data-page="vocab-quiz">
+<body data-page="privacy">
   <a href="#main" class="skip-link">Skip to content</a>
   <noscript><p class="note-box" style="margin:16px 20px;">Safety Superheroes needs JavaScript turned on to show its lessons. Please enable JavaScript in your browser settings and reload the page.</p></noscript>
 
@@ -32,7 +36,7 @@
       <nav class="site-nav" aria-label="Main">
         <a href="index.html" data-i18n="nav_library">Home</a>
         <a href="review.html" data-i18n="nav_review">Review</a>
-        <a href="games.html" aria-current="page" data-i18n="nav_games">Games</a>
+        <a href="games.html" data-i18n="nav_games">Games</a>
         <a href="parents.html" data-i18n="nav_parents">Parents &amp; Educators</a>
         <a href="about.html" data-i18n="nav_about">About</a>
       </nav>
@@ -75,12 +79,52 @@
   </header>
 
   <main id="main">
-    <div data-vocab-root></div>
-    <p class="mt-lg"><a href="games.html" data-i18n="rush_back_btn">← Back to Games</a></p>
+    <section class="hero">
+      <h1 data-i18n="privacy_title">Privacy Policy</h1>
+      <p data-i18n="privacy_lead">Safety Superheroes is built to need as little information about you as possible. Here is exactly what that means.</p>
+    </section>
+
+    <section class="section">
+      <h2 data-i18n="privacy_noaccounts_heading">No accounts, no logins</h2>
+      <p data-i18n="privacy_noaccounts_body">You never create an account or sign in to use Safety Superheroes. There is no username, password, email address, or profile stored anywhere for using the app.</p>
+    </section>
+
+    <section class="section">
+      <h2 data-i18n="privacy_local_heading">Everything stays on your device</h2>
+      <p data-i18n="privacy_local_body">Your preferences (color theme, text size, language, Calm Mode, sound on/off) and your progress (which lessons you've completed, favorites, game best streaks) are saved only in your browser's local storage, on your own device. None of it is uploaded to a server, and I cannot see it. Clearing your browser's site data for Safety Superheroes will erase it, and using a different device or browser starts fresh.</p>
+    </section>
+
+    <section class="section">
+      <h2 data-i18n="privacy_tracking_heading">No ads, no analytics tracking, no selling data</h2>
+      <p data-i18n="privacy_tracking_body">Safety Superheroes has no advertising, no third-party analytics or tracking scripts, and no social media pixels. There is nothing to sell, because nothing about you is collected in the first place.</p>
+    </section>
+
+    <section class="section">
+      <h2 data-i18n="privacy_offline_heading">Works offline, by design</h2>
+      <p data-i18n="privacy_offline_body">Once you've visited the site, a service worker saves the app's files so it keeps working without an internet connection. This is a standard web feature (a Progressive Web App) and does not involve sending any additional information anywhere.</p>
+    </section>
+
+    <section class="section">
+      <h2 data-i18n="privacy_children_heading">A note for parents and educators</h2>
+      <p data-i18n="privacy_children_body">Because Safety Superheroes doesn't collect names, birthdates, contact information, photos, audio, or any other personal information from any user — child or adult — there is nothing to request the deletion of. If you have questions about how this app handles data, or a request related to a specific device, reach out using the contact below.</p>
+    </section>
+
+    <section class="section">
+      <h2 data-i18n="privacy_changes_heading">Changes to this policy</h2>
+      <p data-i18n="privacy_changes_body">If this policy ever changes — for example, if a future feature needed to collect information it doesn't today — this page will be updated first, and the change will be described clearly, in plain language.</p>
+    </section>
+
+    <section class="section">
+      <h2 data-i18n="privacy_contact_heading">Questions?</h2>
+      <p data-i18n="privacy_contact_body">If anything here is unclear, or you have a question about privacy, reach out any time.</p>
+      <p style="display:flex; gap:10px; flex-wrap:wrap;">
+        <a class="btn btn-secondary" href="mailto:evanp819@stanford.edu">evanp819@stanford.edu</a>
+      </p>
+    </section>
   </main>
 
   <footer class="site-footer">
-    <p data-i18n="footer_note">Safety Superheroes — a free resource.</p>
+    <p data-i18n="footer_note">Safety Superheroes — a free resource. No accounts, no logins, no tracking.</p>
     <p><a href="privacy.html" data-i18n="footer_privacy_link">Privacy Policy</a></p>
   </footer>
 
@@ -94,9 +138,6 @@
   <script src="js/analytics.js"></script>
   <script src="js/pwa.js"></script>
   <script src="js/calmspace.js"></script>
-  <script src="js/glossary.js"></script>
-  <script src="js/soundfx.js"></script>
-  <script src="js/page-vocab-quiz.js"></script>
   <script src="js/boot.js"></script>
 </body>
 </html>

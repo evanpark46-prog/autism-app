@@ -117,7 +117,7 @@ function startSkyChase(root, lang, onDone){
     el.className = 'chase-villain';
     el.style.left = `${8 + Math.random() * 78}%`;
     el.innerHTML = villainSvg();
-    el.setAttribute('aria-label', 'Zap');
+    el.setAttribute('aria-label', t('vocab_bonus_zap_label'));
     field.appendChild(el);
     // Trigger the fall on the next frame so the transition actually runs.
     requestAnimationFrame(() => { el.style.top = '92%'; });
@@ -295,10 +295,14 @@ function renderVocabQuiz(){
           <svg viewBox="0 0 120 70" width="100%" height="100%" fill="none" xmlns="http://www.w3.org/2000/svg" focusable="false">
             <path d="M52 18 C30 14 14 26 10 44 C24 40 40 40 54 34 Z" fill="var(--rose)"/>
             <ellipse cx="66" cy="36" rx="16" ry="14" fill="var(--rose-dark)"/>
-            <circle cx="88" cy="26" r="11" fill="#fff"/>
-            <circle cx="81" cy="17" r="4" fill="#fff"/><circle cx="93" cy="17" r="4" fill="#fff"/>
-            <circle cx="81" cy="18" r="2" fill="#3b3b3b" opacity=".5"/><circle cx="93" cy="18" r="2" fill="#3b3b3b" opacity=".5"/>
-            <path d="M79 24c4-4 14-4 18 0 0 4-4 6-9 6s-9-2-9-6Z" fill="#3b3b3b"/>
+            <path d="M78 30c6-4 12-3 14 1s-2 8-8 8-9-5-6-9Z" fill="var(--rose-dark)"/>
+            <circle cx="80" cy="19" r="5" fill="#c98a4b"/><circle cx="96" cy="19" r="5" fill="#c98a4b"/>
+            <circle cx="80" cy="20" r="2.2" fill="#f0d3ab"/><circle cx="96" cy="20" r="2.2" fill="#f0d3ab"/>
+            <circle cx="88" cy="27" r="10" fill="#c98a4b"/>
+            <ellipse cx="88" cy="30" rx="6.5" ry="5" fill="#f0d3ab"/>
+            <ellipse cx="88" cy="28" rx="2.1" ry="1.7" fill="#3b2a20"/>
+            <circle cx="83.5" cy="24" r="1.5" fill="#3b2a20"/><circle cx="92.5" cy="24" r="1.5" fill="#3b2a20"/>
+            <path d="M84.5 32.5c2 1.6 5 1.6 7 0" stroke="#3b2a20" stroke-width="1.4" fill="none" stroke-linecap="round"/>
           </svg>
         </div>
       </div>`;

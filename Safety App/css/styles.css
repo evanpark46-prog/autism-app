@@ -22,6 +22,10 @@
 
   --amber:#c9770a;
   --amber-tint:#fff3e0;
+  /* --amber itself is only 3.1:1 against --amber-tint (fails WCAG AA's 4.5:1
+     text minimum) -- fine for borders/icons (3:1 non-text threshold), but
+     use this darker value for actual text on an amber-tint background. */
+  --amber-text:#8a5a10;
 
   --red:#c0392b;
   --red-tint:#fdecea;
@@ -54,7 +58,7 @@
   --rose:#2dbfc7; --rose-dark:#12787e; --rose-tint:#e3f7f8;
 }
 :root[data-skin="sunset"]{
-  --rose:#f2994a; --rose-dark:#c9691b; --rose-tint:#fff1e3;
+  --rose:#f2994a; --rose-dark:#a85013; --rose-tint:#fff1e3;
 }
 :root[data-skin="meadow"]{
   --rose:#3fae6a; --rose-dark:#1f7a45; --rose-tint:#e6f7ec;
@@ -164,9 +168,9 @@ a:focus-visible, button:focus-visible, select:focus-visible, input:focus-visible
   background:linear-gradient(135deg, var(--rose), var(--rose-dark)); color:#fff; font-size:1.2rem;
   box-shadow:0 3px 0 var(--rose-dark), inset 0 1px 0 rgba(255,255,255,.4);
 }
-/* Mascot: a friendly raccoon face, used as the site logo and as the topic
-   loading animation below. Gives the app a distinct, recognizable identity
-   instead of a generic emoji, plus a little personality via motion. */
+/* Mascot: a shield emblem, used as the site logo. Gives the app a distinct,
+   recognizable identity instead of a generic emoji, plus a little
+   personality via motion. */
 .brand__badge svg{
   animation:mascot-wiggle 5s ease-in-out infinite;
   transform-origin:50% 85%;
@@ -270,13 +274,13 @@ a:focus-visible, button:focus-visible, select:focus-visible, input:focus-visible
 }
 
 .lang-switch select{
-  border:2px solid var(--border); border-radius:10px; padding:7px 10px;
+  border:2px solid var(--border); border-radius:10px; padding:7px 10px; min-height:44px;
   font-weight:700; color:var(--ink); background:#fff; cursor:pointer;
 }
 
 .rate-switch{display:flex; align-items:center; gap:4px;}
 .rate-switch select{
-  border:2px solid var(--border); border-radius:10px; padding:7px 8px;
+  border:2px solid var(--border); border-radius:10px; padding:7px 8px; min-height:44px;
   font-weight:700; color:var(--ink); background:#fff; cursor:pointer; font-size:.9rem;
 }
 
@@ -289,7 +293,7 @@ a:focus-visible, button:focus-visible, select:focus-visible, input:focus-visible
    collapsed behind one control so the header reads brand+nav+language) ---------- */
 .display-settings{position:relative;}
 .display-settings__btn{
-  display:inline-flex; align-items:center; gap:6px;
+  display:inline-flex; align-items:center; gap:6px; min-height:44px;
   border:2px solid var(--border); border-radius:10px; padding:8px 12px;
   font-weight:700; font-size:.9rem; color:var(--ink-soft); background:#fff; cursor:pointer; font-family:inherit;
 }
@@ -307,11 +311,11 @@ a:focus-visible, button:focus-visible, select:focus-visible, input:focus-visible
   font-size:.78rem; font-weight:800; text-transform:uppercase; letter-spacing:.03em; color:var(--ink-soft);
 }
 .display-panel__group select{
-  border:2px solid var(--border); border-radius:10px; padding:7px 8px;
+  border:2px solid var(--border); border-radius:10px; padding:7px 8px; min-height:44px;
   font-weight:700; color:var(--ink); background:#fff; cursor:pointer; font-size:.9rem; width:100%;
 }
 .calmmode-toggle{
-  display:flex; align-items:center; gap:8px; border:none; background:none; cursor:pointer;
+  display:flex; align-items:center; gap:8px; min-height:44px; border:none; background:none; cursor:pointer;
   font-family:inherit; font-weight:700; font-size:.85rem; color:var(--ink); padding:0;
 }
 .calmmode-toggle__track{
@@ -337,17 +341,18 @@ a:focus-visible, button:focus-visible, select:focus-visible, input:focus-visible
 :root[data-calm-mode="on"] [data-emotion-checkin]{display:none;}
 :root[data-calm-mode="on"] .reveal-on-scroll{opacity:1; transform:none; filter:none;}
 
-.text-size-switch{display:flex; gap:4px;}
+.text-size-switch{display:flex; gap:4px; flex-wrap:wrap;}
 .text-size-switch button{
+  display:inline-flex; align-items:center; justify-content:center; min-width:44px; min-height:44px;
   border:2px solid var(--border); border-radius:10px; padding:6px 10px;
   font-weight:800; color:var(--ink); background:#fff; cursor:pointer; font-size:.85rem;
 }
 .text-size-switch button:hover:not(:disabled){border-color:var(--rose); color:var(--rose-dark);}
 .text-size-switch button:disabled{opacity:.4; cursor:not-allowed;}
 
-.skin-switch{display:flex; align-items:center; gap:6px;}
+.skin-switch{display:flex; align-items:center; gap:6px; flex-wrap:wrap;}
 .skin-switch__swatch{
-  width:28px; height:28px; border-radius:50%; border:2px solid var(--border);
+  width:44px; height:44px; border-radius:50%; border:2px solid var(--border);
   cursor:pointer; padding:0; flex-shrink:0;
 }
 .skin-switch__swatch[aria-pressed="true"]{border-color:var(--ink); box-shadow:0 0 0 2px #fff inset;}
@@ -462,7 +467,7 @@ main{max-width:1080px; margin:0 auto; padding:28px 20px 64px;}
 }
 .topic-card-wrap{position:relative;}
 .topic-card__pin{
-  position:absolute; top:12px; left:12px; z-index:2; width:32px; height:32px; border-radius:50%;
+  position:absolute; top:10px; left:10px; z-index:2; width:44px; height:44px; border-radius:50%;
   border:2px solid var(--border); background:#fff; color:var(--ink-soft); cursor:pointer;
   display:flex; align-items:center; justify-content:center; font-size:1.15rem; padding:0;
   box-shadow:var(--shadow);
@@ -517,7 +522,7 @@ main{max-width:1080px; margin:0 auto; padding:28px 20px 64px;}
 [data-theme="green"] .topic-card__icon{background:var(--green-tint); color:var(--green);}
 [data-theme="purple"] .topic-card__icon{background:var(--purple-tint); color:var(--purple);}
 [data-theme="red"] .topic-card__icon{background:var(--red-tint); color:var(--red);}
-[data-theme="amber"] .topic-card__icon{background:var(--amber-tint); color:var(--amber);}
+[data-theme="amber"] .topic-card__icon{background:var(--amber-tint); color:var(--amber-text);}
 
 .topic-card[data-theme="blue"]{border-top-color:var(--blue);}
 .topic-card[data-theme="green"]{border-top-color:var(--green);}
@@ -556,7 +561,7 @@ main{max-width:1080px; margin:0 auto; padding:28px 20px 64px;}
 [data-theme="green"] .hero-card__power{background:var(--green-tint); color:var(--green);}
 [data-theme="purple"] .hero-card__power{background:var(--purple-tint); color:var(--purple);}
 [data-theme="red"] .hero-card__power{background:var(--red-tint); color:var(--red);}
-[data-theme="amber"] .hero-card__power{background:var(--amber-tint); color:var(--amber);}
+[data-theme="amber"] .hero-card__power{background:var(--amber-tint); color:var(--amber-text);}
 @media (prefers-reduced-motion: reduce){
   .hero-card{transition:none;}
 }
@@ -745,27 +750,20 @@ main{max-width:1080px; margin:0 auto; padding:28px 20px 64px;}
 }
 
 /* Shown in the story panel while a topic's lesson content is being fetched
-   (see ensureTopicContentLoaded() in js/page-topic.js) -- a bouncing mascot
-   instead of a plain "Loading…" line for that one genuinely async moment. */
+   (see ensureTopicContentLoaded() in js/page-topic.js) -- the bear hero
+   "landing" (GSAP drop-in, js/page-topic.js's animateHeroLanding()) on a
+   ground glow tinted with this topic's own theme color, instead of a plain
+   "Loading…" line, for that one genuinely async moment. */
 .topic-loading{
   display:flex; flex-direction:column; align-items:center; justify-content:center;
   gap:16px; padding:56px 20px; text-align:center;
 }
 .topic-loading__mascot{
-  width:88px; height:88px; border-radius:50%; padding:16px; box-sizing:border-box;
-  background:var(--rose-tint);
-  animation:mascot-bounce 1s ease-in-out infinite;
+  display:flex; align-items:center; justify-content:center;
+  width:170px; max-width:60vw; height:auto;
 }
+.topic-loading__mascot svg{width:100%; height:auto;}
 .topic-loading p{color:var(--ink-soft); font-weight:700; margin:0; font-size:1.05rem;}
-@keyframes mascot-bounce{
-  0%, 100%{transform:translateY(0) scaleX(1) scaleY(1);}
-  30%{transform:translateY(-18px) scaleX(.94) scaleY(1.06);}
-  50%{transform:translateY(0) scaleX(1.08) scaleY(.9);}
-  70%{transform:translateY(-7px) scaleX(.99) scaleY(1.02);}
-}
-@media (prefers-reduced-motion: reduce){
-  .topic-loading__mascot{animation:none;}
-}
 
 /* ---------- Story engine ---------- */
 .story-stage{
@@ -1201,7 +1199,7 @@ main{max-width:1080px; margin:0 auto; padding:28px 20px 64px;}
 .rush-status-row .review-progress{margin-bottom:0;}
 .rush-streak{
   font-weight:800; font-size:.95rem; padding:4px 12px; border-radius:20px;
-  background:var(--amber-tint); color:var(--amber);
+  background:var(--amber-tint); color:var(--amber-text);
 }
 .rush-alltime-best{color:var(--ink-soft); font-size:.9rem; font-weight:700;}
 
@@ -1213,7 +1211,7 @@ main{max-width:1080px; margin:0 auto; padding:28px 20px 64px;}
   border:3px solid var(--border); cursor:pointer; font-family:inherit; transition:transform .15s var(--ease-bounce), box-shadow .15s ease;
 }
 .sort-bin--safe{background:var(--green-tint); color:#155a3c; border-color:var(--green);}
-.sort-bin--rethink{background:var(--amber-tint); color:#8a5a10; border-color:var(--amber);}
+.sort-bin--rethink{background:var(--amber-tint); color:var(--amber-text); border-color:var(--amber);}
 button.sort-bin:hover{transform:translateY(-3px); box-shadow:0 6px 0 rgba(0,0,0,.1);}
 button.sort-bin:active{transform:translateY(1px);}
 .sort-bin.is-answer{box-shadow:0 0 0 4px #fff, 0 0 0 7px currentColor;}

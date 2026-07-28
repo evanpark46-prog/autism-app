@@ -8,12 +8,17 @@
    heavier shadows) so the screen shows only what's needed. Persisted
    locally and applied via [data-calm-mode] on <html>, same pattern as the
    skin/text-size preferences.
+
+   ON by default (a never-visited learner gets the calm experience) --
+   motion/decoration is the opt-in, not the opt-out, matching this app's
+   own "a calm place" brief. Matches the inline bootstrap script in every
+   page's <head>, which must stay in sync with this same default.
    ========================================================================== */
 
 const CALM_MODE_KEY = 'safetylib_calm_mode';
 
 function getCalmMode(){
-  try { return localStorage.getItem(CALM_MODE_KEY) === 'on'; } catch (e) { return false; }
+  try { return localStorage.getItem(CALM_MODE_KEY) !== 'off'; } catch (e) { return true; }
 }
 
 function setCalmMode(on){

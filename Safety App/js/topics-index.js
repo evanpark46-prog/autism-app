@@ -122,6 +122,26 @@ const TOPICS = [
     "id": "peer-pressure-safety",
     "theme": "amber",
     "image": "img/generated/peer-pressure-safety.webp"
+  },
+  {
+    "id": "elopement-safety",
+    "theme": "green",
+    "image": "img/generated/elopement-safety.webp"
+  },
+  {
+    "id": "safehelper-safety",
+    "theme": "green",
+    "image": "img/generated/safehelper-safety.webp"
+  },
+  {
+    "id": "medical-safety",
+    "theme": "purple",
+    "image": "img/generated/medical-safety.webp"
+  },
+  {
+    "id": "selfregulation-safety",
+    "theme": "amber",
+    "image": "img/generated/selfregulation-safety.webp"
   }
 ];
 
@@ -1192,6 +1212,150 @@ const TOPIC_SUMMARY = {
           }
         ]
       }
+    },
+    "elopement-safety": {
+      "title": "Staying With My Safe Adult",
+      "tagline": "What to do to stay safe and be easy to find, wherever you go.",
+      "video": {
+        "checkpoints": [
+          {
+            "time": 20,
+            "question": "The character wants to run to something exciting far away. What should they do?",
+            "choices": [
+              {
+                "text": "Stop and ask their safe adult to go together.",
+                "correct": true
+              },
+              {
+                "text": "Run ahead right away.",
+                "correct": false
+              }
+            ]
+          },
+          {
+            "time": 55,
+            "question": "The character can’t find their safe adult. What’s the safest thing to do?",
+            "choices": [
+              {
+                "text": "Stop and stay right where they are.",
+                "correct": true
+              },
+              {
+                "text": "Walk around to search.",
+                "correct": false
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "safehelper-safety": {
+      "title": "Finding a Safe Helper",
+      "tagline": "How to spot the right kind of helper when you need help.",
+      "video": {
+        "checkpoints": [
+          {
+            "time": 20,
+            "question": "The character is lost in a store. Who should they look for?",
+            "choices": [
+              {
+                "text": "A worker in a uniform or name tag.",
+                "correct": true
+              },
+              {
+                "text": "Anyone standing nearby.",
+                "correct": false
+              }
+            ]
+          },
+          {
+            "time": 50,
+            "question": "A stranger without a badge offers to take the character to their family. What should they do?",
+            "choices": [
+              {
+                "text": "Say no and find an official helper.",
+                "correct": true
+              },
+              {
+                "text": "Go with them since they offered to help.",
+                "correct": false
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "medical-safety": {
+      "title": "Going to the Doctor or Dentist",
+      "tagline": "What to expect at checkups, and how it’s okay to ask questions.",
+      "video": {
+        "checkpoints": [
+          {
+            "time": 20,
+            "question": "The character feels nervous about a checkup. What can help?",
+            "choices": [
+              {
+                "text": "Asking what will happen ahead of time.",
+                "correct": true
+              },
+              {
+                "text": "Refusing to go in at all.",
+                "correct": false
+              }
+            ]
+          },
+          {
+            "time": 50,
+            "question": "A doctor needs to check something private for a health reason. What should the character do?",
+            "choices": [
+              {
+                "text": "Ask why, and have a trusted adult stay in the room.",
+                "correct": true
+              },
+              {
+                "text": "Just refuse no matter what.",
+                "correct": false
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "selfregulation-safety": {
+      "title": "Finding My Calm",
+      "tagline": "Noticing big feelings and using calming strategies before they become too much.",
+      "video": {
+        "checkpoints": [
+          {
+            "time": 20,
+            "question": "The character notices a tight, hot feeling starting. What should they do?",
+            "choices": [
+              {
+                "text": "Use a calming strategy right away.",
+                "correct": true
+              },
+              {
+                "text": "Wait until the feeling gets much bigger.",
+                "correct": false
+              }
+            ]
+          },
+          {
+            "time": 50,
+            "question": "Even after trying calming strategies, a feeling becomes too big to manage. What can help?",
+            "choices": [
+              {
+                "text": "Use a bigger-feelings plan, like a calm spot with a trusted adult.",
+                "correct": true
+              },
+              {
+                "text": "Feel bad and never try strategies again.",
+                "correct": false
+              }
+            ]
+          }
+        ]
+      }
     }
   },
   "es": {
@@ -2254,6 +2418,150 @@ const TOPIC_SUMMARY = {
               },
               {
                 "text": "Debe ser cierto y está bien hacerlo.",
+                "correct": false
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "elopement-safety": {
+      "title": "Quedarme con mi Adulto de Confianza",
+      "tagline": "Qué hacer para estar seguro y ser fácil de encontrar, dondequiera que vayas.",
+      "video": {
+        "checkpoints": [
+          {
+            "time": 20,
+            "question": "El personaje quiere correr hacia algo emocionante que está lejos. ¿Qué debería hacer?",
+            "choices": [
+              {
+                "text": "Detenerse y pedirle a su adulto de confianza ir juntos.",
+                "correct": true
+              },
+              {
+                "text": "Correr adelante de inmediato.",
+                "correct": false
+              }
+            ]
+          },
+          {
+            "time": 55,
+            "question": "El personaje no puede encontrar a su adulto de confianza. ¿Qué es lo más seguro?",
+            "choices": [
+              {
+                "text": "Detenerse y quedarse justo donde está.",
+                "correct": true
+              },
+              {
+                "text": "Caminar para buscar.",
+                "correct": false
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "safehelper-safety": {
+      "title": "Encontrar a un Ayudante Seguro",
+      "tagline": "Cómo reconocer al tipo correcto de ayudante cuando necesitas ayuda.",
+      "video": {
+        "checkpoints": [
+          {
+            "time": 20,
+            "question": "El personaje está perdido en una tienda. ¿A quién debería buscar?",
+            "choices": [
+              {
+                "text": "A un trabajador con uniforme o gafete.",
+                "correct": true
+              },
+              {
+                "text": "A cualquiera que esté cerca.",
+                "correct": false
+              }
+            ]
+          },
+          {
+            "time": 50,
+            "question": "Un desconocido sin gafete se ofrece a llevar al personaje con su familia. ¿Qué debería hacer?",
+            "choices": [
+              {
+                "text": "Decir que no y buscar a un ayudante oficial.",
+                "correct": true
+              },
+              {
+                "text": "Ir con esa persona ya que se ofreció a ayudar.",
+                "correct": false
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "medical-safety": {
+      "title": "Ir al Médico o al Dentista",
+      "tagline": "Qué esperar en los chequeos, y cómo está bien hacer preguntas.",
+      "video": {
+        "checkpoints": [
+          {
+            "time": 20,
+            "question": "El personaje se siente nervioso por un chequeo. ¿Qué puede ayudar?",
+            "choices": [
+              {
+                "text": "Preguntar qué va a pasar de antemano.",
+                "correct": true
+              },
+              {
+                "text": "Negarse por completo a entrar.",
+                "correct": false
+              }
+            ]
+          },
+          {
+            "time": 50,
+            "question": "Un médico necesita revisar algo privado por una razón de salud. ¿Qué debería hacer el personaje?",
+            "choices": [
+              {
+                "text": "Preguntar por qué, y pedir que un adulto de confianza se quede en la sala.",
+                "correct": true
+              },
+              {
+                "text": "Simplemente negarse sin importar qué.",
+                "correct": false
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "selfregulation-safety": {
+      "title": "Encontrar Mi Calma",
+      "tagline": "Notar sentimientos grandes y usar estrategias calmantes antes de que sean demasiado.",
+      "video": {
+        "checkpoints": [
+          {
+            "time": 20,
+            "question": "El personaje nota que empieza una sensación apretada y caliente. ¿Qué debería hacer?",
+            "choices": [
+              {
+                "text": "Usar una estrategia calmante de inmediato.",
+                "correct": true
+              },
+              {
+                "text": "Esperar hasta que el sentimiento sea mucho más grande.",
+                "correct": false
+              }
+            ]
+          },
+          {
+            "time": 50,
+            "question": "Incluso después de intentar estrategias calmantes, un sentimiento se vuelve demasiado grande. ¿Qué puede ayudar?",
+            "choices": [
+              {
+                "text": "Usar un plan de sentimientos grandes, como un lugar tranquilo con un adulto de confianza.",
+                "correct": true
+              },
+              {
+                "text": "Sentirse mal y nunca intentar estrategias otra vez.",
                 "correct": false
               }
             ]

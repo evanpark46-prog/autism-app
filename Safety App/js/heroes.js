@@ -30,6 +30,9 @@ const HERO_EMBLEMS = {
   house: '<path d="M12 3 3 10v11h6v-6h6v6h6V10Z" fill="#fff"/>',
   wheel: '<circle cx="12" cy="12" r="9" fill="none" stroke="#fff" stroke-width="2"/><circle cx="12" cy="12" r="2" fill="#fff"/><path d="M12 3v6M12 15v6M3 12h6M15 12h6" stroke="#fff" stroke-width="1.6"/>',
   star: '<path d="M12 2l2.9 6.3 6.9.7-5.2 4.7 1.5 6.8L12 17l-6.1 3.5 1.5-6.8L2.2 9l6.9-.7Z" fill="#fff"/>',
+  anchor: '<circle cx="12" cy="5" r="2" fill="none" stroke="#fff" stroke-width="1.6"/><path d="M12 7v13M7 12H4a8 8 0 0 0 8 8 8 8 0 0 0 8-8h-3" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"/><path d="M9 9h6" stroke="#fff" stroke-width="2" stroke-linecap="round"/>',
+  badge: '<path d="M12 2l7 3v6c0 5-3.5 8.5-7 11-3.5-2.5-7-6-7-11V5Z" fill="none" stroke="#fff" stroke-width="1.8"/><path d="M9 12l2 2 4-4.5" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>',
+  breeze: '<path d="M3 9h11a3 3 0 1 0-2.4-4.8" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round"/><path d="M3 14h15a3 3 0 1 1-2.4 4.8" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round"/><path d="M3 19h9" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round"/>',
 };
 
 const HEROES = {
@@ -56,6 +59,10 @@ const HEROES = {
   'home-safety':             { emblem: 'house',        en: { name: 'Home Hero',         power: 'Check-First Sense',  tagline: 'Always checks first before opening the door.' }, es: { name: 'Héroe del Hogar',    power: 'Sentido de Verificar',  tagline: 'Siempre verifica antes de abrir la puerta.' } },
   'bike-safety':             { emblem: 'wheel',        en: { name: 'Pedal Patrol',      power: 'Helmet Force',       tagline: 'Never rides without a helmet on.' }, es: { name: 'Patrulla de Pedales', power: 'Fuerza del Casco',     tagline: 'Nunca anda en bici sin casco.' } },
   'peer-pressure-safety':    { emblem: 'star',         en: { name: 'Willpower',         power: 'Strong No',          tagline: 'Says a strong "no" and means it.' }, es: { name: 'Fuerza de Voluntad', power: 'No Firme',              tagline: 'Dice un "no" firme y lo sostiene.' } },
+  'elopement-safety':        { emblem: 'anchor',       en: { name: 'Steady Anchor',     power: 'Stay-Put Strength',  tagline: 'Always stays with the group and finds a helper instead of wandering off.' }, es: { name: 'Ancla Firme', power: 'Fuerza de Quedarse',    tagline: 'Siempre se queda con el grupo y busca ayuda en vez de alejarse.' } },
+  'safehelper-safety':       { emblem: 'badge',        en: { name: 'Helper Hawk',       power: 'Safe-Helper Sight',  tagline: 'Spots the right kind of helper to ask when help is needed.' }, es: { name: 'Halcón Ayudante', power: 'Vista de Ayudante Seguro', tagline: 'Reconoce al ayudante correcto cuando necesita ayuda.' } },
+  'medical-safety':          { emblem: 'heart',        en: { name: 'Brave Heart',       power: 'Calm Courage',       tagline: 'Stays brave and asks questions at checkups.' }, es: { name: 'Corazón Valiente', power: 'Valentía Calmada',      tagline: 'Se mantiene valiente y hace preguntas en los chequeos.' } },
+  'selfregulation-safety':   { emblem: 'breeze',       en: { name: 'Breeze',            power: 'Calm Wave',          tagline: 'Finds calm and asks for a break when feelings get big.' }, es: { name: 'Brisa',       power: 'Ola de Calma',          tagline: 'Encuentra calma y pide un descanso cuando los sentimientos crecen.' } },
 };
 
 function heroFor(topicId){

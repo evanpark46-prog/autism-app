@@ -58,6 +58,7 @@
     body2El: document.getElementById(`flyhero-body2${suffix}`),
     emblemEl: document.getElementById(`flyhero-emblem${suffix}`),
     tween: null,
+    flutterTween: null,
   })).filter(hero => hero.el);
 
   // Cycle through a random topic's colour + emblem each lap, so each flying
@@ -111,13 +112,22 @@
     for (let i = 1; i <= points.length; i++){
       hero.tween.to(hero.el, Object.assign({ duration: legDuration, ease: 'sine.inOut' }, points[i % points.length]));
     }
+    // A small secondary "flutter" (gentle scale breathing, offset per hero so the
+    // squadron doesn't pulse in lockstep) layered on top of the patrol path --
+    // scale is untouched by the path tween above, so the two never fight. Kept
+    // slow and subtle (4% scale, ~1.8s half-cycle) to match the calm-motion rule.
+    hero.flutterTween = gsap.to(hero.el, {
+      scale: 1.04, duration: 1.8 + index * 0.2, ease: 'sine.inOut', yoyo: true, repeat: -1,
+      delay: index * 0.5,
+    });
   }
 
   function stopHero(hero, index){
     if (hero.tween){ hero.tween.kill(); hero.tween = null; }
+    if (hero.flutterTween){ hero.flutterTween.kill(); hero.flutterTween = null; }
     if (hero.el && typeof gsap !== 'undefined'){
       const offset = Math.round((index * WAYPOINTS.length) / squadron.length);
-      gsap.set(hero.el, WAYPOINTS[offset % WAYPOINTS.length]);
+      gsap.set(hero.el, Object.assign({ scale: 1 }, WAYPOINTS[offset % WAYPOINTS.length]));
     }
   }
 

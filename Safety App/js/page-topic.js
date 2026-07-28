@@ -1507,15 +1507,49 @@ function initTopicPage(){
   const storyPanel = document.querySelector('[data-panel="story"]');
   if (storyPanel) storyPanel.innerHTML = `
     <div class="topic-loading">
-      <div class="topic-loading__mascot">${mascotSvg()}</div>
+      <div class="topic-loading__mascot">${heroLandingSvg(meta.theme)}</div>
       <p>${t('topic_loading')}</p>
     </div>`;
+  animateHeroLanding(storyPanel);
 
   ensureTopicContentLoaded(meta.id).then(() => {
     renderHero();
     setActiveTab('video');
   }).catch(() => {
     if (storyPanel) storyPanel.innerHTML = `<p class="center">${t('topic_load_error')}</p>`;
+  });
+}
+
+// Same calm-motion gate as js/herobg.js's squadron (Calm Mode forces it off
+// regardless of OS setting; prefers-reduced-motion is honored in parallel) --
+// duplicated locally since this file has no shared "is motion allowed"
+// helper of its own to import.
+function heroLandingMotionAllowed(){
+  try {
+    if (typeof getCalmMode === 'function' && getCalmMode()) return false;
+    return !window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  } catch (e) { return false; }
+}
+
+// A single drop-in + settle + dust-puff beat (no repeat, no bounce chatter --
+// this plays once while the lesson's content bundle is fetched). Under Calm
+// Mode/reduced motion the static "already landed" markup from
+// heroLandingSvg() is exactly what's shown, so skipping this is a graceful,
+// intentional no-op, not a missing feature.
+function animateHeroLanding(panel){
+  if (!panel || typeof gsap === 'undefined' || !heroLandingMotionAllowed()) return;
+  const figure = panel.querySelector('.hero-landing__figure');
+  const dust = panel.querySelector('.hero-landing__dust');
+  if (!figure) return;
+  gsap.fromTo(figure, { y: -70, opacity: 0 }, {
+    y: 0, opacity: 1, duration: 0.9, ease: 'power2.in',
+    onComplete: () => {
+      gsap.to(figure, { y: -6, duration: 0.35, ease: 'power1.out', yoyo: true, repeat: 1 });
+      if (dust) gsap.fromTo(dust, { opacity: 0, scale: 0.6 }, {
+        opacity: 1, scale: 1.15, duration: 0.4, ease: 'sine.out',
+        onComplete: () => gsap.to(dust, { opacity: 0, duration: 0.6, delay: 0.3 }),
+      });
+    },
   });
 }
 

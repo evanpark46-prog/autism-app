@@ -1,97 +1,66 @@
-# AAC Communication Learning App (name to be determined later)
+# Safety Superheroes
 
-A free, privacy-first communication learning app for nonspeaking and minimally speaking autistic children. The app starts with simple picture-based AAC boards that speak words out loud, then grows into a Duolingo-style learning experience for communication, reading comprehension, sentence building, and eventually writing practice.
+A free, offline-capable Progressive Web App that teaches real-world safety skills to autistic children through comic-book-style superhero stories, flashcards, and original mini-games.
 
-> This project is not affiliated with Duolingo. "Duolingo-style" means short, playful, skill-building lessons with progress paths and repeated practice.
+**Live app:** https://evanpark46-prog.github.io/autism-app/Safety%20App/index.html
 
-## Goal
+> This project is not affiliated with any existing comic book or superhero franchise. All heroes, emblems, and artwork described here are original to this app.
 
-The goal is to make communication support easier to access for families, caregivers, educators, and speech-language professionals without requiring accounts, ads, tracking, or expensive subscriptions.
+## What it is
 
-The app will focus on two connected needs:
+Safety Superheroes teaches 27 safety topics — from street safety and stranger safety to body boundaries, online safety, self-advocacy, and self-regulation — through:
 
-1. **Immediate communication**: picture buttons for everyday needs like help, stop, more, food, water, bathroom, feelings, pain, and play.
-2. **Communication learning**: short practice activities that help users connect pictures, spoken words, written words, sentences, and meaning.
+- **Story mode**: three difficulty levels per topic, each a branching narrative (narrative beats, decision points, dialogue, matching, and sequencing steps) starring a recurring kid protagonist, Alex.
+- **Flashcards**: quick review of each topic's key ideas, in solo or guided (repeat-then-quiz) modes.
+- **Video mode**: checkpoint quizzes layered over a topic video, with a full quiz-only fallback when no video is set.
+- **A hero wall**: every topic has a matching original superhero (name, power, and emblem) that "unlocks" on completion.
+- **Original mini-games**: Hero Quiz Rush (streak-based review quiz), Word Power Quiz with a Sky Chase bonus round, and Sort It Out — all built from the same topic content, no licensed characters.
 
-## Research-Informed Approach
+The whole app is plain HTML/CSS/vanilla JS with no build step (aside from a small content-bundling script), works fully offline via a service worker, and stores all preferences and progress locally in the browser — no accounts, no ads, no tracking.
 
-This project is based on early research into augmentative and alternative communication (AAC), autism accessibility, child privacy, and language-learning design.
+## Design principles
 
-Key research ideas guiding the app:
+- **Calm by default.** Calm Mode ships on for first-time visitors: it disables animation/transitions, mutes sound effects, and simplifies the UI. `prefers-reduced-motion` is respected everywhere in parallel.
+- **Bilingual.** Every string ships in English and Spanish via a shared `UI_STRINGS` dictionary (`js/i18n.js`).
+- **Accessible.** WCAG 2.1 AA color contrast, 44x44px minimum touch targets, and semantic markup are treated as launch requirements, not nice-to-haves.
+- **Private.** No login, no analytics tracking by default, no data leaves the device.
 
-- AAC includes many ways of communicating beyond speech, including pictures, writing, gestures, speech-generating devices, and apps.
-- AAC can support people of different ages and abilities; users do not need to meet specific cognitive or speech milestones before AAC can be helpful.
-- AAC should support autonomy and real communication, not force speech or replace the user's own choices.
-- Families, caregivers, educators, autistic AAC users, and speech-language pathologists should help shape the design.
-- Because many users may be children, the app should avoid ads, tracking, unnecessary accounts, public profiles, and unnecessary data collection.
+## Project layout
 
-Helpful starting sources:
+```
+Safety App/              the live app (note: folder name has a literal space)
+  index.html, *.html      one shell page per screen (home, topic, games, badges, ...)
+  js/data.js              source of truth for all topic content (TOPICS + CONTENT.en/es)
+  js/heroes.js            one superhero per topic (emblem, name, power, tagline)
+  js/categories.js        groups topics into the home page's category sections
+  tools/build-content.js  splits js/data.js into content/<topic-id>.js + js/topics-index.js
+  content/                generated per-topic bundles (lazy-loaded by topic.html)
+  service-worker.js       offline precache; bump CACHE_NAME after editing any shell file
 
-- ASHA: Augmentative and Alternative Communication (AAC): https://www.asha.org/public/speech/disorders/aac/
-- ASHA: AAC in Early Intervention: https://www.asha.org/practice/early-intervention-provider-support/augmentative-and-alternative-communication-in-early-intervention/
-- FTC: COPPA compliance guidance for child-directed apps: https://www.ftc.gov/business-guidance/resources/childrens-online-privacy-protection-rule-six-step-compliance-plan-your-business
-- MDN: Web Speech API for browser text-to-speech: https://developer.mozilla.org/en-US/docs/Web/API/Web_Speech_API
-- MDN: Progressive Web Apps: https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps
+conversat-learning-planets-nextjs/   an early-stage, separate Next.js prototype (not the main app)
+```
 
-## Duolingo-Style Learning Vision
+## Adding or editing a lesson topic
 
-The long-term vision is to make communication practice feel simple, encouraging, and repeatable.
+1. Edit `js/data.js`: add an entry to the `TOPICS` array, plus a matching `CONTENT.en.<id>` and `CONTENT.es.<id>` block (copy an existing topic's shape).
+2. Run `node tools/build-content.js` to regenerate `content/<id>.js` and `js/topics-index.js`.
+3. Add a hero entry in `js/heroes.js` and place the topic in a category in `js/categories.js`.
+4. Bump `CACHE_NAME` in `service-worker.js`.
 
-Possible lesson types:
+## Running locally
 
-- Match a picture to a spoken word
-- Match a written word to a picture
-- Hear a word and choose the correct symbol
-- Build simple sentences like "I want water"
-- Answer yes/no questions
-- Choose the picture that matches a sentence
-- Practice reading short routine-based sentences
-- Sequence daily routines, such as washing hands or getting a snack
-- Drag words into the correct sentence order
-- Eventually practice typing or writing simple words and sentences
+No build step is required to view the app. Serve the `Safety App/` folder with any static file server, e.g.:
 
-The app should reward participation without pressure. Progress features should be supportive, not punitive. No user should lose access to communication tools because they miss a lesson, lose a streak, or answer incorrectly.
+```
+npx http-server "Safety App" -p 8099
+```
 
-## Planned Features
+then open `http://localhost:8099/index.html`.
 
-### First Prototype
+## Deployment
 
-- Picture-based communication buttons
-- Text-to-speech when a button is tapped
-- Simple sentence strip
-- Starter boards for daily routines
-- Custom buttons for each child's needs
-- Local-first data storage
-- No login required
-- Offline-friendly web app
+The app is deployed via GitHub Pages from the `main` branch. The root `index.html` redirects to `Safety App/index.html`.
 
-### Later Learning Features
+## History note
 
-- Duolingo-style skill path
-- Reading comprehension practice
-- Listening comprehension practice
-- Sentence-building exercises
-- Writing and typing practice
-- Caregiver/educator lesson customization
-- Gentle progress tracking stored locally
-
-## What This App Is Not
-
-This app is not a medical device, diagnostic tool, therapy replacement, or substitute for an AAC evaluation by a qualified speech-language pathologist. It is an early prototype intended for learning, feedback, and accessibility-focused design.
-
-The app should not claim to treat, cure, or diagnose autism. It should also avoid AI features that guess what a user means or speak on behalf of the user without clear intentional input.
-
-## Current Status
-
-This project is in the early prototype stage. The first version will focus on a simple, usable demo that families and professionals can test and critique.
-
-## Built With
-
-- HTML, CSS, and JavaScript or React
-- Browser text-to-speech
-- Progressive Web App design
-- Local browser storage
-
-## Feedback
-
-Feedback from caregivers, autistic AAC users, educators, and speech-language professionals is welcome and will guide future development.
+Earlier root-level files (`Roadmap`, `Privacy.md`, `Product Specs.md`, `Background Research.md`, `Interviews.md`) describe an initial AAC communication-app concept that predates Safety Superheroes and was not built. They're kept for historical context but no longer reflect the current app.
