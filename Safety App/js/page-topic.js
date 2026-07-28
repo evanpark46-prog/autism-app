@@ -127,7 +127,7 @@ function initTopicPage(){
     const data = hero[lang] || hero.en;
     heroBuddyEl.hidden = false;
     heroBuddyEl.innerHTML = `
-      ${heroBadgeHtml(meta.id, lang, meta.theme, 56)}
+      ${heroPortraitHtml(meta.id, lang, meta.theme, 60)}
       <div class="speech-bubble">
         <span class="hero-buddy__name">${escapeHtml(data.name)}</span>
         <span class="hero-buddy__power font-comic">${escapeHtml(data.power)}</span>
@@ -278,7 +278,7 @@ function initTopicPage(){
       const powerUnlockHtml = heroUnlockData ? `
         <div class="comic-panel comic-panel--tilt power-unlock">
           <div class="comic-burst power-unlock__burst"><span class="font-comic">${t('power_unlocked_label')}</span></div>
-          ${heroBadgeHtml(meta.id, getLang(), meta.theme, 72)}
+          ${heroPortraitHtml(meta.id, getLang(), meta.theme, 84)}
           <div>
             <div class="power-unlock__name">${escapeHtml(heroUnlockData.name)}</div>
             <div class="power-unlock__power font-comic">${escapeHtml(heroUnlockData.power)}</div>

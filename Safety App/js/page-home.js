@@ -52,7 +52,7 @@ function heroCardHtml(meta, lang, index){
   return `
     <a class="hero-card comic-panel ${tilt} ${shape} reveal-on-scroll" data-theme="${meta.theme}"
       href="topic.html?id=${encodeURIComponent(meta.id)}">
-      ${heroBadgeHtml(meta.id, lang, meta.theme, 72)}
+      ${heroPortraitHtml(meta.id, lang, meta.theme, 84)}
       <h3>${escapeHtml(data.name)}</h3>
       <span class="hero-card__power">${escapeHtml(data.power)}</span>
       <p class="hero-card__tagline">${escapeHtml(data.tagline)}</p>

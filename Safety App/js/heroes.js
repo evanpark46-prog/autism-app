@@ -84,3 +84,37 @@ function heroBadgeHtml(topicId, lang, theme, size){
     <svg viewBox="0 0 24 24" width="62%" height="62%" focusable="false">${heroEmblemInner(hero.emblem)}</svg>
   </div>`;
 }
+
+// A fuller superhero bust (head, cowl, cape/shoulders, chest emblem) instead
+// of just a flat color + tiny icon -- same flat-vector house style as the
+// homepage bear mascot and the topic-loading landing scene (js/boot.js),
+// but a human hero here since these 27 are each lesson's own named
+// character (Captain Caution, Willpower, etc.), distinct from the site's
+// single flagship bear mascot. Cowl/cape/collar are tinted with the topic's
+// theme color and the chest emblem is that hero's real HERO_EMBLEMS shape,
+// so all 27 stay visually distinct without hand-drawing 27 bespoke faces.
+// Square viewBox on purpose -- it's dropped into a circular badge frame
+// (.hero-portrait), and a square avoids letterboxing inside that circle.
+function heroPortraitSvg(emblemKey, theme){
+  const accent = `var(--${theme})`;
+  const accentDark = `var(--${theme}-dark, ${accent})`;
+  return '<svg viewBox="0 0 100 100" width="100%" height="100%" fill="none" xmlns="http://www.w3.org/2000/svg" focusable="false">'
+    + `<path d="M50 30 C22 36 12 68 20 96 C36 84 64 84 80 96 C88 68 78 36 50 30 Z" fill="${accent}"/>`
+    + `<path d="M30 82 C40 74 60 74 70 82 L76 96 C56 102 44 102 24 96 Z" fill="${accentDark}"/>`
+    + '<circle cx="50" cy="30" r="19" fill="#f2c199"/>'
+    + `<path d="M32 24c5-8 31-8 36 0 1 5-2.3 8.5-7 9.7-2.8-2.8-19-2.8-22 0-4.7-1.2-8-4.7-7-9.7Z" fill="${accentDark}"/>`
+    + '<circle cx="43" cy="29" r="2" fill="#2b2320"/><circle cx="57" cy="29" r="2" fill="#2b2320"/>'
+    + '<path d="M42 36c3 2.4 7.5 2.4 10.5 0" stroke="#a8734a" stroke-width="1.8" fill="none" stroke-linecap="round"/>'
+    + `<g transform="translate(50,90) scale(0.68) translate(-12,-12)">${heroEmblemInner(emblemKey)}</g>`
+    + '</svg>';
+}
+
+function heroPortraitHtml(topicId, lang, theme, size){
+  const hero = heroFor(topicId);
+  if (!hero) return '';
+  const data = hero[lang] || hero.en;
+  const px = size || 88;
+  return `<div class="hero-portrait" data-theme="${theme}" style="width:${px}px;height:${px}px" title="${escapeHtml(data.name)}">
+    ${heroPortraitSvg(hero.emblem, theme)}
+  </div>`;
+}

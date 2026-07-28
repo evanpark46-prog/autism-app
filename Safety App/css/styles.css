@@ -203,6 +203,16 @@ a:focus-visible, button:focus-visible, select:focus-visible, input:focus-visible
 .hero-badge[data-theme="red"]{background:var(--red);}
 .hero-badge[data-theme="amber"]{background:var(--amber);}
 
+/* Fuller superhero bust portrait (js/heroes.js heroPortraitHtml()) -- same
+   circular medallion frame as .hero-badge, but the SVG inside is a whole
+   character instead of a flat color + tiny icon. overflow:hidden keeps the
+   bust's cape cropped cleanly to the circle instead of poking past corners. */
+.hero-portrait{
+  display:inline-grid; place-items:center; border-radius:50%; overflow:hidden;
+  border:3px solid var(--ink); box-shadow:3px 3px 0 var(--ink);
+  flex-shrink:0; background:var(--panel);
+}
+
 .comic-panel{
   background:var(--panel); border:3px solid var(--ink); border-radius:var(--radius-md);
   box-shadow:6px 6px 0 var(--ink); position:relative;
