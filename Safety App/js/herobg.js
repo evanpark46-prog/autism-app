@@ -1,13 +1,12 @@
 /* ==========================================================================
    Safety Superheroes — home-page sky (VANTA.CLOUDS2 background covering the
-   whole page + a GSAP patrol loop of the site mascot in a cape around the
-   whole screen)
+   whole page) + a single GSAP-animated hero drifting gently within the hero
+   banner only (not an ambient squadron flying over the whole page).
    Purely decorative, so both are skipped under Calm Mode and
    prefers-reduced-motion, same as every other motion effect in this app --
    and react live if a learner flips Calm Mode on/off from the display
    panel without leaving the page. Kept slow and smooth (no flashing, no
-   quick moves) to match this app's calm-motion design rule -- one full lap
-   takes about half a minute.
+   quick moves) to match this app's calm-motion design rule.
    ========================================================================== */
 
 (function(){
@@ -44,28 +43,28 @@
     if (cloudEffect){ cloudEffect.destroy(); cloudEffect = null; }
   }
 
-  /* ---------------- flying squadron (GSAP) ---------------- */
+  /* ---------------- one hero, contained to the banner (GSAP) ---------------- */
 
-  // A small squadron, not a single mascot -- each flies the same patrol
-  // loop but phase-offset (started at a different waypoint) so they're
-  // spread around the screen instead of clumped together. See the
-  // matching page-flyhero-b/-c markup + CSS sizing in index.html/styles.css.
-  const SQUADRON_SUFFIXES = ['', '-b', '-c'];
-  const squadron = SQUADRON_SUFFIXES.map(suffix => ({
-    el: document.getElementById(`hero-flyhero${suffix}`),
-    capeEl: document.getElementById(`flyhero-cape${suffix}`),
-    bodyEl: document.getElementById(`flyhero-body${suffix}`),
-    body2El: document.getElementById(`flyhero-body2${suffix}`),
-    emblemEl: document.getElementById(`flyhero-emblem${suffix}`),
+  // Deliberately a single hero, not a squadron, and confined to the hero
+  // banner (see .page-flyhero's position:absolute + .hero's overflow:hidden
+  // in styles.css) rather than patrolling the whole page forever -- a
+  // character should read as a purposeful touch, not ambient decoration
+  // flying over the topic grid/footer/etc. as the page scrolls.
+  const hero = {
+    el: document.getElementById('hero-flyhero'),
+    capeEl: document.getElementById('flyhero-cape'),
+    bodyEl: document.getElementById('flyhero-body'),
+    body2El: document.getElementById('flyhero-body2'),
+    emblemEl: document.getElementById('flyhero-emblem'),
     tween: null,
     flutterTween: null,
-  })).filter(hero => hero.el);
+  };
 
-  // Cycle through a random topic's colour + emblem each lap, so each flying
-  // hero reads as "one of the 23 heroes" rather than always the same look --
-  // reuses the existing HEROES/HERO_EMBLEMS data (js/heroes.js), already
-  // loaded on this page for the "Meet your superheroes" wall.
-  function cycleHeroSkin(hero){
+  // Cycle through a random topic's colour + emblem each lap, so the visitor
+  // sees a few different heroes over time rather than always the same
+  // look -- reuses the existing HEROES/HERO_EMBLEMS data (js/heroes.js),
+  // already loaded on this page for the "Meet your superheroes" wall.
+  function cycleHeroSkin(){
     if (!hero.capeEl || typeof TOPICS === 'undefined' || typeof HERO_EMBLEMS === 'undefined') return;
     const meta = TOPICS[Math.floor(Math.random() * TOPICS.length)];
     if (!meta) return;
@@ -80,73 +79,46 @@
     }
   }
 
-  // A closed lap around the screen's edges (clockwise), each leg eased with
-  // sine.inOut. The lap loops back to WAYPOINTS[0] as its own last leg, so
+  // A small closed loop within the banner's own bounds (percentages resolve
+  // against .hero, which is position:relative) -- a gentle drift, not a
+  // full-screen patrol. Loops back to WAYPOINTS[0] as its own last leg, so
   // repeat:-1 restarts exactly where it left off -- no visible teleport.
   const WAYPOINTS = [
-    { left: '8%',  top: '14%', rotation: -12 },
-    { left: '50%', top: '7%',  rotation: 0 },
-    { left: '90%', top: '16%', rotation: 14 },
-    { left: '92%', top: '50%', rotation: 30 },
-    { left: '88%', top: '82%', rotation: 14 },
-    { left: '50%', top: '88%', rotation: 0 },
-    { left: '10%', top: '80%', rotation: -14 },
-    { left: '6%',  top: '45%', rotation: -26 },
+    { left: '68%', top: '8%',  rotation: -12 },
+    { left: '84%', top: '18%', rotation: 6 },
+    { left: '80%', top: '58%', rotation: 16 },
+    { left: '62%', top: '48%', rotation: -6 },
   ];
-  const LEG_DURATION = 3.4;
+  const LEG_DURATION = 4.2;
 
-  /** Rotated copy of WAYPOINTS starting at `offset`, so a squadron member's
-   * lap begins partway around the same closed loop instead of at the top. */
-  function rotatedWaypoints(offset){
-    const n = WAYPOINTS.length;
-    return Array.from({ length: n }, (_, i) => WAYPOINTS[(offset + i) % n]);
-  }
-
-  function startHero(hero, index){
-    if (hero.tween || typeof gsap === 'undefined' || !motionAllowed()) return;
-    const offset = Math.round((index * WAYPOINTS.length) / squadron.length);
-    const points = rotatedWaypoints(offset);
-    const legDuration = LEG_DURATION * (1 + index * 0.12); // slightly different pace per hero
-    cycleHeroSkin(hero);
-    hero.tween = gsap.timeline({ repeat: -1, onRepeat: () => cycleHeroSkin(hero) }).set(hero.el, points[0]);
-    for (let i = 1; i <= points.length; i++){
-      hero.tween.to(hero.el, Object.assign({ duration: legDuration, ease: 'sine.inOut' }, points[i % points.length]));
+  function startHero(){
+    if (hero.tween || !hero.el || typeof gsap === 'undefined' || !motionAllowed()) return;
+    cycleHeroSkin();
+    hero.tween = gsap.timeline({ repeat: -1, onRepeat: cycleHeroSkin }).set(hero.el, WAYPOINTS[0]);
+    for (let i = 1; i <= WAYPOINTS.length; i++){
+      hero.tween.to(hero.el, Object.assign({ duration: LEG_DURATION, ease: 'sine.inOut' }, WAYPOINTS[i % WAYPOINTS.length]));
     }
-    // A small secondary "flutter" (gentle scale breathing, offset per hero so the
-    // squadron doesn't pulse in lockstep) layered on top of the patrol path --
-    // scale is untouched by the path tween above, so the two never fight. Kept
-    // slow and subtle (4% scale, ~1.8s half-cycle) to match the calm-motion rule.
-    hero.flutterTween = gsap.to(hero.el, {
-      scale: 1.04, duration: 1.8 + index * 0.2, ease: 'sine.inOut', yoyo: true, repeat: -1,
-      delay: index * 0.5,
-    });
+    // A small secondary "flutter" (gentle scale breathing) layered on top of
+    // the drift path -- scale is untouched by the path tween above, so the
+    // two never fight. Kept slow and subtle to match the calm-motion rule.
+    hero.flutterTween = gsap.to(hero.el, { scale: 1.04, duration: 1.9, ease: 'sine.inOut', yoyo: true, repeat: -1 });
   }
 
-  function stopHero(hero, index){
+  function stopHero(){
     if (hero.tween){ hero.tween.kill(); hero.tween = null; }
     if (hero.flutterTween){ hero.flutterTween.kill(); hero.flutterTween = null; }
-    if (hero.el && typeof gsap !== 'undefined'){
-      const offset = Math.round((index * WAYPOINTS.length) / squadron.length);
-      gsap.set(hero.el, Object.assign({ scale: 1 }, WAYPOINTS[offset % WAYPOINTS.length]));
-    }
-  }
-
-  function startSquadron(){
-    squadron.forEach((hero, i) => startHero(hero, i));
-  }
-  function stopSquadron(){
-    squadron.forEach((hero, i) => stopHero(hero, i));
+    if (hero.el && typeof gsap !== 'undefined') gsap.set(hero.el, Object.assign({ scale: 1 }, WAYPOINTS[0]));
   }
 
   /* ---------------- wire up ---------------- */
 
   startClouds();
-  startSquadron();
+  startHero();
 
   // Calm Mode can be toggled on this same page via the display panel --
   // react immediately instead of waiting for a reload.
   new MutationObserver(() => {
-    if (motionAllowed()){ startClouds(); startSquadron(); }
-    else { stopClouds(); stopSquadron(); }
+    if (motionAllowed()){ startClouds(); startHero(); }
+    else { stopClouds(); stopHero(); }
   }).observe(document.documentElement, { attributes: true, attributeFilter: ['data-calm-mode'] });
 })();

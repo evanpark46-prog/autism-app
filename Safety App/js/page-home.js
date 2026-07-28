@@ -21,7 +21,7 @@ function topicCardHtml(meta, lang, completedIds, opts){
         title="${t(pinned ? 'topic_card_unpin_label' : 'topic_card_pin_label')}">${pinned ? '★' : '☆'}</button>
       <a class="topic-card${reveal}" data-theme="${meta.theme}" href="topic.html?id=${encodeURIComponent(meta.id)}">
         ${done ? `<span class="topic-card__done" title="${t('topic_card_done_label')}" aria-label="${t('topic_card_done_label')}">✓</span>` : ''}
-        <div class="topic-card__icon"><img src="${meta.image}" alt="" loading="lazy" decoding="async" width="64" height="64"></div>
+        <div class="topic-card__icon">${heroPortraitHtml(meta.id, lang, meta.theme, 64)}</div>
         <h3>${escapeHtml(content.title)}</h3>
         <p>${escapeHtml(content.tagline)}</p>
         <div class="topic-card__tags">
@@ -65,6 +65,38 @@ function renderHeroWall(){
   const lang = getLang();
   wall.innerHTML = TOPICS.map((meta, i) => heroCardHtml(meta, lang, i)).join('');
   initScrollReveal(wall);
+}
+
+// A single, static encouragement card -- one random hero saying one random
+// supportive line, chosen once per page load (not looping, not flying).
+// This is the "occasional supportive message" the flying squadron used to
+// stand in for; picked once and cached so a language switch re-translates
+// the same message instead of re-rolling a new one.
+const HERO_TIP_COUNT = 8;
+let heroTipChoice = null;
+
+function renderHeroTip(){
+  const el = document.querySelector('[data-hero-tip]');
+  if (!el || typeof HEROES === 'undefined') return;
+  if (!heroTipChoice){
+    const ids = Object.keys(HEROES);
+    heroTipChoice = {
+      id: ids[Math.floor(Math.random() * ids.length)],
+      msgIndex: Math.floor(Math.random() * HERO_TIP_COUNT) + 1,
+    };
+  }
+  const meta = getTopicMeta(heroTipChoice.id);
+  const hero = heroFor(heroTipChoice.id);
+  if (!meta || !hero) { el.hidden = true; return; }
+  const lang = getLang();
+  const data = hero[lang] || hero.en;
+  el.hidden = false;
+  el.innerHTML = `
+    ${heroPortraitHtml(heroTipChoice.id, lang, meta.theme, 56)}
+    <div>
+      <p class="hero-tip__message">${escapeHtml(t('hero_tip_msg_' + heroTipChoice.msgIndex))}</p>
+      <p class="hero-tip__from">${escapeHtml(t('hero_tip_from', { name: data.name }))}</p>
+    </div>`;
 }
 
 function wirePinButtons(container){
@@ -138,8 +170,10 @@ function initScrollReveal(container){
 function initHomePage(){
   renderTopicGrid();
   renderHeroWall();
+  renderHeroTip();
   window.addEventListener('safetylib:langchange', renderTopicGrid);
   window.addEventListener('safetylib:langchange', renderHeroWall);
+  window.addEventListener('safetylib:langchange', renderHeroTip);
   if (typeof initEmotionCheckin === 'function') initEmotionCheckin();
 }
 

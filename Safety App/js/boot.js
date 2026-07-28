@@ -133,6 +133,7 @@ document.addEventListener('DOMContentLoaded', () => {
   else if (page === 'hero-rush') initHeroRushPage();
   else if (page === 'vocab-quiz') initVocabQuizPage();
   else if (page === 'sort-it-out') initSortItOutPage();
+  else if (page === 'certificate') initCertificatePage();
 
   window.addEventListener('safetylib:langchange', () => applyStaticI18n());
 });

@@ -264,6 +264,7 @@ a:focus-visible, button:focus-visible, select:focus-visible, input:focus-visible
 .power-unlock__name{font-family:var(--font-display); font-weight:800; font-size:1.15rem; color:var(--ink);}
 .power-unlock__power{color:var(--rose-dark); font-size:1.05rem; margin:2px 0 4px;}
 .power-unlock__tagline{color:var(--ink-soft); font-size:.92rem; margin:0;}
+.power-unlock__certificate{display:inline-block; margin-top:8px; font-weight:700; font-size:.9rem;}
 @keyframes power-unlock-pop{
   0%{opacity:0; transform:scale(.7) rotate(-1.2deg);}
   100%{opacity:1; transform:scale(1) rotate(-1.2deg);}
@@ -383,34 +384,44 @@ main{max-width:1080px; margin:0 auto; padding:28px 20px 64px;}
 /* ---------- Hero ---------- */
 .hero{
   text-align:center; padding:36px 16px 12px;
+  position:relative; overflow:hidden;
 }
 .hero h1{font-size:2.6rem; color:var(--rose-dark); text-shadow:2px 3px 0 var(--rose-tint);}
 .hero p{color:var(--ink-soft); font-size:1.1rem; max-width:640px; margin:0 auto 1em;}
 .hero-actions{display:flex; gap:12px; justify-content:center; flex-wrap:wrap; margin-top:14px;}
 
-/* ---------- Home-page sky (clouds background + flying mascot) ----------
+/* One hero, one line -- a static "occasional supportive message" card
+   (js/page-home.js renderHeroTip()), picked once per page load and never
+   re-rolled or animated. This is the intentional, purposeful use of a hero
+   the flying banner mascot doesn't try to cover on its own. */
+.hero-tip{
+  display:flex; align-items:center; gap:14px; text-align:left;
+  max-width:520px; margin:20px auto 0; padding:14px 18px;
+  background:var(--panel); border:1px solid var(--border); border-radius:var(--radius-lg);
+  box-shadow:var(--shadow);
+}
+.hero-tip__message{font-weight:700; color:var(--ink); margin:0;}
+.hero-tip__from{color:var(--ink-soft); font-size:.85rem; margin:2px 0 0;}
+
+/* ---------- Home-page sky (clouds background) ----------
    Page-level, not hero-scoped -- covers the whole home page as a fixed
-   backdrop/overlay behind (resp. above) the normal content. Vanta mounts
-   its own <canvas> into .page-vanta-bg. Both are skipped entirely under
-   Calm Mode / prefers-reduced-motion (see js/herobg.js), same as every
-   other motion effect in this app. */
+   backdrop behind normal content. Vanta mounts its own <canvas> into
+   .page-vanta-bg. Skipped entirely under Calm Mode / prefers-reduced-motion
+   (see js/herobg.js), same as every other motion effect in this app. */
 .page-vanta-bg{position:fixed; inset:0; z-index:-1;}
 
-/* The site mascot in a cape, patrolling a slow lap around the whole screen.
-   Motion is driven by GSAP (js/herobg.js) -- this is just its resting
-   position/size before the timeline starts. Sits above page content but
-   below the sticky header/display panel/calm-space button so it never
-   competes with real UI. pointer-events:none so it can never block clicks. */
+/* One hero making a brief, purposeful appearance in the hero banner only --
+   not an ambient squadron flying over the whole page forever. Positioned
+   (and clipped, via .hero's overflow:hidden) relative to that one section,
+   so it scrolls away with the banner instead of persisting over the topic
+   grid/footer/etc. Motion is driven by GSAP (js/herobg.js) -- this is just
+   its resting position/size before the timeline starts. pointer-events:none
+   so it can never block clicks. */
 .page-flyhero{
-  position:fixed; z-index:40; left:8%; top:14%;
-  width:76px; height:auto; pointer-events:none;
+  position:absolute; z-index:1; left:70%; top:8%;
+  width:64px; height:auto; pointer-events:none;
   transform:rotate(-12deg);
 }
-/* A small squadron, not a single mascot -- b/c fly the same patrol loop
-   phase-offset in js/herobg.js, sized down a touch so they read as
-   teammates at different distances rather than exact clones. */
-.page-flyhero--b{width:58px;}
-.page-flyhero--c{width:46px;}
 
 /* ---------- Buttons ---------- */
 .btn{
@@ -626,14 +637,14 @@ main{max-width:1080px; margin:0 auto; padding:28px 20px 64px;}
   width:92px; height:92px; border-radius:50%; display:flex; align-items:center; justify-content:center;
   border:4px solid var(--border); background:var(--panel); margin:0 auto;
 }
-.topic-badge img{width:58px; height:58px; object-fit:contain;}
+.topic-badge img, .topic-badge .hero-portrait{width:58px; height:58px; object-fit:contain;}
 [data-theme="blue"] .topic-badge{background:var(--blue-tint); border-color:var(--blue);}
 [data-theme="green"] .topic-badge{background:var(--green-tint); border-color:var(--green);}
 [data-theme="purple"] .topic-badge{background:var(--purple-tint); border-color:var(--purple);}
 [data-theme="red"] .topic-badge{background:var(--red-tint); border-color:var(--red);}
 [data-theme="amber"] .topic-badge{background:var(--amber-tint); border-color:var(--amber);}
 .topic-badge--locked{background:#eef1f6 !important; border-color:var(--border) !important;}
-.topic-badge--locked img{filter:grayscale(1); opacity:.4;}
+.topic-badge--locked img, .topic-badge--locked .hero-portrait{filter:grayscale(1); opacity:.4;}
 .topic-badge--stamp{animation:badge-stamp-in .5s cubic-bezier(.2,1.4,.4,1);}
 @keyframes badge-stamp-in{
   0%{transform:scale(0) rotate(-12deg); opacity:0;}
@@ -656,6 +667,7 @@ main{max-width:1080px; margin:0 auto; padding:28px 20px 64px;}
 .badge-cell{display:flex; flex-direction:column; align-items:center;}
 .topic-badge-power{font-size:.82rem; color:var(--rose-dark); margin:2px 0 0;}
 .topic-badge-power--locked{color:var(--ink-soft); font-family:var(--font-body); font-weight:700;}
+.topic-badge-certificate{display:block; margin-top:4px; font-size:.82rem; font-weight:700;}
 
 /* Shown at the top of the badges page once every topic is complete */
 .battle-banner{
@@ -735,6 +747,7 @@ main{max-width:1080px; margin:0 auto; padding:28px 20px 64px;}
 }
 .hero-buddy__name{font-family:var(--font-display); font-weight:800; color:var(--ink); display:block;}
 .hero-buddy__power{font-family:'Comic Neue', var(--font-body); font-weight:700; color:var(--rose-dark); font-size:.92rem;}
+.hero-buddy__intro{display:block; color:var(--ink-soft); font-size:.88rem; margin-top:2px;}
 
 .mode-tabs{
   display:inline-flex; gap:4px; margin-bottom:22px; flex-wrap:wrap;
@@ -1112,10 +1125,35 @@ main{max-width:1080px; margin:0 auto; padding:28px 20px 64px;}
 .worksheet-answer-key li{margin-bottom:6px;}
 .worksheet-empty{color:var(--ink-soft);}
 
+/* ---------- Printable certificate (certificate.html) ---------- */
+.certificate-sheet{
+  max-width:600px; margin:0 auto; padding:40px 32px; text-align:center;
+  border-width:4px; position:relative;
+}
+.certificate-sheet::before{
+  content:''; position:absolute; inset:14px; border:2px dashed var(--border); border-radius:var(--radius-md); pointer-events:none;
+}
+[data-theme="blue"] .certificate-sheet::before{border-color:var(--blue);}
+[data-theme="green"] .certificate-sheet::before{border-color:var(--green);}
+[data-theme="purple"] .certificate-sheet::before{border-color:var(--purple);}
+[data-theme="red"] .certificate-sheet::before{border-color:var(--red);}
+[data-theme="amber"] .certificate-sheet::before{border-color:var(--amber);}
+.certificate-kicker{font-size:1.6rem; margin:14px 0 4px; color:var(--rose-dark);}
+.certificate-name{
+  font-family:'Dancing Script', var(--font-display); font-size:2rem; text-align:center;
+  border:none; border-bottom:2px solid var(--ink); background:transparent; color:var(--ink);
+  width:100%; max-width:420px; margin:10px auto 18px; padding:4px 8px;
+}
+.certificate-name:focus{outline:2px solid var(--blue); outline-offset:2px;}
+.certificate-body{font-size:1.1rem; margin:0 auto 10px; max-width:460px;}
+.certificate-hero{color:var(--rose-dark); font-size:1rem; margin:0 0 16px;}
+.certificate-date{color:var(--ink-soft); font-size:.9rem; margin:0;}
+
 @media print{
   .no-print{display:none !important;}
   body{background:none !important;}
   .worksheet-sheet{box-shadow:none; border:none; padding:0;}
+  .certificate-sheet{box-shadow:none;}
 }
 
 /* ---------- Video checkpoints ---------- */

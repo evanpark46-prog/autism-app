@@ -131,6 +131,7 @@ function initTopicPage(){
       <div class="speech-bubble">
         <span class="hero-buddy__name">${escapeHtml(data.name)}</span>
         <span class="hero-buddy__power font-comic">${escapeHtml(data.power)}</span>
+        <span class="hero-buddy__intro">${escapeHtml(t('hero_buddy_intro', { tagline: data.tagline }))}</span>
       </div>`;
   }
 
@@ -283,6 +284,7 @@ function initTopicPage(){
             <div class="power-unlock__name">${escapeHtml(heroUnlockData.name)}</div>
             <div class="power-unlock__power font-comic">${escapeHtml(heroUnlockData.power)}</div>
             <p class="power-unlock__tagline">${escapeHtml(heroUnlockData.tagline)}</p>
+            <a class="power-unlock__certificate" href="certificate.html?id=${encodeURIComponent(meta.id)}">${t('certificate_print_link')}</a>
           </div>
         </div>` : '';
       panel.innerHTML = `

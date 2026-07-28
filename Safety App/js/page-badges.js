@@ -15,14 +15,18 @@ function badgeHtml(meta, lang, unlocked){
         ? `<p class="topic-badge-power font-comic">${escapeHtml(heroData.power)}</p>`
         : `<p class="topic-badge-power topic-badge-power--locked">${t('power_locked_label')}</p>`)
     : '';
+  const certificateHtml = unlocked
+    ? `<a class="topic-badge-certificate" href="certificate.html?id=${encodeURIComponent(meta.id)}">${t('certificate_print_link')}</a>`
+    : '';
   return `
     <div class="badge-cell">
       <div class="topic-badge ${unlocked ? '' : 'topic-badge--locked'}" data-theme="${meta.theme}">
-        <img src="${meta.image}" alt="" loading="lazy" decoding="async" width="58" height="58">
+        ${heroPortraitHtml(meta.id, lang, meta.theme, 58)}
         ${unlocked ? '' : `<span class="topic-badge__lock" aria-hidden="true">🔒</span>`}
       </div>
       <p class="topic-badge-label">${escapeHtml(content.title)}</p>
       ${powerHtml}
+      ${certificateHtml}
     </div>`;
 }
 
