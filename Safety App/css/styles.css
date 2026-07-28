@@ -668,6 +668,14 @@ main{max-width:1080px; margin:0 auto; padding:28px 20px 64px;}
 .topic-badge-power{font-size:.82rem; color:var(--rose-dark); margin:2px 0 0;}
 .topic-badge-power--locked{color:var(--ink-soft); font-family:var(--font-body); font-weight:700;}
 .topic-badge-certificate{display:block; margin-top:4px; font-size:.82rem; font-weight:700;}
+.topic-badge-insitu{
+  display:inline-block; margin:4px 0 0; font-size:.76rem; font-weight:800;
+  text-transform:uppercase; letter-spacing:.02em; padding:3px 9px; border-radius:20px;
+}
+.topic-badge-insitu--independent{background:var(--green-tint); color:#155a3c;}
+.topic-badge-insitu--coached{background:var(--amber-tint); color:var(--amber-text);}
+.topic-badge-insitu--not-yet{background:var(--red-tint); color:var(--red);}
+.topic-badge-insitu--none{background:none; color:var(--ink-soft); font-weight:600; text-transform:none;}
 
 /* Shown at the top of the badges page once every topic is complete */
 .battle-banner{
@@ -986,7 +994,7 @@ main{max-width:1080px; margin:0 auto; padding:28px 20px 64px;}
   background:var(--blue-tint); border-radius:var(--radius-sm); padding:10px 14px; font-weight:700; color:var(--blue-dark);
 }
 
-.practice-card{
+.practice-card, .in-situ-card{
   margin-top:18px; text-align:left; background:var(--green-tint); border:1px solid #bfe6d3;
   border-radius:var(--radius-md); padding:16px 18px;
 }
@@ -994,6 +1002,35 @@ main{max-width:1080px; margin:0 auto; padding:28px 20px 64px;}
   font-size:.78rem; font-weight:800; text-transform:uppercase; letter-spacing:.03em; color:#155a3c; margin-bottom:4px;
 }
 .practice-card p{color:#155a3c; margin:0; font-weight:700;}
+
+/* ---------- In-situ practice card (Behavioral Skills Training's
+   real-world half -- js/page-topic.js inSituCardHtml()) ---------- */
+.in-situ-card > p{color:#155a3c; margin:0 0 10px; font-weight:700;}
+.in-situ-steps{margin:0 0 16px; padding-left:22px; color:var(--ink); font-weight:500;}
+.in-situ-steps li{margin-bottom:8px;}
+.in-situ-steps strong{color:#155a3c; margin-right:4px;}
+.in-situ-record{border-top:1px dashed #bfe6d3; padding-top:14px;}
+.in-situ-record__heading{font-weight:800; color:var(--ink); margin:0 0 8px;}
+.in-situ-record__buttons{display:flex; gap:8px; flex-wrap:wrap; margin-bottom:10px;}
+.in-situ-record__note-label{display:block; font-size:.85rem; font-weight:700; color:var(--ink-soft); margin-bottom:4px;}
+.in-situ-record__note{
+  width:100%; max-width:420px; padding:8px 10px; border:1px solid var(--border); border-radius:var(--radius-sm, 8px);
+  font-family:var(--font-body); font-size:.95rem; box-sizing:border-box;
+}
+.in-situ-saved{color:#155a3c; font-weight:700; margin-top:10px;}
+.in-situ-history{margin-top:16px; border-top:1px dashed #bfe6d3; padding-top:14px;}
+.in-situ-history h4{margin:0 0 8px; font-size:.9rem; color:var(--ink);}
+.in-situ-history ul{list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:6px;}
+.in-situ-history li{display:flex; align-items:center; gap:8px; flex-wrap:wrap; font-size:.88rem;}
+.in-situ-history__result{
+  font-weight:800; font-size:.76rem; text-transform:uppercase; letter-spacing:.02em;
+  padding:3px 8px; border-radius:20px;
+}
+.in-situ-history__result--independent{background:var(--green-tint); color:#155a3c;}
+.in-situ-history__result--coached{background:var(--amber-tint); color:var(--amber-text);}
+.in-situ-history__result--not-yet{background:var(--red-tint); color:var(--red);}
+.in-situ-history__date{color:var(--ink-soft);}
+.in-situ-history__note{color:var(--ink-soft); font-style:italic;}
 
 /* ---------- Matching step (tap-to-pair) ---------- */
 .matching-grid{display:grid; grid-template-columns:1fr 1fr; gap:14px; margin-top:16px;}

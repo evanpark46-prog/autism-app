@@ -18,6 +18,7 @@ function badgeHtml(meta, lang, unlocked){
   const certificateHtml = unlocked
     ? `<a class="topic-badge-certificate" href="certificate.html?id=${encodeURIComponent(meta.id)}">${t('certificate_print_link')}</a>`
     : '';
+  const inSituHtml = (unlocked && typeof getInSituHistory === 'function') ? inSituBadgeHtml(meta.id) : '';
   return `
     <div class="badge-cell">
       <div class="topic-badge ${unlocked ? '' : 'topic-badge--locked'}" data-theme="${meta.theme}">
@@ -26,8 +27,22 @@ function badgeHtml(meta, lang, unlocked){
       </div>
       <p class="topic-badge-label">${escapeHtml(content.title)}</p>
       ${powerHtml}
+      ${inSituHtml}
       ${certificateHtml}
     </div>`;
+}
+
+// A quick, honest signal (not gating the badge itself) of whether this
+// skill has actually been confirmed in the real world -- based on the most
+// recent check-in, since a stale "did it independently" from months ago
+// shouldn't read the same as a skill that was never checked, or one that
+// regressed. See recordInSitu()/getInSituHistory() in js/analytics.js.
+function inSituBadgeHtml(topicId){
+  const history = getInSituHistory(topicId);
+  if (!history.length) return `<p class="topic-badge-insitu topic-badge-insitu--none">${t('in_situ_badge_none')}</p>`;
+  const latest = history[0].result;
+  const key = latest === 'not-yet' ? 'in_situ_badge_notyet' : `in_situ_badge_${latest}`;
+  return `<p class="topic-badge-insitu topic-badge-insitu--${latest}">${t(key)}</p>`;
 }
 
 function renderBadgesPage(){

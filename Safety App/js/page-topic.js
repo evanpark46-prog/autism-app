@@ -244,6 +244,71 @@ function initTopicPage(){
       </div>`;
   }
 
+  // The real-world half of Behavioral Skills Training: a short caregiver
+  // script (Tell/Show/Practice/Check-in) plus a place to record whether the
+  // learner actually performed the skill in the real environment -- in-app
+  // mastery reliably fails to generalize without that step. History (not a
+  // single flag) since one good check today doesn't guarantee the skill
+  // still holds up next month. See recordInSitu()/getInSituHistory() in
+  // js/analytics.js.
+  function inSituResultLabelKey(result){
+    return result === 'not-yet' ? 'in_situ_result_notyet' : `in_situ_result_${result}`;
+  }
+
+  function inSituCardInnerHtml(meta, content){
+    const history = typeof getInSituHistory === 'function' ? getInSituHistory(meta.id) : [];
+    const historyHtml = history.length ? `
+      <div class="in-situ-history">
+        <h4>${t('in_situ_history_heading')}</h4>
+        <ul>
+          ${history.slice(0, 5).map(entry => `
+            <li>
+              <span class="in-situ-history__result in-situ-history__result--${entry.result}">${t(inSituResultLabelKey(entry.result))}</span>
+              <span class="in-situ-history__date">${escapeHtml(new Date(entry.date).toLocaleDateString(getLang() === 'es' ? 'es' : 'en-US', { month: 'short', day: 'numeric', year: 'numeric' }))}</span>
+              ${entry.note ? `<span class="in-situ-history__note">${escapeHtml(entry.note)}</span>` : ''}
+            </li>`).join('')}
+        </ul>
+      </div>` : '';
+
+    return `
+      <div class="practice-card__label">${t('in_situ_heading')}</div>
+      <ol class="in-situ-steps">
+        <li><strong>${t('in_situ_step_tell_label')}</strong> ${escapeHtml(content.practicePrompt)}</li>
+        <li><strong>${t('in_situ_step_show_label')}</strong> ${t('in_situ_step_show_body')}</li>
+        <li><strong>${t('in_situ_step_practice_label')}</strong> ${t('in_situ_step_practice_body')}</li>
+        <li><strong>${t('in_situ_step_checkin_label')}</strong> ${t('in_situ_step_checkin_body')}</li>
+      </ol>
+      <div class="in-situ-record">
+        <p class="in-situ-record__heading">${t('in_situ_record_heading')}</p>
+        <div class="in-situ-record__buttons">
+          <button type="button" class="btn btn-secondary" data-in-situ-result="independent">${t('in_situ_result_independent')}</button>
+          <button type="button" class="btn btn-secondary" data-in-situ-result="coached">${t('in_situ_result_coached')}</button>
+          <button type="button" class="btn btn-secondary" data-in-situ-result="not-yet">${t('in_situ_result_notyet')}</button>
+        </div>
+        <label class="in-situ-record__note-label" for="in-situ-note-${meta.id}">${t('in_situ_note_label')}</label>
+        <input type="text" id="in-situ-note-${meta.id}" class="in-situ-record__note" data-in-situ-note placeholder="${escapeHtml(t('in_situ_note_placeholder'))}">
+      </div>
+      ${historyHtml}`;
+  }
+
+  function inSituCardHtml(meta, content){
+    return `<div class="in-situ-card" data-in-situ-root>${inSituCardInnerHtml(meta, content)}</div>`;
+  }
+
+  function wireInSituCard(meta, content){
+    const root = document.querySelector('[data-in-situ-root]');
+    if (!root) return;
+    root.querySelectorAll('[data-in-situ-result]').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const noteEl = root.querySelector('[data-in-situ-note]');
+        const note = noteEl ? noteEl.value.trim() : '';
+        recordInSitu(meta.id, btn.dataset.inSituResult, note);
+        root.innerHTML = inSituCardInnerHtml(meta, content) + `<p class="in-situ-saved" role="status">${t('in_situ_saved_confirm')}</p>`;
+        wireInSituCard(meta, content);
+      });
+    });
+  }
+
   function renderStory(){
     const panel = document.querySelector('[data-panel="story"]');
     if (!panel) return;
@@ -269,11 +334,7 @@ function initTopicPage(){
         trackEvent(meta.id, 'level_complete', { level: storyState.level });
         if (typeof playCompletionChime === 'function') playCompletionChime();
       }
-      const practiceHtml = content.practicePrompt ? `
-        <div class="practice-card">
-          <div class="practice-card__label">${t('story_practice_heading')}</div>
-          <p>${escapeHtml(content.practicePrompt)}</p>
-        </div>` : '';
+      const practiceHtml = content.practicePrompt ? inSituCardHtml(meta, content) : '';
       const heroUnlock = typeof heroFor === 'function' ? heroFor(meta.id) : null;
       const heroUnlockData = heroUnlock ? (heroUnlock[getLang()] || heroUnlock.en) : null;
       const powerUnlockHtml = heroUnlockData ? `
@@ -291,7 +352,7 @@ function initTopicPage(){
         <div class="story-stage">
           <div class="story-complete">
             <div class="topic-badge ${justCompleted ? 'topic-badge--stamp' : ''}" data-theme="${meta.theme}">
-              <img src="${meta.image}" alt="" width="58" height="58">
+              ${heroPortraitHtml(meta.id, getLang(), meta.theme, 58)}
             </div>
             <h2>${t('story_complete_title')}</h2>
             ${powerUnlockHtml}
@@ -310,6 +371,7 @@ function initTopicPage(){
             </div>
           </div>
         </div>`;
+      wireInSituCard(meta, content);
       panel.querySelector('[data-story-replay]').addEventListener('click', () => {
         storyState.index = 0;
         storyState.answered = false;
