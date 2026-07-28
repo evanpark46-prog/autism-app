@@ -9,16 +9,17 @@
    locally and applied via [data-calm-mode] on <html>, same pattern as the
    skin/text-size preferences.
 
-   ON by default (a never-visited learner gets the calm experience) --
-   motion/decoration is the opt-in, not the opt-out, matching this app's
-   own "a calm place" brief. Matches the inline bootstrap script in every
-   page's <head>, which must stay in sync with this same default.
+   OFF by default (a never-visited learner sees the full clouds/flying-hero
+   experience) -- Calm Mode is the opt-in, not the opt-out, so the app's
+   visual identity is what a new visitor actually sees. Matches the inline
+   bootstrap script in every page's <head>, which must stay in sync with
+   this same default.
    ========================================================================== */
 
 const CALM_MODE_KEY = 'safetylib_calm_mode';
 
 function getCalmMode(){
-  try { return localStorage.getItem(CALM_MODE_KEY) !== 'off'; } catch (e) { return true; }
+  try { return localStorage.getItem(CALM_MODE_KEY) === 'on'; } catch (e) { return false; }
 }
 
 function setCalmMode(on){

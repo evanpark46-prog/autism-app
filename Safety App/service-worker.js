@@ -10,7 +10,7 @@
    returning visitors pick up the change instead of an old cached copy.
    ========================================================================== */
 
-const CACHE_NAME = 'safety-superheroes-shell-v20';
+const CACHE_NAME = 'safety-superheroes-shell-v21';
 
 const SHELL_FILES = [
   'index.html',
