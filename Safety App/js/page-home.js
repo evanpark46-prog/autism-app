@@ -62,9 +62,20 @@ function heroCardHtml(meta, lang, index){
 
 function renderHeroWall(){
   const wall = document.querySelector('[data-hero-wall]');
+  const section = document.querySelector('[data-hero-wall-section]');
   if (!wall) return;
+
+  if (typeof hasChosenAgeBand === 'function' && !hasChosenAgeBand()){
+    if (section) section.hidden = true;
+    wall.innerHTML = '';
+    return;
+  }
+  if (section) section.hidden = false;
+
   const lang = getLang();
-  wall.innerHTML = TOPICS.map((meta, i) => heroCardHtml(meta, lang, i)).join('');
+  const ageBand = typeof getAgeBand === 'function' ? getAgeBand() : 'all';
+  const metas = TOPICS.filter(meta => topicMatchesAgeBand(meta, ageBand));
+  wall.innerHTML = metas.map((meta, i) => heroCardHtml(meta, lang, i)).join('');
   initScrollReveal(wall);
 }
 
@@ -114,6 +125,15 @@ function wirePinButtons(container){
 function renderTopicGrid(){
   const grid = document.querySelector('[data-topic-grid]');
   if (!grid) return;
+
+  // Nothing renders below the three big age-gate squares until a parent
+  // picks one (or the "show everything" escape hatch) -- the whole point
+  // is to not hand a first-time visitor all 31 lessons at once.
+  if (typeof hasChosenAgeBand === 'function' && !hasChosenAgeBand()){
+    grid.innerHTML = '';
+    return;
+  }
+
   const lang = getLang();
   const ageBand = typeof getAgeBand === 'function' ? getAgeBand() : 'all';
 
@@ -173,7 +193,7 @@ function initScrollReveal(container){
 }
 
 function initHomePage(){
-  if (typeof initAgeBandSwitcher === 'function') initAgeBandSwitcher();
+  if (typeof initAgeGate === 'function') initAgeGate();
   renderTopicGrid();
   renderHeroWall();
   renderHeroTip();
@@ -181,6 +201,7 @@ function initHomePage(){
   window.addEventListener('safetylib:langchange', renderHeroWall);
   window.addEventListener('safetylib:langchange', renderHeroTip);
   window.addEventListener('safetylib:agebandchange', renderTopicGrid);
+  window.addEventListener('safetylib:agebandchange', renderHeroWall);
   if (typeof initEmotionCheckin === 'function') initEmotionCheckin();
 }
 

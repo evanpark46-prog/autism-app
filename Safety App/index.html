@@ -114,14 +114,11 @@
 
     <section>
       <h2 class="visually-hidden" data-i18n="home_topics_heading">Choose a topic</h2>
-      <div class="ageband-filter">
-        <span class="ageband-filter__label" data-i18n="ageband_label">Age</span>
-        <div class="ageband-switch" data-ageband-switch role="group" aria-label="Age"></div>
-      </div>
+      <div data-age-gate></div>
       <div class="grid grid-topics" data-topic-grid></div>
     </section>
 
-    <section class="hero-wall mt-lg">
+    <section class="hero-wall mt-lg" data-hero-wall-section hidden>
       <h2 data-i18n="home_heroes_heading">Meet your superheroes</h2>
       <p class="hero-wall__lead" data-i18n="home_heroes_lead">Every topic has its own hero. Tap one to start their lesson.</p>
       <div class="hero-wall__grid" data-hero-wall></div>
