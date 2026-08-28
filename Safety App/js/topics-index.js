@@ -11,137 +11,280 @@ const TOPICS = [
   {
     "id": "stranger-safety",
     "theme": "green",
-    "image": "img/generated/park-safe.webp"
+    "image": "img/generated/park-safe.webp",
+    "ageBands": [
+      "toddler",
+      "youth"
+    ]
   },
   {
     "id": "street-safety",
     "theme": "green",
-    "image": "img/generated/street-crossing.webp"
+    "image": "img/generated/street-crossing.webp",
+    "ageBands": [
+      "toddler",
+      "youth"
+    ]
   },
   {
     "id": "lost-safety",
     "theme": "green",
-    "image": "img/generated/store-helper.webp"
+    "image": "img/generated/store-helper.webp",
+    "ageBands": [
+      "toddler",
+      "youth"
+    ]
   },
   {
     "id": "emergency-safety",
     "theme": "red",
-    "image": "img/generated/emergency-safety.webp"
+    "image": "img/generated/emergency-safety.webp",
+    "ageBands": [
+      "toddler",
+      "youth"
+    ]
   },
   {
     "id": "fire-safety",
     "theme": "red",
-    "image": "img/generated/fire-safety.webp"
+    "image": "img/generated/fire-safety.webp",
+    "ageBands": [
+      "toddler",
+      "youth"
+    ]
   },
   {
     "id": "earthquake-safety",
     "theme": "red",
-    "image": "img/generated/earthquake-safety.webp"
+    "image": "img/generated/earthquake-safety.webp",
+    "ageBands": [
+      "toddler",
+      "youth"
+    ]
   },
   {
     "id": "rainyweather-safety",
     "theme": "red",
-    "image": "img/generated/rainyweather-safety.webp"
+    "image": "img/generated/rainyweather-safety.webp",
+    "ageBands": [
+      "toddler",
+      "youth"
+    ]
   },
   {
     "id": "selfadvocacy-safety",
     "theme": "amber",
-    "image": "img/generated/selfadvocacy-safety.webp"
+    "image": "img/generated/selfadvocacy-safety.webp",
+    "ageBands": [
+      "toddler",
+      "youth"
+    ]
   },
   {
     "id": "body-boundaries-safety",
     "theme": "purple",
-    "image": "img/generated/body-boundaries-safety.webp"
+    "image": "img/generated/body-boundaries-safety.webp",
+    "ageBands": [
+      "toddler",
+      "youth"
+    ]
   },
   {
     "id": "secrets-safety",
     "theme": "purple",
-    "image": "img/generated/secrets-safety.webp"
+    "image": "img/generated/secrets-safety.webp",
+    "ageBands": [
+      "toddler",
+      "youth"
+    ]
   },
   {
     "id": "reporting-safety",
     "theme": "purple",
-    "image": "img/generated/reporting-safety.webp"
+    "image": "img/generated/reporting-safety.webp",
+    "ageBands": [
+      "toddler",
+      "youth"
+    ]
   },
   {
     "id": "awareness-safety",
     "theme": "green",
-    "image": "img/generated/awareness-safety.webp"
+    "image": "img/generated/awareness-safety.webp",
+    "ageBands": [
+      "toddler",
+      "youth"
+    ]
   },
   {
     "id": "plan-safety",
     "theme": "red",
-    "image": "img/generated/plan-safety.webp"
+    "image": "img/generated/plan-safety.webp",
+    "ageBands": [
+      "toddler",
+      "youth"
+    ]
   },
   {
     "id": "privacy-safety",
     "theme": "purple",
-    "image": "img/generated/privacy-safety.webp"
+    "image": "img/generated/privacy-safety.webp",
+    "ageBands": [
+      "toddler",
+      "youth"
+    ]
   },
   {
     "id": "bullying-safety",
     "theme": "amber",
-    "image": "img/generated/bullying-safety.webp"
+    "image": "img/generated/bullying-safety.webp",
+    "ageBands": [
+      "toddler",
+      "youth"
+    ]
   },
   {
     "id": "online-safety",
     "theme": "blue",
-    "image": "img/generated/online-safety.webp"
+    "image": "img/generated/online-safety.webp",
+    "ageBands": [
+      "toddler",
+      "youth"
+    ]
   },
   {
     "id": "cyberbullying-safety",
     "theme": "blue",
-    "image": "img/generated/cyberbullying-safety.webp"
+    "image": "img/generated/cyberbullying-safety.webp",
+    "ageBands": [
+      "toddler",
+      "youth"
+    ]
   },
   {
     "id": "citizenship-safety",
     "theme": "blue",
-    "image": "img/generated/citizenship-safety.webp"
+    "image": "img/generated/citizenship-safety.webp",
+    "ageBands": [
+      "toddler",
+      "youth"
+    ]
   },
   {
     "id": "rights-safety",
     "theme": "amber",
-    "image": "img/generated/rights-safety.webp"
+    "image": "img/generated/rights-safety.webp",
+    "ageBands": [
+      "toddler",
+      "youth"
+    ]
   },
   {
     "id": "water-safety",
     "theme": "red",
-    "image": "img/generated/water-safety.webp"
+    "image": "img/generated/water-safety.webp",
+    "ageBands": [
+      "toddler",
+      "youth"
+    ]
   },
   {
     "id": "home-safety",
     "theme": "red",
-    "image": "img/generated/home-safety.webp"
+    "image": "img/generated/home-safety.webp",
+    "ageBands": [
+      "toddler",
+      "youth"
+    ]
   },
   {
     "id": "bike-safety",
     "theme": "green",
-    "image": "img/generated/bike-safety.webp"
+    "image": "img/generated/bike-safety.webp",
+    "ageBands": [
+      "toddler",
+      "youth"
+    ]
   },
   {
     "id": "peer-pressure-safety",
     "theme": "amber",
-    "image": "img/generated/peer-pressure-safety.webp"
+    "image": "img/generated/peer-pressure-safety.webp",
+    "ageBands": [
+      "toddler",
+      "youth"
+    ]
   },
   {
     "id": "elopement-safety",
     "theme": "green",
-    "image": "img/generated/elopement-safety.webp"
+    "image": "img/generated/elopement-safety.webp",
+    "ageBands": [
+      "toddler",
+      "youth"
+    ]
   },
   {
     "id": "safehelper-safety",
     "theme": "green",
-    "image": "img/generated/safehelper-safety.webp"
+    "image": "img/generated/safehelper-safety.webp",
+    "ageBands": [
+      "toddler",
+      "youth"
+    ]
   },
   {
     "id": "medical-safety",
     "theme": "purple",
-    "image": "img/generated/medical-safety.webp"
+    "image": "img/generated/medical-safety.webp",
+    "ageBands": [
+      "toddler",
+      "youth"
+    ]
   },
   {
     "id": "selfregulation-safety",
     "theme": "amber",
-    "image": "img/generated/selfregulation-safety.webp"
+    "image": "img/generated/selfregulation-safety.webp",
+    "ageBands": [
+      "toddler",
+      "youth"
+    ]
+  },
+  {
+    "id": "firstaid-safety",
+    "theme": "red",
+    "image": "img/generated/emergency-safety.webp",
+    "ageBands": [
+      "youth",
+      "teen"
+    ]
+  },
+  {
+    "id": "seizure-safety",
+    "theme": "red",
+    "image": "img/generated/medical-safety.webp",
+    "ageBands": [
+      "youth",
+      "teen"
+    ]
+  },
+  {
+    "id": "money-safety",
+    "theme": "amber",
+    "image": "img/generated/peer-pressure-safety.webp",
+    "ageBands": [
+      "youth",
+      "teen"
+    ]
+  },
+  {
+    "id": "dating-safety",
+    "theme": "purple",
+    "image": "img/generated/body-boundaries-safety.webp",
+    "ageBands": [
+      "teen"
+    ]
   }
 ];
 
@@ -1356,6 +1499,150 @@ const TOPIC_SUMMARY = {
           }
         ]
       }
+    },
+    "firstaid-safety": {
+      "title": "Choking & First Aid Basics",
+      "tagline": "What to notice and do if someone is choking, cut, or hurt.",
+      "video": {
+        "checkpoints": [
+          {
+            "time": 20,
+            "question": "A classmate starts choking and can’t talk. What should the character do?",
+            "choices": [
+              {
+                "text": "Get a grown-up or call 911 immediately.",
+                "correct": true
+              },
+              {
+                "text": "Wait to see if it passes.",
+                "correct": false
+              }
+            ]
+          },
+          {
+            "time": 55,
+            "question": "A friend has a small cut that’s bleeding. What should the character do?",
+            "choices": [
+              {
+                "text": "Tell a grown-up so they can clean and cover it.",
+                "correct": true
+              },
+              {
+                "text": "Clean it themselves.",
+                "correct": false
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "seizure-safety": {
+      "title": "Seizure Awareness & Safety",
+      "tagline": "What to notice and do if someone near you has a seizure.",
+      "video": {
+        "checkpoints": [
+          {
+            "time": 20,
+            "question": "A classmate starts shaking and doesn’t respond. What should the character do first?",
+            "choices": [
+              {
+                "text": "Stay calm, tell a grown-up, and clear the area.",
+                "correct": true
+              },
+              {
+                "text": "Try to hold them still.",
+                "correct": false
+              }
+            ]
+          },
+          {
+            "time": 60,
+            "question": "The shaking has stopped but the person isn’t fully awake yet. What’s the safe next step?",
+            "choices": [
+              {
+                "text": "Turn them gently onto their side.",
+                "correct": true
+              },
+              {
+                "text": "Sit them up straight right away.",
+                "correct": false
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "money-safety": {
+      "title": "Money & Scam Safety",
+      "tagline": "Spotting a money trick and knowing what to do about it.",
+      "video": {
+        "checkpoints": [
+          {
+            "time": 20,
+            "question": "A caller says to pay right now with a gift card. What should the character do?",
+            "choices": [
+              {
+                "text": "Tell a grown-up before doing anything.",
+                "correct": true
+              },
+              {
+                "text": "Find a gift card to pay.",
+                "correct": false
+              }
+            ]
+          },
+          {
+            "time": 55,
+            "question": "A message asks to keep a money request secret from parents. What does that mean?",
+            "choices": [
+              {
+                "text": "It’s a warning sign.",
+                "correct": true
+              },
+              {
+                "text": "It’s normal and fine.",
+                "correct": false
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "dating-safety": {
+      "title": "Healthy Relationships & Dating Safety",
+      "tagline": "Respecting your own “no” and someone else’s, in friendships and dating.",
+      "video": {
+        "checkpoints": [
+          {
+            "time": 20,
+            "question": "A partner keeps asking after being told “not yet.” What does that mean?",
+            "choices": [
+              {
+                "text": "That’s not respectful — a respectful partner accepts your answer.",
+                "correct": true
+              },
+              {
+                "text": "That means they really care.",
+                "correct": false
+              }
+            ]
+          },
+          {
+            "time": 55,
+            "question": "A partner wants to know your location constantly and gets upset over slow replies. What is that?",
+            "choices": [
+              {
+                "text": "A controlling pattern, not healthy closeness.",
+                "correct": true
+              },
+              {
+                "text": "Normal in a serious relationship.",
+                "correct": false
+              }
+            ]
+          }
+        ]
+      }
     }
   },
   "es": {
@@ -2562,6 +2849,150 @@ const TOPIC_SUMMARY = {
               },
               {
                 "text": "Sentirse mal y nunca intentar estrategias otra vez.",
+                "correct": false
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "firstaid-safety": {
+      "title": "Primeros Auxilios y Asfixia",
+      "tagline": "Qué notar y hacer si alguien se está asfixiando, se corta o se lastima.",
+      "video": {
+        "checkpoints": [
+          {
+            "time": 20,
+            "question": "Un compañero empieza a asfixiarse y no puede hablar. ¿Qué debería hacer el personaje?",
+            "choices": [
+              {
+                "text": "Buscar a un adulto o llamar al 911 de inmediato.",
+                "correct": true
+              },
+              {
+                "text": "Esperar a ver si se pasa.",
+                "correct": false
+              }
+            ]
+          },
+          {
+            "time": 55,
+            "question": "Un amigo tiene una pequeña cortada que sangra. ¿Qué debería hacer el personaje?",
+            "choices": [
+              {
+                "text": "Avisarle a un adulto para que la limpie y la cubra.",
+                "correct": true
+              },
+              {
+                "text": "Limpiarla él mismo.",
+                "correct": false
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "seizure-safety": {
+      "title": "Convulsiones: Reconocerlas y Ayudar",
+      "tagline": "Qué notar y hacer si alguien cerca de ti tiene una convulsión.",
+      "video": {
+        "checkpoints": [
+          {
+            "time": 20,
+            "question": "Un compañero empieza a temblar y no responde. ¿Qué debería hacer el personaje primero?",
+            "choices": [
+              {
+                "text": "Mantener la calma, avisar a un adulto, y despejar el área.",
+                "correct": true
+              },
+              {
+                "text": "Intentar sujetarlo.",
+                "correct": false
+              }
+            ]
+          },
+          {
+            "time": 60,
+            "question": "El temblor se detuvo pero la persona todavía no está completamente despierta. ¿Cuál es el siguiente paso seguro?",
+            "choices": [
+              {
+                "text": "Girarla suavemente hacia un lado.",
+                "correct": true
+              },
+              {
+                "text": "Sentarla derecha de inmediato.",
+                "correct": false
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "money-safety": {
+      "title": "Seguridad con el Dinero y las Estafas",
+      "tagline": "Reconocer un engaño de dinero y saber qué hacer al respecto.",
+      "video": {
+        "checkpoints": [
+          {
+            "time": 20,
+            "question": "Alguien que llama dice que hay que pagar ahora mismo con una tarjeta de regalo. ¿Qué debería hacer el personaje?",
+            "choices": [
+              {
+                "text": "Avisarle a un adulto antes de hacer nada.",
+                "correct": true
+              },
+              {
+                "text": "Buscar una tarjeta de regalo para pagar.",
+                "correct": false
+              }
+            ]
+          },
+          {
+            "time": 55,
+            "question": "Un mensaje pide mantener un pedido de dinero en secreto de los padres. ¿Qué significa eso?",
+            "choices": [
+              {
+                "text": "Es una señal de alerta.",
+                "correct": true
+              },
+              {
+                "text": "Es normal y está bien.",
+                "correct": false
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "dating-safety": {
+      "title": "Relaciones Sanas y Seguridad al Salir con Alguien",
+      "tagline": "Respetar tu propio “no” y el de los demás, en amistades y relaciones.",
+      "video": {
+        "checkpoints": [
+          {
+            "time": 20,
+            "question": "Una pareja sigue preguntando después de que le dijeron “todavía no”. ¿Qué significa eso?",
+            "choices": [
+              {
+                "text": "No es respetuoso — una pareja respetuosa acepta tu respuesta.",
+                "correct": true
+              },
+              {
+                "text": "Significa que de verdad le importa.",
+                "correct": false
+              }
+            ]
+          },
+          {
+            "time": 55,
+            "question": "Una pareja quiere saber tu ubicación constantemente y se molesta por respuestas lentas. ¿Qué es eso?",
+            "choices": [
+              {
+                "text": "Un patrón de control, no cercanía sana.",
+                "correct": true
+              },
+              {
+                "text": "Normal en una relación seria.",
                 "correct": false
               }
             ]

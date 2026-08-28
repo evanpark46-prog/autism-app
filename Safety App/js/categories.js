@@ -8,10 +8,10 @@
 
 const TOPIC_CATEGORIES = [
   { key: 'out_about', color: 'green', topics: ['stranger-safety', 'street-safety', 'lost-safety', 'bike-safety', 'awareness-safety', 'elopement-safety', 'safehelper-safety'] },
-  { key: 'emergencies', color: 'red', topics: ['emergency-safety', 'fire-safety', 'earthquake-safety', 'rainyweather-safety', 'water-safety', 'home-safety', 'plan-safety'] },
-  { key: 'body', color: 'purple', topics: ['body-boundaries-safety', 'secrets-safety', 'reporting-safety', 'privacy-safety', 'medical-safety'] },
+  { key: 'emergencies', color: 'red', topics: ['emergency-safety', 'fire-safety', 'earthquake-safety', 'rainyweather-safety', 'water-safety', 'home-safety', 'plan-safety', 'firstaid-safety', 'seizure-safety'] },
+  { key: 'body', color: 'purple', topics: ['body-boundaries-safety', 'secrets-safety', 'reporting-safety', 'privacy-safety', 'medical-safety', 'dating-safety'] },
   { key: 'online', color: 'blue', topics: ['online-safety', 'cyberbullying-safety', 'citizenship-safety'] },
-  { key: 'speaking_up', color: 'amber', topics: ['selfadvocacy-safety', 'rights-safety', 'bullying-safety', 'peer-pressure-safety', 'selfregulation-safety'] },
+  { key: 'speaking_up', color: 'amber', topics: ['selfadvocacy-safety', 'rights-safety', 'bullying-safety', 'peer-pressure-safety', 'selfregulation-safety', 'money-safety'] },
 ];
 
 const CATEGORY_ACCENT_VAR = {

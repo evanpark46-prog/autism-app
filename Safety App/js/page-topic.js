@@ -43,7 +43,7 @@ function initTopicPage(){
     storyState.missedSteps.add(step);
     storyState.missed.push({ front, back });
   }
-  const flashState = { level: null, index: 0, flipped: false };
+  const flashState = { level: null, index: 0, flipped: false, hintLevel: 0 };
   let flashMode = 'alone';
 
   // "Guided" walks the learner through every card in two phases: (1) drill —
@@ -118,21 +118,47 @@ function initTopicPage(){
 
   // The superhero buddy for this lesson -- shown once here in the always-
   // visible topic-hero header, so it "accompanies" the learner across the
-  // Video/Flashcards/Story tabs without needing to be re-rendered per tab.
-  function renderHeroBuddy(){
+  // Video/Flashcards/Story tabs. On Video/Story (and the flashcard level
+  // chooser / guided-done screen) it's just a static intro. During actual
+  // flashcard practice it becomes a tappable companion: `interactiveCtx`
+  // (an { prompt, onTap } pair supplied by the caller) turns it into a
+  // hint button whose message and action depend on exactly where the
+  // learner is (plain flip card, guided drill, or guided quiz).
+  function renderHeroBuddy(interactiveCtx){
     if (!heroBuddyEl || typeof heroFor !== 'function') return;
     const hero = heroFor(meta.id);
     if (!hero){ heroBuddyEl.hidden = true; return; }
     const lang = getLang();
     const data = hero[lang] || hero.en;
     heroBuddyEl.hidden = false;
+
+    const introText = interactiveCtx ? interactiveCtx.prompt : t('hero_buddy_intro', { tagline: data.tagline });
     heroBuddyEl.innerHTML = `
       ${heroPortraitHtml(meta.id, lang, meta.theme, 60)}
       <div class="speech-bubble">
         <span class="hero-buddy__name">${escapeHtml(data.name)}</span>
         <span class="hero-buddy__power font-comic">${escapeHtml(data.power)}</span>
-        <span class="hero-buddy__intro">${escapeHtml(t('hero_buddy_intro', { tagline: data.tagline }))}</span>
+        <span class="hero-buddy__intro">${escapeHtml(introText)}</span>
       </div>`;
+
+    if (!interactiveCtx){
+      heroBuddyEl.className = 'hero-buddy';
+      heroBuddyEl.removeAttribute('role');
+      heroBuddyEl.removeAttribute('tabindex');
+      heroBuddyEl.removeAttribute('aria-label');
+      heroBuddyEl.onclick = null;
+      heroBuddyEl.onkeydown = null;
+      return;
+    }
+
+    heroBuddyEl.className = 'hero-buddy hero-buddy--tappable';
+    heroBuddyEl.setAttribute('role', 'button');
+    heroBuddyEl.tabIndex = 0;
+    heroBuddyEl.setAttribute('aria-label', t('companion_aria_label', { name: data.name }));
+    heroBuddyEl.onclick = interactiveCtx.onTap;
+    heroBuddyEl.onkeydown = e => {
+      if (e.key === 'Enter' || e.key === ' '){ e.preventDefault(); interactiveCtx.onTap(); }
+    };
   }
 
   function renderHeroPin(){
@@ -314,6 +340,7 @@ function initTopicPage(){
     if (!panel) return;
     stopSpeaking();
     stopActiveTypewriter();
+    renderHeroBuddy();
 
     if (storyState.level === null){
       renderLevelChooser(panel);
@@ -850,6 +877,7 @@ function initTopicPage(){
   }
 
   function renderFlashLevelChooser(panel){
+    renderHeroBuddy();
     const levelKeys = [
       ['level1_label', 'level1_desc'],
       ['level2_label', 'level2_desc'],
@@ -873,6 +901,7 @@ function initTopicPage(){
         flashState.level = Number(btn.dataset.flashLevel);
         flashState.index = 0;
         flashState.flipped = false;
+        flashState.hintLevel = 0;
         renderFlashcards();
       });
     });
@@ -950,6 +979,25 @@ function initTopicPage(){
     wireSpeakButtonHighlighted(panel, [{ el: flashTextEl, text: flashState.flipped ? card.back : card.front }]);
     wireFlashChrome(panel);
 
+    const hero = typeof heroFor === 'function' ? heroFor(meta.id) : null;
+    const heroName = hero ? (hero[getLang()] || hero.en).name : null;
+    if (flashState.flipped){
+      renderHeroBuddy({
+        prompt: t('companion_flash_replay_prompt'),
+        onTap: () => speak(card.back, heroName),
+      });
+    } else if (flashState.hintLevel === 0){
+      renderHeroBuddy({
+        prompt: t('companion_flash_hint_prompt'),
+        onTap: () => { flashState.hintLevel = 1; speak(card.front, heroName); renderFlashcards(); },
+      });
+    } else {
+      renderHeroBuddy({
+        prompt: t('companion_flash_more_help_prompt'),
+        onTap: () => { flashState.flipped = true; renderFlashcards(); },
+      });
+    }
+
     const flip = () => { flashState.flipped = !flashState.flipped; renderFlashcards(); };
     const cardEl = panel.querySelector('[data-flashcard]');
     cardEl.addEventListener('click', flip);
@@ -957,13 +1005,13 @@ function initTopicPage(){
       if (e.key === 'Enter' || e.key === ' '){ e.preventDefault(); flip(); }
     });
     panel.querySelector('[data-flash-prev]').addEventListener('click', () => {
-      if (flashState.index > 0){ flashState.index -= 1; flashState.flipped = false; renderFlashcards(); }
+      if (flashState.index > 0){ flashState.index -= 1; flashState.flipped = false; flashState.hintLevel = 0; renderFlashcards(); }
     });
     panel.querySelector('[data-flash-next]').addEventListener('click', () => {
-      if (flashState.index < cards.length - 1){ flashState.index += 1; flashState.flipped = false; renderFlashcards(); }
+      if (flashState.index < cards.length - 1){ flashState.index += 1; flashState.flipped = false; flashState.hintLevel = 0; renderFlashcards(); }
     });
     panel.querySelector('[data-flash-restart]').addEventListener('click', () => {
-      flashState.index = 0; flashState.flipped = false; renderFlashcards();
+      flashState.index = 0; flashState.flipped = false; flashState.hintLevel = 0; renderFlashcards();
     });
   }
 
@@ -1090,6 +1138,13 @@ function initTopicPage(){
     wireSpeakButtonHighlighted(panel, [{ el: panel.querySelector('[data-guided-target]'), text: card.back }]);
     wireFlashChrome(panel);
 
+    const drillHero = typeof heroFor === 'function' ? heroFor(meta.id) : null;
+    const drillHeroName = drillHero ? (drillHero[getLang()] || drillHero.en).name : null;
+    renderHeroBuddy({
+      prompt: t('companion_drill_prompt'),
+      onTap: () => speak(card.back, drillHeroName),
+    });
+
     const advanceRep = () => {
       guidedState.reps += 1;
       if (guidedState.reps >= guidedState.repsNeeded){
@@ -1150,12 +1205,6 @@ function initTopicPage(){
       feedbackHtml = `<div class="story-feedback bad">${t('guided_quiz_try_again')}</div>`;
     }
 
-    const helpHtml = showNext ? '' : `
-      <div class="guided-quiz-help">
-        ${!guidedState.quizHint ? `<button type="button" class="btn btn-ghost" data-quiz-hint>${t('guided_quiz_hint_btn')}</button>` : ''}
-        <button type="button" class="btn btn-ghost" data-quiz-reveal>${t('guided_quiz_reveal_btn')}</button>
-      </div>`;
-
     panel.innerHTML = `
       <div class="flashcard-wrap">
         <div class="flash-level-bar">${changeLevelBtn}</div>
@@ -1168,7 +1217,6 @@ function initTopicPage(){
         </div>
         <div class="story-choices">${choicesHtml}</div>
         ${feedbackHtml}
-        ${helpHtml}
         <div class="flashcard-controls">
           <span class="flashcard-counter">${t('flash_counter', { current: guidedState.quizIndex + 1, total: guidedState.quizOrder.length })}</span>
           ${showNext ? `<button type="button" class="btn btn-primary" data-quiz-next>${t('flash_next')}</button>` : ''}
@@ -1177,6 +1225,29 @@ function initTopicPage(){
 
     wireSpeakButtonHighlighted(panel, [{ el: panel.querySelector('.speak-quiz-card .flashcard__text'), text: card.front }]);
     wireFlashChrome(panel);
+
+    if (showNext){
+      renderHeroBuddy();
+    } else if (!guidedState.quizHint){
+      renderHeroBuddy({
+        prompt: t('companion_quiz_hint_prompt'),
+        onTap: () => {
+          guidedState.quizHint = true;
+          const remainingWrong = guidedState.quizChoices.filter(c => !c.correct && !c.eliminated);
+          if (remainingWrong.length > 1) remainingWrong[0].eliminated = true;
+          renderFlashcards();
+        },
+      });
+    } else {
+      renderHeroBuddy({
+        prompt: t('companion_quiz_more_help_prompt'),
+        onTap: () => {
+          guidedState.quizRevealed = true;
+          guidedState.quizTotal += 1;
+          renderFlashcards();
+        },
+      });
+    }
 
     panel.querySelectorAll('[data-quiz-choice]').forEach(btn => {
       btn.addEventListener('click', () => {
@@ -1193,19 +1264,6 @@ function initTopicPage(){
         renderFlashcards();
       });
     });
-    const hintBtn = panel.querySelector('[data-quiz-hint]');
-    if (hintBtn) hintBtn.addEventListener('click', () => {
-      guidedState.quizHint = true;
-      const remainingWrong = guidedState.quizChoices.filter(c => !c.correct && !c.eliminated);
-      if (remainingWrong.length > 1) remainingWrong[0].eliminated = true;
-      renderFlashcards();
-    });
-    const revealBtn = panel.querySelector('[data-quiz-reveal]');
-    if (revealBtn) revealBtn.addEventListener('click', () => {
-      guidedState.quizRevealed = true;
-      guidedState.quizTotal += 1;
-      renderFlashcards();
-    });
     const nextBtn = panel.querySelector('[data-quiz-next]');
     if (nextBtn) nextBtn.addEventListener('click', () => {
       guidedState.quizIndex += 1;
@@ -1218,6 +1276,7 @@ function initTopicPage(){
   }
 
   function renderGuidedDone(panel, cards){
+    renderHeroBuddy();
     const changeLevelBtn = `<button type="button" class="btn btn-ghost" data-flash-change-level>${t('level_change')}</button>`;
     panel.innerHTML = `
       <div class="flashcard-wrap">
@@ -1244,6 +1303,7 @@ function initTopicPage(){
     const panel = document.querySelector('[data-panel="video"]');
     if (!panel) return;
     stopSpeaking();
+    renderHeroBuddy();
     const video = currentContent().video;
 
     if (!video.youtubeId){

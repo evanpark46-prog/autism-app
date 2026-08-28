@@ -192,8 +192,11 @@ a:focus-visible, button:focus-visible, select:focus-visible, input:focus-visible
    reads as an inset comic panel rather than re-skinning the whole calm app. */
 .font-comic{font-family:'Comic Neue', var(--font-body); font-weight:700;}
 
+/* Simple rounded-rectangle frame, not a circle -- fewer distinct shapes on
+   screen reads calmer/more predictable for young autistic learners than
+   mixing circles, pills, and rounded squares everywhere. */
 .hero-badge{
-  display:inline-grid; place-items:center; border-radius:50%;
+  display:inline-grid; place-items:center; border-radius:var(--radius-sm);
   border:3px solid var(--ink); box-shadow:3px 3px 0 var(--ink);
   flex-shrink:0;
 }
@@ -204,11 +207,11 @@ a:focus-visible, button:focus-visible, select:focus-visible, input:focus-visible
 .hero-badge[data-theme="amber"]{background:var(--amber);}
 
 /* Fuller superhero bust portrait (js/heroes.js heroPortraitHtml()) -- same
-   circular medallion frame as .hero-badge, but the SVG inside is a whole
+   rounded-rectangle frame as .hero-badge, but the SVG inside is a whole
    character instead of a flat color + tiny icon. overflow:hidden keeps the
-   bust's cape cropped cleanly to the circle instead of poking past corners. */
+   bust's cape cropped cleanly to the frame instead of poking past corners. */
 .hero-portrait{
-  display:inline-grid; place-items:center; border-radius:50%; overflow:hidden;
+  display:inline-grid; place-items:center; border-radius:var(--radius-sm); overflow:hidden;
   border:3px solid var(--ink); box-shadow:3px 3px 0 var(--ink);
   flex-shrink:0; background:var(--panel);
 }
@@ -367,6 +370,21 @@ a:focus-visible, button:focus-visible, select:focus-visible, input:focus-visible
   cursor:pointer; padding:0; flex-shrink:0;
 }
 .skin-switch__swatch[aria-pressed="true"]{border-color:var(--ink); box-shadow:0 0 0 2px #fff inset;}
+
+.ageband-filter{
+  display:flex; align-items:center; justify-content:center; gap:12px; flex-wrap:wrap;
+  max-width:640px; margin:0 auto 28px; padding:12px 18px;
+  background:var(--panel); border:1px solid var(--border); border-radius:var(--radius-md); box-shadow:var(--shadow);
+}
+.ageband-filter__label{font-weight:800; color:var(--ink); font-size:.9rem;}
+.ageband-switch{display:flex; gap:6px; flex-wrap:wrap;}
+.ageband-switch__option{
+  display:inline-flex; align-items:center; justify-content:center; min-height:40px;
+  border:2px solid var(--border); border-radius:var(--radius-sm); padding:6px 14px;
+  font-weight:700; font-size:.85rem; color:var(--ink); background:#fff; cursor:pointer;
+}
+.ageband-switch__option:hover{border-color:var(--rose); color:var(--rose-dark);}
+.ageband-switch__option[aria-pressed="true"]{background:var(--rose); border-color:var(--rose); color:#fff;}
 .skin-swatch-rose{background:linear-gradient(135deg,#c8460a,#8f3208);}
 .skin-swatch-ocean{background:linear-gradient(135deg,#2dbfc7,#12787e);}
 .skin-swatch-sunset{background:linear-gradient(135deg,#f2994a,#c9691b);}
@@ -386,8 +404,11 @@ main{max-width:1080px; margin:0 auto; padding:28px 20px 64px;}
   text-align:center; padding:36px 16px 12px;
   position:relative; overflow:hidden;
 }
-.hero h1{font-size:2.6rem; color:var(--rose-dark); text-shadow:2px 3px 0 var(--rose-tint);}
-.hero p{color:var(--ink-soft); font-size:1.1rem; max-width:640px; margin:0 auto 1em;}
+.hero h1{
+  font-size:2.6rem; color:var(--rose-dark);
+  text-shadow:0 2px 5px rgba(255,255,255,.65), 0 6px 20px rgba(51,38,31,.18);
+}
+.hero p{color:var(--ink-soft); font-size:1.1rem; max-width:640px; margin:0 auto 1em; text-shadow:0 1px 3px rgba(255,255,255,.5);}
 .hero-actions{display:flex; gap:12px; justify-content:center; flex-wrap:wrap; margin-top:14px;}
 
 /* One hero, one line -- a static "occasional supportive message" card
@@ -396,7 +417,7 @@ main{max-width:1080px; margin:0 auto; padding:28px 20px 64px;}
    the flying banner mascot doesn't try to cover on its own. */
 .hero-tip{
   display:flex; align-items:center; gap:14px; text-align:left;
-  max-width:520px; margin:20px auto 0; padding:14px 18px;
+  max-width:520px; margin:20px auto 28px; padding:14px 18px;
   background:var(--panel); border:1px solid var(--border); border-radius:var(--radius-lg);
   box-shadow:var(--shadow);
 }
@@ -527,9 +548,11 @@ main{max-width:1080px; margin:0 auto; padding:28px 20px 64px;}
 .topic-group h3{font-size:1.3rem; margin-bottom:14px; color:var(--group-accent, var(--rose-dark));}
 .topic-group:last-child{margin-bottom:0;}
 .topic-card__icon{
-  width:64px; height:64px; border-radius:14px; display:grid; place-items:center; overflow:hidden;
+  width:64px; height:64px; display:grid; place-items:center;
 }
 .topic-card__icon img{width:100%; height:100%; object-fit:contain; padding:6px; transition:transform .15s ease;}
+.topic-card:hover .topic-card__icon .hero-badge{transform:scale(1.08);}
+.topic-card__icon .hero-badge{transition:transform .15s ease;}
 .topic-card h3{font-size:1.2rem;}
 .topic-card p{color:var(--ink-soft); font-size:.95rem; margin-bottom:0;}
 .topic-card__tags{display:flex; gap:6px; margin-top:6px; flex-wrap:wrap;}
@@ -537,13 +560,6 @@ main{max-width:1080px; margin:0 auto; padding:28px 20px 64px;}
   font-size:.78rem; font-weight:800; letter-spacing:.02em; text-transform:uppercase;
   padding:4px 9px; border-radius:20px; background:var(--blue-tint); color:var(--blue-dark);
 }
-
-/* theme accents per topic (data-theme on .topic-card / .topic-hero) */
-[data-theme="blue"]  .topic-card__icon{background:var(--blue-tint); color:var(--blue-dark);}
-[data-theme="green"] .topic-card__icon{background:var(--green-tint); color:var(--green);}
-[data-theme="purple"] .topic-card__icon{background:var(--purple-tint); color:var(--purple);}
-[data-theme="red"] .topic-card__icon{background:var(--red-tint); color:var(--red);}
-[data-theme="amber"] .topic-card__icon{background:var(--amber-tint); color:var(--amber-text);}
 
 .topic-card[data-theme="blue"]{border-top-color:var(--blue);}
 .topic-card[data-theme="green"]{border-top-color:var(--green);}
@@ -756,6 +772,22 @@ main{max-width:1080px; margin:0 auto; padding:28px 20px 64px;}
 .hero-buddy__name{font-family:var(--font-display); font-weight:800; color:var(--ink); display:block;}
 .hero-buddy__power{font-family:'Comic Neue', var(--font-body); font-weight:700; color:var(--rose-dark); font-size:.92rem;}
 .hero-buddy__intro{display:block; color:var(--ink-soft); font-size:.88rem; margin-top:2px;}
+
+/* During flashcards/guided-quiz, the buddy becomes a tappable companion
+   that offers a hint (see js/page-topic.js renderHeroBuddy) -- a small
+   lift + press feedback signals it's interactive without any looping or
+   auto-playing motion, matching this app's calm, low-anxiety design. */
+.hero-buddy--tappable{
+  cursor:pointer; border-radius:16px; transition:transform .15s ease;
+}
+.hero-buddy--tappable:hover, .hero-buddy--tappable:focus-visible{
+  transform:translateY(-2px);
+}
+.hero-buddy--tappable:active{transform:translateY(0) scale(.97);}
+.hero-buddy--tappable:focus-visible{outline:none; box-shadow:var(--focus-ring);}
+@media (prefers-reduced-motion: reduce){
+  .hero-buddy--tappable{transition:none;}
+}
 
 .mode-tabs{
   display:inline-flex; gap:4px; margin-bottom:22px; flex-wrap:wrap;
@@ -1135,7 +1167,6 @@ main{max-width:1080px; margin:0 auto; padding:28px 20px 64px;}
 .rep-dots{display:flex; gap:8px;}
 .rep-dot{width:14px; height:14px; border-radius:50%; background:var(--border); transition:background .2s ease;}
 .rep-dot.done{background:var(--green);}
-.guided-quiz-help{display:flex; gap:10px; flex-wrap:wrap; justify-content:center;}
 
 @media (prefers-reduced-motion: reduce){
   .mic-btn.is-listening{animation:none; box-shadow:0 0 0 6px rgba(214,120,159,.35);}

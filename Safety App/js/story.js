@@ -58,6 +58,17 @@ const ILLUSTRATIONS = {
   'bike-safe': { file: 'img/generated/bike-safety.webp', alt: 'A grown-up checks that a child’s bicycle helmet fits snugly.' },
   'peer-pressure-moment': { file: 'img/generated/peer-pressure-safety.webp', alt: 'A child calmly declines an unsafe playground suggestion.' },
   'peer-pressure-safe': { file: 'img/generated/peer-pressure-safety.webp', alt: 'A child and a supportive friend choose the safe play area.' },
+
+  /* These four newer topics reuse an existing topic's art file as a
+     placeholder (no dedicated illustration generated yet). */
+  'firstaid-alert': { file: 'img/generated/emergency-safety.webp', alt: 'A child gets a grown-up’s help right away during a first-aid emergency.' },
+  'firstaid-safe': { file: 'img/generated/emergency-safety.webp', alt: 'A grown-up takes care of a first-aid emergency after a child speaks up fast.' },
+  'seizure-alert': { file: 'img/generated/medical-safety.webp', alt: 'A child notices a classmate having a seizure and stays calm.' },
+  'seizure-safe': { file: 'img/generated/medical-safety.webp', alt: 'A grown-up clears the space and helps a classmate during a seizure.' },
+  'money-alert': { file: 'img/generated/peer-pressure-safety.webp', alt: 'A child gets an unexpected call or message asking for money.' },
+  'money-safe': { file: 'img/generated/peer-pressure-safety.webp', alt: 'A child checks with a grown-up before responding to a money request.' },
+  'dating-alert': { file: 'img/generated/body-boundaries-safety.webp', alt: 'A teen thinks through a boundary in a friendship or relationship.' },
+  'dating-safe': { file: 'img/generated/body-boundaries-safety.webp', alt: 'A teen and a respectful friend check in with each other.' },
 };
 
 // Optional "wrong choice" variant per illustration key, shown when a

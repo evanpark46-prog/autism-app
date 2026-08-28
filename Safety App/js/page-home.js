@@ -21,7 +21,7 @@ function topicCardHtml(meta, lang, completedIds, opts){
         title="${t(pinned ? 'topic_card_unpin_label' : 'topic_card_pin_label')}">${pinned ? '★' : '☆'}</button>
       <a class="topic-card${reveal}" data-theme="${meta.theme}" href="topic.html?id=${encodeURIComponent(meta.id)}">
         ${done ? `<span class="topic-card__done" title="${t('topic_card_done_label')}" aria-label="${t('topic_card_done_label')}">✓</span>` : ''}
-        <div class="topic-card__icon">${heroPortraitHtml(meta.id, lang, meta.theme, 64)}</div>
+        <div class="topic-card__icon">${heroBadgeHtml(meta.id, lang, meta.theme, 64)}</div>
         <h3>${escapeHtml(content.title)}</h3>
         <p>${escapeHtml(content.tagline)}</p>
         <div class="topic-card__tags">
@@ -114,24 +114,28 @@ function renderTopicGrid(){
   const grid = document.querySelector('[data-topic-grid]');
   if (!grid) return;
   const lang = getLang();
+  const ageBand = typeof getAgeBand === 'function' ? getAgeBand() : 'all';
 
   const analytics = loadAnalytics();
   const completedIds = new Set(Object.keys(analytics.topics).filter(id => analytics.topics[id].levelCompletes > 0));
 
   const favoriteIds = getFavorites();
-  const favoritesHtml = favoriteIds.length ? `
+  const favoriteMetas = favoriteIds.map(id => getTopicMeta(id)).filter(Boolean)
+    .filter(meta => topicMatchesAgeBand(meta, ageBand));
+  const favoritesHtml = favoriteMetas.length ? `
     <div class="topic-group" style="--group-accent:var(--rose-dark)">
       <h3>${t('home_favorites_heading')}</h3>
-      <div class="grid grid-topics">${favoriteIds.map(id => getTopicMeta(id)).filter(Boolean)
+      <div class="grid grid-topics">${favoriteMetas
         .map(meta => topicCardHtml(meta, lang, completedIds, { noReveal: true })).join('')}</div>
     </div>` : '';
 
   const groupsHtml = TOPIC_CATEGORIES.map(group => {
-    const cardsHtml = group.topics
+    const metas = group.topics
       .map(id => getTopicMeta(id))
       .filter(Boolean)
-      .map(meta => topicCardHtml(meta, lang, completedIds))
-      .join('');
+      .filter(meta => topicMatchesAgeBand(meta, ageBand));
+    if (!metas.length) return '';
+    const cardsHtml = metas.map(meta => topicCardHtml(meta, lang, completedIds)).join('');
     return `
       <div class="topic-group" style="--group-accent:${CATEGORY_ACCENT_VAR[group.color]}">
         <h3>${t('home_category_' + group.key)}</h3>
@@ -168,12 +172,14 @@ function initScrollReveal(container){
 }
 
 function initHomePage(){
+  if (typeof initAgeBandSwitcher === 'function') initAgeBandSwitcher();
   renderTopicGrid();
   renderHeroWall();
   renderHeroTip();
   window.addEventListener('safetylib:langchange', renderTopicGrid);
   window.addEventListener('safetylib:langchange', renderHeroWall);
   window.addEventListener('safetylib:langchange', renderHeroTip);
+  window.addEventListener('safetylib:agebandchange', renderTopicGrid);
   if (typeof initEmotionCheckin === 'function') initEmotionCheckin();
 }
 

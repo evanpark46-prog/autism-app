@@ -37,7 +37,7 @@ const HERO_EMBLEMS = {
 
 const HEROES = {
   'stranger-safety':        { emblem: 'shield',       en: { name: 'Captain Caution',   power: 'Stranger Sense',    tagline: 'Knows when to keep a safe distance.' }, es: { name: 'Capitán Cautela',     power: 'Sentido de Alerta',     tagline: 'Sabe cuándo mantener una distancia segura.' } },
-  'street-safety':          { emblem: 'radar',        en: { name: 'Crosswalk Guardian', power: 'Look-Both-Ways Vision', tagline: 'Never crosses without checking twice.' }, es: { name: 'Guardián del Cruce',  power: 'Visión de Ambos Lados', tagline: 'Nunca cruza sin mirar dos veces.' } },
+  'street-safety':          { emblem: 'star',         en: { name: 'Crosswalk Guardian', power: 'Look-Both-Ways Vision', tagline: 'Never crosses without checking twice.' }, es: { name: 'Guardián del Cruce',  power: 'Visión de Ambos Lados', tagline: 'Nunca cruza sin mirar dos veces.' } },
   'lost-safety':             { emblem: 'compass',      en: { name: 'Wayfinder',         power: 'Steady Ground',      tagline: 'Stays put and finds a helper when lost.' }, es: { name: 'Guía Segura',        power: 'Terreno Firme',         tagline: 'Se queda quieta y busca ayuda si se pierde.' } },
   'emergency-safety':        { emblem: 'bolt',         en: { name: 'Rescue Ray',        power: 'Emergency Signal',   tagline: 'Calls for help fast when it matters most.' }, es: { name: 'Rayo de Rescate',    power: 'Señal de Emergencia',   tagline: 'Pide ayuda rápido cuando más importa.' } },
   'fire-safety':             { emblem: 'flame',        en: { name: 'Blaze Guard',       power: 'Flame Shield',       tagline: 'Drops, covers, and gets to safety.' }, es: { name: 'Guardián de las Llamas', power: 'Escudo de Fuego',    tagline: 'Se agacha, se cubre y llega a un lugar seguro.' } },
@@ -63,6 +63,11 @@ const HEROES = {
   'safehelper-safety':       { emblem: 'badge',        en: { name: 'Helper Hawk',       power: 'Safe-Helper Sight',  tagline: 'Spots the right kind of helper to ask when help is needed.' }, es: { name: 'Halcón Ayudante', power: 'Vista de Ayudante Seguro', tagline: 'Reconoce al ayudante correcto cuando necesita ayuda.' } },
   'medical-safety':          { emblem: 'heart',        en: { name: 'Brave Heart',       power: 'Calm Courage',       tagline: 'Stays brave and asks questions at checkups.' }, es: { name: 'Corazón Valiente', power: 'Valentía Calmada',      tagline: 'Se mantiene valiente y hace preguntas en los chequeos.' } },
   'selfregulation-safety':   { emblem: 'breeze',       en: { name: 'Breeze',            power: 'Calm Wave',          tagline: 'Finds calm and asks for a break when feelings get big.' }, es: { name: 'Brisa',       power: 'Ola de Calma',          tagline: 'Encuentra calma y pide un descanso cuando los sentimientos crecen.' } },
+
+  'firstaid-safety':         { emblem: 'heart',        en: { name: 'Aid Ally',          power: 'Calm Response',      tagline: 'Notices trouble fast and gets a grown-up right away.' }, es: { name: 'Aliado de Auxilio', power: 'Respuesta Calmada', tagline: 'Nota los problemas rápido y avisa a un adulto de inmediato.' } },
+  'seizure-safety':          { emblem: 'radar',        en: { name: 'Steady Watcher',    power: 'Safe-Side Sense',    tagline: 'Stays calm, clears the space, and gets help during a seizure.' }, es: { name: 'Vigía Sereno', power: 'Sentido del Lado Seguro', tagline: 'Se mantiene calmado, despeja el espacio y busca ayuda durante una convulsión.' } },
+  'money-safety':            { emblem: 'shield',       en: { name: 'Penny Guard',       power: 'Scam Sense',         tagline: 'Spots a money trick and checks with a grown-up first.' }, es: { name: 'Guardián del Dinero', power: 'Sentido de Estafas', tagline: 'Reconoce un engaño de dinero y lo consulta primero con un adulto.' } },
+  'dating-safety':           { emblem: 'compass',      en: { name: 'Respect Ranger',    power: 'Clear Consent',      tagline: 'Knows their “no” matters, and so does everyone else’s.' }, es: { name: 'Guardabosques del Respeto', power: 'Consentimiento Claro', tagline: 'Sabe que su “no” importa, y también el de los demás.' } },
 };
 
 function heroFor(topicId){
