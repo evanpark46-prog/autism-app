@@ -38,10 +38,11 @@ function topicCardHtml(meta, lang, completedIds, opts){
 /* linking straight into that topic's lesson.                             */
 /* ---------------------------------------------------------------------- */
 
-// Not every card has to be a rectangle -- cycle a small set of superhero
-// badge shapes (see .shape-hex/.shape-shield/.shape-tag in styles.css) so
-// the wall reads as a collection of badges, not a plain grid.
-const HERO_CARD_SHAPES = ['', 'shape-hex', 'shape-shield', 'shape-tag'];
+// All cards stay plain rectangles (.comic-panel) -- simple, predictable
+// shapes read calmer for young autistic learners than a mix of cut-out
+// hex/shield/tag silhouettes. See .shape-hex/.shape-shield/.shape-tag in
+// styles.css if that variety is ever wanted again elsewhere.
+const HERO_CARD_SHAPES = [''];
 
 function heroCardHtml(meta, lang, index){
   const hero = heroFor(meta.id);

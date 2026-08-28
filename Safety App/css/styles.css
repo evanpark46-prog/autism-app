@@ -591,7 +591,7 @@ main{max-width:1080px; margin:0 auto; padding:28px 20px 64px;}
 .hero-card h3{font-size:1.05rem; margin:2px 0 0;}
 .hero-card__power{
   font-size:.75rem; font-weight:800; text-transform:uppercase; letter-spacing:.02em;
-  padding:3px 10px; border-radius:20px; background:var(--rose-tint); color:var(--rose-dark);
+  padding:3px 10px; border-radius:6px; background:var(--rose-tint); color:var(--rose-dark);
 }
 .hero-card__tagline{font-size:.85rem; color:var(--ink-soft); margin:0;}
 [data-theme="blue"] .hero-card__power{background:var(--blue-tint); color:var(--blue-dark);}
