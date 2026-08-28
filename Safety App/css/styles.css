@@ -44,9 +44,9 @@
   --shadow-lift:0 16px 36px rgba(140,70,20,.16), inset 0 1px 0 rgba(255,255,255,.5);
   --ease-bounce:cubic-bezier(.34,1.56,.64,1);
 
-  --font-display:'Baloo 2', 'Quicksand', system-ui, sans-serif;
-  --font-display-cursive:'Dancing Script', 'Baloo 2', cursive, system-ui, sans-serif;
-  --font-body:'Quicksand', 'Nunito', system-ui, -apple-system, sans-serif;
+  --font-display:'Nunito', 'DM Sans', system-ui, sans-serif;
+  --font-display-cursive:'Dancing Script', 'Nunito', cursive, system-ui, sans-serif;
+  --font-body:'DM Sans', 'Nunito', system-ui, -apple-system, sans-serif;
 
   --focus-ring:0 0 0 3px rgba(47,111,237,.35);
 }
@@ -115,7 +115,7 @@ body[data-page="boss-battle"]{
 }
 h1,h2,h3,h4{
   font-family:var(--font-display);
-  font-weight:700;
+  font-weight:800;
   line-height:1.25;
   margin:0 0 .5em;
   color:var(--ink);
@@ -503,13 +503,13 @@ main{max-width:1080px; margin:0 auto; padding:28px 20px 64px;}
 .topic-card:active{transform:translateY(-1px) scale(.99);}
 .topic-card:hover .topic-card__icon img{transform:scale(1.08);}
 .topic-card__done{
-  position:absolute; top:14px; right:14px; width:26px; height:26px; border-radius:50%;
+  position:absolute; top:14px; right:14px; width:26px; height:26px; border-radius:7px;
   background:var(--green); color:#fff; display:flex; align-items:center; justify-content:center;
   font-size:.9rem; font-weight:800; box-shadow:var(--shadow);
 }
 .topic-card-wrap{position:relative;}
 .topic-card__pin{
-  position:absolute; top:10px; left:10px; z-index:2; width:44px; height:44px; border-radius:50%;
+  position:absolute; top:10px; left:10px; z-index:2; width:44px; height:44px; border-radius:var(--radius-sm);
   border:2px solid var(--border); background:#fff; color:var(--ink-soft); cursor:pointer;
   display:flex; align-items:center; justify-content:center; font-size:1.15rem; padding:0;
   box-shadow:var(--shadow);
@@ -525,14 +525,14 @@ main{max-width:1080px; margin:0 auto; padding:28px 20px 64px;}
   box-shadow:var(--shadow); padding:20px 26px;
 }
 .emotion-checkin__close{
-  position:absolute; top:10px; right:10px; width:28px; height:28px; border-radius:50%;
+  position:absolute; top:10px; right:10px; width:28px; height:28px; border-radius:7px;
   border:none; background:transparent; color:var(--ink-soft); cursor:pointer; font-size:.95rem;
 }
 .emotion-checkin__close:hover{background:var(--blue-tint); color:var(--blue-dark);}
 .emotion-checkin__prompt{font-weight:700; margin-bottom:14px;}
 .emotion-checkin__faces{display:flex; justify-content:center; gap:10px; flex-wrap:wrap;}
 .emotion-checkin__face{
-  width:52px; height:52px; border-radius:50%; border:2px solid var(--border); background:#fff;
+  width:52px; height:52px; border-radius:var(--radius-sm); border:2px solid var(--border); background:#fff;
   font-size:1.6rem; cursor:pointer; display:flex; align-items:center; justify-content:center;
 }
 .emotion-checkin__face:hover{border-color:var(--rose); transform:translateY(-2px);}
@@ -558,7 +558,7 @@ main{max-width:1080px; margin:0 auto; padding:28px 20px 64px;}
 .topic-card__tags{display:flex; gap:6px; margin-top:6px; flex-wrap:wrap;}
 .tag{
   font-size:.78rem; font-weight:800; letter-spacing:.02em; text-transform:uppercase;
-  padding:4px 9px; border-radius:20px; background:var(--blue-tint); color:var(--blue-dark);
+  padding:4px 9px; border-radius:6px; background:var(--blue-tint); color:var(--blue-dark);
 }
 
 .topic-card[data-theme="blue"]{border-top-color:var(--blue);}
@@ -1380,7 +1380,7 @@ div.sort-bin{cursor:default;}
 .calmspace-btn{
   position:fixed; right:18px; bottom:18px; z-index:150;
   display:inline-flex; align-items:center; gap:8px;
-  border:2px solid var(--green); border-radius:30px; padding:12px 18px;
+  border:2px solid var(--green); border-radius:var(--radius-md); padding:12px 18px;
   background:#fff; color:var(--green); font-weight:800; font-size:.95rem;
   box-shadow:var(--shadow-lift); cursor:pointer; font-family:inherit;
 }
