@@ -43,6 +43,34 @@ function initTopicPage(){
     storyState.missedSteps.add(step);
     storyState.missed.push({ front, back });
   }
+
+  // Shown right alongside the plain feedback text after a wrong answer, in
+  // every story step type (decision/sequence/dialogue), for every topic --
+  // an explicit "here's the correct action, modeled" beat (the video-
+  // modeling principle) rather than leaving the learner to infer the fix
+  // purely from feedback wording. Stands in for a real modeling video clip
+  // using the hero + narrated correct choice, since most topics don't have
+  // a real video yet; swap in an actual clip here later if one exists.
+  function modelingCalloutHtml(correctChoice){
+    if (typeof heroFor !== 'function' || !heroFor(meta.id)) return '';
+    const lang = getLang();
+    const hero = heroFor(meta.id);
+    const data = hero[lang] || hero.en;
+    return `
+      <div class="story-modeling" data-story-modeling>
+        <div class="story-modeling__portrait">${heroPortraitHtml(meta.id, lang, meta.theme, 44)}</div>
+        <div class="story-modeling__body">
+          <p class="story-modeling__label">${escapeHtml(t('story_modeling_label', { name: data.name }))}</p>
+          <p class="story-modeling__text">${escapeHtml(correctChoice.text)}</p>
+        </div>
+        ${speakButtonHtml().replace('data-speak-btn', 'data-modeling-speak')}
+      </div>`;
+  }
+
+  function wireModelingSpeak(panel, correctChoice){
+    const btn = panel.querySelector('[data-modeling-speak]');
+    if (btn) btn.addEventListener('click', () => speak(correctChoice.text));
+  }
   const flashState = { level: null, index: 0, flipped: false, hintLevel: 0 };
   let flashMode = 'alone';
 
@@ -452,6 +480,7 @@ function initTopicPage(){
     let choicesHtml = '';
     let footerHtml = '';
     let feedbackHtml = '';
+    let modelingHtml = '';
     const sequenceHtml = step.type === 'sequence' && step.stepsSoFar
       ? `<ol class="sequence-list">${step.stepsSoFar.map(s => `<li>${escapeHtml(s)}</li>`).join('')}</ol>`
       : '';
@@ -471,6 +500,9 @@ function initTopicPage(){
         footerHtml = chosen.correct
           ? `<button type="button" class="btn btn-primary" data-story-next>${t('story_continue')}</button>`
           : `<button type="button" class="btn btn-secondary" data-story-retry>${t('story_try_again')}</button>`;
+        if (!chosen.correct){
+          modelingHtml = modelingCalloutHtml(step.choices.find(c => c.correct));
+        }
       }
     } else {
       footerHtml = `<button type="button" class="btn btn-primary" data-story-next>${t('story_next')}</button>`;
@@ -494,6 +526,7 @@ function initTopicPage(){
           </div>
           ${choicesHtml}
           ${feedbackHtml}
+          ${modelingHtml}
           <div class="story-footer">
             ${footerHtml}
           </div>
@@ -504,6 +537,10 @@ function initTopicPage(){
       storyState.level = null;
       renderStory();
     });
+
+    if (isChoiceStep && storyState.answered && !step.choices[storyState.chosenIndex].correct){
+      wireModelingSpeak(panel, step.choices.find(c => c.correct));
+    }
 
     if (isChoiceStep){
       panel.querySelectorAll('[data-choice]').forEach(btn => {
@@ -696,8 +733,11 @@ function initTopicPage(){
       panel.querySelector('[data-dialogue-go-next]').addEventListener('click', goToNextStep);
     }
 
-    function showRetryFooter(){
-      setFooter(`<button type="button" class="btn btn-secondary" data-dialogue-retry>${t('story_try_again')}</button>`);
+    function showRetryFooter(correctChoice){
+      setFooter(`
+        ${modelingCalloutHtml(correctChoice)}
+        <button type="button" class="btn btn-secondary" data-dialogue-retry>${t('story_try_again')}</button>`);
+      wireModelingSpeak(panel, correctChoice);
       panel.querySelector('[data-dialogue-retry]').addEventListener('click', () => {
         answered = false;
         setConsequenceVisual(false);
@@ -744,7 +784,7 @@ function initTopicPage(){
       const controller = typeWriter(textEl, text, () => {
         activeTypewriterClear = null;
         if (choice.correct) showNextFooter(t('story_continue'));
-        else showRetryFooter();
+        else showRetryFooter(step.choices.find(c => c.correct));
       });
       activeTypewriterClear = () => controller.finish();
     }

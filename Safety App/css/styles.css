@@ -1019,6 +1019,22 @@ main{max-width:1080px; margin:0 auto; padding:28px 20px 64px;}
 .story-feedback.bad{background:var(--amber-tint); color:#7a4a06; border:1px solid #f0d3a3;}
 .story-footer{display:flex; justify-content:space-between; align-items:center; padding:16px 22px 22px;}
 
+/* Shown after a wrong answer, right alongside the plain feedback text --
+   an explicit "watch/hear the correct action modeled" beat (video-modeling
+   principle, stood in with the hero + narrated correct choice since most
+   topics have no real video yet) instead of relying on the learner to
+   infer the fix from feedback text alone. */
+.story-modeling{
+  margin-top:10px; padding:12px 14px; border-radius:var(--radius-md);
+  background:var(--blue-tint); border:1px solid #c9dcfb;
+  display:flex; align-items:center; gap:12px;
+}
+.story-modeling__portrait{flex-shrink:0; width:44px; height:44px;}
+.story-modeling__body{flex:1; min-width:0;}
+.story-modeling__label{margin:0; font-size:.82rem; font-weight:800; color:var(--blue-dark); text-transform:uppercase; letter-spacing:.02em;}
+.story-modeling__text{margin:2px 0 0; font-weight:700; color:var(--ink);}
+.story-modeling .speak-btn{flex-shrink:0;}
+
 .story-complete{padding:30px 22px; text-align:center;}
 .story-complete__badge{font-size:2.6rem; margin-bottom:8px;}
 .recap-list{list-style:none; margin:18px 0 0; padding:0; display:grid; gap:8px; text-align:left;}
