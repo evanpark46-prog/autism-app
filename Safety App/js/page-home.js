@@ -64,9 +64,8 @@ function renderHeroWall(){
   const wall = document.querySelector('[data-hero-wall]');
   const section = document.querySelector('[data-hero-wall-section]');
   if (!wall) return;
-  const forced = getForcedAgeBand();
 
-  if (!forced && typeof hasChosenAgeBand === 'function' && !hasChosenAgeBand()){
+  if (typeof hasChosenAgeBand === 'function' && !hasChosenAgeBand()){
     if (section) section.hidden = true;
     wall.innerHTML = '';
     return;
@@ -74,7 +73,7 @@ function renderHeroWall(){
   if (section) section.hidden = false;
 
   const lang = getLang();
-  const ageBand = forced || (typeof getAgeBand === 'function' ? getAgeBand() : 'all');
+  const ageBand = typeof getAgeBand === 'function' ? getAgeBand() : 'all';
   const metas = TOPICS.filter(meta => topicMatchesAgeBand(meta, ageBand));
   wall.innerHTML = metas.map((meta, i) => heroCardHtml(meta, lang, i)).join('');
   initScrollReveal(wall);
@@ -123,30 +122,19 @@ function wirePinButtons(container){
   });
 }
 
-// Dedicated pages (toddlers.html/kids.html/teens.html) set
-// <body data-force-age-band="toddler|youth|teen"> to lock the grid/hero
-// wall to that tier permanently, bypassing the index.html gate/localStorage
-// choice entirely -- each is its own bookmarkable, linkable page.
-function getForcedAgeBand(){
-  return document.body.dataset.forceAgeBand || null;
-}
-
 function renderTopicGrid(){
   const grid = document.querySelector('[data-topic-grid]');
   if (!grid) return;
-  const forced = getForcedAgeBand();
 
-  // Nothing renders below the three big age-gate squares until a parent
-  // picks one (or the "show everything" escape hatch) -- the whole point
-  // is to not hand a first-time visitor all 31 lessons at once. Doesn't
-  // apply to a forced-band page, which always shows its own grid.
-  if (!forced && typeof hasChosenAgeBand === 'function' && !hasChosenAgeBand()){
+  // Nothing renders below the age tabs until one is picked -- the whole
+  // point is to not hand a first-time visitor all 31 lessons at once.
+  if (typeof hasChosenAgeBand === 'function' && !hasChosenAgeBand()){
     grid.innerHTML = '';
     return;
   }
 
   const lang = getLang();
-  const ageBand = forced || (typeof getAgeBand === 'function' ? getAgeBand() : 'all');
+  const ageBand = typeof getAgeBand === 'function' ? getAgeBand() : 'all';
 
   const analytics = loadAnalytics();
   const completedIds = new Set(Object.keys(analytics.topics).filter(id => analytics.topics[id].levelCompletes > 0));
@@ -205,7 +193,6 @@ function initScrollReveal(container){
 
 function initHomePage(){
   if (typeof initAgeGate === 'function') initAgeGate();
-  if (typeof initAgeBandPageChrome === 'function') initAgeBandPageChrome();
   renderTopicGrid();
   renderHeroWall();
   renderHeroTip();
