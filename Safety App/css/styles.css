@@ -387,7 +387,8 @@ a:focus-visible, button:focus-visible, select:focus-visible, input:focus-visible
   aspect-ratio:1; min-height:150px; padding:20px 14px;
   border:3px solid var(--border); border-radius:var(--radius-lg);
   background:var(--panel); box-shadow:var(--shadow); cursor:pointer;
-  font-family:inherit; transition:transform .15s var(--ease-bounce), box-shadow .15s ease, border-color .15s ease;
+  font-family:inherit; text-decoration:none; color:inherit;
+  transition:transform .15s var(--ease-bounce), box-shadow .15s ease, border-color .15s ease;
 }
 .age-gate__card:hover{border-color:var(--rose); transform:translateY(-4px); box-shadow:var(--shadow-lift);}
 .age-gate__card:active{transform:translateY(-1px) scale(.98);}
@@ -414,6 +415,20 @@ a:focus-visible, button:focus-visible, select:focus-visible, input:focus-visible
   font-weight:700; font-size:.85rem; color:var(--blue-dark); background:#fff; cursor:pointer; font-family:inherit;
 }
 .age-gate-bar__change:hover{border-color:var(--blue);}
+
+/* Static switcher strip + heading on the three dedicated age pages
+   (toddlers.html/kids.html/teens.html) -- js/agebands.js's
+   initAgeBandPageChrome() just fills in the translated heading text and
+   marks the current page's link. */
+.age-switch{display:flex; justify-content:center; gap:8px; flex-wrap:wrap; margin-bottom:14px;}
+.age-switch a{
+  display:inline-flex; align-items:center; justify-content:center; min-height:40px;
+  border:2px solid var(--border); border-radius:var(--radius-sm); padding:6px 16px;
+  font-weight:700; font-size:.9rem; color:var(--ink-soft); background:#fff; text-decoration:none;
+}
+.age-switch a:hover{border-color:var(--rose); color:var(--rose-dark);}
+.age-switch a[aria-current="page"]{background:var(--rose); border-color:var(--rose); color:#fff;}
+.age-page-heading{text-align:center; font-size:1.15rem; margin-bottom:20px; color:var(--ink-soft);}
 .skin-swatch-rose{background:linear-gradient(135deg,#c8460a,#8f3208);}
 .skin-swatch-ocean{background:linear-gradient(135deg,#2dbfc7,#12787e);}
 .skin-swatch-sunset{background:linear-gradient(135deg,#f2994a,#c9691b);}

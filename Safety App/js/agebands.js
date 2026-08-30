@@ -12,9 +12,9 @@
    ========================================================================== */
 
 const AGE_BANDS = [
-  { code: 'toddler', icon: '🧸', titleKey: 'ageband_gate_toddler_title', subtitleKey: 'ageband_gate_toddler_subtitle' },
-  { code: 'youth',   icon: '🎒', titleKey: 'ageband_gate_youth_title',   subtitleKey: 'ageband_gate_youth_subtitle' },
-  { code: 'teen',    icon: '🎓', titleKey: 'ageband_gate_teen_title',    subtitleKey: 'ageband_gate_teen_subtitle' },
+  { code: 'toddler', page: 'toddlers.html', icon: '🧸', titleKey: 'ageband_gate_toddler_title', subtitleKey: 'ageband_gate_toddler_subtitle' },
+  { code: 'youth',   page: 'kids.html',     icon: '🎒', titleKey: 'ageband_gate_youth_title',   subtitleKey: 'ageband_gate_youth_subtitle' },
+  { code: 'teen',    page: 'teens.html',    icon: '🎓', titleKey: 'ageband_gate_teen_title',    subtitleKey: 'ageband_gate_teen_subtitle' },
 ];
 const ALL_BANDS_CODE = 'all';
 const AGEBAND_STORAGE_KEY = 'safetylib_ageband';
@@ -57,16 +57,19 @@ function initAgeGate(){
   if (!wrap) return;
 
   function renderPicker(){
+    // The three age bands are real links to their own page (bookmarkable,
+    // separate URL each) rather than an in-page filter -- only the "show
+    // everything" escape hatch stays as a same-page reveal.
     wrap.innerHTML = `
       <div class="age-gate">
         <h2 class="age-gate__heading">${escapeHtml(t('ageband_gate_heading'))}</h2>
         <div class="age-gate__grid">
           ${AGE_BANDS.map(b => `
-            <button type="button" class="age-gate__card" data-age-gate-pick="${b.code}">
+            <a class="age-gate__card" href="${b.page}">
               <span class="age-gate__icon" aria-hidden="true">${b.icon}</span>
               <span class="age-gate__title">${escapeHtml(t(b.titleKey))}</span>
               <span class="age-gate__subtitle">${escapeHtml(t(b.subtitleKey))}</span>
-            </button>`).join('')}
+            </a>`).join('')}
         </div>
         <button type="button" class="age-gate__all-link" data-age-gate-pick="${ALL_BANDS_CODE}">${escapeHtml(t('ageband_gate_show_all'))}</button>
       </div>`;
@@ -97,6 +100,28 @@ function initAgeGate(){
     else renderPicker();
   }
 
+  render();
+  window.addEventListener('safetylib:langchange', render);
+}
+
+// Dedicated age pages (toddlers.html/kids.html/teens.html) each carry a
+// static switcher strip + heading in their markup; this just fills in the
+// translated heading text and marks the current page's link, re-running
+// on language change. No-ops on index.html (no forceAgeBand set there).
+function initAgeBandPageChrome(){
+  const forced = document.body.dataset.forceAgeBand;
+  if (!forced) return;
+  const band = AGE_BANDS.find(b => b.code === forced);
+  if (!band) return;
+  function render(){
+    const heading = document.querySelector('[data-age-page-heading]');
+    if (heading) heading.textContent = `${t(band.titleKey)} — ${t(band.subtitleKey)}`;
+    document.querySelectorAll('[data-age-switch-link]').forEach(a => {
+      const isCurrent = a.dataset.ageSwitchLink === forced;
+      if (isCurrent) a.setAttribute('aria-current', 'page');
+      else a.removeAttribute('aria-current');
+    });
+  }
   render();
   window.addEventListener('safetylib:langchange', render);
 }
