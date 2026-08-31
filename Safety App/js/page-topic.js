@@ -86,6 +86,12 @@ function initTopicPage(){
     quizOrder: [], quizIndex: 0, quizChoices: [],
     quizWrongTries: 0, quizHint: false, quizRevealed: false,
     quizCorrect: 0, quizTotal: 0,
+    // Cards where at least one wrong choice was clicked before landing on
+    // the right one (or the answer had to be revealed) -- getting there
+    // eventually via narrowed-down guessing isn't the same as knowing it,
+    // so these get re-shown on the done screen instead of counting as
+    // mastered and moved past.
+    missed: [],
   };
   function repsForLevel(levelIdx){
     const reps = [5, 4, 3];
@@ -118,6 +124,7 @@ function initTopicPage(){
     guidedState.quizRevealed = false;
     guidedState.quizCorrect = 0;
     guidedState.quizTotal = 0;
+    guidedState.missed = [];
   }
   function buildQuizChoices(cards, correctIdx){
     const correctCard = cards[correctIdx];
@@ -298,6 +305,17 @@ function initTopicPage(){
       </div>`;
   }
 
+  // Shared flip-toggle wiring for renderReviewSectionHtml()'s cards --
+  // used on both the story level-complete screen and the guided-quiz done
+  // screen.
+  function wireReviewCards(panel){
+    panel.querySelectorAll('[data-review-card]').forEach(card => {
+      const toggle = () => card.classList.toggle('flipped');
+      card.addEventListener('click', toggle);
+      card.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' '){ e.preventDefault(); toggle(); } });
+    });
+  }
+
   // The real-world half of Behavioral Skills Training: a short caregiver
   // script (Tell/Show/Practice/Check-in) plus a place to record whether the
   // learner actually performed the skill in the real environment -- in-app
@@ -446,11 +464,7 @@ function initTopicPage(){
         flashMode = 'alone';
         document.querySelector('[data-mode="flashcards"]').click();
       });
-      panel.querySelectorAll('[data-review-card]').forEach(card => {
-        const toggle = () => card.classList.toggle('flipped');
-        card.addEventListener('click', toggle);
-        card.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' '){ e.preventDefault(); toggle(); } });
-      });
+      wireReviewCards(panel);
       const recapSegments = [{ el: panel.querySelector('[data-recap-lead]'), text: t('story_complete_lead') }]
         .concat(level.recap.map((r, i) => ({ el: panel.querySelector(`[data-recap-item="${i}"]`), text: r })));
       wireSpeakButtonHighlighted(panel, recapSegments, null, '. ');
@@ -1284,6 +1298,7 @@ function initTopicPage(){
         onTap: () => {
           guidedState.quizRevealed = true;
           guidedState.quizTotal += 1;
+          guidedState.missed.push({ front: card.front, back: card.back });
           renderFlashcards();
         },
       });
@@ -1297,6 +1312,12 @@ function initTopicPage(){
         if (choice.correct){
           guidedState.quizCorrect += 1;
           guidedState.quizTotal += 1;
+          // Narrowing choices down by guessing wrong ones first still ends
+          // in a "correct" click -- that's not the same as knowing it, so
+          // it goes on the missed list for review just like a real miss.
+          if (guidedState.quizWrongTries > 0){
+            guidedState.missed.push({ front: card.front, back: card.back });
+          }
         } else {
           choice.eliminated = true;
           guidedState.quizWrongTries += 1;
@@ -1329,8 +1350,10 @@ function initTopicPage(){
           ${guidedState.quizTotal > 0 ? `<p>${t('guided_done_quiz_note', { correct: guidedState.quizCorrect, total: guidedState.quizTotal })}</p>` : ''}
           <button type="button" class="btn btn-primary" data-guided-restart>${t('flash_restart')}</button>
         </div>
+        ${renderReviewSectionHtml(guidedState.missed)}
       </div>`;
     wireFlashChrome(panel);
+    wireReviewCards(panel);
     panel.querySelector('[data-guided-restart]').addEventListener('click', () => {
       resetGuided(flashState.level, cards.length);
       renderFlashcards();
