@@ -8,6 +8,7 @@
   <script>(function(){try{var f=localStorage.getItem('safetylib_heading_font');if(f==='cursive')document.documentElement.setAttribute('data-heading-font','cursive');}catch(e){}})();</script>
   <script>(function(){try{var c=localStorage.getItem('safetylib_calm_mode');document.documentElement.setAttribute('data-calm-mode', c==='on'?'on':'off');}catch(e){}})();</script>
   <script>(function(){try{var p=JSON.parse(localStorage.getItem('safetylib_profile_v1')||'{}')||{};var r=document.documentElement;r.setAttribute('data-look',p.look==='calm'?'calm':'playful');if(p.contrast)r.setAttribute('data-contrast','');if(p.easyFont)r.setAttribute('data-easy-font','');}catch(e){document.documentElement.setAttribute('data-look','playful');}})();</script>
+  <script>(function(){try{var n=+sessionStorage.getItem("safetylib_hero_nav");sessionStorage.removeItem("safetylib_hero_nav");if(n&&Date.now()-n<4000&&localStorage.getItem("safetylib_calm_mode")!=="on")document.documentElement.setAttribute("data-hero-enter","");}catch(e){}})();</script>
   <title>Parents &amp; Educators — Safety Superheroes</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -204,6 +205,19 @@
       <p data-i18n="parents_analytics_body"></p>
       <p><a href="analytics.html" class="btn btn-secondary" data-i18n="parents_analytics_link">Open usage insights →</a></p>
     </section>
+    <section class="section" id="music-credits">
+      <h2 data-i18n="parents_music_heading">Music credits</h2>
+      <p data-i18n="parents_music_body"></p>
+      <ul class="music-credits">
+        <li>"Super Power Cool Dude"</li>
+        <li>"Big Rock"</li>
+        <li>"Heroic Age"</li>
+        <li>"Call to Adventure"</li>
+        <li>"Welcome to the Show"</li>
+        <li>"Who Likes to Party"</li>
+      </ul>
+      <p>Kevin MacLeod (<a href="https://incompetech.com" target="_blank" rel="noopener">incompetech.com</a>) — Licensed under Creative Commons: By Attribution 4.0 License, <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener">creativecommons.org/licenses/by/4.0/</a></p>
+    </section>
   </main>
 
   <footer class="site-footer">
@@ -224,6 +238,8 @@
   <script src="js/calmspace.js"></script>
   <script src="js/profile.js"></script>
   <script src="js/music.js"></script>
+  <script src="js/animal-heroes.js"></script>
+  <script src="js/hero-transition.js"></script>
   <script src="js/boot.js"></script>
 </body>
 </html>

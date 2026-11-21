@@ -9,6 +9,7 @@
   <script>(function(){try{var f=localStorage.getItem('safetylib_heading_font');if(f==='cursive')document.documentElement.setAttribute('data-heading-font','cursive');}catch(e){}})();</script>
   <script>(function(){try{var c=localStorage.getItem('safetylib_calm_mode');document.documentElement.setAttribute('data-calm-mode', c==='on'?'on':'off');}catch(e){}})();</script>
   <script>(function(){try{var p=JSON.parse(localStorage.getItem('safetylib_profile_v1')||'{}')||{};var r=document.documentElement;r.setAttribute('data-look',p.look==='calm'?'calm':'playful');if(p.contrast)r.setAttribute('data-contrast','');if(p.easyFont)r.setAttribute('data-easy-font','');}catch(e){document.documentElement.setAttribute('data-look','playful');}})();</script>
+  <script>(function(){try{var n=+sessionStorage.getItem("safetylib_hero_nav");sessionStorage.removeItem("safetylib_hero_nav");if(n&&Date.now()-n<4000&&localStorage.getItem("safetylib_calm_mode")!=="on")document.documentElement.setAttribute("data-hero-enter","");}catch(e){}})();</script>
   <title>Usage Insights — Safety Superheroes</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -111,6 +112,8 @@
   <script src="js/page-analytics.js"></script>
   <script src="js/profile.js"></script>
   <script src="js/music.js"></script>
+  <script src="js/animal-heroes.js"></script>
+  <script src="js/hero-transition.js"></script>
   <script src="js/boot.js"></script>
 </body>
 </html>

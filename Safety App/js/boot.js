@@ -120,6 +120,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initDisplayPanel();
   if (typeof initProfile === 'function') initProfile();
   if (typeof initMusic === 'function') initMusic();
+  if (typeof initHeroTransitions === 'function') initHeroTransitions();
   if (typeof initCalmModeToggle === 'function') initCalmModeToggle();
   if (typeof initSymbolModeToggle === 'function') initSymbolModeToggle();
   if (typeof initCalmSpace === 'function') initCalmSpace();

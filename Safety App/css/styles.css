@@ -2102,3 +2102,65 @@ section[id]{scroll-margin-top:120px;}
 /* Favorite star in the card corner, clear of the animal-hero logo */
 .topic-card-wrap .topic-card__pin{left:auto; right:12px; top:12px;}
 .topic-card-wrap .topic-card__done{right:64px; top:22px;}
+
+/* Music menu: real recorded tracks with style subtitle + credit */
+.music-menu{min-width:260px;}
+.music-menu__name{display:flex; flex-direction:column; line-height:1.15;}
+.music-menu__name small{font-family:var(--font-body, inherit); font-weight:500; font-size:.8rem; color:var(--ink-soft, #5a6475);}
+.music-menu__credit{margin:6px 8px 2px; font-size:.75rem; color:var(--ink-soft, #5a6475); line-height:1.35;}
+.music-menu__credit a{color:inherit; text-decoration:underline;}
+
+/* ---------- Superhero page transitions (js/hero-transition.js) ---------- */
+.hero-nav{position:fixed; inset:0; z-index:10000; pointer-events:all; overflow:hidden;}
+.hero-nav__sky{
+  position:absolute; inset:0;
+  background:radial-gradient(circle at var(--hx,50%) var(--hy,50%), #fff7c2 0 6%, #ffd65a 14%, #6cc4ff 34%, #2f7fe0 70%, #1d4fb3 100%);
+  clip-path:circle(0 at var(--hx,50%) var(--hy,50%));
+  animation:hx-open .38s cubic-bezier(.2,.8,.3,1) forwards;
+}
+.hero-nav__lines{
+  position:absolute; inset:-20%;
+  background:repeating-conic-gradient(from 0deg at 50% 55%, rgba(255,255,255,.28) 0 4deg, rgba(255,255,255,0) 4deg 14deg);
+  -webkit-mask:radial-gradient(circle at 50% 55%, transparent 12%, #000 40%); mask:radial-gradient(circle at 50% 55%, transparent 12%, #000 40%);
+  opacity:0; animation:hx-lines .5s ease-out .1s forwards;
+}
+.hero-nav__star{position:absolute; color:#fff6b0; font-size:28px; text-shadow:0 0 10px #fff; opacity:0; animation:hx-star .5s ease-out forwards;}
+.hero-nav__star.s1{left:18%; top:24%; animation-delay:.12s;} .hero-nav__star.s2{right:20%; top:30%; animation-delay:.2s;} .hero-nav__star.s3{left:30%; bottom:22%; animation-delay:.26s;}
+.hero-nav__hero{
+  position:absolute; top:50%; left:0; width:150px; height:150px; margin-top:-75px;
+  transform:translateX(-200px) rotate(-14deg); animation:hx-fly .62s cubic-bezier(.45,.05,.35,1) .06s forwards;
+}
+.hero-nav__face{
+  position:relative; width:150px; height:150px; border-radius:50%; overflow:hidden;
+  background:radial-gradient(circle at 50% 38%, #fff 0 45%, #e6f4ff 100%);
+  border:5px solid #fff; box-shadow:0 0 0 5px #ffd65a, 0 0 40px rgba(255,246,180,.9);
+}
+.hero-nav__trail{
+  position:absolute; right:60%; top:50%; width:70vw; height:64px; margin-top:-32px; border-radius:40px;
+  background:linear-gradient(90deg, rgba(255,255,255,0), rgba(255,246,180,.55) 60%, rgba(255,255,255,.95));
+  filter:blur(2px);
+}
+@keyframes hx-open{to{clip-path:circle(150vmax at var(--hx,50%) var(--hy,50%));}}
+@keyframes hx-lines{to{opacity:1; transform:rotate(8deg);}}
+@keyframes hx-star{0%{opacity:0; transform:scale(.3);} 60%{opacity:1; transform:scale(1.25);} 100%{opacity:.9; transform:scale(1);}}
+@keyframes hx-fly{
+  0%{transform:translateX(-200px) translateY(40px) rotate(-14deg) scale(.7);}
+  55%{transform:translateX(calc(50vw - 75px)) translateY(-10px) rotate(6deg) scale(1.08);}
+  100%{transform:translateX(calc(50vw - 75px)) translateY(0) rotate(0) scale(1);}
+}
+
+/* Arrival: the sky closes like a cartoon iris to reveal the new page. */
+:root[data-hero-enter] body::after{
+  content:""; position:fixed; inset:0; z-index:10000; pointer-events:none;
+  background:radial-gradient(circle at 50% 50%, #fff7c2 0 6%, #ffd65a 14%, #6cc4ff 34%, #2f7fe0 70%, #1d4fb3 100%);
+  clip-path:circle(150vmax at 50% 50%);
+  animation:hx-iris .5s cubic-bezier(.6,0,.4,1) .08s forwards;
+}
+@keyframes hx-iris{to{clip-path:circle(0 at 50% 50%); visibility:hidden;}}
+
+@media (prefers-reduced-motion: reduce){
+  .hero-nav{display:none !important;}
+  :root[data-hero-enter] body::after{display:none;}
+}
+:root[data-calm-mode="on"] .hero-nav{display:none !important;}
+:root[data-calm-mode="on"][data-hero-enter] body::after{display:none;}

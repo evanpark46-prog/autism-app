@@ -10,7 +10,7 @@
    returning visitors pick up the change instead of an old cached copy.
    ========================================================================== */
 
-const CACHE_NAME = 'safety-superheroes-shell-v40';
+const CACHE_NAME = 'safety-superheroes-shell-v41';
 
 const SHELL_FILES = [
   'index.html',
@@ -47,6 +47,7 @@ const SHELL_FILES = [
   'js/glossary.js',
   'js/heroes.js',
   'js/animal-heroes.js',
+  'js/hero-transition.js',
   'js/soundfx.js',
   'js/categories.js',
   'js/topics-index.js',
@@ -98,6 +99,9 @@ self.addEventListener('activate', event => {
 self.addEventListener('fetch', event => {
   const request = event.request;
   if (request.method !== 'GET') return;
+  // Music files stream with Range requests; let the browser handle them
+  // directly (caching partial responses would break seeking and waste space).
+  if (new URL(request.url).pathname.includes('/audio/music/')) return;
 
   // Pages: try the network first so edits show up right away; fall back to
   // the cached shell copy when offline. ignoreSearch matters here -- pages
