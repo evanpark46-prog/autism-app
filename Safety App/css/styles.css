@@ -1899,3 +1899,13 @@ div.sort-bin{cursor:default;}
 .access-card p{font-size:.98rem; margin-bottom:.6em;}
 
 section[id]{scroll-margin-top:120px;}
+
+/* ---------- Hero music toggle ---------- */
+.music-btn{
+  display:inline-grid; place-items:center; width:44px; height:44px; flex:none;
+  border-radius:50%; border:3px solid var(--border); background:#fff; cursor:pointer;
+  font-size:1.2rem; line-height:1;
+}
+.music-btn.is-on{border-color:#ffb52e; background:#fff3d6;}
+.music-btn:disabled{opacity:.45; cursor:not-allowed;}
+@media (max-width:640px){ .music-btn{width:40px; height:40px; justify-self:start;} }

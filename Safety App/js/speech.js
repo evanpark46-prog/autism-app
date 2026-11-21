@@ -21,6 +21,15 @@ if (SPEECH_SUPPORTED){
   window.speechSynthesis.addEventListener('voiceschanged', refreshVoiceCache);
 }
 
+// Lets other modules (the hero music, js/music.js) react to read-aloud
+// without touching speechSynthesis themselves.
+function announceSpeech(utter){
+  const fire = name => window.dispatchEvent(new CustomEvent(name));
+  utter.addEventListener('start', () => fire('safetylib:speechstart'));
+  utter.addEventListener('end', () => fire('safetylib:speechend'));
+  utter.addEventListener('error', () => fire('safetylib:speechend'));
+}
+
 function hashStr(s){
   let h = 0;
   for (let i = 0; i < s.length; i++){ h = (h * 31 + s.charCodeAt(i)) | 0; }
@@ -87,6 +96,7 @@ function speak(text, speaker){
   if (!SPEECH_SUPPORTED || !text) return;
   window.speechSynthesis.cancel();
   const utter = new SpeechSynthesisUtterance(text);
+  announceSpeech(utter);
   utter.lang = getLang() === 'es' ? 'es-ES' : 'en-US';
   const profile = voiceProfileFor(speaker);
   if (profile.voice) utter.voice = profile.voice;
@@ -159,6 +169,7 @@ function speakWithHighlight(segments, speaker, joiner){
   if (!fullText) return;
 
   const utter = new SpeechSynthesisUtterance(fullText);
+  announceSpeech(utter);
   utter.lang = getLang() === 'es' ? 'es-ES' : 'en-US';
   const profile = voiceProfileFor(speaker);
   if (profile.voice) utter.voice = profile.voice;

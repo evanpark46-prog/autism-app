@@ -536,7 +536,8 @@ function initTopicPage(){
         storyState.trackedComplete = true;
         justCompleted = true;
         trackEvent(meta.id, 'level_complete', { level: storyState.level });
-        if (typeof playCompletionChime === 'function') playCompletionChime();
+        const fanfared = typeof playHeroFanfare === 'function' && playHeroFanfare();
+        if (!fanfared && typeof playCompletionChime === 'function') playCompletionChime();
       }
       const practiceHtml = content.practicePrompt ? inSituCardHtml(meta, content) : '';
       const heroUnlock = typeof heroFor === 'function' ? heroFor(meta.id) : null;

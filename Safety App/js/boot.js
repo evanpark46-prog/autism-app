@@ -119,6 +119,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initHeadingFontSwitcher();
   initDisplayPanel();
   if (typeof initProfile === 'function') initProfile();
+  if (typeof initMusic === 'function') initMusic();
   if (typeof initCalmModeToggle === 'function') initCalmModeToggle();
   if (typeof initSymbolModeToggle === 'function') initSymbolModeToggle();
   if (typeof initCalmSpace === 'function') initCalmSpace();
