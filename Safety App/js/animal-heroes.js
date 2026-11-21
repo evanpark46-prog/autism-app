@@ -135,8 +135,9 @@ function animalMaskSvg(themeVar, frog){
 }
 
 // Full animal-hero bust in a 100x100 box: cape, suit + emblem, head.
-function animalHeroSvg(topicId, theme, emblemInner){
+function animalHeroSvg(topicId, theme, emblemInner, opts){
   const a = ANIMAL_HEROES[topicId];
+  const headOnly = !!(opts && opts.headOnly);
   if (!a) return '';
   const accent = `var(--${theme})`;
   const accentDark = `var(--${theme}-dark, ${accent})`;
@@ -145,11 +146,11 @@ function animalHeroSvg(topicId, theme, emblemInner){
     : `<circle cx="50" cy="40" r="27" fill="${a.fur}" stroke="${INK}" stroke-width="2.4"/>`;
   const faceShade = (a.snout === 'beak' || a.snout === 'bill' || a.marks === 'penguin' || a.animal === 'zebra')
     ? '' : `<ellipse cx="50" cy="48" rx="18" ry="14" fill="${a.face}" opacity=".55"/>`;
-  return '<svg viewBox="0 0 100 100" width="100%" height="100%" fill="none" xmlns="http://www.w3.org/2000/svg" focusable="false">'
-    + `<path d="M50 58 C26 62 12 80 14 100 L86 100 C88 80 74 62 50 58 Z" fill="${accentDark}" stroke="${INK}" stroke-width="2.4" stroke-linejoin="round"/>`
+  return `<svg viewBox="${headOnly ? '12 0 76 74' : '0 0 100 100'}" width="100%" height="100%" fill="none" xmlns="http://www.w3.org/2000/svg" focusable="false">`
+    + (headOnly ? '' : `<path d="M50 58 C26 62 12 80 14 100 L86 100 C88 80 74 62 50 58 Z" fill="${accentDark}" stroke="${INK}" stroke-width="2.4" stroke-linejoin="round"/>`
     + `<path d="M30 74 C38 66 62 66 70 74 L74 100 L26 100 Z" fill="${accent}" stroke="${INK}" stroke-width="2.2" stroke-linejoin="round"/>`
     + `<circle cx="50" cy="86" r="9" fill="#ffe066" stroke="${INK}" stroke-width="1.8"/>`
-    + (emblemInner ? `<g transform="translate(50,86) scale(0.5) translate(-12,-12)">${emblemInner.replace(/#fff\b/g, accentDark).replace(/#ffffff/g, accentDark)}</g>` : '')
+    + (emblemInner ? `<g transform="translate(50,86) scale(0.5) translate(-12,-12)">${emblemInner.replace(/#fff\b/g, accentDark).replace(/#ffffff/g, accentDark)}</g>` : ''))
     + animalBackMarksSvg(a)
     + animalEarsSvg(a)
     + head
@@ -166,8 +167,43 @@ function animalNameFor(topicId, lang){
   return (ANIMAL_NAMES[lang] || ANIMAL_NAMES.en)[a.animal] || a.animal;
 }
 
-// Lesson loading screen: the lesson's own hero swoops in over a glowing
-// light burst while two other animal heroes zoom past behind it.
+// Full-body flying pose: stretched out, fist forward, cape flapping behind.
+// Faces right. The cape is a separate group so CSS can flutter it.
+function flyingHeroSvg(topicId, theme){
+  const a = ANIMAL_HEROES[topicId];
+  if (!a) return '';
+  const accent = `var(--${theme})`;
+  const accentDark = `var(--${theme}-dark, ${accent})`;
+  const limb = (x1, y1, x2, y2, w, color) =>
+    `<line x1="${x1}" y1="${y1}" x2="${x2}" y2="${y2}" stroke="${INK}" stroke-width="${w + 4.4}" stroke-linecap="round"/>`
+    + `<line x1="${x1}" y1="${y1}" x2="${x2}" y2="${y2}" stroke="${color}" stroke-width="${w}" stroke-linecap="round"/>`;
+  return '<svg class="fly-hero" viewBox="0 0 240 120" width="100%" height="100%" fill="none" xmlns="http://www.w3.org/2000/svg" focusable="false">'
+    // cape (behind everything)
+    + `<g class="fly-hero__cape"><path d="M152 50 C124 40 84 30 26 20 Q40 32 24 43 Q42 53 22 63 Q40 73 26 86 C80 86 122 82 152 76 Z" fill="${accentDark}" stroke="${INK}" stroke-width="2.4" stroke-linejoin="round"/>`
+    + `<path d="M150 56 C120 50 86 44 52 40" stroke="rgba(255,255,255,.35)" stroke-width="3" stroke-linecap="round"/></g>`
+    // legs + boots
+    + limb(104, 60, 62, 56, 13, accentDark) + limb(104, 72, 64, 76, 13, accentDark)
+    + `<ellipse cx="56" cy="55" rx="9" ry="7.5" fill="#ffd23f" stroke="${INK}" stroke-width="2.2"/>`
+    + `<ellipse cx="58" cy="77" rx="9" ry="7.5" fill="#ffd23f" stroke="${INK}" stroke-width="2.2"/>`
+    // back arm
+    + limb(150, 74, 128, 90, 10, accent)
+    + `<circle cx="126" cy="92" r="6.5" fill="${a.fur}" stroke="${INK}" stroke-width="2.2"/>`
+    // body, belt, emblem
+    + `<rect x="96" y="49" width="70" height="31" rx="15.5" fill="${accent}" stroke="${INK}" stroke-width="2.4"/>`
+    + `<rect x="106" y="49.5" width="8" height="30" fill="#ffd23f" stroke="${INK}" stroke-width="1.6"/>`
+    + `<circle cx="142" cy="64.5" r="8.5" fill="#ffe066" stroke="${INK}" stroke-width="1.8"/>`
+    + `<path d="M142 58.5 l1.9 4 4.3.5-3.2 2.9.9 4.3-3.9-2.2-3.9 2.2.9-4.3-3.2-2.9 4.3-.5z" fill="${accentDark}"/>`
+    // front arm, fist forward
+    + limb(160, 57, 220, 56, 11, accent)
+    + `<circle cx="224" cy="56" r="8" fill="${a.fur}" stroke="${INK}" stroke-width="2.2"/>`
+    // head
+    + animalHeroSvg(topicId, theme, '', { headOnly: true })
+        .replace(' width="100%" height="100%"', ' x="148" y="-2" width="74" height="72"')
+    + '</svg>';
+}
+
+// Lesson loading screen: the lesson's own hero flies in over a glowing
+// light burst while two other caped animal heroes zoom past behind it.
 function heroLoadingSceneHtml(topicId, theme, lang){
   const hero = typeof heroFor === 'function' ? heroFor(topicId) : null;
   const emblem = id => (typeof heroEmblemInner === 'function' && heroFor(id)) ? heroEmblemInner(heroFor(id).emblem) : '';
@@ -176,13 +212,121 @@ function heroLoadingSceneHtml(topicId, theme, lang){
   const f1 = pick(), f2 = pick();
   const data = hero ? (hero[lang] || hero.en) : null;
   const line = data ? t('loading_hero_line', { name: data.name, animal: animalNameFor(topicId, lang) }) : '';
+  const tip = heroTipFor(topicId, lang);
   return `
     <div class="hero-load" aria-hidden="true">
       <div class="hero-load__burst"></div>
       <span class="hero-load__spark s1">✦</span><span class="hero-load__spark s2">★</span><span class="hero-load__spark s3">✦</span><span class="hero-load__spark s4">★</span>
-      ${f1 ? `<div class="hero-load__fly f1">${animalHeroSvg(f1.id, f1.theme, emblem(f1.id))}</div>` : ''}
-      ${f2 ? `<div class="hero-load__fly f2">${animalHeroSvg(f2.id, f2.theme, emblem(f2.id))}</div>` : ''}
-      <div class="hero-load__main">${animalHeroSvg(topicId, theme, emblem(topicId))}</div>
+      ${f1 ? `<div class="hero-load__fly f1">${flyingHeroSvg(f1.id, f1.theme)}</div>` : ''}
+      ${f2 ? `<div class="hero-load__fly f2">${flyingHeroSvg(f2.id, f2.theme)}</div>` : ''}
+      <div class="hero-load__main"><div class="hero-load__trail"></div>${flyingHeroSvg(topicId, theme)}</div>
     </div>
-    ${line ? `<p class="hero-load__line">${escapeHtml(line)}</p>` : ''}`;
+    ${line ? `<p class="hero-load__line">${escapeHtml(line)}</p>` : ''}
+    ${tip ? `<p class="safety-tip"><span class="safety-tip__label">${escapeHtml(t('hero_tip_label'))}</span> ${escapeHtml(tip)}</p>` : ''}`;
+}
+
+/* ---- Hero safety tips ----
+   Two short, positive tips per lesson (EN + ES), said by that lesson's
+   animal hero on page transitions and the lesson loading screen. */
+const HERO_TIPS = {
+  'stranger-safety': {
+    en: ['If someone you don\'t know asks you to go with them, say "No!" and tell a grown-up you trust.', 'Stay where your grown-up can see you.'],
+    es: ['Si alguien que no conoces te pide que vayas con él, di "¡No!" y avisa a un adulto de confianza.', 'Quédate donde tu adulto pueda verte.'] },
+  'street-safety': {
+    en: ['Stop, look left, look right, and look left again before you cross.', 'Hold a grown-up\'s hand when you cross the street.'],
+    es: ['Para, mira a la izquierda, a la derecha y otra vez a la izquierda antes de cruzar.', 'Toma la mano de un adulto para cruzar la calle.'] },
+  'lost-safety': {
+    en: ['If you get lost, stay where you are and look for a worker or a mom with kids.', 'Learn your grown-up\'s phone number by heart.'],
+    es: ['Si te pierdes, quédate donde estás y busca a un trabajador o a una mamá con niños.', 'Apréndete de memoria el número de teléfono de tu adulto.'] },
+  'emergency-safety': {
+    en: ['In an emergency, call 911 and stay on the phone.', 'Say your name and where you are, slowly and clearly.'],
+    es: ['En una emergencia, llama al 911 y no cuelgues.', 'Di tu nombre y dónde estás, despacio y claro.'] },
+  'fire-safety': {
+    en: ['If there\'s smoke, get low and go out fast.', 'If your clothes catch fire: stop, drop, and roll!'],
+    es: ['Si hay humo, agáchate y sal rápido.', 'Si tu ropa se prende: ¡detente, tírate al suelo y rueda!'] },
+  'earthquake-safety': {
+    en: ['When the ground shakes: drop, cover, and hold on!', 'Stay away from windows during an earthquake.'],
+    es: ['Cuando la tierra tiembla: ¡agáchate, cúbrete y sujétate!', 'Aléjate de las ventanas durante un terremoto.'] },
+  'rainyweather-safety': {
+    en: ['Never walk or play in flood water.', 'When thunder roars, go indoors!'],
+    es: ['Nunca camines ni juegues en agua de inundación.', '¡Si truena, ve adentro!'] },
+  'selfadvocacy-safety': {
+    en: ['It\'s okay to say "I need help" or "I need a break."', 'Your feelings and needs matter. Use your words, card, or device to share them.'],
+    es: ['Está bien decir "necesito ayuda" o "necesito un descanso".', 'Lo que sientes y necesitas importa. Usa tus palabras, tarjeta o dispositivo para decirlo.'] },
+  'body-boundaries-safety': {
+    en: ['Your body belongs to you. You can say "No, stop!"', 'Parts covered by a swimsuit are private.'],
+    es: ['Tu cuerpo es tuyo. Puedes decir "¡No, para!"', 'Las partes que cubre el traje de baño son privadas.'] },
+  'secrets-safety': {
+    en: ['Surprises are fun to keep. Secrets that make you feel bad should be told.', 'No grown-up should ask you to keep a secret from your family.'],
+    es: ['Las sorpresas son divertidas de guardar. Los secretos que te hacen sentir mal se deben contar.', 'Ningún adulto debe pedirte que guardes un secreto de tu familia.'] },
+  'reporting-safety': {
+    en: ['If something feels wrong, tell a trusted grown-up. Keep telling until someone helps.', 'Telling to get help is not tattling.'],
+    es: ['Si algo se siente mal, díselo a un adulto de confianza. Sigue diciéndolo hasta que alguien te ayude.', 'Contar algo para pedir ayuda no es chismear.'] },
+  'awareness-safety': {
+    en: ['Look up from your screen when you walk.', 'Notice the exits when you go into a new place.'],
+    es: ['Levanta la vista de la pantalla cuando camines.', 'Fíjate dónde están las salidas al entrar a un lugar nuevo.'] },
+  'plan-safety': {
+    en: ['Make a meeting spot with your family, in case you get separated.', 'Practice your safety plan, just like a fire drill.'],
+    es: ['Elige con tu familia un lugar para reunirse por si se separan.', 'Practica tu plan de seguridad, igual que un simulacro de incendio.'] },
+  'privacy-safety': {
+    en: ['Keep your address and passwords private.', 'Ask a grown-up before you share a photo.'],
+    es: ['Mantén en privado tu dirección y tus contraseñas.', 'Pregunta a un adulto antes de compartir una foto.'] },
+  'bullying-safety': {
+    en: ['If someone is mean to you, walk away and tell a grown-up.', 'Be a buddy: stand next to someone who is being picked on.'],
+    es: ['Si alguien es malo contigo, aléjate y díselo a un adulto.', 'Sé un amigo: ponte al lado de alguien a quien están molestando.'] },
+  'online-safety': {
+    en: ['Never meet up with someone you only know online.', 'If something online feels weird, close it and tell a grown-up.'],
+    es: ['Nunca te reúnas con alguien que solo conoces por internet.', 'Si algo en internet se siente raro, ciérralo y díselo a un adulto.'] },
+  'cyberbullying-safety': {
+    en: ['Don\'t answer mean messages. Save them and show a grown-up.', 'You can block someone who is being mean online.'],
+    es: ['No contestes mensajes groseros. Guárdalos y muéstraselos a un adulto.', 'Puedes bloquear a alguien que es grosero por internet.'] },
+  'citizenship-safety': {
+    en: ['Police officers, firefighters, and doctors are community helpers.', 'Treat others the way you want to be treated.'],
+    es: ['Los policías, bomberos y médicos son ayudantes de la comunidad.', 'Trata a los demás como quieres que te traten.'] },
+  'rights-safety': {
+    en: ['You have the right to be safe and to ask for help.', 'You can ask for the supports you need at school.'],
+    es: ['Tienes derecho a estar seguro y a pedir ayuda.', 'Puedes pedir los apoyos que necesitas en la escuela.'] },
+  'water-safety': {
+    en: ['Always swim with a grown-up watching.', 'Wear a life jacket on boats and near deep water.'],
+    es: ['Nada siempre con un adulto mirando.', 'Usa chaleco salvavidas en botes y cerca del agua profunda.'] },
+  'home-safety': {
+    en: ['Medicine is only for when a grown-up gives it to you.', 'Don\'t open the door to someone you don\'t know.'],
+    es: ['La medicina solo es para cuando un adulto te la da.', 'No abras la puerta a alguien que no conoces.'] },
+  'bike-safety': {
+    en: ['Always wear your helmet when you ride.', 'Ride on the right side, the same way as cars.'],
+    es: ['Usa siempre tu casco cuando montes.', 'Anda por la derecha, en la misma dirección que los carros.'] },
+  'peer-pressure-safety': {
+    en: ['A real friend won\'t make you do something unsafe.', 'You can say "No thanks" and walk away.'],
+    es: ['Un verdadero amigo no te obliga a hacer algo peligroso.', 'Puedes decir "No, gracias" y alejarte.'] },
+  'elopement-safety': {
+    en: ['Before you go anywhere, tell a grown-up where you\'re going.', 'If you feel like running, stop and squeeze your hands instead.'],
+    es: ['Antes de ir a cualquier lugar, dile a un adulto adónde vas.', 'Si sientes ganas de correr, para y aprieta tus manos.'] },
+  'safehelper-safety': {
+    en: ['Safe helpers wear a uniform or name tag, like store workers and police.', 'If you need help, look for a worker at a counter.'],
+    es: ['Los ayudantes seguros llevan uniforme o gafete, como los empleados y la policía.', 'Si necesitas ayuda, busca a un trabajador en un mostrador.'] },
+  'medical-safety': {
+    en: ['Tell a grown-up when something hurts.', 'Doctors and nurses help you get better. It\'s okay to ask questions.'],
+    es: ['Dile a un adulto cuando algo te duela.', 'Los médicos y enfermeros te ayudan a mejorar. Está bien hacer preguntas.'] },
+  'selfregulation-safety': {
+    en: ['Feeling big feelings? Smell the flower, blow out the candle.', 'It\'s okay to ask for a quiet space.'],
+    es: ['¿Sientes emociones grandes? Huele la flor, sopla la vela.', 'Está bien pedir un lugar tranquilo.'] },
+  'firstaid-safety': {
+    en: ['For a small cut: wash it, then put on a bandage.', 'If someone is badly hurt, get a grown-up or call 911.'],
+    es: ['Para una cortada pequeña: lávala y ponle una curita.', 'Si alguien está muy lastimado, busca a un adulto o llama al 911.'] },
+  'seizure-safety': {
+    en: ['If someone has a seizure, move things away and don\'t hold them down.', 'Stay with them and get a grown-up.'],
+    es: ['Si alguien tiene una convulsión, aparta las cosas y no lo sujetes.', 'Quédate con la persona y busca a un adulto.'] },
+  'money-safety': {
+    en: ['Keep your money in a safe place, like a wallet or pocket.', 'Never give your bank card or PIN to someone online.'],
+    es: ['Guarda tu dinero en un lugar seguro, como una cartera o un bolsillo.', 'Nunca des tu tarjeta del banco ni tu PIN a alguien por internet.'] },
+  'dating-safety': {
+    en: ['A good friend listens when you say no.', 'Tell a trusted grown-up where you\'re going and who you\'re with.'],
+    es: ['Un buen amigo te escucha cuando dices que no.', 'Dile a un adulto de confianza adónde vas y con quién.'] },
+};
+
+function heroTipFor(topicId, lang){
+  const set = HERO_TIPS[topicId];
+  if (!set) return '';
+  const list = set[lang] || set.en;
+  return list[Math.floor(Math.random() * list.length)];
 }

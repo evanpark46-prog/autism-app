@@ -2164,3 +2164,83 @@ section[id]{scroll-margin-top:120px;}
 }
 :root[data-calm-mode="on"] .hero-nav{display:none !important;}
 :root[data-calm-mode="on"][data-hero-enter] body::after{display:none;}
+
+/* ---------- Flying caped heroes + hero tips ---------- */
+.fly-hero{display:block; overflow:visible;}
+.fly-hero__cape{transform-origin:152px 63px; animation:fh-flap .3s ease-in-out infinite alternate;}
+@keyframes fh-flap{from{transform:scaleY(1) skewY(0deg);} to{transform:scaleY(.84) skewY(-5deg);}}
+
+/* Transition: full-body flyer instead of a framed bust */
+.hero-nav__hero{
+  top:36%; width:300px; height:150px; margin-top:-75px;
+  filter:drop-shadow(0 10px 18px rgba(10,30,80,.35));
+  transform:translateX(-340px) rotate(-10deg);
+  animation:hx-fly2 .7s cubic-bezier(.3,.1,.3,1) .06s forwards, hx-bob 1.4s ease-in-out .8s infinite;
+}
+.hero-nav__trail{right:72%; height:46px; margin-top:-26px;}
+@keyframes hx-fly2{
+  0%{transform:translateX(-340px) translateY(50px) rotate(-12deg) scale(.7);}
+  70%{transform:translateX(calc(50vw - 140px)) translateY(-8px) rotate(3deg) scale(1.05);}
+  100%{transform:translateX(calc(50vw - 150px)) translateY(0) rotate(0deg) scale(1);}
+}
+@keyframes hx-bob{0%,100%{translate:0 0;} 50%{translate:0 -8px;}}
+.safety-tip{
+  max-width:min(520px, 86vw); margin:14px auto 0; padding:14px 20px; border-radius:22px;
+  background:#fff; color:#1e2a44; border:4px solid #ffd23f; box-shadow:0 10px 24px rgba(10,30,80,.18);
+  font-family:var(--font-display, inherit); font-weight:600; font-size:1.15rem; line-height:1.35; text-align:center;
+}
+.safety-tip__label{display:block; font-weight:800; color:#e05a00; font-size:.95rem; letter-spacing:.02em; margin-bottom:2px;}
+.hero-nav__tip{
+  position:absolute; left:50%; top:calc(36% + 90px); margin:0; transform:translateX(-50%) scale(.6); opacity:0;
+  width:max-content; animation:hx-tip .35s cubic-bezier(.34,1.56,.64,1) .55s forwards;
+}
+.hero-nav__tip::before{
+  content:""; position:absolute; top:-16px; left:50%; margin-left:-12px; border:12px solid transparent; border-top:0;
+  border-bottom:14px solid #ffd23f;
+}
+.hero-nav__skip{
+  position:absolute; left:0; right:0; bottom:max(24px, env(safe-area-inset-bottom, 0px)); margin:0; text-align:center;
+  color:#fff; font-weight:700; font-size:.95rem; opacity:0; animation:hx-skip .3s ease-out 1s forwards; text-shadow:0 1px 4px rgba(0,0,0,.35);
+}
+@keyframes hx-tip{to{opacity:1; transform:translateX(-50%) scale(1);}}
+@keyframes hx-skip{to{opacity:.9;}}
+@media (max-width:520px){
+  .hero-nav__hero{width:220px; height:110px; margin-top:-55px;}
+  @keyframes hx-fly2{0%{transform:translateX(-260px) translateY(40px) rotate(-12deg) scale(.7);} 100%{transform:translateX(calc(50vw - 110px));}}
+  .hero-nav__tip{top:calc(36% + 70px); font-size:1.05rem;}
+}
+
+/* Lesson loading screen: flying heroes, no circle frames */
+.hero-load{height:230px;}
+.hero-load__main{
+  width:240px; height:120px; margin:-60px 0 0 -120px; border:0; border-radius:0; overflow:visible;
+  background:none; box-shadow:none; filter:drop-shadow(0 8px 14px rgba(20,60,110,.28));
+}
+.hero-load__main .hero-load__trail{
+  position:absolute; right:70%; top:50%; width:46vw; max-width:260px; height:38px; margin-top:-22px; border-radius:30px;
+  background:linear-gradient(90deg, rgba(255,255,255,0), rgba(255,240,170,.6) 65%, rgba(255,255,255,.95)); filter:blur(2px);
+}
+.hero-load__fly{
+  width:112px; height:56px; border:0; border-radius:0; overflow:visible; background:none; box-shadow:none; opacity:.85;
+  filter:drop-shadow(0 4px 8px rgba(20,60,110,.2));
+}
+.hero-load .safety-tip{margin-top:10px;}
+
+@media (prefers-reduced-motion: reduce){ .fly-hero__cape{animation:none;} }
+:root[data-calm-mode="on"] .fly-hero__cape{animation:none;}
+
+/* ---------- Cumulative review: difficulty picker, hero tag, scene ---------- */
+.review-level{display:flex; flex-wrap:wrap; align-items:center; justify-content:center; gap:8px; margin:0 0 14px;}
+.review-level__label{font-weight:800; margin-right:4px;}
+.review-level__btn{
+  min-height:44px; padding:8px 16px; border-radius:999px; border:3px solid var(--border, #d8dde6);
+  background:#fff; font:inherit; font-weight:700; cursor:pointer; color:var(--ink);
+}
+.review-level__btn[aria-pressed="true"]{border-color:#ffb52e; background:#fff3d6; box-shadow:0 3px 0 #ffb52e;}
+.review-progress-bar{height:10px; border-radius:999px; background:rgba(0,0,0,.08); overflow:hidden; margin:-4px 0 12px;}
+.review-progress-bar span{display:block; height:100%; border-radius:inherit; background:linear-gradient(90deg,#ffb52e,#ff6b6b,#8f5cff); transition:width .4s;}
+.review-topic-tag{display:flex; align-items:center; gap:10px;}
+.review-hero{display:inline-block; width:52px; height:52px; flex:none; border-radius:50%; overflow:hidden; background:#fff; border:3px solid #fff; box-shadow:0 0 0 3px #ffd23f;}
+.review-scene{margin:0 0 6px; font-size:1.05rem; color:var(--ink-soft, #4a5568);}
+.review-listen{margin:0 0 12px;}
+.review-card-wrap .story-feedback strong{margin-right:4px;}

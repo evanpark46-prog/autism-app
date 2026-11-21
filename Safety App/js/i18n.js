@@ -222,7 +222,7 @@ const UI_STRINGS = {
     calmspace_done_btn: 'I’m ready to continue',
 
     home_review_cta_title: 'Ready to test what you remember?',
-    home_review_cta_lead: 'Try the cumulative review — one question from every topic, shuffled and mixed together.',
+    home_review_cta_lead: "Try the review: ten quick questions from different lessons. Easy mode works for every age!",
     home_review_cta_btn: 'Take the Cumulative Review →',
 
     home_games_cta_title: 'Want to practice with a game instead?',
@@ -398,6 +398,8 @@ const UI_STRINGS = {
     music_track_show: "Guitars & horns",
     music_track_party: "Happy dance",
     music_credit_short: "Music by Kevin MacLeod",
+    hero_tip_label: "Hero tip!",
+    hero_tip_skip: "Tap to keep going",
     parents_music_heading: "Music credits",
     parents_music_body: "The optional hero music (the 🎵 button at the top) uses these instrumental songs. They are free to use with credit. Music is off by default and never plays in Calm Mode.",
     music_turn_off: 'Turn off hero music',
@@ -469,8 +471,8 @@ const UI_STRINGS = {
     practice_ws_links_lead: 'One printable sheet per story level: situations, “what could happen if…” talk-throughs, phrases to practice, and an answer key.',
 
     review_title: 'Cumulative Review',
-    review_lead: 'One question from every topic, shuffled together — see how much you remember!',
-    review_progress: 'Question {current} of {total} · {pool} questions in the bank',
+    review_lead: "Ten quick questions from different lessons. Pick Easy, Medium, or Challenge!",
+    review_progress: "Question {current} of {total}",
     review_dialogue_question: 'A character says: “{text}” What is a safe response?',
     review_loading: 'Gathering questions from your lessons…',
     review_load_error: 'The question bank could not load. Check your connection and try again.',
@@ -480,6 +482,11 @@ const UI_STRINGS = {
     review_missed_heading: 'Worth another look:',
     review_perfect_note: 'Perfect score — every topic stuck! 🎉',
     review_restart_btn: 'Take it again',
+    review_level_label: "How hard?",
+    review_level_easy: "😊 Easy",
+    review_level_medium: "🙂 Medium",
+    review_level_hard: "💪 Challenge",
+    review_listen: "🔊 Read it to me",
 
     games_title: 'Safety Games',
     games_lead: 'Original games built right into Safety Superheroes, plus a few well-made picks from trusted organizations — playful ways to practice what you’ve learned.',
@@ -795,7 +802,7 @@ const UI_STRINGS = {
     calmspace_done_btn: 'Estoy listo para continuar',
 
     home_review_cta_title: '¿Listo para poner a prueba lo que recuerdas?',
-    home_review_cta_lead: 'Prueba el repaso acumulativo — una pregunta de cada tema, mezcladas entre sí.',
+    home_review_cta_lead: "Prueba el repaso: diez preguntas rápidas de distintas lecciones. ¡El modo Fácil sirve para todas las edades!",
     home_review_cta_btn: 'Hacer el repaso acumulativo →',
 
     home_games_cta_title: '¿Prefieres practicar con un juego?',
@@ -971,6 +978,8 @@ const UI_STRINGS = {
     music_track_show: "Guitarras y trompetas",
     music_track_party: "Baile feliz",
     music_credit_short: "Música de Kevin MacLeod",
+    hero_tip_label: "¡Consejo de héroe!",
+    hero_tip_skip: "Toca para seguir",
     parents_music_heading: "Créditos de la música",
     parents_music_body: "La música de héroe opcional (el botón 🎵 de arriba) usa estas canciones instrumentales. Se pueden usar gratis dando crédito. La música está apagada de forma predeterminada y nunca suena en el Modo Calma.",
     music_turn_off: 'Apagar música de héroe',
@@ -1042,8 +1051,8 @@ const UI_STRINGS = {
     practice_ws_links_lead: 'Una hoja imprimible por nivel: situaciones, conversaciones de “¿qué podría pasar si…?”, frases para practicar y una clave de respuestas.',
 
     review_title: 'Repaso acumulativo',
-    review_lead: 'Una pregunta de cada tema, mezcladas entre sí — ¡mira cuánto recuerdas!',
-    review_progress: 'Pregunta {current} de {total} · {pool} preguntas disponibles',
+    review_lead: "Diez preguntas rápidas de distintas lecciones. ¡Elige Fácil, Medio o Reto!",
+    review_progress: "Pregunta {current} de {total}",
     review_dialogue_question: 'Un personaje dice: “{text}” ¿Cuál es una respuesta segura?',
     review_loading: 'Cargando preguntas de tus lecciones…',
     review_load_error: 'No se pudo cargar el banco de preguntas. Revisa tu conexión e inténtalo de nuevo.',
@@ -1053,6 +1062,11 @@ const UI_STRINGS = {
     review_missed_heading: 'Vale la pena repasar:',
     review_perfect_note: '¡Puntaje perfecto — se te quedó todo! 🎉',
     review_restart_btn: 'Hacerlo de nuevo',
+    review_level_label: "¿Qué tan difícil?",
+    review_level_easy: "😊 Fácil",
+    review_level_medium: "🙂 Medio",
+    review_level_hard: "💪 Reto",
+    review_listen: "🔊 Léemelo",
 
     games_title: 'Juegos de seguridad',
     games_lead: 'Juegos originales creados dentro de Safety Superheroes, además de algunas buenas opciones de organizaciones confiables — formas divertidas de practicar lo que has aprendido.',
