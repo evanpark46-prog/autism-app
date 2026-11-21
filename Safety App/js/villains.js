@@ -46,7 +46,7 @@ const VILLAINS = {
   'reporting-safety': { shape: 'blob', color: '#b5b5b5', extras: ['antenna'],
     en: { name: 'Shrug-o-Tron', taunt: 'Beep boop. Something wrong? Shrug! Don\'t bother telling anyone. Beep!', reform: 'Error! Error! You kept telling until someone helped. That is not tattling, that is heroic!' },
     es: { name: 'Encogetrón', taunt: 'Bip bup. ¿Algo anda mal? ¡Encógete de hombros! No se lo digas a nadie. ¡Bip!', reform: '¡Error! ¡Error! Seguiste contando hasta que alguien te ayudó. ¡Eso no es chismear, es ser un héroe!' } },
-  'awareness-safety': { shape: 'bean', color: '#7ad1a8', extras: ['screen'],
+  'awareness-safety': { shape: 'bean', color: '#7ad1a8', extras: [],
     en: { name: 'Daydream Drifter', taunt: 'Keep your eyes glued to the screen! Who needs to look where they\'re going?', reform: 'You looked up and noticed everything around you. I can\'t sneak up on you!' },
     es: { name: 'Soñador Distraído', taunt: '¡Mantén los ojos pegados a la pantalla! ¿Quién necesita mirar por dónde camina?', reform: 'Levantaste la vista y notaste todo a tu alrededor. ¡No te puedo sorprender!' } },
   'plan-safety': { shape: 'cloud', color: '#f2c94c', extras: ['spikes'],
@@ -58,7 +58,7 @@ const VILLAINS = {
   'bullying-safety': { shape: 'box', color: '#e57373', extras: ['horns'],
     en: { name: 'Grumblegrump', taunt: 'Being mean is fun! And nobody will stand up for anybody. Grumble grumble!', reform: 'You walked away, told a grown-up, and stood by a friend. Being kind wins!' },
     es: { name: 'Gruñegruñe', taunt: '¡Ser malo es divertido! Y nadie va a defender a nadie. ¡Grr, grr!', reform: 'Te alejaste, le dijiste a un adulto y acompañaste a un amigo. ¡La bondad gana!' } },
-  'online-safety': { shape: 'box', color: '#56ccf2', extras: ['antenna', 'screen'],
+  'online-safety': { shape: 'box', color: '#56ccf2', extras: ['antenna'],
     en: { name: 'Captain Click', taunt: 'Click every link! Answer every message! Meet your online pals in person!', reform: 'You closed it and told a grown-up. My clicks can\'t trick you!' },
     es: { name: 'Capitán Clic', taunt: '¡Haz clic en todo! ¡Contesta todos los mensajes! ¡Conoce en persona a tus amigos de internet!', reform: 'Lo cerraste y se lo dijiste a un adulto. ¡Mis clics no te pueden engañar!' } },
   'cyberbullying-safety': { shape: 'blob', color: '#bb6bd9', extras: ['antenna', 'horns'],
@@ -144,43 +144,193 @@ function villainExtrasSvg(v, behind){
   if (ex.includes('wheels')) s += `<g stroke="${ink}" stroke-width="2.4"><circle cx="36" cy="108" r="10" fill="#444"/><circle cx="84" cy="108" r="10" fill="#444"/><circle cx="36" cy="108" r="3" fill="#ddd"/><circle cx="84" cy="108" r="3" fill="#ddd"/></g>`;
   if (ex.includes('germs')) s += `<g fill="#b5d96b" stroke="${ink}" stroke-width="1.8"><circle cx="14" cy="40" r="6"/><circle cx="108" cy="34" r="5"/><circle cx="104" cy="96" r="4.5"/></g>`;
   if (ex.includes('coins')) s += `<g fill="#ffd23f" stroke="${ink}" stroke-width="1.8"><circle cx="14" cy="96" r="7"/><circle cx="106" cy="92" r="7"/></g><g fill="${ink}" font-size="8" font-weight="700" text-anchor="middle" font-family="sans-serif"><text x="14" y="99">$</text><text x="106" y="95">$</text></g>`;
-  if (ex.includes('screen')) s += `<rect x="70" y="82" width="34" height="24" rx="4" fill="#2f3b55" stroke="${ink}" stroke-width="2.2"/><rect x="74" y="86" width="26" height="16" rx="2" fill="#7fe0ff"/>`;
+  if (false && ex.includes('screen')) s += `<rect x="70" y="82" width="34" height="24" rx="4" fill="#2f3b55" stroke="${ink}" stroke-width="2.2"/><rect x="74" y="86" width="26" height="16" rx="2" fill="#7fe0ff"/>`;
   return s;
+}
+
+/* Per-villain character: eye style, mouth, body pattern, and a prop that
+   shows the habit. Gives each villain its own personality instead of one
+   template with different colors. */
+const VILLAIN_STYLE = {
+  'stranger-safety':        { eyes: 'shifty', mouth: 'smirk', pattern: 'none',    prop: 'candy' },
+  'street-safety':          { eyes: 'pair',   mouth: 'laugh', pattern: 'none',    prop: 'speed' },
+  'lost-safety':            { eyes: 'sleepy', mouth: 'wavy',  pattern: 'spots',   prop: 'map' },
+  'emergency-safety':       { eyes: 'pair',   mouth: 'o',     pattern: 'spots',   prop: 'none' },
+  'fire-safety':            { eyes: 'sleepy', mouth: 'smirk', pattern: 'none',    prop: 'none' },
+  'earthquake-safety':      { eyes: 'three',  mouth: 'fangs', pattern: 'stripes', prop: 'none' },
+  'rainyweather-safety':    { eyes: 'one',    mouth: 'laugh', pattern: 'none',    prop: 'none' },
+  'selfadvocacy-safety':    { eyes: 'pair',   mouth: 'o',     pattern: 'none',    prop: 'finger' },
+  'body-boundaries-safety': { eyes: 'pair',   mouth: 'laugh', pattern: 'spots',   prop: 'none' },
+  'secrets-safety':         { eyes: 'shifty', mouth: 'smirk', pattern: 'none',    prop: 'finger' },
+  'reporting-safety':       { eyes: 'sleepy', mouth: 'wavy',  pattern: 'stripes', prop: 'none' },
+  'awareness-safety':       { eyes: 'sleepy', mouth: 'o',     pattern: 'none',    prop: 'screen' },
+  'plan-safety':            { eyes: 'three',  mouth: 'wavy',  pattern: 'spots',   prop: 'none' },
+  'privacy-safety':         { eyes: 'one',    mouth: 'grin',  pattern: 'none',    prop: 'magnifier' },
+  'bullying-safety':        { eyes: 'pair',   mouth: 'fangs', pattern: 'stripes', prop: 'none' },
+  'online-safety':          { eyes: 'pair',   mouth: 'laugh', pattern: 'none',    prop: 'cursor' },
+  'cyberbullying-safety':   { eyes: 'three',  mouth: 'fangs', pattern: 'stripes', prop: 'none' },
+  'citizenship-safety':     { eyes: 'one',    mouth: 'grin',  pattern: 'spots',   prop: 'peel' },
+  'rights-safety':          { eyes: 'pair',   mouth: 'smirk', pattern: 'bricks',  prop: 'none' },
+  'water-safety':           { eyes: 'pair',   mouth: 'laugh', pattern: 'stripes', prop: 'none' },
+  'home-safety':            { eyes: 'shifty', mouth: 'grin',  pattern: 'none',    prop: 'candy' },
+  'bike-safety':            { eyes: 'pair',   mouth: 'wavy',  pattern: 'none',    prop: 'none' },
+  'peer-pressure-safety':   { eyes: 'shifty', mouth: 'smirk', pattern: 'none',    prop: 'none' },
+  'elopement-safety':       { eyes: 'pair',   mouth: 'laugh', pattern: 'none',    prop: 'speed' },
+  'safehelper-safety':      { eyes: 'three',  mouth: 'wavy',  pattern: 'spots',   prop: 'none' },
+  'medical-safety':         { eyes: 'shifty', mouth: 'wavy',  pattern: 'none',    prop: 'bandage' },
+  'selfregulation-safety':  { eyes: 'pair',   mouth: 'fangs', pattern: 'none',    prop: 'fizz' },
+  'firstaid-safety':        { eyes: 'one',    mouth: 'fangs', pattern: 'spots',   prop: 'none' },
+  'seizure-safety':         { eyes: 'pair',   mouth: 'grin',  pattern: 'none',    prop: 'none' },
+  'money-safety':           { eyes: 'shifty', mouth: 'smirk', pattern: 'none',    prop: 'envelope' },
+  'dating-safety':          { eyes: 'pair',   mouth: 'o',     pattern: 'none',    prop: 'none' },
+};
+
+let villainSvgSeq = 0;
+
+function villainShade(hex, amt){
+  const n = parseInt(hex.slice(1), 16);
+  const f = c => Math.max(0, Math.min(255, Math.round(c * (1 - amt))));
+  return '#' + [f(n >> 16), f((n >> 8) & 255), f(n & 255)].map(x => x.toString(16).padStart(2, '0')).join('');
+}
+
+function villainEyesSvg(style, v, defeated){
+  const ink = VILLAIN_INK;
+  const spiral = (cx, cy, r) => `<path d="M${cx} ${cy} m-${r} 0 a${r} ${r} 0 1 0 ${2 * r} 0 a${r * 0.62} ${r * 0.62} 0 1 0 -${r * 1.24} 0 a${r * 0.25} ${r * 0.25} 0 1 0 ${r * 0.5} 0" fill="none" stroke="${ink}" stroke-width="2.4" stroke-linecap="round"/>`;
+  const lid = villainShade(v.color, 0.12);
+  switch (style.eyes){
+    case 'one':
+      return defeated ? spiral(60, 52, 11)
+        : `<ellipse cx="60" cy="52" rx="17" ry="18" fill="#fff" stroke="${ink}" stroke-width="2.6"/><circle cx="64" cy="55" r="8" fill="${ink}"/><circle cx="66.5" cy="52" r="2.4" fill="#fff"/>`
+          + `<path d="M42 30 Q60 24 78 34" stroke="${ink}" stroke-width="3.4" stroke-linecap="round"/>`;
+    case 'three':
+      return defeated ? spiral(40, 58, 6) + spiral(60, 48, 6) + spiral(80, 58, 6)
+        : [[40, 58], [60, 47], [80, 58]].map(([x, y]) => `<circle cx="${x}" cy="${y}" r="8.5" fill="#fff" stroke="${ink}" stroke-width="2.3"/><circle cx="${x + 2}" cy="${y + 1.5}" r="4" fill="${ink}"/><circle cx="${x + 3}" cy="${y}" r="1.2" fill="#fff"/>`).join('')
+          + `<path d="M31 46 L48 50 M89 46 L72 50" stroke="${ink}" stroke-width="3" stroke-linecap="round"/>`;
+    case 'shifty':
+      return defeated ? spiral(44, 56, 8) + spiral(76, 56, 8)
+        : `<ellipse cx="44" cy="56" rx="11" ry="9" fill="#fff" stroke="${ink}" stroke-width="2.4"/><ellipse cx="76" cy="56" rx="11" ry="9" fill="#fff" stroke="${ink}" stroke-width="2.4"/>`
+          + `<circle cx="50" cy="58" r="4.5" fill="${ink}"/><circle cx="82" cy="58" r="4.5" fill="${ink}"/>`
+          + `<path d="M32 52 Q44 46 56 51 L56 47 Q44 41 32 48 Z M64 51 Q76 46 88 52 L88 48 Q76 41 64 47 Z" fill="${lid}" stroke="${ink}" stroke-width="2.2" stroke-linejoin="round"/>`
+          + `<path d="M33 40 Q44 36 54 42 M66 42 Q76 36 87 40" stroke="${ink}" stroke-width="3" stroke-linecap="round"/>`;
+    case 'sleepy':
+      return defeated ? spiral(44, 56, 8) + spiral(76, 56, 8)
+        : `<ellipse cx="44" cy="56" rx="11" ry="11" fill="#fff" stroke="${ink}" stroke-width="2.4"/><ellipse cx="76" cy="56" rx="11" ry="11" fill="#fff" stroke="${ink}" stroke-width="2.4"/>`
+          + `<circle cx="45" cy="61" r="4.5" fill="${ink}"/><circle cx="77" cy="61" r="4.5" fill="${ink}"/>`
+          + `<path d="M33 56 A11 11 0 0 1 55 56 Z M65 56 A11 11 0 0 1 87 56 Z" fill="${lid}" stroke="${ink}" stroke-width="2.3" stroke-linejoin="round"/>`;
+    default: // pair
+      return defeated ? spiral(44, 55, 8) + spiral(76, 55, 8)
+        : `<ellipse cx="44" cy="55" rx="11" ry="12" fill="#fff" stroke="${ink}" stroke-width="2.4"/><ellipse cx="76" cy="55" rx="10" ry="11" fill="#fff" stroke="${ink}" stroke-width="2.4"/>`
+          + `<circle cx="47" cy="57" r="5" fill="${ink}"/><circle cx="79" cy="57" r="4.6" fill="${ink}"/>`
+          + `<circle cx="48.6" cy="54.6" r="1.6" fill="#fff"/><circle cx="80.4" cy="54.8" r="1.5" fill="#fff"/>`
+          + `<path d="M31 41 Q42 40 54 46 M88 39 Q78 39 66 46" stroke="${ink}" stroke-width="3.2" stroke-linecap="round"/>`;
+  }
+}
+
+function villainMouthSvg(style, defeated){
+  const ink = VILLAIN_INK;
+  if (defeated) return `<path d="M46 85 Q52 79 60 85 Q68 91 74 85" fill="none" stroke="${ink}" stroke-width="2.8" stroke-linecap="round"/>`;
+  switch (style.mouth){
+    case 'smirk':
+      return `<path d="M42 80 Q58 92 78 76" fill="none" stroke="${ink}" stroke-width="3" stroke-linecap="round"/><path d="M76 72 Q80 76 78 80" fill="none" stroke="${ink}" stroke-width="2" stroke-linecap="round"/>`;
+    case 'fangs':
+      return `<path d="M40 77 Q60 95 80 77 Q60 82 40 77 Z" fill="#7a2335" stroke="${ink}" stroke-width="2.4" stroke-linejoin="round"/>`
+        + `<path d="M47 79 l3 6 l3 -5 Z M67 79 l3 5 l3 -6 Z" fill="#fff" stroke="${ink}" stroke-width="1.3" stroke-linejoin="round"/>`;
+    case 'laugh':
+      return `<path d="M40 75 Q60 106 80 75 Z" fill="#7a2335" stroke="${ink}" stroke-width="2.4" stroke-linejoin="round"/><path d="M50 90 Q60 82 70 90 Q60 97 50 90 Z" fill="#ff8fa3"/><path d="M44 77 H76" stroke="#fff" stroke-width="3.2" stroke-linecap="round"/>`;
+    case 'wavy':
+      return `<path d="M41 82 l6 -4 l6 4 l6 -4 l6 4 l6 -4 l6 4" fill="none" stroke="${ink}" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/>`;
+    case 'o':
+      return `<ellipse cx="60" cy="83" rx="6.5" ry="7.5" fill="#7a2335" stroke="${ink}" stroke-width="2.4"/>`;
+    default: // grin with a snaggle tooth
+      return `<path d="M40 78 Q60 96 80 78 Z" fill="#7a2335" stroke="${ink}" stroke-width="2.4" stroke-linejoin="round"/><path d="M52 81 h7 v6 h-7 z" fill="#fff" stroke="${ink}" stroke-width="1.4"/>`;
+  }
+}
+
+function villainPatternSvg(style, v){
+  const d = villainShade(v.color, 0.22);
+  switch (style.pattern){
+    case 'spots': return `<g fill="${d}" opacity=".55"><circle cx="30" cy="44" r="6"/><circle cx="92" cy="82" r="7"/><circle cx="84" cy="34" r="4"/><circle cx="26" cy="92" r="4.5"/></g>`;
+    case 'stripes': return `<g stroke="${d}" stroke-width="7" opacity=".45"><path d="M0 34 H120 M0 98 H120"/></g>`;
+    case 'bricks': return `<g stroke="${d}" stroke-width="2.4" opacity=".7" fill="none"><path d="M10 44 H110 M10 70 H110 M10 96 H110 M40 26 V44 M80 26 V44 M24 44 V70 M60 44 V70 M96 44 V70 M40 70 V96 M80 70 V96"/></g>`;
+    default: return '';
+  }
+}
+
+function villainPropSvg(style, behind){
+  const ink = VILLAIN_INK;
+  const p = style.prop;
+  if (behind){
+    if (p === 'speed') return `<g stroke="#fff" stroke-width="4" stroke-linecap="round" opacity=".9"><path d="M2 50 H14 M0 66 H12 M4 82 H14"/></g>`;
+    if (p === 'fizz') return `<g fill="#fff" stroke="${ink}" stroke-width="1.6"><circle cx="30" cy="10" r="5"/><circle cx="44" cy="4" r="3.5"/><circle cx="82" cy="8" r="4.5"/><circle cx="94" cy="18" r="3"/></g>`;
+    return '';
+  }
+  switch (p){
+    case 'candy': return `<g transform="translate(104 44) rotate(-20)"><path d="M-12 0 l-6 -6 v12 Z M12 0 l6 -6 v12 Z" fill="#ff7aa8" stroke="${ink}" stroke-width="1.8" stroke-linejoin="round"/><ellipse rx="12" ry="8" fill="#ff7aa8" stroke="${ink}" stroke-width="2"/><path d="M-6 -6 Q0 0 -6 6 M2 -7 Q8 0 2 7" stroke="#fff" stroke-width="2" fill="none"/></g>`;
+    case 'map': return `<g transform="translate(104 42) rotate(12)"><path d="M-14 -10 L-5 -13 L5 -10 L14 -13 V11 L5 14 L-5 11 L-14 14 Z" fill="#fff3c4" stroke="${ink}" stroke-width="2" stroke-linejoin="round"/><path d="M-9 2 Q-2 -6 4 3 T10 -4" stroke="#e05a5a" stroke-width="2" fill="none" stroke-dasharray="3 2"/><text x="2" y="10" font-size="9" font-weight="800" fill="${ink}" font-family="sans-serif">?</text></g>`;
+    case 'finger': return `<rect x="56" y="70" width="8" height="22" rx="4" fill="#fff" stroke="${ink}" stroke-width="2"/>`;
+    case 'screen': return `<g transform="translate(104 46) rotate(-8)"><rect x="-13" y="-18" width="26" height="36" rx="5" fill="#2f3b55" stroke="${ink}" stroke-width="2.2"/><rect x="-9" y="-13" width="18" height="24" rx="2" fill="#7fe0ff"/></g>`;
+    case 'magnifier': return `<g transform="translate(104 42)"><path d="M6 8 L16 20" stroke="#8a5a2b" stroke-width="5" stroke-linecap="round"/><circle r="11" fill="rgba(200,240,255,.6)" stroke="${ink}" stroke-width="3"/><path d="M-5 -4 Q-3 -7 1 -7" stroke="#fff" stroke-width="2" fill="none"/></g>`;
+    case 'cursor': return `<g transform="translate(98 26) rotate(-10)"><path d="M0 0 L0 24 L6 18 L11 28 L16 26 L11 16 L19 16 Z" fill="#fff" stroke="${ink}" stroke-width="2.2" stroke-linejoin="round"/></g>`;
+    case 'peel': return `<g transform="translate(104 46)"><path d="M0 -12 C6 -4 10 4 6 12 C2 6 -2 6 -6 12 C-10 4 -6 -4 0 -12 Z" fill="#ffe066" stroke="${ink}" stroke-width="2" stroke-linejoin="round"/><path d="M0 -12 V-16" stroke="#8a5a2b" stroke-width="3" stroke-linecap="round"/></g>`;
+    case 'bandage': return `<g transform="translate(36 40) rotate(-30)"><rect x="-13" y="-5" width="26" height="10" rx="5" fill="#ffd8b0" stroke="${ink}" stroke-width="1.8"/><rect x="-4" y="-5" width="8" height="10" fill="#f6c18f"/></g>`;
+    case 'envelope': return `<g transform="translate(104 44) rotate(-12)"><rect x="-14" y="-10" width="28" height="20" rx="3" fill="#fff" stroke="${ink}" stroke-width="2"/><path d="M-14 -9 L0 3 L14 -9" fill="none" stroke="${ink}" stroke-width="2" stroke-linejoin="round"/><circle cx="9" cy="-8" r="5" fill="#e05a5a" stroke="${ink}" stroke-width="1.6"/><text x="9" y="-5.5" font-size="7" font-weight="800" text-anchor="middle" fill="#fff" font-family="sans-serif">!</text></g>`;
+    default: return '';
+  }
 }
 
 function villainSvg(topicId, defeated){
   const v = VILLAINS[topicId];
   if (!v) return '';
+  const style = VILLAIN_STYLE[topicId] || { eyes: 'pair', mouth: 'grin', pattern: 'none', prop: 'none' };
   const ink = VILLAIN_INK;
   const ex = v.extras || [];
-  const eyes = defeated
-    ? `<path d="M42 54 m-8 0 a8 8 0 1 0 16 0 a5 5 0 1 0 -10 0 a2 2 0 1 0 4 0" fill="none" stroke="${ink}" stroke-width="2.4"/>`
-      + `<path d="M78 54 m-8 0 a8 8 0 1 0 16 0 a5 5 0 1 0 -10 0 a2 2 0 1 0 4 0" fill="none" stroke="${ink}" stroke-width="2.4"/>`
-    : `<ellipse cx="44" cy="55" rx="11" ry="12" fill="#fff" stroke="${ink}" stroke-width="2.4"/><ellipse cx="76" cy="55" rx="11" ry="12" fill="#fff" stroke="${ink}" stroke-width="2.4"/>`
-      + `<circle class="villain__pupil" cx="48" cy="57" r="5" fill="${ink}"/><circle class="villain__pupil" cx="80" cy="57" r="5" fill="${ink}"/>`
-      + `<circle cx="49.5" cy="55" r="1.6" fill="#fff"/><circle cx="81.5" cy="55" r="1.6" fill="#fff"/>`
-      + `<path d="M32 40 L54 46 M88 40 L66 46" stroke="${ink}" stroke-width="3.2" stroke-linecap="round"/>`;
-  const mask = ex.includes('mask') && !defeated
-    ? `<path d="M26 50 Q40 40 56 48 Q60 50 64 48 Q80 40 94 50 Q92 64 78 64 Q66 64 60 56 Q54 64 42 64 Q28 64 26 50 Z" fill="#2b2b2b" opacity=".85"/>`
-      + `<ellipse cx="44" cy="55" rx="7" ry="7.5" fill="#fff"/><ellipse cx="76" cy="55" rx="7" ry="7.5" fill="#fff"/><circle cx="47" cy="57" r="3.6" fill="${ink}"/><circle cx="79" cy="57" r="3.6" fill="${ink}"/>`
+  const n = ++villainSvgSeq;
+  const dark = villainShade(v.color, 0.28);
+  const body = villainShapePath(v.shape);
+  const handsUp = style.prop && style.prop !== 'none' && !['speed', 'fizz', 'finger', 'bandage'].includes(style.prop);
+  // Stubby arms with cartoon gloves; the right one holds the habit prop.
+  const arm = (x1, y1, cx, cy, x2, y2) =>
+    `<path d="M${x1} ${y1} Q${cx} ${cy} ${x2} ${y2}" stroke="${ink}" stroke-width="10" stroke-linecap="round" fill="none"/>`
+    + `<path d="M${x1} ${y1} Q${cx} ${cy} ${x2} ${y2}" stroke="${dark}" stroke-width="5.6" stroke-linecap="round" fill="none"/>`
+    + `<circle cx="${x2}" cy="${y2}" r="6.5" fill="#fff" stroke="${ink}" stroke-width="2.2"/>`;
+  const arms = defeated
+    ? arm(22, 74, 8, 82, 8, 96) + arm(98, 74, 112, 82, 112, 96)
+    : arm(22, 72, 6, 70, 8, 56) + (handsUp ? arm(98, 70, 108, 64, 104, 54) : arm(98, 72, 114, 76, 112, 90));
+  const feet = ex.includes('wheels') ? '' : `<ellipse cx="43" cy="113" rx="11" ry="6.5" fill="${dark}" stroke="${ink}" stroke-width="2.3"/><ellipse cx="77" cy="113" rx="11" ry="6.5" fill="${dark}" stroke="${ink}" stroke-width="2.3"/>`;
+  const usePairExtras = style.eyes === 'pair' || style.eyes === 'shifty';
+  const mask = ex.includes('mask') && !defeated && usePairExtras
+    ? `<path d="M27 52 Q38 42 54 49 Q60 51 66 49 Q82 42 93 52 Q91 64 78 64 Q67 64 60 57 Q53 64 42 64 Q29 64 27 52 Z" fill="${ink}" opacity=".82"/>`
+      + `<ellipse cx="44" cy="56" rx="7" ry="7" fill="#fff"/><ellipse cx="76" cy="56" rx="7" ry="7" fill="#fff"/><circle cx="47" cy="57.5" r="3.5" fill="${ink}"/><circle cx="79" cy="57.5" r="3.5" fill="${ink}"/>`
     : '';
   const goggles = ex.includes('goggles') && !defeated
-    ? `<path d="M22 52 H32 M88 52 H98" stroke="${ink}" stroke-width="3"/><circle cx="44" cy="55" r="14" fill="none" stroke="#ffd23f" stroke-width="4"/><circle cx="76" cy="55" r="14" fill="none" stroke="#ffd23f" stroke-width="4"/>`
+    ? (style.eyes === 'one'
+      ? `<circle cx="60" cy="52" r="21" fill="none" stroke="#ffd23f" stroke-width="4.5"/><path d="M20 50 H39 M81 50 H100" stroke="${ink}" stroke-width="3"/>`
+      : `<path d="M20 53 H31 M89 53 H100" stroke="${ink}" stroke-width="3"/><circle cx="44" cy="55" r="14" fill="none" stroke="#ffd23f" stroke-width="4"/><circle cx="76" cy="55" r="14" fill="none" stroke="#ffd23f" stroke-width="4"/><path d="M58 55 H62" stroke="#ffd23f" stroke-width="4"/>`)
     : '';
-  const mouth = defeated
-    ? `<path d="M46 84 Q52 78 60 84 Q68 90 74 84" fill="none" stroke="${ink}" stroke-width="2.8" stroke-linecap="round"/>`
-    : `<path d="M40 78 Q60 96 80 78 Z" fill="#7a2335" stroke="${ink}" stroke-width="2.4" stroke-linejoin="round"/><path d="M52 81 h7 v6 h-7 z" fill="#fff" stroke="${ink}" stroke-width="1.4"/>`;
-  const mustache = ex.includes('mustache')
+  const mustache = ex.includes('mustache') && !defeated
     ? `<path d="M60 74 C52 68 42 70 38 76 C36 72 32 72 30 74 C36 80 48 80 60 76 C72 80 84 80 90 74 C88 72 84 72 82 76 C78 70 68 68 60 74 Z" fill="#3b2a1e" stroke="${ink}" stroke-width="1.4"/>`
     : '';
+  const dizzy = defeated
+    ? `<g fill="#ffd23f" stroke="${ink}" stroke-width="1.2"><path d="M30 14 l2 4 4 .5-3 2.6.8 4-3.8-2-3.8 2 .8-4-3-2.6 4-.5z"/><path d="M88 10 l2 4 4 .5-3 2.6.8 4-3.8-2-3.8 2 .8-4-3-2.6 4-.5z"/><circle cx="60" cy="6" r="3"/></g>`
+    : '';
+  const seed = (topicId.length * 7 + n) % 97;
   return `<svg class="villain${defeated ? ' villain--defeated' : ''}" viewBox="0 0 120 124" width="100%" height="100%" fill="none" xmlns="http://www.w3.org/2000/svg" focusable="false">`
-    + villainExtrasSvg(v, true)
-    + `<path d="${villainShapePath(v.shape)}" fill="${v.color}" stroke="${ink}" stroke-width="2.6" stroke-linejoin="round"/>`
-    + `<ellipse cx="60" cy="98" rx="26" ry="7" fill="rgba(255,255,255,.22)"/>`
-    + `<circle cx="30" cy="74" r="6" fill="#ff8fa3" opacity=".55"/><circle cx="90" cy="74" r="6" fill="#ff8fa3" opacity=".55"/>`
-    + eyes + mask + goggles + mouth + mustache
-    + villainExtrasSvg(v, false)
-    + '</svg>';
+    + `<defs><clipPath id="vclip${n}"><path d="${body}"/></clipPath>`
+    + `<filter id="vwob${n}" x="-8%" y="-8%" width="116%" height="116%"><feTurbulence type="fractalNoise" baseFrequency="0.035" numOctaves="2" seed="${seed}"/><feDisplacementMap in="SourceGraphic" scale="2.4" xChannelSelector="R" yChannelSelector="G"/></filter></defs>`
+    + `<g filter="url(#vwob${n})">`
+    + villainExtrasSvg(v, true) + villainPropSvg(style, true)
+    + feet + arms
+    + `<path d="${body}" fill="${v.color}"/>`
+    + `<g clip-path="url(#vclip${n})">`
+    +   villainPatternSvg(style, v)
+    +   `<ellipse cx="74" cy="114" rx="62" ry="34" fill="${dark}" opacity=".28"/>`
+    +   `<ellipse cx="38" cy="34" rx="15" ry="9" fill="#fff" opacity=".4" transform="rotate(-28 38 34)"/>`
+    + `</g>`
+    + `<path d="${body}" stroke="${ink}" stroke-width="2.8" stroke-linejoin="round"/>`
+    + `<circle cx="29" cy="74" r="6" fill="#ff8fa3" opacity=".5"/><circle cx="91" cy="74" r="6" fill="#ff8fa3" opacity=".5"/>`
+    + villainEyesSvg(style, v, defeated) + mask + goggles + villainMouthSvg(style, defeated) + mustache
+    + villainExtrasSvg(v, false) + (defeated ? '' : villainPropSvg(style, false)) + dizzy
+    + `</g></svg>`;
 }
 
 /* Which villains a learner has beaten: { topicId: [levelIndex, ...] } */

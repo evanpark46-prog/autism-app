@@ -166,7 +166,22 @@ function renderTopicGrid(){
   const progressHtml = `<p class="home-progress">${t('home_progress_summary', { done: completedIds.size, total: TOPICS.length })}
     &nbsp;<a href="badges.html">${t('home_badges_link')}</a></p>`;
 
-  grid.innerHTML = progressHtml + favoritesHtml + groupsHtml;
+  const hasMap = typeof lessonMapHtml === 'function';
+  const view = hasMap ? getHomeView() : 'cards';
+  const toggleHtml = hasMap ? homeViewToggleHtml(view) : '';
+  if (view === 'map'){
+    const mapGroups = TOPIC_CATEGORIES.map(group => ({
+      title: t('home_category_' + group.key),
+      accent: CATEGORY_ACCENT_VAR[group.color],
+      metas: group.topics.map(id => getTopicMeta(id)).filter(Boolean).filter(meta => topicMatchesAgeBand(meta, ageBand)),
+    })).filter(g => g.metas.length);
+    grid.innerHTML = progressHtml + toggleHtml + lessonMapHtml(mapGroups, lang, completedIds);
+    wireLessonMap(grid);
+    return;
+  }
+
+  grid.innerHTML = progressHtml + toggleHtml + favoritesHtml + groupsHtml;
+  if (hasMap) wireLessonMap(grid);
   wirePinButtons(grid);
   initScrollReveal(grid);
 }
