@@ -204,6 +204,13 @@ function renderPracticeWorksheet(id, levelIdx){
 
         <h2>${t('practice_ws_part4')}</h2>
         ${content.practicePrompt ? `<p class="practice-ws-prompt">${escapeHtml(content.practicePrompt)}</p>` : ''}
+        <div class="practice-ws-adults">
+          <strong>${t('practice_ws_my_adults')}</strong>
+          <ol>${[0, 1, 2].map(i => {
+            const adults = typeof trustedAdults === 'function' ? trustedAdults() : [];
+            return `<li>${adults[i] ? escapeHtml(adults[i]) : '______________________'}</li>`;
+          }).join('')}</ol>
+        </div>
         <ul class="practice-ws-checklist">${recap.map(r => `<li><span class="worksheet-checkbox" aria-hidden="true">☐</span> ${escapeHtml(r)}</li>`).join('')}</ul>
         <p class="worksheet-writing-prompt">${t('worksheet_writing_prompt')}</p>
         ${lines(3)}

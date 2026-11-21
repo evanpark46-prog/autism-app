@@ -118,6 +118,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initTextSizeSwitcher();
   initHeadingFontSwitcher();
   initDisplayPanel();
+  if (typeof initProfile === 'function') initProfile();
   if (typeof initCalmModeToggle === 'function') initCalmModeToggle();
   if (typeof initSymbolModeToggle === 'function') initSymbolModeToggle();
   if (typeof initCalmSpace === 'function') initCalmSpace();

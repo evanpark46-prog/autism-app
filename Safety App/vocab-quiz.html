@@ -7,10 +7,11 @@
   <script>(function(){try{var sizes=[87.5,100,115,130,145];var idx=parseInt(localStorage.getItem('safetylib_text_size_idx'),10);if(!(idx>=0&&idx<sizes.length))idx=1;document.documentElement.style.fontSize=sizes[idx]+'%';}catch(e){}})();</script>
   <script>(function(){try{var f=localStorage.getItem('safetylib_heading_font');if(f==='cursive')document.documentElement.setAttribute('data-heading-font','cursive');}catch(e){}})();</script>
   <script>(function(){try{var c=localStorage.getItem('safetylib_calm_mode');document.documentElement.setAttribute('data-calm-mode', c==='on'?'on':'off');}catch(e){}})();</script>
+  <script>(function(){try{var p=JSON.parse(localStorage.getItem('safetylib_profile_v1')||'{}')||{};var r=document.documentElement;r.setAttribute('data-look',p.look==='calm'?'calm':'playful');if(p.contrast)r.setAttribute('data-contrast','');if(p.easyFont)r.setAttribute('data-easy-font','');}catch(e){document.documentElement.setAttribute('data-look','playful');}})();</script>
   <title>Word Power Quiz — Safety Superheroes</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;800;900&family=DM+Sans:wght@400;500;700&family=Dancing+Script:wght@600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Atkinson+Hyperlegible:wght@400;700&family=Nunito:wght@600;700;800;900&family=DM+Sans:wght@400;500;700&family=Dancing+Script:wght@600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/styles.css">
   <link rel="manifest" href="manifest.json">
   <meta name="theme-color" content="#c8460a">
@@ -97,6 +98,7 @@
   <script src="js/glossary.js"></script>
   <script src="js/soundfx.js"></script>
   <script src="js/page-vocab-quiz.js"></script>
+  <script src="js/profile.js"></script>
   <script src="js/boot.js"></script>
 </body>
 </html>

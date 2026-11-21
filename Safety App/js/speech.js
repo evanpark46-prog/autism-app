@@ -73,7 +73,8 @@ function voiceProfileFor(speaker){
   if (!speaker || speaker === 'Narrator'){
     return { voice: pool[0], pitch: 1, rate: 0.95 };
   }
-  const isChild = /alex/i.test(speaker);
+  const customName = typeof learnerName === 'function' ? learnerName() : '';
+  const isChild = /alex/i.test(speaker) || (!!customName && speaker.indexOf(customName) !== -1);
   const voice = pool.length > 1 ? pool[hashStr(speaker) % pool.length] : pool[0];
   let pitch;
   if (highQuality) pitch = isChild ? 1.06 : 1;
@@ -217,10 +218,13 @@ function speakWithHighlight(segments, speaker, joiner){
   window.speechSynthesis.speak(utter);
 }
 
-function wireSpeakButtonHighlighted(root, segments, speaker, joiner){
+// `autoRead` (default true): when the learner's profile has "read
+// everything aloud" on, the segments are spoken automatically once wired.
+function wireSpeakButtonHighlighted(root, segments, speaker, joiner, autoRead){
   if (!SPEECH_SUPPORTED) return;
   const btn = root.querySelector('[data-speak-btn]');
   if (btn) btn.addEventListener('click', () => speakWithHighlight(segments, speaker, joiner));
+  if (btn && autoRead !== false && typeof maybeAutoRead === 'function') maybeAutoRead(btn);
 }
 
 function speakButtonHtml(){
