@@ -1991,7 +1991,7 @@ function initTopicPage(){
   const storyPanel = document.querySelector('[data-panel="story"]');
   if (storyPanel) storyPanel.innerHTML = `
     <div class="topic-loading">
-      <div class="topic-loading__mascot">${heroLandingSvg(meta.theme)}</div>
+      <div class="topic-loading__mascot">${typeof heroLoadingSceneHtml === 'function' && typeof ANIMAL_HEROES !== 'undefined' && ANIMAL_HEROES[meta.id] ? heroLoadingSceneHtml(meta.id, meta.theme, getLang()) : heroLandingSvg(meta.theme)}</div>
       <p>${t('topic_loading')}</p>
     </div>`;
   animateHeroLanding(storyPanel);
