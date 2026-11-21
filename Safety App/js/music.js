@@ -12,7 +12,7 @@
    ========================================================================== */
 
 const MUSIC_KEY = 'safetylib_music';
-const MUSIC_BPM = 104;
+const MUSIC_TRACK_KEY = 'safetylib_music_track';
 const MUSIC_VOLUME = 0.075;
 
 function isMusicOn(){
@@ -20,22 +20,76 @@ function isMusicOn(){
 }
 function musicBlocked(){ return typeof getCalmMode === 'function' && getCalmMode(); }
 
-/* ---- The tune ----
-   8th-note grid, 8 steps per bar. Numbers are MIDI notes, '_' holds the
-   previous note, null is a rest. Phrase A climbs (C F C G); phrase B lifts
-   through the heroic Ab -> Bb -> C cadence. */
+/* ---- The tracks (all original compositions) ----
+   8th-note grid, 8 steps per bar, 8 bars per loop. Numbers are MIDI notes,
+   '_' holds the previous note, null is a rest. Chords are [root, 'M'|'m'].
+   style.bass: 'march' (root on 1, fifth on 3) | 'drive' (steady 8ths) | 'soft' (half notes)
+   style.comp: 'stabs' (chord hits on 2 & 4) | 'pad' (held chord) | 'offbeat' (hits between beats)
+   style.drums: 'march' | 'drive' | 'soft' | 'fanfare' */
 const _ = '_';
-const THEME_LEAD = [
-  [67, 72, 76, _, 79, _, _, _],      // C
-  [81, _, 79, 77, 76, _, 72, _],     // F
-  [76, _, 79, _, 84, _, _, _],       // C
-  [83, _, 81, _, 79, _, 74, _],      // G
-  [72, _, 75, _, 80, _, _, _],       // Ab
-  [74, _, 77, _, 82, _, _, _],       // Bb
-  [84, _, _, _, 79, _, 76, _],       // C
-  [79, _, 84, _, _, _, null, null],  // C
+const MUSIC_TRACKS = [
+  { id: 'march', emoji: '🦸', nameKey: 'music_track_march', bpm: 104,
+    lead: [
+      [67, 72, 76, _, 79, _, _, _],      // C
+      [81, _, 79, 77, 76, _, 72, _],     // F
+      [76, _, 79, _, 84, _, _, _],       // C
+      [83, _, 81, _, 79, _, 74, _],      // G
+      [72, _, 75, _, 80, _, _, _],       // Ab
+      [74, _, 77, _, 82, _, _, _],       // Bb
+      [84, _, _, _, 79, _, 76, _],       // C
+      [79, _, 84, _, _, _, null, null],  // C
+    ],
+    chords: [[48, 'M'], [53, 'M'], [48, 'M'], [43, 'M'], [44, 'M'], [46, 'M'], [48, 'M'], [48, 'M']],
+    style: { lead: 'brass', bass: 'march', comp: 'stabs', drums: 'march' } },
+
+  { id: 'sky', emoji: '🚀', nameKey: 'music_track_sky', bpm: 132,
+    lead: [
+      [69, 72, 76, 72, 81, _, 76, _],    // Am
+      [77, _, 72, 77, 81, _, 84, _],     // F
+      [79, _, 76, 72, 76, _, 79, _],     // C
+      [83, _, 79, 74, 79, _, _, _],      // G
+      [81, _, _, 79, 76, _, 72, _],      // Am
+      [77, _, _, 76, 72, _, 69, _],      // F
+      [71, 74, 79, _, 83, _, 86, _],     // G
+      [88, _, _, _, 80, _, _, _],        // E
+    ],
+    chords: [[45, 'm'], [41, 'M'], [48, 'M'], [43, 'M'], [45, 'm'], [41, 'M'], [43, 'M'], [40, 'M']],
+    style: { lead: 'synth', bass: 'drive', comp: 'offbeat', drums: 'drive' } },
+
+  { id: 'city', emoji: '🌃', nameKey: 'music_track_city', bpm: 90,
+    lead: [
+      [72, _, _, _, 69, _, 72, _],       // F
+      [74, _, _, _, 77, _, _, _],        // Dm
+      [74, _, 72, _, 70, _, _, _],       // Bb
+      [72, _, _, _, null, null, 67, _],  // C
+      [77, _, _, _, 76, _, 74, _],       // F
+      [72, _, _, _, 69, _, _, _],        // Dm
+      [70, _, 74, _, 79, _, 77, _],      // Gm
+      [76, _, _, _, _, _, null, null],   // C
+    ],
+    chords: [[41, 'M'], [38, 'm'], [46, 'M'], [48, 'M'], [41, 'M'], [38, 'm'], [43, 'm'], [48, 'M']],
+    style: { lead: 'soft', bass: 'soft', comp: 'pad', drums: 'soft' } },
+
+  { id: 'victory', emoji: '🏆', nameKey: 'music_track_victory', bpm: 112,
+    lead: [
+      [74, _, _, 78, 81, _, _, _],       // D
+      [83, _, 81, _, 79, _, 78, _],      // G
+      [76, _, _, 78, 79, _, 81, _],      // A
+      [86, _, _, _, 81, _, _, _],        // D
+      [83, _, _, 81, 78, _, 74, _],      // Bm
+      [79, _, _, 78, 76, _, 74, _],      // G
+      [73, _, 76, _, 81, _, 85, _],      // A
+      [86, _, _, _, _, _, null, null],   // D
+    ],
+    chords: [[50, 'M'], [43, 'M'], [45, 'M'], [50, 'M'], [47, 'm'], [43, 'M'], [45, 'M'], [50, 'M']],
+    style: { lead: 'brass', bass: 'march', comp: 'stabs', drums: 'fanfare' } },
 ];
-const THEME_CHORDS = [48, 53, 48, 43, 44, 46, 48, 48]; // roots (major triads)
+
+function currentTrack(){
+  let id = null;
+  try { id = localStorage.getItem(MUSIC_TRACK_KEY); } catch (e) { /* ignore */ }
+  return MUSIC_TRACKS.find(tr => tr.id === id) || MUSIC_TRACKS[0];
+}
 
 let musicCtx = null, musicMaster = null, musicDuck = null, musicLowpass = null;
 let musicTimer = null, musicNextTime = 0, musicStep = 0, musicLoop = 0, musicPlaying = false;
@@ -124,44 +178,90 @@ function playDrum(kind, start, level){
   src.start(start); src.stop(start + 0.1);
 }
 
+let playingTrack = MUSIC_TRACKS[0];
+
+function chordTones(chord){
+  const [root, q] = chord;
+  return [0, q === 'm' ? 3 : 4, 7].map(iv => root + iv);
+}
+
+function playLead(note, time, dur, kind, variation){
+  if (kind === 'soft'){
+    playTone(midiHz(note), time, dur, 'sine', 0.3, 0.04);
+    playTone(midiHz(note + 12), time, dur, 'sine', 0.05, 0.04);
+    return;
+  }
+  if (variation){
+    playTone(midiHz(note - 12), time, dur, 'triangle', 0.32);
+    return;
+  }
+  if (kind === 'synth'){
+    playTone(midiHz(note), time, dur, 'square', 0.07, 0.01);
+    playTone(midiHz(note), time, dur, 'triangle', 0.22, 0.01);
+    return;
+  }
+  playTone(midiHz(note), time, dur, 'sawtooth', 0.11);
+  playTone(midiHz(note), time, dur, 'triangle', 0.22); // body under the "brass"
+}
+
 function scheduleStep(step, time){
-  const eighth = 60 / MUSIC_BPM / 2;
+  const tr = playingTrack;
+  const eighth = 60 / tr.bpm / 2;
   const bar = Math.floor(step / 8) % 8;
   const pos = step % 8;
-  const root = THEME_CHORDS[bar];
-  const variation = musicLoop % 2 === 1; // every other loop: softer, lower melody
+  const chord = tr.chords[bar];
+  const root = chord[0];
+  const tones = chordTones(chord);
+  const variation = tr.style.lead !== 'soft' && musicLoop % 2 === 1; // every other loop: softer, lower melody
 
   // Lead melody
-  const note = THEME_LEAD[bar][pos];
+  const note = tr.lead[bar][pos];
   if (typeof note === 'number'){
     let len = 1;
-    while (pos + len < 8 && THEME_LEAD[bar][pos + len] === _) len++;
-    const dur = len * eighth * 0.95;
-    if (variation){
-      playTone(midiHz(note - 12), time, dur, 'triangle', 0.32);
-    } else {
-      playTone(midiHz(note), time, dur, 'sawtooth', 0.11);
-      playTone(midiHz(note), time, dur, 'triangle', 0.22); // body under the "brass"
-    }
+    while (pos + len < 8 && tr.lead[bar][pos + len] === _) len++;
+    playLead(note, time, len * eighth * 0.95, tr.style.lead, variation);
   }
-  // March: bass on beats 1 & 3, chord stabs on 2 & 4
-  if (pos === 0 || pos === 4){
+
+  // Bass
+  if (tr.style.bass === 'march' && (pos === 0 || pos === 4)){
     playTone(midiHz(root - 12 + (pos === 4 ? 7 : 0)), time, eighth * 1.6, 'triangle', 0.42);
+  } else if (tr.style.bass === 'drive'){
+    playTone(midiHz(root - 12 + (pos % 4 === 3 ? 12 : 0)), time, eighth * 0.8, 'triangle', 0.34, 0.008);
+  } else if (tr.style.bass === 'soft' && (pos === 0 || pos === 4)){
+    playTone(midiHz(root - 12), time, eighth * 3.6, 'sine', 0.38, 0.03);
   }
-  if (pos === 2 || pos === 6){
-    [0, 4, 7].forEach(iv => playTone(midiHz(root + 12 + iv), time, eighth * 0.9, 'square', 0.035, 0.01));
+
+  // Chords
+  if (tr.style.comp === 'stabs' && (pos === 2 || pos === 6)){
+    tones.forEach(n => playTone(midiHz(n + 12), time, eighth * 0.9, 'square', 0.035, 0.01));
+  } else if (tr.style.comp === 'offbeat' && pos % 2 === 1){
+    tones.forEach(n => playTone(midiHz(n + 12), time, eighth * 0.6, 'square', 0.022, 0.005));
+  } else if (tr.style.comp === 'pad' && pos === 0){
+    tones.forEach(n => playTone(midiHz(n + 12), time, eighth * 7.6, 'triangle', 0.07, 0.25));
   }
-  // Drums: soft kick on 1 & 3, light snare on 2 & 4, a little roll into the loop
-  if (pos === 0 || pos === 4) playDrum('kick', time, 0.5);
-  if (pos === 2 || pos === 6) playDrum('snare', time, 0.12);
-  if (bar === 7 && pos >= 4){
-    playDrum('snare', time, 0.07);
-    playDrum('snare', time + eighth / 2, 0.09);
+
+  // Drums
+  const d = tr.style.drums;
+  if (d === 'march' || d === 'fanfare'){
+    if (pos === 0 || pos === 4) playDrum('kick', time, 0.5);
+    if (pos === 2 || pos === 6) playDrum('snare', time, d === 'fanfare' ? 0.14 : 0.12);
+    if (bar === 7 && pos >= 4){
+      playDrum('snare', time, 0.07);
+      playDrum('snare', time + eighth / 2, 0.09);
+    }
+    if (d === 'fanfare' && bar % 4 === 3 && pos === 6) playDrum('kick', time, 0.45);
+  } else if (d === 'drive'){
+    if (pos % 2 === 0) playDrum('kick', time, 0.42);
+    if (pos === 2 || pos === 6) playDrum('snare', time, 0.11);
+    if (pos % 2 === 1) playDrum('snare', time, 0.03); // light "hi-hat"
+  } else if (d === 'soft'){
+    if (pos === 0) playDrum('kick', time, 0.32);
+    if (pos === 4) playDrum('snare', time, 0.05);
   }
 }
 
 function musicScheduler(){
-  const eighth = 60 / MUSIC_BPM / 2;
+  const eighth = 60 / playingTrack.bpm / 2;
   while (musicNextTime < musicCtx.currentTime + 0.15){
     scheduleStep(musicStep, musicNextTime);
     musicNextTime += eighth;
@@ -182,6 +282,7 @@ function startMusic(){
     if (musicPlaying) return;
     musicPlaying = true;
     musicStep = 0; musicLoop = 0;
+    playingTrack = currentTrack();
     musicNextTime = ctx.currentTime + 0.08;
     musicMaster.gain.cancelScheduledValues(ctx.currentTime);
     musicMaster.gain.setValueAtTime(0.0001, ctx.currentTime);
@@ -230,27 +331,72 @@ function playHeroFanfare(){
   } catch (e) { return false; }
 }
 
-/* ---- Header button ---- */
-function musicButtonLabel(){ return t(isMusicOn() ? 'music_turn_off' : 'music_turn_on'); }
+/* ---- Header button + track menu ---- */
+function musicButtonLabel(){ return t(isMusicOn() ? 'music_menu_label_on' : 'music_menu_label_off', { track: t(currentTrack().nameKey) }); }
+
+function selectTrack(id){
+  try { localStorage.setItem(MUSIC_TRACK_KEY, id); } catch (e) { /* ignore */ }
+  if (musicPlaying) stopMusic();
+  setMusicOn(true);
+}
 
 function injectMusicButton(){
   const anchor = document.querySelector('[data-profile-open]') || document.querySelector('.display-settings');
   if (!anchor || document.querySelector('[data-music-toggle]')) return;
+  const wrap = document.createElement('div');
+  wrap.className = 'music-menu-wrap';
   const btn = document.createElement('button');
   btn.type = 'button';
   btn.className = 'music-btn';
   btn.setAttribute('data-music-toggle', '');
+  btn.setAttribute('aria-haspopup', 'true');
+  btn.setAttribute('aria-expanded', 'false');
+  const menu = document.createElement('div');
+  menu.className = 'music-menu';
+  menu.setAttribute('role', 'menu');
+  menu.hidden = true;
+  wrap.appendChild(btn);
+  wrap.appendChild(menu);
+
   const render = () => {
     const on = isMusicOn() && !musicBlocked();
     btn.innerHTML = `<span aria-hidden="true">${on ? '🎵' : '🔇'}</span>`;
-    btn.setAttribute('aria-pressed', String(on));
-    btn.setAttribute('aria-label', musicButtonLabel());
+    btn.setAttribute('aria-label', musicBlocked() ? t('music_calm_note') : musicButtonLabel());
     btn.title = musicBlocked() ? t('music_calm_note') : musicButtonLabel();
     btn.classList.toggle('is-on', on);
     btn.disabled = musicBlocked();
+    const cur = currentTrack().id;
+    menu.innerHTML = `<p class="music-menu__title">${escapeHtml(t('music_menu_title'))}</p>`
+      + MUSIC_TRACKS.map(tr => `
+        <button type="button" role="menuitemradio" class="music-menu__item" data-music-track="${tr.id}" aria-checked="${on && tr.id === cur}">
+          <span aria-hidden="true">${tr.emoji}</span> ${escapeHtml(t(tr.nameKey))}
+        </button>`).join('')
+      + `<button type="button" role="menuitemradio" class="music-menu__item music-menu__off" data-music-track="off" aria-checked="${!on}">
+          <span aria-hidden="true">🔇</span> ${escapeHtml(t('music_off'))}
+        </button>`;
+    menu.querySelectorAll('[data-music-track]').forEach(item => item.addEventListener('click', () => {
+      const id = item.dataset.musicTrack;
+      if (id === 'off') setMusicOn(false); else selectTrack(id);
+      close();
+      btn.focus();
+    }));
   };
-  btn.addEventListener('click', () => { setMusicOn(!isMusicOn()); render(); });
-  anchor.parentNode.insertBefore(btn, anchor);
+  const open = () => { render(); menu.hidden = false; btn.setAttribute('aria-expanded', 'true'); const first = menu.querySelector('[aria-checked="true"]') || menu.querySelector('[data-music-track]'); if (first) first.focus(); };
+  const close = () => { menu.hidden = true; btn.setAttribute('aria-expanded', 'false'); };
+  btn.addEventListener('click', () => { if (menu.hidden) open(); else close(); });
+  // composedPath() (not contains) because opening the menu re-renders the
+  // button icon, detaching the original click target.
+  document.addEventListener('click', e => { if (!menu.hidden && !e.composedPath().includes(wrap)) close(); });
+  document.addEventListener('keydown', e => { if (e.key === 'Escape' && !menu.hidden){ close(); btn.focus(); } });
+  menu.addEventListener('keydown', e => {
+    if (e.key !== 'ArrowDown' && e.key !== 'ArrowUp') return;
+    e.preventDefault();
+    const items = [...menu.querySelectorAll('[data-music-track]')];
+    const i = items.indexOf(document.activeElement);
+    items[(i + (e.key === 'ArrowDown' ? 1 : items.length - 1)) % items.length].focus();
+  });
+
+  anchor.parentNode.insertBefore(wrap, anchor);
   render();
   window.addEventListener('safetylib:musicchange', render);
   window.addEventListener('safetylib:langchange', render);
