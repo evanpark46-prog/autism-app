@@ -680,8 +680,15 @@ function initTopicPage(){
     const answerStateClass = chosenForIllustration
       ? (chosenForIllustration.correct ? ' is-answer-right' : ' is-answer-wrong')
       : '';
-    const illustrationHtml = step.illustration
-      ? `<div class="story-illustration story-illustration--scene${answerStateClass}" data-answer-badge-right="${escapeHtml(t('story_pic_right'))}" data-answer-badge-wrong="${escapeHtml(t('story_pic_wrong'))}">${getIllustration(step.illustration, showWrongIllustration)}</div>`
+    // A picture made for this exact answer (or this scene) wins; otherwise
+    // the lesson's shared artwork.
+    const ownPic = (chosenForIllustration && choiceImageSrc(meta.id, storyState.level, storyState.index, storyState.chosenIndex))
+      || choiceImageSrc(meta.id, storyState.level, storyState.index, 'scene');
+    const picHtml = ownPic
+      ? choiceImageHtml(ownPic, t(showWrongIllustration ? 'story_consequence_image_alt' : 'story_scene_illustration_alt', { topic: currentContent().title }))
+      : (step.illustration ? getIllustration(step.illustration, showWrongIllustration) : '');
+    const illustrationHtml = picHtml
+      ? `<div class="story-illustration story-illustration--scene${answerStateClass}" data-answer-badge-right="${escapeHtml(t('story_pic_right'))}" data-answer-badge-wrong="${escapeHtml(t('story_pic_wrong'))}">${picHtml}</div>`
       : '';
 
     panel.innerHTML = `
@@ -898,11 +905,29 @@ function initTopicPage(){
     let lineIndex = 0;
     let answered = false;
     const dialogueSceneNumber = getDialogueSceneNumber();
-    const dialogueIllustration = getDialogueIllustration(
+    const dlgLevel = storyState.level, dlgStep = storyState.index;
+    const dlgScenePic = choiceImageSrc(meta.id, dlgLevel, dlgStep, 'scene');
+    let dialogueIllustration = getDialogueIllustration(
       meta.id,
       dialogueSceneNumber,
       t('story_scene_illustration_alt', { topic: currentContent().title })
     );
+    // Pictures made for this exact scene / answers take over the shared panel.
+    const dlgHasOwnPics = dlgScenePic || step.choices.some((c, i) => choiceImageSrc(meta.id, dlgLevel, dlgStep, i));
+    if (dlgHasOwnPics){
+      const base = dlgScenePic || dialogueArtworkFile(meta.id, dialogueSceneNumber, false)
+        || (step.illustration && typeof ILLUSTRATIONS !== 'undefined' && ILLUSTRATIONS[step.illustration] ? ILLUSTRATIONS[step.illustration].file : '');
+      if (base){
+        dialogueIllustration = `<img src="${base}" data-dialogue-image data-dialogue-base-src="${base}" data-dialogue-consequence-src="${dialogueArtworkFile(meta.id, dialogueSceneNumber, true) || base}" alt="${escapeHtml(t('story_scene_illustration_alt', { topic: currentContent().title }))}" loading="eager">`;
+      }
+    }
+    let dlgChosen = null;
+    function showChoicePicture(){
+      if (dlgChosen == null) return;
+      const own = choiceImageSrc(meta.id, dlgLevel, dlgStep, dlgChosen);
+      const img = own && panel.querySelector('[data-dialogue-image]');
+      if (img) img.src = own;
+    }
 
     function setConsequenceVisual(showConsequence){
       const sceneEl = panel.querySelector('[data-dialogue-scene]');
@@ -964,6 +989,7 @@ function initTopicPage(){
       choicesEl.querySelectorAll('[data-choice]').forEach(btn => {
         btn.addEventListener('click', () => {
           const choice = step.choices[Number(btn.dataset.choice)];
+          dlgChosen = Number(btn.dataset.choice);
           answered = true;
           choicesEl.querySelectorAll('[data-choice]').forEach(b => { b.disabled = true; });
           btn.classList.add(choice.correct ? 'correct' : 'incorrect');
@@ -987,6 +1013,7 @@ function initTopicPage(){
       const beats = choiceOutcome(choice);
       if (beats){
         setConsequenceVisual(true);
+        showChoicePicture();
         panel.querySelector('[data-dialogue-box]').classList.add('is-consequence');
         advanceEl.style.visibility = 'hidden';
         const playBeat = (i) => {
@@ -1018,6 +1045,7 @@ function initTopicPage(){
       }
       const displayedSpeaker = showConsequence ? t('story_consequence_label') : replySpeaker;
       setConsequenceVisual(showConsequence);
+      showChoicePicture();
       panel.querySelector('[data-dialogue-box]').classList.toggle('is-consequence', showConsequence);
       speakerEl.textContent = displayedSpeaker;
       advanceEl.style.visibility = 'hidden';

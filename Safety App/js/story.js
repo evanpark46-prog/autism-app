@@ -77,6 +77,19 @@ const ILLUSTRATIONS = {
 // until art is generated for them).
 const ILLUSTRATION_WRONG_VARIANTS = {};
 
+/* Per-scene / per-answer pictures (img/choices/, registered in
+   js/choice-images.js by tools/build-choice-images.js). which = 'scene' or
+   a 0-based choice index. Returns '' when that picture hasn't been made yet,
+   so callers fall back to the existing artwork. */
+function choiceImageSrc(topicId, levelIndex, stepIndex, which){
+  if (typeof CHOICE_IMAGES === 'undefined' || levelIndex == null || stepIndex == null) return '';
+  const tail = which === 'scene' ? 'scene' : `C${Number(which) + 1}`;
+  return CHOICE_IMAGES[`${topicId}/L${levelIndex + 1}-S${String(stepIndex + 1).padStart(2, '0')}-${tail}`] || '';
+}
+function choiceImageHtml(src, alt){
+  return `<img src="${src}" alt="${escapeHtml(alt || '')}" loading="eager">`;
+}
+
 function getIllustration(key, wrong){
   const pic = ILLUSTRATIONS[key];
   if (!pic) return '';
