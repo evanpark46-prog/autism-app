@@ -69,7 +69,7 @@ function initTopicPage(){
 
   function wireModelingSpeak(panel, correctChoice){
     const btn = panel.querySelector('[data-modeling-speak]');
-    if (btn) btn.addEventListener('click', () => speak(correctChoice.text));
+    if (btn) btn.addEventListener('click', () => speakOrStop(() => speak(correctChoice.text)));
   }
 
   // "What happens next..." consequence chain. A wrong choice can carry an
@@ -107,7 +107,7 @@ function initTopicPage(){
     let shown = 1;
     const nextBtn = chain.querySelector('[data-chain-next]');
     chain.querySelectorAll('[data-chain-speak]').forEach(btn => {
-      btn.addEventListener('click', () => speak(beats[Number(btn.dataset.chainSpeak)]));
+      btn.addEventListener('click', () => speakOrStop(() => speak(beats[Number(btn.dataset.chainSpeak)])));
     });
     nextBtn.addEventListener('click', () => {
       if (shown < beats.length){
@@ -739,7 +739,7 @@ function initTopicPage(){
     const speakSegments = [{ el: panel.querySelector('.story-text'), text: step.text }];
     if (isChoiceStep){
       panel.querySelectorAll('[data-choice]').forEach((btn, i) => {
-        speakSegments.push({ el: btn, text: step.choices[i].text });
+        if (typeof readChoicesAloud !== 'function' || readChoicesAloud()) speakSegments.push({ el: btn, text: step.choices[i].text });
       });
     }
     wireSpeakButtonHighlighted(panel, speakSegments, null, '. ', !(isChoiceStep && storyState.answered));
@@ -1035,7 +1035,7 @@ function initTopicPage(){
       btn.onclick = (e) => {
         e.stopPropagation();
         if (activeTypewriterClear) activeTypewriterClear();
-        speakWithHighlight([{ el: textEl, text }], speaker);
+        speakOrStop(() => speakWithHighlight([{ el: textEl, text }], speaker));
       };
       if (typeof maybeAutoRead === 'function') maybeAutoRead(btn, 350);
     }
@@ -1908,9 +1908,10 @@ function initTopicPage(){
     overlay.classList.add('active');
 
     if (speakBtn){
+      const withChoices = typeof readChoicesAloud !== 'function' || readChoicesAloud();
       const checkpointSegments = [{ el: questionEl, text: cp.question }]
-        .concat([...choicesEl.querySelectorAll('[data-choice]')].map((btn, i) => ({ el: btn, text: cp.choices[i].text })));
-      speakBtn.onclick = () => speakWithHighlight(checkpointSegments, null, '. ');
+        .concat(withChoices ? [...choicesEl.querySelectorAll('[data-choice]')].map((btn, i) => ({ el: btn, text: cp.choices[i].text })) : []);
+      speakBtn.onclick = () => speakOrStop(() => speakWithHighlight(checkpointSegments, null, '. '));
     }
 
     choicesEl.querySelectorAll('[data-choice]').forEach(btn => {

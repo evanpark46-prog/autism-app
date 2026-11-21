@@ -23,11 +23,41 @@ if (SPEECH_SUPPORTED){
 
 // Lets other modules (the hero music, js/music.js) react to read-aloud
 // without touching speechSynthesis themselves.
+let speechBusy = false;
 function announceSpeech(utter){
   const fire = name => window.dispatchEvent(new CustomEvent(name));
-  utter.addEventListener('start', () => fire('safetylib:speechstart'));
-  utter.addEventListener('end', () => fire('safetylib:speechend'));
-  utter.addEventListener('error', () => fire('safetylib:speechend'));
+  utter.addEventListener('start', () => { speechBusy = true; fire('safetylib:speechstart'); });
+  utter.addEventListener('end', () => { speechBusy = false; fire('safetylib:speechend'); });
+  utter.addEventListener('error', () => { speechBusy = false; fire('safetylib:speechend'); });
+}
+
+// Tapping a 🔊 button while the app is already talking stops it instead of
+// starting over -- so a learner can always cut reading short.
+function speakOrStop(fn){
+  if (speechBusy){ stopSpeaking(); return; }
+  fn();
+}
+
+// A floating "Stop reading" button that appears only while the app talks.
+function initStopReadingButton(){
+  if (!SPEECH_SUPPORTED || document.querySelector('[data-stop-reading]')) return;
+  const btn = document.createElement('button');
+  btn.type = 'button';
+  btn.className = 'stop-reading-btn';
+  btn.setAttribute('data-stop-reading', '');
+  btn.hidden = true;
+  const label = () => { btn.innerHTML = `<span aria-hidden="true">⏹</span> ${escapeHtml(t('stop_reading'))}`; };
+  label();
+  btn.addEventListener('click', () => { stopSpeaking(); btn.hidden = true; });
+  document.body.appendChild(btn);
+  let hideTimer = null;
+  window.addEventListener('safetylib:speechstart', () => { clearTimeout(hideTimer); label(); btn.hidden = false; });
+  // Small delay so chained utterances don't make the button flicker.
+  window.addEventListener('safetylib:speechend', () => { clearTimeout(hideTimer); hideTimer = setTimeout(() => { if (!speechBusy) btn.hidden = true; }, 400); });
+}
+if (typeof document !== 'undefined'){
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', initStopReadingButton);
+  else initStopReadingButton();
 }
 
 function hashStr(s){
@@ -120,7 +150,9 @@ function clearActiveHighlight(){
 
 function stopSpeaking(){
   if (SPEECH_SUPPORTED) window.speechSynthesis.cancel();
+  speechBusy = false;
   clearActiveHighlight();
+  window.dispatchEvent(new CustomEvent('safetylib:speechend'));
 }
 
 // Reads one or more elements aloud as a single utterance, highlighting the
@@ -234,7 +266,7 @@ function speakWithHighlight(segments, speaker, joiner){
 function wireSpeakButtonHighlighted(root, segments, speaker, joiner, autoRead){
   if (!SPEECH_SUPPORTED) return;
   const btn = root.querySelector('[data-speak-btn]');
-  if (btn) btn.addEventListener('click', () => speakWithHighlight(segments, speaker, joiner));
+  if (btn) btn.addEventListener('click', () => speakOrStop(() => speakWithHighlight(segments, speaker, joiner)));
   if (btn && autoRead !== false && typeof maybeAutoRead === 'function') maybeAutoRead(btn);
 }
 
@@ -247,7 +279,7 @@ function speakButtonHtml(){
 function wireSpeakButton(root, text, speaker){
   if (!SPEECH_SUPPORTED) return;
   const btn = root.querySelector('[data-speak-btn]');
-  if (btn) btn.addEventListener('click', () => speak(text, speaker));
+  if (btn) btn.addEventListener('click', () => speakOrStop(() => speak(text, speaker)));
 }
 
 /* ---------------------------------------------------------------------- */

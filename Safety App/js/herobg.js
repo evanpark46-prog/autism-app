@@ -27,6 +27,8 @@
 
   function startClouds(){
     if (!cloudEl || cloudEffect || typeof VANTA === 'undefined' || !motionAllowed()) return;
+    // The playful look draws its own CSS sky (js/profile.js); Vanta is for the calm look.
+    if (document.documentElement.getAttribute('data-look') === 'playful' && !document.documentElement.hasAttribute('data-contrast')) return;
     cloudEffect = VANTA.CLOUDS2({
       el: cloudEl,
       mouseControls: true,
@@ -118,7 +120,7 @@
   // Calm Mode can be toggled on this same page via the display panel --
   // react immediately instead of waiting for a reload.
   new MutationObserver(() => {
-    if (motionAllowed()){ startClouds(); startHero(); }
+    if (motionAllowed()){ stopClouds(); startClouds(); startHero(); }
     else { stopClouds(); stopHero(); }
-  }).observe(document.documentElement, { attributes: true, attributeFilter: ['data-calm-mode'] });
+  }).observe(document.documentElement, { attributes: true, attributeFilter: ['data-calm-mode', 'data-look', 'data-contrast'] });
 })();

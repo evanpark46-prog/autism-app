@@ -20,7 +20,7 @@ const PROFILE_KEY = 'safetylib_profile_v1';
 const PROFILE_AVATARS = ['🦁', '🐯', '🐼', '🦊', '🐸', '🐙', '🦄', '🐲', '🐢', '🐬', '🦉', '🚀', '⭐', '🌈', '⚽', '🎨'];
 const PROFILE_DEFAULTS = {
   name: '', avatar: '⭐', adults: ['', '', ''],
-  look: 'playful', autoRead: false, contrast: false, easyFont: false, captions: false,
+  look: 'playful', autoRead: false, readChoices: true, contrast: false, easyFont: false, captions: false,
 };
 
 function getProfile(){
@@ -52,6 +52,7 @@ function cleanName(s){
 
 function learnerName(){ return cleanName(getProfile().name) || ''; }
 function isAutoRead(){ return !!getProfile().autoRead; }
+function readChoicesAloud(){ return getProfile().readChoices !== false; }
 function wantsCaptions(){ return !!getProfile().captions; }
 function trustedAdults(){ return getProfile().adults.map(cleanName).filter(Boolean); }
 
@@ -102,7 +103,13 @@ _wrapContentGetter('getTopicSummary');
 
 function maybeAutoRead(btn, delay){
   if (!btn || !isAutoRead()) return;
-  setTimeout(() => { if (document.contains(btn)) btn.click(); }, delay == null ? 250 : delay);
+  setTimeout(() => {
+    if (!document.contains(btn)) return;
+    // Clear any reading still going from the previous step first; otherwise
+    // the 🔊 button's tap-to-stop behavior would stop instead of read.
+    if (typeof stopSpeaking === 'function') stopSpeaking();
+    btn.click();
+  }, delay == null ? 250 : delay);
 }
 
 function maybeAutoSpeak(text, delay){
@@ -201,6 +208,7 @@ function openProfileDialog(){
       <fieldset class="profile-section">
         <legend>${t('profile_section_access')}</legend>
         ${toggleRowHtml('autoRead', 'profile_autoread', 'profile_autoread_hint', p.autoRead)}
+        ${toggleRowHtml('readChoices', 'profile_readchoices', 'profile_readchoices_hint', p.readChoices !== false)}
         ${toggleRowHtml('contrast', 'profile_contrast', 'profile_contrast_hint', p.contrast)}
         ${toggleRowHtml('easyFont', 'profile_easyfont', 'profile_easyfont_hint', p.easyFont)}
         ${toggleRowHtml('captions', 'profile_captions', 'profile_captions_hint', p.captions)}
@@ -310,8 +318,20 @@ function renderHomeGreeting(){
   card.querySelector('[data-profile-greeting-btn]').addEventListener('click', openProfileDialog);
 }
 
+function injectSky(){
+  if (document.querySelector('.pl-sky')) return;
+  const sky = document.createElement('div');
+  sky.className = 'pl-sky';
+  sky.setAttribute('aria-hidden', 'true');
+  sky.innerHTML = '<div class="pl-sun"><div class="pl-rays"></div></div>'
+    + [1, 2, 3, 4, 5, 6].map(i => `<div class="pl-cloud c${i}"></div>`).join('')
+    + [1, 2, 3, 4, 5, 6, 7, 8].map(i => `<span class="pl-twinkle t${i}">✦</span>`).join('');
+  document.body.insertBefore(sky, document.body.firstChild);
+}
+
 function initProfile(){
   applyProfileAttrs();
+  injectSky();
   injectProfileButton();
   applyRainbowHeadings();
   renderHomeGreeting();

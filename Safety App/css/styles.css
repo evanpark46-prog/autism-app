@@ -1922,3 +1922,104 @@ section[id]{scroll-margin-top:120px;}
 .story-illustration.is-answer-wrong::after{content:attr(data-answer-badge-wrong); background:#fff3d6; color:#7a4a06; border:3px solid #f0b54a;}
 .story-illustration.is-answer-right::after{content:attr(data-answer-badge-right); background:#e7f8ec; color:#155a3c; border:3px solid #4fbf73;}
 :root[data-contrast] .story-illustration.is-answer-right img{box-shadow:0 0 0 5px #000;}
+
+/* ---------- Floating "Stop reading" button (shown only while talking) ---------- */
+.stop-reading-btn{
+  position:fixed; left:16px; bottom:calc(16px + env(safe-area-inset-bottom, 0px)); z-index:90;
+  display:inline-flex; align-items:center; gap:8px; min-height:48px; padding:10px 18px;
+  border-radius:999px; border:3px solid #c62828; background:#fff; color:#b71c1c;
+  font-family:var(--font-display); font-weight:700; font-size:1.02rem; cursor:pointer;
+  box-shadow:0 5px 0 rgba(0,0,0,.15);
+}
+.stop-reading-btn:hover{background:#ffebee;}
+.stop-reading-btn[hidden]{display:none !important;}
+:root[data-contrast] .stop-reading-btn{border-color:#000; color:#000;}
+
+/* ==========================================================================
+   PLAYFUL SKY — drifting clouds, a glowing sun with slowly turning light
+   rays, and twinkling stars (injected as .pl-sky by js/profile.js).
+   Playful look only; all motion stops under reduced-motion (Calm Mode
+   already switches the playful look off entirely).
+   ========================================================================== */
+.pl-sky{display:none;}
+:root[data-look="playful"]:not([data-calm-mode="on"]):not([data-contrast]) .pl-sky{display:block; position:fixed; inset:0; z-index:-1; pointer-events:none; overflow:hidden;}
+:root[data-look="playful"]:not([data-calm-mode="on"]):not([data-contrast]) .pl-sun{
+  position:absolute; top:-120px; left:-110px; width:360px; height:360px; border-radius:50%;
+  background:radial-gradient(circle, #fffbe0 0 24%, rgba(255,236,140,.75) 36%, rgba(255,236,140,.25) 52%, transparent 70%);
+}
+:root[data-look="playful"]:not([data-calm-mode="on"]):not([data-contrast]) .pl-rays{
+  position:absolute; inset:-60%;
+  background:repeating-conic-gradient(from 0deg, rgba(255,255,255,.28) 0 6deg, transparent 6deg 18deg);
+  -webkit-mask:radial-gradient(circle, #000 18%, transparent 62%);
+          mask:radial-gradient(circle, #000 18%, transparent 62%);
+  animation:pl-spin 120s linear infinite;
+}
+:root[data-look="playful"]:not([data-calm-mode="on"]):not([data-contrast]) .pl-cloud{
+  position:absolute; left:0; width:200px; height:58px; border-radius:999px;
+  background:#fff; opacity:.9;
+  box-shadow:0 10px 0 rgba(150,200,240,.25);
+  animation:pl-drift var(--dur, 110s) linear infinite; animation-delay:var(--delay, 0s);
+}
+:root[data-look="playful"]:not([data-calm-mode="on"]):not([data-contrast]) .pl-cloud::before, :root[data-look="playful"]:not([data-calm-mode="on"]):not([data-contrast]) .pl-cloud::after{content:""; position:absolute; background:#fff; border-radius:50%;}
+:root[data-look="playful"]:not([data-calm-mode="on"]):not([data-contrast]) .pl-cloud::before{width:96px; height:96px; left:28px; top:-50px;}
+:root[data-look="playful"]:not([data-calm-mode="on"]):not([data-contrast]) .pl-cloud::after{width:70px; height:70px; left:104px; top:-32px;}
+:root[data-look="playful"]:not([data-calm-mode="on"]):not([data-contrast]) .pl-cloud.c1{top:16%; transform:scale(1.1); --dur:120s; --delay:-10s;}
+:root[data-look="playful"]:not([data-calm-mode="on"]):not([data-contrast]) .pl-cloud.c2{top:34%; --dur:150s; --delay:-70s; opacity:.75;}
+:root[data-look="playful"]:not([data-calm-mode="on"]):not([data-contrast]) .pl-cloud.c3{top:58%; --dur:135s; --delay:-40s; opacity:.8;}
+:root[data-look="playful"]:not([data-calm-mode="on"]):not([data-contrast]) .pl-cloud.c4{top:8%;  --dur:170s; --delay:-120s; opacity:.7;}
+:root[data-look="playful"]:not([data-calm-mode="on"]):not([data-contrast]) .pl-cloud.c5{top:76%; --dur:160s; --delay:-95s; opacity:.85;}
+:root[data-look="playful"]:not([data-calm-mode="on"]):not([data-contrast]) .pl-cloud.c6{top:46%; --dur:190s; --delay:-150s; opacity:.6;}
+:root[data-look="playful"]:not([data-calm-mode="on"]):not([data-contrast]) .pl-twinkle{position:absolute; color:#fff; font-size:18px; text-shadow:0 0 10px rgba(255,255,255,.9); animation:pl-twinkle var(--tw, 3.4s) ease-in-out infinite; animation-delay:var(--twd, 0s);}
+:root[data-look="playful"]:not([data-calm-mode="on"]):not([data-contrast]) .pl-twinkle.t1{top:12%; left:30%; --tw:3.1s;}
+:root[data-look="playful"]:not([data-calm-mode="on"]):not([data-contrast]) .pl-twinkle.t2{top:22%; left:78%; --tw:4.2s; --twd:-1.2s; color:#ffe066;}
+:root[data-look="playful"]:not([data-calm-mode="on"]):not([data-contrast]) .pl-twinkle.t3{top:40%; left:12%; --tw:3.7s; --twd:-2s;}
+:root[data-look="playful"]:not([data-calm-mode="on"]):not([data-contrast]) .pl-twinkle.t4{top:52%; left:88%; --tw:4.6s; --twd:-.6s; color:#ffe066;}
+:root[data-look="playful"]:not([data-calm-mode="on"]):not([data-contrast]) .pl-twinkle.t5{top:66%; left:24%; --tw:3.3s; --twd:-1.7s;}
+:root[data-look="playful"]:not([data-calm-mode="on"]):not([data-contrast]) .pl-twinkle.t6{top:30%; left:55%; --tw:5s; --twd:-3s; font-size:14px;}
+:root[data-look="playful"]:not([data-calm-mode="on"]):not([data-contrast]) .pl-twinkle.t7{top:80%; left:70%; --tw:4s; --twd:-2.4s; color:#ffe066;}
+:root[data-look="playful"]:not([data-calm-mode="on"]):not([data-contrast]) .pl-twinkle.t8{top:6%; left:92%; --tw:3.6s; --twd:-.3s; font-size:22px;}
+@keyframes pl-drift{ from{translate:-260px 0;} to{translate:calc(100vw + 60px) 0;} }
+@keyframes pl-spin{ to{transform:rotate(360deg);} }
+@keyframes pl-twinkle{ 0%,100%{opacity:.25; transform:scale(.7);} 50%{opacity:1; transform:scale(1.15);} }
+@media (prefers-reduced-motion: reduce){
+  :root[data-look="playful"]:not([data-calm-mode="on"]):not([data-contrast]) .pl-rays, :root[data-look="playful"]:not([data-calm-mode="on"]):not([data-contrast]) .pl-cloud, :root[data-look="playful"]:not([data-calm-mode="on"]):not([data-contrast]) .pl-twinkle{animation:none !important;}
+  :root[data-look="playful"]:not([data-calm-mode="on"]):not([data-contrast]) .pl-cloud.c1{translate:6vw 0;} P .pl-cloud.c2{translate:62vw 0;} P .pl-cloud.c3{translate:30vw 0;}
+  :root[data-look="playful"]:not([data-calm-mode="on"]):not([data-contrast]) .pl-cloud.c4{translate:80vw 0;} P .pl-cloud.c5{translate:12vw 0;} P .pl-cloud.c6{translate:48vw 0;}
+}
+
+/* ---- Home hero: soft spotlight glow behind the title ---- */
+:root[data-look="playful"]:not([data-calm-mode="on"]):not([data-contrast]) body[data-page="home"] .hero{
+  background:radial-gradient(ellipse 60% 55% at 50% 52%, rgba(255,255,255,.6), rgba(255,255,255,0) 70%);
+  border-radius:40px;
+}
+:root[data-look="playful"]:not([data-calm-mode="on"]):not([data-contrast]) .hero h1{filter:drop-shadow(0 0 18px rgba(255,255,255,.75));}
+
+/* ---- New flying superhero ---- */
+:root[data-look="playful"]:not([data-calm-mode="on"]):not([data-contrast]) .page-flyhero{width:128px; filter:drop-shadow(0 0 10px rgba(255,236,140,.9)) drop-shadow(0 6px 0 rgba(20,60,110,.12));}
+.flyhero-spark{transform-box:fill-box; transform-origin:center; animation:pl-twinkle 1.6s ease-in-out infinite;}
+.flyhero-spark.s2{animation-delay:-.5s;}
+.flyhero-spark.s3{animation-delay:-1s;}
+@media (prefers-reduced-motion: reduce){ .flyhero-spark{animation:none;} }
+:root[data-calm-mode="on"] .flyhero-spark{animation:none;}
+
+/* ---- Home page cards ---- */
+:root[data-look="playful"]:not([data-calm-mode="on"]):not([data-contrast]) .emotion-checkin{border:4px solid #ffb6c8; border-radius:var(--radius-lg); background:#fff;}
+:root[data-look="playful"]:not([data-calm-mode="on"]):not([data-contrast]) .emotion-checkin h2, :root[data-look="playful"]:not([data-calm-mode="on"]):not([data-contrast]) .emotion-checkin h3, :root[data-look="playful"]:not([data-calm-mode="on"]):not([data-contrast]) .emotion-checkin p:first-of-type{font-family:var(--font-display);}
+:root[data-look="playful"]:not([data-calm-mode="on"]):not([data-contrast]) .hero-tip{border-color:#9fd8ff;}
+:root[data-look="playful"]:not([data-calm-mode="on"]):not([data-contrast]) .home-review-cta{border:none; position:relative; overflow:hidden; padding-top:30px; background:#fff;}
+:root[data-look="playful"]:not([data-calm-mode="on"]):not([data-contrast]) .home-review-cta::before{content:""; position:absolute; top:0; left:0; right:0; height:10px;}
+:root[data-look="playful"]:not([data-calm-mode="on"]):not([data-contrast]) .home-review-cta:nth-of-type(1)::before{background:linear-gradient(90deg, var(--pl-blue), var(--pl-purple));}
+:root[data-look="playful"]:not([data-calm-mode="on"]):not([data-contrast]) main > .home-review-cta + .home-review-cta::before{background:linear-gradient(90deg, var(--pl-green), var(--pl-yellow));}
+:root[data-look="playful"]:not([data-calm-mode="on"]):not([data-contrast]) .home-review-cta h2{font-size:1.6rem; color:#13385e;}
+:root[data-look="playful"]:not([data-calm-mode="on"]):not([data-contrast]) .home-review-cta h2::before{content:"⭐ ";}
+:root[data-look="playful"]:not([data-calm-mode="on"]):not([data-contrast]) main > .home-review-cta + .home-review-cta h2::before{content:"🎮 ";}
+:root[data-look="playful"]:not([data-calm-mode="on"]):not([data-contrast]) .practice-path{border:4px dashed var(--pl-purple); border-radius:var(--radius-lg); background:#fff;}
+:root[data-look="playful"]:not([data-calm-mode="on"]):not([data-contrast]) .hero-wall__grid > *{border-radius:22px;}
+
+
+/* Phone header: brand row, nav row, then music / profile / display / language on one row */
+@media (max-width:640px){
+  .site-header__bar{grid-template-columns:auto auto minmax(0,1fr) auto;}
+  .site-header__bar > .brand{grid-column:1 / -1;}
+  .site-header__bar > .display-settings{justify-self:end;}
+}
