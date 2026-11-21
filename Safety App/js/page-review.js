@@ -3,18 +3,76 @@
    ========================================================================== */
 
 /* ---------------------------------------------------------------------- */
-/* Cumulative review — one shuffled question from every topic            */
+/* Cumulative review — one fresh question from every topic                */
 /* ---------------------------------------------------------------------- */
 
 let reviewState = null;
+let reviewLoadToken = 0;
+const REVIEW_HISTORY_KEY = 'safetylib_review_question_history_v1';
 
-function buildReviewQuestions(lang){
-  return TOPICS.map(meta => {
-    const content = getTopicSummary(meta.id, lang);
-    const cp = content.video && content.video.checkpoints && content.video.checkpoints[0];
-    if (!cp) return null;
-    return { topicId: meta.id, topicTitle: content.title, question: cp.question, choices: cp.choices };
-  }).filter(Boolean);
+function buildReviewQuestionBank(lang){
+  return TOPICS.flatMap(meta => {
+    const content = getTopicContent(meta.id, lang);
+    if (!content || !content.story || !Array.isArray(content.story.levels)) return [];
+    return content.story.levels.flatMap((level, levelIndex) => (level.steps || [])
+      .filter(step => ['decision', 'sequence', 'dialogue'].includes(step.type)
+        && step.choices && step.choices.length > 1
+        && step.choices.filter(choice => choice.correct).length === 1)
+      .map((step, stepIndex) => {
+        const dialogueLine = step.type === 'dialogue' && step.lines && step.lines[step.lines.length - 1];
+        const question = dialogueLine
+          ? t('review_dialogue_question', { text: dialogueLine.text })
+          : step.text;
+        if (!question) return null;
+        return {
+          id: `${meta.id}:${levelIndex}:${stepIndex}`,
+          topicId: meta.id,
+          topicTitle: content.title,
+          question,
+          choices: step.choices,
+        };
+      })
+      .filter(Boolean));
+  });
+}
+
+function readReviewHistory(lang){
+  try {
+    const allHistory = JSON.parse(localStorage.getItem(REVIEW_HISTORY_KEY) || '{}');
+    return allHistory[lang] && typeof allHistory[lang] === 'object' ? allHistory[lang] : {};
+  } catch (e) { return {}; }
+}
+
+function writeReviewHistory(lang, history){
+  try {
+    const allHistory = JSON.parse(localStorage.getItem(REVIEW_HISTORY_KEY) || '{}');
+    allHistory[lang] = history;
+    localStorage.setItem(REVIEW_HISTORY_KEY, JSON.stringify(allHistory));
+  } catch (e) { /* storage may be unavailable */ }
+}
+
+function selectReviewQuestions(questionBank, lang){
+  const history = readReviewHistory(lang);
+  const byTopic = new Map();
+  questionBank.forEach(question => {
+    if (!byTopic.has(question.topicId)) byTopic.set(question.topicId, []);
+    byTopic.get(question.topicId).push(question);
+  });
+
+  const selected = [];
+  byTopic.forEach((topicQuestions, topicId) => {
+    const availableIds = new Set(topicQuestions.map(question => question.id));
+    const seen = (Array.isArray(history[topicId]) ? history[topicId] : [])
+      .filter(id => availableIds.has(id));
+    const unseen = topicQuestions.filter(question => !seen.includes(question.id));
+    const candidates = unseen.length ? unseen : topicQuestions;
+    const chosen = candidates[Math.floor(Math.random() * candidates.length)];
+    selected.push(chosen);
+    history[topicId] = unseen.length ? seen.concat(chosen.id) : [chosen.id];
+  });
+
+  writeReviewHistory(lang, history);
+  return selected;
 }
 
 function shuffledIndexOrder(n){
@@ -26,12 +84,27 @@ function shuffledIndexOrder(n){
   return order;
 }
 
-function resetReview(){
+async function resetReview(){
   const lang = getLang();
-  const questions = buildReviewQuestions(lang);
+  const token = ++reviewLoadToken;
+  reviewState = { lang, loading: true };
+  renderReview();
+  try {
+    await Promise.all(TOPICS.map(meta => ensureTopicContentLoaded(meta.id)));
+  } catch (error) {
+    if (token !== reviewLoadToken || lang !== getLang()) return;
+    reviewState = { lang, error: true };
+    renderReview();
+    return;
+  }
+  if (token !== reviewLoadToken || lang !== getLang()) return;
+
+  const questionBank = buildReviewQuestionBank(lang);
+  const questions = selectReviewQuestions(questionBank, lang);
   reviewState = {
     lang,
     questions,
+    questionBankSize: questionBank.length,
     order: shuffledIndexOrder(questions.length),
     index: 0,
     correct: 0,
@@ -39,12 +112,25 @@ function resetReview(){
     chosenIndex: null,
     missed: [],
   };
+  renderReview();
 }
 
 function renderReview(){
   const root = document.querySelector('[data-review-root]');
   if (!root) return;
-  if (!reviewState || reviewState.lang !== getLang()) resetReview();
+  if (!reviewState || reviewState.lang !== getLang()){
+    resetReview();
+    return;
+  }
+  if (reviewState.loading){
+    root.innerHTML = `<div class="card review-card-wrap"><p role="status">${escapeHtml(t('review_loading'))}</p></div>`;
+    return;
+  }
+  if (reviewState.error){
+    root.innerHTML = `<div class="card review-card-wrap"><p role="alert">${escapeHtml(t('review_load_error'))}</p><button type="button" class="btn btn-primary" data-review-retry>${escapeHtml(t('review_retry_btn'))}</button></div>`;
+    root.querySelector('[data-review-retry]').addEventListener('click', resetReview);
+    return;
+  }
 
   if (reviewState.index >= reviewState.order.length){
     renderReviewDone(root);
@@ -72,7 +158,7 @@ function renderReview(){
 
   root.innerHTML = `
     <div class="card review-card-wrap">
-      <p class="review-progress">${t('review_progress', { current: reviewState.index + 1, total: reviewState.order.length })}</p>
+      <p class="review-progress">${t('review_progress', { current: reviewState.index + 1, total: reviewState.order.length, pool: reviewState.questionBankSize })}</p>
       <p class="review-topic-tag">${escapeHtml(q.topicTitle)}</p>
       <h2 class="review-question">${escapeHtml(q.question)}</h2>
       <div class="story-choices">${choicesHtml}</div>
@@ -130,13 +216,11 @@ function renderReviewDone(root){
 
   root.querySelector('[data-review-restart]').addEventListener('click', () => {
     resetReview();
-    renderReview();
   });
 }
 
 function initReviewPage(){
   resetReview();
-  renderReview();
-  window.addEventListener('safetylib:langchange', () => { resetReview(); renderReview(); });
+  window.addEventListener('safetylib:langchange', resetReview);
 }
 

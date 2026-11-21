@@ -10,7 +10,7 @@
    returning visitors pick up the change instead of an old cached copy.
    ========================================================================== */
 
-const CACHE_NAME = 'safety-superheroes-shell-v25';
+const CACHE_NAME = 'safety-superheroes-shell-v32';
 
 const SHELL_FILES = [
   'index.html',
@@ -78,7 +78,7 @@ const SHELL_FILES = [
 self.addEventListener('install', event => {
   event.waitUntil(
     caches.open(CACHE_NAME)
-      .then(cache => cache.addAll(SHELL_FILES))
+      .then(cache => cache.addAll(SHELL_FILES.map(file => new Request(new URL(file, self.registration.scope), { cache: 'reload' }))))
       .then(() => self.skipWaiting())
   );
 });

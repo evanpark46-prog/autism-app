@@ -71,6 +71,57 @@ function initTopicPage(){
     const btn = panel.querySelector('[data-modeling-speak]');
     if (btn) btn.addEventListener('click', () => speak(correctChoice.text));
   }
+
+  // "What happens next..." consequence chain. A wrong choice can carry an
+  // optional `outcome` array of short beats that play out what happens
+  // AFTER that choice (one tap per beat), before the app rewinds to the
+  // lesson + modeled correct answer + Try again. Choices without `outcome`
+  // keep the old single-line feedback, so un-authored topics are unchanged.
+  function choiceOutcome(choice){
+    if (!choice || choice.correct || !choice.outcome) return null;
+    const beats = Array.isArray(choice.outcome) ? choice.outcome : [choice.outcome];
+    return beats.filter(Boolean).length ? beats.filter(Boolean) : null;
+  }
+
+  function outcomeChainHtml(beats){
+    return `
+      <div class="story-chain" data-chain role="status" aria-live="polite">
+        <p class="story-chain__label">${escapeHtml(t('story_chain_label'))}</p>
+        <ol class="story-chain__beats">
+          ${beats.map((b, i) => `
+            <li class="story-chain__beat" data-chain-beat="${i}" ${i === 0 ? '' : 'hidden'}>
+              <span class="story-chain__text">${escapeHtml(b)}</span>
+              ${SPEECH_SUPPORTED ? `<button type="button" class="speak-btn" data-chain-speak="${i}" aria-label="${t('read_aloud')}" title="${t('read_aloud')}">🔊</button>` : ''}
+            </li>`).join('')}
+        </ol>
+        <button type="button" class="btn btn-secondary story-chain__next" data-chain-next>
+          ${escapeHtml(beats.length > 1 ? t('story_chain_next') : t('story_chain_rewind'))}
+        </button>
+      </div>`;
+  }
+
+  // Reveals beats one at a time; calls onDone once the learner taps Rewind.
+  function wireOutcomeChain(root, beats, onDone){
+    const chain = root.querySelector('[data-chain]');
+    if (!chain) return;
+    let shown = 1;
+    const nextBtn = chain.querySelector('[data-chain-next]');
+    chain.querySelectorAll('[data-chain-speak]').forEach(btn => {
+      btn.addEventListener('click', () => speak(beats[Number(btn.dataset.chainSpeak)]));
+    });
+    nextBtn.addEventListener('click', () => {
+      if (shown < beats.length){
+        const beatEl = chain.querySelector(`[data-chain-beat="${shown}"]`);
+        beatEl.hidden = false;
+        shown += 1;
+        if (shown === beats.length) nextBtn.textContent = t('story_chain_rewind');
+        return;
+      }
+      nextBtn.remove();
+      chain.classList.add('is-done');
+      onDone();
+    });
+  }
   const flashState = { level: null, index: 0, flipped: false, hintLevel: 0 };
   let flashMode = 'alone';
 
@@ -83,7 +134,8 @@ function initTopicPage(){
     order: [], cardPos: 0, reps: 0, repsNeeded: 4,
     listening: false, activeRecognition: null, manual: false,
     lastHeardMatched: null, transcript: '',
-    quizOrder: [], quizIndex: 0, quizChoices: [],
+    quizOrder: [], quizIndex: 0, quizChoices: [], quizType: null,
+    quizStatement: '', quizStatementCorrect: false, quizAnswered: false,
     quizWrongTries: 0, quizHint: false, quizRevealed: false,
     quizCorrect: 0, quizTotal: 0,
     // Cards where at least one wrong choice was clicked before landing on
@@ -105,9 +157,59 @@ function initTopicPage(){
     }
     return arr;
   }
+  const LEARN_SCHEDULE_KEY = 'safetylib_learn_schedule_v1';
+  function readLearnSchedule(){
+    try { return JSON.parse(localStorage.getItem(LEARN_SCHEDULE_KEY) || '{}'); }
+    catch (err) { return {}; }
+  }
+  function writeLearnSchedule(schedule){
+    try { localStorage.setItem(LEARN_SCHEDULE_KEY, JSON.stringify(schedule)); }
+    catch (err) { /* storage may be unavailable */ }
+  }
+  function learnCardKey(levelIdx, cardIdx){ return `${meta.id}:${levelIdx}:${cardIdx}`; }
+  function dueLearnCards(levelIdx, cardCount){
+    const schedule = readLearnSchedule();
+    const now = Date.now();
+    const due = Array.from({ length: cardCount }, (_, cardIdx) => ({
+      cardIdx,
+      item: schedule[learnCardKey(levelIdx, cardIdx)] || { due: 0 },
+    })).filter(entry => (entry.item.due || 0) <= now);
+    if (due.length) return due.sort((a, b) => (a.item.due || 0) - (b.item.due || 0)).map(entry => entry.cardIdx);
+    const next = Array.from({ length: cardCount }, (_, cardIdx) => ({
+      cardIdx,
+      due: schedule[learnCardKey(levelIdx, cardIdx)]?.due || 0,
+    })).sort((a, b) => a.due - b.due)[0];
+    return next ? [next.cardIdx] : [];
+  }
+  function recordLearnResult(levelIdx, cardIdx, correct){
+    const schedule = readLearnSchedule();
+    const key = learnCardKey(levelIdx, cardIdx);
+    const previous = schedule[key] || { interval: 0, ease: 2.3, reps: 0, lapses: 0 };
+    if (correct){
+      const intervals = [1, 3, 7, 14, 30, 60, 120];
+      const nextInterval = previous.interval ? Math.round(previous.interval * previous.ease) : intervals[previous.reps] || 1;
+      schedule[key] = {
+        interval: Math.min(nextInterval, 365),
+        ease: Math.min(2.8, previous.ease + 0.1),
+        reps: previous.reps + 1,
+        lapses: previous.lapses || 0,
+        due: Date.now() + Math.min(nextInterval, 365) * 86400000,
+      };
+    } else {
+      schedule[key] = {
+        interval: 0,
+        ease: Math.max(1.3, previous.ease - 0.2),
+        reps: 0,
+        lapses: (previous.lapses || 0) + 1,
+        due: Date.now() + 6 * 3600000,
+      };
+    }
+    writeLearnSchedule(schedule);
+  }
   function resetGuided(levelIdx, cardCount){
     guidedState.phase = 'drill';
-    guidedState.order = shuffledOrder(cardCount);
+    const dueCards = dueLearnCards(levelIdx, cardCount);
+    guidedState.order = shuffledOrder(dueCards.length).map(i => dueCards[i]);
     guidedState.cardPos = 0;
     guidedState.reps = 0;
     guidedState.repsNeeded = repsForLevel(levelIdx);
@@ -119,6 +221,10 @@ function initTopicPage(){
     guidedState.quizOrder = [];
     guidedState.quizIndex = 0;
     guidedState.quizChoices = [];
+    guidedState.quizType = null;
+    guidedState.quizStatement = '';
+    guidedState.quizStatementCorrect = false;
+    guidedState.quizAnswered = false;
     guidedState.quizWrongTries = 0;
     guidedState.quizHint = false;
     guidedState.quizRevealed = false;
@@ -134,6 +240,23 @@ function initTopicPage(){
       .map(i => ({ text: cards[i].back, correct: false, eliminated: false }));
     const choices = [{ text: correctCard.back, correct: true, eliminated: false }, ...distractors];
     return shuffledOrder(choices.length).map(i => choices[i]);
+  }
+
+  function buildLearnQuestion(cards, entry){
+    const card = cards[entry.cardIdx];
+    guidedState.quizType = entry.type;
+    guidedState.quizChoices = [];
+    guidedState.quizStatement = '';
+    guidedState.quizStatementCorrect = false;
+    guidedState.quizAnswered = false;
+    if (entry.type === 'multiple'){
+      guidedState.quizChoices = buildQuizChoices(cards, entry.cardIdx);
+    } else if (entry.type === 'truefalse'){
+      const makeTrue = Math.random() >= 0.5;
+      const other = cards.find((candidate, i) => i !== entry.cardIdx && candidate.back !== card.back);
+      guidedState.quizStatementCorrect = makeTrue || !other;
+      guidedState.quizStatement = guidedState.quizStatementCorrect ? card.back : other.back;
+    }
   }
   const videoState = { previewing: false, previewIndex: 0, previewAnswered: false, player: null, nextCheckpoint: 0, awaitingAnswer: false, checkpointTimer: null, embedRetried: false };
 
@@ -416,7 +539,6 @@ function initTopicPage(){
           ${heroPortraitHtml(meta.id, getLang(), meta.theme, 84)}
           <div>
             <div class="power-unlock__name">${escapeHtml(heroUnlockData.name)}</div>
-            <div class="power-unlock__power font-comic">${escapeHtml(heroUnlockData.power)}</div>
             <p class="power-unlock__tagline">${escapeHtml(heroUnlockData.tagline)}</p>
             <a class="power-unlock__certificate" href="certificate.html?id=${encodeURIComponent(meta.id)}">${t('certificate_print_link')}</a>
           </div>
@@ -510,12 +632,21 @@ function initTopicPage(){
 
       if (storyState.answered){
         const chosen = step.choices[storyState.chosenIndex];
-        feedbackHtml = `<div class="story-feedback ${chosen.correct ? 'good' : 'bad'}">${escapeHtml(chosen.feedback || (chosen.correct ? t('feedback_good_default') : t('feedback_bad_default')))}</div>`;
+        const feedbackText = chosen.feedback || (chosen.correct ? t('feedback_good_default') : t('feedback_bad_default'));
+        const beats = choiceOutcome(chosen);
+        feedbackHtml = chosen.correct
+          ? `<div class="story-feedback good">${escapeHtml(feedbackText)}</div>`
+          : `<div class="story-outcome" role="status" ${beats ? 'data-after-chain hidden' : ''}>
+              <p class="story-outcome__label">${escapeHtml(t(beats ? 'story_rewind_label' : 'story_consequence_label'))}</p>
+              <p class="story-outcome__text">${escapeHtml(feedbackText)}</p>
+            </div>`;
+        if (beats) feedbackHtml = outcomeChainHtml(beats) + feedbackHtml;
         footerHtml = chosen.correct
           ? `<button type="button" class="btn btn-primary" data-story-next>${t('story_continue')}</button>`
-          : `<button type="button" class="btn btn-secondary" data-story-retry>${t('story_try_again')}</button>`;
+          : `<button type="button" class="btn btn-secondary" data-story-retry ${beats ? 'data-after-chain hidden' : ''}>${t('story_try_again')}</button>`;
         if (!chosen.correct){
           modelingHtml = modelingCalloutHtml(step.choices.find(c => c.correct));
+          if (beats && modelingHtml) modelingHtml = `<div data-after-chain hidden>${modelingHtml}</div>`;
         }
       }
     } else {
@@ -524,26 +655,34 @@ function initTopicPage(){
 
     const chosenForIllustration = isChoiceStep && storyState.answered ? step.choices[storyState.chosenIndex] : null;
     const showWrongIllustration = !!(chosenForIllustration && !chosenForIllustration.correct);
+    const illustrationHtml = step.illustration
+      ? `<div class="story-illustration story-illustration--scene">${getIllustration(step.illustration, showWrongIllustration)}</div>`
+      : '';
 
     panel.innerHTML = `
       <div class="story-stage">
         <div class="story-level-bar">${changeLevelBtn}</div>
         <div class="story-progress">${dots}</div>
-        <div class="story-illustration">${getIllustration(step.illustration, showWrongIllustration)}</div>
-        <div class="story-body">
-          <div class="story-kicker">${escapeHtml(step.kicker)}</div>
-          ${sequenceHtml}
-          ${typeof symbolRowHtml === 'function' ? symbolRowHtml(step.text, getLang()) : ''}
-          <div class="speak-row">
-            <p class="story-text">${typeof wrapGlossaryHtml === 'function' ? wrapGlossaryHtml(step.text, getLang()) : escapeHtml(step.text)}</p>
-            ${speakButtonHtml()}
-          </div>
-          ${choicesHtml}
-          ${feedbackHtml}
-          ${modelingHtml}
-          <div class="story-footer">
-            ${footerHtml}
-          </div>
+        ${illustrationHtml}
+        <div class="story-text-layout">
+          <section class="story-question-panel" aria-label="${t('story_question_label')}">
+            <div class="story-kicker">${escapeHtml(step.kicker || '')}</div>
+            ${sequenceHtml}
+            ${choicesHtml}
+            ${feedbackHtml}
+            ${modelingHtml}
+            <div class="story-footer">
+              ${footerHtml}
+            </div>
+          </section>
+          <section class="story-reading-panel" aria-label="${t('story_reading_label')}">
+            <p class="story-panel-label">${t('story_reading_label')}</p>
+            ${typeof symbolRowHtml === 'function' ? symbolRowHtml(step.text, getLang()) : ''}
+            <div class="speak-row">
+              <p class="story-text">${typeof wrapGlossaryHtml === 'function' ? wrapGlossaryHtml(step.text, getLang()) : escapeHtml(step.text)}</p>
+              ${speakButtonHtml()}
+            </div>
+          </section>
         </div>
       </div>`;
 
@@ -554,6 +693,14 @@ function initTopicPage(){
 
     if (isChoiceStep && storyState.answered && !step.choices[storyState.chosenIndex].correct){
       wireModelingSpeak(panel, step.choices.find(c => c.correct));
+      const beats = choiceOutcome(step.choices[storyState.chosenIndex]);
+      if (beats){
+        wireOutcomeChain(panel, beats, () => {
+          panel.querySelectorAll('[data-after-chain]').forEach(el => { el.hidden = false; });
+          const retryBtn = panel.querySelector('[data-story-retry]');
+          if (retryBtn) retryBtn.focus();
+        });
+      }
     }
 
     if (isChoiceStep){
@@ -628,21 +775,24 @@ function initTopicPage(){
         <div class="story-stage">
           <div class="story-level-bar">${changeLevelBtn}</div>
           <div class="story-progress">${dots}</div>
-          <div class="story-illustration">${getIllustration(step.illustration)}</div>
-          <div class="story-body">
-            <div class="story-kicker">${escapeHtml(step.kicker || '')}</div>
-            <div class="speak-row">
-              <p class="story-text">${typeof wrapGlossaryHtml === 'function' ? wrapGlossaryHtml(step.text, getLang()) : escapeHtml(step.text)}</p>
-              ${speakButtonHtml()}
-            </div>
-            <div class="matching-grid">
+          ${step.illustration ? `<div class="story-illustration story-illustration--scene">${getIllustration(step.illustration)}</div>` : ''}
+          <div class="story-text-layout">
+            <section class="story-question-panel" aria-label="${t('story_question_label')}">
+              <div class="story-kicker">${escapeHtml(step.kicker || '')}</div>
+              <p class="story-panel-label">${t('story_question_label')}</p>
               <div class="matching-col">${leftHtml}</div>
+              <div class="story-footer"></div>
+            </section>
+            <section class="story-reading-panel" aria-label="${t('story_reading_label')}">
+              <p class="story-panel-label">${t('story_reading_label')}</p>
+              <div class="speak-row">
+                <p class="story-text">${typeof wrapGlossaryHtml === 'function' ? wrapGlossaryHtml(step.text, getLang()) : escapeHtml(step.text)}</p>
+                ${speakButtonHtml()}
+              </div>
               <div class="matching-col">${rightHtml}</div>
+              <div class="story-footer">${footerHtml}</div>
             </div>
-            <div class="story-footer">
-              ${footerHtml}
-            </div>
-          </div>
+          </section>
         </div>`;
 
       panel.querySelector('[data-change-level]').addEventListener('click', () => {
@@ -718,17 +868,26 @@ function initTopicPage(){
     let lineIndex = 0;
     let answered = false;
     const dialogueSceneNumber = getDialogueSceneNumber();
-    // Tappable exploration is an optional bonus layer, piloted at Level 1
-    // only — it never blocks the core lesson, which still advances by
-    // tapping the dialogue box regardless of whether a hotspot was found.
-    const hotspots = storyState.level === 0 ? getDialogueHotspots(meta.id, dialogueSceneNumber, getLang()) : [];
+    const dialogueIllustration = getDialogueIllustration(
+      meta.id,
+      dialogueSceneNumber,
+      t('story_scene_illustration_alt', { topic: currentContent().title })
+    );
 
     function setConsequenceVisual(showConsequence){
       const sceneEl = panel.querySelector('[data-dialogue-scene]');
-      const imageEl = panel.querySelector('[data-dialogue-image]');
-      const file = dialogueArtworkFile(meta.id, dialogueSceneNumber, showConsequence);
-      if (imageEl && file) imageEl.src = file;
       if (sceneEl) sceneEl.classList.toggle('is-consequence', showConsequence);
+      const artEl = panel.querySelector('.story-illustration--dialogue');
+      if (artEl) artEl.classList.toggle('is-consequence', showConsequence);
+      const image = artEl && artEl.querySelector('[data-dialogue-image]');
+      if (!image) return;
+      const hasConsequenceArt = image.dataset.dialogueConsequenceSrc !== image.dataset.dialogueBaseSrc;
+      image.src = showConsequence && hasConsequenceArt
+        ? image.dataset.dialogueConsequenceSrc
+        : image.dataset.dialogueBaseSrc;
+      image.alt = showConsequence && hasConsequenceArt
+        ? t('story_consequence_image_alt', { topic: currentContent().title })
+        : t('story_scene_illustration_alt', { topic: currentContent().title });
     }
 
     function goToNextStep(){
@@ -789,6 +948,38 @@ function initTopicPage(){
       const advanceEl = panel.querySelector('[data-dialogue-advance]');
       const replySpeaker = step.replySpeaker || step.lines[step.lines.length - 1].speaker || '';
       const showConsequence = !choice.correct;
+      const beats = choiceOutcome(choice);
+      if (beats){
+        setConsequenceVisual(true);
+        panel.querySelector('[data-dialogue-box]').classList.add('is-consequence');
+        advanceEl.style.visibility = 'hidden';
+        const playBeat = (i) => {
+          setFooter('');
+          const speaker = t('story_chain_label');
+          speakerEl.textContent = speaker;
+          wireDialogueSpeakHighlighted(textEl, beats[i], speaker);
+          const c = typeWriter(textEl, beats[i], () => {
+            activeTypewriterClear = null;
+            const last = i === beats.length - 1;
+            setFooter(`<button type="button" class="btn btn-secondary" data-chain-next>${escapeHtml(last ? t('story_chain_rewind') : t('story_chain_next'))}</button>`);
+            panel.querySelector('[data-chain-next]').addEventListener('click', () => {
+              if (!last){ playBeat(i + 1); return; }
+              setFooter('');
+              const rewindSpeaker = t('story_rewind_label');
+              speakerEl.textContent = rewindSpeaker;
+              wireDialogueSpeakHighlighted(textEl, text, rewindSpeaker);
+              const c2 = typeWriter(textEl, text, () => {
+                activeTypewriterClear = null;
+                showRetryFooter(step.choices.find(cc => cc.correct));
+              });
+              activeTypewriterClear = () => c2.finish();
+            });
+          });
+          activeTypewriterClear = () => c.finish();
+        };
+        playBeat(0);
+        return;
+      }
       const displayedSpeaker = showConsequence ? t('story_consequence_label') : replySpeaker;
       setConsequenceVisual(showConsequence);
       panel.querySelector('[data-dialogue-box]').classList.toggle('is-consequence', showConsequence);
@@ -857,30 +1048,27 @@ function initTopicPage(){
       <div class="story-stage">
         <div class="story-level-bar">${changeLevelBtn}</div>
         <div class="story-progress">${dots}</div>
-        <div class="story-illustration dialogue-scene" data-dialogue-scene>
-          <div class="dialogue-art">
-            <div class="dialogue-art-inner">
-              ${getDialogueIllustration(meta.id, dialogueSceneNumber, t('story_dialogue_image_alt'))}
-              ${hotspots.map((h, i) => `
-                <button type="button" class="dialogue-hotspot" data-hotspot="${i}"
-                  style="left:${h.x}%; top:${h.y}%" aria-label="${escapeHtml(h.label)}"></button>`).join('')}
-              <div class="dialogue-hotspot-tip" data-hotspot-tip hidden></div>
+        ${dialogueIllustration ? `<div class="story-illustration story-illustration--scene story-illustration--dialogue">${dialogueIllustration}</div>` : ''}
+        <div class="story-text-layout">
+          <section class="story-question-panel dialogue-question-panel" aria-label="${t('story_question_label')}">
+            <p class="story-panel-label">${t('story_question_label')}</p>
+            <div class="story-choices" data-dialogue-choices hidden></div>
+            <div class="story-footer">
+              <div data-dialogue-footer></div>
+            </div>
+          </section>
+          <section class="story-reading-panel dialogue-reading-panel" data-dialogue-scene aria-label="${t('story_reading_label')}">
+            <p class="story-panel-label">${t('story_reading_label')}</p>
+            <div class="dialogue-box" data-dialogue-box tabindex="0" role="button" aria-label="${t('story_next')}">
+              <div class="dialogue-speaker" data-dialogue-speaker></div>
+              <div class="speak-row">
+                <p class="dialogue-text" data-dialogue-text></p>
+                ${speakButtonHtml()}
+              </div>
+              <span class="dialogue-advance" data-dialogue-advance aria-hidden="true">▼</span>
             </div>
           </div>
-        <div class="dialogue-box" data-dialogue-box tabindex="0" role="button" aria-label="${t('story_next')}">
-          <div class="dialogue-speaker" data-dialogue-speaker></div>
-          <div class="speak-row">
-            <p class="dialogue-text" data-dialogue-text></p>
-            ${speakButtonHtml()}
-          </div>
-          <span class="dialogue-advance" data-dialogue-advance aria-hidden="true">▼</span>
-        </div>
-        </div>
-        <div class="story-body">
-          <div class="story-choices" data-dialogue-choices hidden></div>
-          <div class="story-footer">
-            <div data-dialogue-footer></div>
-          </div>
+          </section>
         </div>
       </div>`;
 
@@ -892,28 +1080,6 @@ function initTopicPage(){
     box.addEventListener('click', handleBoxActivate);
     box.addEventListener('keydown', e => {
       if (e.key === 'Enter' || e.key === ' '){ e.preventDefault(); handleBoxActivate(); }
-    });
-
-    panel.querySelectorAll('[data-hotspot]').forEach(btn => {
-      btn.addEventListener('click', (e) => {
-        e.stopPropagation();
-        const idx = Number(btn.dataset.hotspot);
-        const spot = hotspots[idx];
-        const tip = panel.querySelector('[data-hotspot-tip]');
-        const wasOpenOnThis = tip.dataset.openIdx === String(idx) && !tip.hidden;
-        btn.classList.add('is-discovered');
-        if (wasOpenOnThis){
-          tip.hidden = true;
-          tip.dataset.openIdx = '';
-          return;
-        }
-        tip.textContent = spot.text;
-        tip.style.left = `${spot.x}%`;
-        tip.style.top = `${spot.y}%`;
-        tip.hidden = false;
-        tip.dataset.openIdx = String(idx);
-        speak(spot.text);
-      });
     });
 
     showLine(0);
@@ -1206,9 +1372,15 @@ function initTopicPage(){
         guidedState.reps = 0;
         guidedState.lastHeardMatched = null;
         guidedState.transcript = '';
-        if (guidedState.cardPos >= cards.length){
+        if (guidedState.cardPos >= guidedState.order.length){
           guidedState.phase = 'quiz';
-          guidedState.quizOrder = shuffledOrder(cards.length);
+          const questionTypes = ['multiple', 'truefalse', 'written'];
+          guidedState.quizOrder = shuffledOrder(guidedState.order.length).map((orderIdx, i) => ({
+            cardIdx: guidedState.order[orderIdx],
+            type: questionTypes[i % questionTypes.length],
+          }));
+          guidedState.quizIndex = 0;
+          guidedState.quizType = null;
         }
       }
       renderFlashcards();
@@ -1235,14 +1407,17 @@ function initTopicPage(){
       return;
     }
 
-    const cardIdx = guidedState.quizOrder[guidedState.quizIndex];
+    const entry = guidedState.quizOrder[guidedState.quizIndex];
+    const cardIdx = entry.cardIdx;
     const card = cards[cardIdx];
-    if (!guidedState.quizChoices.length){
-      guidedState.quizChoices = buildQuizChoices(cards, cardIdx);
+    if (guidedState.quizType === null){
+      buildLearnQuestion(cards, entry);
     }
 
-    const gotItRight = guidedState.quizChoices.some(c => c.correct && c.picked);
-    const showNext = gotItRight || guidedState.quizRevealed;
+    const gotItRight = guidedState.quizChoices.some(c => c.correct && c.picked)
+      || (guidedState.quizAnswered && guidedState.lastHeardMatched)
+      || (guidedState.quizAnswered && guidedState.quizType === 'written' && guidedState.lastHeardMatched);
+    const showNext = gotItRight || guidedState.quizRevealed || guidedState.quizAnswered;
 
     const choicesHtml = guidedState.quizChoices.map((choice, i) => {
       let cls = 'choice-btn';
@@ -1253,24 +1428,53 @@ function initTopicPage(){
     }).join('');
 
     let feedbackHtml = '';
-    if (gotItRight){
+    if (guidedState.quizAnswered && gotItRight){
       feedbackHtml = `<div class="story-feedback good">${t('feedback_good_default')}</div>`;
-    } else if (guidedState.quizWrongTries > 0 && !guidedState.quizRevealed){
+    } else if (guidedState.quizAnswered || (guidedState.quizWrongTries > 0 && !guidedState.quizRevealed)){
       feedbackHtml = `<div class="story-feedback bad">${t('guided_quiz_try_again')}</div>`;
     }
+
+    let questionBody = '';
+    if (guidedState.quizType === 'truefalse'){
+      questionBody = `
+        <p class="learn-question-prompt">${t('learn_truefalse_prompt')}</p>
+        <div class="learn-statement">${escapeHtml(guidedState.quizStatement)}</div>
+        <div class="story-choices learn-boolean-choices">
+          <button type="button" class="choice-btn ${guidedState.quizAnswered && guidedState.quizStatementCorrect ? 'correct' : ''}" data-quiz-boolean="true" ${showNext ? 'disabled' : ''}>${t('learn_true')}</button>
+          <button type="button" class="choice-btn ${guidedState.quizAnswered && !guidedState.quizStatementCorrect ? 'correct' : ''}" data-quiz-boolean="false" ${showNext ? 'disabled' : ''}>${t('learn_false')}</button>
+        </div>`;
+    } else if (guidedState.quizType === 'written'){
+      questionBody = `
+        <p class="learn-question-prompt">${t('learn_written_prompt')}</p>
+        <label class="learn-written-label" for="learn-written-answer">${t('learn_written_label')}</label>
+        <input id="learn-written-answer" class="learn-written-input" type="text" autocomplete="off" placeholder="${t('learn_written_placeholder')}" value="${escapeHtml(guidedState.transcript || '')}" ${showNext ? 'disabled' : ''}>
+        <button type="button" class="btn btn-primary" data-learn-submit ${showNext ? 'disabled' : ''}>${t('learn_check_answer')}</button>`;
+    } else {
+      questionBody = `<div class="story-choices">${choicesHtml}</div>`;
+    }
+
+    const progress = guidedState.quizOrder.length
+      ? Math.round((guidedState.quizIndex / guidedState.quizOrder.length) * 100)
+      : 0;
+    const typeKey = guidedState.quizType === 'truefalse' ? 'learn_type_truefalse' : guidedState.quizType === 'written' ? 'learn_type_written' : 'learn_type_multiple';
 
     panel.innerHTML = `
       <div class="flashcard-wrap">
         <div class="flash-level-bar">${changeLevelBtn}</div>
         ${flashModeToggleHtml('guided')}
-        <p class="guided-phase-label">${t('guided_quiz_phase_label')}</p>
+        <div class="learn-progress" aria-label="${t('learn_progress', { current: guidedState.quizIndex + 1, total: guidedState.quizOrder.length })}">
+          <div class="learn-progress__meta"><span>${t('guided_quiz_phase_label')}</span><strong>${t('learn_progress', { current: guidedState.quizIndex + 1, total: guidedState.quizOrder.length })}</strong></div>
+          <div class="learn-progress__track"><span style="width:${progress}%"></span></div>
+        </div>
+        <p class="guided-phase-label">${t(typeKey)}</p>
         <div class="speak-quiz-card">
           <div class="flashcard__label">${t('speak_prompt_label')}</div>
           <div class="flashcard__text">${typeof wrapGlossaryHtml === 'function' ? wrapGlossaryHtml(card.front, getLang()) : escapeHtml(card.front)}</div>
           ${speakButtonHtml()}
         </div>
-        <div class="story-choices">${choicesHtml}</div>
+        ${questionBody}
         ${feedbackHtml}
+        ${guidedState.quizRevealed ? `<p class="learn-answer">${t('learn_answer_label')}: <strong>${escapeHtml(card.back)}</strong></p>` : ''}
         <div class="flashcard-controls">
           <span class="flashcard-counter">${t('flash_counter', { current: guidedState.quizIndex + 1, total: guidedState.quizOrder.length })}</span>
           ${showNext ? `<button type="button" class="btn btn-primary" data-quiz-next>${t('flash_next')}</button>` : ''}
@@ -1298,6 +1502,7 @@ function initTopicPage(){
         onTap: () => {
           guidedState.quizRevealed = true;
           guidedState.quizTotal += 1;
+          recordLearnResult(flashState.level, cardIdx, false);
           guidedState.missed.push({ front: card.front, back: card.back });
           renderFlashcards();
         },
@@ -1312,6 +1517,7 @@ function initTopicPage(){
         if (choice.correct){
           guidedState.quizCorrect += 1;
           guidedState.quizTotal += 1;
+          recordLearnResult(flashState.level, cardIdx, guidedState.quizWrongTries === 0);
           // Narrowing choices down by guessing wrong ones first still ends
           // in a "correct" click -- that's not the same as knowing it, so
           // it goes on the missed list for review just like a real miss.
@@ -1325,13 +1531,49 @@ function initTopicPage(){
         renderFlashcards();
       });
     });
+    panel.querySelectorAll('[data-quiz-boolean]').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const answer = btn.dataset.quizBoolean === 'true';
+        guidedState.quizAnswered = true;
+        guidedState.lastHeardMatched = answer === guidedState.quizStatementCorrect;
+        guidedState.quizRevealed = !guidedState.lastHeardMatched;
+        guidedState.quizTotal += 1;
+        recordLearnResult(flashState.level, cardIdx, guidedState.lastHeardMatched);
+        if (guidedState.lastHeardMatched) guidedState.quizCorrect += 1;
+        else guidedState.missed.push({ front: card.front, back: card.back });
+        renderFlashcards();
+      });
+    });
+    const writtenSubmit = panel.querySelector('[data-learn-submit]');
+    if (writtenSubmit) writtenSubmit.addEventListener('click', () => {
+      const input = panel.querySelector('#learn-written-answer');
+      const answer = input ? input.value.trim() : '';
+      guidedState.transcript = answer;
+      guidedState.lastHeardMatched = typeof speechMatches === 'function' ? speechMatches(answer, card.back) : normalizeForCompare(answer) === normalizeForCompare(card.back);
+      guidedState.quizAnswered = true;
+      guidedState.quizRevealed = !guidedState.lastHeardMatched;
+      guidedState.quizTotal += 1;
+      recordLearnResult(flashState.level, cardIdx, guidedState.lastHeardMatched);
+      if (guidedState.lastHeardMatched) guidedState.quizCorrect += 1;
+      else guidedState.missed.push({ front: card.front, back: card.back });
+      renderFlashcards();
+    });
     const nextBtn = panel.querySelector('[data-quiz-next]');
     if (nextBtn) nextBtn.addEventListener('click', () => {
+      if (!gotItRight && !entry.requeued){
+        guidedState.quizOrder.push({ cardIdx, type: 'written', requeued: true });
+      }
       guidedState.quizIndex += 1;
       guidedState.quizChoices = [];
+      guidedState.quizType = null;
+      guidedState.quizStatement = '';
+      guidedState.quizStatementCorrect = false;
+      guidedState.quizAnswered = false;
       guidedState.quizWrongTries = 0;
       guidedState.quizHint = false;
       guidedState.quizRevealed = false;
+      guidedState.lastHeardMatched = null;
+      guidedState.transcript = '';
       renderFlashcards();
     });
   }
@@ -1347,6 +1589,7 @@ function initTopicPage(){
           <div class="story-complete__badge">🎉</div>
           <h2>${t('guided_done_heading')}</h2>
           <p>${t('guided_done_body', { total: cards.length })}</p>
+          <p class="learn-spaced-note">${t('learn_spaced_note')}</p>
           ${guidedState.quizTotal > 0 ? `<p>${t('guided_done_quiz_note', { correct: guidedState.quizCorrect, total: guidedState.quizTotal })}</p>` : ''}
           <button type="button" class="btn btn-primary" data-guided-restart>${t('flash_restart')}</button>
         </div>

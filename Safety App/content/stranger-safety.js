@@ -26,6 +26,11 @@
                 {
                   "text": "Get very close right away to say hi.",
                   "correct": false,
+                  "outcome": [
+                    "Alex walks right up close.",
+                    "Now the person is very close.",
+                    "Alex feels mixed up. It is hard to step away."
+                  ],
                   "feedback": "Getting close right away is not safe. Stay back first."
                 },
                 {
@@ -36,6 +41,11 @@
                 {
                   "text": "Run away and hide, and don’t tell anyone.",
                   "correct": false,
+                  "outcome": [
+                    "Alex runs and hides behind the slide.",
+                    "Alex’s grown-up cannot find Alex.",
+                    "Everyone is worried. Alex feels scared and alone."
+                  ],
                   "feedback": "You don’t have to hide. Just stay back, and tell a grown-up soon."
                 }
               ]
@@ -57,6 +67,11 @@
                 {
                   "text": "Take the candy.",
                   "correct": false,
+                  "outcome": [
+                    "Alex takes the candy.",
+                    "The person smiles and says, “Come get more by my car.”",
+                    "Now it feels harder to say no."
+                  ],
                   "feedback": "It is not safe to take things from people you do not know."
                 },
                 {
@@ -80,6 +95,11 @@
                 {
                   "text": "Stay and keep talking alone.",
                   "correct": false,
+                  "outcome": [
+                    "Alex stays and keeps talking.",
+                    "The person steps closer to Alex.",
+                    "No grown-up Alex trusts is close by to help."
+                  ],
                   "feedback": "It is safer to walk to a trusted grown-up."
                 }
               ]
@@ -128,6 +148,11 @@
                 {
                   "text": "Say nothing else.",
                   "correct": false,
+                  "outcome": [
+                    "Alex says nothing else.",
+                    "The lifeguard does not know who to look for.",
+                    "The person can stay at the park."
+                  ],
                   "feedback": "It helps to tell a little more, like what the person looked like."
                 },
                 {
@@ -147,6 +172,11 @@
                 {
                   "text": "No, you always have to say yes.",
                   "correct": false,
+                  "outcome": [
+                    "Alex thinks, “I have to say yes.”",
+                    "The person asks Alex to come with them.",
+                    "Alex says yes, even though it feels wrong."
+                  ],
                   "feedback": "That is not true. You can always say no."
                 },
                 {
@@ -165,6 +195,11 @@
                 {
                   "text": "Go look at the puppy.",
                   "correct": false,
+                  "outcome": [
+                    "Alex walks to the car to see the puppy.",
+                    "Now Alex is far from the park.",
+                    "No grown-up Alex knows can see Alex."
+                  ],
                   "feedback": "Never go anywhere with someone you do not know, even for a puppy."
                 },
                 {
@@ -183,6 +218,11 @@
                 {
                   "text": "Very close, like a hug.",
                   "correct": false,
+                  "outcome": [
+                    "Alex stands very close to the person.",
+                    "If something feels wrong, there is no room to step back.",
+                    "It is hard for Alex to get away fast."
+                  ],
                   "feedback": "That is too close. Stay an arm’s length away, or more."
                 },
                 {
@@ -209,6 +249,11 @@
                 {
                   "text": "Say Alex should have wandered off alone instead.",
                   "correct": false,
+                  "outcome": [
+                    "Alex walks away from the lifeguard.",
+                    "Now Alex is alone again.",
+                    "If the person comes back, no helper is near."
+                  ],
                   "feedback": "Staying near a trusted grown-up is safer than wandering off."
                 },
                 {
@@ -228,6 +273,11 @@
                 {
                   "text": "Wait and see what happens.",
                   "correct": false,
+                  "outcome": [
+                    "Alex waits.",
+                    "The person keeps coming closer.",
+                    "Alex feels more scared, and no grown-up knows."
+                  ],
                   "feedback": "Waiting is not safe. Move away and tell a grown-up right away."
                 },
                 {
@@ -319,6 +369,11 @@
                 {
                   "text": "Go with the person right away since they mentioned Mom.",
                   "correct": false,
+                  "outcome": [
+                    "Alex walks away from school with the person.",
+                    "A few minutes later, Mom pulls up — and Alex isn’t there.",
+                    "Nobody knows where Alex went, and Mom is very scared."
+                  ],
                   "feedback": "Knowing a detail like a parent’s name doesn’t prove someone is who they say — always check first."
                 },
                 {
@@ -337,6 +392,11 @@
                 {
                   "text": "Walk off somewhere quiet and private to make the call.",
                   "correct": false,
+                  "outcome": [
+                    "Alex walks behind the building, where nobody else is around.",
+                    "The person follows Alex there.",
+                    "Now no teachers or other grown-ups can see Alex or help."
+                  ],
                   "feedback": "A quiet, private spot away from others isn’t the safest choice — staying visible in a public area is better."
                 },
                 {
@@ -370,6 +430,11 @@
                 {
                   "text": "Just wait and see what the person does next time.",
                   "correct": false,
+                  "outcome": [
+                    "The next week, the person comes back with a new story.",
+                    "Alex isn’t sure what to do, because there’s no plan.",
+                    "The staff didn’t know to watch for this person."
+                  ],
                   "feedback": "Waiting to see isn’t the safest plan — always check first, every time, no matter what."
                 },
                 {
@@ -394,6 +459,11 @@
                 {
                   "text": "Ask the person for their ID or phone number.",
                   "correct": false,
+                  "outcome": [
+                    "The person shows a card and writes down a phone number.",
+                    "Alex calls it. The person’s friend answers: “Yes, it’s fine!”",
+                    "Alex believes it — but none of it really came from Mom."
+                  ],
                   "feedback": "A stranger could show a fake ID or hand over any phone number — it’s safer to use a number you already have, not one they give you."
                 }
               ]
@@ -412,6 +482,11 @@
                 {
                   "text": "Because it doesn’t matter which number you use.",
                   "correct": false,
+                  "outcome": [
+                    "Alex calls the number the stranger gave.",
+                    "The stranger’s friend picks up and says, “Your mom said it’s okay.”",
+                    "Alex gets tricked, because that number was never Mom’s."
+                  ],
                   "feedback": "It matters a lot — always use a number you already know and trust."
                 }
               ]
@@ -425,6 +500,11 @@
                 {
                   "text": "Believe them anyway since they tried.",
                   "correct": false,
+                  "outcome": [
+                    "Alex decides the wrong code word is “close enough.”",
+                    "Alex walks off with the person.",
+                    "Later, Mom says she never sent anyone. The wrong code word was the clue."
+                  ],
                   "feedback": "Getting the code word wrong is a warning sign — always double-check."
                 },
                 {
@@ -451,6 +531,11 @@
                 {
                   "text": "Go with them since they seem nice.",
                   "correct": false,
+                  "outcome": [
+                    "Alex starts walking with the person.",
+                    "Dad calls the school to ask where Alex is.",
+                    "No one knows who Alex left with or which way they went."
+                  ],
                   "feedback": "Being nice doesn’t prove it’s true — always check first."
                 },
                 {
@@ -474,6 +559,11 @@
                 {
                   "text": "Go home a different way alone, without telling anyone.",
                   "correct": false,
+                  "outcome": [
+                    "Alex takes a different street home, alone.",
+                    "The person sees which way Alex went.",
+                    "No grown-up knows anything happened, so no one can help or watch out."
+                  ],
                   "feedback": "It’s safer to tell a trusted adult nearby, like a teacher, right away."
                 },
                 {
@@ -492,6 +582,11 @@
                 {
                   "text": "Because knowing small details proves they’re trustworthy.",
                   "correct": false,
+                  "outcome": [
+                    "Alex thinks, “They know Dad’s name, so they must be okay.”",
+                    "Alex goes along with them.",
+                    "But the person only heard Dad’s name at pickup. They are still a stranger."
+                  ],
                   "feedback": "Knowing a detail doesn’t prove trust — always check yourself."
                 },
                 {
@@ -510,6 +605,11 @@
                 {
                   "text": "Trust anyone who seems nice or knows a detail about your family.",
                   "correct": false,
+                  "outcome": [
+                    "Alex trusts the next nice person who says Mom’s name.",
+                    "That person learned it by hearing Alex’s friends say it.",
+                    "Alex ends up somewhere no trusted grown-up knows about."
+                  ],
                   "feedback": "Niceness or a detail doesn’t prove someone is safe."
                 },
                 {
@@ -601,6 +701,11 @@
                 {
                   "text": "Go along, since the person seems to be part of the family.",
                   "correct": false,
+                  "outcome": [
+                    "Alex follows the cousin out to the parking lot.",
+                    "Back inside, Mom and Dad look around and can’t find Alex anywhere.",
+                    "Even if the cousin meant well, Alex’s parents spend a scary twenty minutes searching — and if this person wasn’t who Alex thought, nobody would know where to look."
+                  ],
                   "feedback": "Even someone who might be family isn’t automatically safe to go off alone with."
                 },
                 {
@@ -619,6 +724,11 @@
                 {
                   "text": "Avoiding the awkward moment, even if it means skipping the check.",
                   "correct": false,
+                  "outcome": [
+                    "Alex skips the check so things won’t feel awkward.",
+                    "Alex leaves with someone Alex isn’t sure about.",
+                    "A few seconds of awkwardness would have been much easier than what Alex’s parents go through searching for Alex."
+                  ],
                   "feedback": "Avoiding awkwardness isn’t worth skipping a safety check — it’s always okay to pause."
                 },
                 {
@@ -652,6 +762,11 @@
                 {
                   "text": "No, this was a one-time special rule just for today.",
                   "correct": false,
+                  "outcome": [
+                    "Alex decides the “check with Dad” rule only counted today.",
+                    "At the next party, a different relative offers Alex a ride to the store.",
+                    "Alex goes without checking — and no one knows where Alex is."
+                  ],
                   "feedback": "This isn’t a one-time rule — checking first applies every time, with anyone, even family."
                 },
                 {
@@ -676,6 +791,11 @@
                 {
                   "text": "Because anyone who is polite and friendly can be trusted with it.",
                   "correct": false,
+                  "outcome": [
+                    "Alex tells the safe word to a friendly neighbor.",
+                    "The neighbor mentions it to someone else.",
+                    "Now the safe word doesn’t prove anything — anyone could say it."
+                  ],
                   "feedback": "Being polite or friendly doesn’t tell you whether someone actually knows the safe word — the point is that only people your family already trusts should know it."
                 }
               ]
@@ -694,6 +814,11 @@
                 {
                   "text": "Go along quietly to avoid seeming rude.",
                   "correct": false,
+                  "outcome": [
+                    "Alex goes along quietly, even with a bad feeling.",
+                    "The bad feeling grows, but now Alex is away from the crowd.",
+                    "Speaking up is much harder now than it would have been at the start."
+                  ],
                   "feedback": "Avoiding rudeness isn’t worth the risk — staying visible and finding a trusted adult is safer."
                 }
               ]
@@ -715,6 +840,11 @@
                 {
                   "text": "Keep it secret since it’s just ice cream.",
                   "correct": false,
+                  "outcome": [
+                    "Alex keeps the ice cream trip a secret.",
+                    "Next time, the cousin asks Alex to keep a bigger secret.",
+                    "Each secret makes it harder for Alex to tell Dad what’s really going on."
+                  ],
                   "feedback": "Being asked to keep a secret from your parents about where you’re going is a warning sign, even from family."
                 },
                 {
@@ -738,6 +868,11 @@
                 {
                   "text": "Because all secrets, even fun surprises, are always dangerous.",
                   "correct": false,
+                  "outcome": [
+                    "Alex starts worrying about every secret — even a surprise party for Mom.",
+                    "Alex feels stressed and can’t tell which secrets matter.",
+                    "The real warning sign — a secret meant to hide something from parents — gets lost among harmless surprises."
+                  ],
                   "feedback": "Not true — surprise parties are fine. It’s secrecy about where you’re going or who you’re with that matters."
                 }
               ]
@@ -759,6 +894,11 @@
                 {
                   "text": "Say Alex shouldn’t have mentioned the secret request.",
                   "correct": false,
+                  "outcome": [
+                    "Alex decides not to tell Dad things like this anymore.",
+                    "Later, someone asks Alex to keep a more serious secret.",
+                    "Alex stays quiet, and the grown-ups who could help never find out."
+                  ],
                   "feedback": "Mentioning it was exactly the right call."
                 },
                 {
@@ -778,6 +918,11 @@
                 {
                   "text": "Wander around looking on your own.",
                   "correct": false,
+                  "outcome": [
+                    "Alex wanders into the crowd to look.",
+                    "Mom and Dad come back to where they last saw Alex — but Alex is gone.",
+                    "Now everyone is searching in different directions, and it takes much longer to find each other."
+                  ],
                   "feedback": "Wandering off alone in a crowd can make it harder for your parents to find you."
                 },
                 {
@@ -796,6 +941,11 @@
                 {
                   "text": "Go to the parking lot since they mentioned the parents.",
                   "correct": false,
+                  "outcome": [
+                    "Alex walks to the parking lot with the person.",
+                    "Mom and Dad are actually still inside, looking for Alex.",
+                    "Now Alex is alone in a parking lot with someone Alex barely knows."
+                  ],
                   "feedback": "Mentioning your parents doesn’t prove it’s true — always verify with your parents directly first."
                 },
                 {
@@ -814,6 +964,11 @@
                 {
                   "text": "Because family members are never trying to trick you, so checking isn’t really needed.",
                   "correct": false,
+                  "outcome": [
+                    "Alex stops checking first with relatives.",
+                    "Most of the time nothing goes wrong, so the habit fades away.",
+                    "Then, the one time it really matters, Alex doesn’t check — and no trusted adult knows where Alex is."
+                  ],
                   "feedback": "Checking is still worth it — most of the time it’s unnecessary, but the rule protects you the rare times it matters."
                 },
                 {
@@ -857,6 +1012,11 @@
                 {
                   "text": "Because family members are secretly untrustworthy.",
                   "correct": false,
+                  "outcome": [
+                    "Alex starts feeling nervous around every relative.",
+                    "Family events start to feel scary instead of fun.",
+                    "That was never the point — the rule is about always letting a trusted grown-up know, not about being afraid of family."
+                  ],
                   "feedback": "That’s not the point — it’s not about assuming family is bad, it’s about the rule protecting you consistently, for everyone."
                 }
               ]
@@ -981,6 +1141,11 @@
                 {
                   "text": "Acercarse mucho de inmediato para saludar.",
                   "correct": false,
+                  "outcome": [
+                    "Alex se acerca mucho.",
+                    "Ahora la persona está muy cerca.",
+                    "Alex se siente confundido. Es difícil alejarse."
+                  ],
                   "feedback": "Acercarse de inmediato no es seguro. Primero hay que mantenerse alejado."
                 },
                 {
@@ -991,6 +1156,11 @@
                 {
                   "text": "Correr y esconderse, sin contarle a nadie.",
                   "correct": false,
+                  "outcome": [
+                    "Alex corre y se esconde detrás del tobogán.",
+                    "El adulto de Alex no lo puede encontrar.",
+                    "Todos están preocupados. Alex se siente asustado y solo."
+                  ],
                   "feedback": "No tienes que esconderte. Solo mantente alejado, y cuéntale a un adulto pronto."
                 }
               ]
@@ -1012,6 +1182,11 @@
                 {
                   "text": "Tomar el dulce.",
                   "correct": false,
+                  "outcome": [
+                    "Alex toma el dulce.",
+                    "La persona sonríe y dice: “Ven por más a mi carro.”",
+                    "Ahora es más difícil decir que no."
+                  ],
                   "feedback": "No es seguro tomar cosas de personas que no conoces."
                 },
                 {
@@ -1035,6 +1210,11 @@
                 {
                   "text": "Quedarse y seguir hablando solo.",
                   "correct": false,
+                  "outcome": [
+                    "Alex se queda y sigue hablando.",
+                    "La persona se acerca más a Alex.",
+                    "No hay ningún adulto de confianza cerca para ayudar."
+                  ],
                   "feedback": "Es más seguro caminar hacia un adulto de confianza."
                 }
               ]
@@ -1083,6 +1263,11 @@
                 {
                   "text": "No decir nada más.",
                   "correct": false,
+                  "outcome": [
+                    "Alex no dice nada más.",
+                    "El salvavidas no sabe a quién buscar.",
+                    "La persona se puede quedar en el parque."
+                  ],
                   "feedback": "Ayuda contar un poco más, como cómo se veía la persona."
                 },
                 {
@@ -1102,6 +1287,11 @@
                 {
                   "text": "No, siempre tienes que decir que sí.",
                   "correct": false,
+                  "outcome": [
+                    "Alex piensa: “Tengo que decir que sí.”",
+                    "La persona le pide a Alex que vaya con ella.",
+                    "Alex dice que sí, aunque se siente mal."
+                  ],
                   "feedback": "Eso no es cierto. Siempre puedes decir que no."
                 },
                 {
@@ -1120,6 +1310,11 @@
                 {
                   "text": "Ir a ver el cachorro.",
                   "correct": false,
+                  "outcome": [
+                    "Alex camina al carro para ver el cachorro.",
+                    "Ahora Alex está lejos del parque.",
+                    "Ningún adulto que Alex conoce puede ver a Alex."
+                  ],
                   "feedback": "Nunca vayas a ningún lugar con alguien que no conoces, ni siquiera por un cachorro."
                 },
                 {
@@ -1138,6 +1333,11 @@
                 {
                   "text": "Muy cerca, como un abrazo.",
                   "correct": false,
+                  "outcome": [
+                    "Alex se para muy cerca de la persona.",
+                    "Si algo se siente mal, no hay espacio para alejarse.",
+                    "Es difícil para Alex irse rápido."
+                  ],
                   "feedback": "Eso es demasiado cerca. Mantente al menos la distancia de un brazo."
                 },
                 {
@@ -1164,6 +1364,11 @@
                 {
                   "text": "Decir que Alex debería haberse ido solo en su lugar.",
                   "correct": false,
+                  "outcome": [
+                    "Alex se aleja del salvavidas.",
+                    "Ahora Alex está solo otra vez.",
+                    "Si la persona regresa, no hay ningún ayudante cerca."
+                  ],
                   "feedback": "Quedarse cerca de un adulto de confianza es más seguro que irse solo."
                 },
                 {
@@ -1183,6 +1388,11 @@
                 {
                   "text": "Esperar a ver qué pasa.",
                   "correct": false,
+                  "outcome": [
+                    "Alex espera.",
+                    "La persona se sigue acercando.",
+                    "Alex tiene más miedo, y ningún adulto lo sabe."
+                  ],
                   "feedback": "Esperar no es seguro. Aléjate y cuéntale a un adulto de inmediato."
                 },
                 {
@@ -1274,6 +1484,11 @@
                 {
                   "text": "Ir con la persona enseguida porque mencionó a mamá.",
                   "correct": false,
+                  "outcome": [
+                    "Alex se va de la escuela con la persona.",
+                    "Unos minutos después, llega mamá — y Alex no está.",
+                    "Nadie sabe adónde fue Alex, y mamá tiene mucho miedo."
+                  ],
                   "feedback": "Saber un detalle como el nombre de un padre no prueba que alguien sea quien dice ser — siempre confirma primero."
                 },
                 {
@@ -1292,6 +1507,11 @@
                 {
                   "text": "Caminar a algún lugar tranquilo y privado para hacer la llamada.",
                   "correct": false,
+                  "outcome": [
+                    "Alex camina detrás del edificio, donde no hay nadie más.",
+                    "La persona sigue a Alex hasta allí.",
+                    "Ahora ningún maestro ni otro adulto puede ver a Alex ni ayudar."
+                  ],
                   "feedback": "Un lugar tranquilo y privado, lejos de otras personas, no es la opción más segura — quedarse visible en un área pública es mejor."
                 },
                 {
@@ -1325,6 +1545,11 @@
                 {
                   "text": "Solo esperar a ver qué hace la persona la próxima vez.",
                   "correct": false,
+                  "outcome": [
+                    "La semana siguiente, la persona regresa con otra historia.",
+                    "Alex no sabe qué hacer, porque no hay un plan.",
+                    "El personal no sabía que debía estar atento a esta persona."
+                  ],
                   "feedback": "Esperar a ver no es el plan más seguro — siempre confirma primero, cada vez, sin importar qué."
                 },
                 {
@@ -1349,6 +1574,11 @@
                 {
                   "text": "Pedirle a la persona su identificación o número de teléfono.",
                   "correct": false,
+                  "outcome": [
+                    "La persona muestra una tarjeta y escribe un número de teléfono.",
+                    "Alex llama. Un amigo de la persona contesta: “¡Sí, está bien!”",
+                    "Alex lo cree — pero nada de eso vino de mamá."
+                  ],
                   "feedback": "Un desconocido podría mostrar una identificación falsa o dar cualquier número — es más seguro usar un número que ya tienes, no uno que te dé esa persona."
                 }
               ]
@@ -1367,6 +1597,11 @@
                 {
                   "text": "Porque no importa qué número uses.",
                   "correct": false,
+                  "outcome": [
+                    "Alex llama al número que le dio el desconocido.",
+                    "Un amigo del desconocido contesta y dice: “Tu mamá dijo que está bien.”",
+                    "Alex cae en el engaño, porque ese número nunca fue de mamá."
+                  ],
                   "feedback": "Sí importa mucho — siempre usa un número que ya conoces y en el que confías."
                 }
               ]
@@ -1380,6 +1615,11 @@
                 {
                   "text": "Creerle de todos modos porque lo intentó.",
                   "correct": false,
+                  "outcome": [
+                    "Alex decide que la palabra clave equivocada es “casi igual.”",
+                    "Alex se va con la persona.",
+                    "Después, mamá dice que no mandó a nadie. La palabra clave equivocada era la pista."
+                  ],
                   "feedback": "Decir mal la palabra secreta es una señal de advertencia — siempre confirma dos veces."
                 },
                 {
@@ -1406,6 +1646,11 @@
                 {
                   "text": "Ir con ellos porque parecen agradables.",
                   "correct": false,
+                  "outcome": [
+                    "Alex empieza a caminar con la persona.",
+                    "Papá llama a la escuela para preguntar dónde está Alex.",
+                    "Nadie sabe con quién se fue Alex ni por dónde."
+                  ],
                   "feedback": "Parecer agradable no prueba que sea cierto — siempre confirma primero."
                 },
                 {
@@ -1429,6 +1674,11 @@
                 {
                   "text": "Ir a casa por otro camino solo, sin contarle a nadie.",
                   "correct": false,
+                  "outcome": [
+                    "Alex se va a casa por otra calle, solo.",
+                    "La persona ve por dónde se fue Alex.",
+                    "Ningún adulto sabe que pasó algo, así que nadie puede ayudar ni estar atento."
+                  ],
                   "feedback": "Es más seguro contarle a un adulto de confianza cercano, como un maestro, de inmediato."
                 },
                 {
@@ -1447,6 +1697,11 @@
                 {
                   "text": "Porque saber pequeños detalles prueba que es de confianza.",
                   "correct": false,
+                  "outcome": [
+                    "Alex piensa: “Sabe el nombre de papá, así que debe estar bien.”",
+                    "Alex se va con la persona.",
+                    "Pero la persona solo oyó el nombre de papá a la salida. Sigue siendo un desconocido."
+                  ],
                   "feedback": "Saber un detalle no prueba confianza — siempre confirma tú mismo."
                 },
                 {
@@ -1465,6 +1720,11 @@
                 {
                   "text": "Confiar en cualquiera que parezca agradable o que sepa un detalle sobre tu familia.",
                   "correct": false,
+                  "outcome": [
+                    "Alex confía en la siguiente persona amable que dice el nombre de mamá.",
+                    "Esa persona lo aprendió al oír a los amigos de Alex decirlo.",
+                    "Alex termina en un lugar que ningún adulto de confianza conoce."
+                  ],
                   "feedback": "Ser agradable o saber un detalle no prueba que alguien sea seguro."
                 },
                 {
@@ -1556,6 +1816,11 @@
                 {
                   "text": "Ir con la persona, ya que parece ser parte de la familia.",
                   "correct": false,
+                  "outcome": [
+                    "Alex sigue al primo hasta el estacionamiento.",
+                    "Adentro, mamá y papá miran por todos lados y no encuentran a Alex.",
+                    "Aunque el primo tuviera buenas intenciones, los papás de Alex pasan veinte minutos de miedo buscándolo — y si esta persona no fuera quien Alex creía, nadie sabría dónde buscar."
+                  ],
                   "feedback": "Incluso alguien que podría ser familia no es automáticamente seguro para ir solo con él."
                 },
                 {
@@ -1574,6 +1839,11 @@
                 {
                   "text": "Evitar el momento incómodo, aunque signifique saltarse la comprobación.",
                   "correct": false,
+                  "outcome": [
+                    "Alex se salta la comprobación para que no sea incómodo.",
+                    "Alex se va con alguien de quien no está seguro.",
+                    "Unos segundos incómodos habrían sido mucho más fáciles que lo que pasan los papás de Alex buscándolo."
+                  ],
                   "feedback": "Evitar la incomodidad no vale la pena si significa saltarse una comprobación de seguridad — siempre está bien pausar."
                 },
                 {
@@ -1607,6 +1877,11 @@
                 {
                   "text": "No, esta fue una regla especial solo por hoy.",
                   "correct": false,
+                  "outcome": [
+                    "Alex decide que la regla de “preguntarle a papá” solo contaba hoy.",
+                    "En la siguiente fiesta, otro familiar le ofrece llevarlo a la tienda.",
+                    "Alex se va sin preguntar — y nadie sabe dónde está."
+                  ],
                   "feedback": "Esta no es una regla de una sola vez — confirmar primero aplica siempre, con cualquiera, incluso familia."
                 },
                 {
@@ -1631,6 +1906,11 @@
                 {
                   "text": "Porque cualquier persona amable y simpática puede saberla.",
                   "correct": false,
+                  "outcome": [
+                    "Alex le dice la palabra secreta a un vecino amable.",
+                    "El vecino se la menciona a otra persona.",
+                    "Ahora la palabra secreta no prueba nada — cualquiera podría decirla."
+                  ],
                   "feedback": "Ser amable o simpático no indica si alguien realmente conoce la palabra secreta — la idea es que solo las personas en las que tu familia ya confía deberían saberla."
                 }
               ]
@@ -1649,6 +1929,11 @@
                 {
                   "text": "Ir en silencio para no parecer grosero.",
                   "correct": false,
+                  "outcome": [
+                    "Alex se va en silencio, aunque tiene un mal presentimiento.",
+                    "El mal presentimiento crece, pero ahora Alex está lejos de la gente.",
+                    "Hablar ahora es mucho más difícil de lo que habría sido al principio."
+                  ],
                   "feedback": "Evitar parecer grosero no vale el riesgo — quedarte visible y buscar a un adulto de confianza es más seguro."
                 }
               ]
@@ -1670,6 +1955,11 @@
                 {
                   "text": "Guardar el secreto porque es solo helado.",
                   "correct": false,
+                  "outcome": [
+                    "Alex guarda en secreto la salida por helado.",
+                    "La próxima vez, el primo le pide guardar un secreto más grande.",
+                    "Cada secreto hace más difícil que Alex le cuente a papá lo que realmente pasa."
+                  ],
                   "feedback": "Que te pidan guardar un secreto de tus papás sobre a dónde vas es una señal de advertencia, incluso viniendo de familia."
                 },
                 {
@@ -1693,6 +1983,11 @@
                 {
                   "text": "Porque todos los secretos, incluso las sorpresas divertidas, siempre son peligrosos.",
                   "correct": false,
+                  "outcome": [
+                    "Alex empieza a preocuparse por todos los secretos — hasta por una fiesta sorpresa para mamá.",
+                    "Alex se siente estresado y no sabe qué secretos importan.",
+                    "La verdadera señal de alerta — un secreto para ocultarles algo a los papás — se pierde entre sorpresas inofensivas."
+                  ],
                   "feedback": "No es cierto — las fiestas sorpresa están bien. Lo que importa es el secreto sobre a dónde vas o con quién estás."
                 }
               ]
@@ -1714,6 +2009,11 @@
                 {
                   "text": "Decir que Alex no debería haber mencionado la petición del secreto.",
                   "correct": false,
+                  "outcome": [
+                    "Alex decide no contarle más cosas así a papá.",
+                    "Después, alguien le pide a Alex guardar un secreto más serio.",
+                    "Alex se queda callado, y los adultos que podrían ayudar nunca se enteran."
+                  ],
                   "feedback": "Mencionarlo fue exactamente lo correcto."
                 },
                 {
@@ -1733,6 +2033,11 @@
                 {
                   "text": "Caminar por ahí buscando solo.",
                   "correct": false,
+                  "outcome": [
+                    "Alex camina entre la gente para buscar.",
+                    "Mamá y papá regresan a donde vieron a Alex por última vez — pero Alex ya no está.",
+                    "Ahora todos buscan en direcciones distintas, y tardan mucho más en encontrarse."
+                  ],
                   "feedback": "Alejarte solo entre la multitud puede hacer más difícil que tus papás te encuentren."
                 },
                 {
@@ -1751,6 +2056,11 @@
                 {
                   "text": "Ir al estacionamiento porque mencionaron a los papás.",
                   "correct": false,
+                  "outcome": [
+                    "Alex camina al estacionamiento con la persona.",
+                    "En realidad, mamá y papá siguen adentro buscando a Alex.",
+                    "Ahora Alex está solo en un estacionamiento con alguien que apenas conoce."
+                  ],
                   "feedback": "Mencionar a tus papás no prueba que sea cierto — siempre confirma directamente con ellos primero."
                 },
                 {
@@ -1769,6 +2079,11 @@
                 {
                   "text": "Porque los familiares nunca intentan engañarte, así que confirmar realmente no es necesario.",
                   "correct": false,
+                  "outcome": [
+                    "Alex deja de preguntar primero con los familiares.",
+                    "Casi siempre no pasa nada, así que el hábito desaparece.",
+                    "Entonces, la única vez que de verdad importa, Alex no pregunta — y ningún adulto de confianza sabe dónde está."
+                  ],
                   "feedback": "Confirmar sigue valiendo la pena — la mayoría de las veces no es necesario, pero la regla te protege las pocas veces que sí importa."
                 },
                 {
@@ -1812,6 +2127,11 @@
                 {
                   "text": "Porque los familiares son secretamente poco confiables.",
                   "correct": false,
+                  "outcome": [
+                    "Alex empieza a sentirse nervioso con todos sus familiares.",
+                    "Las reuniones familiares empiezan a dar miedo en vez de ser divertidas.",
+                    "Esa nunca fue la idea — la regla es avisar siempre a un adulto de confianza, no tenerle miedo a la familia."
+                  ],
                   "feedback": "Ese no es el punto — no se trata de suponer que la familia es mala, sino de que la regla te proteja siempre, a todos."
                 }
               ]

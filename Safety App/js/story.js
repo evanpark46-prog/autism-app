@@ -147,7 +147,8 @@ function dialogueArtworkFile(topicId, sceneNumber, consequence){
 function getDialogueIllustration(topicId, sceneNumber, alt){
   const file = dialogueArtworkFile(topicId, sceneNumber, false);
   if (!file) return '';
-  return `<img src="${file}" alt="${alt || ''}" loading="eager" data-dialogue-image>`;
+  const consequenceFile = dialogueArtworkFile(topicId, sceneNumber, true);
+  return `<img src="${file}" data-dialogue-image data-dialogue-base-src="${file}" data-dialogue-consequence-src="${consequenceFile}" alt="${escapeHtml(alt || '')}" loading="eager">`;
 }
 
 /* Tappable exploration hotspots for Level 1 scenes — a low-stakes, optional

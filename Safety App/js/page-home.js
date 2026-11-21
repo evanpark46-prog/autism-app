@@ -193,6 +193,7 @@ function initScrollReveal(container){
 
 function initHomePage(){
   if (typeof initAgeGate === 'function') initAgeGate();
+  if (typeof initPracticePath === 'function') initPracticePath();
   renderTopicGrid();
   renderHeroWall();
   renderHeroTip();
