@@ -133,6 +133,7 @@ document.addEventListener('DOMContentLoaded', () => {
   else if (page === 'review') initReviewPage();
   else if (page === 'badges') initBadgesPage();
   else if (page === 'boss-battle') initBossBattlePage();
+  else if (page === 'villain') initVillainPage();
   else if (page === 'hero-rush') initHeroRushPage();
   else if (page === 'vocab-quiz') initVocabQuizPage();
   else if (page === 'sort-it-out') initSortItOutPage();

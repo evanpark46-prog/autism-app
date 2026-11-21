@@ -552,6 +552,17 @@ function initTopicPage(){
             <a class="power-unlock__certificate" href="certificate.html?id=${encodeURIComponent(meta.id)}">${t('certificate_print_link')}</a>
           </div>
         </div>` : '';
+      const villain = typeof villainData === 'function' ? villainData(meta.id, getLang()) : null;
+      const beaten = villain && villainBeaten(meta.id, storyState.level);
+      const villainHtml = villain ? `
+        <div class="villain-callout ${beaten ? 'villain-callout--done' : ''}">
+          <div class="villain-callout__art" aria-hidden="true">${villainSvg(meta.id, beaten)}</div>
+          <div class="villain-callout__text">
+            <p class="villain-callout__title">${escapeHtml(t(beaten ? 'villain_callout_done_title' : 'villain_callout_title', { villain: villain.name }))}</p>
+            ${beaten ? '' : `<p class="villain-callout__body">${escapeHtml(t('villain_callout_body'))}</p>`}
+            <a class="btn ${beaten ? 'btn-secondary' : 'btn-primary btn-lg'}" href="villain.html?id=${encodeURIComponent(meta.id)}&level=${storyState.level}">${escapeHtml(beaten ? t('villain_callout_again') : t('villain_callout_btn', { villain: villain.name }))}</a>
+          </div>
+        </div>` : '';
       panel.innerHTML = `
         <div class="story-stage">
           <div class="story-complete">
@@ -559,6 +570,7 @@ function initTopicPage(){
               ${heroPortraitHtml(meta.id, getLang(), meta.theme, 58)}
             </div>
             <h2>${t('story_complete_title')}</h2>
+            ${villainHtml}
             ${powerUnlockHtml}
             <div class="speak-row center">
               <p style="margin:0" data-recap-lead>${escapeHtml(t('story_complete_lead'))}</p>
