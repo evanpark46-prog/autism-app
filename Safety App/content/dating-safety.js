@@ -31,11 +31,21 @@
                 {
                   "text": "Go along with it anyway so Jamie doesn’t feel bad.",
                   "correct": false,
+                  "outcome": [
+                    "Alex holds hands anyway.",
+                    "Alex’s tummy feels funny and tight.",
+                    "Alex feels upset, and Jamie doesn’t know."
+                  ],
                   "feedback": "Your own comfort matters too — you don’t have to go along with something just to avoid disappointing someone."
                 },
                 {
                   "text": "Avoid Jamie completely from now on.",
                   "correct": false,
+                  "outcome": [
+                    "Alex stops talking to Jamie.",
+                    "Jamie is confused and feels sad.",
+                    "Alex misses Jamie and feels lonely."
+                  ],
                   "feedback": "You don’t have to avoid someone completely — you can just say how you feel honestly."
                 }
               ]
@@ -62,6 +72,11 @@
                 {
                   "text": "Say Jamie should have kept asking until Alex agreed.",
                   "correct": false,
+                  "outcome": [
+                    "Alex thinks Jamie should keep asking.",
+                    "Alex keeps asking a friend after the friend says no.",
+                    "The friend feels pushed and walks away."
+                  ],
                   "feedback": "Someone who respects you accepts your answer the first time, without repeating the ask to wear you down."
                 }
               ]
@@ -87,6 +102,11 @@
                 {
                   "text": "Because Jamie forgot the earlier answer.",
                   "correct": false,
+                  "outcome": [
+                    "Alex thinks Jamie just forgot.",
+                    "Alex gets grumpy at Jamie for asking again.",
+                    "Jamie feels sad for being kind."
+                  ],
                   "feedback": "Asking first is about respect, not forgetting — checking each time is exactly right."
                 }
               ]
@@ -143,11 +163,21 @@
                 {
                   "text": "Riley must be right, since caring means proving it by giving things up.",
                   "correct": false,
+                  "outcome": [
+                    "Alex stops hanging out with other friends to prove caring to Riley.",
+                    "Alex’s friends stop inviting Alex to lunch and games.",
+                    "Now Alex only has Riley to talk to and feels left out."
+                  ],
                   "feedback": "That’s actually a common pressure tactic — real caring doesn’t require giving up your other friendships."
                 },
                 {
                   "text": "Ignore it, but keep everything exactly the same anyway.",
                   "correct": false,
+                  "outcome": [
+                    "Alex ignores what Riley said and doesn’t tell anyone.",
+                    "Riley says it again, and Alex starts skipping time with friends.",
+                    "Alex feels confused and stuck, and no trusted adult knows."
+                  ],
                   "feedback": "It’s worth actually noticing this as a warning sign, not just ignoring it — consider talking to a trusted friend or adult about it."
                 }
               ]
@@ -174,6 +204,11 @@
                 {
                   "text": "Say it’s only a problem if it happens a lot.",
                   "correct": false,
+                  "outcome": [
+                    "Alex decides it isn’t a problem because it only happened once.",
+                    "Riley keeps asking Alex to skip time with friends.",
+                    "By the time it happens a lot, Alex already sees friends much less."
+                  ],
                   "feedback": "Even once, isolating pressure is worth paying attention to, not waiting for it to repeat."
                 }
               ],
@@ -200,6 +235,11 @@
                 {
                   "text": "By being upset until Alex gives in.",
                   "correct": false,
+                  "outcome": [
+                    "Alex thinks Riley staying upset is normal.",
+                    "Riley stays upset, so Alex gives in and skips time with friends.",
+                    "Alex feels sad and pressured, and Riley keeps getting upset to get their way."
+                  ],
                   "feedback": "Staying upset until you give in is more pressure, not respect."
                 }
               ]
@@ -223,6 +263,11 @@
                 {
                   "text": "Those phrases always mean the person really does care more.",
                   "correct": false,
+                  "outcome": [
+                    "Alex thinks those phrases always mean Riley cares more.",
+                    "When Riley says, “If you really liked me, you would…,” Alex says yes every time.",
+                    "Alex keeps doing things Alex isn’t comfortable with, just to seem caring."
+                  ],
                   "feedback": "That phrasing is actually a common pressure tactic, not proof of caring."
                 }
               ]
@@ -259,11 +304,21 @@
                 {
                   "text": "This is just what caring a lot looks like.",
                   "correct": false,
+                  "outcome": [
+                    "Alex decides the constant location checks just mean the partner cares a lot.",
+                    "The partner starts asking for more check-ins and getting upset more often.",
+                    "Alex feels watched all the time and starts to feel anxious whenever the phone buzzes."
+                  ],
                   "feedback": "Constant monitoring is a control pattern, not a healthy sign of caring."
                 },
                 {
                   "text": "It’s fine as long as Alex just always replies fast enough to avoid upset.",
                   "correct": false,
+                  "outcome": [
+                    "Alex starts replying to every text within seconds to keep the partner from getting upset.",
+                    "Alex checks the phone during class, meals, and time with friends.",
+                    "Alex is tired and stressed, and the partner’s rules keep growing anyway."
+                  ],
                   "feedback": "Changing your own behavior to manage someone else’s control isn’t the goal — recognizing the pattern is what matters here."
                 }
               ]
@@ -290,6 +345,11 @@
                 {
                   "text": "Say Alex should just get used to being monitored since it’s a serious relationship.",
                   "correct": false,
+                  "outcome": [
+                    "Alex decides to just get used to being monitored.",
+                    "Alex shares location all the time and stops telling the counselor how it feels.",
+                    "The controlling pattern keeps going, and Alex has less and less space to just be Alex."
+                  ],
                   "feedback": "That’s not something to just get used to — it’s worth addressing directly."
                 }
               ],
@@ -316,6 +376,11 @@
                 {
                   "text": "It’s not useful unless something has already gone wrong.",
                   "correct": false,
+                  "outcome": [
+                    "Alex decides a code word isn’t needed since nothing bad has happened yet.",
+                    "One night at a party, Alex feels uncomfortable and wants to leave quietly.",
+                    "With no plan ready, Alex has to explain everything out loud or just stay feeling stuck."
+                  ],
                   "feedback": "A safety plan is most useful when it’s set up ahead of time, before anything happens."
                 }
               ]
@@ -339,6 +404,11 @@
                 {
                   "text": "You have to have a very serious reason before it’s okay to ask for help or leave.",
                   "correct": false,
+                  "outcome": [
+                    "Alex believes there has to be a very serious reason before asking for help or leaving.",
+                    "On a date, something feels off, but Alex stays because it doesn’t seem serious enough.",
+                    "Alex feels more and more uncomfortable and alone, and no trusted adult knows."
+                  ],
                   "feedback": "That’s not true — you’re always allowed to ask for help or leave a situation, for any reason, including just a feeling that something’s wrong."
                 }
               ]
@@ -444,11 +514,21 @@
                 {
                   "text": "Seguir la corriente de todas formas para que Jamie no se sienta mal.",
                   "correct": false,
+                  "outcome": [
+                    "Alex se toma de las manos igual.",
+                    "Alex siente algo raro en la pancita.",
+                    "Alex se siente mal, y Jamie no lo sabe."
+                  ],
                   "feedback": "Tu propia comodidad también importa — no tienes que seguir la corriente solo para evitar decepcionar a alguien."
                 },
                 {
                   "text": "Evitar a Jamie por completo desde ahora.",
                   "correct": false,
+                  "outcome": [
+                    "Alex deja de hablarle a Jamie.",
+                    "Jamie se confunde y se pone triste.",
+                    "Alex extraña a Jamie y se siente solo."
+                  ],
                   "feedback": "No tienes que evitar a alguien por completo — puedes simplemente decir cómo te sientes con honestidad."
                 }
               ]
@@ -475,6 +555,11 @@
                 {
                   "text": "Decir que Jamie debería haber seguido preguntando hasta que Alex aceptara.",
                   "correct": false,
+                  "outcome": [
+                    "Alex cree que Jamie debería seguir preguntando.",
+                    "Alex sigue preguntándole a un amigo después de que dice que no.",
+                    "El amigo se siente presionado y se va."
+                  ],
                   "feedback": "Alguien que te respeta acepta tu respuesta la primera vez, sin repetir el pedido para cansarte."
                 }
               ]
@@ -500,6 +585,11 @@
                 {
                   "text": "Porque Jamie olvidó la respuesta anterior.",
                   "correct": false,
+                  "outcome": [
+                    "Alex cree que Jamie solo olvidó.",
+                    "Alex se enoja con Jamie por preguntar otra vez.",
+                    "Jamie se pone triste por ser amable."
+                  ],
                   "feedback": "Preguntar primero es sobre respeto, no sobre olvidar — verificar cada vez es exactamente correcto."
                 }
               ]
@@ -556,11 +646,21 @@
                 {
                   "text": "Riley debe tener razón, ya que querer a alguien significa demostrarlo renunciando a cosas.",
                   "correct": false,
+                  "outcome": [
+                    "Alex deja de pasar tiempo con otros amigos para demostrarle cariño a Riley.",
+                    "Los amigos de Alex dejan de invitarlo a comer y a jugar.",
+                    "Ahora Alex solo tiene a Riley para hablar y se siente excluido."
+                  ],
                   "feedback": "En realidad esa es una táctica de presión común — el cariño real no requiere renunciar a tus otras amistades."
                 },
                 {
                   "text": "Ignorarlo, pero dejar todo exactamente igual de todas formas.",
                   "correct": false,
+                  "outcome": [
+                    "Alex ignora lo que dijo Riley y no le cuenta a nadie.",
+                    "Riley lo vuelve a decir, y Alex empieza a faltar a planes con sus amigos.",
+                    "Alex se siente confundido y atrapado, y ningún adulto de confianza lo sabe."
+                  ],
                   "feedback": "Vale la pena notar esto de verdad como una señal de alerta, no solo ignorarlo — considera hablar con un amigo o adulto de confianza al respecto."
                 }
               ]
@@ -587,6 +687,11 @@
                 {
                   "text": "Decir que solo es un problema si pasa muchas veces.",
                   "correct": false,
+                  "outcome": [
+                    "Alex decide que no es un problema porque solo pasó una vez.",
+                    "Riley sigue pidiéndole a Alex que no vea a sus amigos.",
+                    "Para cuando pasa muchas veces, Alex ya ve mucho menos a sus amigos."
+                  ],
                   "feedback": "Incluso una vez, la presión para aislarte vale la pena tenerla en cuenta, sin esperar a que se repita."
                 }
               ],
@@ -613,6 +718,11 @@
                 {
                   "text": "Estando molesto hasta que Alex ceda.",
                   "correct": false,
+                  "outcome": [
+                    "Alex cree que es normal que Riley siga molesto.",
+                    "Riley sigue molesto, así que Alex cede y deja de ver a sus amigos.",
+                    "Alex se siente triste y presionado, y Riley sigue molestándose para salirse con la suya."
+                  ],
                   "feedback": "Seguir molesto hasta que cedas es más presión, no respeto."
                 }
               ]
@@ -636,6 +746,11 @@
                 {
                   "text": "Esas frases siempre significan que la persona de verdad quiere más.",
                   "correct": false,
+                  "outcome": [
+                    "Alex cree que esas frases siempre significan que Riley lo quiere más.",
+                    "Cuando Riley dice: “Si de verdad te gustara, harías…”, Alex dice que sí cada vez.",
+                    "Alex sigue haciendo cosas con las que no está cómodo, solo para parecer cariñoso."
+                  ],
                   "feedback": "Esa frase en realidad es una táctica de presión común, no prueba de cariño."
                 }
               ]
@@ -672,11 +787,21 @@
                 {
                   "text": "Esto es solo cómo se ve querer mucho a alguien.",
                   "correct": false,
+                  "outcome": [
+                    "Alex decide que revisar su ubicación todo el tiempo solo significa que la pareja lo quiere mucho.",
+                    "La pareja empieza a pedir más reportes y a molestarse más seguido.",
+                    "Alex se siente vigilado todo el tiempo y se pone nervioso cada vez que vibra el teléfono."
+                  ],
                   "feedback": "La vigilancia constante es un patrón de control, no una señal sana de cariño."
                 },
                 {
                   "text": "Está bien mientras Alex siempre responda lo bastante rápido para evitar molestias.",
                   "correct": false,
+                  "outcome": [
+                    "Alex empieza a responder cada mensaje en segundos para que la pareja no se moleste.",
+                    "Alex revisa el teléfono en clase, en la comida y cuando está con amigos.",
+                    "Alex está cansado y estresado, y las reglas de la pareja siguen creciendo de todas formas."
+                  ],
                   "feedback": "Cambiar tu propio comportamiento para manejar el control de otra persona no es la meta — reconocer el patrón es lo que importa aquí."
                 }
               ]
@@ -703,6 +828,11 @@
                 {
                   "text": "Decir que Alex debería acostumbrarse a ser vigilado ya que es una relación seria.",
                   "correct": false,
+                  "outcome": [
+                    "Alex decide acostumbrarse a ser vigilado.",
+                    "Alex comparte su ubicación todo el tiempo y deja de contarle al consejero cómo se siente.",
+                    "El patrón de control sigue, y Alex tiene cada vez menos espacio para ser simplemente Alex."
+                  ],
                   "feedback": "Eso no es algo a lo que simplemente acostumbrarse — vale la pena abordarlo directamente."
                 }
               ],
@@ -729,6 +859,11 @@
                 {
                   "text": "No es útil a menos que algo ya haya salido mal.",
                   "correct": false,
+                  "outcome": [
+                    "Alex decide que no necesita una palabra clave porque todavía no ha pasado nada malo.",
+                    "Una noche en una fiesta, Alex se siente incómodo y quiere irse sin llamar la atención.",
+                    "Sin un plan listo, Alex tiene que explicar todo en voz alta o quedarse sintiéndose atrapado."
+                  ],
                   "feedback": "Un plan de seguridad es más útil cuando se prepara con anticipación, antes de que pase algo."
                 }
               ]
@@ -752,6 +887,11 @@
                 {
                   "text": "Hay que tener una razón muy seria antes de que esté bien pedir ayuda o irse.",
                   "correct": false,
+                  "outcome": [
+                    "Alex cree que necesita una razón muy seria antes de pedir ayuda o irse.",
+                    "En una cita, algo no se siente bien, pero Alex se queda porque no parece suficientemente serio.",
+                    "Alex se siente cada vez más incómodo y solo, y ningún adulto de confianza lo sabe."
+                  ],
                   "feedback": "Eso no es cierto — siempre puedes pedir ayuda o dejar una situación, por cualquier razón, incluyendo solo un presentimiento de que algo está mal."
                 }
               ]

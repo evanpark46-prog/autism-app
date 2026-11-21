@@ -26,6 +26,11 @@
                 {
                   "text": "Walk into the street right where you’re standing.",
                   "correct": false,
+                  "outcome": [
+                    "Alex steps into the street right there.",
+                    "A driver does not expect Alex there.",
+                    "The car has to stop fast. Alex feels scared."
+                  ],
                   "feedback": "Crossing away from a crosswalk is harder for drivers to expect — it’s safer to find a marked crossing."
                 },
                 {
@@ -36,6 +41,11 @@
                 {
                   "text": "Cross between two parked cars so it’s a shorter walk.",
                   "correct": false,
+                  "outcome": [
+                    "Alex steps out between two parked cars.",
+                    "A driver cannot see Alex behind them.",
+                    "A car comes close. Alex jumps back, scared."
+                  ],
                   "feedback": "Parked cars can hide you from drivers — it’s much safer to cross where everyone can see you."
                 }
               ]
@@ -57,6 +67,11 @@
                 {
                   "text": "Just cross wherever looks clear.",
                   "correct": false,
+                  "outcome": [
+                    "Alex crosses where it looks clear.",
+                    "A car comes around the corner fast.",
+                    "The driver didn’t expect Alex. Alex feels scared."
+                  ],
                   "feedback": "It’s safer to use the marked crosswalk, where drivers expect people to cross."
                 },
                 {
@@ -83,6 +98,11 @@
                 {
                   "text": "Keep walking without checking the car.",
                   "correct": false,
+                  "outcome": [
+                    "Alex keeps walking without looking.",
+                    "The turning car keeps coming too.",
+                    "The driver stops suddenly. Alex is scared."
+                  ],
                   "feedback": "Even with the signal, it’s safer to check that turning cars have actually stopped for you."
                 },
                 {
@@ -109,6 +129,11 @@
                 {
                   "text": "Just keep walking and hope they see you.",
                   "correct": false,
+                  "outcome": [
+                    "Alex keeps walking and hopes.",
+                    "The driver did not see Alex.",
+                    "The car honks and stops fast. Alex is scared."
+                  ],
                   "feedback": "Hoping isn’t a safe plan — always make sure the driver has actually stopped."
                 },
                 {
@@ -166,6 +191,11 @@
                 {
                   "text": "Cross quickly right next to the truck since it’s the shortest way across.",
                   "correct": false,
+                  "outcome": [
+                    "Alex darts out right next to the big truck.",
+                    "A car coming down the street can’t see Alex behind the truck.",
+                    "The driver slams on the brakes, and Alex freezes in the street, heart pounding."
+                  ],
                   "feedback": "The truck blocks both Alex’s view of traffic and drivers’ view of Alex — that’s exactly the kind of spot to avoid crossing."
                 },
                 {
@@ -176,6 +206,11 @@
                 {
                   "text": "Ask a stranger walking by to walk across with them.",
                   "correct": false,
+                  "outcome": [
+                    "Alex asks a stranger walking by to cross with them.",
+                    "They step out next to the truck, and neither of them can see the cars.",
+                    "Now Alex is in the street with someone Alex doesn’t know, and drivers can’t see either of them."
+                  ],
                   "feedback": "Having company doesn’t fix the visibility problem — the safer fix is finding a clearer spot to cross."
                 }
               ]
@@ -197,6 +232,11 @@
                 {
                   "text": "Just squeeze past the truck quickly.",
                   "correct": false,
+                  "outcome": [
+                    "Alex squeezes quickly past the front of the truck.",
+                    "Alex steps out, and a car is right there, coming fast.",
+                    "The car honks loudly, and Alex jumps back to the curb feeling shaky."
+                  ],
                   "feedback": "Squeezing past a truck blocking the view isn’t safe — finding a clearer spot is worth the extra time."
                 },
                 {
@@ -222,6 +262,11 @@
                 {
                   "text": "Keep crossing at the same pace — sirens don’t change anything.",
                   "correct": false,
+                  "outcome": [
+                    "Alex keeps crossing at the same slow pace.",
+                    "The ambulance comes around the corner fast while Alex is still in the street.",
+                    "The ambulance has to swerve and slow down, and Alex feels frozen and scared."
+                  ],
                   "feedback": "An emergency vehicle may need to move fast and unexpectedly — it’s safer to get all the way across or back to the curb first, then watch for it."
                 },
                 {
@@ -248,6 +293,11 @@
                 {
                   "text": "Because it doesn’t really matter either way.",
                   "correct": false,
+                  "outcome": [
+                    "Alex believes it doesn’t matter whether you get off the street for a siren.",
+                    "Another day, Alex keeps standing in the street as a fire truck rushes closer.",
+                    "The fire truck has to slow down, so it takes longer to get where it’s needed."
+                  ],
                   "feedback": "It matters a lot — emergency vehicles need clear room to move fast and unexpectedly."
                 },
                 {
@@ -305,6 +355,11 @@
                 {
                   "text": "Start crossing right away since the signal is in Alex’s favor.",
                   "correct": false,
+                  "outcome": [
+                    "Alex steps into the crosswalk right away because the signal says walk.",
+                    "The driver, still looking at their phone, starts to roll forward into the turn.",
+                    "The car stops just in time when the driver finally looks up, and Alex is left standing shaky in the middle of the crosswalk."
+                  ],
                   "feedback": "The signal being on your side doesn’t stop a distracted driver from moving — it’s safer to make sure the driver actually sees you first."
                 },
                 {
@@ -315,6 +370,11 @@
                 {
                   "text": "Cross on the far side of the crosswalk, away from that car.",
                   "correct": false,
+                  "outcome": [
+                    "Alex crosses on the far edge of the crosswalk, away from the car.",
+                    "The driver, still on their phone, turns right and swings toward that far side of the crosswalk.",
+                    "Alex has to hurry out of the way, realizing the driver never saw anyone at all."
+                  ],
                   "feedback": "Moving to the edge of the crosswalk doesn’t fix the real problem — the driver still might not see anyone crossing at all."
                 }
               ]
@@ -336,6 +396,11 @@
                 {
                   "text": "Cross immediately without watching the car anymore.",
                   "correct": false,
+                  "outcome": [
+                    "Alex hurries across without looking at the car again.",
+                    "The driver glances back down at their phone, and the car starts to creep forward.",
+                    "Alex doesn’t notice until the car is close, and has to rush the last few steps to the curb."
+                  ],
                   "feedback": "Even after they wave, it’s safer to keep watching until you’re fully across."
                 },
                 {
@@ -361,6 +426,11 @@
                 {
                   "text": "Let the sibling run ahead since Alex already checked the street.",
                   "correct": false,
+                  "outcome": [
+                    "Alex lets the sibling run ahead into the street.",
+                    "A car pulls out of a driveway just as the sibling reaches the road.",
+                    "The driver brakes hard, and Alex’s sibling stands frozen and scared, too far away for Alex to grab their hand."
+                  ],
                   "feedback": "A situation can change fast — someone running ahead alone loses the benefit of checking together and being seen together."
                 },
                 {
@@ -387,6 +457,11 @@
                 {
                   "text": "Let the sibling go first alone since they’re excited.",
                   "correct": false,
+                  "outcome": [
+                    "Alex lets the sibling go first alone.",
+                    "The sibling runs out without looking, eyes fixed on the other side of the street.",
+                    "A bike coming down the street has to swerve, and the sibling starts crying, scared and alone in the road."
+                  ],
                   "feedback": "Letting someone run ahead alone loses the safety of checking and crossing together."
                 },
                 {
@@ -410,6 +485,11 @@
                 {
                   "text": "Once you’ve checked the street, there’s no need to check again.",
                   "correct": false,
+                  "outcome": [
+                    "Alex agrees that one check is enough and stops checking again.",
+                    "Alex checks once, then waits a while before crossing — and a car turns onto the street in that time.",
+                    "Alex steps out without seeing it, and the driver has to stop suddenly; Alex and the sibling both feel shaken."
+                  ],
                   "feedback": "A situation, like a car appearing, can change in just a few seconds — one more check is always worth it."
                 },
                 {
@@ -515,6 +595,11 @@
                 {
                   "text": "Caminar hacia la calle justo donde está parado.",
                   "correct": false,
+                  "outcome": [
+                    "Alex baja a la calle justo ahí.",
+                    "Un conductor no espera ver a Alex.",
+                    "El carro frena rápido. Alex tiene miedo."
+                  ],
                   "feedback": "Cruzar fuera de un cruce peatonal es más difícil de anticipar para los conductores — es más seguro buscar un cruce marcado."
                 },
                 {
@@ -525,6 +610,11 @@
                 {
                   "text": "Cruzar entre dos carros estacionados porque es un camino más corto.",
                   "correct": false,
+                  "outcome": [
+                    "Alex sale entre dos carros estacionados.",
+                    "Un conductor no puede ver a Alex.",
+                    "Un carro pasa muy cerca. Alex se asusta."
+                  ],
                   "feedback": "Los carros estacionados pueden ocultarte de los conductores — es mucho más seguro cruzar donde todos puedan verte."
                 }
               ]
@@ -546,6 +636,11 @@
                 {
                   "text": "Simplemente cruzar donde se vea despejado.",
                   "correct": false,
+                  "outcome": [
+                    "Alex cruza donde se ve despejado.",
+                    "Un carro da la vuelta en la esquina rápido.",
+                    "El conductor no esperaba a Alex. Alex se asusta."
+                  ],
                   "feedback": "Es más seguro usar el cruce peatonal marcado, donde los conductores esperan que cruce la gente."
                 },
                 {
@@ -572,6 +667,11 @@
                 {
                   "text": "Seguir caminando sin revisar el carro.",
                   "correct": false,
+                  "outcome": [
+                    "Alex sigue caminando sin mirar.",
+                    "El carro que gira también sigue.",
+                    "El conductor frena de golpe. Alex se asusta."
+                  ],
                   "feedback": "Aunque tengas la señal, es más seguro revisar que los carros que giran realmente se hayan detenido para ti."
                 },
                 {
@@ -598,6 +698,11 @@
                 {
                   "text": "Simplemente seguir caminando y esperar que te vean.",
                   "correct": false,
+                  "outcome": [
+                    "Alex sigue caminando y espera.",
+                    "El conductor no vio a Alex.",
+                    "El carro pita y frena rápido. Alex se asusta."
+                  ],
                   "feedback": "Esperar no es un plan seguro — siempre asegúrate de que el conductor realmente se haya detenido."
                 },
                 {
@@ -655,6 +760,11 @@
                 {
                   "text": "Cruzar rápido justo al lado del camión porque es el camino más corto.",
                   "correct": false,
+                  "outcome": [
+                    "Alex sale rápido justo al lado del camión grande.",
+                    "Un carro que viene por la calle no puede ver a Alex detrás del camión.",
+                    "El conductor frena de golpe, y Alex se queda congelado en la calle, con el corazón acelerado."
+                  ],
                   "feedback": "El camión bloquea tanto la vista de Alex hacia el tráfico como la vista de los conductores hacia Alex — es exactamente el tipo de lugar que se debe evitar para cruzar."
                 },
                 {
@@ -665,6 +775,11 @@
                 {
                   "text": "Pedirle a un desconocido que pase caminando que cruce junto con Alex.",
                   "correct": false,
+                  "outcome": [
+                    "Alex le pide a un desconocido que pasa que cruce con él.",
+                    "Salen junto al camión, y ninguno de los dos puede ver los carros.",
+                    "Ahora Alex está en la calle con alguien que no conoce, y los conductores no pueden ver a ninguno de los dos."
+                  ],
                   "feedback": "Tener compañía no resuelve el problema de visibilidad — la solución más segura es encontrar un lugar más despejado para cruzar."
                 }
               ]
@@ -686,6 +801,11 @@
                 {
                   "text": "Simplemente pasar rápido junto al camión.",
                   "correct": false,
+                  "outcome": [
+                    "Alex pasa rápido por delante del camión.",
+                    "Alex sale, y hay un carro justo ahí, viniendo rápido.",
+                    "El carro pita fuerte, y Alex regresa a la acera temblando."
+                  ],
                   "feedback": "Pasar rápido junto a un camión que bloquea la vista no es seguro — buscar un lugar más despejado vale el tiempo extra."
                 },
                 {
@@ -711,6 +831,11 @@
                 {
                   "text": "Seguir cruzando al mismo ritmo — las sirenas no cambian nada.",
                   "correct": false,
+                  "outcome": [
+                    "Alex sigue cruzando al mismo ritmo lento.",
+                    "La ambulancia da la vuelta en la esquina rápido mientras Alex todavía está en la calle.",
+                    "La ambulancia tiene que esquivarlo y frenar, y Alex se queda paralizado del susto."
+                  ],
                   "feedback": "Un vehículo de emergencia puede necesitar moverse rápido e inesperadamente — es más seguro terminar de cruzar o volver a la acera primero, y luego observar."
                 },
                 {
@@ -737,6 +862,11 @@
                 {
                   "text": "Porque realmente no importa de ninguna manera.",
                   "correct": false,
+                  "outcome": [
+                    "Alex cree que no importa si sale de la calle cuando suena una sirena.",
+                    "Otro día, Alex se queda parado en la calle mientras un camión de bomberos se acerca.",
+                    "El camión de bomberos tiene que frenar, así que tarda más en llegar a donde lo necesitan."
+                  ],
                   "feedback": "Sí importa mucho — los vehículos de emergencia necesitan espacio despejado para moverse rápido e inesperadamente."
                 },
                 {
@@ -794,6 +924,11 @@
                 {
                   "text": "Empezar a cruzar de inmediato porque la señal está a favor de Alex.",
                   "correct": false,
+                  "outcome": [
+                    "Alex entra al cruce de inmediato porque la señal dice que puede cruzar.",
+                    "El conductor, todavía mirando su teléfono, empieza a avanzar para girar.",
+                    "El carro se detiene justo a tiempo cuando el conductor por fin levanta la vista, y Alex queda temblando en medio del cruce."
+                  ],
                   "feedback": "Que la señal esté a tu favor no impide que un conductor distraído se mueva — es más seguro asegurarte de que el conductor realmente te haya visto."
                 },
                 {
@@ -804,6 +939,11 @@
                 {
                   "text": "Cruzar por el borde más alejado del cruce peatonal, lejos de ese carro.",
                   "correct": false,
+                  "outcome": [
+                    "Alex cruza por el borde más alejado del cruce, lejos del carro.",
+                    "El conductor, todavía con el teléfono, gira a la derecha y se abre hacia ese lado del cruce.",
+                    "Alex tiene que apurarse para quitarse del camino, y se da cuenta de que el conductor nunca vio a nadie."
+                  ],
                   "feedback": "Moverse hacia el borde del cruce no resuelve el problema real — el conductor todavía podría no ver a nadie cruzando."
                 }
               ]
@@ -825,6 +965,11 @@
                 {
                   "text": "Cruzar de inmediato sin seguir observando el carro.",
                   "correct": false,
+                  "outcome": [
+                    "Alex cruza rápido sin volver a mirar el carro.",
+                    "El conductor vuelve a mirar su teléfono, y el carro empieza a avanzar despacio.",
+                    "Alex no lo nota hasta que el carro está cerca, y tiene que apurarse los últimos pasos hasta la acera."
+                  ],
                   "feedback": "Aunque hagan una seña, es más seguro seguir observando hasta haber cruzado por completo."
                 },
                 {
@@ -850,6 +995,11 @@
                 {
                   "text": "Dejar que el hermano corra primero ya que Alex ya revisó la calle.",
                   "correct": false,
+                  "outcome": [
+                    "Alex deja que su hermano corra primero hacia la calle.",
+                    "Un carro sale de una entrada justo cuando el hermano llega a la calle.",
+                    "El conductor frena fuerte, y el hermano de Alex se queda congelado y asustado, demasiado lejos para que Alex le tome la mano."
+                  ],
                   "feedback": "Una situación puede cambiar rápido — que alguien corra solo hacia adelante pierde el beneficio de revisar juntos y ser vistos juntos."
                 },
                 {
@@ -876,6 +1026,11 @@
                 {
                   "text": "Dejar que el hermano vaya primero solo ya que está emocionado.",
                   "correct": false,
+                  "outcome": [
+                    "Alex deja que su hermano vaya primero solo.",
+                    "El hermano sale corriendo sin mirar, con los ojos en el otro lado de la calle.",
+                    "Una bicicleta que viene tiene que esquivarlo, y el hermano empieza a llorar, asustado y solo en la calle."
+                  ],
                   "feedback": "Dejar que alguien corra solo hacia adelante pierde la seguridad de revisar y cruzar juntos."
                 },
                 {
@@ -899,6 +1054,11 @@
                 {
                   "text": "Una vez que revisaste la calle, no hace falta volver a revisar.",
                   "correct": false,
+                  "outcome": [
+                    "Alex está de acuerdo en que revisar una vez es suficiente y deja de revisar otra vez.",
+                    "Alex revisa una vez, espera un rato antes de cruzar, y en ese tiempo un carro entra a la calle.",
+                    "Alex sale sin verlo, y el conductor tiene que frenar de repente; Alex y su hermano se quedan asustados."
+                  ],
                   "feedback": "Una situación, como un carro apareciendo, puede cambiar en solo unos segundos — una revisión más siempre vale la pena."
                 },
                 {

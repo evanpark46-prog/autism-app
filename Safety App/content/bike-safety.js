@@ -26,6 +26,11 @@
                 {
                   "text": "Ride now and put the helmet on later.",
                   "correct": false,
+                  "outcome": [
+                    "Alex rides off with no helmet.",
+                    "Alex hits a bump and falls down.",
+                    "Nothing was on Alex’s head. Alex cries and stops."
+                  ],
                   "feedback": "A helmet needs to be on before riding, not after — it protects your head if you ever fall."
                 },
                 {
@@ -52,6 +57,11 @@
                 {
                   "text": "Say Alex should have ridden now and put the helmet on later.",
                   "correct": false,
+                  "outcome": [
+                    "Alex leaves the helmet on the grass.",
+                    "Alex wobbles and tips over.",
+                    "Alex’s knee gets scraped. Alex’s head had no helmet."
+                  ],
                   "feedback": "A helmet needs to be on before riding, not after."
                 },
                 {
@@ -82,6 +92,11 @@
                 {
                   "text": "Only for long bike rides.",
                   "correct": false,
+                  "outcome": [
+                    "Alex thinks short rides need no helmet.",
+                    "Alex rides around the block without it.",
+                    "Alex falls at the corner and feels scared."
+                  ],
                   "feedback": "Falls can happen on short rides too — wear a helmet every time, no matter the distance."
                 }
               ]
@@ -103,6 +118,11 @@
                 {
                   "text": "Say a helmet is only needed for long bike rides.",
                   "correct": false,
+                  "outcome": [
+                    "Alex skips the helmet for a quick ride.",
+                    "Alex turns too fast and falls.",
+                    "Alex’s knee gets scraped. The grown-up looks worried."
+                  ],
                   "feedback": "Falls can happen on short rides too — the rule is every ride, every time."
                 },
                 {
@@ -160,6 +180,11 @@
                 {
                   "text": "Keep riding through at the same speed since Alex has the right of way.",
                   "correct": false,
+                  "outcome": [
+                    "Alex keeps riding at the same speed across the driveway.",
+                    "The car keeps backing out, and the driver has to slam on the brakes.",
+                    "Alex swerves, tips over onto the sidewalk, and feels shaky and scared."
+                  ],
                   "feedback": "Even if you technically have the right of way, a driver who hasn’t seen you yet is a real danger — it’s safer to slow down or stop until you’re sure they’ve noticed you."
                 },
                 {
@@ -186,6 +211,11 @@
                 {
                   "text": "Say Alex should keep riding at the same speed since they have the right of way.",
                   "correct": false,
+                  "outcome": [
+                    "Alex listens to the friend and keeps riding fast past the driveway.",
+                    "The driver still hasn’t seen Alex and keeps backing up.",
+                    "Alex has to swerve into the grass and falls, with a scraped elbow and a big scare."
+                  ],
                   "feedback": "Right of way doesn’t protect you if the driver hasn’t actually seen you — stopping was safer."
                 },
                 {
@@ -216,6 +246,11 @@
                 {
                   "text": "Because driveways are never a concern for bike riders.",
                   "correct": false,
+                  "outcome": [
+                    "Alex believes driveways are never a problem on a bike.",
+                    "Alex zooms past every driveway without slowing down or looking.",
+                    "A car pulls out right in front of Alex, and Alex stops so fast that Alex falls off the bike."
+                  ],
                   "feedback": "That’s not true — driveways are actually one of the more important spots to watch carefully while biking."
                 }
               ]
@@ -237,6 +272,11 @@
                 {
                   "text": "Say driveways are never a concern for bike riders.",
                   "correct": false,
+                  "outcome": [
+                    "Alex decides driveways don’t really matter and stops watching them.",
+                    "On the next street, a car backs out while the driver looks only at the road.",
+                    "The driver doesn’t see Alex, and Alex has to skid to a stop with a pounding heart."
+                  ],
                   "feedback": "That’s not true — driveways are actually an important spot to watch carefully."
                 },
                 {
@@ -294,6 +334,11 @@
                 {
                   "text": "Turn suddenly at the last second without signaling.",
                   "correct": false,
+                  "outcome": [
+                    "Alex swerves left at the last second without signaling or looking back.",
+                    "A car behind the group wasn’t expecting it and has to brake hard and honk.",
+                    "Alex wobbles through the turn feeling shaken, and the friends behind Alex nearly bump into each other trying to react."
+                  ],
                   "feedback": "Turning suddenly without signaling gives drivers no warning — that’s a common cause of bike accidents at intersections."
                 },
                 {
@@ -304,6 +349,11 @@
                 {
                   "text": "Ride on the sidewalk through the intersection to avoid dealing with traffic at all.",
                   "correct": false,
+                  "outcome": [
+                    "Alex suddenly hops onto the sidewalk to cut through the intersection.",
+                    "A person walking at the corner has to jump out of the way, and a turning car stops short.",
+                    "Alex feels embarrassed and rattled, and the group ends up split on two different sides of the street."
+                  ],
                   "feedback": "Riding onto the sidewalk suddenly can surprise pedestrians and drivers turning at the corner — using proper lane position and signals in the street is generally safer for a planned turn like this."
                 }
               ]
@@ -325,6 +375,11 @@
                 {
                   "text": "Say Alex should turn suddenly at the last second without signaling.",
                   "correct": false,
+                  "outcome": [
+                    "Alex listens to the friend and turns right away, without checking or signaling.",
+                    "A car Alex didn’t see behind them has to brake hard, and the driver honks.",
+                    "Alex makes it through, but feels shaky and realizes how close that was."
+                  ],
                   "feedback": "Sudden turns without signaling give drivers no warning — checking first was safer."
                 },
                 {
@@ -355,6 +410,11 @@
                 {
                   "text": "Because signaling is only a formality that doesn’t actually affect what drivers do.",
                   "correct": false,
+                  "outcome": [
+                    "Alex believes signaling is just a formality that drivers ignore anyway.",
+                    "Alex stops signaling and moves across the lane whenever it feels right.",
+                    "Drivers keep getting surprised by Alex’s moves, and one has to swerve, leaving Alex rattled and the friends worried."
+                  ],
                   "feedback": "That’s not accurate — clear, early signals genuinely help drivers anticipate and react safely to your movements."
                 }
               ]
@@ -376,6 +436,11 @@
                 {
                   "text": "Say signaling is only a formality that doesn’t actually affect drivers.",
                   "correct": false,
+                  "outcome": [
+                    "Alex tells the friend that signals don’t really change anything.",
+                    "On the next ride, the friend skips signaling before a turn.",
+                    "A driver behind them has to brake suddenly, and the friend is shaken, partly because of what Alex said."
+                  ],
                   "feedback": "That’s not accurate — clear signals genuinely help drivers react."
                 },
                 {
@@ -400,6 +465,11 @@
                 {
                   "text": "Signaling is just a formality that doesn’t actually change what drivers do.",
                   "correct": false,
+                  "outcome": [
+                    "Alex agrees that signaling doesn’t matter and starts skipping it.",
+                    "At a busy intersection, Alex turns without any warning.",
+                    "Even the driver who was paying attention has no time to react and stops suddenly, leaving Alex shaken and embarrassed."
+                  ],
                   "feedback": "That’s not accurate — clear, early signals genuinely help drivers anticipate and react safely."
                 },
                 {
@@ -575,6 +645,11 @@
                 {
                   "text": "Andar ahora y ponerse el casco después.",
                   "correct": false,
+                  "outcome": [
+                    "Alex sale a andar sin casco.",
+                    "Alex pasa por un bache y se cae.",
+                    "Su cabeza no tenía casco. Alex llora y para."
+                  ],
                   "feedback": "Un casco debe ponerse antes de andar, no después — te protege la cabeza si alguna vez te caes."
                 },
                 {
@@ -601,6 +676,11 @@
                 {
                   "text": "Decir que Alex debería haber andado ahora y ponerse el casco después.",
                   "correct": false,
+                  "outcome": [
+                    "Alex deja el casco en el pasto.",
+                    "Alex se tambalea y se cae.",
+                    "Alex se raspa la rodilla. Su cabeza no tenía casco."
+                  ],
                   "feedback": "Un casco debe ponerse antes de andar, no después."
                 },
                 {
@@ -631,6 +711,11 @@
                 {
                   "text": "Solo para paseos largos en bicicleta.",
                   "correct": false,
+                  "outcome": [
+                    "Alex cree que en paseos cortos no se necesita casco.",
+                    "Alex da la vuelta a la cuadra sin casco.",
+                    "Alex se cae en la esquina y se asusta."
+                  ],
                   "feedback": "Las caídas también pueden pasar en paseos cortos — usa casco cada vez, sin importar la distancia."
                 }
               ]
@@ -652,6 +737,11 @@
                 {
                   "text": "Decir que un casco solo se necesita para paseos largos en bicicleta.",
                   "correct": false,
+                  "outcome": [
+                    "Alex no se pone el casco para un paseo rápido.",
+                    "Alex gira muy rápido y se cae.",
+                    "Alex se raspa la rodilla. El adulto se ve preocupado."
+                  ],
                   "feedback": "Las caídas también pueden pasar en paseos cortos — la regla es cada vez."
                 },
                 {
@@ -709,6 +799,11 @@
                 {
                   "text": "Seguir andando a la misma velocidad ya que Alex tiene el derecho de paso.",
                   "correct": false,
+                  "outcome": [
+                    "Alex sigue andando a la misma velocidad por la entrada de auto.",
+                    "El carro sigue saliendo en reversa, y el conductor tiene que frenar de golpe.",
+                    "Alex se desvía, se cae en la acera, y se siente tembloroso y asustado."
+                  ],
                   "feedback": "Aunque técnicamente tengas el derecho de paso, un conductor que aún no te ha visto es un peligro real — es más seguro reducir la velocidad o detenerte hasta que estés seguro de que te vio."
                 },
                 {
@@ -735,6 +830,11 @@
                 {
                   "text": "Decir que Alex debería seguir andando a la misma velocidad ya que tiene el derecho de paso.",
                   "correct": false,
+                  "outcome": [
+                    "Alex le hace caso a su amigo y sigue andando rápido frente a la entrada.",
+                    "El conductor todavía no ha visto a Alex y sigue retrocediendo.",
+                    "Alex tiene que desviarse hacia el pasto y se cae, con el codo raspado y un gran susto."
+                  ],
                   "feedback": "El derecho de paso no protege si el conductor no te ha visto realmente — detenerse fue más seguro."
                 },
                 {
@@ -765,6 +865,11 @@
                 {
                   "text": "Porque las entradas de autos nunca son una preocupación para los que andan en bicicleta.",
                   "correct": false,
+                  "outcome": [
+                    "Alex cree que las entradas de autos nunca son un problema en bicicleta.",
+                    "Alex pasa rápido frente a cada entrada sin reducir la velocidad ni mirar.",
+                    "Un carro sale justo frente a Alex, y Alex frena tan rápido que se cae de la bicicleta."
+                  ],
                   "feedback": "Eso no es cierto — las entradas de autos son en realidad uno de los lugares más importantes para vigilar con cuidado mientras andas en bicicleta."
                 }
               ]
@@ -786,6 +891,11 @@
                 {
                   "text": "Decir que las entradas de autos nunca son una preocupación para los ciclistas.",
                   "correct": false,
+                  "outcome": [
+                    "Alex decide que las entradas de autos no importan y deja de vigilarlas.",
+                    "En la siguiente calle, un carro sale en reversa mientras el conductor solo mira la calle.",
+                    "El conductor no ve a Alex, y Alex tiene que frenar derrapando, con el corazón latiendo fuerte."
+                  ],
                   "feedback": "Eso no es cierto — las entradas de autos son un lugar importante para vigilar con cuidado."
                 },
                 {
@@ -843,6 +953,11 @@
                 {
                   "text": "Girar de repente en el último segundo sin señalizar.",
                   "correct": false,
+                  "outcome": [
+                    "Alex gira a la izquierda de repente en el último segundo, sin señalizar ni mirar atrás.",
+                    "Un carro detrás del grupo no lo esperaba y tiene que frenar fuerte y tocar el claxon.",
+                    "Alex termina el giro tambaleándose y asustado, y los amigos de atrás casi chocan entre ellos al intentar reaccionar."
+                  ],
                   "feedback": "Girar de repente sin señalizar no le da ninguna advertencia a los conductores — esa es una causa común de accidentes de bicicleta en intersecciones."
                 },
                 {
@@ -853,6 +968,11 @@
                 {
                   "text": "Andar por la acera a través de la intersección para evitar el tráfico por completo.",
                   "correct": false,
+                  "outcome": [
+                    "Alex se sube de repente a la acera para cruzar la intersección.",
+                    "Una persona que camina en la esquina tiene que hacerse a un lado de un salto, y un carro que gira frena de golpe.",
+                    "Alex se siente avergonzado y nervioso, y el grupo termina separado en dos lados distintos de la calle."
+                  ],
                   "feedback": "Subirse de repente a la acera puede sorprender a peatones y conductores que giran en la esquina — usar la posición correcta del carril y las señales en la calle suele ser más seguro para un giro planeado como este."
                 }
               ]
@@ -874,6 +994,11 @@
                 {
                   "text": "Decir que Alex debería girar de repente en el último segundo sin señalizar.",
                   "correct": false,
+                  "outcome": [
+                    "Alex le hace caso a su amigo y gira de inmediato, sin revisar ni señalizar.",
+                    "Un carro que Alex no vio detrás tiene que frenar fuerte, y el conductor toca el claxon.",
+                    "Alex logra pasar, pero se siente tembloroso y se da cuenta de lo cerca que estuvo."
+                  ],
                   "feedback": "Los giros repentinos sin señalizar no dan advertencia a los conductores — revisar primero fue más seguro."
                 },
                 {
@@ -904,6 +1029,11 @@
                 {
                   "text": "Porque señalizar es solo una formalidad que realmente no afecta lo que hacen los conductores.",
                   "correct": false,
+                  "outcome": [
+                    "Alex cree que señalizar es solo una formalidad que los conductores ignoran de todos modos.",
+                    "Alex deja de señalizar y se mueve por el carril cuando le parece.",
+                    "Los conductores se sorprenden una y otra vez con los movimientos de Alex, y uno tiene que desviarse, dejando a Alex nervioso y a sus amigos preocupados."
+                  ],
                   "feedback": "Eso no es exacto — las señales claras y tempranas realmente ayudan a los conductores a anticipar y reaccionar de forma segura a tus movimientos."
                 }
               ]
@@ -925,6 +1055,11 @@
                 {
                   "text": "Decir que señalizar es solo una formalidad que no afecta realmente a los conductores.",
                   "correct": false,
+                  "outcome": [
+                    "Alex le dice a su amigo que las señales no cambian nada en realidad.",
+                    "En el siguiente paseo, el amigo no señaliza antes de girar.",
+                    "Un conductor detrás tiene que frenar de repente, y el amigo queda asustado, en parte por lo que dijo Alex."
+                  ],
                   "feedback": "Eso no es exacto — las señales claras realmente ayudan a los conductores a reaccionar."
                 },
                 {
@@ -949,6 +1084,11 @@
                 {
                   "text": "Señalizar es solo una formalidad que realmente no cambia lo que hacen los conductores.",
                   "correct": false,
+                  "outcome": [
+                    "Alex está de acuerdo en que señalizar no importa y deja de hacerlo.",
+                    "En una intersección con mucho tráfico, Alex gira sin ningún aviso.",
+                    "Incluso el conductor que sí estaba prestando atención no tiene tiempo de reaccionar y frena de golpe, dejando a Alex asustado y avergonzado."
+                  ],
                   "feedback": "Eso no es exacto — las señales claras y tempranas realmente ayudan a los conductores a anticipar y reaccionar de forma segura."
                 },
                 {

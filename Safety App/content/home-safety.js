@@ -26,6 +26,11 @@
                 {
                   "text": "Open the door to see who it is.",
                   "correct": false,
+                  "outcome": [
+                    "Alex opens the door.",
+                    "The person steps closer and asks questions.",
+                    "No grown-up is there. Alex feels unsure and scared."
+                  ],
                   "feedback": "Opening the door to someone unfamiliar isn’t safe — it’s better to not open it and get a grown-up."
                 },
                 {
@@ -52,6 +57,11 @@
                 {
                   "text": "Say Alex should have opened the door to see who it was.",
                   "correct": false,
+                  "outcome": [
+                    "Alex thinks, “Next time, I will open the door.”",
+                    "Next time, Alex opens it for someone new.",
+                    "The person is right there, and no grown-up knows."
+                  ],
                   "feedback": "Opening the door isn’t safe — not opening it was the right call."
                 },
                 {
@@ -82,6 +92,11 @@
                 {
                   "text": "Yes, running is fine anywhere in the house.",
                   "correct": false,
+                  "outcome": [
+                    "Alex runs fast in the kitchen.",
+                    "Alex bumps into the grown-up by the hot stove.",
+                    "The hot pot almost spills. Everyone is startled."
+                  ],
                   "feedback": "Running near stairs or a hot stove can lead to falls or burns — walking carefully in those spots is safer."
                 }
               ]
@@ -103,6 +118,11 @@
                 {
                   "text": "Say running near stairs is fine anywhere in the house.",
                   "correct": false,
+                  "outcome": [
+                    "Alex races to the stairs.",
+                    "Alex’s foot slips on a step.",
+                    "Alex falls down and scrapes a knee."
+                  ],
                   "feedback": "Running near stairs can lead to falls — walking carefully was safer."
                 },
                 {
@@ -159,6 +179,11 @@
                 {
                   "text": "Say nothing since it’s the sibling’s choice.",
                   "correct": false,
+                  "outcome": [
+                    "Alex stays quiet and lets the sibling turn on the stove.",
+                    "The sibling steps away for a minute, and the pan starts to smoke.",
+                    "Now both kids are alone with a smoking pan, and no parent knows."
+                  ],
                   "feedback": "Using the stove without a parent’s knowledge, especially for kids, carries real risk — it’s worth saying something."
                 },
                 {
@@ -185,6 +210,11 @@
                 {
                   "text": "Say Alex should have said nothing since it’s the sibling’s choice.",
                   "correct": false,
+                  "outcome": [
+                    "Alex decides to say nothing next time.",
+                    "Next time, the sibling cooks alone and forgets a pan on the burner.",
+                    "The kitchen fills with smoke, and no parent even knew anyone was cooking."
+                  ],
                   "feedback": "This carries real risk — saying something was the better move."
                 },
                 {
@@ -215,6 +245,11 @@
                 {
                   "text": "Because kids should never be in the kitchen at all, ever.",
                   "correct": false,
+                  "outcome": [
+                    "Alex believes kids should never be in the kitchen at all.",
+                    "Alex won’t even go in to get a glass of water or help set the table.",
+                    "Alex feels stressed and left out, and still doesn’t understand what makes the stove risky."
+                  ],
                   "feedback": "That’s too strict — the point is checking in about specific risky tasks like the stove, not avoiding the kitchen altogether."
                 }
               ]
@@ -236,6 +271,11 @@
                 {
                   "text": "Say kids should never be in the kitchen at all, ever.",
                   "correct": false,
+                  "outcome": [
+                    "Alex tells the sibling, “Kids should never be in the kitchen, ever.”",
+                    "The sibling rolls their eyes and stops listening to Alex.",
+                    "Now, when Alex has a real safety worry, the sibling may not take it seriously."
+                  ],
                   "feedback": "That’s too strict — checking in is about the specific risk, not avoiding the kitchen entirely."
                 },
                 {
@@ -293,6 +333,11 @@
                 {
                   "text": "Try to put it out with water.",
                   "correct": false,
+                  "outcome": [
+                    "Alex grabs a cup of water and throws it on the pan.",
+                    "The burning grease splatters, and the flames jump up higher.",
+                    "The small fire is suddenly bigger, and Alex has to back away from the stove."
+                  ],
                   "feedback": "Water can make certain kitchen fires (like grease fires) much worse — the safer response depends on the type, but leaving and calling for help is usually safest if unsure."
                 },
                 {
@@ -303,6 +348,11 @@
                 {
                   "text": "Try to handle it completely alone no matter how big it gets, to avoid worrying anyone.",
                   "correct": false,
+                  "outcome": [
+                    "Alex keeps trying to fight the fire alone, so nobody will worry.",
+                    "The fire grows faster than Alex can handle, and smoke fills the kitchen.",
+                    "Alex is now in a smoky room, and still no one knows Alex needs help."
+                  ],
                   "feedback": "Trying to handle a growing fire completely alone is risky — getting out and calling 911 is always an acceptable, safe choice."
                 }
               ]
@@ -324,6 +374,11 @@
                 {
                   "text": "Say Alex should try to put it out with water no matter what.",
                   "correct": false,
+                  "outcome": [
+                    "Alex believes water should always be used, no matter what kind of fire it is.",
+                    "Next time a greasy pan flares up, Alex pours water on it.",
+                    "The flames spread across the stove, turning a small problem into a much bigger one."
+                  ],
                   "feedback": "Water can make certain fires worse — turning off the burner was the safer move."
                 },
                 {
@@ -354,6 +409,11 @@
                 {
                   "text": "Every single fire, no matter how small, always requires firefighters to come out.",
                   "correct": false,
+                  "outcome": [
+                    "Alex believes every tiny fire needs firefighters to come out in person.",
+                    "Alex feels panicked and embarrassed after even a small flare-up that was handled quickly.",
+                    "Worried about making a big fuss, Alex starts to hesitate about calling or telling anyone at all."
+                  ],
                   "feedback": "Not every situation requires firefighters in person, but calling to report it is always a reasonable, safe choice."
                 },
                 {
@@ -380,6 +440,11 @@
                 {
                   "text": "Say every single fire always requires firefighters to come out in person.",
                   "correct": false,
+                  "outcome": [
+                    "Alex tells the parent that every fire needs firefighters in person.",
+                    "Alex starts to feel like even a quick call means something huge went wrong.",
+                    "Next time, Alex feels too nervous to call at all, worried it will turn into a big scene."
+                  ],
                   "feedback": "Not every fire needs firefighters in person — but calling to report it is always reasonable."
                 },
                 {
@@ -404,6 +469,11 @@
                 {
                   "text": "Because water always makes every single type of fire completely worse.",
                   "correct": false,
+                  "outcome": [
+                    "Alex believes water makes every type of fire worse.",
+                    "On a camping trip, Alex panics when the grown-ups use water to put out the campfire.",
+                    "Alex feels confused and scared, and can’t tell which fires are truly risky."
+                  ],
                   "feedback": "Not every fire, but specific types like grease fires — that’s exactly why it’s risky to guess."
                 }
               ]
@@ -504,6 +574,11 @@
                 {
                   "text": "Abrir la puerta para ver quién es.",
                   "correct": false,
+                  "outcome": [
+                    "Alex abre la puerta.",
+                    "La persona se acerca y hace preguntas.",
+                    "No hay ningún adulto. Alex se siente inseguro y asustado."
+                  ],
                   "feedback": "Abrirle la puerta a alguien desconocido no es seguro — es mejor no abrirla y buscar a un adulto."
                 },
                 {
@@ -530,6 +605,11 @@
                 {
                   "text": "Decir que Alex debería haber abierto la puerta para ver quién era.",
                   "correct": false,
+                  "outcome": [
+                    "Alex piensa: “La próxima vez, abriré la puerta.”",
+                    "La próxima vez, Alex le abre a alguien nuevo.",
+                    "La persona está ahí mismo, y ningún adulto sabe."
+                  ],
                   "feedback": "Abrir la puerta no es seguro — no abrirla fue la decisión correcta."
                 },
                 {
@@ -560,6 +640,11 @@
                 {
                   "text": "Sí, correr está bien en cualquier parte de la casa.",
                   "correct": false,
+                  "outcome": [
+                    "Alex corre rápido en la cocina.",
+                    "Alex choca con el adulto junto a la estufa caliente.",
+                    "La olla caliente casi se cae. Todos se asustan."
+                  ],
                   "feedback": "Correr cerca de las escaleras o una estufa caliente puede causar caídas o quemaduras — caminar con cuidado en esos lugares es más seguro."
                 }
               ]
@@ -581,6 +666,11 @@
                 {
                   "text": "Decir que correr cerca de las escaleras está bien en cualquier parte de la casa.",
                   "correct": false,
+                  "outcome": [
+                    "Alex corre hacia las escaleras.",
+                    "El pie de Alex se resbala en un escalón.",
+                    "Alex se cae y se raspa la rodilla."
+                  ],
                   "feedback": "Correr cerca de las escaleras puede causar caídas — caminar con cuidado fue más seguro."
                 },
                 {
@@ -637,6 +727,11 @@
                 {
                   "text": "No decir nada ya que es la decisión del hermano.",
                   "correct": false,
+                  "outcome": [
+                    "Alex se queda callado y deja que el hermano prenda la estufa.",
+                    "El hermano se aleja un minuto, y la sartén empieza a echar humo.",
+                    "Ahora los dos están solos con una sartén humeante, y ningún padre lo sabe."
+                  ],
                   "feedback": "Usar la estufa sin que un padre lo sepa, especialmente para niños, tiene un riesgo real — vale la pena decir algo."
                 },
                 {
@@ -663,6 +758,11 @@
                 {
                   "text": "Decir que Alex debería haberse quedado callado ya que es la decisión del hermano.",
                   "correct": false,
+                  "outcome": [
+                    "Alex decide quedarse callado la próxima vez.",
+                    "La próxima vez, el hermano cocina solo y olvida una sartén en la hornilla.",
+                    "La cocina se llena de humo, y ningún padre sabía que alguien estaba cocinando."
+                  ],
                   "feedback": "Esto tiene un riesgo real — decir algo fue la mejor decisión."
                 },
                 {
@@ -693,6 +793,11 @@
                 {
                   "text": "Porque los niños nunca deberían estar en la cocina, nunca.",
                   "correct": false,
+                  "outcome": [
+                    "Alex cree que los niños nunca deberían estar en la cocina.",
+                    "Alex ni siquiera entra a buscar un vaso de agua o a ayudar a poner la mesa.",
+                    "Alex se siente estresado y excluido, y todavía no entiende qué hace riesgosa a la estufa."
+                  ],
                   "feedback": "Eso es demasiado estricto — el punto es consultar sobre tareas riesgosas específicas como la estufa, no evitar la cocina por completo."
                 }
               ]
@@ -714,6 +819,11 @@
                 {
                   "text": "Decir que los niños nunca deberían estar en la cocina, nunca.",
                   "correct": false,
+                  "outcome": [
+                    "Alex le dice al hermano: “Los niños nunca deberían estar en la cocina, nunca.”",
+                    "El hermano pone los ojos en blanco y deja de escuchar a Alex.",
+                    "Ahora, cuando Alex tenga una preocupación real de seguridad, tal vez el hermano no lo tome en serio."
+                  ],
                   "feedback": "Eso es demasiado estricto — consultar es sobre el riesgo específico, no evitar la cocina por completo."
                 },
                 {
@@ -771,6 +881,11 @@
                 {
                   "text": "Intentar apagarlo con agua.",
                   "correct": false,
+                  "outcome": [
+                    "Alex agarra un vaso de agua y lo echa sobre la sartén.",
+                    "La grasa encendida salpica, y las llamas suben más alto.",
+                    "El pequeño incendio de repente es más grande, y Alex tiene que alejarse de la estufa."
+                  ],
                   "feedback": "El agua puede empeorar mucho ciertos incendios de cocina (como los de grasa) — la respuesta más segura depende del tipo, pero salir y llamar por ayuda usualmente es lo más seguro si no estás seguro."
                 },
                 {
@@ -781,6 +896,11 @@
                 {
                   "text": "Intentar manejarlo completamente solo sin importar qué tan grande se ponga, para no preocupar a nadie.",
                   "correct": false,
+                  "outcome": [
+                    "Alex sigue intentando apagar el fuego solo, para que nadie se preocupe.",
+                    "El fuego crece más rápido de lo que Alex puede manejar, y el humo llena la cocina.",
+                    "Ahora Alex está en un cuarto lleno de humo, y todavía nadie sabe que necesita ayuda."
+                  ],
                   "feedback": "Intentar manejar un incendio creciente completamente solo es riesgoso — salir y llamar al 911 siempre es una opción segura y aceptable."
                 }
               ]
@@ -802,6 +922,11 @@
                 {
                   "text": "Decir que Alex debería intentar apagarlo con agua sin importar qué.",
                   "correct": false,
+                  "outcome": [
+                    "Alex cree que siempre hay que usar agua, sin importar qué tipo de incendio sea.",
+                    "La próxima vez que una sartén con grasa se enciende, Alex le echa agua.",
+                    "Las llamas se extienden por la estufa, y un problema pequeño se vuelve mucho más grande."
+                  ],
                   "feedback": "El agua puede empeorar ciertos incendios — apagar la hornilla fue la decisión más segura."
                 },
                 {
@@ -832,6 +957,11 @@
                 {
                   "text": "Cada incendio, sin importar qué tan pequeño, siempre requiere que vengan bomberos.",
                   "correct": false,
+                  "outcome": [
+                    "Alex cree que cada pequeño incendio necesita que vengan bomberos en persona.",
+                    "Alex se siente asustado y avergonzado incluso después de un fuego pequeño que se apagó rápido.",
+                    "Preocupado por armar un gran escándalo, Alex empieza a dudar si llamar o contarle a alguien."
+                  ],
                   "feedback": "No toda situación requiere bomberos en persona, pero llamar para reportarlo siempre es una opción razonable y segura."
                 },
                 {
@@ -858,6 +988,11 @@
                 {
                   "text": "Decir que cada incendio siempre requiere que vengan bomberos en persona.",
                   "correct": false,
+                  "outcome": [
+                    "Alex le dice a su padre que cada incendio necesita bomberos en persona.",
+                    "Alex empieza a sentir que hasta una llamada rápida significa que algo enorme salió mal.",
+                    "La próxima vez, Alex se siente demasiado nervioso para llamar, preocupado de que se vuelva un gran escándalo."
+                  ],
                   "feedback": "No todo incendio necesita bomberos en persona — pero llamar para reportarlo siempre es razonable."
                 },
                 {
@@ -882,6 +1017,11 @@
                 {
                   "text": "Porque el agua siempre empeora completamente cada tipo de incendio.",
                   "correct": false,
+                  "outcome": [
+                    "Alex cree que el agua empeora cada tipo de incendio.",
+                    "En un campamento, Alex se asusta cuando los adultos usan agua para apagar la fogata.",
+                    "Alex se siente confundido y asustado, y no puede distinguir qué incendios son realmente riesgosos."
+                  ],
                   "feedback": "No todo incendio, pero tipos específicos como los de grasa — por eso adivinar es riesgoso."
                 }
               ]

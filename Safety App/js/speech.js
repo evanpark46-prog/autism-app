@@ -38,9 +38,13 @@ function hashStr(s){
 // matches, since a browser will otherwise happily default to those.
 function rankVoice(v){
   const name = v.name || '';
-  if (/google/i.test(name)) return 0;
-  if (/online|natural|neural/i.test(name)) return 0;
-  if (/enhanced|premium/i.test(name)) return 1;
+  // Edge/Windows "Online (Natural)" and other neural voices sound the most
+  // human, then Chrome's Google network voices and Apple's enhanced/premium
+  // voices, then ordinary OS voices; eSpeak/compact/pico always last.
+  if (/natural|neural/i.test(name)) return 0;
+  if (/online/i.test(name)) return 0;
+  if (/google/i.test(name)) return 1;
+  if (/enhanced|premium|siri/i.test(name)) return 1;
   if (/espeak|compact|pico/i.test(name)) return 3;
   return 2;
 }
@@ -52,21 +56,30 @@ function voicesForLang(lang){
     .sort((a, b) => rankVoice(a) - rankVoice(b));
 }
 
-// Gives each named character a consistent voice + pitch across the app,
-// without needing every line of content tagged with age/gender metadata.
+// Gives each named character a consistent voice across the app, without
+// needing every line of content tagged with age/gender metadata. Characters
+// only ever draw from the BEST quality tier the device has -- a nicer voice
+// for the narrator and a robotic one for a side character sounds worse than
+// fewer, better voices. Pitch-shifting is what makes neural voices sound
+// robotic/chipmunky, so it's kept tiny for high-quality voices and only used
+// more strongly when there's a single voice and nothing else to tell
+// characters apart.
 function voiceProfileFor(speaker){
-  const pool = voicesForLang(getLang());
-  if (!speaker || speaker === 'Narrator' || !pool.length){
-    return { voice: pool[0] || null, pitch: 1, rate: 0.95 };
+  const all = voicesForLang(getLang());
+  if (!all.length) return { voice: null, pitch: 1, rate: 0.95 };
+  const bestTier = rankVoice(all[0]);
+  const pool = all.filter(v => rankVoice(v) === bestTier);
+  const highQuality = bestTier <= 1;
+  if (!speaker || speaker === 'Narrator'){
+    return { voice: pool[0], pitch: 1, rate: 0.95 };
   }
   const isChild = /alex/i.test(speaker);
-  const idx = pool.length > 1 ? hashStr(speaker) % pool.length : 0;
-  const voice = pool[idx];
-  return {
-    voice,
-    pitch: isChild ? 1.35 : 0.9 + (hashStr(speaker) % 20) / 100, // adults: ~0.90-1.09
-    rate: isChild ? 1.05 : 0.93,
-  };
+  const voice = pool.length > 1 ? pool[hashStr(speaker) % pool.length] : pool[0];
+  let pitch;
+  if (highQuality) pitch = isChild ? 1.06 : 1;
+  else if (pool.length > 1) pitch = isChild ? 1.12 : 1;
+  else pitch = isChild ? 1.2 : 0.92 + (hashStr(speaker) % 10) / 100;
+  return { voice, pitch, rate: isChild ? 1.0 : 0.95 };
 }
 
 function speak(text, speaker){

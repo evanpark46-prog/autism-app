@@ -31,11 +31,21 @@
                 {
                   "text": "Wait quietly to see if Sam stops coughing on their own.",
                   "correct": false,
+                  "outcome": [
+                    "Alex sits quietly and watches Sam.",
+                    "Sam keeps coughing. No grown-up knows.",
+                    "Sam looks scared, and help is not coming."
+                  ],
                   "feedback": "Don’t just wait and watch — telling a grown-up right away is safer."
                 },
                 {
                   "text": "Try to fix it by patting Sam’s back really hard.",
                   "correct": false,
+                  "outcome": [
+                    "Alex pats Sam’s back really hard.",
+                    "Sam jumps and coughs even more.",
+                    "Sam is upset, and still no grown-up is helping."
+                  ],
                   "feedback": "That’s a grown-up’s job, not yours — go get help right away."
                 }
               ]
@@ -62,6 +72,11 @@
                 {
                   "text": "Say Alex should have tried to help more by himself.",
                   "correct": false,
+                  "outcome": [
+                    "Alex thinks, “I should have helped more by myself.”",
+                    "Next time, Alex tries to fix it alone and does not call anyone.",
+                    "The grown-up comes much later. Alex feels scared and stuck."
+                  ],
                   "feedback": "Getting the grown-up was the right amount of help — that’s not something to do alone."
                 }
               ]
@@ -87,6 +102,11 @@
                 {
                   "text": "Just leave it alone.",
                   "correct": false,
+                  "outcome": [
+                    "Alex leaves the cut alone.",
+                    "Dirt gets into the cut at recess.",
+                    "Now Sam’s knee is red and sore."
+                  ],
                   "feedback": "A cut still needs a grown-up to check it, even if it’s small."
                 }
               ]
@@ -143,11 +163,21 @@
                 {
                   "text": "Try to clean the scrape yourself with your shirt.",
                   "correct": false,
+                  "outcome": [
+                    "Alex rubs Jordan’s scrape with a dirty shirt.",
+                    "Jordan yelps because it stings, and dirt gets in the scrape.",
+                    "No adult knows Jordan is hurt, and the scrape still isn’t clean."
+                  ],
                   "feedback": "Cleaning a wound is a grown-up’s job — go get one instead."
                 },
                 {
                   "text": "Ignore it since it’s just a little blood.",
                   "correct": false,
+                  "outcome": [
+                    "Alex says, “It’s just a little blood,” and keeps playing.",
+                    "Jordan limps off and sits alone by the fence.",
+                    "No adult knows Jordan is hurt, so nobody cleans or covers the scrape."
+                  ],
                   "feedback": "Even a little bleeding is worth telling an adult about."
                 }
               ]
@@ -174,6 +204,11 @@
                 {
                   "text": "Yes, Alex should have cleaned it alone.",
                   "correct": false,
+                  "outcome": [
+                    "Alex decides that next time, Alex will clean a scrape alone.",
+                    "Next time, Alex uses an old tissue from a pocket, and the cut gets dirty.",
+                    "The cut gets sore, and an adult only finds out much later."
+                  ],
                   "feedback": "Cleaning a wound alone isn’t safe — getting an adult was correct."
                 }
               ]
@@ -199,6 +234,11 @@
                 {
                   "text": "Wait a minute to see if it passes.",
                   "correct": false,
+                  "outcome": [
+                    "Alex waits a minute to see if the coughing stops.",
+                    "The classmate still can’t talk and looks more and more scared.",
+                    "A whole minute goes by, and no grown-up has been called to help."
+                  ],
                   "feedback": "Waiting isn’t safe when someone can’t talk or cough at all — get help immediately."
                 }
               ]
@@ -221,6 +261,11 @@
                 {
                   "text": "Walk away since a grown-up is there now.",
                   "correct": false,
+                  "outcome": [
+                    "Alex walks away to finish lunch.",
+                    "The grown-up looks up and asks, “Can someone call 911?”",
+                    "Nobody nearby hears, so the grown-up has to stop helping to find a phone."
+                  ],
                   "feedback": "It’s okay to stay nearby in case you’re needed — don’t wander off either."
                 }
               ]
@@ -257,11 +302,21 @@
                 {
                   "text": "It’s not serious since they can still make sound, so nothing needs to be done.",
                   "correct": false,
+                  "outcome": [
+                    "Alex decides it’s not serious and goes back to playing with the friend.",
+                    "The little sibling keeps coughing, and nobody tells a grown-up.",
+                    "If the food blocks more air, no adult will be close enough to help quickly."
+                  ],
                   "feedback": "Any choking situation needs a grown-up’s attention right away, even if the child can still cough."
                 },
                 {
                   "text": "Alex should try patting the child’s back hard, since it seems mild.",
                   "correct": false,
+                  "outcome": [
+                    "Alex starts patting the little sibling’s back hard.",
+                    "The child gets startled and starts crying and coughing harder.",
+                    "Precious time passes while Alex tries alone, and the friend’s parent still doesn’t know."
+                  ],
                   "feedback": "First-aid actions like back blows are a trained grown-up’s job, not something to do yourself."
                 }
               ]
@@ -288,6 +343,11 @@
                 {
                   "text": "Say it meant nothing needed to be done.",
                   "correct": false,
+                  "outcome": [
+                    "Alex believes that if someone can still cough, nothing needs to be done.",
+                    "Next time a kid is coughing on food, Alex doesn’t tell anyone.",
+                    "If things suddenly get worse, no grown-up is nearby to step in."
+                  ],
                   "feedback": "It’s still a real emergency that needs a grown-up, even with some coughing."
                 }
               ],
@@ -314,6 +374,11 @@
                 {
                   "text": "Just wait for someone to show up.",
                   "correct": false,
+                  "outcome": [
+                    "Alex waits by the door, hoping someone will show up.",
+                    "Minutes pass, and nobody comes.",
+                    "The person still needs help badly, and no one even knows help is needed."
+                  ],
                   "feedback": "Waiting without calling for help wastes time that matters — call 911 right away."
                 }
               ]
@@ -337,6 +402,11 @@
                 {
                   "text": "Your job is to handle it completely by yourself so grown-ups don’t have to.",
                   "correct": false,
+                  "outcome": [
+                    "Alex believes the job is to handle emergencies alone so grown-ups don’t have to.",
+                    "When a friend gets hurt, Alex tries to fix everything and doesn’t call anyone.",
+                    "Alex feels overwhelmed and scared, and real help arrives much later than it could have."
+                  ],
                   "feedback": "That’s not the goal — getting help fast is what actually helps."
                 }
               ]
@@ -442,11 +512,21 @@
                 {
                   "text": "Esperar en silencio para ver si Sam deja de toser solo.",
                   "correct": false,
+                  "outcome": [
+                    "Alex se queda callado mirando a Sam.",
+                    "Sam sigue tosiendo. Ningún adulto sabe.",
+                    "Sam se ve asustado, y la ayuda no viene."
+                  ],
                   "feedback": "No solo esperes y observes — avisarle a un adulto de inmediato es más seguro."
                 },
                 {
                   "text": "Intentar arreglarlo dándole palmadas muy fuertes en la espalda a Sam.",
                   "correct": false,
+                  "outcome": [
+                    "Alex le da palmadas muy fuertes a Sam.",
+                    "Sam se asusta y tose más.",
+                    "Sam está molesto, y todavía ningún adulto ayuda."
+                  ],
                   "feedback": "Eso es trabajo de un adulto, no el tuyo — ve a buscar ayuda de inmediato."
                 }
               ]
@@ -473,6 +553,11 @@
                 {
                   "text": "Decir que Alex debería haber intentado ayudar más por sí solo.",
                   "correct": false,
+                  "outcome": [
+                    "Alex piensa: “Debí ayudar más yo solo.”",
+                    "La próxima vez, Alex intenta arreglarlo solo y no llama a nadie.",
+                    "El adulto llega mucho después. Alex se siente asustado."
+                  ],
                   "feedback": "Buscar al adulto fue la cantidad correcta de ayuda — eso no es algo para hacer solo."
                 }
               ]
@@ -498,6 +583,11 @@
                 {
                   "text": "Simplemente dejarla así.",
                   "correct": false,
+                  "outcome": [
+                    "Alex deja la cortada así.",
+                    "Le entra tierra a la cortada en el recreo.",
+                    "Ahora la rodilla de Sam está roja y le duele."
+                  ],
                   "feedback": "Una cortada aún necesita que un adulto la revise, aunque sea pequeña."
                 }
               ]
@@ -554,11 +644,21 @@
                 {
                   "text": "Intentar limpiar el raspón él mismo con su camiseta.",
                   "correct": false,
+                  "outcome": [
+                    "Alex frota el raspón de Jordan con su camiseta sucia.",
+                    "A Jordan le arde, y le entra tierra al raspón.",
+                    "Ningún adulto sabe que Jordan está lastimado, y el raspón sigue sucio."
+                  ],
                   "feedback": "Limpiar una herida es trabajo de un adulto — ve a buscar uno en cambio."
                 },
                 {
                   "text": "Ignorarlo porque es solo un poco de sangre.",
                   "correct": false,
+                  "outcome": [
+                    "Alex dice: “Es solo un poco de sangre”, y sigue jugando.",
+                    "Jordan se va cojeando y se sienta solo junto a la cerca.",
+                    "Ningún adulto sabe que Jordan está lastimado, así que nadie le limpia ni le cubre el raspón."
+                  ],
                   "feedback": "Incluso un poco de sangrado vale la pena contárselo a un adulto."
                 }
               ]
@@ -585,6 +685,11 @@
                 {
                   "text": "Sí, Alex debería haberla limpiado solo.",
                   "correct": false,
+                  "outcome": [
+                    "Alex decide que la próxima vez limpiará un raspón solo.",
+                    "La próxima vez, Alex usa un pañuelo usado de su bolsillo, y la herida se ensucia.",
+                    "La herida empieza a doler, y un adulto se entera mucho después."
+                  ],
                   "feedback": "Limpiar una herida solo no es seguro — buscar a un adulto fue correcto."
                 }
               ],
@@ -611,6 +716,11 @@
                 {
                   "text": "Esperar un minuto para ver si se pasa.",
                   "correct": false,
+                  "outcome": [
+                    "Alex espera un minuto para ver si la tos se pasa.",
+                    "El compañero todavía no puede hablar, y se ve cada vez más asustado.",
+                    "Pasa un minuto entero, y nadie ha llamado a un adulto para ayudar."
+                  ],
                   "feedback": "Esperar no es seguro cuando alguien no puede hablar ni toser en absoluto — busca ayuda de inmediato."
                 }
               ]
@@ -633,6 +743,11 @@
                 {
                   "text": "Alejarse ya que ahora hay un adulto presente.",
                   "correct": false,
+                  "outcome": [
+                    "Alex se aleja para terminar su almuerzo.",
+                    "El adulto levanta la vista y pregunta: “¿Alguien puede llamar al 911?”",
+                    "Nadie cerca escucha, así que el adulto tiene que dejar de ayudar para buscar un teléfono."
+                  ],
                   "feedback": "Está bien quedarse cerca en caso de que te necesiten — tampoco te alejes por completo."
                 }
               ]
@@ -669,11 +784,21 @@
                 {
                   "text": "No es grave ya que todavía puede hacer sonido, así que no hay que hacer nada.",
                   "correct": false,
+                  "outcome": [
+                    "Alex decide que no es grave y vuelve a jugar con su amigo.",
+                    "El hermanito sigue tosiendo, y nadie le avisa a un adulto.",
+                    "Si la comida bloquea más aire, ningún adulto estará cerca para ayudar rápido."
+                  ],
                   "feedback": "Cualquier situación de asfixia necesita la atención de un adulto de inmediato, aunque el niño todavía pueda toser."
                 },
                 {
                   "text": "Alex debería darle palmadas fuertes en la espalda al niño, ya que parece leve.",
                   "correct": false,
+                  "outcome": [
+                    "Alex empieza a darle palmadas fuertes en la espalda al hermanito.",
+                    "El niño se asusta y empieza a llorar y toser más fuerte.",
+                    "Pasa tiempo valioso mientras Alex lo intenta solo, y la madre del amigo todavía no sabe."
+                  ],
                   "feedback": "Acciones de primeros auxilios como palmadas en la espalda son trabajo de un adulto entrenado, no algo para hacer tú mismo."
                 }
               ]
@@ -700,6 +825,11 @@
                 {
                   "text": "Decir que eso significaba que no había que hacer nada.",
                   "correct": false,
+                  "outcome": [
+                    "Alex cree que si alguien todavía puede toser, no hay que hacer nada.",
+                    "La próxima vez que un niño tose con comida, Alex no le dice a nadie.",
+                    "Si las cosas empeoran de repente, no hay ningún adulto cerca para ayudar."
+                  ],
                   "feedback": "Sigue siendo una emergencia real que necesita un adulto, incluso con algo de tos."
                 }
               ],
@@ -726,6 +856,11 @@
                 {
                   "text": "Simplemente esperar a que alguien aparezca.",
                   "correct": false,
+                  "outcome": [
+                    "Alex espera junto a la puerta, con la esperanza de que alguien aparezca.",
+                    "Pasan los minutos, y nadie llega.",
+                    "La persona todavía necesita ayuda urgente, y nadie sabe siquiera que hace falta."
+                  ],
                   "feedback": "Esperar sin llamar por ayuda desperdicia tiempo que importa — llama al 911 de inmediato."
                 }
               ]
@@ -749,6 +884,11 @@
                 {
                   "text": "Tu trabajo es encargarte de todo por tu cuenta para que los adultos no tengan que hacerlo.",
                   "correct": false,
+                  "outcome": [
+                    "Alex cree que su trabajo es encargarse de las emergencias solo, para que los adultos no tengan que hacerlo.",
+                    "Cuando un amigo se lastima, Alex intenta arreglarlo todo y no llama a nadie.",
+                    "Alex se siente abrumado y asustado, y la ayuda real llega mucho más tarde de lo que pudo llegar."
+                  ],
                   "feedback": "Esa no es la meta — buscar ayuda rápido es lo que realmente ayuda."
                 }
               ]

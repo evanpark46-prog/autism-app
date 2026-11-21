@@ -26,6 +26,11 @@
                 {
                   "text": "Walk around the whole store looking.",
                   "correct": false,
+                  "outcome": [
+                    "Alex walks all around the store.",
+                    "Mom looks, but Alex has moved far away.",
+                    "Now Mom can’t find Alex. Both feel worried."
+                  ],
                   "feedback": "Walking all over can make it harder for Mom to find you — look for a safe helper instead."
                 },
                 {
@@ -52,6 +57,11 @@
                 {
                   "text": "Say Alex should have kept walking alone.",
                   "correct": false,
+                  "outcome": [
+                    "Alex keeps walking alone.",
+                    "Alex gets farther and farther from Mom.",
+                    "Mom can’t find Alex. Alex feels scared."
+                  ],
                   "feedback": "Walking alone makes it harder to be found — asking the worker was better."
                 },
                 {
@@ -82,6 +92,11 @@
                 {
                   "text": "They’re just standing near the toys.",
                   "correct": false,
+                  "outcome": [
+                    "Alex asks a person by the toys.",
+                    "That person is not a store worker.",
+                    "They can’t call Mom on the speaker."
+                  ],
                   "feedback": "Standing near something fun doesn’t make someone a safe helper — look for a uniform or name tag instead."
                 }
               ]
@@ -103,6 +118,11 @@
                 {
                   "text": "Say the worker wasn’t actually a safe helper.",
                   "correct": false,
+                  "outcome": [
+                    "Alex thinks the worker wasn’t safe.",
+                    "Next time, Alex won’t ask a worker.",
+                    "Alex stays lost and alone longer."
+                  ],
                   "feedback": "The worker was exactly the kind of safe helper to ask."
                 },
                 {
@@ -160,6 +180,11 @@
                 {
                   "text": "Any person walking by, since there are lots of nice-looking people.",
                   "correct": false,
+                  "outcome": [
+                    "Alex walks up to the first nice-looking person passing by.",
+                    "The person isn’t sure how to help and just points somewhere far away.",
+                    "Alex wanders off that way and ends up even farther from Dad."
+                  ],
                   "feedback": "Looking “nice” doesn’t tell you who’s a safe helper — look for a specific job or role instead."
                 },
                 {
@@ -186,6 +211,11 @@
                 {
                   "text": "Say Alex should have asked just any stranger walking by.",
                   "correct": false,
+                  "outcome": [
+                    "Alex asks a random person walking by instead.",
+                    "The person says, “Sorry, I’m busy,” and keeps walking.",
+                    "Alex is still alone and doesn’t know who to ask next."
+                  ],
                   "feedback": "Just any stranger isn’t a reliable choice — asking a parent with kids nearby was better."
                 },
                 {
@@ -216,6 +246,11 @@
                 {
                   "text": "Because they’re always wearing a uniform.",
                   "correct": false,
+                  "outcome": [
+                    "Alex believes safe helpers always wear uniforms.",
+                    "Alex looks only for uniforms and walks right past parents with kids.",
+                    "With no uniform in sight, Alex stays lost and alone much longer."
+                  ],
                   "feedback": "Parents with kids don’t usually wear uniforms — it’s their role as a caregiver that makes them a good choice, not a uniform."
                 }
               ]
@@ -237,6 +272,11 @@
                 {
                   "text": "Say Alex should have only looked for uniforms.",
                   "correct": false,
+                  "outcome": [
+                    "Alex decides to only look for people in uniforms.",
+                    "Alex wanders around the big park searching for a uniform.",
+                    "Alex gets farther from Dad and stays lost much longer."
+                  ],
                   "feedback": "Safe helpers can be spotted without a uniform too, by their job or role."
                 },
                 {
@@ -294,6 +334,11 @@
                 {
                   "text": "Go with the stranger since they said they saw Grandma.",
                   "correct": false,
+                  "outcome": [
+                    "Alex goes with the stranger, who leads Alex away from the crowd.",
+                    "They keep walking, and Grandma is nowhere in sight.",
+                    "Now Alex is somewhere unfamiliar with someone Alex doesn’t know, and Grandma has no idea where Alex is."
+                  ],
                   "feedback": "A safe helper doesn’t ask you to go somewhere alone with them — that’s a warning sign, even if they say something helpful-sounding."
                 },
                 {
@@ -304,6 +349,11 @@
                 {
                   "text": "Follow at a distance to see if it’s true.",
                   "correct": false,
+                  "outcome": [
+                    "Alex follows a few steps behind the stranger to see if it’s true.",
+                    "The stranger heads toward the parking lot, away from the busy fair.",
+                    "Alex is getting farther from Grandma and the security staff, and nobody knows where Alex went."
+                  ],
                   "feedback": "Following someone, even at a distance, still isn’t safe — go find an official helper instead."
                 }
               ]
@@ -325,6 +375,11 @@
                 {
                   "text": "Say Alex should have followed since the stranger seemed to know something.",
                   "correct": false,
+                  "outcome": [
+                    "Alex follows the stranger because they seemed to know something.",
+                    "The stranger keeps saying, “Just a little farther,” as they leave the crowd behind.",
+                    "Grandma isn’t there, and now Alex is alone with a stranger, far from anyone who could help."
+                  ],
                   "feedback": "Following the stranger would not be safe, even if they seemed to know something."
                 },
                 {
@@ -350,6 +405,11 @@
                 {
                   "text": "There’s no real difference — anyone offering help should be trusted the same way.",
                   "correct": false,
+                  "outcome": [
+                    "Alex believes anyone offering help can be trusted the same way.",
+                    "Alex goes along with the first person who offers, without checking for a badge or uniform.",
+                    "That person leads Alex away from the help desk, the one place Grandma would come looking."
+                  ],
                   "feedback": "There is a real difference — an official helper has a role (badge, uniform, job) and won’t ask you to go somewhere alone with them."
                 },
                 {
@@ -376,6 +436,11 @@
                 {
                   "text": "Say Alex should have trusted anyone who offered help.",
                   "correct": false,
+                  "outcome": [
+                    "Alex decides to trust whoever offers help next time.",
+                    "At the next busy event, Alex goes with someone just because they offered.",
+                    "Alex ends up away from the crowd with someone Alex doesn’t know, and no one in the family knows where Alex is."
+                  ],
                   "feedback": "Trusting anyone who offers help isn’t safe — checking for a real role is what matters."
                 },
                 {
@@ -400,6 +465,11 @@
                 {
                   "text": "Since this is a smaller request, it’s fine to go along with any offer to help.",
                   "correct": false,
+                  "outcome": [
+                    "Alex thinks a lost toy is a small thing, so it’s fine to go along.",
+                    "The stranger says the toy is “behind the tents” and starts walking away from the crowd.",
+                    "Alex is now leaving the safe, busy area with someone who has no real role, and Grandma can’t see where Alex went."
+                  ],
                   "feedback": "The same rule applies even for smaller things — a real helper doesn’t need you to go anywhere alone with them."
                 },
                 {
@@ -505,6 +575,11 @@
                 {
                   "text": "Caminar por toda la tienda buscando.",
                   "correct": false,
+                  "outcome": [
+                    "Alex camina por toda la tienda.",
+                    "Mamá busca, pero Alex ya se fue lejos.",
+                    "Ahora Mamá no encuentra a Alex. Los dos se preocupan."
+                  ],
                   "feedback": "Caminar por todos lados puede hacer que sea más difícil que Mamá te encuentre — busca a un ayudante seguro en su lugar."
                 },
                 {
@@ -531,6 +606,11 @@
                 {
                   "text": "Decir que Alex debería haber seguido caminando solo.",
                   "correct": false,
+                  "outcome": [
+                    "Alex sigue caminando solo.",
+                    "Alex se aleja más y más de Mamá.",
+                    "Mamá no encuentra a Alex. Alex siente miedo."
+                  ],
                   "feedback": "Caminar solo hace que sea más difícil ser encontrado — pedirle ayuda al trabajador fue mejor."
                 },
                 {
@@ -561,6 +641,11 @@
                 {
                   "text": "Solo está parado cerca de los juguetes.",
                   "correct": false,
+                  "outcome": [
+                    "Alex le pregunta a alguien junto a los juguetes.",
+                    "Esa persona no trabaja en la tienda.",
+                    "No puede llamar a Mamá por el altavoz."
+                  ],
                   "feedback": "Estar cerca de algo divertido no hace que alguien sea un ayudante seguro — busca un uniforme o gafete en su lugar."
                 }
               ]
@@ -582,6 +667,11 @@
                 {
                   "text": "Decir que el trabajador no era realmente un ayudante seguro.",
                   "correct": false,
+                  "outcome": [
+                    "Alex cree que el trabajador no era seguro.",
+                    "La próxima vez, Alex no le pide ayuda a un trabajador.",
+                    "Alex sigue perdido y solo por más tiempo."
+                  ],
                   "feedback": "El trabajador era exactamente el tipo de ayudante seguro a quien pedir ayuda."
                 },
                 {
@@ -639,6 +729,11 @@
                 {
                   "text": "Cualquier persona que pase, ya que hay mucha gente que se ve amable.",
                   "correct": false,
+                  "outcome": [
+                    "Alex se acerca a la primera persona que pasa y se ve amable.",
+                    "La persona no sabe bien cómo ayudar y solo señala hacia un lugar lejano.",
+                    "Alex camina hacia allá y termina todavía más lejos de Papá."
+                  ],
                   "feedback": "Verse “amable” no te dice quién es un ayudante seguro — busca un trabajo o rol específico en su lugar."
                 },
                 {
@@ -665,6 +760,11 @@
                 {
                   "text": "Decir que Alex debería haberle preguntado a cualquier desconocido que pasara.",
                   "correct": false,
+                  "outcome": [
+                    "Alex le pregunta a un desconocido cualquiera que va pasando.",
+                    "La persona dice: “Perdón, tengo prisa,” y sigue caminando.",
+                    "Alex sigue solo y no sabe a quién preguntarle después."
+                  ],
                   "feedback": "Cualquier desconocido no es una opción confiable — pedirle ayuda a un padre con hijos cerca fue mejor."
                 },
                 {
@@ -695,6 +795,11 @@
                 {
                   "text": "Porque siempre llevan puesto un uniforme.",
                   "correct": false,
+                  "outcome": [
+                    "Alex cree que los ayudantes seguros siempre llevan uniforme.",
+                    "Alex solo busca uniformes y pasa de largo junto a padres con sus hijos.",
+                    "Como no hay ningún uniforme a la vista, Alex sigue perdido y solo mucho más tiempo."
+                  ],
                   "feedback": "Los padres con hijos usualmente no llevan uniforme — es su papel de cuidador lo que los hace una buena opción, no un uniforme."
                 }
               ]
@@ -716,6 +821,11 @@
                 {
                   "text": "Decir que Alex solo debería haber buscado uniformes.",
                   "correct": false,
+                  "outcome": [
+                    "Alex decide buscar solo a personas con uniforme.",
+                    "Alex da vueltas por el parque grande buscando un uniforme.",
+                    "Alex se aleja más de Papá y sigue perdido mucho más tiempo."
+                  ],
                   "feedback": "Los ayudantes seguros también se pueden reconocer sin uniforme, por su trabajo o rol."
                 },
                 {
@@ -773,6 +883,11 @@
                 {
                   "text": "Ir con el desconocido ya que dijo que vio a la Abuela.",
                   "correct": false,
+                  "outcome": [
+                    "Alex se va con el desconocido, que lo aleja de la multitud.",
+                    "Siguen caminando, y la Abuela no aparece por ningún lado.",
+                    "Ahora Alex está en un lugar desconocido con alguien que no conoce, y la Abuela no tiene idea de dónde está."
+                  ],
                   "feedback": "Un ayudante seguro no te pide que vayas solo con él a algún lugar — eso es una señal de advertencia, aunque diga algo que suene útil."
                 },
                 {
@@ -783,6 +898,11 @@
                 {
                   "text": "Seguirlo a cierta distancia para ver si es cierto.",
                   "correct": false,
+                  "outcome": [
+                    "Alex sigue al desconocido unos pasos atrás para ver si es cierto.",
+                    "El desconocido va hacia el estacionamiento, lejos de la feria concurrida.",
+                    "Alex se aleja cada vez más de la Abuela y de los guardias, y nadie sabe a dónde fue."
+                  ],
                   "feedback": "Seguir a alguien, incluso a distancia, sigue sin ser seguro — mejor busca a un ayudante oficial."
                 }
               ]
@@ -804,6 +924,11 @@
                 {
                   "text": "Decir que Alex debería haberlo seguido ya que el desconocido parecía saber algo.",
                   "correct": false,
+                  "outcome": [
+                    "Alex sigue al desconocido porque parecía saber algo.",
+                    "El desconocido repite: “Ya casi llegamos,” mientras dejan atrás a la multitud.",
+                    "La Abuela no está ahí, y ahora Alex está solo con un desconocido, lejos de cualquiera que pueda ayudar."
+                  ],
                   "feedback": "Seguir al desconocido no sería seguro, aunque pareciera saber algo."
                 },
                 {
@@ -829,6 +954,11 @@
                 {
                   "text": "No hay ninguna diferencia real — cualquiera que ofrezca ayuda debería recibir la misma confianza.",
                   "correct": false,
+                  "outcome": [
+                    "Alex cree que cualquiera que ofrezca ayuda merece la misma confianza.",
+                    "Alex se va con la primera persona que se ofrece, sin fijarse si tiene gafete o uniforme.",
+                    "Esa persona aleja a Alex del mostrador de ayuda, el lugar donde la Abuela iría a buscarlo."
+                  ],
                   "feedback": "Sí hay una diferencia real — un ayudante oficial tiene un rol (gafete, uniforme, trabajo) y no te pedirá que vayas solo con él."
                 },
                 {
@@ -855,6 +985,11 @@
                 {
                   "text": "Decir que Alex debería haber confiado en cualquiera que ofreciera ayuda.",
                   "correct": false,
+                  "outcome": [
+                    "Alex decide confiar la próxima vez en cualquiera que ofrezca ayuda.",
+                    "En el siguiente evento concurrido, Alex se va con alguien solo porque se ofreció.",
+                    "Alex termina lejos de la multitud con alguien que no conoce, y nadie de su familia sabe dónde está."
+                  ],
                   "feedback": "Confiar en cualquiera que ofrezca ayuda no es seguro — lo importante es buscar un rol real."
                 },
                 {
@@ -879,6 +1014,11 @@
                 {
                   "text": "Como es un pedido más pequeño, está bien aceptar cualquier oferta de ayuda.",
                   "correct": false,
+                  "outcome": [
+                    "Alex piensa que un juguete perdido es algo pequeño, así que está bien aceptar.",
+                    "El desconocido dice que el juguete está “detrás de las carpas” y empieza a alejarse de la multitud.",
+                    "Alex está saliendo del área segura y concurrida con alguien sin un rol real, y la Abuela no puede ver a dónde va."
+                  ],
                   "feedback": "La misma regla aplica incluso para cosas pequeñas — un verdadero ayudante no necesita que vayas solo con él a ningún lado."
                 },
                 {

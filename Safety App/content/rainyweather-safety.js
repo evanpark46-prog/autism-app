@@ -26,6 +26,11 @@
                 {
                   "text": "Keep playing outside since it’s just a little rain.",
                   "correct": false,
+                  "outcome": [
+                    "Alex keeps playing outside.",
+                    "The thunder gets louder and closer.",
+                    "Alex is still outside in the storm."
+                  ],
                   "feedback": "Thunder means lightning is nearby — even a little rain with thunder means it’s time to head inside."
                 },
                 {
@@ -36,6 +41,11 @@
                 {
                   "text": "Stand under a tall tree until the rain stops.",
                   "correct": false,
+                  "outcome": [
+                    "Alex stands under a tall tree.",
+                    "Lightning flashes close by.",
+                    "Alex feels scared and is not safe there."
+                  ],
                   "feedback": "Tall trees can attract lightning — standing under one during a storm isn’t safe. Going inside is best."
                 }
               ]
@@ -57,6 +67,11 @@
                 {
                   "text": "Agree and keep playing outside.",
                   "correct": false,
+                  "outcome": [
+                    "Alex and the friend keep playing.",
+                    "The thunder booms even louder.",
+                    "Now they are both outside in the storm."
+                  ],
                   "feedback": "Thunder means lightning is close — it’s time to go inside, not keep playing."
                 },
                 {
@@ -87,6 +102,11 @@
                 {
                   "text": "Because thunder means it’s about to snow.",
                   "correct": false,
+                  "outcome": [
+                    "Alex thinks thunder means snow.",
+                    "Alex waits outside to see snow.",
+                    "No snow comes, but the lightning does."
+                  ],
                   "feedback": "Thunder is linked to lightning, not snow — the important thing is it means lightning is nearby."
                 }
               ]
@@ -108,6 +128,11 @@
                 {
                   "text": "Wait outside until you hear thunder too.",
                   "correct": false,
+                  "outcome": [
+                    "Alex waits outside for thunder.",
+                    "Lightning flashes again, closer now.",
+                    "Alex is still outside while danger is near."
+                  ],
                   "feedback": "Seeing lightning already means danger is close — don’t wait for thunder to go inside."
                 },
                 {
@@ -165,6 +190,11 @@
                 {
                   "text": "Run the rest of the way home to get out of the rain faster.",
                   "correct": false,
+                  "outcome": [
+                    "Alex runs fast down the wet, slippery sidewalk.",
+                    "Alex’s shoe slides on a puddle, and Alex falls down.",
+                    "Alex’s knee gets scraped, and now Alex is wet and sore."
+                  ],
                   "feedback": "Running on a wet, slippery sidewalk makes it much easier to fall — walking carefully is safer, even if it takes a bit longer."
                 },
                 {
@@ -175,6 +205,11 @@
                 {
                   "text": "Take a shortcut through a grassy area that looks like it might flood.",
                   "correct": false,
+                  "outcome": [
+                    "Alex cuts across the grassy area to get home faster.",
+                    "The grass is hiding thick mud and deep puddles.",
+                    "Alex’s shoes get stuck, and the shortcut takes even longer."
+                  ],
                   "feedback": "Grassy areas can flood or hide uneven, slippery ground — sticking to a familiar, walkable path is safer."
                 }
               ]
@@ -196,6 +231,11 @@
                 {
                   "text": "Race and run as fast as possible.",
                   "correct": false,
+                  "outcome": [
+                    "Alex races the friend as fast as possible.",
+                    "Alex slips on a wet spot and tumbles onto the sidewalk.",
+                    "Alex’s hands get scraped, and Alex has to walk home slowly and sore."
+                  ],
                   "feedback": "Running on wet sidewalks makes it much easier to slip and fall."
                 },
                 {
@@ -226,6 +266,11 @@
                 {
                   "text": "Because rain makes cars go slower automatically, so it doesn’t matter.",
                   "correct": false,
+                  "outcome": [
+                    "Alex believes rain makes every car slow down.",
+                    "Alex steps toward the street without looking carefully.",
+                    "A driver doesn’t see Alex in the rain and has to brake hard, and Alex feels scared."
+                  ],
                   "feedback": "Rain doesn’t automatically make every driver slow down or notice pedestrians — staying visible is still important."
                 }
               ]
@@ -252,6 +297,11 @@
                 {
                   "text": "Because cars can’t drive at all when it’s raining.",
                   "correct": false,
+                  "outcome": [
+                    "Alex believes cars can’t drive when it’s raining.",
+                    "Alex walks right by the street without watching for cars.",
+                    "A car splashes past very close, and Alex jumps back, scared."
+                  ],
                   "feedback": "Cars can absolutely still drive in the rain — that’s exactly why staying visible matters."
                 }
               ],
@@ -304,6 +354,11 @@
                 {
                   "text": "Go outside to check how deep the water is.",
                   "correct": false,
+                  "outcome": [
+                    "Alex opens the front door and steps outside to check how deep the water is.",
+                    "The water is deeper than it looked, and it tugs hard at Alex’s legs.",
+                    "Alex struggles back inside, soaked and frightened, and no grown-up even knew Alex had gone out."
+                  ],
                   "feedback": "Floodwater can be deeper, faster-moving, or more dangerous than it looks — it’s safer to stay inside and tell a grown-up."
                 },
                 {
@@ -314,6 +369,11 @@
                 {
                   "text": "Ignore it since it’s probably just a little bit of water.",
                   "correct": false,
+                  "outcome": [
+                    "Alex decides it’s just a little water and goes back to watching TV.",
+                    "While nobody is paying attention, the water keeps creeping closer to the door.",
+                    "By the time the family notices, water is seeping inside and there’s much less time to move things or get ready."
+                  ],
                   "feedback": "Even a small amount of water outside is worth telling a grown-up about during a flood warning — conditions can change quickly."
                 }
               ]
@@ -335,6 +395,11 @@
                 {
                   "text": "Go check the water together.",
                   "correct": false,
+                  "outcome": [
+                    "Alex and the sibling slip out the door together to check the water.",
+                    "The water is deeper than it looked, and the sibling trips on something hidden underneath.",
+                    "Now they’re both outside in rising water, scared, and Mom and Dad don’t know where they are."
+                  ],
                   "feedback": "Floodwater can be more dangerous than it looks — checking it yourselves isn’t safe."
                 },
                 {
@@ -365,6 +430,11 @@
                 {
                   "text": "Floodwater is always completely still and shallow, so it’s fine to check.",
                   "correct": false,
+                  "outcome": [
+                    "Alex believes floodwater is always still and shallow.",
+                    "Alex wades in to check, and the water is moving faster than it looked.",
+                    "Alex loses balance on something hidden under the surface and has to scramble back, soaked and shaken."
+                  ],
                   "feedback": "Floodwater is often unpredictable, not calm and shallow — that’s exactly why it’s safer to avoid it."
                 },
                 {
@@ -396,6 +466,11 @@
                 {
                   "text": "Because floodwater is always shallow and safe to check.",
                   "correct": false,
+                  "outcome": [
+                    "Alex believes floodwater is always shallow and safe to check.",
+                    "Alex guesses the depth by looking and steps off the porch.",
+                    "The water is much deeper than it looked, and Alex ends up soaked to the waist and scared."
+                  ],
                   "feedback": "That’s not true — floodwater is often unpredictable and can hide real danger."
                 }
               ],
@@ -415,6 +490,11 @@
                 {
                   "text": "Immediately go check everything yourself.",
                   "correct": false,
+                  "outcome": [
+                    "As soon as the warning is lifted, Alex runs outside alone to check everything.",
+                    "The yard is still muddy and slippery, with a deep dip hidden under a puddle.",
+                    "Alex slips and scrapes a knee, and no grown-up is there to help."
+                  ],
                   "feedback": "Checking it yourself first isn’t safe — wait for a trusted adult to confirm it."
                 }
               ]
@@ -515,6 +595,11 @@
                 {
                   "text": "Seguir jugando afuera ya que es solo un poco de lluvia.",
                   "correct": false,
+                  "outcome": [
+                    "Alex sigue jugando afuera.",
+                    "Los truenos suenan más fuerte y más cerca.",
+                    "Alex sigue afuera en la tormenta."
+                  ],
                   "feedback": "Un trueno significa que hay un rayo cerca — incluso con poca lluvia, escuchar truenos significa que es momento de entrar."
                 },
                 {
@@ -525,6 +610,11 @@
                 {
                   "text": "Quedarse debajo de un árbol alto hasta que deje de llover.",
                   "correct": false,
+                  "outcome": [
+                    "Alex se queda debajo de un árbol alto.",
+                    "Un rayo brilla muy cerca.",
+                    "Alex siente miedo y ahí no está a salvo."
+                  ],
                   "feedback": "Los árboles altos pueden atraer los rayos — quedarse debajo de uno durante una tormenta no es seguro. Entrar es lo mejor."
                 }
               ]
@@ -546,6 +636,11 @@
                 {
                   "text": "Estar de acuerdo y seguir jugando afuera.",
                   "correct": false,
+                  "outcome": [
+                    "Alex y su amigo siguen jugando.",
+                    "El trueno retumba todavía más fuerte.",
+                    "Ahora los dos están afuera en la tormenta."
+                  ],
                   "feedback": "Un trueno significa que hay un rayo cerca — es momento de entrar, no de seguir jugando."
                 },
                 {
@@ -576,6 +671,11 @@
                 {
                   "text": "Porque los truenos significan que va a nevar.",
                   "correct": false,
+                  "outcome": [
+                    "Alex cree que los truenos significan nieve.",
+                    "Alex espera afuera para ver la nieve.",
+                    "No llega la nieve, pero sí llegan los rayos."
+                  ],
                   "feedback": "Los truenos están relacionados con los rayos, no con la nieve — lo importante es que significa que hay un rayo cerca."
                 }
               ]
@@ -597,6 +697,11 @@
                 {
                   "text": "Esperar afuera hasta escuchar también un trueno.",
                   "correct": false,
+                  "outcome": [
+                    "Alex espera afuera hasta oír un trueno.",
+                    "Otro rayo brilla, ahora más cerca.",
+                    "Alex sigue afuera mientras el peligro está cerca."
+                  ],
                   "feedback": "Ver un rayo ya significa que el peligro está cerca — no esperes al trueno para entrar."
                 },
                 {
@@ -654,6 +759,11 @@
                 {
                   "text": "Correr el resto del camino a casa para salir de la lluvia más rápido.",
                   "correct": false,
+                  "outcome": [
+                    "Alex corre rápido por la acera mojada y resbalosa.",
+                    "El zapato de Alex se resbala en un charco, y Alex se cae.",
+                    "Alex se raspa la rodilla, y ahora está empapado y adolorido."
+                  ],
                   "feedback": "Correr en una acera mojada y resbalosa hace que sea mucho más fácil caerse — caminar con cuidado es más seguro, aunque tome un poco más de tiempo."
                 },
                 {
@@ -664,6 +774,11 @@
                 {
                   "text": "Tomar un atajo por un área de pasto que parece que podría inundarse.",
                   "correct": false,
+                  "outcome": [
+                    "Alex toma el atajo por el área de pasto para llegar más rápido.",
+                    "El pasto esconde lodo espeso y charcos profundos.",
+                    "Los zapatos de Alex se atoran, y el atajo tarda todavía más."
+                  ],
                   "feedback": "Las áreas de pasto pueden inundarse u ocultar suelo desnivelado y resbaloso — quedarte en un camino conocido y transitable es más seguro."
                 }
               ]
@@ -685,6 +800,11 @@
                 {
                   "text": "Competir y correr lo más rápido posible.",
                   "correct": false,
+                  "outcome": [
+                    "Alex compite con su amigo y corre lo más rápido posible.",
+                    "Alex se resbala en un lugar mojado y se cae en la acera.",
+                    "Alex se raspa las manos y tiene que caminar a casa despacio y adolorido."
+                  ],
                   "feedback": "Correr en aceras mojadas hace que sea mucho más fácil resbalar y caer."
                 },
                 {
@@ -715,6 +835,11 @@
                 {
                   "text": "Porque la lluvia hace que los carros vayan más lento automáticamente, así que no importa.",
                   "correct": false,
+                  "outcome": [
+                    "Alex cree que la lluvia hace que todos los carros vayan más lento.",
+                    "Alex se acerca a la calle sin mirar con cuidado.",
+                    "Un conductor no ve a Alex por la lluvia y tiene que frenar fuerte, y Alex se asusta."
+                  ],
                   "feedback": "La lluvia no hace que todos los conductores vayan más lento o noten a los peatones automáticamente — seguir siendo visible sigue siendo importante."
                 }
               ]
@@ -741,6 +866,11 @@
                 {
                   "text": "Porque los carros no pueden manejar en absoluto cuando llueve.",
                   "correct": false,
+                  "outcome": [
+                    "Alex cree que los carros no pueden manejar cuando llueve.",
+                    "Alex camina junto a la calle sin fijarse en los carros.",
+                    "Un carro pasa salpicando muy cerca, y Alex brinca hacia atrás, asustado."
+                  ],
                   "feedback": "Los carros sí pueden seguir manejando en la lluvia — precisamente por eso ser visible importa."
                 }
               ],
@@ -793,6 +923,11 @@
                 {
                   "text": "Salir a revisar qué tan profunda está el agua.",
                   "correct": false,
+                  "outcome": [
+                    "Alex abre la puerta principal y sale a revisar qué tan profunda está el agua.",
+                    "El agua es más profunda de lo que parecía, y jala con fuerza las piernas de Alex.",
+                    "Alex logra volver adentro, empapado y asustado, y ningún adulto sabía que había salido."
+                  ],
                   "feedback": "El agua de una inundación puede ser más profunda, más rápida, o más peligrosa de lo que parece — es más seguro quedarse adentro y avisarle a un adulto."
                 },
                 {
@@ -803,6 +938,11 @@
                 {
                   "text": "Ignorarlo porque probablemente es solo un poco de agua.",
                   "correct": false,
+                  "outcome": [
+                    "Alex decide que es solo un poco de agua y vuelve a ver la televisión.",
+                    "Mientras nadie presta atención, el agua sigue acercándose a la puerta.",
+                    "Cuando la familia se da cuenta, el agua ya está entrando y hay mucho menos tiempo para mover cosas o prepararse."
+                  ],
                   "feedback": "Incluso una pequeña cantidad de agua afuera vale la pena contársela a un adulto durante una alerta de inundación — las condiciones pueden cambiar rápido."
                 }
               ]
@@ -824,6 +964,11 @@
                 {
                   "text": "Salir a revisar el agua juntos.",
                   "correct": false,
+                  "outcome": [
+                    "Alex y su hermano salen juntos por la puerta a revisar el agua.",
+                    "El agua es más profunda de lo que parecía, y el hermano se tropieza con algo escondido debajo.",
+                    "Ahora los dos están afuera en el agua que sube, asustados, y mamá y papá no saben dónde están."
+                  ],
                   "feedback": "El agua de una inundación puede ser más peligrosa de lo que parece — revisarla ustedes mismos no es seguro."
                 },
                 {
@@ -854,6 +999,11 @@
                 {
                   "text": "El agua de una inundación siempre está completamente quieta y poco profunda, así que está bien revisarla.",
                   "correct": false,
+                  "outcome": [
+                    "Alex cree que el agua de una inundación siempre está quieta y poco profunda.",
+                    "Alex se mete a revisarla, y el agua se mueve más rápido de lo que parecía.",
+                    "Alex pierde el equilibrio con algo escondido bajo el agua y tiene que regresar como puede, empapado y asustado."
+                  ],
                   "feedback": "El agua de una inundación suele ser impredecible, no tranquila y poco profunda — por eso es más seguro evitarla."
                 },
                 {
@@ -885,6 +1035,11 @@
                 {
                   "text": "Porque el agua de una inundación siempre es poco profunda y segura de revisar.",
                   "correct": false,
+                  "outcome": [
+                    "Alex cree que el agua de la inundación siempre es poco profunda y segura de revisar.",
+                    "Alex adivina la profundidad mirándola y baja del porche.",
+                    "El agua es mucho más profunda de lo que parecía, y Alex queda empapado hasta la cintura y asustado."
+                  ],
                   "feedback": "Eso no es cierto — el agua de una inundación suele ser impredecible y puede ocultar peligro real."
                 }
               ],
@@ -904,6 +1059,11 @@
                 {
                   "text": "Ir a revisar todo tú mismo de inmediato.",
                   "correct": false,
+                  "outcome": [
+                    "En cuanto se levanta la alerta, Alex sale solo a revisar todo.",
+                    "El patio sigue lleno de lodo y resbaloso, con un hoyo profundo escondido bajo un charco.",
+                    "Alex se resbala y se raspa la rodilla, y no hay ningún adulto ahí para ayudar."
+                  ],
                   "feedback": "Revisarlo tú mismo primero no es seguro — espera a que un adulto de confianza lo confirme."
                 }
               ]

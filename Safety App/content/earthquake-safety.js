@@ -26,6 +26,11 @@
                 {
                   "text": "Run outside as fast as possible.",
                   "correct": false,
+                  "outcome": [
+                    "Alex runs for the door.",
+                    "The floor shakes and Alex trips.",
+                    "Alex’s knee gets scraped. Books fall nearby."
+                  ],
                   "feedback": "Running during shaking can cause you to fall or get hit by falling objects — it’s safer to drop and cover right where you are."
                 },
                 {
@@ -36,6 +41,11 @@
                 {
                   "text": "Stand in a doorway and watch what’s happening.",
                   "correct": false,
+                  "outcome": [
+                    "Alex stands in the doorway to watch.",
+                    "Things fall off the shelves nearby.",
+                    "Alex has nothing over Alex’s head."
+                  ],
                   "feedback": "Standing and watching means you’re not protected from falling objects — getting under something sturdy is safer."
                 }
               ]
@@ -57,6 +67,11 @@
                 {
                   "text": "Stand up to see what’s falling.",
                   "correct": false,
+                  "outcome": [
+                    "Alex stands up to look.",
+                    "The floor shakes and a book falls close by.",
+                    "Alex feels scared and has no cover."
+                  ],
                   "feedback": "Standing up leaves you exposed to falling objects — get under the desk instead."
                 },
                 {
@@ -87,6 +102,11 @@
                 {
                   "text": "Run around to see if friends are okay before doing anything else.",
                   "correct": false,
+                  "outcome": [
+                    "Alex runs around the room.",
+                    "Alex bumps into a fallen chair.",
+                    "Alex trips, and the teacher can’t find Alex."
+                  ],
                   "feedback": "Running around right after shaking can be risky if there’s damage nearby — it’s safer to follow the teacher’s instructions first."
                 }
               ]
@@ -108,6 +128,11 @@
                 {
                   "text": "Just stand still out in the open.",
                   "correct": false,
+                  "outcome": [
+                    "Alex stands still in the open.",
+                    "Things fall from a shelf nearby.",
+                    "Nothing is keeping Alex’s head safe."
+                  ],
                   "feedback": "Standing in the open leaves you unprotected — find something sturdy or an interior wall instead."
                 },
                 {
@@ -165,6 +190,11 @@
                 {
                   "text": "Stay right next to the tall cabinets since they’re close.",
                   "correct": false,
+                  "outcome": [
+                    "Alex stays right next to the tall cabinets.",
+                    "The cabinet doors swing open and dishes start sliding out.",
+                    "Things are falling close to Alex, and Alex feels very scared."
+                  ],
                   "feedback": "Tall cabinets can tip over or spill their contents during shaking — it’s safer to move away from them if you can do it quickly and safely."
                 },
                 {
@@ -175,6 +205,11 @@
                 {
                   "text": "Try to hold the cabinets still so nothing falls out.",
                   "correct": false,
+                  "outcome": [
+                    "Alex pushes on the cabinets to hold them still.",
+                    "The cabinets are too heavy, and they keep shaking anyway.",
+                    "Dishes fall around Alex, and Alex isn’t covering Alex’s head."
+                  ],
                   "feedback": "Trying to hold heavy furniture still during shaking isn’t safe — protecting yourself matters more than protecting objects."
                 }
               ]
@@ -196,6 +231,11 @@
                 {
                   "text": "Stay close to the cabinets since they’re nearby.",
                   "correct": false,
+                  "outcome": [
+                    "Alex stays close to the cabinets instead of moving with Mom.",
+                    "A cabinet door bangs open and cans tumble out near Alex.",
+                    "Mom has to reach back for Alex while the shaking keeps going."
+                  ],
                   "feedback": "Staying close to tall cabinets is risky — they could tip or spill."
                 },
                 {
@@ -226,6 +266,11 @@
                 {
                   "text": "Open the oven to see if that’s where the smell is coming from.",
                   "correct": false,
+                  "outcome": [
+                    "Alex opens the oven door to look for the smell.",
+                    "The gas smell gets stronger, and Alex starts to feel dizzy.",
+                    "Alex is still in the kitchen, and no grown-up knows about the gas yet."
+                  ],
                   "feedback": "Investigating the source yourself isn’t safe — tell a grown-up and leave the area instead."
                 }
               ]
@@ -247,6 +292,11 @@
                 {
                   "text": "Yes, turn on the light switch.",
                   "correct": false,
+                  "outcome": [
+                    "Alex reaches for the light switch.",
+                    "Mom shouts, “Stop!” because a switch can make a spark near gas.",
+                    "Now Alex is scared, and leaving the house takes longer."
+                  ],
                   "feedback": "A light switch could create a spark near gas — avoid switches and anything electric."
                 },
                 {
@@ -304,6 +354,11 @@
                 {
                   "text": "Run inside a building to find a desk.",
                   "correct": false,
+                  "outcome": [
+                    "Alex runs toward the building to find a desk inside.",
+                    "The ground shakes hard, and Alex stumbles on the steps.",
+                    "Alex is stuck near the building’s walls and windows while things may still be falling."
+                  ],
                   "feedback": "Running into or out of buildings during shaking is risky — outside, the safer move is to get into an open area, away from things that could fall."
                 },
                 {
@@ -314,6 +369,11 @@
                 {
                   "text": "Stand close to the brick wall since it looks sturdy.",
                   "correct": false,
+                  "outcome": [
+                    "Alex stays right next to the brick wall because it looks strong.",
+                    "During the strong shaking, bricks near the top start to crack and loosen.",
+                    "Alex is now standing in the one spot where falling pieces could land, and has to scramble away mid-quake."
+                  ],
                   "feedback": "Brick walls can crack or fall during strong shaking — it’s safer to move away from them into an open area."
                 }
               ]
@@ -335,6 +395,11 @@
                 {
                   "text": "Run toward the building for shelter.",
                   "correct": false,
+                  "outcome": [
+                    "Alex runs toward the building instead of the open field.",
+                    "The shaking makes Alex stumble, and loose pieces fall from the roof edge nearby.",
+                    "Alex ends up closer to falling debris and farther from the friend who went to the field."
+                  ],
                   "feedback": "Running toward or into a building during shaking is risky — an open area is safer outside."
                 },
                 {
@@ -365,6 +430,11 @@
                 {
                   "text": "Since the big one already happened, there’s no need to react again.",
                   "correct": false,
+                  "outcome": [
+                    "Alex decides the big one already happened and keeps standing up.",
+                    "The aftershock is strong, and Alex loses balance and falls on the grass.",
+                    "Alex wasn’t ready to protect Alex’s head, and the shaking feels even scarier than the first time."
+                  ],
                   "feedback": "Aftershocks can still be strong enough to matter — always drop and cover again."
                 },
                 {
@@ -391,6 +461,11 @@
                 {
                   "text": "Say aftershocks never happen, so it’s safe to relax completely.",
                   "correct": false,
+                  "outcome": [
+                    "Alex tells the friend aftershocks never happen, so they can relax.",
+                    "They walk back toward the building, and the ground starts shaking again.",
+                    "Now they’re near the wall and trees, caught off guard and frightened."
+                  ],
                   "feedback": "Aftershocks are common after a bigger earthquake — staying alert is the safer response."
                 },
                 {
@@ -415,6 +490,11 @@
                 {
                   "text": "Since the big one already happened, you don’t need to react again.",
                   "correct": false,
+                  "outcome": [
+                    "Alex believes there’s no need to react again after the big quake.",
+                    "When the ground shakes again, Alex keeps walking instead of dropping down.",
+                    "Alex stumbles and gets a scraped hand, and feels shaken and caught by surprise."
+                  ],
                   "feedback": "Aftershocks can still be strong enough to hurt you — always drop and cover again."
                 }
               ]
@@ -515,6 +595,11 @@
                 {
                   "text": "Correr afuera lo más rápido posible.",
                   "correct": false,
+                  "outcome": [
+                    "Alex corre hacia la puerta.",
+                    "El piso tiembla y Alex se tropieza.",
+                    "Alex se raspa la rodilla. Caen libros cerca."
+                  ],
                   "feedback": "Correr durante un temblor puede hacer que te caigas o te golpee algo que se cae — es más seguro agacharse y cubrirse justo donde estás."
                 },
                 {
@@ -525,6 +610,11 @@
                 {
                   "text": "Pararse en una puerta y observar lo que pasa.",
                   "correct": false,
+                  "outcome": [
+                    "Alex se para en la puerta a mirar.",
+                    "Las cosas se caen de los estantes cerca.",
+                    "Alex no tiene nada que le cubra la cabeza."
+                  ],
                   "feedback": "Pararte a observar significa que no estás protegido de cosas que puedan caer — meterte debajo de algo resistente es más seguro."
                 }
               ]
@@ -546,6 +636,11 @@
                 {
                   "text": "Levantarse para ver qué se está cayendo.",
                   "correct": false,
+                  "outcome": [
+                    "Alex se levanta para mirar.",
+                    "El piso tiembla y un libro cae muy cerca.",
+                    "Alex tiene miedo y no está cubierto."
+                  ],
                   "feedback": "Levantarte te deja expuesto a objetos que caen — mejor métete debajo del escritorio."
                 },
                 {
@@ -576,6 +671,11 @@
                 {
                   "text": "Correr por todos lados para ver si los amigos están bien antes de hacer cualquier otra cosa.",
                   "correct": false,
+                  "outcome": [
+                    "Alex corre por todo el salón.",
+                    "Alex choca con una silla caída.",
+                    "Alex se tropieza, y el maestro no encuentra a Alex."
+                  ],
                   "feedback": "Correr por todos lados justo después de un temblor puede ser riesgoso si hay daños cerca — es más seguro seguir primero las instrucciones del maestro."
                 }
               ]
@@ -597,6 +697,11 @@
                 {
                   "text": "Simplemente quedarse parado en un espacio abierto.",
                   "correct": false,
+                  "outcome": [
+                    "Alex se queda parado en el espacio abierto.",
+                    "Caen cosas de un estante cercano.",
+                    "Nada protege la cabeza de Alex."
+                  ],
                   "feedback": "Quedarte parado en un espacio abierto te deja sin protección — busca algo resistente o una pared interior."
                 },
                 {
@@ -654,6 +759,11 @@
                 {
                   "text": "Quedarse justo al lado de los gabinetes altos porque están cerca.",
                   "correct": false,
+                  "outcome": [
+                    "Alex se queda justo al lado de los gabinetes altos.",
+                    "Las puertas de los gabinetes se abren y los platos empiezan a resbalar.",
+                    "Las cosas caen cerca de Alex, y Alex tiene mucho miedo."
+                  ],
                   "feedback": "Los gabinetes altos pueden volcarse o derramar su contenido durante un temblor — es más seguro alejarte de ellos si puedes hacerlo rápido y con seguridad."
                 },
                 {
@@ -664,6 +774,11 @@
                 {
                   "text": "Intentar sujetar los gabinetes para que nada se caiga.",
                   "correct": false,
+                  "outcome": [
+                    "Alex empuja los gabinetes para sujetarlos.",
+                    "Los gabinetes son muy pesados, y siguen temblando de todas formas.",
+                    "Caen platos alrededor de Alex, y Alex no se está cubriendo la cabeza."
+                  ],
                   "feedback": "Intentar sujetar muebles pesados durante un temblor no es seguro — protegerte a ti mismo importa más que proteger objetos."
                 }
               ]
@@ -685,6 +800,11 @@
                 {
                   "text": "Quedarse cerca de los gabinetes porque están cerca.",
                   "correct": false,
+                  "outcome": [
+                    "Alex se queda cerca de los gabinetes en vez de irse con Mamá.",
+                    "La puerta de un gabinete se abre de golpe y caen latas cerca de Alex.",
+                    "Mamá tiene que regresar por Alex mientras sigue temblando."
+                  ],
                   "feedback": "Quedarte cerca de gabinetes altos es arriesgado — podrían volcarse o derramarse."
                 },
                 {
@@ -715,6 +835,11 @@
                 {
                   "text": "Abrir el horno para ver si de ahí viene el olor.",
                   "correct": false,
+                  "outcome": [
+                    "Alex abre el horno para buscar el olor.",
+                    "El olor a gas se hace más fuerte, y Alex empieza a sentirse mareado.",
+                    "Alex sigue en la cocina, y ningún adulto sabe del gas todavía."
+                  ],
                   "feedback": "Investigar la fuente tú mismo no es seguro — avísale a un adulto y sal del área en su lugar."
                 }
               ]
@@ -736,6 +861,11 @@
                 {
                   "text": "Sí, encender el interruptor de luz.",
                   "correct": false,
+                  "outcome": [
+                    "Alex estira la mano hacia el interruptor de luz.",
+                    "Mamá grita: “¡Para!” porque un interruptor puede hacer una chispa cerca del gas.",
+                    "Ahora Alex tiene miedo, y salir de la casa toma más tiempo."
+                  ],
                   "feedback": "Un interruptor de luz podría crear una chispa cerca del gas — evita interruptores y cualquier cosa eléctrica."
                 },
                 {
@@ -793,6 +923,11 @@
                 {
                   "text": "Correr dentro de un edificio para buscar un escritorio.",
                   "correct": false,
+                  "outcome": [
+                    "Alex corre hacia el edificio para buscar un escritorio adentro.",
+                    "La tierra tiembla fuerte, y Alex se tropieza en los escalones.",
+                    "Alex queda atrapado cerca de las paredes y ventanas del edificio mientras todavía pueden caer cosas."
+                  ],
                   "feedback": "Correr hacia dentro o fuera de edificios durante un temblor es arriesgado — afuera, lo más seguro es ir a un área abierta, lejos de cosas que puedan caer."
                 },
                 {
@@ -803,6 +938,11 @@
                 {
                   "text": "Quedarse cerca de la pared de ladrillos porque parece resistente.",
                   "correct": false,
+                  "outcome": [
+                    "Alex se queda justo al lado de la pared de ladrillos porque parece fuerte.",
+                    "Durante el temblor fuerte, los ladrillos de arriba empiezan a agrietarse y aflojarse.",
+                    "Alex está parado justo donde podrían caer pedazos, y tiene que alejarse a toda prisa en medio del temblor."
+                  ],
                   "feedback": "Las paredes de ladrillos pueden agrietarse o caerse durante un temblor fuerte — es más seguro alejarte de ellas hacia un área abierta."
                 }
               ]
@@ -824,6 +964,11 @@
                 {
                   "text": "Correr hacia el edificio para refugiarse.",
                   "correct": false,
+                  "outcome": [
+                    "Alex corre hacia el edificio en vez del campo abierto.",
+                    "El temblor hace que Alex se tropiece, y caen pedazos sueltos del borde del techo cerca.",
+                    "Alex termina más cerca de cosas que caen y más lejos del amigo que fue al campo."
+                  ],
                   "feedback": "Correr hacia o dentro de un edificio durante un temblor es arriesgado — un área abierta es más segura afuera."
                 },
                 {
@@ -854,6 +999,11 @@
                 {
                   "text": "Como el temblor grande ya pasó, no hay que reaccionar de nuevo.",
                   "correct": false,
+                  "outcome": [
+                    "Alex decide que el temblor grande ya pasó y se queda de pie.",
+                    "La réplica es fuerte, y Alex pierde el equilibrio y cae en el pasto.",
+                    "Alex no estaba listo para protegerse la cabeza, y el temblor da todavía más miedo que la primera vez."
+                  ],
                   "feedback": "Las réplicas pueden ser lo bastante fuertes para importar — siempre agáchate y cúbrete de nuevo."
                 },
                 {
@@ -880,6 +1030,11 @@
                 {
                   "text": "Decir que las réplicas nunca ocurren, así que ya se puede relajar por completo.",
                   "correct": false,
+                  "outcome": [
+                    "Alex le dice al amigo que las réplicas nunca ocurren, así que pueden relajarse.",
+                    "Caminan de regreso hacia el edificio, y la tierra empieza a temblar otra vez.",
+                    "Ahora están cerca de la pared y los árboles, tomados por sorpresa y asustados."
+                  ],
                   "feedback": "Las réplicas son comunes después de un terremoto grande — mantenerse alerta es la respuesta más segura."
                 },
                 {
@@ -904,6 +1059,11 @@
                 {
                   "text": "Como el grande ya pasó, no hace falta reaccionar de nuevo.",
                   "correct": false,
+                  "outcome": [
+                    "Alex cree que no hace falta reaccionar de nuevo después del temblor grande.",
+                    "Cuando la tierra vuelve a temblar, Alex sigue caminando en vez de agacharse.",
+                    "Alex se tropieza y se raspa la mano, y se siente asustado y sorprendido."
+                  ],
                   "feedback": "Las réplicas pueden ser lo bastante fuertes para lastimarte — siempre agáchate y cúbrete otra vez."
                 }
               ]

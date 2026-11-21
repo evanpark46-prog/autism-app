@@ -26,6 +26,11 @@
                 {
                   "text": "Stay quiet and try to push through the uncomfortable feeling.",
                   "correct": false,
+                  "outcome": [
+                    "Alex stays quiet and keeps working.",
+                    "The noise and lights feel bigger and bigger.",
+                    "Alex feels worse, and the teacher doesn’t know."
+                  ],
                   "feedback": "You don’t have to just push through — telling a trusted adult how you’re feeling is always okay, and it helps them help you."
                 },
                 {
@@ -36,6 +41,11 @@
                 {
                   "text": "Get upset and leave the room without telling anyone.",
                   "correct": false,
+                  "outcome": [
+                    "Alex gets upset and runs out of the room.",
+                    "The teacher looks up and can’t see Alex.",
+                    "Everyone is worried. Alex is alone in the hall."
+                  ],
                   "feedback": "Leaving without telling anyone can worry people and makes it harder for them to help — it’s better to say something first, even briefly."
                 }
               ]
@@ -57,6 +67,11 @@
                 {
                   "text": "Say Alex should’ve stayed quiet and just pushed through instead.",
                   "correct": false,
+                  "outcome": [
+                    "Alex thinks, “I should have stayed quiet.”",
+                    "Next time, Alex doesn’t ask for a break.",
+                    "Alex feels overwhelmed, and no one knows."
+                  ],
                   "feedback": "Pushing through quietly wouldn’t have helped — speaking up was exactly the right move."
                 },
                 {
@@ -87,6 +102,11 @@
                 {
                   "text": "Because staying quiet always makes uncomfortable feelings go away on their own.",
                   "correct": false,
+                  "outcome": [
+                    "Alex thinks staying quiet makes bad feelings go away.",
+                    "Alex stays quiet, but the feeling stays.",
+                    "Alex still feels bad. No grown-up can help."
+                  ],
                   "feedback": "Uncomfortable feelings don’t always just disappear — speaking up is a more reliable way to get things to change."
                 }
               ]
@@ -108,6 +128,11 @@
                 {
                   "text": "Wait quietly for a trusted adult to notice on their own.",
                   "correct": false,
+                  "outcome": [
+                    "Alex waits quietly for the teacher to notice.",
+                    "The teacher is busy helping other kids.",
+                    "Alex keeps waiting and feels worse and worse."
+                  ],
                   "feedback": "Trusted adults can’t always tell how you’re feeling — it’s better to say it directly."
                 },
                 {
@@ -165,6 +190,11 @@
                 {
                   "text": "Say nothing and hope the classmate eventually stops.",
                   "correct": false,
+                  "outcome": [
+                    "Alex says nothing and hopes the teasing will stop.",
+                    "The next day at lunch, the classmate teases Alex again.",
+                    "Alex starts to dread lunch, and no grown-up knows what’s happening."
+                  ],
                   "feedback": "Hoping it stops on its own often doesn’t work — telling a trusted adult gives the situation a real chance to change."
                 },
                 {
@@ -175,6 +205,11 @@
                 {
                   "text": "Tease the classmate back to make it even.",
                   "correct": false,
+                  "outcome": [
+                    "Alex teases the classmate back to make it even.",
+                    "The classmate gets mad and teases Alex even more.",
+                    "Now both kids are upset, and Alex might get in trouble too."
+                  ],
                   "feedback": "Teasing back usually makes things worse, not better — it’s more effective to say it’s not okay and get a trusted adult involved."
                 }
               ]
@@ -196,6 +231,11 @@
                 {
                   "text": "Say Alex shouldn’t have said anything and should have just ignored it.",
                   "correct": false,
+                  "outcome": [
+                    "Alex decides speaking up was a mistake.",
+                    "The next time someone teases Alex, Alex stays quiet and ignores it.",
+                    "The teasing keeps going, because the other kid never learns it bothers Alex."
+                  ],
                   "feedback": "Ignoring it likely wouldn’t have changed anything — speaking up clearly was the right move."
                 },
                 {
@@ -226,6 +266,11 @@
                 {
                   "text": "It’s better to never tell an adult about anything, just in case it makes things worse.",
                   "correct": false,
+                  "outcome": [
+                    "Alex decides to never tell a grown-up about anything.",
+                    "When the teasing starts again, Alex keeps it a secret.",
+                    "The problem keeps growing, and Alex has to handle it all alone."
+                  ],
                   "feedback": "Avoiding trusted adults entirely usually leaves problems unresolved — most of the time, telling them helps more than it hurts."
                 }
               ]
@@ -247,6 +292,11 @@
                 {
                   "text": "Say that worry means you should never tell an adult.",
                   "correct": false,
+                  "outcome": [
+                    "Alex believes feeling worried means Alex should never tell.",
+                    "Next time something bothers Alex, Alex hides it from the teacher.",
+                    "Alex feels stuck and alone with the problem."
+                  ],
                   "feedback": "That worry is understandable, but avoiding adults entirely usually leaves problems unresolved."
                 },
                 {
@@ -304,6 +354,11 @@
                 {
                   "text": "Go along with everything to avoid any conflict.",
                   "correct": false,
+                  "outcome": [
+                    "Alex goes along with every decision the other student makes, saying nothing.",
+                    "Alex’s part of the project ends up full of ideas that aren’t Alex’s.",
+                    "Alex feels frustrated and invisible for the rest of the project, and the teacher thinks everything is fine."
+                  ],
                   "feedback": "Going along with everything can leave you feeling unheard for the whole project — it’s okay to speak up even when no one is being mean."
                 },
                 {
@@ -314,6 +369,11 @@
                 {
                   "text": "Do the work separately without telling anyone why.",
                   "correct": false,
+                  "outcome": [
+                    "Alex quietly starts a separate version of their part without telling anyone.",
+                    "The other student is confused, and now there are two versions that don’t match.",
+                    "The group argues about whose work to use, and the real problem — Alex not being heard — never gets talked about."
+                  ],
                   "feedback": "Quietly doing your own thing without explaining doesn’t solve the actual problem — saying what you need works better."
                 }
               ]
@@ -335,6 +395,11 @@
                 {
                   "text": "Say Alex should have just gone along with it instead.",
                   "correct": false,
+                  "outcome": [
+                    "Alex starts thinking speaking up was a mistake and goes back to going along.",
+                    "In the next group project, Alex doesn’t share any ideas at all.",
+                    "Alex’s ideas stay unheard, and Alex starts to believe their opinions don’t matter."
+                  ],
                   "feedback": "Going along quietly wouldn’t have gotten Alex’s ideas heard — speaking up did."
                 },
                 {
@@ -365,6 +430,11 @@
                 {
                   "text": "Because self-advocacy is never actually important compared to bigger emergencies.",
                   "correct": false,
+                  "outcome": [
+                    "Alex believes self-advocacy isn’t important unless it’s an emergency.",
+                    "So Alex stays quiet in group work, in class, and with friends whenever something isn’t a big deal.",
+                    "Small things pile up, and Alex often feels unheard and unhappy without anyone knowing why."
+                  ],
                   "feedback": "Self-advocacy matters even when the situation isn’t an emergency — feeling heard and respected is important too."
                 }
               ]
@@ -386,6 +456,11 @@
                 {
                   "text": "Say it’s only okay to speak up when someone is being mean.",
                   "correct": false,
+                  "outcome": [
+                    "Alex believes speaking up is only okay when someone is being mean.",
+                    "The next time a friend talks over Alex, Alex stays quiet because the friend isn’t being mean.",
+                    "Alex keeps feeling left out, and the friend has no idea anything is wrong."
+                  ],
                   "feedback": "Speaking up matters any time you feel unheard, whether or not anyone is being mean."
                 },
                 {
@@ -410,6 +485,11 @@
                 {
                   "text": "Self-advocacy only really matters for big emergencies, not everyday moments.",
                   "correct": false,
+                  "outcome": [
+                    "Alex agrees with the classmate that self-advocacy is only for emergencies.",
+                    "Alex stops speaking up about everyday things, like needing more time or a quieter seat.",
+                    "Those everyday needs go unmet, and Alex feels more stressed at school day after day."
+                  ],
                   "feedback": "Self-advocacy matters in everyday moments too, not just emergencies."
                 },
                 {
@@ -585,6 +665,11 @@
                 {
                   "text": "Quedarse callado e intentar aguantar el sentimiento incómodo.",
                   "correct": false,
+                  "outcome": [
+                    "Alex se queda callado y sigue trabajando.",
+                    "El ruido y las luces se sienten cada vez más fuertes.",
+                    "Alex se siente peor, y el maestro no sabe."
+                  ],
                   "feedback": "No tienes que simplemente aguantar — decirle a un adulto de confianza cómo te sientes siempre está bien, y les ayuda a ayudarte."
                 },
                 {
@@ -595,6 +680,11 @@
                 {
                   "text": "Molestarse e irse del salón sin decirle a nadie.",
                   "correct": false,
+                  "outcome": [
+                    "Alex se molesta y sale corriendo del salón.",
+                    "El maestro levanta la vista y no ve a Alex.",
+                    "Todos se preocupan. Alex está solo en el pasillo."
+                  ],
                   "feedback": "Irse sin decirle a nadie puede preocupar a las personas y hace más difícil que te ayuden — es mejor decir algo primero, aunque sea breve."
                 }
               ]
@@ -616,6 +706,11 @@
                 {
                   "text": "Decir que Alex debería haberse quedado callado y aguantar.",
                   "correct": false,
+                  "outcome": [
+                    "Alex piensa: “Debí quedarme callado.”",
+                    "La próxima vez, Alex no pide un descanso.",
+                    "Alex se siente abrumado, y nadie sabe."
+                  ],
                   "feedback": "Aguantar en silencio no habría ayudado — hablar fue exactamente lo correcto."
                 },
                 {
@@ -646,6 +741,11 @@
                 {
                   "text": "Porque quedarse callado siempre hace que los sentimientos incómodos desaparezcan solos.",
                   "correct": false,
+                  "outcome": [
+                    "Alex cree que callarse hace que los sentimientos feos se vayan.",
+                    "Alex se queda callado, pero el sentimiento sigue.",
+                    "Alex todavía se siente mal. Ningún adulto puede ayudar."
+                  ],
                   "feedback": "Los sentimientos incómodos no siempre desaparecen solos — hablar es una forma más confiable de lograr que las cosas cambien."
                 }
               ]
@@ -667,6 +767,11 @@
                 {
                   "text": "Esperar en silencio a que un adulto de confianza se dé cuenta solo.",
                   "correct": false,
+                  "outcome": [
+                    "Alex espera en silencio a que el maestro se dé cuenta.",
+                    "El maestro está ocupado ayudando a otros niños.",
+                    "Alex sigue esperando y se siente cada vez peor."
+                  ],
                   "feedback": "Los adultos de confianza no siempre pueden saber cómo te sientes — es mejor decirlo directamente."
                 },
                 {
@@ -724,6 +829,11 @@
                 {
                   "text": "No decir nada y esperar que el compañero deje de hacerlo eventualmente.",
                   "correct": false,
+                  "outcome": [
+                    "Alex no dice nada y espera que las burlas se detengan.",
+                    "Al día siguiente en el almuerzo, el compañero se burla de Alex otra vez.",
+                    "Alex empieza a temer el almuerzo, y ningún adulto de confianza sabe lo que pasa."
+                  ],
                   "feedback": "Esperar que se detenga solo a menudo no funciona — decirle a un adulto de confianza le da a la situación una oportunidad real de cambiar."
                 },
                 {
@@ -734,6 +844,11 @@
                 {
                   "text": "Burlarse del compañero también para estar a mano.",
                   "correct": false,
+                  "outcome": [
+                    "Alex se burla del compañero también para estar a mano.",
+                    "El compañero se enoja y se burla de Alex todavía más.",
+                    "Ahora los dos están molestos, y Alex también podría meterse en problemas."
+                  ],
                   "feedback": "Burlarse de vuelta usualmente empeora las cosas, no las mejora — es más efectivo decir que no está bien e involucrar a un adulto de confianza."
                 }
               ]
@@ -755,6 +870,11 @@
                 {
                   "text": "Decir que Alex no debería haber dicho nada y debería haberlo ignorado.",
                   "correct": false,
+                  "outcome": [
+                    "Alex decide que hablar fue un error.",
+                    "La próxima vez que alguien se burla de él, Alex se queda callado y lo ignora.",
+                    "Las burlas siguen, porque el otro niño nunca se entera de que le molestan a Alex."
+                  ],
                   "feedback": "Ignorarlo probablemente no habría cambiado nada — hablar claramente fue lo correcto."
                 },
                 {
@@ -785,6 +905,11 @@
                 {
                   "text": "Es mejor nunca contarle nada a un adulto, por si acaso empeora las cosas.",
                   "correct": false,
+                  "outcome": [
+                    "Alex decide nunca contarle nada a un adulto.",
+                    "Cuando las burlas empiezan otra vez, Alex se lo guarda en secreto.",
+                    "El problema sigue creciendo, y Alex tiene que enfrentarlo completamente solo."
+                  ],
                   "feedback": "Evitar completamente a los adultos de confianza usualmente deja los problemas sin resolver — la mayoría de las veces, contarles ayuda más de lo que perjudica."
                 }
               ]
@@ -806,6 +931,11 @@
                 {
                   "text": "Decir que esa preocupación significa que nunca debería contarle a un adulto.",
                   "correct": false,
+                  "outcome": [
+                    "Alex cree que estar preocupado significa que nunca debe contar nada.",
+                    "La próxima vez que algo le molesta, Alex se lo oculta al maestro.",
+                    "Alex se siente atrapado y solo con el problema."
+                  ],
                   "feedback": "Esa preocupación es comprensible, pero evitar a los adultos por completo usualmente deja los problemas sin resolver."
                 },
                 {
@@ -863,6 +993,11 @@
                 {
                   "text": "Seguir la corriente en todo para evitar cualquier conflicto.",
                   "correct": false,
+                  "outcome": [
+                    "Alex sigue la corriente en cada decisión del otro estudiante, sin decir nada.",
+                    "La parte de Alex en el proyecto termina llena de ideas que no son suyas.",
+                    "Alex se siente frustrado e invisible durante el resto del proyecto, y el maestro cree que todo está bien."
+                  ],
                   "feedback": "Seguir la corriente en todo puede dejarte sintiéndote ignorado durante todo el proyecto — está bien hablar aunque nadie esté siendo malo."
                 },
                 {
@@ -873,6 +1008,11 @@
                 {
                   "text": "Hacer el trabajo por separado sin decirle a nadie por qué.",
                   "correct": false,
+                  "outcome": [
+                    "Alex empieza a hacer en silencio su propia versión de su parte, sin decirle a nadie.",
+                    "El otro estudiante se confunde, y ahora hay dos versiones que no coinciden.",
+                    "El grupo discute sobre cuál trabajo usar, y el problema real — que Alex no se siente escuchado — nunca se habla."
+                  ],
                   "feedback": "Hacer las cosas en silencio por tu cuenta sin explicar no resuelve el problema real — decir lo que necesitas funciona mejor."
                 }
               ]
@@ -894,6 +1034,11 @@
                 {
                   "text": "Decir que Alex debería simplemente haber seguido la corriente.",
                   "correct": false,
+                  "outcome": [
+                    "Alex empieza a pensar que hablar fue un error y vuelve a seguir la corriente.",
+                    "En el siguiente proyecto en grupo, Alex no comparte ninguna idea.",
+                    "Las ideas de Alex siguen sin escucharse, y Alex empieza a creer que sus opiniones no importan."
+                  ],
                   "feedback": "Seguir la corriente en silencio no habría logrado que se escucharan las ideas de Alex — hablar sí lo logró."
                 },
                 {
@@ -924,6 +1069,11 @@
                 {
                   "text": "Porque la autodefensa nunca es realmente importante comparada con emergencias más grandes.",
                   "correct": false,
+                  "outcome": [
+                    "Alex cree que la autodefensa no es importante a menos que sea una emergencia.",
+                    "Entonces Alex se queda callado en el trabajo en grupo, en clase y con amigos cada vez que algo no parece grave.",
+                    "Las cosas pequeñas se acumulan, y Alex a menudo se siente ignorado e infeliz sin que nadie sepa por qué."
+                  ],
                   "feedback": "La autodefensa importa incluso cuando la situación no es una emergencia — sentirse escuchado y respetado también es importante."
                 }
               ]
@@ -945,6 +1095,11 @@
                 {
                   "text": "Decir que solo está bien hablar cuando alguien está siendo malo.",
                   "correct": false,
+                  "outcome": [
+                    "Alex cree que solo está bien hablar cuando alguien está siendo malo.",
+                    "La próxima vez que un amigo no lo deja hablar, Alex se queda callado porque el amigo no está siendo malo.",
+                    "Alex sigue sintiéndose excluido, y el amigo no tiene idea de que algo anda mal."
+                  ],
                   "feedback": "Hablar importa cada vez que te sientes ignorado, sea que alguien esté siendo malo o no."
                 },
                 {
@@ -969,6 +1124,11 @@
                 {
                   "text": "La autodefensa solo importa realmente en grandes emergencias, no en momentos cotidianos.",
                   "correct": false,
+                  "outcome": [
+                    "Alex le da la razón al compañero: la autodefensa es solo para emergencias.",
+                    "Alex deja de hablar de cosas cotidianas, como necesitar más tiempo o un asiento más tranquilo.",
+                    "Esas necesidades cotidianas no se atienden, y Alex se siente más estresado en la escuela día tras día."
+                  ],
                   "feedback": "La autodefensa importa en los momentos cotidianos también, no solo en emergencias."
                 },
                 {

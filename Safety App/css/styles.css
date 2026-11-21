@@ -1345,6 +1345,26 @@ main{max-width:1080px; margin:0 auto; padding:28px 20px 64px;}
 .worksheet-answer-key{max-width:720px; margin:24px auto 0; background:var(--amber-tint); border-radius:var(--radius-md); padding:18px 24px;}
 .worksheet-answer-key li{margin-bottom:6px;}
 .worksheet-empty{color:var(--ink-soft);}
+.practice-ws-kicker{margin:0 0 4px; font-size:.85rem; font-weight:800; text-transform:uppercase; letter-spacing:.04em; color:var(--ink-soft);}
+.practice-ws-howto{background:var(--blue-tint); border:1px solid #c9dcfb; border-radius:var(--radius-md); padding:12px 16px; margin:12px 0 22px;}
+.practice-ws-howto ol{margin:6px 0 0; padding-left:20px;}
+.practice-ws-howto li{margin-bottom:4px;}
+.worksheet-sheet h2{font-size:1.2rem; margin:28px 0 6px; padding-top:10px; border-top:2px dashed var(--border);}
+.practice-ws-chain{margin:6px 0 0; padding-left:22px; display:flex; flex-direction:column; gap:10px;}
+.practice-ws-say-grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:10px;}
+.practice-ws-say{display:flex; gap:8px; align-items:flex-start; border:1px solid var(--border); border-radius:10px; padding:10px 12px; break-inside:avoid;}
+.practice-ws-say__front{font-size:.92rem; color:var(--ink-soft);}
+.practice-ws-say__back{font-weight:800; margin-top:2px;}
+.practice-ws-prompt{font-weight:700;}
+.practice-ws-checklist{list-style:none; padding:0; margin:8px 0 0; display:flex; flex-direction:column; gap:6px;}
+.practice-ws-key h3{font-size:1rem; margin:14px 0 6px;}
+.practice-ws-key .practice-ws-chain{gap:2px;}
+.practice-ws-lesson{margin:4px 0 10px; font-weight:700;}
+.practice-ws-keytoggle{display:flex; align-items:center; gap:6px; font-weight:700;}
+.practice-ws-links{max-width:720px; margin:0 auto 22px; background:var(--green-tint); border-radius:var(--radius-md); padding:16px 22px;}
+.practice-ws-links h2{margin-top:0;}
+.worksheet-toolbar{flex-wrap:wrap; align-items:center;}
+.worksheet-question{break-inside:avoid;}
 
 /* ---------- Printable certificate (certificate.html) ---------- */
 .certificate-sheet{
@@ -1374,6 +1394,9 @@ main{max-width:1080px; margin:0 auto; padding:28px 20px 64px;}
   .no-print{display:none !important;}
   body{background:none !important;}
   .worksheet-sheet{box-shadow:none; border:none; padding:0;}
+  .practice-ws-key{break-before:page; background:none; border:1px solid #999; max-width:none;}
+  .calmspace-btn, .calmspace-overlay{display:none !important;}
+  .worksheet-sheet h2, .worksheet-sheet .worksheet-instructions{break-after:avoid;}
   .certificate-sheet{box-shadow:none;}
 }
 

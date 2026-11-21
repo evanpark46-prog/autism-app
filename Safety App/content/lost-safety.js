@@ -26,11 +26,21 @@
                 {
                   "text": "Go outside to check the parking lot.",
                   "correct": false,
+                  "outcome": [
+                    "Alex walks outside to the parking lot.",
+                    "There are lots of cars and no workers.",
+                    "Mom is inside looking. Now she can’t find Alex."
+                  ],
                   "feedback": "Leaving the building alone makes it much harder for your grown-up (and staff) to find you."
                 },
                 {
                   "text": "Hide in a clothing rack until someone finds you.",
                   "correct": false,
+                  "outcome": [
+                    "Alex hides inside a clothing rack.",
+                    "Mom walks right by and does not see Alex.",
+                    "Alex stays hidden and alone. Mom keeps looking."
+                  ],
                   "feedback": "Hiding makes it harder for people to spot you. It’s better to be seen by someone who can help."
                 },
                 {
@@ -57,6 +67,11 @@
                 {
                   "text": "Just keep looking around the same aisle.",
                   "correct": false,
+                  "outcome": [
+                    "Alex walks past the cashier and looks in the same aisle.",
+                    "Mom is not there. The aisle stays empty.",
+                    "Alex is still lost and starts to feel scared."
+                  ],
                   "feedback": "Looking around alone doesn’t help as much as asking a worker directly."
                 },
                 {
@@ -83,6 +98,11 @@
                 {
                   "text": "Keep walking around to look on your own.",
                   "correct": false,
+                  "outcome": [
+                    "Alex walks away from the cashier to look.",
+                    "Mom hears the speaker and goes to the cashier.",
+                    "Alex is gone again. Now Mom can’t find Alex."
+                  ],
                   "feedback": "Moving around again makes it harder for your grown-up to find you once they hear the announcement."
                 },
                 {
@@ -109,6 +129,11 @@
                 {
                   "text": "Try to find my own way out next time instead.",
                   "correct": false,
+                  "outcome": [
+                    "Next time, Alex tries to find the way alone.",
+                    "Alex walks up and down and gets more mixed up.",
+                    "Alex feels scared, and nobody is helping."
+                  ],
                   "feedback": "Finding a worker is still the fastest, safest way — don’t try to handle it alone."
                 },
                 {
@@ -166,6 +191,11 @@
                 {
                   "text": "Look for the nearest ride and get in line to stay busy while waiting.",
                   "correct": false,
+                  "outcome": [
+                    "Alex gets in a long line for the nearest ride.",
+                    "The line winds around, and Alex ends up far from the break spot.",
+                    "The group comes back looking, but nobody can spot Alex in the long line."
+                  ],
                   "feedback": "Getting in a line moves you further from where the group might look for you — it’s safer to get help finding them."
                 },
                 {
@@ -176,6 +206,11 @@
                 {
                   "text": "Try calling out the group’s names loudly while walking around to search.",
                   "correct": false,
+                  "outcome": [
+                    "Alex walks around the park shouting the group’s names.",
+                    "The park is so loud that nobody hears, and Alex ends up somewhere new.",
+                    "Now Alex is even farther from the group and doesn’t know where they are."
+                  ],
                   "feedback": "Walking around while searching can take you further from where you were separated — it’s safer to get a staff member to help look."
                 }
               ]
@@ -197,6 +232,11 @@
                 {
                   "text": "Say “No, I’m fine,” and keep walking alone.",
                   "correct": false,
+                  "outcome": [
+                    "Alex says, “No, I’m fine,” and walks away from the park staff.",
+                    "Alex wanders past rides and food stands, but the group is nowhere.",
+                    "Now Alex is alone again, and the person who could have helped is gone."
+                  ],
                   "feedback": "It’s safer to explain what happened, even if you feel like you can handle it alone."
                 },
                 {
@@ -227,6 +267,11 @@
                 {
                   "text": "Walk toward where the group was last seen to save time.",
                   "correct": false,
+                  "outcome": [
+                    "Alex leaves the help point and walks toward where the group was.",
+                    "The chaperone arrives at the help point, but Alex isn’t there.",
+                    "Now the chaperone and the staff have to start searching all over again."
+                  ],
                   "feedback": "Moving to a new spot means the chaperone won’t know where to find you — staying put with the helper is safest."
                 }
               ]
@@ -248,6 +293,11 @@
                 {
                   "text": "No, it’s only for amusement parks.",
                   "correct": false,
+                  "outcome": [
+                    "Alex believes the rule is only for amusement parks.",
+                    "Later, Alex gets separated at a busy mall and doesn’t look for staff.",
+                    "Alex wanders around alone, and it takes much longer to find Alex’s family."
+                  ],
                   "feedback": "This rule actually works anywhere big or busy — stores, parks, events, anywhere."
                 },
                 {
@@ -305,6 +355,11 @@
                 {
                   "text": "Push through the crowd trying to spot the cousin.",
                   "correct": false,
+                  "outcome": [
+                    "Alex starts squeezing and pushing through the packed crowd to find the cousin.",
+                    "People push back, and the crowd carries Alex farther from where they were.",
+                    "Alex is boxed in by strangers and noise, and no one notices Alex needs help."
+                  ],
                   "feedback": "Pushing through a dense, loud crowd can be unsafe and makes it harder for anyone to notice you need help."
                 },
                 {
@@ -315,6 +370,11 @@
                 {
                   "text": "Wait exactly where you are no matter what, even if it’s in the middle of a packed crowd.",
                   "correct": false,
+                  "outcome": [
+                    "Alex plants both feet and stays put in the middle of the packed crowd.",
+                    "The crowd keeps shifting and bumping, and Alex gets swept along anyway.",
+                    "Alex ends up in some random part of the crowd, not a spot anyone would think to look."
+                  ],
                   "feedback": "Staying in the middle of a moving crowd isn’t the same as staying somewhere findable — it’s safer to move toward a clear, staffed spot like an exit or info booth."
                 }
               ]
@@ -336,6 +396,11 @@
                 {
                   "text": "Say it’s fine and keep looking on your own.",
                   "correct": false,
+                  "outcome": [
+                    "Alex tells security, “It’s fine,” and slips back into the crowd.",
+                    "With no signal and loud music, Alex can’t spot the cousin anywhere.",
+                    "Alex is alone in the crowd again, and the person who could have helped is gone."
+                  ],
                   "feedback": "Going with security to a fixed, visible spot is much safer than continuing to search alone in a loud crowd."
                 },
                 {
@@ -366,6 +431,11 @@
                 {
                   "text": "Because it means you never actually need to ask staff for help.",
                   "correct": false,
+                  "outcome": [
+                    "Alex believes a planned meeting spot means staff are never needed.",
+                    "At the next event, Alex waits at the meeting spot alone and doesn’t tell anyone.",
+                    "The cousin is stuck across the venue, and Alex waits a long time without anyone knowing."
+                  ],
                   "feedback": "A meeting spot is a great backup plan, but it’s still smart to get staff involved too, especially in a big or unfamiliar place."
                 }
               ]
@@ -387,6 +457,11 @@
                 {
                   "text": "Say the meeting spot doesn’t matter now since staff are already helping.",
                   "correct": false,
+                  "outcome": [
+                    "Alex tells security the meeting spot doesn’t matter anymore.",
+                    "The cousin hears the page but goes to the planned meeting spot instead.",
+                    "The cousin waits there while Alex waits at the booth, and nobody thinks to check the other spot."
+                  ],
                   "feedback": "Mentioning the planned meeting spot still helps — staff can check there too, or use it as a backup plan."
                 },
                 {
@@ -411,6 +486,11 @@
                 {
                   "text": "Having a planned meeting spot means you never need to involve staff.",
                   "correct": false,
+                  "outcome": [
+                    "Alex starts believing that having a meeting spot means never involving staff.",
+                    "Next time, the meeting spot is roped off, and Alex doesn’t ask anyone for help.",
+                    "Alex ends up stuck and unsure where to go, with no backup plan and no one helping."
+                  ],
                   "feedback": "A plan is a great backup, but staff have tools, like paging, that can help even faster."
                 },
                 {
@@ -516,11 +596,21 @@
                 {
                   "text": "Salir a revisar el estacionamiento.",
                   "correct": false,
+                  "outcome": [
+                    "Alex sale al estacionamiento.",
+                    "Hay muchos carros y nadie que trabaje ahí.",
+                    "Su mamá está adentro buscando. Ahora no encuentra a Alex."
+                  ],
                   "feedback": "Salir solo del edificio hace que sea mucho más difícil que tu adulto (y el personal) te encuentren."
                 },
                 {
                   "text": "Esconderse entre la ropa hasta que alguien lo encuentre.",
                   "correct": false,
+                  "outcome": [
+                    "Alex se esconde entre la ropa.",
+                    "Su mamá pasa cerca y no ve a Alex.",
+                    "Alex sigue escondido y solo. Su mamá sigue buscando."
+                  ],
                   "feedback": "Esconderse hace más difícil que te vean. Es mejor que alguien que pueda ayudarte te vea."
                 },
                 {
@@ -547,6 +637,11 @@
                 {
                   "text": "Solo seguir mirando por el mismo pasillo.",
                   "correct": false,
+                  "outcome": [
+                    "Alex pasa junto a la cajera y sigue mirando el mismo pasillo.",
+                    "Su mamá no está ahí. El pasillo sigue vacío.",
+                    "Alex sigue perdido y empieza a sentir miedo."
+                  ],
                   "feedback": "Mirar solo por tu cuenta no ayuda tanto como pedirle ayuda directamente a alguien del personal."
                 },
                 {
@@ -573,6 +668,11 @@
                 {
                   "text": "Seguir caminando para buscar por su cuenta.",
                   "correct": false,
+                  "outcome": [
+                    "Alex se aleja de la cajera para buscar.",
+                    "Su mamá oye el altavoz y va con la cajera.",
+                    "Alex ya no está. Ahora su mamá no lo encuentra."
+                  ],
                   "feedback": "Moverse de nuevo hace más difícil que tu adulto te encuentre después de escuchar el anuncio."
                 },
                 {
@@ -599,6 +699,11 @@
                 {
                   "text": "Intentar encontrar mi propio camino la próxima vez.",
                   "correct": false,
+                  "outcome": [
+                    "La próxima vez, Alex intenta encontrar el camino solo.",
+                    "Alex camina de aquí para allá y se confunde más.",
+                    "Alex siente miedo, y nadie lo está ayudando."
+                  ],
                   "feedback": "Buscar a alguien del personal sigue siendo la forma más rápida y segura — no intentes manejarlo solo."
                 },
                 {
@@ -656,6 +761,11 @@
                 {
                   "text": "Buscar la atracción más cercana y hacer fila para mantenerse ocupado mientras espera.",
                   "correct": false,
+                  "outcome": [
+                    "Alex hace fila en la atracción más cercana.",
+                    "La fila da muchas vueltas, y Alex termina lejos del lugar del descanso.",
+                    "El grupo regresa a buscarlo, pero nadie lo ve en la fila tan larga."
+                  ],
                   "feedback": "Hacer fila te aleja más de donde el grupo podría buscarte — es más seguro conseguir ayuda para encontrarlos."
                 },
                 {
@@ -666,6 +776,11 @@
                 {
                   "text": "Intentar gritar los nombres del grupo mientras camina buscando.",
                   "correct": false,
+                  "outcome": [
+                    "Alex camina por el parque gritando los nombres del grupo.",
+                    "Hay tanto ruido que nadie lo escucha, y Alex termina en un lugar nuevo.",
+                    "Ahora Alex está aún más lejos del grupo y no sabe dónde están."
+                  ],
                   "feedback": "Caminar mientras buscas puede alejarte más de donde te separaste — es más seguro que un miembro del personal ayude a buscar."
                 }
               ]
@@ -687,6 +802,11 @@
                 {
                   "text": "Decir “No, estoy bien,” y seguir caminando solo.",
                   "correct": false,
+                  "outcome": [
+                    "Alex dice: “No, estoy bien”, y se aleja del personal del parque.",
+                    "Alex pasa por atracciones y puestos de comida, pero el grupo no aparece.",
+                    "Ahora Alex está solo otra vez, y la persona que pudo ayudarlo ya no está."
+                  ],
                   "feedback": "Es más seguro explicar lo que pasó, aunque sientas que puedes manejarlo solo."
                 },
                 {
@@ -717,6 +837,11 @@
                 {
                   "text": "Caminar hacia donde se vio al grupo por última vez para ahorrar tiempo.",
                   "correct": false,
+                  "outcome": [
+                    "Alex deja el punto de ayuda y camina hacia donde estaba el grupo.",
+                    "El acompañante llega al punto de ayuda, pero Alex no está ahí.",
+                    "Ahora el acompañante y el personal tienen que empezar a buscar otra vez."
+                  ],
                   "feedback": "Moverte a un lugar nuevo significa que el acompañante no sabrá dónde encontrarte — quedarte con la persona que ayuda es más seguro."
                 }
               ]
@@ -738,6 +863,11 @@
                 {
                   "text": "No, es solo para parques de diversiones.",
                   "correct": false,
+                  "outcome": [
+                    "Alex cree que la regla es solo para parques de diversiones.",
+                    "Después, Alex se separa de su familia en un centro comercial lleno y no busca al personal.",
+                    "Alex camina solo por todas partes, y encontrar a su familia tarda mucho más."
+                  ],
                   "feedback": "Esta regla en realidad funciona en cualquier lugar grande o concurrido — tiendas, parques, eventos, donde sea."
                 },
                 {
@@ -795,6 +925,11 @@
                 {
                   "text": "Abrirse paso entre la multitud tratando de encontrar al primo.",
                   "correct": false,
+                  "outcome": [
+                    "Alex empieza a empujar y abrirse paso entre la multitud para encontrar al primo.",
+                    "La gente empuja de vuelta, y la multitud lleva a Alex más lejos de donde estaban.",
+                    "Alex queda rodeado de desconocidos y ruido, y nadie nota que necesita ayuda."
+                  ],
                   "feedback": "Abrirse paso entre una multitud densa y ruidosa puede ser inseguro y hace más difícil que alguien note que necesitas ayuda."
                 },
                 {
@@ -805,6 +940,11 @@
                 {
                   "text": "Esperar exactamente donde estás sin importar qué, aunque sea en medio de una multitud apretada.",
                   "correct": false,
+                  "outcome": [
+                    "Alex se queda firme en medio de la multitud apretada.",
+                    "La multitud sigue moviéndose y empujando, y Alex termina arrastrado de todas formas.",
+                    "Ahora Alex está en un lugar cualquiera de la multitud, no en un sitio donde alguien pensaría buscar."
+                  ],
                   "feedback": "Quedarte en medio de una multitud en movimiento no es lo mismo que quedarte en un lugar donde te puedan encontrar — es más seguro moverte hacia un lugar claro y con personal, como una salida o un mostrador de información."
                 }
               ]
@@ -826,6 +966,11 @@
                 {
                   "text": "Decir que está bien y seguir buscando solo.",
                   "correct": false,
+                  "outcome": [
+                    "Alex le dice a seguridad: “Está bien”, y vuelve a meterse en la multitud.",
+                    "Sin señal y con la música tan fuerte, Alex no ve al primo por ningún lado.",
+                    "Alex está solo en la multitud otra vez, y la persona que pudo ayudarlo ya no está."
+                  ],
                   "feedback": "Ir con seguridad a un lugar fijo y visible es mucho más seguro que seguir buscando solo en una multitud ruidosa."
                 },
                 {
@@ -856,6 +1001,11 @@
                 {
                   "text": "Porque significa que nunca necesitas pedir ayuda al personal.",
                   "correct": false,
+                  "outcome": [
+                    "Alex cree que un lugar de encuentro significa que nunca necesita al personal.",
+                    "En el siguiente evento, Alex espera solo en el lugar de encuentro y no le avisa a nadie.",
+                    "El primo está atrapado al otro lado del lugar, y Alex espera mucho tiempo sin que nadie lo sepa."
+                  ],
                   "feedback": "Un lugar de encuentro es un buen plan de respaldo, pero sigue siendo inteligente también involucrar al personal, especialmente en un lugar grande o desconocido."
                 }
               ]
@@ -877,6 +1027,11 @@
                 {
                   "text": "Decir que el lugar de encuentro ya no importa porque el personal ya está ayudando.",
                   "correct": false,
+                  "outcome": [
+                    "Alex le dice a seguridad que el lugar de encuentro ya no importa.",
+                    "El primo escucha el anuncio, pero va al lugar de encuentro planeado.",
+                    "El primo espera ahí mientras Alex espera en el mostrador, y nadie piensa en revisar el otro lugar."
+                  ],
                   "feedback": "Mencionar el lugar de encuentro planeado igual ayuda — el personal puede revisar ahí también, o usarlo como plan de respaldo."
                 },
                 {
@@ -901,6 +1056,11 @@
                 {
                   "text": "Tener un lugar de encuentro planeado significa que nunca necesitas involucrar al personal.",
                   "correct": false,
+                  "outcome": [
+                    "Alex empieza a creer que tener un lugar de encuentro significa nunca involucrar al personal.",
+                    "La próxima vez, el lugar de encuentro está cerrado, y Alex no le pide ayuda a nadie.",
+                    "Alex termina atascado y sin saber adónde ir, sin plan de respaldo y sin nadie que lo ayude."
+                  ],
                   "feedback": "Un plan es un gran respaldo, pero el personal tiene herramientas, como los altavoces, que pueden ayudar aún más rápido."
                 },
                 {

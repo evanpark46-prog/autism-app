@@ -31,11 +31,21 @@
                 {
                   "text": "Try to hold Riley still.",
                   "correct": false,
+                  "outcome": [
+                    "Alex grabs Riley’s arms to hold them still.",
+                    "Riley keeps shaking, and Alex holds on too tight.",
+                    "Riley could get hurt. No grown-up knows yet."
+                  ],
                   "feedback": "Holding someone still during a seizure isn’t safe — just get a grown-up."
                 },
                 {
                   "text": "Laugh or make a joke about it.",
                   "correct": false,
+                  "outcome": [
+                    "Alex laughs and makes a joke.",
+                    "Other kids start laughing too.",
+                    "Riley still needs help. No one gets the teacher."
+                  ],
                   "feedback": "This isn’t something to joke about — Riley needs calm help, not jokes."
                 }
               ]
@@ -62,6 +72,11 @@
                 {
                   "text": "Say Alex should try to fix it alone.",
                   "correct": false,
+                  "outcome": [
+                    "Alex thinks fixing it is Alex’s job.",
+                    "Alex rushes over and gets in the teacher’s way.",
+                    "The teacher has less room to help Riley."
+                  ],
                   "feedback": "That’s the teacher’s job now — telling fast was enough."
                 }
               ]
@@ -87,6 +102,11 @@
                 {
                   "text": "Just to tidy up the room.",
                   "correct": false,
+                  "outcome": [
+                    "Alex thinks the chairs are just messy.",
+                    "Another day, Alex leaves chairs near a shaking friend.",
+                    "The friend could bump into a chair."
+                  ],
                   "feedback": "It’s actually for safety, not tidiness — clearing space helps prevent injury."
                 }
               ]
@@ -143,11 +163,21 @@
                 {
                   "text": "Try to put a pencil in Casey’s mouth like the other kids suggest.",
                   "correct": false,
+                  "outcome": [
+                    "Alex tries to push a pencil into Casey’s mouth.",
+                    "Casey’s jaw is tight, and the pencil could hurt Casey’s teeth or mouth.",
+                    "Meanwhile, no grown-up has been called to help Casey."
+                  ],
                   "feedback": "That’s a myth, and it can actually hurt someone — never put anything in a person’s mouth during a seizure."
                 },
                 {
                   "text": "Do nothing at all and walk away.",
                   "correct": false,
+                  "outcome": [
+                    "Alex walks away and goes back to the game.",
+                    "Nobody moves the hard things from around Casey.",
+                    "Casey is shaking with no one watching, and the club leader doesn’t know yet."
+                  ],
                   "feedback": "Walking away isn’t safe either — stay, clear space, and get a grown-up."
                 }
               ]
@@ -174,6 +204,11 @@
                 {
                   "text": "Say maybe that would have helped.",
                   "correct": false,
+                  "outcome": [
+                    "Alex tells the club leader the pencil idea might have helped.",
+                    "Other kids hear Alex and start to believe the myth is true.",
+                    "Next time someone has a seizure, a kid might try it and hurt them."
+                  ],
                   "feedback": "That’s a myth — it’s never safe to put something in someone’s mouth during a seizure."
                 }
               ],
@@ -200,6 +235,11 @@
                 {
                   "text": "Ask lots of questions right away about what happened.",
                   "correct": false,
+                  "outcome": [
+                    "Alex asks Casey lots of questions right away.",
+                    "Casey is tired and confused and can’t answer them.",
+                    "Casey feels upset and overwhelmed instead of getting to rest."
+                  ],
                   "feedback": "Right after a seizure isn’t the time for lots of questions — give them space to rest first."
                 }
               ]
@@ -223,6 +263,11 @@
                 {
                   "text": "Yes, it’s funny and worth talking about.",
                   "correct": false,
+                  "outcome": [
+                    "The next day, Alex jokes about Casey shaking.",
+                    "Other kids laugh, and Casey hears them.",
+                    "Casey feels embarrassed and doesn’t want to come back to club."
+                  ],
                   "feedback": "That’s not kind — seizures aren’t something to tease someone about."
                 }
               ]
@@ -259,11 +304,21 @@
                 {
                   "text": "Leave to find a coach without staying with Morgan at all.",
                   "correct": false,
+                  "outcome": [
+                    "Alex runs off to find the coach, leaving Morgan alone on the ground.",
+                    "While Alex is gone, nobody moves the hard equipment away from Morgan.",
+                    "No one is with Morgan to keep the area safe or notice how long the seizure lasts."
+                  ],
                   "feedback": "It’s safer to have someone stay while another person gets help — don’t leave the person completely alone if you can help it."
                 },
                 {
                   "text": "Try to stop the shaking by holding Morgan down.",
                   "correct": false,
+                  "outcome": [
+                    "Alex presses down on Morgan’s arms to try to stop the shaking.",
+                    "The shaking doesn’t stop — holding someone down can’t end a seizure.",
+                    "Pushing against the movement could hurt Morgan’s arms or shoulders, and Alex feels even more panicked."
+                  ],
                   "feedback": "Never hold someone down during a seizure — that can cause injury."
                 }
               ]
@@ -290,6 +345,11 @@
                 {
                   "text": "Say nothing needs to be done for the head.",
                   "correct": false,
+                  "outcome": [
+                    "Alex tells the coach Morgan’s head doesn’t need anything.",
+                    "Morgan’s head stays on the hard ground while Morgan keeps shaking.",
+                    "Morgan’s head could bump the hard ground again and again, with nothing soft underneath."
+                  ],
                   "feedback": "Cushioning the head with something soft is a helpful, safe step."
                 }
               ]
@@ -315,6 +375,11 @@
                 {
                   "text": "Sit Morgan up straight right away.",
                   "correct": false,
+                  "outcome": [
+                    "Alex quickly pulls Morgan up into a sitting position.",
+                    "Morgan is still not fully awake and slumps over, hard to hold up.",
+                    "Breathing isn’t as easy for Morgan in that position, and Morgan could tip over."
+                  ],
                   "feedback": "Sitting up right away isn’t the recommended step — turning them onto their side is safer while they recover."
                 }
               ]
@@ -338,6 +403,11 @@
                 {
                   "text": "No, since the shaking already stopped, there’s nothing more to do.",
                   "correct": false,
+                  "outcome": [
+                    "Alex believes that once the shaking stops, everything is fine.",
+                    "Nobody calls 911, and Morgan goes home without seeing a doctor.",
+                    "No one finds out why Morgan had a first-ever seizure, or whether it might happen again."
+                  ],
                   "feedback": "A first-ever seizure or a long one are still reasons to get medical help, even after it stops."
                 }
               ]
@@ -443,11 +513,21 @@
                 {
                   "text": "Intentar sujetar a Riley para que no se mueva.",
                   "correct": false,
+                  "outcome": [
+                    "Alex agarra los brazos de Riley para que no se mueva.",
+                    "Riley sigue temblando, y Alex aprieta muy fuerte.",
+                    "Riley se puede lastimar. Ningún adulto sabe todavía."
+                  ],
                   "feedback": "Sujetar a alguien durante una convulsión no es seguro — solo busca a un adulto."
                 },
                 {
                   "text": "Reírse o hacer una broma al respecto.",
                   "correct": false,
+                  "outcome": [
+                    "Alex se ríe y hace una broma.",
+                    "Otros niños también se ríen.",
+                    "Riley sigue necesitando ayuda. Nadie busca al maestro."
+                  ],
                   "feedback": "Esto no es algo de qué bromear — Riley necesita ayuda calmada, no bromas."
                 }
               ]
@@ -474,6 +554,11 @@
                 {
                   "text": "Decir que Alex debería intentar arreglarlo solo.",
                   "correct": false,
+                  "outcome": [
+                    "Alex piensa que arreglarlo es su trabajo.",
+                    "Alex corre y se mete en el camino del maestro.",
+                    "El maestro tiene menos espacio para ayudar a Riley."
+                  ],
                   "feedback": "Eso ya es trabajo del maestro — avisar rápido fue suficiente."
                 }
               ]
@@ -499,6 +584,11 @@
                 {
                   "text": "Solo para ordenar el salón.",
                   "correct": false,
+                  "outcome": [
+                    "Alex piensa que las sillas solo están desordenadas.",
+                    "Otro día, Alex deja sillas cerca de un amigo que tiembla.",
+                    "El amigo se puede golpear con una silla."
+                  ],
                   "feedback": "En realidad es por seguridad, no por orden — despejar el espacio ayuda a prevenir lesiones."
                 }
               ]
@@ -555,11 +645,21 @@
                 {
                   "text": "Intentar poner un lápiz en la boca de Casey como sugieren los otros niños.",
                   "correct": false,
+                  "outcome": [
+                    "Alex intenta meter un lápiz en la boca de Casey.",
+                    "Casey tiene la mandíbula apretada, y el lápiz podría lastimarle los dientes o la boca.",
+                    "Mientras tanto, nadie ha llamado a un adulto para ayudar a Casey."
+                  ],
                   "feedback": "Eso es un mito, y puede lastimar a alguien — nunca pongas nada en la boca de una persona durante una convulsión."
                 },
                 {
                   "text": "No hacer nada y alejarse.",
                   "correct": false,
+                  "outcome": [
+                    "Alex se aleja y vuelve al juego.",
+                    "Nadie aparta las cosas duras alrededor de Casey.",
+                    "Casey está temblando sin nadie que la cuide, y el líder del club todavía no sabe."
+                  ],
                   "feedback": "Alejarse tampoco es seguro — quédate, despeja el espacio y busca a un adulto."
                 }
               ]
@@ -586,6 +686,11 @@
                 {
                   "text": "Decir que tal vez eso habría ayudado.",
                   "correct": false,
+                  "outcome": [
+                    "Alex le dice al líder del club que tal vez el lápiz habría ayudado.",
+                    "Otros niños lo escuchan y empiezan a creer que el mito es verdad.",
+                    "La próxima vez que alguien tenga una convulsión, un niño podría intentarlo y lastimarlo."
+                  ],
                   "feedback": "Eso es un mito — nunca es seguro poner algo en la boca de alguien durante una convulsión."
                 }
               ],
@@ -612,6 +717,11 @@
                 {
                   "text": "Hacer muchas preguntas de inmediato sobre lo que pasó.",
                   "correct": false,
+                  "outcome": [
+                    "Alex le hace muchas preguntas a Casey de inmediato.",
+                    "Casey está cansada y confundida, y no puede responder.",
+                    "Casey se siente molesta y abrumada en lugar de poder descansar."
+                  ],
                   "feedback": "Justo después de una convulsión no es momento de muchas preguntas — dale espacio para descansar primero."
                 }
               ]
@@ -635,6 +745,11 @@
                 {
                   "text": "Sí, es gracioso y vale la pena hablar de ello.",
                   "correct": false,
+                  "outcome": [
+                    "Al día siguiente, Alex hace bromas sobre cuando Casey temblaba.",
+                    "Otros niños se ríen, y Casey los escucha.",
+                    "Casey se siente avergonzada y ya no quiere volver al club."
+                  ],
                   "feedback": "Eso no es amable — las convulsiones no son algo de qué burlarse."
                 }
               ]
@@ -671,11 +786,21 @@
                 {
                   "text": "Irse a buscar a un entrenador sin quedarse con Morgan en absoluto.",
                   "correct": false,
+                  "outcome": [
+                    "Alex sale corriendo a buscar al entrenador y deja a Morgan solo en el suelo.",
+                    "Mientras Alex no está, nadie aparta el equipo duro que está cerca de Morgan.",
+                    "Nadie se queda con Morgan para mantener el área segura ni para fijarse cuánto dura la convulsión."
+                  ],
                   "feedback": "Es más seguro que alguien se quede mientras otra persona busca ayuda — no dejes a la persona completamente sola si puedes evitarlo."
                 },
                 {
                   "text": "Intentar detener el temblor sujetando a Morgan.",
                   "correct": false,
+                  "outcome": [
+                    "Alex presiona los brazos de Morgan hacia abajo para detener el temblor.",
+                    "El temblor no se detiene — sujetar a alguien no termina una convulsión.",
+                    "Empujar contra el movimiento podría lastimar los brazos u hombros de Morgan, y Alex siente aún más pánico."
+                  ],
                   "feedback": "Nunca sujetes a alguien durante una convulsión — eso puede causar lesiones."
                 }
               ]
@@ -702,6 +827,11 @@
                 {
                   "text": "Decir que no hay que hacer nada por la cabeza.",
                   "correct": false,
+                  "outcome": [
+                    "Alex le dice al entrenador que la cabeza de Morgan no necesita nada.",
+                    "La cabeza de Morgan se queda sobre el suelo duro mientras sigue temblando.",
+                    "La cabeza de Morgan podría golpear el suelo duro una y otra vez, sin nada suave debajo."
+                  ],
                   "feedback": "Poner algo suave bajo la cabeza es un paso útil y seguro."
                 }
               ]
@@ -727,6 +857,11 @@
                 {
                   "text": "Sentar a Morgan derecho de inmediato.",
                   "correct": false,
+                  "outcome": [
+                    "Alex levanta rápido a Morgan para sentarlo derecho.",
+                    "Morgan todavía no está despierto del todo y se va de lado, difícil de sostener.",
+                    "En esa posición a Morgan le cuesta más respirar, y podría caerse."
+                  ],
                   "feedback": "Sentarlo derecho de inmediato no es el paso recomendado — girarlo hacia un lado es más seguro mientras se recupera."
                 }
               ]
@@ -750,6 +885,11 @@
                 {
                   "text": "No, ya que el temblor se detuvo, no hay nada más que hacer.",
                   "correct": false,
+                  "outcome": [
+                    "Alex cree que, como el temblor se detuvo, todo está bien.",
+                    "Nadie llama al 911, y Morgan se va a casa sin ver a un médico.",
+                    "Nadie averigua por qué Morgan tuvo su primera convulsión, ni si podría volver a pasar."
+                  ],
                   "feedback": "Una primera convulsión o una larga siguen siendo razones para buscar ayuda médica, incluso después de que se detenga."
                 }
               ]

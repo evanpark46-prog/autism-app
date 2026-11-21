@@ -26,6 +26,11 @@
                 {
                   "text": "Hug and kiss the aunt anyway so she doesn’t feel bad.",
                   "correct": false,
+                  "outcome": [
+                    "Alex hugs and kisses the aunt anyway.",
+                    "Alex’s tummy feels tight and yucky.",
+                    "Alex feels like Alex didn’t get a choice."
+                  ],
                   "feedback": "Alex’s body belongs to Alex — you never have to hug or kiss someone just to make them feel good, even a relative."
                 },
                 {
@@ -36,6 +41,11 @@
                 {
                   "text": "Run away without saying anything.",
                   "correct": false,
+                  "outcome": [
+                    "Alex runs away without a word.",
+                    "The aunt looks sad and confused.",
+                    "Nobody knows what Alex wanted. Alex hides alone."
+                  ],
                   "feedback": "You don’t have to hug, but it’s kind to say something instead of just running off — like offering a wave or a high-five."
                 }
               ]
@@ -57,6 +67,11 @@
                 {
                   "text": "Say Alex should have hugged anyway to be polite.",
                   "correct": false,
+                  "outcome": [
+                    "Alex thinks hugging is the polite rule.",
+                    "Alex hugs even when Alex doesn’t want to.",
+                    "Alex feels uncomfortable and stays quiet about it."
+                  ],
                   "feedback": "Alex never has to hug someone just to be polite — offering something else instead is okay."
                 },
                 {
@@ -87,6 +102,11 @@
                 {
                   "text": "Whoever is asking for the hug gets to decide.",
                   "correct": false,
+                  "outcome": [
+                    "Alex thinks the person asking gets to choose.",
+                    "Alex lets everyone at the party hug Alex.",
+                    "Alex feels squished and upset but doesn’t say no."
+                  ],
                   "feedback": "Not quite — the person asking doesn’t get to decide for you. It’s always your own choice."
                 }
               ]
@@ -108,6 +128,11 @@
                 {
                   "text": "Say you always have to hug family no matter what.",
                   "correct": false,
+                  "outcome": [
+                    "Alex thinks family hugs are a must.",
+                    "At the next party, Alex hugs everyone anyway.",
+                    "Alex feels uncomfortable and doesn’t enjoy the party."
+                  ],
                   "feedback": "That’s not true — it’s always your choice, even with family."
                 },
                 {
@@ -165,6 +190,11 @@
                 {
                   "text": "Just put up with it since it’s supposed to be funny.",
                   "correct": false,
+                  "outcome": [
+                    "Alex stops saying anything and lets the tickling keep going.",
+                    "The classmate thinks it’s okay and tickles Alex every day.",
+                    "Alex starts dreading school and feels upset, and no grown-up knows why."
+                  ],
                   "feedback": "Even if something is meant as a joke, if it doesn’t feel okay and continues after you say stop, you don’t have to just put up with it."
                 },
                 {
@@ -175,6 +205,11 @@
                 {
                   "text": "Tickle the classmate back to make them stop.",
                   "correct": false,
+                  "outcome": [
+                    "Alex tickles the classmate back, hard.",
+                    "The classmate tickles even more, and it turns into a big tickle fight.",
+                    "A teacher tells both kids to stop, and Alex feels confused and frustrated."
+                  ],
                   "feedback": "Touching someone back usually doesn’t solve the problem and can make things more confusing — it’s more effective to say stop clearly and tell an adult."
                 }
               ]
@@ -196,6 +231,11 @@
                 {
                   "text": "Say Alex should let it go since it’s just messing around.",
                   "correct": false,
+                  "outcome": [
+                    "Alex decides to let it go, since it’s just messing around.",
+                    "The classmate keeps tickling Alex at recess and in line.",
+                    "Alex feels uncomfortable every day and starts staying away from the whole group."
+                  ],
                   "feedback": "If it doesn’t feel okay, it doesn’t matter that it’s meant as a joke — saying stop is right."
                 },
                 {
@@ -226,6 +266,11 @@
                 {
                   "text": "Because only big, obviously painful touches are worth mentioning.",
                   "correct": false,
+                  "outcome": [
+                    "Alex believes only big, painful touches are worth telling about.",
+                    "Alex doesn’t tell the teacher, since the tickling doesn’t really hurt.",
+                    "The tickling keeps going, and Alex keeps feeling uncomfortable with nobody helping."
+                  ],
                   "feedback": "Any touch that doesn’t feel okay to you is worth mentioning — it doesn’t have to be big or painful."
                 }
               ]
@@ -247,6 +292,11 @@
                 {
                   "text": "Say only big, painful touches are worth mentioning.",
                   "correct": false,
+                  "outcome": [
+                    "Alex decides small touches don’t count and stops telling grown-ups.",
+                    "Next time someone pokes Alex in a way Alex doesn’t like, Alex stays quiet.",
+                    "Alex keeps the bad feeling inside, and no grown-up knows to help."
+                  ],
                   "feedback": "Any touch that doesn’t feel okay is worth mentioning, big or small."
                 },
                 {
@@ -304,6 +354,11 @@
                 {
                   "text": "Keep watching and keep it secret since they asked nicely.",
                   "correct": false,
+                  "outcome": [
+                    "Alex stays, keeps watching the phone, and promises to keep it secret.",
+                    "The older kid scoots even closer and says, “Good — remember, this stays between us.”",
+                    "Alex goes home with an uneasy feeling and a secret that no trusted adult knows about."
+                  ],
                   "feedback": "Being asked to keep something secret from your parents, especially about how someone is acting toward you, is exactly the kind of thing to tell a trusted adult about instead."
                 },
                 {
@@ -314,6 +369,11 @@
                 {
                   "text": "Go along with it but plan to mention it much later, maybe next year.",
                   "correct": false,
+                  "outcome": [
+                    "Alex goes along with it and plans to maybe mention it next year.",
+                    "The older kid starts asking to hang out alone with Alex again.",
+                    "Alex carries the uncomfortable feeling alone for weeks, and nobody who could help even knows."
+                  ],
                   "feedback": "Waiting a long time to tell someone means you’re carrying an uncomfortable feeling alone for no reason — telling a trusted adult as soon as you can is safer."
                 }
               ]
@@ -335,6 +395,11 @@
                 {
                   "text": "Agree to keep it secret since they seem nice.",
                   "correct": false,
+                  "outcome": [
+                    "Alex agrees to keep the secret because the older kid seems nice.",
+                    "The older kid smiles, says, “I knew I could trust you,” and asks to meet again.",
+                    "Alex feels stuck — it doesn’t feel right, but now it feels even harder to tell anyone."
+                  ],
                   "feedback": "Seeming nice doesn’t make that request safe — it’s still a warning sign worth telling a trusted adult about."
                 },
                 {
@@ -365,6 +430,11 @@
                 {
                   "text": "Because all secrets of any kind are automatically dangerous, even surprise gifts.",
                   "correct": false,
+                  "outcome": [
+                    "Alex starts believing every secret is dangerous — even a surprise gift for Dad.",
+                    "Alex gets anxious whenever anyone whispers, and blurts out a cousin’s surprise birthday plan.",
+                    "Alex feels stressed and confused, and it gets harder to spot which secrets really need to be told."
+                  ],
                   "feedback": "Not all secrets are unsafe — a surprise party is a fun secret. The warning sign is specifically being told to hide something from your parents about how someone is treating you."
                 }
               ]
@@ -386,6 +456,11 @@
                 {
                   "text": "Say yes, every single secret is dangerous, even surprise parties.",
                   "correct": false,
+                  "outcome": [
+                    "Alex tells the parent that every secret must be dangerous, even surprise parties.",
+                    "When the family plans a surprise party for Grandma, Alex feels too worried to join in.",
+                    "Alex misses out on the fun and feels stressed, without being any safer."
+                  ],
                   "feedback": "That’s not true — surprise parties are a fun, safe kind of secret."
                 },
                 {
@@ -410,6 +485,11 @@
                 {
                   "text": "Since it worked out fine before, it’s okay to just go along with it this time.",
                   "correct": false,
+                  "outcome": [
+                    "Alex decides it’s fine to go along with the cousin, since it worked out last time.",
+                    "The cousin says, “See? No need to tell your parents,” and asks Alex to keep another secret.",
+                    "Alex is back to holding an uneasy secret alone, and no trusted adult knows what’s going on."
+                  ],
                   "feedback": "Whether it “worked out” before doesn’t change the rule — that kind of secret request is still a warning sign."
                 },
                 {
@@ -529,6 +609,11 @@
                 {
                   "text": "Abrazar y besar a la tía de todos modos para que no se sienta mal.",
                   "correct": false,
+                  "outcome": [
+                    "Alex abraza y besa a la tía de todos modos.",
+                    "A Alex le duele un poco la pancita.",
+                    "Alex siente que no pudo decidir."
+                  ],
                   "feedback": "El cuerpo de Alex le pertenece a Alex — nunca tienes que abrazar o besar a alguien solo para que se sienta bien, ni siquiera un familiar."
                 },
                 {
@@ -539,6 +624,11 @@
                 {
                   "text": "Salir corriendo sin decir nada.",
                   "correct": false,
+                  "outcome": [
+                    "Alex sale corriendo sin decir nada.",
+                    "La tía se ve triste y confundida.",
+                    "Nadie sabe qué quería Alex. Alex se esconde solo."
+                  ],
                   "feedback": "No tienes que abrazar, pero es amable decir algo en lugar de simplemente salir corriendo — como ofrecer un saludo o un choque de manos."
                 }
               ]
@@ -560,6 +650,11 @@
                 {
                   "text": "Decir que Alex debería haber abrazado de todos modos por cortesía.",
                   "correct": false,
+                  "outcome": [
+                    "Alex cree que abrazar es lo cortés.",
+                    "Alex abraza aunque no quiere.",
+                    "Alex se siente incómodo y no dice nada."
+                  ],
                   "feedback": "Alex nunca tiene que abrazar solo por cortesía — ofrecer otra cosa está bien."
                 },
                 {
@@ -590,6 +685,11 @@
                 {
                   "text": "Quien pide el abrazo es quien decide.",
                   "correct": false,
+                  "outcome": [
+                    "Alex cree que quien pide el abrazo decide.",
+                    "Alex deja que todos en la fiesta lo abracen.",
+                    "Alex se siente apretado y molesto, pero no dice que no."
+                  ],
                   "feedback": "No exactamente — la persona que pide no decide por ti. Siempre es tu propia decisión."
                 }
               ]
@@ -611,6 +711,11 @@
                 {
                   "text": "Decir que siempre tienes que abrazar a la familia sin importar qué.",
                   "correct": false,
+                  "outcome": [
+                    "Alex cree que siempre debe abrazar a la familia.",
+                    "En la siguiente fiesta, Alex abraza a todos de todos modos.",
+                    "Alex se siente incómodo y no disfruta la fiesta."
+                  ],
                   "feedback": "Eso no es cierto — siempre es tu decisión, incluso con la familia."
                 },
                 {
@@ -668,6 +773,11 @@
                 {
                   "text": "Simplemente aguantarlo porque se supone que es gracioso.",
                   "correct": false,
+                  "outcome": [
+                    "Alex deja de decir algo y deja que las cosquillas sigan.",
+                    "El compañero cree que está bien y le hace cosquillas a Alex todos los días.",
+                    "Alex empieza a no querer ir a la escuela, y ningún adulto sabe por qué."
+                  ],
                   "feedback": "Aunque algo se haga en broma, si no se siente bien y continúa después de que dices basta, no tienes que simplemente aguantarlo."
                 },
                 {
@@ -678,6 +788,11 @@
                 {
                   "text": "Hacerle cosquillas de vuelta al compañero para que se detenga.",
                   "correct": false,
+                  "outcome": [
+                    "Alex le hace cosquillas de vuelta al compañero, fuerte.",
+                    "El compañero le hace todavía más cosquillas, y se convierte en una gran pelea de cosquillas.",
+                    "Una maestra les dice a los dos que se detengan, y Alex se siente confundido y frustrado."
+                  ],
                   "feedback": "Tocar de vuelta a alguien usualmente no resuelve el problema y puede confundir más las cosas — es más efectivo decir basta claramente y avisarle a un adulto."
                 }
               ]
@@ -699,6 +814,11 @@
                 {
                   "text": "Decir que Alex debería dejarlo pasar porque solo es un juego.",
                   "correct": false,
+                  "outcome": [
+                    "Alex decide dejarlo pasar, porque solo es un juego.",
+                    "El compañero sigue haciéndole cosquillas a Alex en el recreo y en la fila.",
+                    "Alex se siente incómodo todos los días y empieza a alejarse de todo el grupo."
+                  ],
                   "feedback": "Si no se siente bien, no importa que sea en broma — decir basta es lo correcto."
                 },
                 {
@@ -729,6 +849,11 @@
                 {
                   "text": "Porque solo los toques grandes y obviamente dolorosos merecen mencionarse.",
                   "correct": false,
+                  "outcome": [
+                    "Alex cree que solo vale la pena contar los toques grandes y dolorosos.",
+                    "Alex no le cuenta a la maestra, porque las cosquillas en realidad no duelen.",
+                    "Las cosquillas siguen, y Alex sigue sintiéndose incómodo sin que nadie lo ayude."
+                  ],
                   "feedback": "Cualquier toque que no se sienta bien para ti merece mencionarse — no tiene que ser grande o doloroso."
                 }
               ]
@@ -750,6 +875,11 @@
                 {
                   "text": "Decir que solo los toques grandes y dolorosos merecen mencionarse.",
                   "correct": false,
+                  "outcome": [
+                    "Alex decide que los toques pequeños no cuentan y deja de contarle a los adultos.",
+                    "La próxima vez que alguien toca a Alex de una forma que no le gusta, Alex se queda callado.",
+                    "Alex guarda el mal sentimiento por dentro, y ningún adulto sabe que tiene que ayudar."
+                  ],
                   "feedback": "Cualquier toque que no se sienta bien merece mencionarse, sea grande o pequeño."
                 },
                 {
@@ -807,6 +937,11 @@
                 {
                   "text": "Seguir mirando y guardar el secreto porque lo pidió amablemente.",
                   "correct": false,
+                  "outcome": [
+                    "Alex se queda, sigue mirando el teléfono, y promete guardar el secreto.",
+                    "El chico mayor se acerca todavía más y dice: “Bien — recuerda, esto queda entre nosotros.”",
+                    "Alex se va a casa con un sentimiento incómodo y un secreto que ningún adulto de confianza conoce."
+                  ],
                   "feedback": "Que te pidan guardar un secreto de tus papás, especialmente sobre cómo alguien te está tratando, es exactamente el tipo de cosa que debes contarle a un adulto de confianza en su lugar."
                 },
                 {
@@ -817,6 +952,11 @@
                 {
                   "text": "Seguir la corriente pero planear mencionarlo mucho después, tal vez el próximo año.",
                   "correct": false,
+                  "outcome": [
+                    "Alex sigue la corriente y planea mencionarlo tal vez el próximo año.",
+                    "El chico mayor empieza a pedirle a Alex que se vean a solas otra vez.",
+                    "Alex carga el sentimiento incómodo en soledad por semanas, y nadie que podría ayudar lo sabe."
+                  ],
                   "feedback": "Esperar mucho tiempo para contarle a alguien significa que cargas un sentimiento incómodo solo sin necesidad — contarle a un adulto de confianza lo antes posible es más seguro."
                 }
               ]
@@ -838,6 +978,11 @@
                 {
                   "text": "Aceptar guardar el secreto porque parece agradable.",
                   "correct": false,
+                  "outcome": [
+                    "Alex acepta guardar el secreto porque el chico mayor parece agradable.",
+                    "El chico mayor sonríe, dice: “Sabía que podía confiar en ti,” y le pide volver a verse.",
+                    "Alex se siente atrapado — no se siente bien, pero ahora parece aún más difícil contarle a alguien."
+                  ],
                   "feedback": "Parecer agradable no hace que esa petición sea segura — sigue siendo una señal de advertencia."
                 },
                 {
@@ -868,6 +1013,11 @@
                 {
                   "text": "Porque todos los secretos de cualquier tipo son automáticamente peligrosos, incluso los regalos sorpresa.",
                   "correct": false,
+                  "outcome": [
+                    "Alex empieza a creer que todo secreto es peligroso — incluso un regalo sorpresa para papá.",
+                    "Alex se pone ansioso cada vez que alguien susurra, y revela sin querer la fiesta sorpresa de un primo.",
+                    "Alex se siente estresado y confundido, y se vuelve más difícil notar cuáles secretos de verdad hay que contar."
+                  ],
                   "feedback": "No todos los secretos son peligrosos — una fiesta sorpresa es un secreto divertido. La señal de advertencia es específicamente que te digan que ocultes de tus papás cómo alguien te está tratando."
                 }
               ]
@@ -889,6 +1039,11 @@
                 {
                   "text": "Decir que sí, todos los secretos son peligrosos, incluso las fiestas sorpresa.",
                   "correct": false,
+                  "outcome": [
+                    "Alex le dice a su papá que todo secreto debe ser peligroso, incluso las fiestas sorpresa.",
+                    "Cuando la familia planea una fiesta sorpresa para la abuela, Alex está demasiado preocupado para participar.",
+                    "Alex se pierde la diversión y se siente estresado, sin estar más seguro."
+                  ],
                   "feedback": "Eso no es cierto — las fiestas sorpresa son un tipo de secreto divertido y seguro."
                 },
                 {
@@ -913,6 +1068,11 @@
                 {
                   "text": "Ya que salió bien la última vez, está bien seguir la corriente esta vez.",
                   "correct": false,
+                  "outcome": [
+                    "Alex decide que está bien seguirle la corriente al primo, porque salió bien la última vez.",
+                    "El primo dice: “¿Ves? No hace falta contarle a tus papás,” y le pide a Alex guardar otro secreto.",
+                    "Alex otra vez carga un secreto incómodo en soledad, y ningún adulto de confianza sabe lo que está pasando."
+                  ],
                   "feedback": "Que haya \"salido bien\" antes no cambia la regla — ese tipo de petición de secreto sigue siendo una señal de advertencia."
                 },
                 {

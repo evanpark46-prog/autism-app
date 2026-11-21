@@ -31,6 +31,11 @@
                 {
                   "text": "No — Alex should never keep any secret, ever.",
                   "correct": false,
+                  "outcome": [
+                    "Alex runs to tell Mom about the present.",
+                    "The surprise is ruined.",
+                    "Alex’s sibling feels sad and let down."
+                  ],
                   "feedback": "Not quite — some secrets, like fun surprises, are safe to keep. The important thing is knowing the difference between safe and unsafe secrets."
                 }
               ]
@@ -52,6 +57,11 @@
                 {
                   "text": "Say Alex should never keep any secret at all.",
                   "correct": false,
+                  "outcome": [
+                    "Alex tells Mom about the present.",
+                    "Mom isn’t surprised on Saturday.",
+                    "Alex’s sibling feels let down."
+                  ],
                   "feedback": "Some secrets, like fun surprises, are safe to keep — this isn’t one to worry about."
                 },
                 {
@@ -82,6 +92,11 @@
                 {
                   "text": "Yes — Alex should keep it because they were told to.",
                   "correct": false,
+                  "outcome": [
+                    "Alex keeps the scary secret.",
+                    "No grown-up knows what happened.",
+                    "Alex feels scared and alone with it."
+                  ],
                   "feedback": "Being told to keep a secret forever, especially with a scary warning, is exactly the sign of an unsafe secret — tell a trusted adult."
                 }
               ]
@@ -103,6 +118,11 @@
                 {
                   "text": "Keep the secret because they were told to.",
                   "correct": false,
+                  "outcome": [
+                    "Alex keeps the secret quiet.",
+                    "Alex worries about it every night.",
+                    "No grown-up knows, so no one can help."
+                  ],
                   "feedback": "A scary threat like that means it’s an unsafe secret — it should be told, not kept."
                 },
                 {
@@ -159,6 +179,11 @@
                 {
                   "text": "Promise and never say anything to anyone.",
                   "correct": false,
+                  "outcome": [
+                    "Alex promises and never says a word.",
+                    "The friend’s mom finds the hidden pieces and is confused and upset.",
+                    "The friend is in more trouble for hiding it, and Alex feels bad for being part of it."
+                  ],
                   "feedback": "This kind of secret is about hiding something from a parent that they’ll probably need to know about — it’s better to gently encourage the friend to tell, or tell a trusted adult yourself."
                 },
                 {
@@ -169,6 +194,11 @@
                 {
                   "text": "Tell everyone at school about it right away to be funny.",
                   "correct": false,
+                  "outcome": [
+                    "Alex tells everyone at school about the broken mug to be funny.",
+                    "Kids laugh and tease the friend about it.",
+                    "The friend feels embarrassed and hurt, and doesn’t trust Alex anymore."
+                  ],
                   "feedback": "Spreading someone’s secret around to be funny isn’t kind and isn’t really the point — the goal is honesty with the parent, not embarrassing your friend."
                 }
               ]
@@ -190,6 +220,11 @@
                 {
                   "text": "Say Alex should have just promised and said nothing.",
                   "correct": false,
+                  "outcome": [
+                    "Alex just promises and says nothing.",
+                    "The friend keeps worrying about the hidden pieces.",
+                    "The friend never gets the chance to fix things with their mom."
+                  ],
                   "feedback": "Just promising and staying quiet wouldn’t help the friend fix the situation."
                 },
                 {
@@ -220,6 +255,11 @@
                 {
                   "text": "Any secret a friend asks you to keep should always be kept, no matter what it’s about.",
                   "correct": false,
+                  "outcome": [
+                    "Alex believes every secret a friend asks for must be kept.",
+                    "Later, a friend tells Alex about getting hurt and says, “Don’t tell.”",
+                    "Alex keeps quiet, so no grown-up knows the friend needs help."
+                  ],
                   "feedback": "Not every secret should automatically be kept — what the secret is actually about matters a lot."
                 }
               ]
@@ -241,6 +281,11 @@
                 {
                   "text": "Say any secret should always just be kept no matter what.",
                   "correct": false,
+                  "outcome": [
+                    "Alex decides every secret should always be kept.",
+                    "Later, a kid tells Alex a secret about being bullied on the bus.",
+                    "Alex keeps it, and the kid never gets help from a grown-up."
+                  ],
                   "feedback": "That’s not a safe rule — some secrets really do need to be told."
                 },
                 {
@@ -298,6 +343,11 @@
                 {
                   "text": "Accept the game and keep the secret since it seems like a nice gift.",
                   "correct": false,
+                  "outcome": [
+                    "Alex takes the game and agrees not to tell Alex’s parents about the visits.",
+                    "The adult starts asking for more visits and keeps reminding Alex to stay quiet.",
+                    "Alex feels uneasy and stuck, and no trusted adult knows what’s going on."
+                  ],
                   "feedback": "An adult offering gifts in exchange for secrecy from your parents is a serious warning sign, no matter how nice the gift is or how nice the adult seems."
                 },
                 {
@@ -308,6 +358,11 @@
                 {
                   "text": "Accept the gift now, but tell a parent about it in a few months.",
                   "correct": false,
+                  "outcome": [
+                    "Alex accepts the game and plans to tell a parent later.",
+                    "Over the next few months, the visits keep happening and the adult keeps asking Alex to stay quiet.",
+                    "The longer Alex waits, the harder it feels to tell, and no trusted adult can step in."
+                  ],
                   "feedback": "Waiting to tell someone means the situation continues in the meantime — it’s safer to tell a trusted adult as soon as possible."
                 }
               ]
@@ -329,6 +384,11 @@
                 {
                   "text": "Accept the gift and keep the secret.",
                   "correct": false,
+                  "outcome": [
+                    "Alex accepts the gift and keeps the visits a secret.",
+                    "The adult brings more gifts and keeps saying, “Remember, this is just between us.”",
+                    "Alex feels more and more uncomfortable but trapped by the secret, and no trusted adult knows."
+                  ],
                   "feedback": "A gift tied to secrecy from parents is a serious warning sign — don’t keep that secret."
                 },
                 {
@@ -359,6 +419,11 @@
                 {
                   "text": "Because receiving any gift from any adult is always unsafe.",
                   "correct": false,
+                  "outcome": [
+                    "Alex believes any gift from any adult is always unsafe.",
+                    "When Grandpa gives Alex a birthday present, Alex refuses it and gets upset.",
+                    "Grandpa feels hurt, and Alex is confused — the real warning sign, secrecy from parents, gets mixed up with normal gifts."
+                  ],
                   "feedback": "Gifts by themselves aren’t automatically unsafe — the warning sign is a gift paired with pressure to hide something specifically from your parents."
                 }
               ]
@@ -380,6 +445,11 @@
                 {
                   "text": "Say yes, accepting or almost keeping any gift means you’re in trouble.",
                   "correct": false,
+                  "outcome": [
+                    "Alex believes almost keeping the secret means Alex is in trouble.",
+                    "The next time something feels off, Alex hesitates to tell, afraid of getting in trouble.",
+                    "Worry about trouble keeps Alex quiet right when telling would help the most."
+                  ],
                   "feedback": "That’s not true — you’re never in trouble for telling a trusted adult about this."
                 },
                 {
@@ -404,6 +474,11 @@
                 {
                   "text": "Being a family friend makes that kind of offer safe to accept.",
                   "correct": false,
+                  "outcome": [
+                    "Alex decides a family friend’s offer must be safe.",
+                    "Alex accepts the gift and keeps it a secret from Alex’s parents.",
+                    "The same unsafe pattern starts again, and this time no trusted adult knows about it."
+                  ],
                   "feedback": "How familiar the person is doesn’t change the pattern — a reward plus secrecy from parents is still a warning sign."
                 },
                 {
@@ -514,6 +589,11 @@
                 {
                   "text": "No — Alex nunca debería guardar ningún secreto, jamás.",
                   "correct": false,
+                  "outcome": [
+                    "Alex corre a contarle a mamá sobre el regalo.",
+                    "La sorpresa se arruina.",
+                    "El hermano de Alex se siente triste y decepcionado."
+                  ],
                   "feedback": "No exactamente — algunos secretos, como las sorpresas divertidas, son seguros de guardar. Lo importante es saber la diferencia entre secretos seguros y no seguros."
                 }
               ]
@@ -535,6 +615,11 @@
                 {
                   "text": "Decir que Alex nunca debería guardar ningún secreto.",
                   "correct": false,
+                  "outcome": [
+                    "Alex le cuenta a mamá sobre el regalo.",
+                    "El sábado, mamá no se sorprende.",
+                    "El hermano de Alex se siente decepcionado."
+                  ],
                   "feedback": "Algunos secretos, como las sorpresas divertidas, son seguros de guardar — este no es motivo de preocupación."
                 },
                 {
@@ -565,6 +650,11 @@
                 {
                   "text": "Sí — Alex debería guardarlo porque le dijeron que lo hiciera.",
                   "correct": false,
+                  "outcome": [
+                    "Alex guarda el secreto aterrador.",
+                    "Ningún adulto sabe lo que pasó.",
+                    "Alex se siente asustado y solo con eso."
+                  ],
                   "feedback": "Que te digan que guardes un secreto para siempre, especialmente con una advertencia aterradora, es exactamente la señal de un secreto no seguro — cuéntale a un adulto de confianza."
                 }
               ]
@@ -586,6 +676,11 @@
                 {
                   "text": "Guardar el secreto porque le dijeron que lo hiciera.",
                   "correct": false,
+                  "outcome": [
+                    "Alex guarda el secreto en silencio.",
+                    "Alex se preocupa por eso cada noche.",
+                    "Ningún adulto lo sabe, y nadie puede ayudar."
+                  ],
                   "feedback": "Una amenaza así significa que es un secreto no seguro — hay que contarlo, no guardarlo."
                 },
                 {
@@ -642,6 +737,11 @@
                 {
                   "text": "Prometer y nunca decirle nada a nadie.",
                   "correct": false,
+                  "outcome": [
+                    "Alex lo promete y nunca dice nada.",
+                    "La mamá del amigo encuentra los pedazos escondidos y se siente confundida y molesta.",
+                    "El amigo está en más problemas por esconderlo, y Alex se siente mal por haber sido parte de eso."
+                  ],
                   "feedback": "Este tipo de secreto es sobre ocultarle algo a un padre que probablemente necesite saber — es mejor animar suavemente al amigo a contarlo, o contarle a un adulto de confianza tú mismo."
                 },
                 {
@@ -652,6 +752,11 @@
                 {
                   "text": "Contarle a todos en la escuela de inmediato para ser gracioso.",
                   "correct": false,
+                  "outcome": [
+                    "Alex le cuenta a todos en la escuela sobre la taza rota para ser gracioso.",
+                    "Los niños se ríen y se burlan del amigo.",
+                    "El amigo se siente avergonzado y herido, y ya no confía en Alex."
+                  ],
                   "feedback": "Difundir el secreto de alguien para ser gracioso no es amable y no es el punto — la meta es la honestidad con el padre, no avergonzar a tu amigo."
                 }
               ]
@@ -673,6 +778,11 @@
                 {
                   "text": "Decir que Alex debería haber prometido y quedarse callado.",
                   "correct": false,
+                  "outcome": [
+                    "Alex solo promete y no dice nada.",
+                    "El amigo sigue preocupado por los pedazos escondidos.",
+                    "El amigo nunca tiene la oportunidad de arreglar las cosas con su mamá."
+                  ],
                   "feedback": "Solo prometer y quedarse callado no habría ayudado al amigo a arreglar la situación."
                 },
                 {
@@ -703,6 +813,11 @@
                 {
                   "text": "Cualquier secreto que un amigo te pida guardar siempre debe guardarse, sin importar de qué se trate.",
                   "correct": false,
+                  "outcome": [
+                    "Alex cree que todo secreto que pide un amigo debe guardarse.",
+                    "Después, un amigo le cuenta a Alex que se lastimó y le dice: “No le digas a nadie.”",
+                    "Alex se calla, así que ningún adulto sabe que el amigo necesita ayuda."
+                  ],
                   "feedback": "No todo secreto debe guardarse automáticamente — de qué se trata realmente el secreto importa mucho."
                 }
               ]
@@ -724,6 +839,11 @@
                 {
                   "text": "Decir que cualquier secreto siempre debe guardarse sin importar qué.",
                   "correct": false,
+                  "outcome": [
+                    "Alex decide que todo secreto siempre debe guardarse.",
+                    "Después, un niño le cuenta a Alex en secreto que lo molestan en el autobús.",
+                    "Alex lo guarda, y el niño nunca recibe ayuda de un adulto."
+                  ],
                   "feedback": "Esa no es una regla segura — algunos secretos realmente necesitan contarse."
                 },
                 {
@@ -781,6 +901,11 @@
                 {
                   "text": "Aceptar el juego y guardar el secreto porque parece un regalo agradable.",
                   "correct": false,
+                  "outcome": [
+                    "Alex acepta el juego y promete no contarles a sus papás sobre las visitas.",
+                    "El adulto empieza a pedir más visitas y le recuerda a Alex que no diga nada.",
+                    "Alex se siente incómodo y atrapado, y ningún adulto de confianza sabe lo que está pasando."
+                  ],
                   "feedback": "Un adulto que ofrece regalos a cambio de secreto de tus papás es una señal de advertencia seria, sin importar qué tan agradable sea el regalo o el adulto."
                 },
                 {
@@ -791,6 +916,11 @@
                 {
                   "text": "Aceptar el regalo ahora, pero contarle a un padre en unos meses.",
                   "correct": false,
+                  "outcome": [
+                    "Alex acepta el regalo y planea contarle a un padre más adelante.",
+                    "Durante los siguientes meses, las visitas siguen y el adulto sigue pidiéndole a Alex que no diga nada.",
+                    "Mientras más espera Alex, más difícil se siente contarlo, y ningún adulto de confianza puede intervenir."
+                  ],
                   "feedback": "Esperar para contarle a alguien significa que la situación continúa mientras tanto — es más seguro contarle a un adulto de confianza lo antes posible."
                 }
               ]
@@ -812,6 +942,11 @@
                 {
                   "text": "Aceptar el regalo y guardar el secreto.",
                   "correct": false,
+                  "outcome": [
+                    "Alex acepta el regalo y guarda en secreto las visitas.",
+                    "El adulto trae más regalos y sigue diciendo: “Recuerda, esto es solo entre nosotros.”",
+                    "Alex se siente cada vez más incómodo pero atrapado por el secreto, y ningún adulto de confianza lo sabe."
+                  ],
                   "feedback": "Un regalo unido al secreto de los papás es una señal de advertencia seria — no guardes ese secreto."
                 },
                 {
@@ -842,6 +977,11 @@
                 {
                   "text": "Porque recibir cualquier regalo de cualquier adulto siempre es peligroso.",
                   "correct": false,
+                  "outcome": [
+                    "Alex cree que recibir cualquier regalo de cualquier adulto siempre es peligroso.",
+                    "Cuando el abuelo le da un regalo de cumpleaños, Alex lo rechaza y se altera.",
+                    "El abuelo se siente herido, y Alex se confunde — la verdadera señal de advertencia, el secreto de los papás, se mezcla con regalos normales."
+                  ],
                   "feedback": "Los regalos por sí solos no son automáticamente peligrosos — la señal de advertencia es un regalo combinado con presión para ocultar algo específicamente de tus papás."
                 }
               ]
@@ -863,6 +1003,11 @@
                 {
                   "text": "Decir que sí, casi guardar cualquier secreto significa estar en problemas.",
                   "correct": false,
+                  "outcome": [
+                    "Alex cree que casi guardar un secreto significa estar en problemas.",
+                    "La próxima vez que algo no se siente bien, Alex duda en contarlo por miedo a meterse en problemas.",
+                    "El miedo a los problemas mantiene a Alex callado justo cuando contarlo ayudaría más."
+                  ],
                   "feedback": "Eso no es cierto — nunca estás en problemas por contarle esto a un adulto de confianza."
                 },
                 {
@@ -887,6 +1032,11 @@
                 {
                   "text": "Ser un amigo de la familia hace que ese tipo de oferta sea segura de aceptar.",
                   "correct": false,
+                  "outcome": [
+                    "Alex decide que la oferta de un amigo de la familia debe ser segura.",
+                    "Alex acepta el regalo y se lo guarda en secreto a sus papás.",
+                    "El mismo patrón no seguro empieza otra vez, y esta vez ningún adulto de confianza lo sabe."
+                  ],
                   "feedback": "Qué tan conocida sea la persona no cambia el patrón — una recompensa más el secreto de los papás sigue siendo una señal de advertencia."
                 },
                 {

@@ -26,6 +26,11 @@
                 {
                   "text": "Wait to grab your backpack and finish what you’re doing first.",
                   "correct": false,
+                  "outcome": [
+                    "Alex stops to grab the backpack.",
+                    "The class walks out without Alex.",
+                    "Alex is alone in the room. The teacher can’t find Alex."
+                  ],
                   "feedback": "When the fire alarm rings, leave right away — backpacks and unfinished work can always wait."
                 },
                 {
@@ -36,6 +41,11 @@
                 {
                   "text": "Run as fast as possible, even if it means pushing past others.",
                   "correct": false,
+                  "outcome": [
+                    "Alex runs fast and pushes past friends.",
+                    "A friend trips and falls down.",
+                    "Now the line is stuck, and someone is crying."
+                  ],
                   "feedback": "Running or pushing can cause someone to get hurt — walking quickly but calmly is safer for everyone."
                 }
               ]
@@ -57,6 +67,11 @@
                 {
                   "text": "Yes, grab it quickly.",
                   "correct": false,
+                  "outcome": [
+                    "Alex stops to grab the backpack.",
+                    "The zipper gets stuck. It takes a long time.",
+                    "The class is already gone. Alex is left behind."
+                  ],
                   "feedback": "Belongings can always wait — leave right away without stopping."
                 },
                 {
@@ -87,6 +102,11 @@
                 {
                   "text": "Stand up straight and walk normally through the smoke.",
                   "correct": false,
+                  "outcome": [
+                    "Alex stands up tall in the smoke.",
+                    "Alex breathes in the smoke and coughs.",
+                    "It is hard to breathe, so Alex has to stop."
+                  ],
                   "feedback": "Standing up in smoke means breathing in more of it — staying low is safer."
                 }
               ]
@@ -108,6 +128,11 @@
                 {
                   "text": "Just wait somewhere randomly.",
                   "correct": false,
+                  "outcome": [
+                    "Alex waits by a tree, far away.",
+                    "The teacher counts. Alex is not there.",
+                    "Everyone is worried. Nobody knows where Alex is."
+                  ],
                   "feedback": "It’s safer to go to the assigned meeting spot, where a teacher or staff member expects to find you."
                 },
                 {
@@ -165,6 +190,11 @@
                 {
                   "text": "Wait for the alarm to go off before doing anything.",
                   "correct": false,
+                  "outcome": [
+                    "Alex sits back down and waits for the alarm to beep.",
+                    "The smoke in the kitchen keeps getting thicker.",
+                    "By the time the alarm goes off, the problem is bigger and harder to fix."
+                  ],
                   "feedback": "You don’t need to wait for an alarm — if you notice smoke or smell burning, tell a grown-up right away."
                 },
                 {
@@ -175,6 +205,11 @@
                 {
                   "text": "Open the oven or check the stove to see what’s happening.",
                   "correct": false,
+                  "outcome": [
+                    "Alex opens the oven door to look inside.",
+                    "A puff of hot smoke rushes out at Alex’s face.",
+                    "Alex coughs and jumps back, and still no grown-up knows."
+                  ],
                   "feedback": "Investigating the source yourself isn’t safe — let a grown-up check it out."
                 }
               ]
@@ -196,6 +231,11 @@
                 {
                   "text": "Say Alex should have checked the stove alone first.",
                   "correct": false,
+                  "outcome": [
+                    "Alex thinks, “Next time, I should check the stove by myself.”",
+                    "Next time, Alex reaches toward the hot pan alone.",
+                    "Alex’s hand gets close to the heat, with no grown-up there to help."
+                  ],
                   "feedback": "Checking it alone isn’t safe — telling a grown-up right away was the correct move."
                 },
                 {
@@ -226,6 +266,11 @@
                 {
                   "text": "Just open it quickly to see what’s on the other side.",
                   "correct": false,
+                  "outcome": [
+                    "Alex yanks the door open fast without checking.",
+                    "Smoke rushes into the room all at once.",
+                    "Now the room is smoky, and it’s hard for Alex to see the way out."
+                  ],
                   "feedback": "Opening a door without checking first can let in flames or smoke suddenly — checking for heat and smoke first is safer."
                 }
               ]
@@ -247,6 +292,11 @@
                 {
                   "text": "Open it carefully to see what’s there.",
                   "correct": false,
+                  "outcome": [
+                    "Alex opens the hot door slowly, just a little.",
+                    "Hot air and smoke push in through the crack.",
+                    "Alex has to shut it fast, and now the room is smoky."
+                  ],
                   "feedback": "A hot door means fire could be right outside — opening it isn’t safe, even carefully."
                 },
                 {
@@ -304,6 +354,11 @@
                 {
                   "text": "Open the door anyway since you need to get to the rest of the family.",
                   "correct": false,
+                  "outcome": [
+                    "Alex opens the warm door to go find the family.",
+                    "Thick, hot smoke pours into the bedroom right away.",
+                    "Alex can barely see or breathe, and the hallway Alex needed is already blocked."
+                  ],
                   "feedback": "A warm door usually means fire is close on the other side — opening it could let smoke or flames rush in."
                 },
                 {
@@ -314,6 +369,11 @@
                 {
                   "text": "Hide under the bed and wait quietly.",
                   "correct": false,
+                  "outcome": [
+                    "Alex crawls under the bed and stays very quiet.",
+                    "Firefighters come through calling out, but they can’t see or hear Alex.",
+                    "They have to keep searching, and every minute Alex stays hidden makes getting out harder."
+                  ],
                   "feedback": "Hiding makes it much harder for firefighters to find you — it’s safer to signal for help from a window or call 911."
                 }
               ]
@@ -335,6 +395,11 @@
                 {
                   "text": "Open the door anyway to check.",
                   "correct": false,
+                  "outcome": [
+                    "Alex cracks the warm door open just to check.",
+                    "Smoke rushes in, and the room fills up faster than Alex expected.",
+                    "Now Alex’s safe room isn’t safe anymore, and closing the door again is hard."
+                  ],
                   "feedback": "A warm door means fire may be right outside — don’t open it, even to check."
                 },
                 {
@@ -365,6 +430,11 @@
                 {
                   "text": "Because it’s required, even though one exit is always enough.",
                   "correct": false,
+                  "outcome": [
+                    "Alex believes the two-exit plan is just a rule, and one door is enough.",
+                    "Alex’s family only ever practices leaving through the front door.",
+                    "If a fire ever blocked that door, nobody would know what to do next."
+                  ],
                   "feedback": "It’s not just a rule for its own sake — a second way out is a genuine backup in case the first one is blocked."
                 }
               ]
@@ -386,6 +456,11 @@
                 {
                   "text": "Because one exit is always enough, no matter what.",
                   "correct": false,
+                  "outcome": [
+                    "Alex believes one exit is always enough.",
+                    "Alex never learns that the bedroom window could be a second way out.",
+                    "If smoke ever filled the hallway, Alex would feel trapped with no backup plan."
+                  ],
                   "feedback": "A fire could block that one exit — that’s exactly why a second way out matters."
                 },
                 {
@@ -410,6 +485,11 @@
                 {
                   "text": "Staying as quiet and hidden as possible is the safest way to wait for firefighters.",
                   "correct": false,
+                  "outcome": [
+                    "Alex starts to believe hiding quietly is the best way to wait.",
+                    "In a future emergency, Alex hides in a closet instead of calling or signaling.",
+                    "Firefighters have no clue which room Alex is in, so finding Alex takes much longer."
+                  ],
                   "feedback": "Staying hidden makes you harder to find — signaling for help is much safer."
                 },
                 {
@@ -543,6 +623,11 @@
                 {
                   "text": "Esperar para agarrar la mochila y terminar lo que estaba haciendo.",
                   "correct": false,
+                  "outcome": [
+                    "Alex se detiene a agarrar la mochila.",
+                    "La clase sale sin Alex.",
+                    "Alex está solo en el salón. El maestro no lo encuentra."
+                  ],
                   "feedback": "Cuando suena la alarma de incendios, sal de inmediato — las mochilas y el trabajo sin terminar siempre pueden esperar."
                 },
                 {
@@ -553,6 +638,11 @@
                 {
                   "text": "Correr lo más rápido posible, aunque signifique empujar a otros.",
                   "correct": false,
+                  "outcome": [
+                    "Alex corre rápido y empuja a sus amigos.",
+                    "Un amigo se tropieza y se cae.",
+                    "Ahora la fila se detiene, y alguien está llorando."
+                  ],
                   "feedback": "Correr o empujar puede hacer que alguien se lastime — caminar rápido pero con calma es más seguro para todos."
                 }
               ]
@@ -574,6 +664,11 @@
                 {
                   "text": "Sí, agárrala rápido.",
                   "correct": false,
+                  "outcome": [
+                    "Alex se detiene a agarrar la mochila.",
+                    "El cierre se atora. Tarda mucho.",
+                    "La clase ya se fue. Alex se quedó atrás."
+                  ],
                   "feedback": "Las pertenencias siempre pueden esperar — sal de inmediato sin detenerte."
                 },
                 {
@@ -604,6 +699,11 @@
                 {
                   "text": "Pararte derecho y caminar normalmente por el humo.",
                   "correct": false,
+                  "outcome": [
+                    "Alex se para derecho en el humo.",
+                    "Alex respira el humo y tose.",
+                    "Es difícil respirar, así que Alex tiene que parar."
+                  ],
                   "feedback": "Pararte derecho en medio del humo significa respirar más de él — quedarte agachado es más seguro."
                 }
               ]
@@ -625,6 +725,11 @@
                 {
                   "text": "Simplemente esperar en algún lugar al azar.",
                   "correct": false,
+                  "outcome": [
+                    "Alex espera junto a un árbol, lejos.",
+                    "El maestro cuenta. Alex no está.",
+                    "Todos están preocupados. Nadie sabe dónde está Alex."
+                  ],
                   "feedback": "Es más seguro ir al punto de encuentro asignado, donde un maestro o miembro del personal espera encontrarte."
                 },
                 {
@@ -682,6 +787,11 @@
                 {
                   "text": "Esperar a que suene la alarma antes de hacer algo.",
                   "correct": false,
+                  "outcome": [
+                    "Alex se sienta y espera a que suene la alarma.",
+                    "El humo en la cocina se pone cada vez más espeso.",
+                    "Cuando por fin suena la alarma, el problema es más grande y difícil de arreglar."
+                  ],
                   "feedback": "No necesitas esperar a que suene una alarma — si notas humo o un olor a quemado, avísale a un adulto de inmediato."
                 },
                 {
@@ -692,6 +802,11 @@
                 {
                   "text": "Abrir el horno o revisar la estufa para ver qué está pasando.",
                   "correct": false,
+                  "outcome": [
+                    "Alex abre el horno para mirar adentro.",
+                    "Una bocanada de humo caliente le sale a la cara.",
+                    "Alex tose y salta hacia atrás, y todavía ningún adulto sabe."
+                  ],
                   "feedback": "Investigar la fuente tú mismo no es seguro — deja que un adulto lo revise."
                 }
               ]
@@ -713,6 +828,11 @@
                 {
                   "text": "Decir que Alex debería haber revisado la estufa solo primero.",
                   "correct": false,
+                  "outcome": [
+                    "Alex piensa: “La próxima vez, debería revisar la estufa solo.”",
+                    "La próxima vez, Alex se acerca solo a la sartén caliente.",
+                    "La mano de Alex queda cerca del calor, sin ningún adulto para ayudar."
+                  ],
                   "feedback": "Revisarla solo no es seguro — avisarle a un adulto de inmediato fue lo correcto."
                 },
                 {
@@ -743,6 +863,11 @@
                 {
                   "text": "Simplemente abrirla rápido para ver qué hay del otro lado.",
                   "correct": false,
+                  "outcome": [
+                    "Alex abre la puerta rápido sin revisar.",
+                    "El humo entra a la habitación de golpe.",
+                    "Ahora la habitación está llena de humo, y es difícil ver la salida."
+                  ],
                   "feedback": "Abrir una puerta sin revisar primero puede dejar entrar llamas o humo de repente — revisar el calor y el humo primero es más seguro."
                 }
               ]
@@ -764,6 +889,11 @@
                 {
                   "text": "Abrirla con cuidado para ver qué hay.",
                   "correct": false,
+                  "outcome": [
+                    "Alex abre la puerta caliente despacio, solo un poquito.",
+                    "Aire caliente y humo entran por la rendija.",
+                    "Alex tiene que cerrarla rápido, y ahora hay humo en la habitación."
+                  ],
                   "feedback": "Una puerta caliente significa que el fuego podría estar justo afuera — abrirla no es seguro, ni siquiera con cuidado."
                 },
                 {
@@ -821,6 +951,11 @@
                 {
                   "text": "Abrir la puerta de todas formas porque necesita llegar al resto de la familia.",
                   "correct": false,
+                  "outcome": [
+                    "Alex abre la puerta caliente para ir a buscar a su familia.",
+                    "Humo espeso y caliente entra a la habitación de inmediato.",
+                    "Alex casi no puede ver ni respirar, y el pasillo que necesitaba ya está bloqueado."
+                  ],
                   "feedback": "Una puerta caliente generalmente significa que el fuego está cerca del otro lado — abrirla podría dejar entrar humo o llamas de golpe."
                 },
                 {
@@ -831,6 +966,11 @@
                 {
                   "text": "Esconderse debajo de la cama y esperar en silencio.",
                   "correct": false,
+                  "outcome": [
+                    "Alex se mete debajo de la cama y se queda muy callado.",
+                    "Los bomberos entran llamando, pero no pueden ver ni oír a Alex.",
+                    "Tienen que seguir buscando, y cada minuto escondido hace más difícil salir."
+                  ],
                   "feedback": "Esconderte hace que sea mucho más difícil que los bomberos te encuentren — es más seguro pedir ayuda desde una ventana o llamar al 911."
                 }
               ]
@@ -852,6 +992,11 @@
                 {
                   "text": "Abrir la puerta de todas formas para revisar.",
                   "correct": false,
+                  "outcome": [
+                    "Alex abre un poquito la puerta caliente solo para revisar.",
+                    "El humo entra, y la habitación se llena más rápido de lo que Alex esperaba.",
+                    "Ahora su habitación segura ya no es segura, y volver a cerrar la puerta es difícil."
+                  ],
                   "feedback": "Una puerta caliente significa que el fuego podría estar justo afuera — no la abras, ni siquiera para revisar."
                 },
                 {
@@ -882,6 +1027,11 @@
                 {
                   "text": "Porque es una regla obligatoria, aunque una salida siempre sea suficiente.",
                   "correct": false,
+                  "outcome": [
+                    "Alex cree que el plan de dos salidas es solo una regla, y que una puerta es suficiente.",
+                    "La familia de Alex solo practica salir por la puerta principal.",
+                    "Si un incendio bloqueara esa puerta, nadie sabría qué hacer después."
+                  ],
                   "feedback": "No es solo una regla por sí misma — una segunda salida es un respaldo real en caso de que la primera esté bloqueada."
                 }
               ]
@@ -903,6 +1053,11 @@
                 {
                   "text": "Porque una salida siempre es suficiente, sin importar qué.",
                   "correct": false,
+                  "outcome": [
+                    "Alex cree que una salida siempre es suficiente.",
+                    "Alex nunca aprende que la ventana de su habitación podría ser una segunda salida.",
+                    "Si el humo llenara el pasillo, Alex se sentiría atrapado y sin plan de respaldo."
+                  ],
                   "feedback": "Un incendio podría bloquear esa única salida — por eso importa una segunda ruta."
                 },
                 {
@@ -927,6 +1082,11 @@
                 {
                   "text": "Quedarse lo más callado y escondido posible es la forma más segura de esperar a los bomberos.",
                   "correct": false,
+                  "outcome": [
+                    "Alex empieza a creer que esconderse en silencio es la mejor forma de esperar.",
+                    "En una emergencia futura, Alex se esconde en un clóset en vez de llamar o pedir ayuda.",
+                    "Los bomberos no saben en qué cuarto está Alex, así que encontrarlo tarda mucho más."
+                  ],
                   "feedback": "Quedarte escondido hace que sea más difícil encontrarte — pedir ayuda es mucho más seguro."
                 },
                 {

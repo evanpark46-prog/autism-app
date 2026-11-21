@@ -26,6 +26,11 @@
                 {
                   "text": "Keep looking at the toy since the grown-up is right there.",
                   "correct": false,
+                  "outcome": [
+                    "Alex keeps looking down at the toy.",
+                    "A car backs out right near Alex.",
+                    "The grown-up pulls Alex back fast. Alex feels scared."
+                  ],
                   "feedback": "Even with a grown-up nearby, it’s important to look up and pay attention in a parking lot, since cars can move unexpectedly."
                 },
                 {
@@ -52,6 +57,11 @@
                 {
                   "text": "Say Alex should keep looking at the toy since the grown-up is watching.",
                   "correct": false,
+                  "outcome": [
+                    "Alex lets go and looks at the toy.",
+                    "A car starts to move near Alex.",
+                    "The driver can’t see Alex. Alex feels scared."
+                  ],
                   "feedback": "Even with a grown-up nearby, Alex needs to watch too — parking lots need everyone’s attention."
                 },
                 {
@@ -82,6 +92,11 @@
                 {
                   "text": "Only inside your own bedroom.",
                   "correct": false,
+                  "outcome": [
+                    "Alex thinks only the bedroom is calm and safe.",
+                    "Alex walks by the street without looking.",
+                    "A bike zooms by close. Alex gets a big scare."
+                  ],
                   "feedback": "A bedroom is usually calm, but places with moving cars, bikes, or lots of people need more attention."
                 }
               ]
@@ -103,6 +118,11 @@
                 {
                   "text": "Say yes, only parking lots need extra attention.",
                   "correct": false,
+                  "outcome": [
+                    "Alex thinks only parking lots need care.",
+                    "On the sidewalk, Alex looks at the toy again.",
+                    "A bike almost bumps Alex. Alex feels scared."
+                  ],
                   "feedback": "It’s not just parking lots — any place with moving cars or bikes needs extra attention."
                 },
                 {
@@ -160,6 +180,11 @@
                 {
                   "text": "Keep both earbuds in the whole walk since the music is good.",
                   "correct": false,
+                  "outcome": [
+                    "Alex keeps both earbuds in and turns the music up.",
+                    "The bike rider rings a bell, but Alex can’t hear it.",
+                    "The bike has to swerve around Alex, and Alex jumps and almost falls."
+                  ],
                   "feedback": "Having both ears covered makes it much harder to notice bikes, cars, or people approaching — even on a sidewalk."
                 },
                 {
@@ -186,6 +211,11 @@
                 {
                   "text": "Say Alex should have kept both earbuds in since the music was good.",
                   "correct": false,
+                  "outcome": [
+                    "Alex keeps both earbuds in, even with the bike coming.",
+                    "Alex can’t hear the friend shout, “Watch out!”",
+                    "The bike zooms past very close, and Alex gets a big scare."
+                  ],
                   "feedback": "Keeping both earbuds in would have made it harder to hear the bike coming."
                 },
                 {
@@ -216,6 +246,11 @@
                 {
                   "text": "Devices never affect how aware you are of your surroundings.",
                   "correct": false,
+                  "outcome": [
+                    "Alex believes phones never change what Alex notices.",
+                    "Alex walks home staring at a game on the screen.",
+                    "Alex steps off the curb without looking up, and a car has to stop fast."
+                  ],
                   "feedback": "Devices can definitely affect your awareness — through sound, through looking at the screen, or both."
                 }
               ]
@@ -237,6 +272,11 @@
                 {
                   "text": "Say looking at a screen while walking never actually distracts you.",
                   "correct": false,
+                  "outcome": [
+                    "Alex decides screens don’t really distract and keeps scrolling while walking.",
+                    "Alex doesn’t see a kid on a scooter coming the other way.",
+                    "They bump into each other, and Alex’s phone falls and cracks."
+                  ],
                   "feedback": "It really does distract you — looking down is another way to miss your surroundings."
                 },
                 {
@@ -294,6 +334,11 @@
                 {
                   "text": "Just keep wandering and hope to recognize the way back eventually.",
                   "correct": false,
+                  "outcome": [
+                    "The group keeps wandering, hoping something will look familiar.",
+                    "Every hallway starts to look the same, and they end up on the far side of the mall.",
+                    "Now they’re late for their ride, phones are running low, and everyone feels stressed and lost."
+                  ],
                   "feedback": "Hoping to recognize the way back isn’t a reliable plan in a big, unfamiliar place — it’s smarter to actively check for landmarks or ask staff for directions to a known spot."
                 },
                 {
@@ -320,6 +365,11 @@
                 {
                   "text": "Say the group should just keep wandering and hope to recognize it.",
                   "correct": false,
+                  "outcome": [
+                    "Alex tells the group to just keep wandering and hope for the best.",
+                    "An hour later, they still can’t find the entrance where their ride is waiting.",
+                    "The worried texts keep coming, and the fun trip turns into a stressful search."
+                  ],
                   "feedback": "Wandering and hoping isn’t reliable in a big, unfamiliar place — checking a directory or asking staff is smarter."
                 },
                 {
@@ -350,6 +400,11 @@
                 {
                   "text": "Because it’s only useful if you already know something bad is about to happen.",
                   "correct": false,
+                  "outcome": [
+                    "Alex believes landmarks only matter if Alex already knows trouble is coming.",
+                    "Alex stops noticing exits and staffed areas, since everything seems fine.",
+                    "When a loud alarm suddenly goes off, Alex has no idea which way to go and feels panicky."
+                  ],
                   "feedback": "The whole point is building the habit before anything happens, so you’re ready either way — not waiting until trouble starts."
                 }
               ]
@@ -371,6 +426,11 @@
                 {
                   "text": "Say it’s only useful once something bad is already happening.",
                   "correct": false,
+                  "outcome": [
+                    "Alex tells the friend that checking landmarks only helps once something goes wrong.",
+                    "The group stops paying attention and splits up to shop.",
+                    "When one friend gets separated and calls, nobody can describe where to meet, and it takes a long, worried time to find each other."
+                  ],
                   "feedback": "The habit is most useful built before anything happens, not started only once trouble starts."
                 },
                 {
@@ -395,6 +455,11 @@
                 {
                   "text": "Landmarks and exits are only worth noticing once you already feel unsafe.",
                   "correct": false,
+                  "outcome": [
+                    "Alex agrees and decides to notice exits only after feeling unsafe.",
+                    "Later, a crowd suddenly gets loud and pushy, and Alex starts feeling uneasy.",
+                    "Now Alex is trying to find a way out while already stressed, which makes it much harder to think clearly."
+                  ],
                   "feedback": "Waiting until you feel unsafe defeats the purpose — the habit works best built ahead of time."
                 },
                 {
@@ -500,6 +565,11 @@
                 {
                   "text": "Seguir mirando el juguete ya que el adulto está ahí.",
                   "correct": false,
+                  "outcome": [
+                    "Alex sigue mirando el juguete.",
+                    "Un carro sale en reversa cerca de Alex.",
+                    "El adulto jala a Alex rápido. Alex siente miedo."
+                  ],
                   "feedback": "Aunque haya un adulto cerca, es importante mirar hacia arriba y prestar atención en un estacionamiento, ya que los carros pueden moverse inesperadamente."
                 },
                 {
@@ -526,6 +596,11 @@
                 {
                   "text": "Decir que Alex debería seguir mirando el juguete ya que el adulto está vigilando.",
                   "correct": false,
+                  "outcome": [
+                    "Alex suelta la mano y mira el juguete.",
+                    "Un carro empieza a moverse cerca de Alex.",
+                    "El conductor no ve a Alex. Alex siente miedo."
+                  ],
                   "feedback": "Aunque haya un adulto cerca, Alex también necesita estar atento — los estacionamientos necesitan la atención de todos."
                 },
                 {
@@ -556,6 +631,11 @@
                 {
                   "text": "Solo dentro de tu propia habitación.",
                   "correct": false,
+                  "outcome": [
+                    "Alex cree que solo su habitación importa.",
+                    "Alex camina junto a la calle sin mirar.",
+                    "Una bicicleta pasa muy cerca. Alex se asusta mucho."
+                  ],
                   "feedback": "Una habitación suele ser tranquila, pero los lugares con carros en movimiento, bicicletas, o mucha gente necesitan más atención."
                 }
               ]
@@ -577,6 +657,11 @@
                 {
                   "text": "Decir que sí, solo los estacionamientos necesitan atención extra.",
                   "correct": false,
+                  "outcome": [
+                    "Alex cree que solo los estacionamientos importan.",
+                    "En la acera, Alex mira el juguete otra vez.",
+                    "Una bicicleta casi choca con Alex. Alex se asusta."
+                  ],
                   "feedback": "No es solo en estacionamientos — cualquier lugar con carros o bicicletas en movimiento necesita atención extra."
                 },
                 {
@@ -634,6 +719,11 @@
                 {
                   "text": "Mantener ambos audífonos puestos toda la caminata ya que la música es buena.",
                   "correct": false,
+                  "outcome": [
+                    "Alex deja ambos audífonos puestos y sube el volumen.",
+                    "La persona en bicicleta toca el timbre, pero Alex no lo oye.",
+                    "La bicicleta tiene que esquivar a Alex, y Alex salta del susto y casi se cae."
+                  ],
                   "feedback": "Tener ambos oídos cubiertos hace mucho más difícil notar bicicletas, carros, o personas acercándose — incluso en una acera."
                 },
                 {
@@ -660,6 +750,11 @@
                 {
                   "text": "Decir que Alex debería haber mantenido ambos audífonos puestos porque la música era buena.",
                   "correct": false,
+                  "outcome": [
+                    "Alex deja ambos audífonos puestos, aunque viene la bicicleta.",
+                    "Alex no oye a su amigo gritar: “¡Cuidado!”",
+                    "La bicicleta pasa muy cerca, y Alex se lleva un gran susto."
+                  ],
                   "feedback": "Mantener ambos audífonos puestos habría hecho más difícil oír la bicicleta acercarse."
                 },
                 {
@@ -690,6 +785,11 @@
                 {
                   "text": "Los dispositivos nunca afectan qué tan consciente estás de tu entorno.",
                   "correct": false,
+                  "outcome": [
+                    "Alex cree que el teléfono nunca cambia lo que nota.",
+                    "Alex camina a casa mirando un juego en la pantalla.",
+                    "Alex baja de la acera sin mirar, y un carro tiene que frenar rápido."
+                  ],
                   "feedback": "Los dispositivos definitivamente pueden afectar tu atención — a través del sonido, de mirar la pantalla, o ambos."
                 }
               ]
@@ -711,6 +811,11 @@
                 {
                   "text": "Decir que mirar una pantalla mientras caminas nunca distrae en realidad.",
                   "correct": false,
+                  "outcome": [
+                    "Alex decide que las pantallas no distraen y sigue mirando el teléfono mientras camina.",
+                    "Alex no ve a un niño en patineta que viene en dirección contraria.",
+                    "Chocan, y el teléfono de Alex se cae y la pantalla se rompe."
+                  ],
                   "feedback": "Sí distrae de verdad — mirar hacia abajo es otra forma de perderte de tu entorno."
                 },
                 {
@@ -768,6 +873,11 @@
                 {
                   "text": "Simplemente seguir vagando y esperar reconocer el camino de vuelta eventualmente.",
                   "correct": false,
+                  "outcome": [
+                    "El grupo sigue vagando, esperando que algo se vea conocido.",
+                    "Todos los pasillos empiezan a verse iguales, y terminan al otro lado del centro comercial.",
+                    "Ahora van tarde para que los recojan, los teléfonos tienen poca batería, y todos se sienten estresados y perdidos."
+                  ],
                   "feedback": "Esperar reconocer el camino de vuelta no es un plan confiable en un lugar grande y desconocido — es más inteligente buscar activamente puntos de referencia o pedirle direcciones al personal."
                 },
                 {
@@ -794,6 +904,11 @@
                 {
                   "text": "Decir que el grupo debería seguir vagando y esperar reconocerlo.",
                   "correct": false,
+                  "outcome": [
+                    "Alex le dice al grupo que sigan vagando y esperen lo mejor.",
+                    "Una hora después, todavía no encuentran la entrada donde los están esperando para recogerlos.",
+                    "Siguen llegando mensajes preocupados, y el paseo divertido se convierte en una búsqueda estresante."
+                  ],
                   "feedback": "Vagar y esperar no es confiable en un lugar grande y desconocido — buscar un directorio o preguntar al personal es más inteligente."
                 },
                 {
@@ -824,6 +939,11 @@
                 {
                   "text": "Porque solo es útil si ya sabes que algo malo está a punto de pasar.",
                   "correct": false,
+                  "outcome": [
+                    "Alex cree que los puntos de referencia solo importan si ya sabe que viene un problema.",
+                    "Alex deja de notar las salidas y las áreas con personal, porque todo parece estar bien.",
+                    "Cuando de repente suena una alarma fuerte, Alex no tiene idea de hacia dónde ir y siente pánico."
+                  ],
                   "feedback": "El punto es desarrollar el hábito antes de que pase algo, para que estés listo de cualquier manera — no esperar hasta que empiecen los problemas."
                 }
               ]
@@ -845,6 +965,11 @@
                 {
                   "text": "Decir que solo es útil una vez que algo malo ya está pasando.",
                   "correct": false,
+                  "outcome": [
+                    "Alex le dice a su amigo que revisar puntos de referencia solo sirve cuando algo ya salió mal.",
+                    "El grupo deja de prestar atención y se separa para ir de compras.",
+                    "Cuando un amigo se pierde y llama, nadie sabe explicar dónde encontrarse, y tardan mucho tiempo preocupados en volver a reunirse."
+                  ],
                   "feedback": "El hábito es más útil cuando se desarrolla antes de que pase algo, no solo cuando empiezan los problemas."
                 },
                 {
@@ -869,6 +994,11 @@
                 {
                   "text": "Los puntos de referencia y las salidas solo vale la pena notarlos una vez que ya te sientes inseguro.",
                   "correct": false,
+                  "outcome": [
+                    "Alex está de acuerdo y decide notar las salidas solo cuando ya se sienta inseguro.",
+                    "Más tarde, una multitud se pone ruidosa y empuja, y Alex empieza a sentirse incómodo.",
+                    "Ahora Alex está buscando una salida mientras ya está estresado, lo que hace mucho más difícil pensar con claridad."
+                  ],
                   "feedback": "Esperar hasta sentirte inseguro le quita el propósito — el hábito funciona mejor cuando se desarrolla con anticipación."
                 },
                 {

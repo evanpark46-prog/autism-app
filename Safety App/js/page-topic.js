@@ -561,6 +561,7 @@ function initTopicPage(){
             <div class="hero-actions mt-lg">
               <button type="button" class="btn btn-primary" data-story-replay>${t('story_replay')}</button>
               <button type="button" class="btn btn-secondary" data-story-review-flashcards>${t('story_review_flashcards_btn')}</button>
+              <a class="btn btn-secondary" href="worksheet.html?id=${encodeURIComponent(meta.id)}&level=${storyState.level}">${t('story_practice_ws_btn')}</a>
               ${changeLevelBtn}
               <a class="btn btn-secondary" href="index.html">${t('story_back_to_topics')}</a>
             </div>

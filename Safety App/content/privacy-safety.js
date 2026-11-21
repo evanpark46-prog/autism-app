@@ -31,6 +31,11 @@
                 {
                   "text": "Just let them come in since they’re family.",
                   "correct": false,
+                  "outcome": [
+                    "Alex lets the cousin come in.",
+                    "Alex is still changing clothes.",
+                    "Alex feels embarrassed and uncomfortable."
+                  ],
                   "feedback": "Even family should knock and respect your privacy — it’s okay to ask for that, every time."
                 }
               ]
@@ -52,6 +57,11 @@
                 {
                   "text": "Say Alex should have just let the cousin walk in since it’s family.",
                   "correct": false,
+                  "outcome": [
+                    "Alex thinks family can always walk in.",
+                    "Next time, Alex doesn’t ask them to knock.",
+                    "Alex never gets private time. Alex feels upset."
+                  ],
                   "feedback": "Even family should knock and wait — asking for privacy was fine."
                 },
                 {
@@ -82,6 +92,11 @@
                 {
                   "text": "No — you should never close a door or ask for space.",
                   "correct": false,
+                  "outcome": [
+                    "Alex thinks doors must stay open.",
+                    "Alex changes with the door open.",
+                    "People walk by. Alex feels uncomfortable."
+                  ],
                   "feedback": "Not true — closing the door and asking for privacy in those moments is healthy and normal."
                 }
               ]
@@ -103,6 +118,11 @@
                 {
                   "text": "Say you should never close a door or ask for space.",
                   "correct": false,
+                  "outcome": [
+                    "Alex thinks asking for space is wrong.",
+                    "Alex stops closing the bathroom door.",
+                    "Alex feels embarrassed and has no private space."
+                  ],
                   "feedback": "That’s not right — closing the door for privacy is healthy and normal."
                 },
                 {
@@ -160,6 +180,11 @@
                 {
                   "text": "Share it since it’s just a game friend.",
                   "correct": false,
+                  "outcome": [
+                    "Alex types in Alex’s home address and school name.",
+                    "Now someone Alex only knows from a game knows where Alex lives and goes every day.",
+                    "Alex can’t take the information back, and no grown-up knows it was shared."
+                  ],
                   "feedback": "Even a friendly online game contact shouldn’t get your address or school name — that’s private information best kept between you and people you know in real life, with a trusted adult’s okay."
                 },
                 {
@@ -186,6 +211,11 @@
                 {
                   "text": "Say Alex should have shared it since it’s just a game friend.",
                   "correct": false,
+                  "outcome": [
+                    "Alex starts thinking game friends can know everything.",
+                    "The next time someone in a game asks, Alex shares the address right away.",
+                    "Now people Alex has never really met know where Alex lives."
+                  ],
                   "feedback": "Even a game friend shouldn’t get that information — keeping it private was right."
                 },
                 {
@@ -216,6 +246,11 @@
                 {
                   "text": "Only your favorite color and favorite snack.",
                   "correct": false,
+                  "outcome": [
+                    "Alex believes only things like a favorite color are private.",
+                    "So Alex keeps the favorite color secret but shares the school name and phone number.",
+                    "The truly private details are now out there with someone Alex only knows online."
+                  ],
                   "feedback": "Favorite color or snack usually isn’t risky to share — the concern is information like your address, school, or phone number."
                 }
               ]
@@ -237,6 +272,11 @@
                 {
                   "text": "Say every single detail about yourself is equally private.",
                   "correct": false,
+                  "outcome": [
+                    "Alex decides every detail is just as private as an address.",
+                    "Alex won’t even say a favorite color or snack and feels nervous chatting at all.",
+                    "Alex feels stressed and left out, and it gets harder to tell which details really matter."
+                  ],
                   "feedback": "Not everything is equally private — a favorite color usually isn’t risky to share."
                 },
                 {
@@ -294,6 +334,11 @@
                 {
                   "text": "Let them post it since it’s just a photo.",
                   "correct": false,
+                  "outcome": [
+                    "Alex lets the friend post the photo with the school name showing.",
+                    "The public post gets shared around, and people Alex doesn’t know can see exactly which school Alex goes to.",
+                    "Alex feels uneasy knowing strangers can figure out where Alex spends every weekday, and the post is hard to take back."
+                  ],
                   "feedback": "A public photo showing identifying details like a school name can reveal more than it seems — it’s worth asking your friend to check first or crop that part out."
                 },
                 {
@@ -304,6 +349,11 @@
                 {
                   "text": "Get upset and never speak to the friend again over one photo.",
                   "correct": false,
+                  "outcome": [
+                    "Alex gets upset and stops talking to the friend completely over the photo.",
+                    "The friend is confused and hurt, and other friends start taking sides.",
+                    "Alex loses a friendship, and the photo question never actually gets worked out."
+                  ],
                   "feedback": "That’s an extreme reaction — a calm conversation about asking first and being careful with identifying details works better."
                 }
               ]
@@ -325,6 +375,11 @@
                 {
                   "text": "Say Alex should have just let the friend post it without asking.",
                   "correct": false,
+                  "outcome": [
+                    "Alex starts thinking friends don’t need to ask before posting.",
+                    "Next time, the friend posts a photo showing Alex’s street sign without checking.",
+                    "Identifying details end up public before Alex even knows the photo exists."
+                  ],
                   "feedback": "Letting it post without checking risks sharing identifying details unintentionally."
                 },
                 {
@@ -355,6 +410,11 @@
                 {
                   "text": "Because photos with any background at all should never be posted by anyone.",
                   "correct": false,
+                  "outcome": [
+                    "Alex believes no photo with any background should ever be posted.",
+                    "Alex starts refusing every photo — at birthdays, games, and school trips — and asks friends to delete harmless pictures.",
+                    "Alex feels stressed and left out, and friends get confused about what Alex actually wants."
+                  ],
                   "feedback": "That’s too strict — the specific concern is identifying details like a school name or address, not backgrounds in general."
                 }
               ]
@@ -376,6 +436,11 @@
                 {
                   "text": "Say background details never actually reveal anything private.",
                   "correct": false,
+                  "outcome": [
+                    "Alex decides background details never really reveal anything.",
+                    "Alex posts a photo with the house number clearly showing behind Alex.",
+                    "Anyone who sees the public post can now figure out where Alex lives."
+                  ],
                   "feedback": "They actually can — background details can reveal information by accident."
                 },
                 {
@@ -400,6 +465,11 @@
                 {
                   "text": "A background detail like a school name is too small to matter for privacy.",
                   "correct": false,
+                  "outcome": [
+                    "Alex decides a school name in the background is too small to matter.",
+                    "Alex stops checking photos before they’re posted, and several show the school name and nearby street.",
+                    "Bit by bit, strangers online can piece together where Alex spends time, without Alex ever meaning to share it."
+                  ],
                   "feedback": "That’s too dismissive — small background details can still reveal identifying information."
                 },
                 {
@@ -510,6 +580,11 @@
                 {
                   "text": "Simplemente dejarlo entrar ya que es familia.",
                   "correct": false,
+                  "outcome": [
+                    "Alex deja entrar al primo.",
+                    "Alex todavía se está cambiando de ropa.",
+                    "Alex se siente avergonzado e incómodo."
+                  ],
                   "feedback": "Incluso la familia debería tocar la puerta y respetar tu privacidad — está bien pedir eso, siempre."
                 }
               ]
@@ -531,6 +606,11 @@
                 {
                   "text": "Decir que Alex debería haber dejado entrar al primo ya que es familia.",
                   "correct": false,
+                  "outcome": [
+                    "Alex cree que la familia siempre puede entrar.",
+                    "La próxima vez, Alex no pide que toquen.",
+                    "Alex nunca tiene tiempo privado. Se siente mal."
+                  ],
                   "feedback": "Incluso la familia debería tocar y esperar — pedir privacidad estuvo bien."
                 },
                 {
@@ -561,6 +641,11 @@
                 {
                   "text": "No — nunca deberías cerrar una puerta o pedir espacio.",
                   "correct": false,
+                  "outcome": [
+                    "Alex cree que la puerta debe estar abierta.",
+                    "Alex se cambia con la puerta abierta.",
+                    "La gente pasa. Alex se siente incómodo."
+                  ],
                   "feedback": "No es cierto — cerrar la puerta y pedir privacidad en esos momentos es saludable y normal."
                 }
               ]
@@ -582,6 +667,11 @@
                 {
                   "text": "Decir que nunca deberías cerrar una puerta o pedir espacio.",
                   "correct": false,
+                  "outcome": [
+                    "Alex cree que pedir espacio está mal.",
+                    "Alex deja de cerrar la puerta del baño.",
+                    "Alex se siente avergonzado y sin espacio privado."
+                  ],
                   "feedback": "Eso no es correcto — cerrar la puerta para privacidad es saludable y normal."
                 },
                 {
@@ -639,6 +729,11 @@
                 {
                   "text": "Compartirla ya que es solo un amigo del juego.",
                   "correct": false,
+                  "outcome": [
+                    "Alex escribe su dirección y el nombre de su escuela.",
+                    "Ahora alguien que Alex solo conoce de un juego sabe dónde vive y a dónde va todos los días.",
+                    "Alex no puede recuperar la información, y ningún adulto sabe que la compartió."
+                  ],
                   "feedback": "Incluso un contacto amigable de un juego en línea no debería obtener tu dirección o el nombre de tu escuela — esa es información privada que se debe mantener entre tú y personas que conoces en la vida real, con el visto bueno de un adulto de confianza."
                 },
                 {
@@ -665,6 +760,11 @@
                 {
                   "text": "Decir que Alex debería haberla compartido ya que es solo un amigo del juego.",
                   "correct": false,
+                  "outcome": [
+                    "Alex empieza a pensar que los amigos del juego pueden saberlo todo.",
+                    "La próxima vez que alguien en un juego pregunta, Alex comparte su dirección de inmediato.",
+                    "Ahora personas que Alex nunca ha conocido de verdad saben dónde vive."
+                  ],
                   "feedback": "Ni siquiera un amigo del juego debería obtener esa información — mantenerla privada estuvo bien."
                 },
                 {
@@ -695,6 +795,11 @@
                 {
                   "text": "Solo tu color favorito y tu botana favorita.",
                   "correct": false,
+                  "outcome": [
+                    "Alex cree que solo cosas como el color favorito son privadas.",
+                    "Así que Alex guarda en secreto su color favorito pero comparte su escuela y su número de teléfono.",
+                    "Los detalles realmente privados ahora los tiene alguien que Alex solo conoce en línea."
+                  ],
                   "feedback": "Tu color o botana favorita usualmente no es riesgoso de compartir — la preocupación es información como tu dirección, escuela, o número de teléfono."
                 }
               ]
@@ -716,6 +821,11 @@
                 {
                   "text": "Decir que cada detalle sobre ti mismo es igualmente privado.",
                   "correct": false,
+                  "outcome": [
+                    "Alex decide que cada detalle es tan privado como una dirección.",
+                    "Alex ni siquiera dice su color o botana favorita y se pone nervioso al chatear.",
+                    "Alex se siente estresado y excluido, y le cuesta más saber qué detalles realmente importan."
+                  ],
                   "feedback": "No todo es igualmente privado — un color favorito usualmente no es riesgoso de compartir."
                 },
                 {
@@ -773,6 +883,11 @@
                 {
                   "text": "Dejar que la publique ya que es solo una foto.",
                   "correct": false,
+                  "outcome": [
+                    "Alex deja que el amigo publique la foto con el nombre de la escuela visible.",
+                    "La publicación se comparte, y personas que Alex no conoce pueden ver exactamente a qué escuela va Alex.",
+                    "Alex se siente inquieto sabiendo que desconocidos pueden saber dónde pasa cada día de semana, y es difícil borrar la publicación."
+                  ],
                   "feedback": "Una foto pública que muestra detalles identificables como el nombre de una escuela puede revelar más de lo que parece — vale la pena pedirle a tu amigo que revise primero o recorte esa parte."
                 },
                 {
@@ -783,6 +898,11 @@
                 {
                   "text": "Molestarse y no volver a hablarle nunca al amigo por una foto.",
                   "correct": false,
+                  "outcome": [
+                    "Alex se molesta y deja de hablarle al amigo por completo por la foto.",
+                    "El amigo se siente confundido y herido, y otros amigos empiezan a tomar partido.",
+                    "Alex pierde una amistad, y el tema de la foto nunca se resuelve de verdad."
+                  ],
                   "feedback": "Esa es una reacción extrema — una conversación calmada sobre preguntar primero y tener cuidado con los detalles identificables funciona mejor."
                 }
               ]
@@ -804,6 +924,11 @@
                 {
                   "text": "Decir que Alex debería haber dejado que el amigo la publicara sin preguntar.",
                   "correct": false,
+                  "outcome": [
+                    "Alex empieza a pensar que los amigos no necesitan preguntar antes de publicar.",
+                    "La próxima vez, el amigo publica una foto donde se ve el letrero de la calle de Alex, sin consultar.",
+                    "Los detalles identificables quedan públicos antes de que Alex sepa que la foto existe."
+                  ],
                   "feedback": "Dejarla publicar sin revisar arriesga compartir detalles identificables sin querer."
                 },
                 {
@@ -834,6 +959,11 @@
                 {
                   "text": "Porque las fotos con cualquier fondo nunca deberían publicarse, por nadie.",
                   "correct": false,
+                  "outcome": [
+                    "Alex cree que ninguna foto con fondo debería publicarse nunca.",
+                    "Alex empieza a rechazar todas las fotos — en cumpleaños, partidos y excursiones — y pide borrar fotos inofensivas.",
+                    "Alex se siente estresado y excluido, y sus amigos se confunden sobre lo que Alex realmente quiere."
+                  ],
                   "feedback": "Eso es demasiado estricto — la preocupación específica son los detalles identificables como el nombre de una escuela o dirección, no los fondos en general."
                 }
               ]
@@ -855,6 +985,11 @@
                 {
                   "text": "Decir que los detalles del fondo nunca revelan nada privado en realidad.",
                   "correct": false,
+                  "outcome": [
+                    "Alex decide que los detalles del fondo nunca revelan nada.",
+                    "Alex publica una foto donde se ve claramente el número de su casa detrás.",
+                    "Cualquiera que vea la publicación pública ahora puede saber dónde vive Alex."
+                  ],
                   "feedback": "Sí pueden revelar algo — los detalles del fondo pueden mostrar información por accidente."
                 },
                 {
@@ -879,6 +1014,11 @@
                 {
                   "text": "Un detalle del fondo como el nombre de una escuela es demasiado pequeño para importar en la privacidad.",
                   "correct": false,
+                  "outcome": [
+                    "Alex decide que el nombre de una escuela en el fondo es demasiado pequeño para importar.",
+                    "Alex deja de revisar las fotos antes de que se publiquen, y varias muestran la escuela y una calle cercana.",
+                    "Poco a poco, desconocidos en línea pueden descubrir dónde pasa tiempo Alex, sin que Alex haya querido compartirlo."
+                  ],
                   "feedback": "Eso es restarle importancia — un pequeño detalle del fondo todavía puede revelar información identificable."
                 },
                 {

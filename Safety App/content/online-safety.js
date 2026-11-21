@@ -26,6 +26,11 @@
                 {
                   "text": "Accept right away since it could be fun.",
                   "correct": false,
+                  "outcome": [
+                    "Alex taps yes and accepts.",
+                    "The person sends Alex lots of messages.",
+                    "No grown-up knows who Alex is talking to."
+                  ],
                   "feedback": "Accepting messages from people you don’t know isn’t safe — it’s important to check with a grown-up first."
                 },
                 {
@@ -52,6 +57,11 @@
                 {
                   "text": "Say Alex should have accepted right away since it could be fun.",
                   "correct": false,
+                  "outcome": [
+                    "Alex thinks saying yes is fun.",
+                    "Next time, Alex accepts without asking.",
+                    "No grown-up knows. Alex is on alone."
+                  ],
                   "feedback": "Accepting right away isn’t safe — checking with a grown-up first was the right move."
                 },
                 {
@@ -82,6 +92,11 @@
                 {
                   "text": "Yes, if they ask nicely.",
                   "correct": false,
+                  "outcome": [
+                    "Alex tells them a name and school.",
+                    "The person says, “I know where you go now.”",
+                    "Alex feels worried. That was private."
+                  ],
                   "feedback": "Being asked nicely doesn’t make it safe — that information should still stay private."
                 }
               ]
@@ -103,6 +118,11 @@
                 {
                   "text": "Say yes, if they ask nicely it’s fine.",
                   "correct": false,
+                  "outcome": [
+                    "Alex thinks nice asking makes it okay.",
+                    "Alex tells the person the school name.",
+                    "Now a stranger knows where Alex goes."
+                  ],
                   "feedback": "Asking nicely doesn’t make it safe — that information should stay private."
                 },
                 {
@@ -160,6 +180,11 @@
                 {
                   "text": "Agree, since it’s just a different way to chat.",
                   "correct": false,
+                  "outcome": [
+                    "Alex moves the chat to the secret app.",
+                    "The online friend starts asking Alex more personal questions there.",
+                    "No trusted adult can see the chats, so nobody can notice if something is wrong."
+                  ],
                   "feedback": "Wanting to move somewhere parents wouldn’t know about, or can’t see, is a common warning sign — it’s safer to keep chats where a trusted adult can see them."
                 },
                 {
@@ -186,6 +211,11 @@
                 {
                   "text": "Say Alex should have agreed since it’s just a different way to chat.",
                   "correct": false,
+                  "outcome": [
+                    "Alex starts thinking moving apps is no big deal.",
+                    "The next time someone asks, Alex moves to a secret app without telling anyone.",
+                    "Now Alex is chatting somewhere no grown-up can see or help."
+                  ],
                   "feedback": "That request is a warning sign — agreeing wouldn’t have been safe."
                 },
                 {
@@ -216,6 +246,11 @@
                 {
                   "text": "Because parents should never know about any online friendships at all.",
                   "correct": false,
+                  "outcome": [
+                    "Alex believes parents should never know about online friends.",
+                    "Alex hides all game chats and friends from Mom and Dad.",
+                    "When a chat starts to feel weird, no grown-up knows, so Alex has to handle it alone."
+                  ],
                   "feedback": "It’s actually the opposite — trusted adults knowing about your online friendships and chats is part of what keeps things safe."
                 }
               ]
@@ -237,6 +272,11 @@
                 {
                   "text": "Say trusted adults should never know about any online friendships.",
                   "correct": false,
+                  "outcome": [
+                    "Alex decides grown-ups shouldn’t know about any online friends.",
+                    "Alex stops telling Mom or Dad anything about online chats.",
+                    "If something unsafe happens, Alex has nobody watching out for Alex."
+                  ],
                   "feedback": "That’s backwards — trusted adults knowing about your online friendships is part of what keeps you safe."
                 },
                 {
@@ -294,6 +334,11 @@
                 {
                   "text": "Send the photo since the person said it’s normal and everyone does it.",
                   "correct": false,
+                  "outcome": [
+                    "Alex sends the photo because the person said everyone does it.",
+                    "The person asks for more photos and says, “If you stop, I’ll show this one to people.”",
+                    "Alex feels scared and trapped, and doesn’t know who might see the photo."
+                  ],
                   "feedback": "“Everyone does this” is a pressure tactic, not proof that something is actually safe or normal — trust the uncomfortable feeling instead."
                 },
                 {
@@ -304,6 +349,11 @@
                 {
                   "text": "Ask a few friends what they think before deciding.",
                   "correct": false,
+                  "outcome": [
+                    "Alex asks a few friends what to do instead of a trusted adult.",
+                    "The friends aren’t sure — one says it’s probably fine, another says to ignore it, and the messages keep coming.",
+                    "Time passes, the pressure grows, and no adult who could actually stop it knows what’s going on."
+                  ],
                   "feedback": "Friends might not have the full picture or the right guidance — a trusted adult is the right person to involve in a situation like this."
                 }
               ]
@@ -325,6 +375,11 @@
                 {
                   "text": "Say Alex should send the photo since everyone reportedly does it.",
                   "correct": false,
+                  "outcome": [
+                    "Alex starts to believe the photo is fine to send because “everyone does it.”",
+                    "Alex sends it, and the contact keeps pushing for more.",
+                    "Alex feels uneasy and stuck, with a photo out there that Alex can’t take back."
+                  ],
                   "feedback": "“Everyone does this” isn’t proof of anything — sending it wouldn’t be safe."
                 },
                 {
@@ -355,6 +410,11 @@
                 {
                   "text": "Because it’s always literally true that everyone does whatever is being asked.",
                   "correct": false,
+                  "outcome": [
+                    "Alex believes the phrase literally means every kid does this.",
+                    "Alex feels like the odd one out for being uncomfortable and starts doubting that feeling.",
+                    "Alex ignores the uncomfortable feeling next time — the very signal that was trying to keep Alex safe."
+                  ],
                   "feedback": "It’s not actually true just because someone says it — that phrase is a pressure tactic, not evidence."
                 }
               ]
@@ -376,6 +436,11 @@
                 {
                   "text": "Say “everyone does this” is solid proof something is safe.",
                   "correct": false,
+                  "outcome": [
+                    "Alex decides “everyone does this” really is proof something is safe.",
+                    "The next time someone online uses that line, Alex goes along with it.",
+                    "Alex ends up in an uncomfortable situation again, believing it was normal when it wasn’t."
+                  ],
                   "feedback": "It’s not proof at all — it’s a pressure tactic."
                 },
                 {
@@ -400,6 +465,11 @@
                 {
                   "text": "Other kids usually have the same guidance and ability to help as a trusted adult.",
                   "correct": false,
+                  "outcome": [
+                    "Alex decides next time to just ask other kids instead of a parent.",
+                    "When another uncomfortable message comes, the kids give mixed advice and nobody reports or blocks the account.",
+                    "The contact keeps messaging Alex, and no grown-up who could step in ever finds out."
+                  ],
                   "feedback": "That’s not true — kids usually don’t have the same experience or ability to act on it."
                 },
                 {
@@ -505,6 +575,11 @@
                 {
                   "text": "Aceptar de inmediato ya que podría ser divertido.",
                   "correct": false,
+                  "outcome": [
+                    "Alex toca sí y acepta.",
+                    "La persona le manda muchos mensajes a Alex.",
+                    "Ningún adulto sabe con quién habla Alex."
+                  ],
                   "feedback": "Aceptar mensajes de personas que no conoces no es seguro — es importante consultar con un adulto primero."
                 },
                 {
@@ -531,6 +606,11 @@
                 {
                   "text": "Decir que Alex debería haber aceptado de inmediato ya que podría ser divertido.",
                   "correct": false,
+                  "outcome": [
+                    "Alex piensa que aceptar es divertido.",
+                    "La próxima vez, Alex acepta sin preguntar.",
+                    "Ningún adulto sabe. Alex está solo."
+                  ],
                   "feedback": "Aceptar de inmediato no es seguro — consultar con un adulto primero fue lo correcto."
                 },
                 {
@@ -561,6 +641,11 @@
                 {
                   "text": "Sí, si preguntan amablemente.",
                   "correct": false,
+                  "outcome": [
+                    "Alex le dice su nombre y su escuela.",
+                    "La persona dice: “Ya sé a dónde vas.”",
+                    "Alex se siente preocupado. Eso era privado."
+                  ],
                   "feedback": "Que pregunten amablemente no lo hace seguro — esa información debe seguir siendo privada."
                 }
               ]
@@ -582,6 +667,11 @@
                 {
                   "text": "Decir que sí, si preguntan amablemente está bien.",
                   "correct": false,
+                  "outcome": [
+                    "Alex cree que preguntar amablemente está bien.",
+                    "Alex le dice a la persona su escuela.",
+                    "Ahora un desconocido sabe a dónde va Alex."
+                  ],
                   "feedback": "Preguntar amablemente no lo hace seguro — esa información debe seguir siendo privada."
                 },
                 {
@@ -639,6 +729,11 @@
                 {
                   "text": "Aceptar, ya que es solo otra forma de chatear.",
                   "correct": false,
+                  "outcome": [
+                    "Alex se muda a la app secreta para chatear.",
+                    "Allí, el amigo en línea empieza a hacerle preguntas más personales.",
+                    "Ningún adulto de confianza puede ver los chats, así que nadie puede notar si algo anda mal."
+                  ],
                   "feedback": "Querer mudarse a algún lugar que los papás no conocerían, o no pueden ver, es una señal de advertencia común — es más seguro mantener los chats donde un adulto de confianza pueda verlos."
                 },
                 {
@@ -665,6 +760,11 @@
                 {
                   "text": "Decir que Alex debería haber aceptado ya que es solo otra forma de chatear.",
                   "correct": false,
+                  "outcome": [
+                    "Alex empieza a pensar que cambiar de app no es gran cosa.",
+                    "La próxima vez que alguien le pide, Alex se muda a una app secreta sin decirle a nadie.",
+                    "Ahora Alex chatea en un lugar donde ningún adulto puede ver ni ayudar."
+                  ],
                   "feedback": "Esa petición es una señal de advertencia — aceptar no habría sido seguro."
                 },
                 {
@@ -695,6 +795,11 @@
                 {
                   "text": "Porque los papás nunca deberían saber sobre ninguna amistad en línea.",
                   "correct": false,
+                  "outcome": [
+                    "Alex cree que los papás nunca deberían saber de sus amigos en línea.",
+                    "Alex esconde todos sus chats y amigos del juego de mamá y papá.",
+                    "Cuando un chat empieza a sentirse raro, ningún adulto sabe, y Alex tiene que manejarlo solo."
+                  ],
                   "feedback": "Es realmente lo opuesto — que los adultos de confianza sepan sobre tus amistades y chats en línea es parte de lo que te mantiene seguro."
                 }
               ]
@@ -716,6 +821,11 @@
                 {
                   "text": "Decir que los adultos de confianza nunca deberían saber sobre ninguna amistad en línea.",
                   "correct": false,
+                  "outcome": [
+                    "Alex decide que los adultos no deberían saber de ningún amigo en línea.",
+                    "Alex deja de contarles a mamá o papá sobre sus chats en línea.",
+                    "Si pasa algo inseguro, nadie está cuidando a Alex."
+                  ],
                   "feedback": "Es al revés — que los adultos de confianza sepan sobre tus amistades en línea es parte de lo que te mantiene seguro."
                 },
                 {
@@ -773,6 +883,11 @@
                 {
                   "text": "Enviar la foto ya que la persona dijo que es normal y todos lo hacen.",
                   "correct": false,
+                  "outcome": [
+                    "Alex envía la foto porque la persona dijo que todos lo hacen.",
+                    "La persona pide más fotos y dice: “Si dejas de enviar, le mostraré esta a otras personas.”",
+                    "Alex se siente asustado y atrapado, y no sabe quién podría ver la foto."
+                  ],
                   "feedback": "“Todos hacen esto” es una táctica de presión, no prueba de que algo sea realmente seguro o normal — confía en el sentimiento incómodo en su lugar."
                 },
                 {
@@ -783,6 +898,11 @@
                 {
                   "text": "Preguntarle a algunos amigos qué piensan antes de decidir.",
                   "correct": false,
+                  "outcome": [
+                    "Alex les pregunta a algunos amigos qué hacer en vez de a un adulto de confianza.",
+                    "Los amigos no están seguros — uno dice que probablemente está bien, otro dice que lo ignore, y los mensajes siguen llegando.",
+                    "Pasa el tiempo, la presión crece, y ningún adulto que realmente pueda detenerlo sabe lo que está pasando."
+                  ],
                   "feedback": "Los amigos podrían no tener el panorama completo ni la guía correcta — un adulto de confianza es la persona correcta para involucrar en una situación como esta."
                 }
               ]
@@ -804,6 +924,11 @@
                 {
                   "text": "Decir que Alex debería enviar la foto ya que supuestamente todos lo hacen.",
                   "correct": false,
+                  "outcome": [
+                    "Alex empieza a creer que está bien enviar la foto porque “todos lo hacen”.",
+                    "Alex la envía, y el contacto sigue insistiendo en que mande más.",
+                    "Alex se siente incómodo y atrapado, con una foto que ya no puede recuperar."
+                  ],
                   "feedback": "“Todos hacen esto” no es prueba de nada — enviarla no habría sido seguro."
                 },
                 {
@@ -834,6 +959,11 @@
                 {
                   "text": "Porque siempre es literalmente cierto que todos hacen lo que se está pidiendo.",
                   "correct": false,
+                  "outcome": [
+                    "Alex cree que la frase significa literalmente que todos los chicos lo hacen.",
+                    "Alex se siente raro por estar incómodo y empieza a dudar de ese sentimiento.",
+                    "La próxima vez Alex ignora el sentimiento incómodo — justo la señal que intentaba mantenerlo seguro."
+                  ],
                   "feedback": "No es realmente cierto solo porque alguien lo diga — esa frase es una táctica de presión, no evidencia."
                 }
               ]
@@ -855,6 +985,11 @@
                 {
                   "text": "Decir que “todos hacen esto” es prueba sólida de que algo es seguro.",
                   "correct": false,
+                  "outcome": [
+                    "Alex decide que “todos hacen esto” sí es prueba de que algo es seguro.",
+                    "La próxima vez que alguien en línea usa esa frase, Alex le hace caso.",
+                    "Alex termina otra vez en una situación incómoda, creyendo que era normal cuando no lo era."
+                  ],
                   "feedback": "No es prueba de nada — es una táctica de presión."
                 },
                 {
@@ -879,6 +1014,11 @@
                 {
                   "text": "Otros niños usualmente tienen la misma guía y capacidad de ayudar que un adulto de confianza.",
                   "correct": false,
+                  "outcome": [
+                    "Alex decide que la próxima vez solo les preguntará a otros niños en vez de a un padre.",
+                    "Cuando llega otro mensaje incómodo, los niños dan consejos distintos y nadie reporta ni bloquea la cuenta.",
+                    "El contacto sigue escribiéndole a Alex, y ningún adulto que podría intervenir se entera."
+                  ],
                   "feedback": "Eso no es cierto — los niños usualmente no tienen la misma experiencia ni capacidad de actuar."
                 },
                 {

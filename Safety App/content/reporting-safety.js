@@ -31,6 +31,11 @@
                 {
                   "text": "Immediately tell the teacher without trying to solve it first.",
                   "correct": false,
+                  "outcome": [
+                    "Alex runs to tell the teacher.",
+                    "The teacher is busy helping a hurt kid.",
+                    "Alex still has no turn, and never even asked."
+                  ],
                   "feedback": "For small things like a swing turn, it’s usually better to try talking to the person first — telling a teacher is for bigger or unsafe problems."
                 }
               ]
@@ -52,6 +57,11 @@
                 {
                   "text": "Say Alex should have told the teacher immediately instead.",
                   "correct": false,
+                  "outcome": [
+                    "Alex runs to tell the teacher.",
+                    "The classmate feels embarrassed and upset.",
+                    "Now both kids feel grumpy with each other."
+                  ],
                   "feedback": "For something this small, trying words first is the better first step."
                 },
                 {
@@ -82,6 +92,11 @@
                 {
                   "text": "Keep it to yourself since telling might upset someone.",
                   "correct": false,
+                  "outcome": [
+                    "Alex sees a kid get hurt and stays quiet.",
+                    "No grown-up knows the kid is hurt.",
+                    "The kid keeps crying, and nobody helps."
+                  ],
                   "feedback": "When safety is involved, it’s always okay — and important — to tell a grown-up, even if it might upset someone."
                 }
               ]
@@ -103,6 +118,11 @@
                 {
                   "text": "Say yes, telling about someone getting hurt is tattling.",
                   "correct": false,
+                  "outcome": [
+                    "Alex thinks telling is tattling.",
+                    "Next time a kid gets hurt, Alex stays quiet.",
+                    "No grown-up knows, so no one helps."
+                  ],
                   "feedback": "That’s not right — telling about safety or injuries is never tattling."
                 },
                 {
@@ -160,6 +180,11 @@
                 {
                   "text": "Mind your own business since it’s not about Alex.",
                   "correct": false,
+                  "outcome": [
+                    "Alex walks past the crying classmate and says nothing.",
+                    "The classmate stays sad and alone for the rest of recess.",
+                    "No grown-up finds out, so the mean words might happen again."
+                  ],
                   "feedback": "Telling a trusted adult when you see someone else being hurt or upset isn’t tattling — it’s a caring, helpful thing to do."
                 },
                 {
@@ -170,6 +195,11 @@
                 {
                   "text": "Tell other kids about it so everyone knows what happened.",
                   "correct": false,
+                  "outcome": [
+                    "Alex tells a bunch of kids what happened.",
+                    "The story spreads, and kids start whispering about the classmate.",
+                    "The classmate feels even more embarrassed, and still no grown-up knows."
+                  ],
                   "feedback": "Spreading the story around doesn’t help the classmate — telling a trusted adult, quietly and directly, is more helpful."
                 }
               ]
@@ -191,6 +221,11 @@
                 {
                   "text": "Say Alex should have minded their own business instead.",
                   "correct": false,
+                  "outcome": [
+                    "Alex walks away without asking if the classmate is okay.",
+                    "The classmate sits alone, still crying.",
+                    "The classmate feels like nobody cares."
+                  ],
                   "feedback": "Checking on someone who’s hurting is a caring thing to do, not overstepping."
                 },
                 {
@@ -221,6 +256,11 @@
                 {
                   "text": "Tattling and telling are always exactly the same thing.",
                   "correct": false,
+                  "outcome": [
+                    "Alex believes tattling and telling are exactly the same.",
+                    "When a kid gets picked on, Alex stays quiet so Alex won’t be a tattletale.",
+                    "The picking-on keeps going, and no grown-up knows to help."
+                  ],
                   "feedback": "They’re actually different — the purpose behind saying something (getting someone in trouble vs. keeping someone safe) is what matters."
                 }
               ]
@@ -242,6 +282,11 @@
                 {
                   "text": "Say telling and tattling are always exactly the same.",
                   "correct": false,
+                  "outcome": [
+                    "Alex decides telling and tattling are the same thing.",
+                    "The next time someone is hurting, Alex keeps quiet about it.",
+                    "The person who needs help doesn’t get it."
+                  ],
                   "feedback": "They’re not the same — the purpose behind speaking up makes the difference."
                 },
                 {
@@ -299,6 +344,11 @@
                 {
                   "text": "Say nothing since it’s not Alex’s business and might not be a big deal.",
                   "correct": false,
+                  "outcome": [
+                    "Alex decides it’s probably nothing and doesn’t mention it to anyone.",
+                    "Weeks go by, and the classmate keeps seeming scared and quiet.",
+                    "No trusted adult knows, so nobody can check on the classmate or offer help."
+                  ],
                   "feedback": "A pattern like this — frequent bruises, withdrawal, and fear of going home — is exactly the kind of serious concern that’s important to tell a trusted adult about, even if you’re not fully sure what’s happening."
                 },
                 {
@@ -309,6 +359,11 @@
                 {
                   "text": "Ask the classmate directly, in front of other students, to explain everything right away.",
                   "correct": false,
+                  "outcome": [
+                    "In the middle of class, Alex loudly asks the classmate to explain everything.",
+                    "Other students turn and stare, and the classmate’s face goes red.",
+                    "The classmate says, “It’s nothing,” shuts down, and now feels less safe sharing with anyone."
+                  ],
                   "feedback": "Asking in front of others could feel embarrassing or unsafe for the classmate — it’s better to quietly tell a trusted adult, who can handle it carefully."
                 }
               ]
@@ -330,6 +385,11 @@
                 {
                   "text": "Say Alex should have asked the classmate in front of everyone instead.",
                   "correct": false,
+                  "outcome": [
+                    "Alex asks the classmate about it in front of everyone at lunch.",
+                    "The table goes quiet, and the classmate looks embarrassed and gets up to leave.",
+                    "The classmate starts avoiding Alex, and the worry still hasn’t reached a trusted adult."
+                  ],
                   "feedback": "Asking in front of everyone could feel embarrassing or unsafe — telling an adult privately was better."
                 },
                 {
@@ -360,6 +420,11 @@
                 {
                   "text": "Because you should only ever tell an adult if you’re 100% sure something bad happened.",
                   "correct": false,
+                  "outcome": [
+                    "Alex believes you should only tell an adult if you’re 100% sure.",
+                    "Since Alex isn’t completely sure, Alex keeps waiting for proof.",
+                    "Clear proof never comes, and the classmate goes on without anyone checking in."
+                  ],
                   "feedback": "You don’t need to be 100% sure — trusted adults are there to carefully look into concerns, even uncertain ones."
                 }
               ]
@@ -381,6 +446,11 @@
                 {
                   "text": "Say you should only tell an adult if you’re 100% sure.",
                   "correct": false,
+                  "outcome": [
+                    "Alex decides you have to be 100% sure before telling an adult.",
+                    "The next time Alex has a real worry, Alex stays silent because it isn’t certain.",
+                    "That worry never reaches someone who could look into it and help."
+                  ],
                   "feedback": "You don’t need to be 100% sure — that’s exactly what trusted adults are there to check into."
                 },
                 {
@@ -405,6 +475,11 @@
                 {
                   "text": "You should only tell a trusted adult if you’re completely sure something bad is happening.",
                   "correct": false,
+                  "outcome": [
+                    "Alex starts to believe the friend: you should only tell if you’re completely sure.",
+                    "Alex feels guilty for speaking up and decides to keep future worries private.",
+                    "The next time something seems wrong, Alex says nothing, and nobody who could help ever finds out."
+                  ],
                   "feedback": "You don’t need to be completely sure — that’s exactly what trusted adults are there to look into."
                 },
                 {
@@ -529,6 +604,11 @@
                 {
                   "text": "Contarle a la maestra de inmediato sin intentar resolverlo primero.",
                   "correct": false,
+                  "outcome": [
+                    "Alex corre a contarle a la maestra.",
+                    "La maestra está ayudando a un niño lastimado.",
+                    "Alex sigue sin turno, y ni siquiera lo pidió."
+                  ],
                   "feedback": "Para cosas pequeñas como un turno de columpio, usualmente es mejor intentar hablar con la persona primero — contarle a una maestra es para problemas más grandes o peligrosos."
                 }
               ]
@@ -550,6 +630,11 @@
                 {
                   "text": "Decir que Alex debería haberle contado a la maestra de inmediato.",
                   "correct": false,
+                  "outcome": [
+                    "Alex corre a contarle a la maestra.",
+                    "El compañero se siente avergonzado y molesto.",
+                    "Ahora los dos están enojados entre sí."
+                  ],
                   "feedback": "Para algo tan pequeño, intentar con palabras primero es el mejor primer paso."
                 },
                 {
@@ -580,6 +665,11 @@
                 {
                   "text": "Guardárselo porque contar podría molestar a alguien.",
                   "correct": false,
+                  "outcome": [
+                    "Alex ve que un niño se lastima y no dice nada.",
+                    "Ningún adulto sabe que el niño está lastimado.",
+                    "El niño sigue llorando, y nadie lo ayuda."
+                  ],
                   "feedback": "Cuando hay seguridad de por medio, siempre está bien — y es importante — contarle a un adulto, aunque pueda molestar a alguien."
                 }
               ]
@@ -601,6 +691,11 @@
                 {
                   "text": "Decir que sí, contar que alguien se lastimó es acusar.",
                   "correct": false,
+                  "outcome": [
+                    "Alex cree que contar es acusar.",
+                    "La próxima vez que alguien se lastima, Alex se calla.",
+                    "Ningún adulto se entera, y nadie ayuda."
+                  ],
                   "feedback": "Eso no es correcto — contar sobre seguridad o lesiones nunca es acusar."
                 },
                 {
@@ -658,6 +753,11 @@
                 {
                   "text": "No meterse ya que no es asunto de Alex.",
                   "correct": false,
+                  "outcome": [
+                    "Alex pasa junto al compañero que llora y no dice nada.",
+                    "El compañero se queda triste y solo el resto del recreo.",
+                    "Ningún adulto se entera, así que las palabras hirientes podrían repetirse."
+                  ],
                   "feedback": "Contarle a un adulto de confianza cuando ves a alguien lastimado o molesto no es acusar — es algo amable y útil."
                 },
                 {
@@ -668,6 +768,11 @@
                 {
                   "text": "Contarle a otros niños para que todos sepan lo que pasó.",
                   "correct": false,
+                  "outcome": [
+                    "Alex les cuenta a varios niños lo que pasó.",
+                    "La historia se difunde, y los niños empiezan a cuchichear sobre el compañero.",
+                    "El compañero se siente todavía más avergonzado, y aún ningún adulto lo sabe."
+                  ],
                   "feedback": "Difundir la historia no ayuda al compañero — contarle a un adulto de confianza, en silencio y directamente, es más útil."
                 }
               ]
@@ -689,6 +794,11 @@
                 {
                   "text": "Decir que Alex debería haberse mantenido al margen.",
                   "correct": false,
+                  "outcome": [
+                    "Alex se aleja sin preguntarle al compañero si está bien.",
+                    "El compañero se queda solo, todavía llorando.",
+                    "El compañero siente que a nadie le importa."
+                  ],
                   "feedback": "Ver cómo está alguien que sufre es un gesto de cuidado, no meterse de más."
                 },
                 {
@@ -719,6 +829,11 @@
                 {
                   "text": "Acusar y contar siempre son exactamente lo mismo.",
                   "correct": false,
+                  "outcome": [
+                    "Alex cree que acusar y contar son exactamente lo mismo.",
+                    "Cuando molestan a un niño, Alex se calla para no ser acusón.",
+                    "Siguen molestando al niño, y ningún adulto sabe que debe ayudar."
+                  ],
                   "feedback": "En realidad son diferentes — el propósito detrás de decir algo (meter a alguien en problemas vs. mantener a alguien seguro) es lo que importa."
                 }
               ]
@@ -740,6 +855,11 @@
                 {
                   "text": "Decir que acusar y contar siempre son exactamente lo mismo.",
                   "correct": false,
+                  "outcome": [
+                    "Alex decide que acusar y contar son lo mismo.",
+                    "La próxima vez que alguien está sufriendo, Alex se lo guarda.",
+                    "La persona que necesita ayuda no la recibe."
+                  ],
                   "feedback": "No son lo mismo — el propósito detrás de hablar es lo que hace la diferencia."
                 },
                 {
@@ -797,6 +917,11 @@
                 {
                   "text": "No decir nada ya que no es asunto de Alex y podría no ser gran cosa.",
                   "correct": false,
+                  "outcome": [
+                    "Alex decide que probablemente no es nada y no se lo menciona a nadie.",
+                    "Pasan las semanas, y el compañero sigue pareciendo asustado y callado.",
+                    "Ningún adulto de confianza lo sabe, así que nadie puede ver cómo está el compañero ni ofrecerle ayuda."
+                  ],
                   "feedback": "Un patrón como este —moretones frecuentes, retraimiento, y miedo de ir a casa— es exactamente el tipo de preocupación seria que es importante contarle a un adulto de confianza, aunque no estés completamente seguro de qué está pasando."
                 },
                 {
@@ -807,6 +932,11 @@
                 {
                   "text": "Preguntarle al compañero directamente, frente a otros estudiantes, que explique todo de inmediato.",
                   "correct": false,
+                  "outcome": [
+                    "En plena clase, Alex le pide en voz alta al compañero que explique todo.",
+                    "Los demás estudiantes voltean a mirar, y el compañero se pone rojo.",
+                    "El compañero dice: “No es nada,” se cierra, y ahora se siente menos seguro para hablar con cualquiera."
+                  ],
                   "feedback": "Preguntar frente a otros podría sentirse vergonzoso o inseguro para el compañero — es mejor contarle en silencio a un adulto de confianza, quien puede manejarlo con cuidado."
                 }
               ]
@@ -828,6 +958,11 @@
                 {
                   "text": "Decir que Alex debería haberle preguntado al compañero frente a todos.",
                   "correct": false,
+                  "outcome": [
+                    "Alex le pregunta al compañero sobre eso frente a todos en el almuerzo.",
+                    "La mesa se queda en silencio, y el compañero se ve avergonzado y se levanta para irse.",
+                    "El compañero empieza a evitar a Alex, y la preocupación todavía no ha llegado a un adulto de confianza."
+                  ],
                   "feedback": "Preguntar frente a todos podría sentirse vergonzoso o inseguro — contarle a un adulto en privado fue mejor."
                 },
                 {
@@ -858,6 +993,11 @@
                 {
                   "text": "Porque solo deberías contarle a un adulto si estás 100% seguro de que algo malo pasó.",
                   "correct": false,
+                  "outcome": [
+                    "Alex cree que solo debe contarle a un adulto si está 100% seguro.",
+                    "Como Alex no está completamente seguro, sigue esperando una prueba.",
+                    "Esa prueba clara nunca llega, y el compañero sigue sin que nadie vea cómo está."
+                  ],
                   "feedback": "No necesitas estar 100% seguro — los adultos de confianza están ahí para investigar preocupaciones con cuidado, incluso las incertidumbres."
                 }
               ]
@@ -879,6 +1019,11 @@
                 {
                   "text": "Decir que solo deberías contarle a un adulto si estás 100% seguro.",
                   "correct": false,
+                  "outcome": [
+                    "Alex decide que hay que estar 100% seguro antes de contarle a un adulto.",
+                    "La próxima vez que Alex tiene una preocupación real, se calla porque no está seguro.",
+                    "Esa preocupación nunca llega a alguien que podría investigarla y ayudar."
+                  ],
                   "feedback": "No necesitas estar 100% seguro — eso es exactamente lo que los adultos de confianza están ahí para investigar."
                 },
                 {
@@ -903,6 +1048,11 @@
                 {
                   "text": "Solo deberías contarle a un adulto de confianza si estás completamente seguro de que algo malo está pasando.",
                   "correct": false,
+                  "outcome": [
+                    "Alex empieza a creerle al amigo: solo hay que contar si estás completamente seguro.",
+                    "Alex se siente culpable por haber hablado y decide guardarse sus preocupaciones en el futuro.",
+                    "La próxima vez que algo parece estar mal, Alex no dice nada, y nadie que podría ayudar se entera."
+                  ],
                   "feedback": "No necesitas estar completamente seguro — eso es exactamente lo que los adultos de confianza están ahí para investigar."
                 },
                 {

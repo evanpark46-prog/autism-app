@@ -31,11 +31,21 @@
                 {
                   "text": "Try to find a gift card to help right away.",
                   "correct": false,
+                  "outcome": [
+                    "Alex looks for a gift card.",
+                    "The caller says, “Hurry, read me the numbers.”",
+                    "The money is gone. No grown-up knows."
+                  ],
                   "feedback": "Never try to pay anything yourself — tell a grown-up first."
                 },
                 {
                   "text": "Give the caller your name and address since they asked nicely.",
                   "correct": false,
+                  "outcome": [
+                    "Alex tells the caller a name and address.",
+                    "The caller writes it down and says thanks.",
+                    "Now a stranger knows where Alex lives."
+                  ],
                   "feedback": "It’s not safe to give personal information to an unknown caller — tell a grown-up instead."
                 }
               ]
@@ -62,6 +72,11 @@
                 {
                   "text": "Say maybe it was true and Alex should have paid it.",
                   "correct": false,
+                  "outcome": [
+                    "Alex thinks the call was real.",
+                    "The caller calls back the next day.",
+                    "Alex almost pays. Alex feels confused."
+                  ],
                   "feedback": "It wasn’t true — real bills aren’t paid that way, and telling a grown-up was correct."
                 }
               ]
@@ -87,6 +102,11 @@
                 {
                   "text": "Pay the small fee since the prize sounds big.",
                   "correct": false,
+                  "outcome": [
+                    "Alex pays the small fee.",
+                    "No prize comes. They ask for more money.",
+                    "The money is gone. Alex feels tricked."
+                  ],
                   "feedback": "That’s the trick — never pay to get a “prize.”"
                 }
               ]
@@ -143,11 +163,21 @@
                 {
                   "text": "Reply quickly with the password before time runs out.",
                   "correct": false,
+                  "outcome": [
+                    "Alex quickly replies with the password.",
+                    "Someone else logs into Alex’s account and changes the password.",
+                    "Now Alex can’t get in, and a stranger is using the account."
+                  ],
                   "feedback": "Never share a password, even if a message says to hurry — that urgency is the trick."
                 },
                 {
                   "text": "Ignore it and never mention it to anyone.",
                   "correct": false,
+                  "outcome": [
+                    "Alex deletes the text and doesn’t tell anyone.",
+                    "The next day, another tricky text comes, and it looks even more real.",
+                    "No grown-up knows about the trick, so nobody is watching out for Alex."
+                  ],
                   "feedback": "It’s better to tell a grown-up, even if you didn’t respond, so they know about the trick."
                 }
               ]
@@ -174,6 +204,11 @@
                 {
                   "text": "Say it was probably true and Alex should have hurried.",
                   "correct": false,
+                  "outcome": [
+                    "Alex believes the rush was real and next time Alex should hurry.",
+                    "When the next hurry-up message comes, Alex answers fast without asking anyone.",
+                    "Alex gets tricked, because the rush was the trick all along."
+                  ],
                   "feedback": "That rush is exactly the trick — slowing down and checking is safer."
                 }
               ]
@@ -199,6 +234,11 @@
                 {
                   "text": "It’s fine to keep it secret since they asked nicely.",
                   "correct": false,
+                  "outcome": [
+                    "Alex keeps the message a secret and sends the gift card code.",
+                    "The person says, “Thanks! Now send another one, and don’t tell.”",
+                    "Alex feels stuck and worried, and no grown-up knows what is happening."
+                  ],
                   "feedback": "That secrecy request is exactly the warning sign — tell a grown-up."
                 }
               ]
@@ -222,6 +262,11 @@
                 {
                   "text": "They’re both totally normal requests.",
                   "correct": false,
+                  "outcome": [
+                    "Alex thinks both requests were normal.",
+                    "When a new message asks Alex to hurry and keep a secret, Alex goes along with it.",
+                    "Alex misses the warning signs and gets tricked again."
+                  ],
                   "feedback": "Both had big warning signs: rushing and asking for secrecy."
                 }
               ]
@@ -258,11 +303,21 @@
                 {
                   "text": "Send the money quickly since it sounds like an emergency.",
                   "correct": false,
+                  "outcome": [
+                    "Alex sends the money right away and doesn’t tell anyone in the family.",
+                    "Later, Alex finds out the real relative was safe at home the whole time.",
+                    "The money is gone, it can’t be gotten back, and Alex feels embarrassed and upset."
+                  ],
                   "feedback": "Urgency and secrecy are exactly what scammers rely on — verify first instead."
                 },
                 {
                   "text": "Ask the caller more questions to decide if they’re real.",
                   "correct": false,
+                  "outcome": [
+                    "Alex keeps the caller on the line and asks questions only a relative should know.",
+                    "The caller answers smoothly, guessing some details and using what Alex accidentally gives away.",
+                    "Now Alex feels even more sure it’s real, and the pressure to send money gets stronger."
+                  ],
                   "feedback": "Skilled scammers can answer questions convincingly — the safer move is independent verification, not more questions to the caller."
                 }
               ]
@@ -289,6 +344,11 @@
                 {
                   "text": "Say the caller must have actually known your relative well.",
                   "correct": false,
+                  "outcome": [
+                    "Alex decides the caller must really have known the relative well.",
+                    "Alex starts worrying the family’s information is out there and trusts the next convincing caller more.",
+                    "Alex misses the real lesson: sounding convincing is part of the trick, not proof of anything."
+                  ],
                   "feedback": "Scammers can sound convincing on purpose — that’s not proof they’re real."
                 }
               ],
@@ -315,6 +375,11 @@
                 {
                   "text": "Click the link since it looks official.",
                   "correct": false,
+                  "outcome": [
+                    "Alex taps the link and types in the account login on a page that looks official.",
+                    "The fake page saves the login, and soon strangers are using Alex’s account.",
+                    "Alex has to get a grown-up to help lock the account and fix everything, which takes a long time."
+                  ],
                   "feedback": "Scam messages are often made to look official — never rely on the link inside the message itself."
                 }
               ]
@@ -338,6 +403,11 @@
                 {
                   "text": "They’re all completely different with nothing in common.",
                   "correct": false,
+                  "outcome": [
+                    "Alex treats each trick as totally separate and new.",
+                    "When a new scam shows up in a different form, Alex doesn’t recognize the same urgency and secrecy.",
+                    "Because Alex can’t spot the pattern, Alex has to figure out every new trick from scratch — and some get through."
+                  ],
                   "feedback": "They actually share a pattern: urgency, secrecy, and discouraging independent verification."
                 }
               ]
@@ -443,11 +513,21 @@
                 {
                   "text": "Intentar encontrar una tarjeta de regalo para ayudar de inmediato.",
                   "correct": false,
+                  "outcome": [
+                    "Alex busca una tarjeta de regalo.",
+                    "La persona dice: “Rápido, léeme los números.”",
+                    "El dinero se pierde. Ningún adulto sabe."
+                  ],
                   "feedback": "Nunca intentes pagar nada tú mismo — avísale a un adulto primero."
                 },
                 {
                   "text": "Darle a la persona que llama tu nombre y dirección porque preguntó amablemente.",
                   "correct": false,
+                  "outcome": [
+                    "Alex le da su nombre y dirección.",
+                    "La persona lo anota y dice gracias.",
+                    "Ahora un desconocido sabe dónde vive Alex."
+                  ],
                   "feedback": "No es seguro dar información personal a alguien desconocido que llama — avísale a un adulto en cambio."
                 }
               ]
@@ -474,6 +554,11 @@
                 {
                   "text": "Decir que tal vez era verdad y Alex debería haberlo pagado.",
                   "correct": false,
+                  "outcome": [
+                    "Alex cree que la llamada era real.",
+                    "La persona vuelve a llamar al otro día.",
+                    "Alex casi paga. Alex se siente confundido."
+                  ],
                   "feedback": "No era verdad — las cuentas reales no se pagan así, y avisarle a un adulto fue correcto."
                 }
               ]
@@ -499,6 +584,11 @@
                 {
                   "text": "Pagar la pequeña cuota ya que el premio suena grande.",
                   "correct": false,
+                  "outcome": [
+                    "Alex paga la pequeña cuota.",
+                    "No llega ningún premio. Piden más dinero.",
+                    "El dinero se pierde. Alex se siente engañado."
+                  ],
                   "feedback": "Ese es el engaño — nunca pagues para recibir un “premio”."
                 }
               ]
@@ -555,11 +645,21 @@
                 {
                   "text": "Responder rápido con la contraseña antes de que se acabe el tiempo.",
                   "correct": false,
+                  "outcome": [
+                    "Alex responde rápido con la contraseña.",
+                    "Otra persona entra a la cuenta de Alex y cambia la contraseña.",
+                    "Ahora Alex no puede entrar, y un desconocido está usando la cuenta."
+                  ],
                   "feedback": "Nunca comparta una contraseña, aunque un mensaje diga que hay que apurarse — esa urgencia es el engaño."
                 },
                 {
                   "text": "Ignorarlo y no mencionárselo a nadie.",
                   "correct": false,
+                  "outcome": [
+                    "Alex borra el mensaje y no se lo dice a nadie.",
+                    "Al día siguiente llega otro mensaje engañoso, y parece aún más real.",
+                    "Ningún adulto sabe del engaño, así que nadie está cuidando a Alex."
+                  ],
                   "feedback": "Es mejor avisarle a un adulto, aunque no hayas respondido, para que sepan del engaño."
                 }
               ]
@@ -586,6 +686,11 @@
                 {
                   "text": "Decir que probablemente era verdad y Alex debería haberse apurado.",
                   "correct": false,
+                  "outcome": [
+                    "Alex cree que la prisa era real y que la próxima vez debe apurarse.",
+                    "Cuando llega otro mensaje urgente, Alex responde rápido sin preguntarle a nadie.",
+                    "Alex cae en el engaño, porque la prisa era el engaño desde el principio."
+                  ],
                   "feedback": "Esa urgencia es exactamente el engaño — ir despacio y consultar es más seguro."
                 }
               ]
@@ -611,6 +716,11 @@
                 {
                   "text": "Está bien mantenerlo en secreto ya que preguntaron amablemente.",
                   "correct": false,
+                  "outcome": [
+                    "Alex guarda el secreto y envía el código de la tarjeta de regalo.",
+                    "La persona dice: “¡Gracias! Ahora envía otro, y no le digas a nadie.”",
+                    "Alex se siente atrapado y preocupado, y ningún adulto sabe lo que está pasando."
+                  ],
                   "feedback": "Ese pedido de secreto es exactamente la señal de alerta — avísale a un adulto."
                 }
               ]
@@ -634,6 +744,11 @@
                 {
                   "text": "Ambos son pedidos totalmente normales.",
                   "correct": false,
+                  "outcome": [
+                    "Alex piensa que ambos pedidos eran normales.",
+                    "Cuando un nuevo mensaje le pide apurarse y guardar un secreto, Alex le hace caso.",
+                    "Alex no ve las señales de alerta y cae en otro engaño."
+                  ],
                   "feedback": "Ambos tenían grandes señales de alerta: apurar y pedir secreto."
                 }
               ]
@@ -670,11 +785,21 @@
                 {
                   "text": "Enviar el dinero rápido ya que suena como una emergencia.",
                   "correct": false,
+                  "outcome": [
+                    "Alex envía el dinero de inmediato y no se lo dice a nadie de la familia.",
+                    "Más tarde, Alex descubre que su familiar real estuvo seguro en casa todo el tiempo.",
+                    "El dinero se perdió, no se puede recuperar, y Alex se siente avergonzado y triste."
+                  ],
                   "feedback": "La urgencia y el secreto son exactamente en lo que confían los estafadores — verifica primero en cambio."
                 },
                 {
                   "text": "Hacerle más preguntas a quien llama para decidir si es real.",
                   "correct": false,
+                  "outcome": [
+                    "Alex sigue en la llamada y hace preguntas que solo un familiar sabría.",
+                    "La persona responde con calma, adivinando algunos detalles y usando lo que Alex deja escapar sin querer.",
+                    "Ahora Alex está aún más seguro de que es real, y la presión para enviar dinero crece."
+                  ],
                   "feedback": "Los estafadores hábiles pueden responder preguntas de forma convincente — la decisión más segura es verificar de forma independiente, no hacer más preguntas a quien llama."
                 }
               ]
@@ -701,6 +826,11 @@
                 {
                   "text": "Decir que quien llamó debe haber conocido bien a tu familiar.",
                   "correct": false,
+                  "outcome": [
+                    "Alex decide que quien llamó de verdad conocía bien a su familiar.",
+                    "Alex se preocupa de que la información de la familia esté por ahí y confía más en la próxima llamada convincente.",
+                    "Alex no ve la verdadera lección: sonar convincente es parte del engaño, no prueba de nada."
+                  ],
                   "feedback": "Los estafadores pueden sonar convincentes a propósito — eso no es prueba de que sean reales."
                 }
               ],
@@ -727,6 +857,11 @@
                 {
                   "text": "Hacer clic en el enlace ya que se ve oficial.",
                   "correct": false,
+                  "outcome": [
+                    "Alex hace clic en el enlace y escribe sus datos de acceso en una página que se ve oficial.",
+                    "La página falsa guarda los datos, y pronto unos desconocidos están usando la cuenta de Alex.",
+                    "Alex tiene que pedirle a un adulto que ayude a bloquear la cuenta y arreglar todo, y eso toma mucho tiempo."
+                  ],
                   "feedback": "Los mensajes de engaño a menudo se hacen para verse oficiales — nunca confíes en el enlace dentro del mensaje mismo."
                 }
               ]
@@ -750,6 +885,11 @@
                 {
                   "text": "Son todos completamente diferentes sin nada en común.",
                   "correct": false,
+                  "outcome": [
+                    "Alex ve cada engaño como algo totalmente separado y nuevo.",
+                    "Cuando aparece un engaño nuevo de otra forma, Alex no reconoce la misma urgencia y el mismo secreto.",
+                    "Como Alex no ve el patrón, tiene que descifrar cada engaño desde cero — y algunos logran engañarlo."
+                  ],
                   "feedback": "En realidad comparten un patrón: urgencia, secreto y desalentar la verificación independiente."
                 }
               ]

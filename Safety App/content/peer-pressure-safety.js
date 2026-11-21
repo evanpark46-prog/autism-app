@@ -26,6 +26,11 @@
                 {
                   "text": "Climb up too so Alex isn’t left out.",
                   "correct": false,
+                  "outcome": [
+                    "Alex climbs up high with the kids.",
+                    "Alex’s foot slips on the bar.",
+                    "Alex’s knee gets scraped. Alex feels scared."
+                  ],
                   "feedback": "Doing something unsafe just to fit in isn’t worth it — it’s okay to say no, even if others are doing it."
                 },
                 {
@@ -52,6 +57,11 @@
                 {
                   "text": "Say Alex should have climbed up too so as not to be left out.",
                   "correct": false,
+                  "outcome": [
+                    "Alex thinks climbing up was better.",
+                    "Next time, Alex climbs up high too.",
+                    "Alex’s hands shake. It is hard to get down."
+                  ],
                   "feedback": "Doing something unsafe just to fit in isn’t worth it — staying down was right."
                 },
                 {
@@ -82,6 +92,11 @@
                 {
                   "text": "Yes — you always have to do what the group does.",
                   "correct": false,
+                  "outcome": [
+                    "Alex thinks Alex must copy the group.",
+                    "The group climbs high, so Alex does too.",
+                    "A teacher calls Alex down. Alex feels upset."
+                  ],
                   "feedback": "Not true — you always get to choose your own safe behavior, no matter what others are doing."
                 }
               ]
@@ -103,6 +118,11 @@
                 {
                   "text": "Say yes, you always have to do what the group does.",
                   "correct": false,
+                  "outcome": [
+                    "Alex believes Alex must copy the group.",
+                    "The kids run off the playground, so Alex follows.",
+                    "Alex’s teacher can’t find Alex."
+                  ],
                   "feedback": "That’s not true — you always get to choose your own safe behavior."
                 },
                 {
@@ -160,6 +180,11 @@
                 {
                   "text": "Skip the assignment too, since it seems like everyone is doing it.",
                   "correct": false,
+                  "outcome": [
+                    "Alex skips the assignment like the others.",
+                    "The next day, the teacher collects it, and almost everyone else hands theirs in.",
+                    "Alex gets a missing grade and has to explain why to Mom and Dad."
+                  ],
                   "feedback": "“Everyone else is doing it” often isn’t even true, and it doesn’t change what’s actually the responsible choice for Alex."
                 },
                 {
@@ -186,6 +211,11 @@
                 {
                   "text": "Say Alex should have skipped it too since it seems like everyone is doing it.",
                   "correct": false,
+                  "outcome": [
+                    "Alex starts thinking skipping would have been fine.",
+                    "The next time friends say “everyone’s doing it,” Alex skips an assignment.",
+                    "Alex falls behind in class and feels stressed trying to catch up."
+                  ],
                   "feedback": "That phrase often isn’t even true, and it doesn’t make skipping the responsible choice."
                 },
                 {
@@ -216,6 +246,11 @@
                 {
                   "text": "Yes — if a lot of people do something, it’s automatically the right choice.",
                   "correct": false,
+                  "outcome": [
+                    "Alex believes if lots of people do it, it must be right.",
+                    "When friends say everyone is skipping, Alex skips too without checking.",
+                    "It turns out only a couple of kids skipped, and Alex is stuck with a missing grade."
+                  ],
                   "feedback": "Not true — what other people choose to do doesn’t determine what’s actually the right or responsible choice for you."
                 }
               ]
@@ -237,6 +272,11 @@
                 {
                   "text": "Say if a lot of people do something it’s automatically the right choice.",
                   "correct": false,
+                  "outcome": [
+                    "Alex decides that whatever lots of people do is the right choice.",
+                    "Alex starts following the crowd even when it doesn’t feel right.",
+                    "Alex ends up in trouble for choices Alex didn’t even want to make."
+                  ],
                   "feedback": "That’s not true — what other people do doesn’t decide what’s right for you."
                 },
                 {
@@ -294,6 +334,11 @@
                 {
                   "text": "Give in to avoid being teased or called names.",
                   "correct": false,
+                  "outcome": [
+                    "Alex gives in so the teasing will stop and goes along with the risky thing.",
+                    "The group laughs for a second, then pushes Alex to do something even riskier next.",
+                    "Alex feels uneasy and unlike themself, and now it feels even harder to say no."
+                  ],
                   "feedback": "Giving in to avoid teasing usually leads to a choice you didn’t actually want to make — the teasing itself is a pressure tactic, not a real reason to go along."
                 },
                 {
@@ -304,6 +349,11 @@
                 {
                   "text": "Get into a long argument trying to convince everyone else they’re wrong.",
                   "correct": false,
+                  "outcome": [
+                    "Alex starts a long argument, trying to prove everyone wrong.",
+                    "Voices get louder, more kids crowd around, and the teasing gets worse instead of stopping.",
+                    "Alex is still stuck in the middle of the pressure, more upset than before, and nobody’s mind has changed."
+                  ],
                   "feedback": "Long arguments in the moment often don’t change anyone’s mind and can escalate things — a calm, firm no and stepping away is usually more effective."
                 }
               ]
@@ -325,6 +375,11 @@
                 {
                   "text": "Say Alex should have given in to avoid being teased.",
                   "correct": false,
+                  "outcome": [
+                    "Alex starts believing giving in would have been easier.",
+                    "At the next party, when someone says “don’t be a baby,” Alex goes along with it right away.",
+                    "Alex ends up doing something Alex didn’t want to do, and feels bad about it afterward."
+                  ],
                   "feedback": "Giving in to avoid teasing leads to a choice you don’t actually want — finding another friend was better."
                 },
                 {
@@ -355,6 +410,11 @@
                 {
                   "text": "Because those phrases are only ever used in genuinely harmless situations.",
                   "correct": false,
+                  "outcome": [
+                    "Alex believes those phrases only show up when things are harmless.",
+                    "So when someone says “it’s just this once,” Alex relaxes and stops thinking it through.",
+                    "Alex walks right into a risky situation without noticing the pressure that came with it."
+                  ],
                   "feedback": "Those phrases are commonly used specifically to pressure people into things that aren’t harmless — recognizing the pattern is what matters."
                 }
               ]
@@ -376,6 +436,11 @@
                 {
                   "text": "Say phrases like “don’t be a baby” are only ever used in harmless situations.",
                   "correct": false,
+                  "outcome": [
+                    "Alex decides “don’t be a baby” means the thing must be harmless.",
+                    "The next time Alex hears it, Alex brushes off the uneasy feeling and goes along.",
+                    "Alex ends up somewhere risky, confused about how a harmless-sounding phrase led there."
+                  ],
                   "feedback": "They’re actually commonly used to pressure people into risky things — that’s the pattern to recognize."
                 },
                 {
@@ -400,6 +465,11 @@
                 {
                   "text": "A long argument in the moment is the most effective way to change someone’s mind.",
                   "correct": false,
+                  "outcome": [
+                    "Alex decides that next time, a long argument is the best move.",
+                    "At the next party, Alex argues for a long time while the group keeps pushing and teasing.",
+                    "The argument goes nowhere, things get more heated, and Alex stays stuck in the pressure much longer."
+                  ],
                   "feedback": "Long arguments in the moment often don’t change anyone’s mind and can escalate things."
                 },
                 {
@@ -505,6 +575,11 @@
                 {
                   "text": "Subir también para que Alex no se quede afuera.",
                   "correct": false,
+                  "outcome": [
+                    "Alex sube alto con los niños.",
+                    "El pie de Alex se resbala de la barra.",
+                    "Alex se raspa la rodilla. Alex siente miedo."
+                  ],
                   "feedback": "Hacer algo inseguro solo para encajar no vale la pena — está bien decir que no, aunque otros lo estén haciendo."
                 },
                 {
@@ -531,6 +606,11 @@
                 {
                   "text": "Decir que Alex debería haber subido también para no quedarse afuera.",
                   "correct": false,
+                  "outcome": [
+                    "Alex piensa que subir era mejor.",
+                    "La próxima vez, Alex también sube alto.",
+                    "Las manos de Alex tiemblan. Es difícil bajar."
+                  ],
                   "feedback": "Hacer algo inseguro solo para encajar no vale la pena — quedarse abajo fue lo correcto."
                 },
                 {
@@ -561,6 +641,11 @@
                 {
                   "text": "Sí — siempre tienes que hacer lo que hace el grupo.",
                   "correct": false,
+                  "outcome": [
+                    "Alex cree que debe copiar al grupo.",
+                    "El grupo sube alto, y Alex también.",
+                    "Un maestro llama a Alex. Alex se siente mal."
+                  ],
                   "feedback": "No es cierto — siempre puedes elegir tu propio comportamiento seguro, sin importar qué estén haciendo otros."
                 }
               ]
@@ -582,6 +667,11 @@
                 {
                   "text": "Decir que sí, siempre tienes que hacer lo que hace el grupo.",
                   "correct": false,
+                  "outcome": [
+                    "Alex cree que debe hacer lo que hace el grupo.",
+                    "Los niños se van del patio, y Alex los sigue.",
+                    "El maestro de Alex no puede encontrar a Alex."
+                  ],
                   "feedback": "Eso no es cierto — siempre puedes elegir tu propio comportamiento seguro."
                 },
                 {
@@ -639,6 +729,11 @@
                 {
                   "text": "Saltarse la tarea también, ya que parece que todos lo están haciendo.",
                   "correct": false,
+                  "outcome": [
+                    "Alex se salta la tarea como los demás.",
+                    "Al día siguiente, el maestro la recoge, y casi todos los demás la entregan.",
+                    "Alex recibe una mala nota y tiene que explicarles a mamá y papá por qué."
+                  ],
                   "feedback": "“Todos los demás lo están haciendo” a menudo ni siquiera es cierto, y no cambia lo que es realmente la decisión responsable para Alex."
                 },
                 {
@@ -665,6 +760,11 @@
                 {
                   "text": "Decir que Alex debería haberla saltado también ya que parece que todos lo hacen.",
                   "correct": false,
+                  "outcome": [
+                    "Alex empieza a pensar que saltarla habría estado bien.",
+                    "La próxima vez que sus amigos dicen “todos lo hacen”, Alex se salta una tarea.",
+                    "Alex se atrasa en clase y se siente estresado tratando de ponerse al día."
+                  ],
                   "feedback": "Esa frase a menudo ni siquiera es cierta, y no convierte saltarla en la decisión responsable."
                 },
                 {
@@ -695,6 +795,11 @@
                 {
                   "text": "Sí — si mucha gente hace algo, automáticamente es la decisión correcta.",
                   "correct": false,
+                  "outcome": [
+                    "Alex cree que si mucha gente lo hace, debe estar bien.",
+                    "Cuando los amigos dicen que todos se la saltan, Alex también se la salta sin averiguar.",
+                    "Resulta que solo un par de niños se la saltó, y Alex se queda con una tarea sin entregar."
+                  ],
                   "feedback": "No es cierto — lo que otras personas elijan hacer no determina qué es realmente lo correcto o responsable para ti."
                 }
               ]
@@ -716,6 +821,11 @@
                 {
                   "text": "Decir que si mucha gente hace algo, automáticamente es la decisión correcta.",
                   "correct": false,
+                  "outcome": [
+                    "Alex decide que lo que hace mucha gente es la decisión correcta.",
+                    "Alex empieza a seguir al grupo aunque no se sienta bien.",
+                    "Alex termina en problemas por decisiones que ni siquiera quería tomar."
+                  ],
                   "feedback": "Eso no es cierto — lo que otras personas elijan no decide qué es correcto para ti."
                 },
                 {
@@ -773,6 +883,11 @@
                 {
                   "text": "Ceder para evitar que se burlen o le pongan apodos.",
                   "correct": false,
+                  "outcome": [
+                    "Alex cede para que paren las burlas y hace la cosa riesgosa.",
+                    "El grupo se ríe un momento, y luego presiona a Alex para hacer algo aún más riesgoso.",
+                    "Alex se siente incómodo y como si no fuera Alex mismo, y ahora se siente aún más difícil decir que no."
+                  ],
                   "feedback": "Ceder para evitar burlas usualmente lleva a una decisión que en realidad no querías tomar — la burla misma es una táctica de presión, no una razón real para seguir la corriente."
                 },
                 {
@@ -783,6 +898,11 @@
                 {
                   "text": "Meterse en una larga discusión tratando de convencer a todos de que están equivocados.",
                   "correct": false,
+                  "outcome": [
+                    "Alex empieza una larga discusión, tratando de demostrar que todos están equivocados.",
+                    "Las voces suben, más chicos se acercan, y las burlas empeoran en vez de parar.",
+                    "Alex sigue atrapado en medio de la presión, más molesto que antes, y nadie cambió de opinión."
+                  ],
                   "feedback": "Las discusiones largas en el momento a menudo no cambian la mente de nadie y pueden escalar las cosas — un no calmado y firme, y alejarse, suele ser más efectivo."
                 }
               ]
@@ -804,6 +924,11 @@
                 {
                   "text": "Decir que Alex debería haber cedido para evitar que se burlaran.",
                   "correct": false,
+                  "outcome": [
+                    "Alex empieza a creer que ceder habría sido más fácil.",
+                    "En la próxima fiesta, cuando alguien dice “no seas bebé”, Alex le hace caso de inmediato.",
+                    "Alex termina haciendo algo que no quería hacer, y después se siente mal."
+                  ],
                   "feedback": "Ceder para evitar burlas lleva a una decisión que en realidad no quieres — buscar a otro amigo fue mejor."
                 },
                 {
@@ -834,6 +959,11 @@
                 {
                   "text": "Porque esas frases solo se usan en situaciones genuinamente inofensivas.",
                   "correct": false,
+                  "outcome": [
+                    "Alex cree que esas frases solo aparecen cuando las cosas son inofensivas.",
+                    "Así que cuando alguien dice “es solo esta vez”, Alex se relaja y deja de pensarlo bien.",
+                    "Alex entra directo a una situación riesgosa sin notar la presión que venía con ella."
+                  ],
                   "feedback": "Esas frases se usan comúnmente específicamente para presionar a la gente a hacer cosas que no son inofensivas — reconocer el patrón es lo que importa."
                 }
               ]
@@ -855,6 +985,11 @@
                 {
                   "text": "Decir que frases como “no seas bebé” solo se usan en situaciones inofensivas.",
                   "correct": false,
+                  "outcome": [
+                    "Alex decide que “no seas bebé” significa que la cosa debe ser inofensiva.",
+                    "La próxima vez que lo escucha, Alex ignora el sentimiento incómodo y le sigue la corriente.",
+                    "Alex termina en algo riesgoso, confundido de cómo una frase que sonaba inofensiva lo llevó ahí."
+                  ],
                   "feedback": "En realidad se usan comúnmente para presionar a la gente hacia cosas riesgosas — ese es el patrón a reconocer."
                 },
                 {
@@ -879,6 +1014,11 @@
                 {
                   "text": "Una larga discusión en el momento es la forma más efectiva de cambiar la mente de alguien.",
                   "correct": false,
+                  "outcome": [
+                    "Alex decide que la próxima vez, una larga discusión es lo mejor.",
+                    "En la próxima fiesta, Alex discute por mucho tiempo mientras el grupo sigue presionando y burlándose.",
+                    "La discusión no lleva a nada, las cosas se calientan más, y Alex queda atrapado en la presión mucho más tiempo."
+                  ],
                   "feedback": "Las discusiones largas en el momento a menudo no cambian la mente de nadie y pueden escalar las cosas."
                 },
                 {

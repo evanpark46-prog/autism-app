@@ -26,6 +26,11 @@
                 {
                   "text": "Ignore it and hope it goes away.",
                   "correct": false,
+                  "outcome": [
+                    "Alex ignores the tight hands.",
+                    "The room feels louder and louder.",
+                    "Now it is much harder to calm down."
+                  ],
                   "feedback": "Ignoring the feeling often lets it grow bigger — noticing it early helps you use a strategy sooner."
                 },
                 {
@@ -52,6 +57,11 @@
                 {
                   "text": "Say Alex should have kept ignoring it.",
                   "correct": false,
+                  "outcome": [
+                    "Alex stops the slow breaths.",
+                    "Alex’s hands get even tighter.",
+                    "The big feeling keeps growing."
+                  ],
                   "feedback": "Ignoring the feeling would likely let it grow bigger."
                 },
                 {
@@ -77,6 +87,11 @@
                 {
                   "text": "Keep breathing forever and never ask for anything else.",
                   "correct": false,
+                  "outcome": [
+                    "Alex keeps breathing and breathing.",
+                    "The room is still too loud.",
+                    "Alex still feels bad but asks no one."
+                  ],
                   "feedback": "One strategy doesn’t have to be the only one — it’s okay to ask for more help too."
                 },
                 {
@@ -103,6 +118,11 @@
                 {
                   "text": "Say Alex shouldn’t have asked for a break.",
                   "correct": false,
+                  "outcome": [
+                    "Alex thinks asking was wrong.",
+                    "Next time, Alex doesn’t ask for a break.",
+                    "The feeling stays big. No grown-up helps."
+                  ],
                   "feedback": "Asking for a break is always okay when a feeling gets big."
                 },
                 {
@@ -160,6 +180,11 @@
                 {
                   "text": "Wait until the feeling gets really big before doing anything.",
                   "correct": false,
+                  "outcome": [
+                    "Alex waits and keeps playing at the loud party.",
+                    "More balloons pop, and the tight, hot feeling grows much bigger.",
+                    "Now the feeling is so big that calming down is much harder."
+                  ],
                   "feedback": "Waiting until a feeling gets really big makes it much harder to calm down — using a strategy early works better."
                 },
                 {
@@ -186,6 +211,11 @@
                 {
                   "text": "Say Alex should have waited until the feeling got much bigger.",
                   "correct": false,
+                  "outcome": [
+                    "Alex decides to wait next time until the feeling is really big.",
+                    "At the next loud party, Alex leaves the stress ball in a pocket.",
+                    "The feeling gets huge, and Alex has a much harder time calming down."
+                  ],
                   "feedback": "Waiting would make the feeling much harder to calm down."
                 },
                 {
@@ -211,6 +241,11 @@
                 {
                   "text": "Because one strategy works for absolutely every feeling and every place.",
                   "correct": false,
+                  "outcome": [
+                    "Alex believes one strategy works for every feeling and every place.",
+                    "On a noisy bus, Alex has left the stress ball at home.",
+                    "Alex has no other strategy ready and feels stuck with the big feeling."
+                  ],
                   "feedback": "Different situations can call for different strategies — that’s exactly why having more than one is helpful."
                 },
                 {
@@ -237,6 +272,11 @@
                 {
                   "text": "Say having just one strategy is enough for every situation.",
                   "correct": false,
+                  "outcome": [
+                    "Alex tells Mom one strategy is enough for everything.",
+                    "Alex stops practicing slow breaths and finding quiet corners.",
+                    "One day the stress ball doesn’t help, and Alex doesn’t know what else to try."
+                  ],
                   "feedback": "Having a few different strategies ready is more helpful than just one."
                 },
                 {
@@ -294,6 +334,11 @@
                 {
                   "text": "Feel embarrassed and never use any strategy again since it “didn’t work.”",
                   "correct": false,
+                  "outcome": [
+                    "Alex feels embarrassed and decides strategies are useless because they “didn’t work.”",
+                    "The next time a big feeling starts, Alex doesn’t try breathing or a quiet corner at all.",
+                    "The feeling builds with nothing to slow it down, and Alex ends up feeling even more overwhelmed and alone."
+                  ],
                   "feedback": "One hard moment doesn’t mean your strategies stopped working — sometimes a feeling is just bigger than usual, and that’s okay."
                 },
                 {
@@ -320,6 +365,11 @@
                 {
                   "text": "Say Alex should feel bad that the usual strategies weren’t enough this time.",
                   "correct": false,
+                  "outcome": [
+                    "Alex starts to feel bad that the usual strategies weren’t enough.",
+                    "Instead of going to the calm room, Alex stays put, feeling ashamed and stuck.",
+                    "The big feeling and the shame pile on top of each other, making it even harder to recover."
+                  ],
                   "feedback": "Feeling bad about it isn’t needed — using the backup plan was exactly right."
                 },
                 {
@@ -345,6 +395,11 @@
                 {
                   "text": "No, it means the strategies failed and shouldn’t be used again.",
                   "correct": false,
+                  "outcome": [
+                    "Alex believes the strategies failed and stops using them.",
+                    "Days later, a small feeling starts in class, and Alex doesn’t breathe slowly or ask for a break.",
+                    "Feelings that could have stayed small start growing big more often."
+                  ],
                   "feedback": "That’s not true — sometimes a feeling is just bigger than the moment allows for, and that’s still okay."
                 },
                 {
@@ -371,6 +426,11 @@
                 {
                   "text": "Say Alex should feel bad forever about it.",
                   "correct": false,
+                  "outcome": [
+                    "Alex believes they should feel bad about it forever.",
+                    "Alex keeps thinking about the fire alarm day and feels embarrassed every time.",
+                    "Alex starts avoiding school events, worried it will happen again, and misses out on fun things."
+                  ],
                   "feedback": "Feeling bad forever isn’t needed — the plan helped Alex recover."
                 },
                 {
@@ -395,6 +455,11 @@
                 {
                   "text": "There’s nothing to do but hope it never happens again.",
                   "correct": false,
+                  "outcome": [
+                    "Alex decides all they can do is hope it never happens again.",
+                    "Alex doesn’t talk to anyone about it, and the plan stays the same.",
+                    "Alex keeps worrying about the next fire drill, and still feels unready when it comes."
+                  ],
                   "feedback": "You can do more than just hope — talking about it with a trusted adult and maybe updating the plan can help you feel more ready."
                 },
                 {
@@ -500,6 +565,11 @@
                 {
                   "text": "Ignorarlo y esperar que se vaya.",
                   "correct": false,
+                  "outcome": [
+                    "Alex ignora sus manos apretadas.",
+                    "El salón se siente cada vez más ruidoso.",
+                    "Ahora es mucho más difícil calmarse."
+                  ],
                   "feedback": "Ignorar el sentimiento a menudo permite que crezca más — notarlo temprano te ayuda a usar una estrategia antes."
                 },
                 {
@@ -526,6 +596,11 @@
                 {
                   "text": "Decir que Alex debería haber seguido ignorándolo.",
                   "correct": false,
+                  "outcome": [
+                    "Alex deja de respirar despacio.",
+                    "Las manos de Alex se aprietan más.",
+                    "El sentimiento grande sigue creciendo."
+                  ],
                   "feedback": "Ignorar el sentimiento probablemente lo haría crecer más."
                 },
                 {
@@ -551,6 +626,11 @@
                 {
                   "text": "Seguir respirando para siempre y nunca pedir nada más.",
                   "correct": false,
+                  "outcome": [
+                    "Alex sigue respirando y respirando.",
+                    "El salón todavía está muy ruidoso.",
+                    "Alex sigue mal, pero no le pide a nadie."
+                  ],
                   "feedback": "Una estrategia no tiene que ser la única — también está bien pedir más ayuda."
                 },
                 {
@@ -577,6 +657,11 @@
                 {
                   "text": "Decir que Alex no debería haber pedido un descanso.",
                   "correct": false,
+                  "outcome": [
+                    "Alex piensa que pedir fue un error.",
+                    "Otro día, Alex no pide un descanso.",
+                    "El sentimiento sigue grande. Ningún adulto ayuda."
+                  ],
                   "feedback": "Pedir un descanso siempre está bien cuando un sentimiento crece."
                 },
                 {
@@ -634,6 +719,11 @@
                 {
                   "text": "Esperar hasta que el sentimiento sea realmente grande antes de hacer algo.",
                   "correct": false,
+                  "outcome": [
+                    "Alex espera y sigue jugando en la fiesta ruidosa.",
+                    "Revientan más globos, y la sensación apretada y caliente crece mucho.",
+                    "Ahora el sentimiento es tan grande que calmarse es mucho más difícil."
+                  ],
                   "feedback": "Esperar hasta que un sentimiento sea realmente grande hace que sea mucho más difícil calmarse — usar una estrategia temprano funciona mejor."
                 },
                 {
@@ -660,6 +750,11 @@
                 {
                   "text": "Decir que Alex debería haber esperado hasta que el sentimiento fuera mucho más grande.",
                   "correct": false,
+                  "outcome": [
+                    "Alex decide que la próxima vez esperará hasta que el sentimiento sea muy grande.",
+                    "En la siguiente fiesta ruidosa, Alex deja la pelota antiestrés en el bolsillo.",
+                    "El sentimiento se vuelve enorme, y a Alex le cuesta mucho más calmarse."
+                  ],
                   "feedback": "Esperar haría que el sentimiento fuera mucho más difícil de calmar."
                 },
                 {
@@ -685,6 +780,11 @@
                 {
                   "text": "Porque una sola estrategia funciona para absolutamente cualquier sentimiento y cualquier lugar.",
                   "correct": false,
+                  "outcome": [
+                    "Alex cree que una sola estrategia funciona para cualquier sentimiento y cualquier lugar.",
+                    "En un autobús ruidoso, Alex se dio cuenta de que dejó la pelota antiestrés en casa.",
+                    "Alex no tiene otra estrategia lista y se siente atrapado con el sentimiento grande."
+                  ],
                   "feedback": "Diferentes situaciones pueden necesitar diferentes estrategias — por eso es útil tener más de una."
                 },
                 {
@@ -711,6 +811,11 @@
                 {
                   "text": "Decir que tener solo una estrategia es suficiente para cualquier situación.",
                   "correct": false,
+                  "outcome": [
+                    "Alex le dice a Mamá que una sola estrategia es suficiente para todo.",
+                    "Alex deja de practicar respirar despacio y buscar rincones tranquilos.",
+                    "Un día la pelota antiestrés no ayuda, y Alex no sabe qué más intentar."
+                  ],
                   "feedback": "Tener algunas estrategias diferentes listas es más útil que solo una."
                 },
                 {
@@ -768,6 +873,11 @@
                 {
                   "text": "Sentirse avergonzado y nunca usar ninguna estrategia otra vez ya que “no funcionó.”",
                   "correct": false,
+                  "outcome": [
+                    "Alex se siente avergonzado y decide que las estrategias no sirven porque “no funcionaron.”",
+                    "La próxima vez que empieza un sentimiento grande, Alex no intenta respirar ni buscar un rincón tranquilo.",
+                    "El sentimiento crece sin nada que lo frene, y Alex termina sintiéndose aún más abrumado y solo."
+                  ],
                   "feedback": "Un momento difícil no significa que tus estrategias dejaron de funcionar — a veces un sentimiento es simplemente más grande de lo usual, y eso está bien."
                 },
                 {
@@ -794,6 +904,11 @@
                 {
                   "text": "Decir que Alex debería sentirse mal porque las estrategias usuales no fueron suficientes esta vez.",
                   "correct": false,
+                  "outcome": [
+                    "Alex empieza a sentirse mal porque las estrategias usuales no fueron suficientes.",
+                    "En vez de ir al cuarto de calma, Alex se queda donde está, avergonzado y atrapado.",
+                    "El sentimiento grande y la vergüenza se juntan, y recuperarse se vuelve aún más difícil."
+                  ],
                   "feedback": "Sentirse mal por eso no es necesario — usar el plan de respaldo fue exactamente correcto."
                 },
                 {
@@ -819,6 +934,11 @@
                 {
                   "text": "No, significa que las estrategias fallaron y no deberían usarse otra vez.",
                   "correct": false,
+                  "outcome": [
+                    "Alex cree que las estrategias fallaron y deja de usarlas.",
+                    "Días después, empieza un sentimiento pequeño en clase, y Alex no respira despacio ni pide un descanso.",
+                    "Sentimientos que podrían haberse quedado pequeños empiezan a crecer más seguido."
+                  ],
                   "feedback": "Eso no es cierto — a veces un sentimiento simplemente es más grande de lo que el momento permite, y eso todavía está bien."
                 },
                 {
@@ -845,6 +965,11 @@
                 {
                   "text": "Decir que Alex debería sentirse mal para siempre por eso.",
                   "correct": false,
+                  "outcome": [
+                    "Alex cree que debe sentirse mal para siempre por lo que pasó.",
+                    "Alex sigue pensando en el día de la alarma y se siente avergonzado cada vez.",
+                    "Alex empieza a evitar eventos de la escuela por miedo a que vuelva a pasar, y se pierde cosas divertidas."
+                  ],
                   "feedback": "Sentirse mal para siempre no es necesario — el plan ayudó a Alex a recuperarse."
                 },
                 {
@@ -869,6 +994,11 @@
                 {
                   "text": "No hay nada que hacer más que esperar que nunca vuelva a pasar.",
                   "correct": false,
+                  "outcome": [
+                    "Alex decide que lo único que puede hacer es esperar que nunca vuelva a pasar.",
+                    "Alex no habla con nadie sobre eso, y el plan sigue igual.",
+                    "Alex sigue preocupándose por el próximo simulacro de incendio, y se siente igual de poco preparado cuando llega."
+                  ],
                   "feedback": "Puedes hacer más que solo esperar — hablar de ello con un adulto de confianza y quizás actualizar el plan puede ayudarte a sentirte más preparado."
                 },
                 {

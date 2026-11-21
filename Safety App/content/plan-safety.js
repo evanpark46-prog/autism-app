@@ -26,6 +26,11 @@
                 {
                   "text": "Just go, and explain later.",
                   "correct": false,
+                  "outcome": [
+                    "Alex goes to the friend’s house.",
+                    "Alex’s grown-up comes to get Alex.",
+                    "Alex is not there. Everyone is worried."
+                  ],
                   "feedback": "Going somewhere without asking first means your grown-up doesn’t know where you are — always ask permission before changing plans."
                 },
                 {
@@ -52,6 +57,11 @@
                 {
                   "text": "Say Alex should have just gone without telling the grown-up.",
                   "correct": false,
+                  "outcome": [
+                    "Alex thinks it’s okay to just go.",
+                    "Next time, Alex leaves without telling.",
+                    "Alex’s grown-up can’t find Alex."
+                  ],
                   "feedback": "Going without telling a grown-up means they wouldn’t know where to find Alex."
                 },
                 {
@@ -82,6 +92,11 @@
                 {
                   "text": "Just because they like asking a lot of questions.",
                   "correct": false,
+                  "outcome": [
+                    "Alex thinks the questions don’t matter.",
+                    "Alex doesn’t say where Alex is going.",
+                    "Alex’s grown-up can’t call or find Alex."
+                  ],
                   "feedback": "It’s not just curiosity — knowing where you are and how to reach you is an important safety habit."
                 }
               ]
@@ -103,6 +118,11 @@
                 {
                   "text": "Say it’s just because grown-ups like asking a lot of questions.",
                   "correct": false,
+                  "outcome": [
+                    "Alex thinks grown-ups just like questions.",
+                    "Alex skips telling the address and phone number.",
+                    "If Alex needs help, nobody knows where."
+                  ],
                   "feedback": "It’s not just curiosity — it’s a real safety habit."
                 },
                 {
@@ -160,6 +180,11 @@
                 {
                   "text": "Just go, since the friend seems nice.",
                   "correct": false,
+                  "outcome": [
+                    "Alex gets in the car with the friend and goes.",
+                    "At home, Alex’s parent waits and wonders why Alex isn’t back from school.",
+                    "Nobody knows where Alex is, so Alex’s parent gets very worried."
+                  ],
                   "feedback": "Even with a nice friend, going to a brand-new place with a new driver needs a grown-up’s permission and some details first."
                 },
                 {
@@ -186,6 +211,11 @@
                 {
                   "text": "Say Alex should have just gone without sharing those details.",
                   "correct": false,
+                  "outcome": [
+                    "Alex decides sharing details isn’t needed.",
+                    "Next time, Alex goes to a new place without giving the address or driver’s name.",
+                    "When plans change, Alex’s parent has no way to find or reach Alex."
+                  ],
                   "feedback": "Sharing those details is exactly what makes this a safe plan."
                 },
                 {
@@ -216,6 +246,11 @@
                 {
                   "text": "Because it’s just a fun word to remember, without any real purpose.",
                   "correct": false,
+                  "outcome": [
+                    "Alex believes P.L.A.N. is just a fun word with no real use.",
+                    "Alex only asks permission and forgets the place, the activity, and the phone numbers.",
+                    "Later, Alex’s parent needs to reach Alex but doesn’t know where Alex is or who to call."
+                  ],
                   "feedback": "It’s more than just a memorable word — each letter stands for a real, important piece of safety information."
                 }
               ]
@@ -237,6 +272,11 @@
                 {
                   "text": "Say P.L.A.N. is just a fun word without a real purpose.",
                   "correct": false,
+                  "outcome": [
+                    "Alex decides P.L.A.N. is just a fun word.",
+                    "Alex checks one part and skips the rest, like pickup time.",
+                    "Nobody comes at the right time, and Alex waits not knowing what will happen."
+                  ],
                   "feedback": "Each letter actually stands for a real, important piece of information."
                 },
                 {
@@ -294,6 +334,11 @@
                 {
                   "text": "Go along with the group without checking in, since asking might seem uncool.",
                   "correct": false,
+                  "outcome": [
+                    "Alex goes with the group without texting anyone, so Alex won’t look uncool.",
+                    "Plans shift and the group ends up somewhere different, later than expected, and Alex’s phone is almost dead.",
+                    "Alex’s parents have no idea where Alex is, and Alex has no clear way to get home."
+                  ],
                   "feedback": "Even if it feels awkward compared to the group, checking in with a trusted adult about a new last-minute plan is still the safer choice."
                 },
                 {
@@ -304,6 +349,11 @@
                 {
                   "text": "Go, and just mention it to a parent whenever Alex happens to see them next.",
                   "correct": false,
+                  "outcome": [
+                    "Alex heads over, planning to mention it to a parent sometime later.",
+                    "Meanwhile, Alex’s parent texts and calls to ask where Alex is after the game, but Alex doesn’t notice in the noise.",
+                    "Alex’s parent spends the evening worried and searching, and the next outing gets a lot harder to get permission for."
+                  ],
                   "feedback": "Mentioning it later means your parent doesn’t actually know where you are during the time you’re there — asking first, even quickly, matters."
                 }
               ]
@@ -325,6 +375,11 @@
                 {
                   "text": "Say Alex should skip texting since asking might seem uncool.",
                   "correct": false,
+                  "outcome": [
+                    "Alex starts thinking texting first really does look uncool.",
+                    "Next time the group heads out, Alex skips the check-in to fit in.",
+                    "Alex ends up somewhere no trusted adult knows about, with no backup plan if something goes wrong."
+                  ],
                   "feedback": "Feeling uncool doesn’t outweigh the value of a quick check-in — texting first was right."
                 },
                 {
@@ -355,6 +410,11 @@
                 {
                   "text": "Because P.L.A.N. is only meant for younger kids and stops mattering after elementary school.",
                   "correct": false,
+                  "outcome": [
+                    "Alex believes P.L.A.N. stopped mattering after elementary school.",
+                    "Alex starts making plans with friends without ever checking in with a parent.",
+                    "When something unexpected happens, nobody at home knows where Alex is, and trust at home takes a hit."
+                  ],
                   "feedback": "P.L.A.N. matters at every age — the details might look a little different (a quick text instead of a long conversation), but checking in is still worth doing."
                 }
               ]
@@ -376,6 +436,11 @@
                 {
                   "text": "Say P.L.A.N. only matters for younger kids.",
                   "correct": false,
+                  "outcome": [
+                    "Alex decides P.L.A.N. is only for little kids.",
+                    "Alex stops sending quick texts about where Alex is going and who’s there.",
+                    "One night a ride falls through, and Alex’s parents don’t know where to look or when to worry."
+                  ],
                   "feedback": "P.L.A.N. matters at every age, not just for younger kids."
                 },
                 {
@@ -400,6 +465,11 @@
                 {
                   "text": "If a parent usually says yes, checking in first doesn’t really matter.",
                   "correct": false,
+                  "outcome": [
+                    "Alex decides checking in doesn’t matter since the answer is usually yes.",
+                    "Alex skips the text one night and heads somewhere new with friends.",
+                    "Even though the answer would’ve been yes, Alex’s parent still has no idea where Alex is if something comes up."
+                  ],
                   "feedback": "The answer isn’t the point — checking in is what lets your grown-up know where you are."
                 },
                 {
@@ -505,6 +575,11 @@
                 {
                   "text": "Simplemente ir, y explicar después.",
                   "correct": false,
+                  "outcome": [
+                    "Alex va a la casa del amigo.",
+                    "El adulto de Alex viene a buscarlo.",
+                    "Alex no está. Todos están preocupados."
+                  ],
                   "feedback": "Ir a algún lugar sin preguntar primero significa que tu adulto no sabe dónde estás — siempre pide permiso antes de cambiar de planes."
                 },
                 {
@@ -531,6 +606,11 @@
                 {
                   "text": "Decir que Alex debería haber ido sin decirle al adulto.",
                   "correct": false,
+                  "outcome": [
+                    "Alex cree que puede ir sin avisar.",
+                    "La próxima vez, Alex se va sin decir.",
+                    "El adulto de Alex no puede encontrarlo."
+                  ],
                   "feedback": "Ir sin decirle al adulto significa que no sabría dónde encontrar a Alex."
                 },
                 {
@@ -561,6 +641,11 @@
                 {
                   "text": "Solo porque le gusta hacer muchas preguntas.",
                   "correct": false,
+                  "outcome": [
+                    "Alex cree que las preguntas no importan.",
+                    "Alex no dice a dónde va.",
+                    "El adulto no puede llamar ni encontrar a Alex."
+                  ],
                   "feedback": "No es solo curiosidad — saber dónde estás y cómo contactarte es un hábito de seguridad importante."
                 }
               ]
@@ -582,6 +667,11 @@
                 {
                   "text": "Decir que es solo porque a los adultos les gusta hacer muchas preguntas.",
                   "correct": false,
+                  "outcome": [
+                    "Alex cree que a los adultos les gusta preguntar.",
+                    "Alex no da la dirección ni el número.",
+                    "Si Alex necesita ayuda, nadie sabe dónde está."
+                  ],
                   "feedback": "No es solo curiosidad — es un hábito de seguridad real."
                 },
                 {
@@ -639,6 +729,11 @@
                 {
                   "text": "Simplemente ir, ya que el amigo parece agradable.",
                   "correct": false,
+                  "outcome": [
+                    "Alex sube al carro con el amigo y se va.",
+                    "En casa, el padre de Alex espera y se pregunta por qué Alex no ha vuelto de la escuela.",
+                    "Nadie sabe dónde está Alex, así que su padre se preocupa mucho."
+                  ],
                   "feedback": "Aunque el amigo sea agradable, ir a un lugar completamente nuevo con un conductor nuevo necesita el permiso de un adulto y algunos detalles primero."
                 },
                 {
@@ -665,6 +760,11 @@
                 {
                   "text": "Decir que Alex debería haber ido sin compartir esos detalles.",
                   "correct": false,
+                  "outcome": [
+                    "Alex decide que compartir los detalles no hace falta.",
+                    "La próxima vez, Alex va a un lugar nuevo sin dar la dirección ni el nombre del conductor.",
+                    "Cuando los planes cambian, el padre de Alex no tiene forma de encontrarlo o contactarlo."
+                  ],
                   "feedback": "Compartir esos detalles es exactamente lo que hace este plan seguro."
                 },
                 {
@@ -695,6 +795,11 @@
                 {
                   "text": "Porque es solo una palabra divertida para recordar, sin ningún propósito real.",
                   "correct": false,
+                  "outcome": [
+                    "Alex cree que P.L.A.N. es solo una palabra divertida sin uso real.",
+                    "Alex solo pide permiso y olvida el lugar, la actividad y los números de teléfono.",
+                    "Después, el padre de Alex necesita contactarlo pero no sabe dónde está ni a quién llamar."
+                  ],
                   "feedback": "Es más que solo una palabra fácil de recordar — cada letra representa una pieza real e importante de información de seguridad."
                 }
               ]
@@ -716,6 +821,11 @@
                 {
                   "text": "Decir que P.L.A.N. es solo una palabra divertida sin propósito real.",
                   "correct": false,
+                  "outcome": [
+                    "Alex decide que P.L.A.N. es solo una palabra divertida.",
+                    "Alex revisa una parte y se salta las demás, como la hora de recogida.",
+                    "Nadie llega a la hora correcta, y Alex espera sin saber qué va a pasar."
+                  ],
                   "feedback": "Cada letra en realidad representa una pieza real e importante de información."
                 },
                 {
@@ -773,6 +883,11 @@
                 {
                   "text": "Ir con el grupo sin avisar, ya que preguntar podría parecer poco cool.",
                   "correct": false,
+                  "outcome": [
+                    "Alex va con el grupo sin avisar a nadie, para no parecer poco cool.",
+                    "Los planes cambian y el grupo termina en otro lugar, más tarde de lo esperado, y el teléfono de Alex casi no tiene batería.",
+                    "Los papás de Alex no tienen idea de dónde está, y Alex no tiene una forma clara de volver a casa."
+                  ],
                   "feedback": "Aunque se sienta incómodo comparado con el grupo, avisarle a un adulto de confianza sobre un plan nuevo de último momento sigue siendo la opción más segura."
                 },
                 {
@@ -783,6 +898,11 @@
                 {
                   "text": "Ir, y solo mencionarlo a un padre la próxima vez que Alex lo vea.",
                   "correct": false,
+                  "outcome": [
+                    "Alex va, pensando mencionárselo a un padre en algún momento después.",
+                    "Mientras tanto, el padre de Alex le escribe y lo llama para preguntar dónde está después del partido, pero Alex no lo nota por el ruido.",
+                    "El padre de Alex pasa la noche preocupado buscándolo, y la próxima salida va a ser mucho más difícil de conseguir permiso."
+                  ],
                   "feedback": "Mencionarlo después significa que tu padre no sabe realmente dónde estás durante el tiempo que estás ahí — preguntar primero, aunque sea rápido, importa."
                 }
               ]
@@ -804,6 +924,11 @@
                 {
                   "text": "Decir que Alex debería saltarse el mensaje porque preguntar podría parecer poco cool.",
                   "correct": false,
+                  "outcome": [
+                    "Alex empieza a pensar que enviar el mensaje primero sí parece poco cool.",
+                    "La próxima vez que el grupo sale, Alex no avisa para encajar.",
+                    "Alex termina en un lugar que ningún adulto de confianza conoce, sin plan de respaldo si algo sale mal."
+                  ],
                   "feedback": "Sentirse poco cool no supera el valor de avisar rápido — enviar el mensaje primero fue correcto."
                 },
                 {
@@ -834,6 +959,11 @@
                 {
                   "text": "Porque P.L.A.N. solo es para niños más pequeños y deja de importar después de la primaria.",
                   "correct": false,
+                  "outcome": [
+                    "Alex cree que P.L.A.N. dejó de importar después de la primaria.",
+                    "Alex empieza a hacer planes con amigos sin avisarle nunca a un padre.",
+                    "Cuando pasa algo inesperado, nadie en casa sabe dónde está Alex, y la confianza en casa se debilita."
+                  ],
                   "feedback": "P.L.A.N. importa a cualquier edad — los detalles pueden verse un poco diferentes (un mensaje rápido en lugar de una conversación larga), pero avisar sigue valiendo la pena."
                 }
               ]
@@ -855,6 +985,11 @@
                 {
                   "text": "Decir que P.L.A.N. solo importa para niños más pequeños.",
                   "correct": false,
+                  "outcome": [
+                    "Alex decide que P.L.A.N. es solo para niños pequeños.",
+                    "Alex deja de enviar mensajes rápidos sobre a dónde va y quién está ahí.",
+                    "Una noche, el viaje de regreso se cancela, y los papás de Alex no saben dónde buscar ni cuándo preocuparse."
+                  ],
                   "feedback": "P.L.A.N. importa a cualquier edad, no solo para niños más pequeños."
                 },
                 {
@@ -879,6 +1014,11 @@
                 {
                   "text": "Si un padre normalmente dice que sí, avisar primero en realidad no importa.",
                   "correct": false,
+                  "outcome": [
+                    "Alex decide que avisar no importa porque la respuesta casi siempre es sí.",
+                    "Una noche, Alex no envía el mensaje y va con amigos a un lugar nuevo.",
+                    "Aunque la respuesta habría sido sí, el padre de Alex no tiene idea de dónde está Alex si algo pasa."
+                  ],
                   "feedback": "La respuesta no es el punto — avisar es lo que le permite a tu adulto saber dónde estás."
                 },
                 {

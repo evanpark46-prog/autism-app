@@ -26,6 +26,11 @@
                 {
                   "text": "Ignore it since nothing looks wrong.",
                   "correct": false,
+                  "outcome": [
+                    "Alex keeps playing. The alarm beeps.",
+                    "Smoke starts coming from the kitchen.",
+                    "No grown-up knows yet. Alex feels scared."
+                  ],
                   "feedback": "An alarm going off means something needs a grown-up’s attention right away, even if nothing looks wrong yet."
                 },
                 {
@@ -36,6 +41,11 @@
                 {
                   "text": "Try to turn the alarm off by pulling out the battery.",
                   "correct": false,
+                  "outcome": [
+                    "Alex climbs up to pull the battery.",
+                    "The alarm is too high. Alex wobbles.",
+                    "Time goes by, and Mom still doesn’t know."
+                  ],
                   "feedback": "Alex shouldn’t try to fix or silence an alarm — that’s a job for a grown-up, and every second matters."
                 }
               ]
@@ -57,6 +67,11 @@
                 {
                   "text": "Say Alex should have just ignored it since nothing looked wrong.",
                   "correct": false,
+                  "outcome": [
+                    "Alex ignores the next alarm.",
+                    "Mom is in the other room and doesn’t hear it.",
+                    "The smoke grows, and no grown-up knows."
+                  ],
                   "feedback": "Telling a grown-up right away is always correct, even if it turns out to be nothing serious."
                 },
                 {
@@ -87,6 +102,11 @@
                 {
                   "text": "A friend’s cell phone number.",
                   "correct": false,
+                  "outcome": [
+                    "Alex calls a friend’s phone.",
+                    "The friend says, “I don’t know what to do!”",
+                    "No help is coming yet. Alex feels scared."
+                  ],
                   "feedback": "A friend can’t send help the way emergency services can — 911 is the number for real emergencies."
                 }
               ]
@@ -108,6 +128,11 @@
                 {
                   "text": "Wait for a grown-up to come home no matter how serious it looks.",
                   "correct": false,
+                  "outcome": [
+                    "Alex sees smoke and waits for a grown-up.",
+                    "The smoke gets bigger and bigger.",
+                    "Nobody is coming to help yet."
+                  ],
                   "feedback": "In a real emergency with no grown-up around, waiting could be dangerous — calling 911 directly is the right move."
                 },
                 {
@@ -165,6 +190,11 @@
                 {
                   "text": "Wait quietly to see if she feels better on her own.",
                   "correct": false,
+                  "outcome": [
+                    "Alex sits quietly and waits to see if Grandma feels better.",
+                    "Grandma gets dizzier and has to lie down on the couch.",
+                    "Minutes go by, and no one who can help knows Grandma is sick."
+                  ],
                   "feedback": "Waiting and hoping isn’t safe when someone looks seriously unwell — it’s better to get help right away, even if they say they’re okay."
                 },
                 {
@@ -175,6 +205,11 @@
                 {
                   "text": "Leave to go find a neighbor and take a long time deciding which house to try.",
                   "correct": false,
+                  "outcome": [
+                    "Alex runs outside and stands on the sidewalk, unsure which house to try.",
+                    "Grandma is alone inside, and nobody has called for help yet.",
+                    "Time keeps passing, and help still isn’t on the way."
+                  ],
                   "feedback": "Getting another adult can help, but calling 911 first is faster and connects you with people trained to help right away."
                 }
               ]
@@ -196,6 +231,11 @@
                 {
                   "text": "Say Alex doesn’t know the address.",
                   "correct": false,
+                  "outcome": [
+                    "Alex tells the dispatcher, “I don’t know the address.”",
+                    "The dispatcher has to ask many more questions to figure out where Alex is.",
+                    "Help takes longer to find the house while Grandma waits."
+                  ],
                   "feedback": "If you can, share the address — it helps the dispatcher send help to the right place."
                 },
                 {
@@ -227,6 +267,11 @@
                 {
                   "text": "Just your name and age.",
                   "correct": false,
+                  "outcome": [
+                    "Alex tells the dispatcher only Alex’s name and age.",
+                    "The dispatcher still doesn’t know where Alex is or what’s wrong with Grandma.",
+                    "Help can’t be sent until the dispatcher gets more answers, so it takes longer."
+                  ],
                   "feedback": "Your name is fine to share, but the dispatcher mainly needs your location and what’s happening so they can send the right help."
                 }
               ]
@@ -248,6 +293,11 @@
                 {
                   "text": "Yes, hang up as soon as help is called.",
                   "correct": false,
+                  "outcome": [
+                    "Alex hangs up as soon as help is called.",
+                    "The dispatcher was about to tell Alex how to help Grandma and unlock the door.",
+                    "Now Alex isn’t sure what to do while waiting, and feels worried and alone."
+                  ],
                   "feedback": "It’s safer to stay on the line and follow the dispatcher’s instructions until they say it’s okay to hang up."
                 },
                 {
@@ -305,6 +355,11 @@
                 {
                   "text": "Go outside right away to see what made the crash.",
                   "correct": false,
+                  "outcome": [
+                    "Alex steps outside into the storm to see what made the crash.",
+                    "It’s dark and windy, and Alex slips on the wet steps.",
+                    "Alex is outside in the storm, soaked and scared, and no trusted adult knows what’s going on."
+                  ],
                   "feedback": "Going outside during a storm to investigate isn’t safe — it’s better to stay inside and check in with a trusted adult first."
                 },
                 {
@@ -315,6 +370,11 @@
                 {
                   "text": "Assume it’s nothing and go back to what Alex was doing.",
                   "correct": false,
+                  "outcome": [
+                    "Alex decides the crash was nothing and goes back to playing a game in the dark.",
+                    "A while later, Alex hears more strange noises and the house stays dark.",
+                    "Alex starts to feel nervous, and Dad still has no idea the power is out or that anything happened."
+                  ],
                   "feedback": "A loud crash during a power outage is worth telling a trusted adult about, even if it turns out to be something ordinary like a branch falling."
                 }
               ]
@@ -336,6 +396,11 @@
                 {
                   "text": "Go outside anyway just to check quickly.",
                   "correct": false,
+                  "outcome": [
+                    "Alex goes outside anyway, just to check quickly.",
+                    "Rain and wind push hard, and branches are scattered across the yard in the dark.",
+                    "Alex can’t see what’s safe to step near and has to hurry back in, wet and shaken, after ignoring Dad’s text."
+                  ],
                   "feedback": "Going outside during a storm to check isn’t safe — staying inside and waiting is the safer choice."
                 },
                 {
@@ -366,6 +431,11 @@
                 {
                   "text": "Keep trying the same phone number over and over and do nothing else.",
                   "correct": false,
+                  "outcome": [
+                    "Alex keeps calling the same number over and over and does nothing else.",
+                    "No one picks up, and the minutes keep slipping by.",
+                    "The emergency is still happening, and trained help still hasn’t been called."
+                  ],
                   "feedback": "If it’s truly an emergency, don’t just keep retrying one number — call 911 directly so trained help is on the way."
                 }
               ]
@@ -387,6 +457,11 @@
                 {
                   "text": "Say waiting quietly is always better than calling for help.",
                   "correct": false,
+                  "outcome": [
+                    "Alex agrees that waiting quietly is always better than calling for help.",
+                    "Next time there’s a real emergency and Dad can’t be reached, Alex just waits.",
+                    "Alex sits alone feeling scared while the problem grows, and no help is on the way."
+                  ],
                   "feedback": "Waiting quietly during a real emergency isn’t safe — calling 911 directly is the right move if you can’t reach a trusted adult."
                 },
                 {
@@ -411,6 +486,11 @@
                 {
                   "text": "You should only report something if you’re already sure it’s a real emergency.",
                   "correct": false,
+                  "outcome": [
+                    "Alex decides to only report things when Alex is completely sure they’re a real emergency.",
+                    "Next time Alex smells something strange, Alex stays quiet because Alex isn’t sure.",
+                    "A trusted adult could have checked quickly, but now no one knows anything unusual is happening."
+                  ],
                   "feedback": "You don’t need to be 100% sure before reporting something unusual."
                 },
                 {
@@ -516,6 +596,11 @@
                 {
                   "text": "Ignorarla ya que nada se ve mal.",
                   "correct": false,
+                  "outcome": [
+                    "Alex sigue jugando. La alarma suena.",
+                    "Empieza a salir humo de la cocina.",
+                    "Ningún adulto sabe todavía. Alex tiene miedo."
+                  ],
                   "feedback": "Que una alarma suene significa que algo necesita la atención de un adulto de inmediato, aunque nada se vea mal todavía."
                 },
                 {
@@ -526,6 +611,11 @@
                 {
                   "text": "Intentar apagar la alarma quitándole la batería.",
                   "correct": false,
+                  "outcome": [
+                    "Alex se sube para quitar la batería.",
+                    "La alarma está muy alta. Alex se tambalea.",
+                    "Pasa el tiempo, y Mamá todavía no sabe."
+                  ],
                   "feedback": "Alex no debería intentar arreglar o silenciar una alarma — eso es trabajo de un adulto, y cada segundo importa."
                 }
               ]
@@ -547,6 +637,11 @@
                 {
                   "text": "Decir que Alex debería haberla ignorado ya que nada se veía mal.",
                   "correct": false,
+                  "outcome": [
+                    "Alex ignora la próxima alarma.",
+                    "Mamá está en otro cuarto y no la oye.",
+                    "El humo crece, y ningún adulto sabe."
+                  ],
                   "feedback": "Avisarle a un adulto de inmediato siempre es correcto, aunque resulte no ser grave."
                 },
                 {
@@ -577,6 +672,11 @@
                 {
                   "text": "Al número de celular de un amigo.",
                   "correct": false,
+                  "outcome": [
+                    "Alex llama al celular de un amigo.",
+                    "El amigo dice: “¡No sé qué hacer!”",
+                    "Todavía no viene ayuda. Alex tiene miedo."
+                  ],
                   "feedback": "Un amigo no puede enviar ayuda como lo hacen los servicios de emergencia — el 911 es el número para emergencias reales."
                 }
               ]
@@ -598,6 +698,11 @@
                 {
                   "text": "Esperar a que un adulto llegue a casa sin importar qué tan grave se vea.",
                   "correct": false,
+                  "outcome": [
+                    "Alex ve humo y espera a un adulto.",
+                    "El humo se hace cada vez más grande.",
+                    "Nadie viene a ayudar todavía."
+                  ],
                   "feedback": "En una emergencia real sin ningún adulto cerca, esperar podría ser peligroso — llamar directamente al 911 es lo correcto."
                 },
                 {
@@ -655,6 +760,11 @@
                 {
                   "text": "Esperar en silencio para ver si se siente mejor por sí sola.",
                   "correct": false,
+                  "outcome": [
+                    "Alex se queda callado esperando a ver si la abuela se siente mejor.",
+                    "La abuela se marea más y tiene que acostarse en el sofá.",
+                    "Pasan los minutos, y nadie que pueda ayudar sabe que la abuela está mal."
+                  ],
                   "feedback": "Esperar y confiar en que mejore no es seguro cuando alguien se ve gravemente mal — es mejor pedir ayuda de inmediato, aunque digan que están bien."
                 },
                 {
@@ -665,6 +775,11 @@
                 {
                   "text": "Salir a buscar a un vecino y tardar mucho tiempo decidiendo a qué casa ir.",
                   "correct": false,
+                  "outcome": [
+                    "Alex sale corriendo y se queda en la acera, sin saber a qué casa ir.",
+                    "La abuela está sola adentro, y nadie ha llamado para pedir ayuda.",
+                    "El tiempo sigue pasando, y la ayuda todavía no viene en camino."
+                  ],
                   "feedback": "Buscar a otro adulto puede ayudar, pero llamar primero al 911 es más rápido y te conecta con personas entrenadas para ayudar de inmediato."
                 }
               ]
@@ -686,6 +801,11 @@
                 {
                   "text": "Decir que Alex no sabe la dirección.",
                   "correct": false,
+                  "outcome": [
+                    "Alex le dice al operador: “No sé la dirección.”",
+                    "El operador tiene que hacer muchas más preguntas para saber dónde está Alex.",
+                    "La ayuda tarda más en encontrar la casa mientras la abuela espera."
+                  ],
                   "feedback": "Si puedes, comparte la dirección — ayuda al operador a enviar ayuda al lugar correcto."
                 },
                 {
@@ -717,6 +837,11 @@
                 {
                   "text": "Solo tu nombre y edad.",
                   "correct": false,
+                  "outcome": [
+                    "Alex le dice al operador solo su nombre y su edad.",
+                    "El operador todavía no sabe dónde está Alex ni qué le pasa a la abuela.",
+                    "No pueden enviar ayuda hasta que el operador tenga más respuestas, así que tarda más."
+                  ],
                   "feedback": "Está bien compartir tu nombre, pero el operador necesita principalmente tu ubicación y lo que está pasando para poder enviar la ayuda correcta."
                 }
               ]
@@ -738,6 +863,11 @@
                 {
                   "text": "Sí, colgar en cuanto se pide la ayuda.",
                   "correct": false,
+                  "outcome": [
+                    "Alex cuelga en cuanto se pide la ayuda.",
+                    "El operador iba a decirle a Alex cómo ayudar a la abuela y abrir la puerta.",
+                    "Ahora Alex no sabe qué hacer mientras espera, y se siente preocupado y solo."
+                  ],
                   "feedback": "Es más seguro quedarse en la línea y seguir las instrucciones del operador hasta que digan que está bien colgar."
                 },
                 {
@@ -795,6 +925,11 @@
                 {
                   "text": "Salir de inmediato a ver qué causó el golpe.",
                   "correct": false,
+                  "outcome": [
+                    "Alex sale a la tormenta para ver qué causó el golpe.",
+                    "Está oscuro y hace mucho viento, y Alex se resbala en los escalones mojados.",
+                    "Alex está afuera en la tormenta, empapado y asustado, y ningún adulto de confianza sabe lo que pasa."
+                  ],
                   "feedback": "Salir durante una tormenta para investigar no es seguro — es mejor quedarse adentro y avisar primero a un adulto de confianza."
                 },
                 {
@@ -805,6 +940,11 @@
                 {
                   "text": "Suponer que no es nada y volver a lo que Alex estaba haciendo.",
                   "correct": false,
+                  "outcome": [
+                    "Alex decide que el golpe no fue nada y vuelve a jugar en la oscuridad.",
+                    "Un rato después, Alex escucha más ruidos raros y la casa sigue a oscuras.",
+                    "Alex empieza a ponerse nervioso, y papá todavía no sabe que se fue la luz ni que pasó algo."
+                  ],
                   "feedback": "Un golpe fuerte durante un apagón vale la pena contárselo a un adulto de confianza, aunque resulte ser algo común como una rama caída."
                 }
               ]
@@ -826,6 +966,11 @@
                 {
                   "text": "Salir de todos modos solo para revisar rápido.",
                   "correct": false,
+                  "outcome": [
+                    "Alex sale de todos modos, solo para revisar rápido.",
+                    "La lluvia y el viento empujan fuerte, y hay ramas regadas por el patio en la oscuridad.",
+                    "Alex no puede ver por dónde es seguro pisar y tiene que regresar corriendo, mojado y asustado, después de ignorar el mensaje de papá."
+                  ],
                   "feedback": "Salir durante una tormenta para revisar no es seguro — quedarse adentro y esperar es la opción más segura."
                 },
                 {
@@ -856,6 +1001,11 @@
                 {
                   "text": "Seguir intentando el mismo número de teléfono una y otra vez y no hacer nada más.",
                   "correct": false,
+                  "outcome": [
+                    "Alex sigue llamando al mismo número una y otra vez y no hace nada más.",
+                    "Nadie contesta, y los minutos siguen pasando.",
+                    "La emergencia sigue, y todavía nadie ha llamado a la ayuda entrenada."
+                  ],
                   "feedback": "Si realmente es una emergencia, no solo sigas intentando un número — llama directamente al 911 para que la ayuda entrenada esté en camino."
                 }
               ]
@@ -877,6 +1027,11 @@
                 {
                   "text": "Decir que esperar en silencio siempre es mejor que pedir ayuda.",
                   "correct": false,
+                  "outcome": [
+                    "Alex está de acuerdo en que esperar en silencio siempre es mejor que pedir ayuda.",
+                    "La próxima vez que hay una emergencia real y no puede contactar a papá, Alex solo espera.",
+                    "Alex se queda solo y con miedo mientras el problema crece, y no viene ninguna ayuda."
+                  ],
                   "feedback": "Esperar en silencio durante una emergencia real no es seguro — llamar directamente al 911 es lo correcto si no puedes contactar a un adulto de confianza."
                 },
                 {
@@ -901,6 +1056,11 @@
                 {
                   "text": "Solo deberías reportar algo si ya estás seguro de que es una emergencia real.",
                   "correct": false,
+                  "outcome": [
+                    "Alex decide reportar algo solo cuando esté completamente seguro de que es una emergencia real.",
+                    "La próxima vez que Alex huele algo raro, se queda callado porque no está seguro.",
+                    "Un adulto de confianza podría haberlo revisado rápido, pero ahora nadie sabe que pasa algo inusual."
+                  ],
                   "feedback": "No necesitas estar 100% seguro antes de reportar algo inusual."
                 },
                 {

@@ -26,6 +26,11 @@
                 {
                   "text": "Jump in right away since the pool looks fun.",
                   "correct": false,
+                  "outcome": [
+                    "Alex jumps into the pool right away.",
+                    "No grown-up is there to watch.",
+                    "If Alex needs help, nobody will know."
+                  ],
                   "feedback": "Never go in water without a grown-up watching first — even a pool that looks calm and fun needs supervision."
                 },
                 {
@@ -52,6 +57,11 @@
                 {
                   "text": "Say Alex should have jumped in right away since the pool looks fun.",
                   "correct": false,
+                  "outcome": [
+                    "Alex thinks, “I should have jumped in.”",
+                    "Next time, Alex jumps in with no grown-up watching.",
+                    "If Alex gets tired, nobody is there to help."
+                  ],
                   "feedback": "Never go in without a grown-up watching, no matter how fun it looks."
                 },
                 {
@@ -82,6 +92,11 @@
                 {
                   "text": "Yes, if you’re a really good swimmer.",
                   "correct": false,
+                  "outcome": [
+                    "Alex thinks good swimmers can swim alone.",
+                    "Alex swims with no grown-up watching.",
+                    "Alex gets tired. No one is there to help."
+                  ],
                   "feedback": "Even good swimmers should always have a grown-up watching — it’s the rule every time, no matter how well you swim."
                 }
               ]
@@ -103,6 +118,11 @@
                 {
                   "text": "Say yes, if you’re a good swimmer you can swim alone.",
                   "correct": false,
+                  "outcome": [
+                    "Alex tells a friend good swimmers can swim alone.",
+                    "The friend swims alone in the deep end.",
+                    "The friend gets tired, and no grown-up sees."
+                  ],
                   "feedback": "Even good swimmers should always have a grown-up watching."
                 },
                 {
@@ -160,6 +180,11 @@
                 {
                   "text": "Swim past the buoys since it seems like more fun space.",
                   "correct": false,
+                  "outcome": [
+                    "Alex swims out past the buoys with friends.",
+                    "Out there, the water is deeper and the lifeguard can barely see them.",
+                    "Alex starts to get tired, and the lifeguard is far away."
+                  ],
                   "feedback": "Areas past the safety buoys are marked that way because they’re harder for a lifeguard to see or reach quickly if something goes wrong."
                 },
                 {
@@ -186,6 +211,11 @@
                 {
                   "text": "Say Alex should have swum past the buoys for more space.",
                   "correct": false,
+                  "outcome": [
+                    "Alex decides to swim past the buoys next time for more space.",
+                    "Alex swims far out, where the lifeguard can’t see well.",
+                    "When Alex gets tired, help is much farther away."
+                  ],
                   "feedback": "Past the buoys is harder for a lifeguard to reach — staying within them was safer."
                 },
                 {
@@ -216,6 +246,11 @@
                 {
                   "text": "Just to make the swimming area look nicer.",
                   "correct": false,
+                  "outcome": [
+                    "Alex believes the buoys are just decorations.",
+                    "Alex swims past them without thinking twice.",
+                    "Now Alex is outside the area the lifeguard can watch and reach quickly."
+                  ],
                   "feedback": "It’s not about looks — the buoys mark the area a lifeguard can actually watch and reach in time to help."
                 }
               ]
@@ -237,6 +272,11 @@
                 {
                   "text": "Say the buoys are just there to make the area look nicer.",
                   "correct": false,
+                  "outcome": [
+                    "Alex tells friends the buoys are just for looks.",
+                    "The friends swim past the buoys, far from the lifeguard.",
+                    "One friend gets tired out there, and it takes the lifeguard much longer to reach them."
+                  ],
                   "feedback": "It’s not about looks — the buoys mark the area a lifeguard can watch and reach."
                 },
                 {
@@ -294,6 +334,11 @@
                 {
                   "text": "Swim directly against the current straight back to shore as hard as possible.",
                   "correct": false,
+                  "outcome": [
+                    "Alex turns toward shore and swims as hard as possible straight against the current.",
+                    "The current keeps pulling, and Alex barely gets any closer to shore.",
+                    "Alex’s arms and legs get very tired, the panicky feeling grows, and Alex still hasn’t waved for help."
+                  ],
                   "feedback": "Fighting directly against a strong current can tire you out quickly — a smarter approach is to swim parallel to the shore first, then angle in once free of the current, and to call for help."
                 },
                 {
@@ -304,7 +349,12 @@
                 {
                   "text": "Try to touch the bottom to push off, no matter how deep it might be.",
                   "correct": false,
-                  "feedback": "In deep or uncertain water, trying to reach the bottom can be risky — it’s safer to stay calm, call for help, and swim parallel to the current."
+                  "outcome": [
+                    "Alex stops swimming and reaches down with their feet, trying to find the bottom.",
+                    "The water is too deep to touch, and the current keeps pulling Alex farther out.",
+                    "Alex has used up energy, is farther from shore, and feels even more panicked."
+                  ],
+                  "feedback": "In deep or uncertain water, trying to reach the bottom can be risky — it’s safer to stay calm, call for help, and swim parallel to the shore."
                 }
               ]
             },
@@ -325,6 +375,11 @@
                 {
                   "text": "Say Alex should swim straight against the current as hard as possible.",
                   "correct": false,
+                  "outcome": [
+                    "Alex believes swimming hard against the current is the best plan.",
+                    "Alex ignores the lifeguard’s call and pushes straight toward shore.",
+                    "Alex wears out fast while the current keeps pulling, and the lifeguard has to work harder to reach Alex."
+                  ],
                   "feedback": "Fighting straight against it would tire Alex out fast — swimming parallel was the right call."
                 },
                 {
@@ -354,6 +409,11 @@
                 {
                   "text": "Swim parallel is always faster than swimming toward shore in general, so just swim any direction.",
                   "correct": false,
+                  "outcome": [
+                    "Alex decides direction doesn’t matter and swims whichever way feels fastest.",
+                    "Alex ends up swimming farther out, still inside the current’s pull.",
+                    "Alex is more tired and farther from shore than before."
+                  ],
                   "feedback": "It’s not about general speed — it’s specifically about escaping a narrow current’s pull first."
                 },
                 {
@@ -380,6 +440,11 @@
                 {
                   "text": "Say swimming straight against a strong current is always the fastest way back.",
                   "correct": false,
+                  "outcome": [
+                    "Alex believes swimming straight against a strong current is always fastest.",
+                    "The next time Alex is caught in a current, Alex fights straight toward shore.",
+                    "Alex gets very tired very quickly and still hasn’t escaped the current’s pull."
+                  ],
                   "feedback": "That’s not true — it tires you out fast without necessarily escaping the current."
                 },
                 {
@@ -404,6 +469,11 @@
                 {
                   "text": "Because staying calm makes the current disappear completely.",
                   "correct": false,
+                  "outcome": [
+                    "Alex believes staying calm will make the current disappear.",
+                    "Alex stays calm and just waits, but the current keeps pulling just as hard.",
+                    "Alex drifts farther from shore and starts to feel confused and panicked."
+                  ],
                   "feedback": "Staying calm doesn’t remove the current — but it helps you respond to it more effectively."
                 }
               ]
@@ -504,6 +574,11 @@
                 {
                   "text": "Saltar de inmediato ya que la piscina se ve divertida.",
                   "correct": false,
+                  "outcome": [
+                    "Alex salta a la piscina de inmediato.",
+                    "Ningún adulto está mirando.",
+                    "Si Alex necesita ayuda, nadie sabrá."
+                  ],
                   "feedback": "Nunca entres al agua sin que un adulto esté mirando primero — incluso una piscina que se ve tranquila y divertida necesita supervisión."
                 },
                 {
@@ -530,6 +605,11 @@
                 {
                   "text": "Decir que Alex debería haber saltado de inmediato ya que la piscina se ve divertida.",
                   "correct": false,
+                  "outcome": [
+                    "Alex piensa: “Debí saltar de inmediato.”",
+                    "Otro día, Alex salta sin un adulto mirando.",
+                    "Si Alex se cansa, nadie puede ayudar."
+                  ],
                   "feedback": "Nunca hay que entrar sin un adulto mirando, sin importar qué tan divertido se vea."
                 },
                 {
@@ -560,6 +640,11 @@
                 {
                   "text": "Sí, si eres muy buen nadador.",
                   "correct": false,
+                  "outcome": [
+                    "Alex cree que los buenos nadadores nadan solos.",
+                    "Alex nada sin ningún adulto mirando.",
+                    "Alex se cansa. Nadie está para ayudar."
+                  ],
                   "feedback": "Incluso los buenos nadadores siempre deben tener un adulto mirando — es la regla cada vez, sin importar qué tan bien nades."
                 }
               ]
@@ -581,6 +666,11 @@
                 {
                   "text": "Decir que sí, si eres buen nadador puedes nadar solo.",
                   "correct": false,
+                  "outcome": [
+                    "Alex le dice a un amigo que puede nadar solo.",
+                    "El amigo nada solo en la parte honda.",
+                    "El amigo se cansa, y ningún adulto lo ve."
+                  ],
                   "feedback": "Incluso los buenos nadadores siempre deben tener un adulto mirando."
                 },
                 {
@@ -638,6 +728,11 @@
                 {
                   "text": "Nadar más allá de las boyas ya que parece más espacio divertido.",
                   "correct": false,
+                  "outcome": [
+                    "Alex nada más allá de las boyas con sus amigos.",
+                    "Allá el agua es más profunda y el salvavidas casi no los ve.",
+                    "Alex empieza a cansarse, y el salvavidas está lejos."
+                  ],
                   "feedback": "Las áreas más allá de las boyas de seguridad están marcadas así porque son más difíciles de ver o alcanzar rápidamente para un salvavidas si algo sale mal."
                 },
                 {
@@ -664,6 +759,11 @@
                 {
                   "text": "Decir que Alex debería haber nadado más allá de las boyas para tener más espacio.",
                   "correct": false,
+                  "outcome": [
+                    "Alex decide que la próxima vez nadará más allá de las boyas para tener más espacio.",
+                    "Alex nada lejos, donde el salvavidas no ve bien.",
+                    "Cuando Alex se cansa, la ayuda está mucho más lejos."
+                  ],
                   "feedback": "Más allá de las boyas es más difícil de alcanzar para un salvavidas — quedarse dentro fue más seguro."
                 },
                 {
@@ -694,6 +794,11 @@
                 {
                   "text": "Solo para que el área de natación se vea más bonita.",
                   "correct": false,
+                  "outcome": [
+                    "Alex cree que las boyas son solo decoración.",
+                    "Alex nada más allá de ellas sin pensarlo.",
+                    "Ahora Alex está fuera del área que el salvavidas puede vigilar y alcanzar rápido."
+                  ],
                   "feedback": "No es sobre la apariencia — las boyas marcan el área que un salvavidas realmente puede vigilar y alcanzar a tiempo para ayudar."
                 }
               ]
@@ -715,6 +820,11 @@
                 {
                   "text": "Decir que las boyas solo están ahí para que el área se vea más bonita.",
                   "correct": false,
+                  "outcome": [
+                    "Alex les dice a sus amigos que las boyas son solo para que se vea bonito.",
+                    "Los amigos nadan más allá de las boyas, lejos del salvavidas.",
+                    "Un amigo se cansa allá, y el salvavidas tarda mucho más en alcanzarlo."
+                  ],
                   "feedback": "No es sobre la apariencia — las boyas marcan el área que un salvavidas puede vigilar y alcanzar."
                 },
                 {
@@ -772,6 +882,11 @@
                 {
                   "text": "Nadar directamente contra la corriente de vuelta a la orilla lo más fuerte posible.",
                   "correct": false,
+                  "outcome": [
+                    "Alex se voltea hacia la orilla y nada lo más fuerte posible directamente contra la corriente.",
+                    "La corriente sigue jalando, y Alex casi no se acerca a la orilla.",
+                    "Los brazos y piernas de Alex se cansan mucho, el pánico crece, y todavía no ha hecho señas de ayuda."
+                  ],
                   "feedback": "Luchar directamente contra una corriente fuerte puede cansarte rápido — un enfoque más inteligente es nadar en paralelo a la orilla primero, luego dirigirse hacia la orilla una vez libre de la corriente, y pedir ayuda."
                 },
                 {
@@ -782,7 +897,12 @@
                 {
                   "text": "Intentar tocar el fondo para empujarse, sin importar qué tan profundo pueda ser.",
                   "correct": false,
-                  "feedback": "En agua profunda o incierta, intentar alcanzar el fondo puede ser riesgoso — es más seguro mantener la calma, pedir ayuda, y nadar en paralelo a la corriente."
+                  "outcome": [
+                    "Alex deja de nadar y estira los pies hacia abajo, buscando el fondo.",
+                    "El agua es demasiado profunda para tocarlo, y la corriente sigue alejando a Alex.",
+                    "Alex ha gastado energía, está más lejos de la orilla y siente todavía más pánico."
+                  ],
+                  "feedback": "En agua profunda o incierta, intentar alcanzar el fondo puede ser riesgoso — es más seguro mantener la calma, pedir ayuda, y nadar en paralelo a la orilla."
                 }
               ]
             },
@@ -803,6 +923,11 @@
                 {
                   "text": "Decir que Alex debería nadar directamente contra la corriente lo más fuerte posible.",
                   "correct": false,
+                  "outcome": [
+                    "Alex cree que nadar fuerte contra la corriente es el mejor plan.",
+                    "Alex no le hace caso al salvavidas y empuja directo hacia la orilla.",
+                    "Alex se cansa rápido mientras la corriente sigue jalando, y al salvavidas le cuesta más alcanzarlo."
+                  ],
                   "feedback": "Luchar directamente lo habría cansado rápido — nadar en paralelo fue lo correcto."
                 },
                 {
@@ -832,6 +957,11 @@
                 {
                   "text": "Nadar en paralelo siempre es más rápido que nadar hacia la orilla en general, así que puede nadar en cualquier dirección.",
                   "correct": false,
+                  "outcome": [
+                    "Alex decide que la dirección no importa y nada hacia donde se sienta más rápido.",
+                    "Alex termina nadando más lejos, todavía dentro del tirón de la corriente.",
+                    "Alex está más cansado y más lejos de la orilla que antes."
+                  ],
                   "feedback": "No es sobre la velocidad en general — es específicamente sobre escapar del tirón de una corriente angosta primero."
                 },
                 {
@@ -858,6 +988,11 @@
                 {
                   "text": "Decir que nadar directamente contra una corriente fuerte siempre es la forma más rápida de volver.",
                   "correct": false,
+                  "outcome": [
+                    "Alex cree que nadar directo contra una corriente fuerte siempre es lo más rápido.",
+                    "La próxima vez que una corriente lo atrapa, Alex lucha directo hacia la orilla.",
+                    "Alex se cansa muy rápido y todavía no ha escapado del tirón de la corriente."
+                  ],
                   "feedback": "Eso no es cierto — te cansa rápido sin necesariamente escapar de la corriente."
                 },
                 {
@@ -882,6 +1017,11 @@
                 {
                   "text": "Porque mantener la calma hace que la corriente desaparezca por completo.",
                   "correct": false,
+                  "outcome": [
+                    "Alex cree que mantener la calma hará que la corriente desaparezca.",
+                    "Alex se queda tranquilo y solo espera, pero la corriente sigue jalando igual de fuerte.",
+                    "Alex se aleja más de la orilla y empieza a sentirse confundido y con pánico."
+                  ],
                   "feedback": "Mantener la calma no elimina la corriente — pero te ayuda a responder de forma más efectiva."
                 }
               ]

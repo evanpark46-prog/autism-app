@@ -26,6 +26,11 @@
                 {
                   "text": "Send an even meaner message back.",
                   "correct": false,
+                  "outcome": [
+                    "Alex types a meaner message back.",
+                    "The player gets mad and sends more mean words.",
+                    "Now Alex feels even worse."
+                  ],
                   "feedback": "Sending something mean back usually makes things worse — it’s better to show a grown-up instead."
                 },
                 {
@@ -52,6 +57,11 @@
                 {
                   "text": "Say Alex should have sent an even meaner message back.",
                   "correct": false,
+                  "outcome": [
+                    "Alex sends a meaner message next time.",
+                    "The mean player sends even more mean messages.",
+                    "No grown-up knows. Alex feels upset and alone."
+                  ],
                   "feedback": "Sending something mean back usually makes the situation worse."
                 },
                 {
@@ -82,6 +92,11 @@
                 {
                   "text": "Yes — online meanness doesn’t really count or matter.",
                   "correct": false,
+                  "outcome": [
+                    "Alex thinks online meanness doesn’t count.",
+                    "Alex types something mean to another player.",
+                    "That player feels sad, just like Alex did."
+                  ],
                   "feedback": "That’s not true — online meanness is just as real and hurtful as in-person meanness."
                 }
               ]
@@ -103,6 +118,11 @@
                 {
                   "text": "Say online meanness doesn’t really count or matter.",
                   "correct": false,
+                  "outcome": [
+                    "Alex thinks online meanness doesn’t matter.",
+                    "Alex keeps reading mean messages and tells no one.",
+                    "Alex still feels hurt inside, but no grown-up knows."
+                  ],
                   "feedback": "That’s not true — it hurts just as much as in-person meanness."
                 },
                 {
@@ -160,6 +180,11 @@
                 {
                   "text": "Delete the app and never go online again.",
                   "correct": false,
+                  "outcome": [
+                    "Alex deletes the app and stays offline.",
+                    "Alex can’t talk with friends or play favorite games anymore.",
+                    "The mean comments are still there, and no adult knows about them."
+                  ],
                   "feedback": "That’s a bigger step than needed — the goal is dealing with this specific situation, not avoiding being online forever."
                 },
                 {
@@ -170,6 +195,11 @@
                 {
                   "text": "Try to defend the photo by arguing with everyone in the chat.",
                   "correct": false,
+                  "outcome": [
+                    "Alex starts arguing with everyone in the group chat.",
+                    "More classmates join in and the mean comments get worse.",
+                    "Alex feels more upset, and the pile-on keeps growing."
+                  ],
                   "feedback": "Arguing back in the moment often makes a pile-on worse — it’s more effective to step away and get a trusted adult involved."
                 }
               ]
@@ -191,6 +221,11 @@
                 {
                   "text": "Say Alex should try to defend the photo by arguing with everyone.",
                   "correct": false,
+                  "outcome": [
+                    "Alex goes back into the chat to argue with everyone.",
+                    "The classmates make even more jokes about Alex’s replies.",
+                    "Now there are more mean messages, and Alex feels worse."
+                  ],
                   "feedback": "Arguing back usually makes a pile-on worse — leaving and telling a trusted adult was right."
                 },
                 {
@@ -221,6 +256,11 @@
                 {
                   "text": "Because you’ll need it to argue back later.",
                   "correct": false,
+                  "outcome": [
+                    "Alex saves the screenshots to argue back later.",
+                    "Alex sends them to the group chat and starts a new fight.",
+                    "The chat gets meaner, and no trusted adult knows what happened."
+                  ],
                   "feedback": "The point isn’t to argue back — it’s to give a trusted adult clear evidence of what happened so they can help."
                 }
               ]
@@ -242,6 +282,11 @@
                 {
                   "text": "Say screenshots are only useful for arguing back later.",
                   "correct": false,
+                  "outcome": [
+                    "Alex thinks screenshots are only for arguing back.",
+                    "Alex deletes them and tries to explain the chat from memory.",
+                    "Mom can’t see what was said, so it is harder for her to help."
+                  ],
                   "feedback": "That’s not the purpose — screenshots help a trusted adult see exactly what happened."
                 },
                 {
@@ -299,6 +344,11 @@
                 {
                   "text": "Create a fake account back to embarrass whoever did this.",
                   "correct": false,
+                  "outcome": [
+                    "Alex makes a fake account to embarrass whoever made the first one.",
+                    "The other person gets angry and posts even more embarrassing things as Alex.",
+                    "Now there are two fake accounts, and Alex could get in trouble too."
+                  ],
                   "feedback": "Retaliating with another fake account usually escalates things and can create more problems — reporting the account and involving trusted adults is more effective."
                 },
                 {
@@ -309,6 +359,11 @@
                 {
                   "text": "Ignore it completely and hope classmates figure out it’s fake on their own.",
                   "correct": false,
+                  "outcome": [
+                    "Alex ignores the fake account and hopes classmates will figure it out.",
+                    "More classmates see the made-up posts, and some start believing them.",
+                    "The embarrassing posts keep spreading, and no adult knows it’s happening."
+                  ],
                   "feedback": "Ignoring it lets false, embarrassing content keep spreading — reporting it and getting help addresses the problem directly."
                 }
               ]
@@ -330,6 +385,11 @@
                 {
                   "text": "Say Alex should create a fake account back to embarrass them.",
                   "correct": false,
+                  "outcome": [
+                    "Alex makes a fake account to embarrass the person back.",
+                    "The school finds out, and Alex is now part of the problem too.",
+                    "Instead of being the one who was hurt, Alex has to explain what Alex did."
+                  ],
                   "feedback": "Retaliating usually escalates things — screenshotting and reporting was the better response."
                 },
                 {
@@ -360,6 +420,11 @@
                 {
                   "text": "Because reporting to the platform alone always fixes everything immediately.",
                   "correct": false,
+                  "outcome": [
+                    "Alex believes reporting to the platform fixes everything immediately.",
+                    "The account is gone, but classmates still remember the posts and keep joking about them.",
+                    "No adult at school knows, so the teasing keeps going and Alex has to handle it alone."
+                  ],
                   "feedback": "Reporting helps remove the account, but it doesn’t undo classmates having already seen it — that’s why telling a trusted adult matters too."
                 }
               ]
@@ -381,6 +446,11 @@
                 {
                   "text": "Say yes, reporting to the platform alone fixes everything immediately.",
                   "correct": false,
+                  "outcome": [
+                    "Alex decides the platform report fixed everything and doesn’t tell the school.",
+                    "At school, classmates still talk about the fake posts they saw.",
+                    "Alex feels embarrassed, and no teacher knows why the teasing is happening."
+                  ],
                   "feedback": "It doesn’t undo classmates already having seen it — the school still needed to be involved."
                 },
                 {
@@ -405,6 +475,11 @@
                 {
                   "text": "Reporting to the platform alone always fixes everything, including what classmates already saw.",
                   "correct": false,
+                  "outcome": [
+                    "Alex agrees that reporting to the platform alone was enough.",
+                    "Next time, Alex only reports and doesn’t tell a trusted adult.",
+                    "Classmates who already saw the posts keep believing them, and nobody helps fix that."
+                  ],
                   "feedback": "Reporting helps remove the account, but it doesn’t undo classmates having already seen it."
                 },
                 {
@@ -552,6 +627,11 @@
                 {
                   "text": "Enviar un mensaje todavía más cruel de vuelta.",
                   "correct": false,
+                  "outcome": [
+                    "Alex escribe un mensaje más cruel.",
+                    "El jugador se enoja y envía más palabras crueles.",
+                    "Ahora Alex se siente peor."
+                  ],
                   "feedback": "Enviar algo cruel de vuelta usualmente empeora las cosas — es mejor mostrarle a un adulto en su lugar."
                 },
                 {
@@ -578,6 +658,11 @@
                 {
                   "text": "Decir que Alex debería haber enviado un mensaje todavía más cruel de vuelta.",
                   "correct": false,
+                  "outcome": [
+                    "Alex envía un mensaje más cruel la próxima vez.",
+                    "El jugador cruel envía todavía más mensajes crueles.",
+                    "Ningún adulto sabe. Alex se siente triste y solo."
+                  ],
                   "feedback": "Enviar algo cruel de vuelta usualmente empeora la situación."
                 },
                 {
@@ -608,6 +693,11 @@
                 {
                   "text": "Sí — la crueldad en línea realmente no cuenta ni importa.",
                   "correct": false,
+                  "outcome": [
+                    "Alex cree que la crueldad en línea no cuenta.",
+                    "Alex le escribe algo cruel a otro jugador.",
+                    "Ese jugador se siente triste, igual que Alex."
+                  ],
                   "feedback": "Eso no es cierto — la crueldad en línea es tan real y dolorosa como la crueldad en persona."
                 }
               ]
@@ -629,6 +719,11 @@
                 {
                   "text": "Decir que la crueldad en línea realmente no cuenta ni importa.",
                   "correct": false,
+                  "outcome": [
+                    "Alex cree que la crueldad en línea no importa.",
+                    "Alex sigue leyendo mensajes crueles y no le dice a nadie.",
+                    "Alex sigue sintiéndose mal, y ningún adulto lo sabe."
+                  ],
                   "feedback": "Eso no es cierto — lastima igual que la crueldad en persona."
                 },
                 {
@@ -686,6 +781,11 @@
                 {
                   "text": "Borrar la app y nunca volver a conectarse.",
                   "correct": false,
+                  "outcome": [
+                    "Alex borra la app y deja de conectarse.",
+                    "Alex ya no puede hablar con amigos ni jugar sus juegos favoritos.",
+                    "Los comentarios crueles siguen ahí, y ningún adulto sabe de ellos."
+                  ],
                   "feedback": "Eso es un paso más grande de lo necesario — la meta es manejar esta situación específica, no evitar estar en línea para siempre."
                 },
                 {
@@ -696,6 +796,11 @@
                 {
                   "text": "Intentar defender la foto discutiendo con todos en el chat.",
                   "correct": false,
+                  "outcome": [
+                    "Alex empieza a discutir con todos en el chat de grupo.",
+                    "Más compañeros se unen y los comentarios crueles empeoran.",
+                    "Alex se siente más triste, y la avalancha de comentarios sigue creciendo."
+                  ],
                   "feedback": "Discutir en el momento a menudo empeora una avalancha de comentarios — es más efectivo alejarse e involucrar a un adulto de confianza."
                 }
               ]
@@ -717,6 +822,11 @@
                 {
                   "text": "Decir que Alex debería intentar defender la foto discutiendo con todos.",
                   "correct": false,
+                  "outcome": [
+                    "Alex regresa al chat para discutir con todos.",
+                    "Los compañeros hacen todavía más bromas sobre las respuestas de Alex.",
+                    "Ahora hay más mensajes crueles, y Alex se siente peor."
+                  ],
                   "feedback": "Discutir de vuelta usualmente empeora una avalancha de comentarios — salir y contarle a un adulto de confianza fue lo correcto."
                 },
                 {
@@ -747,6 +857,11 @@
                 {
                   "text": "Porque las necesitarás para discutir de vuelta después.",
                   "correct": false,
+                  "outcome": [
+                    "Alex guarda las capturas para discutir de vuelta después.",
+                    "Alex las manda al chat de grupo y empieza otra pelea.",
+                    "El chat se pone más cruel, y ningún adulto de confianza sabe qué pasó."
+                  ],
                   "feedback": "El punto no es discutir de vuelta — es darle a un adulto de confianza evidencia clara de lo que pasó para que pueda ayudar."
                 }
               ]
@@ -768,6 +883,11 @@
                 {
                   "text": "Decir que las capturas de pantalla solo sirven para discutir de vuelta después.",
                   "correct": false,
+                  "outcome": [
+                    "Alex cree que las capturas solo sirven para discutir.",
+                    "Alex las borra e intenta contar lo del chat de memoria.",
+                    "Mamá no puede ver lo que dijeron, así que le cuesta más ayudar."
+                  ],
                   "feedback": "Ese no es el propósito — las capturas de pantalla ayudan a un adulto de confianza a ver exactamente qué pasó."
                 },
                 {
@@ -825,6 +945,11 @@
                 {
                   "text": "Crear una cuenta falsa de vuelta para avergonzar a quien hizo esto.",
                   "correct": false,
+                  "outcome": [
+                    "Alex crea una cuenta falsa para avergonzar a quien hizo la primera.",
+                    "La otra persona se enoja y publica cosas todavía más vergonzosas como si fuera Alex.",
+                    "Ahora hay dos cuentas falsas, y Alex también podría meterse en problemas."
+                  ],
                   "feedback": "Vengarse con otra cuenta falsa usualmente escala las cosas y puede crear más problemas — reportar la cuenta e involucrar a adultos de confianza es más efectivo."
                 },
                 {
@@ -835,6 +960,11 @@
                 {
                   "text": "Ignorarlo completamente y esperar que los compañeros se den cuenta solos de que es falso.",
                   "correct": false,
+                  "outcome": [
+                    "Alex ignora la cuenta falsa y espera que los compañeros se den cuenta solos.",
+                    "Más compañeros ven las publicaciones inventadas, y algunos empiezan a creerlas.",
+                    "Las publicaciones vergonzosas siguen difundiéndose, y ningún adulto sabe lo que está pasando."
+                  ],
                   "feedback": "Ignorarlo permite que el contenido falso y vergonzoso siga difundiéndose — reportarlo y pedir ayuda resuelve el problema directamente."
                 }
               ]
@@ -856,6 +986,11 @@
                 {
                   "text": "Decir que Alex debería crear una cuenta falsa de vuelta para avergonzarlos.",
                   "correct": false,
+                  "outcome": [
+                    "Alex crea una cuenta falsa para avergonzar a la persona de vuelta.",
+                    "La escuela se entera, y ahora Alex también es parte del problema.",
+                    "En lugar de ser a quien lastimaron, Alex tiene que explicar lo que hizo."
+                  ],
                   "feedback": "Vengarse usualmente escala las cosas — tomar captura y reportar fue la mejor respuesta."
                 },
                 {
@@ -886,6 +1021,11 @@
                 {
                   "text": "Porque reportar a la plataforma sola siempre resuelve todo de inmediato.",
                   "correct": false,
+                  "outcome": [
+                    "Alex cree que reportar a la plataforma resuelve todo de inmediato.",
+                    "La cuenta desaparece, pero los compañeros todavía recuerdan las publicaciones y siguen burlándose.",
+                    "Ningún adulto en la escuela lo sabe, así que las burlas siguen y Alex tiene que enfrentarlo solo."
+                  ],
                   "feedback": "Reportar ayuda a eliminar la cuenta, pero no deshace que los compañeros ya la hayan visto — por eso también importa contarle a un adulto de confianza."
                 }
               ]
@@ -907,6 +1047,11 @@
                 {
                   "text": "Decir que sí, reportar a la plataforma sola resuelve todo de inmediato.",
                   "correct": false,
+                  "outcome": [
+                    "Alex decide que el reporte a la plataforma arregló todo y no le cuenta a la escuela.",
+                    "En la escuela, los compañeros siguen hablando de las publicaciones falsas que vieron.",
+                    "Alex siente vergüenza, y ningún maestro sabe por qué siguen las burlas."
+                  ],
                   "feedback": "No deshace que los compañeros ya la hayan visto — la escuela todavía necesitaba involucrarse."
                 },
                 {
@@ -931,6 +1076,11 @@
                 {
                   "text": "Reportar a la plataforma sola siempre resuelve todo, incluso lo que ya vieron los compañeros.",
                   "correct": false,
+                  "outcome": [
+                    "Alex está de acuerdo en que reportar a la plataforma fue suficiente.",
+                    "La próxima vez, Alex solo reporta y no le cuenta a un adulto de confianza.",
+                    "Los compañeros que ya vieron las publicaciones siguen creyéndolas, y nadie ayuda a arreglarlo."
+                  ],
                   "feedback": "Reportar ayuda a eliminar la cuenta, pero no deshace que los compañeros ya la hayan visto."
                 },
                 {
