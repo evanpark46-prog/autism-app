@@ -1802,6 +1802,17 @@ function initTopicPage(){
             if (e.data === YT.PlayerState.PLAYING){
               startCheckpointWatch(panel, video);
             }
+            // A video can be shorter than a checkpoint's time -- when it ends,
+            // show any questions that haven't come up yet (one at a time; each
+            // answer resumes playback, which ends again and shows the next).
+            if (e.data === YT.PlayerState.ENDED){
+              const cp = video.checkpoints[videoState.nextCheckpoint];
+              if (cp && !videoState.awaitingAnswer){
+                clearCheckpointWatch();
+                videoState.awaitingAnswer = true;
+                showCheckpointOverlay(panel, cp);
+              }
+            }
           },
           onError(){
             // Some browsers/extensions strip the referrer YouTube needs to
@@ -1921,6 +1932,18 @@ function initTopicPage(){
       overlay.classList.remove('active');
       videoState.awaitingAnswer = false;
       videoState.nextCheckpoint += 1;
+      const ended = typeof videoState.player.getPlayerState === 'function'
+        && typeof YT !== 'undefined' && videoState.player.getPlayerState() === YT.PlayerState.ENDED;
+      if (ended){
+        // Video already finished: go straight to any remaining question
+        // instead of restarting the video from the beginning.
+        const nextCp = (currentContent().video.checkpoints || [])[videoState.nextCheckpoint];
+        if (nextCp){
+          videoState.awaitingAnswer = true;
+          showCheckpointOverlay(panel, nextCp);
+        }
+        return;
+      }
       videoState.player.playVideo();
     };
   }
