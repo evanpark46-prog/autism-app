@@ -517,7 +517,7 @@
       }
     ],
     "video": {
-      "youtubeId": "",
+      "youtubeId": "-dnL5iRfROg",
       "title": "Staying with your safe adult",
       "checkpoints": [
         {
@@ -1066,7 +1066,7 @@
       }
     ],
     "video": {
-      "youtubeId": "",
+      "youtubeId": "-dnL5iRfROg",
       "title": "Quedarte con tu adulto de confianza",
       "checkpoints": [
         {

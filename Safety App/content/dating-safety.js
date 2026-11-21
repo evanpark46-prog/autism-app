@@ -451,7 +451,7 @@
       }
     ],
     "video": {
-      "youtubeId": "",
+      "youtubeId": "EGT8YJE3zC0",
       "title": "Healthy relationships and consent",
       "checkpoints": [
         {
@@ -934,7 +934,7 @@
       }
     ],
     "video": {
-      "youtubeId": "",
+      "youtubeId": "EGT8YJE3zC0",
       "title": "Relaciones sanas y consentimiento",
       "checkpoints": [
         {

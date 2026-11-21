@@ -517,7 +517,7 @@
       }
     ],
     "video": {
-      "youtubeId": "5S8-Evqzn7E",
+      "youtubeId": "x2GGG9bVJfs",
       "title": "Making a safety P.L.A.N.",
       "checkpoints": [
         {
@@ -1066,7 +1066,7 @@
       }
     ],
     "video": {
-      "youtubeId": "5S8-Evqzn7E",
+      "youtubeId": "x2GGG9bVJfs",
       "title": "Hacer un P.L.A.N. de seguridad",
       "checkpoints": [
         {

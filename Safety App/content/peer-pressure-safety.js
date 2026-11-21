@@ -517,7 +517,7 @@
       }
     ],
     "video": {
-      "youtubeId": "",
+      "youtubeId": "Naovkwm36hE",
       "title": "Handling peer pressure",
       "checkpoints": [
         {
@@ -1066,7 +1066,7 @@
       }
     ],
     "video": {
-      "youtubeId": "",
+      "youtubeId": "Naovkwm36hE",
       "title": "Manejar la presión de grupo",
       "checkpoints": [
         {

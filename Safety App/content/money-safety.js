@@ -450,7 +450,7 @@
       }
     ],
     "video": {
-      "youtubeId": "",
+      "youtubeId": "EH7Cf-grZJY",
       "title": "Spotting a money trick",
       "checkpoints": [
         {
@@ -932,7 +932,7 @@
       }
     ],
     "video": {
-      "youtubeId": "",
+      "youtubeId": "EH7Cf-grZJY",
       "title": "Reconocer un engaño de dinero",
       "checkpoints": [
         {

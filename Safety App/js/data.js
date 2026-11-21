@@ -3137,7 +3137,7 @@ const CONTENT = {
         { front: 'Is paying attention to your surroundings only useful when something bad is already happening?', back: 'No — it’s a habit that helps you be prepared for anything.' },
       ],
       video: {
-        youtubeId: '',
+        youtubeId: 'D2OizPfxFvM',
         title: 'Paying attention to your surroundings',
         checkpoints: [
           { time: 20, question: 'The character is looking at a toy while walking through a parking lot. What should they do?',
@@ -3368,7 +3368,7 @@ const CONTENT = {
         { front: 'Does P.L.A.N. stop mattering once you’re older?', back: 'No — it still matters, it might just look like a shorter check-in.' },
       ],
       video: {
-        youtubeId: '5S8-Evqzn7E',
+        youtubeId: 'x2GGG9bVJfs',
         title: 'Making a safety P.L.A.N.',
         checkpoints: [
           { time: 20, question: 'The character wants to change plans suddenly after school. What should they do first?',
@@ -4773,7 +4773,7 @@ const CONTENT = {
         { front: 'Does loving someone mean you have to accept feeling disrespected by them?', back: 'No — you can love someone and still address a pattern that doesn’t feel okay.' },
       ],
       video: {
-        youtubeId: '',
+        youtubeId: '6F7ie1Z07aM',
         title: 'Knowing your rights',
         checkpoints: [
           { time: 20, question: 'The character keeps getting talked over while sharing an idea. What can they do?',
@@ -5464,7 +5464,7 @@ const CONTENT = {
         { front: 'Why does signaling early matter more in real traffic than in an empty lot?', back: 'Drivers need advance warning to react safely.' },
       ],
       video: {
-        youtubeId: 'uBGW8j__Jsg',
+        youtubeId: 'C8qp8KZbqrM',
         title: 'Bicycle safety basics',
         checkpoints: [
           { time: 20, question: 'The character is about to ride without a helmet. What should they do?',
@@ -5720,7 +5720,7 @@ const CONTENT = {
         { front: 'Is it okay if your choice is different from what the group is doing?', back: 'Yes — it’s always okay to make your own safe choice.' },
       ],
       video: {
-        youtubeId: '',
+        youtubeId: 'Naovkwm36hE',
         title: 'Handling peer pressure',
         checkpoints: [
           { time: 20, question: 'Friends want the character to climb somewhere unsafe. What should they do?',
@@ -5950,7 +5950,7 @@ const CONTENT = {
         { front: 'Why is staying close to your safe adult important?', back: 'It keeps you both safe and easy to find.' },
       ],
       video: {
-        youtubeId: '',
+        youtubeId: '-dnL5iRfROg',
         title: 'Staying with your safe adult',
         checkpoints: [
           { time: 20, question: 'The character wants to run to something exciting far away. What should they do?',
@@ -6180,7 +6180,7 @@ const CONTENT = {
         { front: 'Does “looking nice” tell you if someone is a safe helper?', back: 'No — look for a real role or job, not how someone looks.' },
       ],
       video: {
-        youtubeId: '',
+        youtubeId: 'NYsDo7XXkXo',
         title: 'Finding a safe helper',
         checkpoints: [
           { time: 20, question: 'The character is lost in a store. Who should they look for?',
@@ -6408,7 +6408,7 @@ const CONTENT = {
         { front: 'You feel a pinch during a shot and it hurts. What should you do?', back: 'Say it hurt and ask what it was for — it’s always okay to speak up.' },
       ],
       video: {
-        youtubeId: '',
+        youtubeId: '-Z2sggwJRZQ',
         title: 'Going to the doctor or dentist',
         checkpoints: [
           { time: 20, question: 'The character feels nervous about a checkup. What can help?',
@@ -6636,7 +6636,7 @@ const CONTENT = {
         { front: 'What can help you feel more ready next time after a hard moment?', back: 'Talking about it with a trusted adult, and updating your plan if it helps.' },
       ],
       video: {
-        youtubeId: '',
+        youtubeId: '_mZbzDOpylA',
         title: 'Finding your calm',
         checkpoints: [
           { time: 20, question: 'The character notices a tight, hot feeling starting. What should they do?',
@@ -6841,7 +6841,7 @@ const CONTENT = {
         { front: 'If you call 911, what should you be ready to say?', back: 'What’s happening and your address, and stay on the line.' },
       ],
       video: {
-        youtubeId: '',
+        youtubeId: 'YNwqdR0JaqE',
         title: 'Recognizing and responding to emergencies',
         checkpoints: [
           { time: 20, question: 'A classmate starts choking and can’t talk. What should the character do?',
@@ -7047,7 +7047,7 @@ const CONTENT = {
         { front: 'How should you treat someone after they’ve had a seizure?', back: 'Kindly and calmly — let them rest, and don’t tease or make a big deal of it.' },
       ],
       video: {
-        youtubeId: '',
+        youtubeId: 'lcKiFyMAgEA',
         title: 'Staying safe during a seizure',
         checkpoints: [
           { time: 20, question: 'A classmate starts shaking and doesn’t respond. What should the character do first?',
@@ -7253,7 +7253,7 @@ const CONTENT = {
         { front: 'What’s the safest first move with any money request?', back: 'Check with a grown-up before doing anything.' },
       ],
       video: {
-        youtubeId: '',
+        youtubeId: 'EH7Cf-grZJY',
         title: 'Spotting a money trick',
         checkpoints: [
           { time: 20, question: 'A caller says to pay right now with a gift card. What should the character do?',
@@ -7460,7 +7460,7 @@ const CONTENT = {
         { front: 'Do you need a “big enough” reason to ask for help or leave a relationship?', back: 'No — trusting your gut is enough. You never need to justify wanting to feel safe.' },
       ],
       video: {
-        youtubeId: '',
+        youtubeId: 'EGT8YJE3zC0',
         title: 'Healthy relationships and consent',
         checkpoints: [
           { time: 20, question: 'A partner keeps asking after being told “not yet.” What does that mean?',
@@ -10549,7 +10549,7 @@ const CONTENT = {
         { front: '¿Es prestar atención a tu entorno solo útil cuando algo malo ya está pasando?', back: 'No — es un hábito que te ayuda a estar preparado para cualquier cosa.' },
       ],
       video: {
-        youtubeId: '',
+        youtubeId: 'D2OizPfxFvM',
         title: 'Prestar atención a tu entorno',
         checkpoints: [
           { time: 20, question: 'El personaje mira un juguete mientras camina por un estacionamiento. ¿Qué debería hacer?',
@@ -10780,7 +10780,7 @@ const CONTENT = {
         { front: '¿Deja de importar P.L.A.N. cuando eres mayor?', back: 'No — sigue importando, solo puede verse como un aviso más corto.' },
       ],
       video: {
-        youtubeId: '5S8-Evqzn7E',
+        youtubeId: 'x2GGG9bVJfs',
         title: 'Hacer un P.L.A.N. de seguridad',
         checkpoints: [
           { time: 20, question: 'El personaje quiere cambiar de planes de repente después de la escuela. ¿Qué debería hacer primero?',
@@ -12185,7 +12185,7 @@ const CONTENT = {
         { front: '¿Significa querer a alguien que tienes que aceptar sentirte irrespetado por esa persona?', back: 'No — puedes querer a alguien y aún abordar un patrón que no se siente bien.' },
       ],
       video: {
-        youtubeId: '',
+        youtubeId: '6F7ie1Z07aM',
         title: 'Conocer tus derechos',
         checkpoints: [
           { time: 20, question: 'Al personaje siguen interrumpiéndolo mientras comparte una idea. ¿Qué puede hacer?',
@@ -12876,7 +12876,7 @@ const CONTENT = {
         { front: '¿Por qué importa más señalizar temprano en tráfico real que en un lote vacío?', back: 'Los conductores necesitan aviso anticipado para reaccionar de forma segura.' },
       ],
       video: {
-        youtubeId: 'uBGW8j__Jsg',
+        youtubeId: 'C8qp8KZbqrM',
         title: 'Lo básico sobre seguridad en bicicleta',
         checkpoints: [
           { time: 20, question: 'El personaje está a punto de andar sin casco. ¿Qué debería hacer?',
@@ -13132,7 +13132,7 @@ const CONTENT = {
         { front: '¿Está bien si tu decisión es diferente a lo que está haciendo el grupo?', back: 'Sí — siempre está bien tomar tu propia decisión segura.' },
       ],
       video: {
-        youtubeId: '',
+        youtubeId: 'Naovkwm36hE',
         title: 'Manejar la presión de grupo',
         checkpoints: [
           { time: 20, question: 'Unos amigos quieren que el personaje suba a un lugar inseguro. ¿Qué debería hacer?',
@@ -13362,7 +13362,7 @@ const CONTENT = {
         { front: '¿Por qué es importante quedarte cerca de tu adulto de confianza?', back: 'Los mantiene seguros a ambos y es más fácil encontrarte.' },
       ],
       video: {
-        youtubeId: '',
+        youtubeId: '-dnL5iRfROg',
         title: 'Quedarte con tu adulto de confianza',
         checkpoints: [
           { time: 20, question: 'El personaje quiere correr hacia algo emocionante que está lejos. ¿Qué debería hacer?',
@@ -13592,7 +13592,7 @@ const CONTENT = {
         { front: '¿“Verse amable” te dice si alguien es un ayudante seguro?', back: 'No — busca un rol o trabajo real, no cómo se ve alguien.' },
       ],
       video: {
-        youtubeId: '',
+        youtubeId: 'NYsDo7XXkXo',
         title: 'Encontrar a un ayudante seguro',
         checkpoints: [
           { time: 20, question: 'El personaje está perdido en una tienda. ¿A quién debería buscar?',
@@ -13820,7 +13820,7 @@ const CONTENT = {
         { front: 'Sientes un pinchazo durante una vacuna y duele. ¿Qué deberías hacer?', back: 'Decir que dolió y preguntar para qué era — siempre está bien hablar.' },
       ],
       video: {
-        youtubeId: '',
+        youtubeId: '-Z2sggwJRZQ',
         title: 'Ir al médico o al dentista',
         checkpoints: [
           { time: 20, question: 'El personaje se siente nervioso por un chequeo. ¿Qué puede ayudar?',
@@ -14048,7 +14048,7 @@ const CONTENT = {
         { front: '¿Qué puede ayudarte a sentirte más preparado la próxima vez después de un momento difícil?', back: 'Hablarlo con un adulto de confianza, y actualizar tu plan si ayuda.' },
       ],
       video: {
-        youtubeId: '',
+        youtubeId: '_mZbzDOpylA',
         title: 'Encontrar tu calma',
         checkpoints: [
           { time: 20, question: 'El personaje nota que empieza una sensación apretada y caliente. ¿Qué debería hacer?',
@@ -14254,7 +14254,7 @@ const CONTENT = {
         { front: 'Si llamas al 911, ¿qué deberías estar listo para decir?', back: 'Qué está pasando y tu dirección, y quedarte en la línea.' },
       ],
       video: {
-        youtubeId: '',
+        youtubeId: 'YNwqdR0JaqE',
         title: 'Reconocer y responder a emergencias',
         checkpoints: [
           { time: 20, question: 'Un compañero empieza a asfixiarse y no puede hablar. ¿Qué debería hacer el personaje?',
@@ -14460,7 +14460,7 @@ const CONTENT = {
         { front: '¿Cómo deberías tratar a alguien después de tener una convulsión?', back: 'Con amabilidad y calma — deja que descanse, y no te burles ni lo hagas un gran problema.' },
       ],
       video: {
-        youtubeId: '',
+        youtubeId: 'lcKiFyMAgEA',
         title: 'Mantenerse seguro durante una convulsión',
         checkpoints: [
           { time: 20, question: 'Un compañero empieza a temblar y no responde. ¿Qué debería hacer el personaje primero?',
@@ -14666,7 +14666,7 @@ const CONTENT = {
         { front: '¿Cuál es el movimiento más seguro con cualquier pedido de dinero?', back: 'Consultar con un adulto antes de hacer nada.' },
       ],
       video: {
-        youtubeId: '',
+        youtubeId: 'EH7Cf-grZJY',
         title: 'Reconocer un engaño de dinero',
         checkpoints: [
           { time: 20, question: 'Alguien que llama dice que hay que pagar ahora mismo con una tarjeta de regalo. ¿Qué debería hacer el personaje?',
@@ -14873,7 +14873,7 @@ const CONTENT = {
         { front: '¿Necesitas una razón “suficientemente grande” para pedir ayuda o dejar una relación?', back: 'No — confiar en tu instinto es suficiente. Nunca necesitas justificar querer sentirte seguro.' },
       ],
       video: {
-        youtubeId: '',
+        youtubeId: 'EGT8YJE3zC0',
         title: 'Relaciones sanas y consentimiento',
         checkpoints: [
           { time: 20, question: 'Una pareja sigue preguntando después de que le dijeron “todavía no”. ¿Qué significa eso?',

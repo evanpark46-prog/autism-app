@@ -665,8 +665,11 @@ function initTopicPage(){
 
     const chosenForIllustration = isChoiceStep && storyState.answered ? step.choices[storyState.chosenIndex] : null;
     const showWrongIllustration = !!(chosenForIllustration && !chosenForIllustration.correct);
+    const answerStateClass = chosenForIllustration
+      ? (chosenForIllustration.correct ? ' is-answer-right' : ' is-answer-wrong')
+      : '';
     const illustrationHtml = step.illustration
-      ? `<div class="story-illustration story-illustration--scene">${getIllustration(step.illustration, showWrongIllustration)}</div>`
+      ? `<div class="story-illustration story-illustration--scene${answerStateClass}" data-answer-badge-right="${escapeHtml(t('story_pic_right'))}" data-answer-badge-wrong="${escapeHtml(t('story_pic_wrong'))}">${getIllustration(step.illustration, showWrongIllustration)}</div>`
       : '';
 
     panel.innerHTML = `
@@ -893,7 +896,13 @@ function initTopicPage(){
       const sceneEl = panel.querySelector('[data-dialogue-scene]');
       if (sceneEl) sceneEl.classList.toggle('is-consequence', showConsequence);
       const artEl = panel.querySelector('.story-illustration--dialogue');
-      if (artEl) artEl.classList.toggle('is-consequence', showConsequence);
+      if (artEl){
+        artEl.classList.toggle('is-consequence', showConsequence);
+        artEl.classList.toggle('is-answer-wrong', showConsequence);
+        artEl.classList.remove('is-answer-right');
+        artEl.setAttribute('data-answer-badge-right', t('story_pic_right'));
+        artEl.setAttribute('data-answer-badge-wrong', t('story_pic_wrong'));
+      }
       const image = artEl && artEl.querySelector('[data-dialogue-image]');
       if (!image) return;
       const hasConsequenceArt = image.dataset.dialogueConsequenceSrc !== image.dataset.dialogueBaseSrc;
@@ -1003,7 +1012,11 @@ function initTopicPage(){
       wireDialogueSpeakHighlighted(textEl, text, displayedSpeaker);
       const controller = typeWriter(textEl, text, () => {
         activeTypewriterClear = null;
-        if (choice.correct) showNextFooter(t('story_continue'));
+        if (choice.correct){
+          const art = panel.querySelector('.story-illustration--dialogue');
+          if (art) art.classList.add('is-answer-right');
+          showNextFooter(t('story_continue'));
+        }
         else showRetryFooter(step.choices.find(c => c.correct));
       });
       activeTypewriterClear = () => controller.finish();

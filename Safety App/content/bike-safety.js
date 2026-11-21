@@ -517,7 +517,7 @@
       }
     ],
     "video": {
-      "youtubeId": "uBGW8j__Jsg",
+      "youtubeId": "C8qp8KZbqrM",
       "title": "Bicycle safety basics",
       "checkpoints": [
         {
@@ -1136,7 +1136,7 @@
       }
     ],
     "video": {
-      "youtubeId": "uBGW8j__Jsg",
+      "youtubeId": "C8qp8KZbqrM",
       "title": "Lo básico sobre seguridad en bicicleta",
       "checkpoints": [
         {

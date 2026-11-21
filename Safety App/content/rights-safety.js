@@ -517,7 +517,7 @@
       }
     ],
     "video": {
-      "youtubeId": "",
+      "youtubeId": "6F7ie1Z07aM",
       "title": "Knowing your rights",
       "checkpoints": [
         {
@@ -1066,7 +1066,7 @@
       }
     ],
     "video": {
-      "youtubeId": "",
+      "youtubeId": "6F7ie1Z07aM",
       "title": "Conocer tus derechos",
       "checkpoints": [
         {

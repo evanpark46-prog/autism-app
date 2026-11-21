@@ -507,7 +507,7 @@
       }
     ],
     "video": {
-      "youtubeId": "",
+      "youtubeId": "-Z2sggwJRZQ",
       "title": "Going to the doctor or dentist",
       "checkpoints": [
         {
@@ -1046,7 +1046,7 @@
       }
     ],
     "video": {
-      "youtubeId": "",
+      "youtubeId": "-Z2sggwJRZQ",
       "title": "Ir al médico o al dentista",
       "checkpoints": [
         {

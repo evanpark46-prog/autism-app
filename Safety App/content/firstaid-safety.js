@@ -449,7 +449,7 @@
       }
     ],
     "video": {
-      "youtubeId": "",
+      "youtubeId": "YNwqdR0JaqE",
       "title": "Recognizing and responding to emergencies",
       "checkpoints": [
         {
@@ -931,7 +931,7 @@
       }
     ],
     "video": {
-      "youtubeId": "",
+      "youtubeId": "YNwqdR0JaqE",
       "title": "Reconocer y responder a emergencias",
       "checkpoints": [
         {

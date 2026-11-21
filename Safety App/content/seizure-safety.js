@@ -450,7 +450,7 @@
       }
     ],
     "video": {
-      "youtubeId": "",
+      "youtubeId": "lcKiFyMAgEA",
       "title": "Staying safe during a seizure",
       "checkpoints": [
         {
@@ -932,7 +932,7 @@
       }
     ],
     "video": {
-      "youtubeId": "",
+      "youtubeId": "lcKiFyMAgEA",
       "title": "Mantenerse seguro durante una convulsión",
       "checkpoints": [
         {

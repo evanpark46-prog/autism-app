@@ -507,7 +507,7 @@
       }
     ],
     "video": {
-      "youtubeId": "",
+      "youtubeId": "_mZbzDOpylA",
       "title": "Finding your calm",
       "checkpoints": [
         {
@@ -1046,7 +1046,7 @@
       }
     ],
     "video": {
-      "youtubeId": "",
+      "youtubeId": "_mZbzDOpylA",
       "title": "Encontrar tu calma",
       "checkpoints": [
         {

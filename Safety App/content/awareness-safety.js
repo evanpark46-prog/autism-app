@@ -507,7 +507,7 @@
       }
     ],
     "video": {
-      "youtubeId": "",
+      "youtubeId": "D2OizPfxFvM",
       "title": "Paying attention to your surroundings",
       "checkpoints": [
         {
@@ -1046,7 +1046,7 @@
       }
     ],
     "video": {
-      "youtubeId": "",
+      "youtubeId": "D2OizPfxFvM",
       "title": "Prestar atención a tu entorno",
       "checkpoints": [
         {

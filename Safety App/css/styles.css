@@ -1909,3 +1909,16 @@ section[id]{scroll-margin-top:120px;}
 .music-btn.is-on{border-color:#ffb52e; background:#fff3d6;}
 .music-btn:disabled{opacity:.45; cursor:not-allowed;}
 @media (max-width:640px){ .music-btn{width:40px; height:40px; justify-self:start;} }
+
+/* ---------- Scene picture reacts to the answer ---------- */
+.story-illustration{position:relative;}
+.story-illustration.is-answer-wrong img{filter:grayscale(.7) sepia(.45) brightness(.85) contrast(.95); transition:filter .4s ease;}
+.story-illustration.is-answer-right img{filter:saturate(1.15) brightness(1.03); box-shadow:0 0 0 6px #7ed99b, 0 0 28px rgba(46,158,72,.45); border-radius:14px; transition:filter .4s ease, box-shadow .4s ease;}
+.story-illustration.is-answer-wrong::after, .story-illustration.is-answer-right::after{
+  position:absolute; top:14px; left:50%; transform:translateX(-50%);
+  padding:6px 16px; border-radius:999px; font-family:var(--font-display); font-weight:700; font-size:1.05rem;
+  box-shadow:0 4px 0 rgba(0,0,0,.15); pointer-events:none; white-space:nowrap;
+}
+.story-illustration.is-answer-wrong::after{content:attr(data-answer-badge-wrong); background:#fff3d6; color:#7a4a06; border:3px solid #f0b54a;}
+.story-illustration.is-answer-right::after{content:attr(data-answer-badge-right); background:#e7f8ec; color:#155a3c; border:3px solid #4fbf73;}
+:root[data-contrast] .story-illustration.is-answer-right img{box-shadow:0 0 0 5px #000;}

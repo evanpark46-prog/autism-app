@@ -517,7 +517,7 @@
       }
     ],
     "video": {
-      "youtubeId": "",
+      "youtubeId": "NYsDo7XXkXo",
       "title": "Finding a safe helper",
       "checkpoints": [
         {
@@ -1066,7 +1066,7 @@
       }
     ],
     "video": {
-      "youtubeId": "",
+      "youtubeId": "NYsDo7XXkXo",
       "title": "Encontrar a un ayudante seguro",
       "checkpoints": [
         {
