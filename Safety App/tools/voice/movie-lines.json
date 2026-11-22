@@ -1,0 +1,722 @@
+[
+ {
+  "lang": "en",
+  "who": "nutty",
+  "text": "One acorn for later... and one acorn for... oops!",
+  "key": "d6973d201k"
+ },
+ {
+  "lang": "es",
+  "who": "nutty",
+  "text": "Una bellota para después... y una bellota para... ¡uy!",
+  "key": "465cc5871p"
+ },
+ {
+  "lang": "en",
+  "who": "nutty",
+  "text": "Oof! Nuts!",
+  "key": "9970f445h"
+ },
+ {
+  "lang": "es",
+  "who": "nutty",
+  "text": "¡Ay! ¡Qué nueces!",
+  "key": "e30065cbo"
+ },
+ {
+  "lang": "en",
+  "who": "narrator",
+  "text": "Once upon a time, in Sunny Meadow Park, there lived a bouncy little bunny named Alex.",
+  "key": "383df5142n"
+ },
+ {
+  "lang": "es",
+  "who": "narrator",
+  "text": "Había una vez, en el Parque Pradera Soleada, una conejita muy saltarina llamada Alex.",
+  "key": "55181d592n"
+ },
+ {
+  "lang": "en",
+  "who": "alex",
+  "text": "Boing! Boing! I’m the bounciest bunny in the whole wide world!",
+  "key": "b4881f781w"
+ },
+ {
+  "lang": "es",
+  "who": "alex",
+  "text": "¡Boing! ¡Boing! ¡Soy la conejita más saltarina del mundo entero!",
+  "key": "01380ee51y"
+ },
+ {
+  "lang": "en",
+  "who": "alex",
+  "text": "Hi, ducks!",
+  "key": "25e4fc4dg"
+ },
+ {
+  "lang": "es",
+  "who": "alex",
+  "text": "¡Hola, patitos!",
+  "key": "c8976429l"
+ },
+ {
+  "lang": "en",
+  "who": "hero",
+  "text": "Hoo-hoo! I’m Captain Caution! Today, YOU can help Alex make super safe choices.",
+  "key": "702512732d"
+ },
+ {
+  "lang": "es",
+  "who": "hero",
+  "text": "¡Ju-ju! ¡Soy el Capitán Cautela! Hoy, TÚ puedes ayudar a Alex a tomar decisiones súper seguras.",
+  "key": "8aba7ac42t"
+ },
+ {
+  "lang": "en",
+  "who": "hero",
+  "text": "Watch closely, hero. I’ll be nearby if anyone needs me!",
+  "key": "7085aa361p"
+ },
+ {
+  "lang": "es",
+  "who": "hero",
+  "text": "Mira con atención, héroe. ¡Estaré cerca por si alguien me necesita!",
+  "key": "5db56fc021"
+ },
+ {
+  "lang": "en",
+  "who": "narrator",
+  "text": "A grown-up walks over. Alex does not know them.",
+  "key": "d1426dbd1l"
+ },
+ {
+  "lang": "es",
+  "who": "narrator",
+  "text": "Un adulto se acerca. Alex no lo conoce.",
+  "key": "1265f5aa1d"
+ },
+ {
+  "lang": "en",
+  "who": "narrator",
+  "text": "Most grown-ups are nice. But this is someone Alex does not know.",
+  "key": "0821420e22"
+ },
+ {
+  "lang": "es",
+  "who": "narrator",
+  "text": "La mayoría de los adultos son amables. Pero esta es una persona que Alex no conoce.",
+  "key": "73ae81f32l"
+ },
+ {
+  "lang": "en",
+  "who": "nutty",
+  "text": "Psst! Alex! You don’t know that grown-up!",
+  "key": "6458a0c41c"
+ },
+ {
+  "lang": "es",
+  "who": "nutty",
+  "text": "¡Psst! ¡Alex! ¡No conoces a ese adulto!",
+  "key": "734074cf1a"
+ },
+ {
+  "lang": "en",
+  "who": "goat",
+  "text": "Hello there, little bunny!",
+  "key": "77755671w"
+ },
+ {
+  "lang": "es",
+  "who": "goat",
+  "text": "¡Hola, conejita!",
+  "key": "8850c413m"
+ },
+ {
+  "lang": "en",
+  "who": "alex",
+  "text": "Um... what should I do?",
+  "key": "d6adf061t"
+ },
+ {
+  "lang": "es",
+  "who": "alex",
+  "text": "Mmm... ¿qué debo hacer?",
+  "key": "8ced5c3ct"
+ },
+ {
+  "lang": "en",
+  "who": "narrator",
+  "text": "Someone Alex does not know is close by. What should Alex do first?",
+  "key": "8fa63bd924"
+ },
+ {
+  "lang": "es",
+  "who": "narrator",
+  "text": "Alguien que Alex no conoce está cerca. ¿Qué debería hacer Alex primero?",
+  "key": "5c39bb5d29"
+ },
+ {
+  "lang": "en",
+  "who": "narrator",
+  "text": "Alex hops right up close.",
+  "key": "4305affdz"
+ },
+ {
+  "lang": "es",
+  "who": "narrator",
+  "text": "Alex salta muy, muy cerca.",
+  "key": "7bf7169f10"
+ },
+ {
+  "lang": "en",
+  "who": "narrator",
+  "text": "Now the grown-up is very, very close.",
+  "key": "987c2d2e1b"
+ },
+ {
+  "lang": "es",
+  "who": "narrator",
+  "text": "Ahora el adulto está muy, muy cerca.",
+  "key": "371a3d541a"
+ },
+ {
+  "lang": "en",
+  "who": "narrator",
+  "text": "Alex feels mixed up. It is hard to step away.",
+  "key": "7e101db61j"
+ },
+ {
+  "lang": "es",
+  "who": "narrator",
+  "text": "Alex se siente confundida. Es difícil alejarse.",
+  "key": "45c377961l"
+ },
+ {
+  "lang": "en",
+  "who": "hero",
+  "text": "Getting close right away is not safe. Stay back first, about two big hops away.",
+  "key": "d854f8942d"
+ },
+ {
+  "lang": "es",
+  "who": "hero",
+  "text": "Acercarse de inmediato no es seguro. Primero mantente alejado, como a dos saltos grandes.",
+  "key": "cea39ce82n"
+ },
+ {
+  "lang": "en",
+  "who": "alex",
+  "text": "I’ll stay back and watch.",
+  "key": "21adc337v"
+ },
+ {
+  "lang": "es",
+  "who": "alex",
+  "text": "Me quedaré lejos y observaré.",
+  "key": "d312aeadz"
+ },
+ {
+  "lang": "en",
+  "who": "narrator",
+  "text": "Smart! Staying back gives Alex room to think.",
+  "key": "4760fa1c1j"
+ },
+ {
+  "lang": "es",
+  "who": "narrator",
+  "text": "¡Muy bien! Mantenerse alejada le da espacio a Alex para pensar.",
+  "key": "a07b93b721"
+ },
+ {
+  "lang": "en",
+  "who": "narrator",
+  "text": "Alex runs and hides behind the big tree.",
+  "key": "859d7b171e"
+ },
+ {
+  "lang": "es",
+  "who": "narrator",
+  "text": "Alex corre y se esconde detrás del árbol grande.",
+  "key": "e9312f101m"
+ },
+ {
+  "lang": "en",
+  "who": "bear",
+  "text": "Alex? Where did Alex go?",
+  "key": "58468a27u"
+ },
+ {
+  "lang": "es",
+  "who": "bear",
+  "text": "¿Alex? ¿Adónde se fue Alex?",
+  "key": "7b3f94b6x"
+ },
+ {
+  "lang": "en",
+  "who": "narrator",
+  "text": "Nobody can find Alex. Everyone is worried, and Alex feels scared and alone.",
+  "key": "3b4470e92d"
+ },
+ {
+  "lang": "es",
+  "who": "narrator",
+  "text": "Nadie encuentra a Alex. Todos están preocupados, y Alex se siente asustada y sola.",
+  "key": "cc10e7912k"
+ },
+ {
+  "lang": "en",
+  "who": "hero",
+  "text": "You don’t have to hide! Stay back, and tell a grown-up you trust.",
+  "key": "e5590f211z"
+ },
+ {
+  "lang": "es",
+  "who": "hero",
+  "text": "¡No tienes que esconderte! Mantente alejado y cuéntale a un adulto de confianza.",
+  "key": "0481bdfa2e"
+ },
+ {
+  "lang": "en",
+  "who": "goat",
+  "text": "Hi! Want some candy? It’s yummy!",
+  "key": "6e5e841b12"
+ },
+ {
+  "lang": "es",
+  "who": "goat",
+  "text": "¡Hola! ¿Quieres un dulce? ¡Está riquísimo!",
+  "key": "a5aa3c531c"
+ },
+ {
+  "lang": "en",
+  "who": "nutty",
+  "text": "Ooh, candy! I love candy!",
+  "key": "652362f2w"
+ },
+ {
+  "lang": "es",
+  "who": "nutty",
+  "text": "¡Uy, dulces! ¡Me encantan los dulces!",
+  "key": "ecedc33718"
+ },
+ {
+  "lang": "en",
+  "who": "nutty",
+  "text": "Wait. Nope! We don’t know that grown-up.",
+  "key": "758752141b"
+ },
+ {
+  "lang": "es",
+  "who": "nutty",
+  "text": "Un momento. ¡No, no! No conocemos a ese adulto.",
+  "key": "095727591i"
+ },
+ {
+  "lang": "en",
+  "who": "alex",
+  "text": "Hmm. I do not know this grown-up.",
+  "key": "74d5d26213"
+ },
+ {
+  "lang": "es",
+  "who": "alex",
+  "text": "Mmm. No conozco a este adulto.",
+  "key": "c5d8e2e510"
+ },
+ {
+  "lang": "en",
+  "who": "narrator",
+  "text": "The grown-up offers Alex candy. What should Alex do?",
+  "key": "755bdb2b1q"
+ },
+ {
+  "lang": "es",
+  "who": "narrator",
+  "text": "El adulto le ofrece un dulce a Alex. ¿Qué debería hacer Alex?",
+  "key": "f1c8c09a1z"
+ },
+ {
+  "lang": "en",
+  "who": "narrator",
+  "text": "Alex takes the candy.",
+  "key": "745e05e6v"
+ },
+ {
+  "lang": "es",
+  "who": "narrator",
+  "text": "Alex toma el dulce.",
+  "key": "8795b38ft"
+ },
+ {
+  "lang": "en",
+  "who": "goat",
+  "text": "Come get more candy by my car!",
+  "key": "19e1ea8a10"
+ },
+ {
+  "lang": "es",
+  "who": "goat",
+  "text": "¡Ven por más dulces a mi carro!",
+  "key": "fd40476d11"
+ },
+ {
+  "lang": "en",
+  "who": "narrator",
+  "text": "Now Alex is walking away from the park. It feels harder to say no.",
+  "key": "64265ae124"
+ },
+ {
+  "lang": "es",
+  "who": "narrator",
+  "text": "Ahora Alex se aleja del parque. Es más difícil decir que no.",
+  "key": "02cea7811y"
+ },
+ {
+  "lang": "en",
+  "who": "hero",
+  "text": "It is not safe to take things from people you do not know. Say, “No, thank you!”",
+  "key": "9dda4ce72e"
+ },
+ {
+  "lang": "es",
+  "who": "hero",
+  "text": "No es seguro tomar cosas de personas que no conoces. Di: “¡No, gracias!”",
+  "key": "6daf379626"
+ },
+ {
+  "lang": "en",
+  "who": "alex",
+  "text": "No, thank you!",
+  "key": "b1a6d48ek"
+ },
+ {
+  "lang": "es",
+  "who": "alex",
+  "text": "¡No, gracias!",
+  "key": "f4ecae1ej"
+ },
+ {
+  "lang": "en",
+  "who": "goat",
+  "text": "Oh. Okay.",
+  "key": "3f9ed2cdf"
+ },
+ {
+  "lang": "es",
+  "who": "goat",
+  "text": "Ah. Está bien.",
+  "key": "b77fa1a8k"
+ },
+ {
+  "lang": "en",
+  "who": "goat",
+  "text": "Are you sure? I have lots and lots of candy...",
+  "key": "51bca2f31g"
+ },
+ {
+  "lang": "es",
+  "who": "goat",
+  "text": "¿Estás segura? Tengo muchísimos dulces...",
+  "key": "403a9ce91b"
+ },
+ {
+  "lang": "en",
+  "who": "narrator",
+  "text": "The grown-up keeps talking.",
+  "key": "fa94f9b611"
+ },
+ {
+  "lang": "es",
+  "who": "narrator",
+  "text": "El adulto sigue hablando.",
+  "key": "a468cee4z"
+ },
+ {
+  "lang": "en",
+  "who": "alex",
+  "text": "What should I do now?",
+  "key": "3e03f359r"
+ },
+ {
+  "lang": "es",
+  "who": "alex",
+  "text": "¿Qué hago ahora?",
+  "key": "3ca33932m"
+ },
+ {
+  "lang": "en",
+  "who": "narrator",
+  "text": "The grown-up keeps talking to Alex. What should Alex do now?",
+  "key": "e3f394bc1y"
+ },
+ {
+  "lang": "es",
+  "who": "narrator",
+  "text": "El adulto sigue hablándole a Alex. ¿Qué debería hacer Alex ahora?",
+  "key": "00008bcb23"
+ },
+ {
+  "lang": "en",
+  "who": "narrator",
+  "text": "Alex stays and keeps talking.",
+  "key": "5f51dae913"
+ },
+ {
+  "lang": "es",
+  "who": "narrator",
+  "text": "Alex se queda y sigue hablando.",
+  "key": "2f54b08f15"
+ },
+ {
+  "lang": "en",
+  "who": "narrator",
+  "text": "The grown-up steps closer.",
+  "key": "6dff954310"
+ },
+ {
+  "lang": "es",
+  "who": "narrator",
+  "text": "El adulto se acerca más.",
+  "key": "bc24fd62y"
+ },
+ {
+  "lang": "en",
+  "who": "narrator",
+  "text": "The lifeguard is far away, watching the pool. No grown-up Alex trusts is close by to help.",
+  "key": "235d12612s"
+ },
+ {
+  "lang": "es",
+  "who": "narrator",
+  "text": "El salvavidas está lejos, mirando la piscina. No hay ningún adulto de confianza cerca para ayudar.",
+  "key": "c22cdb9730"
+ },
+ {
+  "lang": "en",
+  "who": "hero",
+  "text": "It is safer to walk away to a grown-up you trust, like a lifeguard, a teacher or your family.",
+  "key": "c5651c992r"
+ },
+ {
+  "lang": "es",
+  "who": "hero",
+  "text": "Es más seguro alejarse e ir con un adulto de confianza, como un salvavidas, un maestro o tu familia.",
+  "key": "9ae0b0682y"
+ },
+ {
+  "lang": "en",
+  "who": "alex",
+  "text": "I’m going to find Lifeguard Bruno!",
+  "key": "ea4a533814"
+ },
+ {
+  "lang": "es",
+  "who": "alex",
+  "text": "¡Voy a buscar al salvavidas Bruno!",
+  "key": "302acf5d14"
+ },
+ {
+  "lang": "en",
+  "who": "alex",
+  "text": "Not now, ducks! I’m on a safety mission!",
+  "key": "07bdbc4d1a"
+ },
+ {
+  "lang": "es",
+  "who": "alex",
+  "text": "¡Ahora no, patitos! ¡Estoy en una misión de seguridad!",
+  "key": "a318f2761o"
+ },
+ {
+  "lang": "en",
+  "who": "alex",
+  "text": "Lifeguard Bruno! A grown-up I don’t know offered me candy.",
+  "key": "85608fc51s"
+ },
+ {
+  "lang": "es",
+  "who": "alex",
+  "text": "¡Salvavidas Bruno! Un adulto que no conozco me ofreció un dulce.",
+  "key": "d9b9678b1y"
+ },
+ {
+  "lang": "en",
+  "who": "bear",
+  "text": "You did the right thing telling me! What did they look like?",
+  "key": "468d50321u"
+ },
+ {
+  "lang": "es",
+  "who": "bear",
+  "text": "¡Hiciste muy bien en contármelo! ¿Cómo era?",
+  "key": "d7110db61d"
+ },
+ {
+  "lang": "en",
+  "who": "alex",
+  "text": "They had a green sweater and round glasses.",
+  "key": "3d0623901d"
+ },
+ {
+  "lang": "es",
+  "who": "alex",
+  "text": "Tenía un suéter verde y lentes redondos.",
+  "key": "19accd291a"
+ },
+ {
+  "lang": "en",
+  "who": "bear",
+  "text": "Thank you! That helps me a lot. You can stay right here with me.",
+  "key": "8319399a1y"
+ },
+ {
+  "lang": "es",
+  "who": "bear",
+  "text": "¡Gracias! Eso me ayuda mucho. Puedes quedarte aquí conmigo.",
+  "key": "8229e9151t"
+ },
+ {
+  "lang": "en",
+  "who": "narrator",
+  "text": "The grown-up walks back to their car. Alex is safe.",
+  "key": "f389f98f1p"
+ },
+ {
+  "lang": "es",
+  "who": "narrator",
+  "text": "El adulto vuelve a su carro. Alex está a salvo.",
+  "key": "fca7dbee1l"
+ },
+ {
+  "lang": "en",
+  "who": "hero",
+  "text": "Hoo-ray! Alex, you saved the day! You’re a real safety superhero!",
+  "key": "fe8196431z"
+ },
+ {
+  "lang": "es",
+  "who": "hero",
+  "text": "¡Ju-rra! ¡Alex, salvaste el día! ¡Eres una verdadera súper heroína de la seguridad!",
+  "key": "9b7e3acb2h"
+ },
+ {
+  "lang": "en",
+  "who": "nutty",
+  "text": "Hey, Captain! Why do owls love safety?",
+  "key": "07b05dc719"
+ },
+ {
+  "lang": "es",
+  "who": "nutty",
+  "text": "Oye, Capitán, ¿por qué a los búhos les encanta la seguridad?",
+  "key": "82d0433c1v"
+ },
+ {
+  "lang": "en",
+  "who": "nutty",
+  "text": "Because they really give a HOOT!",
+  "key": "1e2eb90113"
+ },
+ {
+  "lang": "es",
+  "who": "nutty",
+  "text": "¡Porque siempre dicen: ju-jú, cuidado tú!",
+  "key": "e30779e41c"
+ },
+ {
+  "lang": "en",
+  "who": "bear",
+  "text": "Ha ha! Good one, Nutty.",
+  "key": "3f839663t"
+ },
+ {
+  "lang": "es",
+  "who": "bear",
+  "text": "¡Ja, ja! Muy bueno, Nutty.",
+  "key": "d813610fw"
+ },
+ {
+  "lang": "en",
+  "who": "hero",
+  "text": "Hoo! Hero to the rescue! Let’s rewind time and try again.",
+  "key": "34190d791r"
+ },
+ {
+  "lang": "es",
+  "who": "hero",
+  "text": "¡Ju! ¡El héroe al rescate! Vamos a regresar el tiempo e intentarlo otra vez.",
+  "key": "386e0c372a"
+ },
+ {
+  "lang": "en",
+  "who": "hero",
+  "text": "Hold on, Alex! Captain Caution is here! Rewind time!",
+  "key": "d6d43e731m"
+ },
+ {
+  "lang": "es",
+  "who": "hero",
+  "text": "¡Espera, Alex! ¡El Capitán Cautela está aquí! ¡A regresar el tiempo!",
+  "key": "4d324ac922"
+ },
+ {
+  "lang": "en",
+  "who": "hero",
+  "text": "Uh-oh! Time for some hero magic. Rewind!",
+  "key": "ce6bf2861a"
+ },
+ {
+  "lang": "es",
+  "who": "hero",
+  "text": "¡Uy! Es hora de magia de héroe. ¡A regresar!",
+  "key": "b1b03df71e"
+ },
+ {
+  "lang": "en",
+  "who": "hero",
+  "text": "Remember: Say NO. GO to a grown-up. TELL them.",
+  "key": "60ab55a41g"
+ },
+ {
+  "lang": "es",
+  "who": "hero",
+  "text": "Recuerda: Di NO. VE con un adulto. CUÉNTALE.",
+  "key": "083215ba1e"
+ },
+ {
+  "lang": "en",
+  "who": "hero",
+  "text": "Be safe, be super!",
+  "key": "c74b9580o"
+ },
+ {
+  "lang": "es",
+  "who": "hero",
+  "text": "¡Sé precavido, sé súper!",
+  "key": "ae594e72u"
+ },
+ {
+  "lang": "en",
+  "who": "nutty",
+  "text": "Nuts about safety!",
+  "key": "82fdaf55p"
+ },
+ {
+  "lang": "es",
+  "who": "nutty",
+  "text": "¡Locos por la seguridad!",
+  "key": "04b6f67dv"
+ },
+ {
+  "lang": "en",
+  "who": "hero",
+  "text": "If someone you don’t know asks you to go with them, say “No!” and tell a grown-up you trust.",
+  "key": "597a55392q"
+ },
+ {
+  "lang": "es",
+  "who": "hero",
+  "text": "Si alguien que no conoces te pide que vayas con él, di “¡No!” y avisa a un adulto de confianza.",
+  "key": "c6b92b9a2t"
+ }
+]

@@ -1682,11 +1682,20 @@ function initTopicPage(){
     renderHeroBuddy();
     const video = currentContent().video;
 
-    if (!video.youtubeId){
-      renderVideoPreviewMode(panel, video);
-      return;
-    }
-    renderVideoPlayerMode(panel, video);
+    if (!video.youtubeId) renderVideoPreviewMode(panel, video);
+    else renderVideoPlayerMode(panel, video);
+    addHeroMovieCallout(panel);
+  }
+
+  // Lessons with an interactive Hero Movie (js/movie-data.js) get a big link above the video.
+  const HERO_MOVIE_IDS = ['stranger-safety'];
+  function addHeroMovieCallout(panel){
+    if (!HERO_MOVIE_IDS.includes(meta.id) || panel.querySelector('.hero-movie-callout')) return;
+    const es = getLang() === 'es';
+    panel.insertAdjacentHTML('afterbegin', `<a class="hero-movie-callout comic-panel" href="movie.html?id=${meta.id}">
+      <span class="hero-movie-callout__icon" aria-hidden="true">🎬</span>
+      <span><strong>${es ? '¡Mira la Película de Héroes!' : 'Watch the Hero Movie!'}</strong>
+      <span class="hero-movie-callout__sub">${es ? 'Una caricatura donde TÚ eliges. Mira qué pasa después de cada decisión.' : 'A cartoon where YOU choose. See what happens after each choice.'}</span></span></a>`);
   }
 
   function renderVideoPreviewMode(panel, video){

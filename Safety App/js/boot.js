@@ -137,6 +137,7 @@ document.addEventListener('DOMContentLoaded', () => {
   else if (page === 'storybook') initStoryBookPage();
   else if (page === 'say-it') initSayItPage();
   else if (page === 'hero-route') initHeroRoutePage();
+  else if (page === 'movie') initMoviePage();
   else if (page === 'spot-danger') initSpotDangerPage();
   else if (page === 'help-call') initHelpCallPage();
   else if (page === 'sign-match') initSignMatchPage();
