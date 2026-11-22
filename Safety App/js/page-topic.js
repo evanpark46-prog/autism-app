@@ -396,6 +396,7 @@ function initTopicPage(){
                 <span class="level-card__desc">${t(descKey)}</span>
               </button>`).join('')}
           </div>
+          <p class="book-topic-link"><a href="storybook.html?id=${encodeURIComponent(meta.id)}&level=0">${escapeHtml(t('book_topic_link'))}</a></p>
         </div>
       </div>`;
     panel.querySelectorAll('[data-level]').forEach(btn => {
