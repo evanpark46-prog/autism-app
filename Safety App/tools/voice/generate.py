@@ -83,8 +83,16 @@ def record(row):
     tmp = path + '.part'
     with open(tmp, 'wb') as fh:
         fh.write(data)
-    os.replace(tmp, path)
-    return len(samples) / sr
+    # Windows can briefly lock a new file (antivirus, indexers): retry, then skip
+    # this clip rather than stopping the whole run (a later run picks it up).
+    for attempt in range(8):
+        try:
+            os.replace(tmp, path)
+            return len(samples) / sr
+        except PermissionError:
+            time.sleep(0.5 * (attempt + 1))
+    print('  could not save', path, flush=True)
+    return 0.0
 
 def write_index():
     for lang in VOICES:
