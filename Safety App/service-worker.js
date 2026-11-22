@@ -10,7 +10,7 @@
    returning visitors pick up the change instead of an old cached copy.
    ========================================================================== */
 
-const CACHE_NAME = 'safety-superheroes-shell-v46';
+const CACHE_NAME = 'safety-superheroes-shell-v47';
 
 const SHELL_FILES = [
   'index.html',
@@ -27,6 +27,7 @@ const SHELL_FILES = [
   'boss-battle.html',
   'villain.html',
   'storybook.html',
+  'say-it.html',
   'hero-rush.html',
   'vocab-quiz.html',
   'sort-it-out.html',
@@ -55,6 +56,8 @@ const SHELL_FILES = [
   'js/lesson-map.js',
   'js/choice-images.js',
   'js/page-storybook.js',
+  'js/page-say-it.js',
+  'js/safety-words.js',
   'js/soundfx.js',
   'js/categories.js',
   'js/topics-index.js',

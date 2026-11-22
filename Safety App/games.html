@@ -38,7 +38,7 @@
       <nav class="site-nav" aria-label="Main">
         <a href="index.html" data-i18n="nav_library">Home</a>
         <a href="review.html" data-i18n="nav_review">Review</a>
-        <a href="storybook.html" data-i18n="nav_stories">Stories</a>
+        <a href="storybook.html" data-i18n="nav_stories">Hero Stories</a>
         <a href="games.html" aria-current="page" data-i18n="nav_games">Games</a>
         <a href="parents.html" data-i18n="nav_parents">Parents &amp; Educators</a>
         <a href="about.html" data-i18n="nav_about">About</a>
@@ -63,6 +63,10 @@
           <div class="display-panel__group">
             <label class="display-panel__label" for="rate-select" data-i18n="rate_label">Voice speed</label>
             <select id="rate-select" data-rate-select></select>
+          </div>
+          <div class="display-panel__group">
+            <label class="display-panel__label" for="voice-select" data-i18n="voice_label">Reading voice</label>
+            <span class="voice-picker"><select id="voice-select" data-voice-select></select><button type="button" class="voice-test-btn" data-voice-test data-i18n-aria-label="voice_test" aria-label="Hear this voice">▶</button></span>
           </div>
           <div class="display-panel__group">
             <span class="display-panel__label" data-i18n="calmmode_label">Calm Mode</span>
@@ -99,6 +103,11 @@
           <div class="hero-badge" data-theme="purple" style="width:64px;height:64px"><svg viewBox="0 0 24 24" width="62%" height="62%" focusable="false"><path d="M4 5h16v10H9l-4 4v-4H4Z" fill="#fff"/></svg></div>
           <h3 data-i18n="vocab_title">Word Power Quiz</h3>
           <p class="hero-card__tagline" data-i18n="games_original_vocab_desc">Match words to their meanings, with a bonus flying mission every 5 in a row.</p>
+        </a>
+        <a class="hero-card comic-panel hero-card--tilt-b" href="say-it.html">
+          <div class="hero-badge" data-theme="amber" style="width:64px;height:64px"><svg viewBox="0 0 24 24" width="62%" height="62%" focusable="false"><rect x="9" y="3" width="6" height="11" rx="3" fill="#fff"/><path d="M6 11a6 6 0 0 0 12 0M12 17v4M9 21h6" stroke="#fff" stroke-width="2" stroke-linecap="round" fill="none"/></svg></div>
+          <h3 data-i18n="sayit_title">Say It Like a Hero</h3>
+          <p class="hero-card__tagline" data-i18n="games_sayit_desc">Learn to say safety words out loud — listen, clap the syllables, then say it into the microphone.</p>
         </a>
         <a class="hero-card comic-panel hero-card--tilt-a" href="sort-it-out.html">
           <div class="hero-badge" data-theme="green" style="width:64px;height:64px"><svg viewBox="0 0 24 24" width="62%" height="62%" focusable="false"><path d="M8.5 12l2 2 4-4.5" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" fill="none"/><rect x="4" y="4" width="16" height="16" rx="3" stroke="#fff" stroke-width="2"/></svg></div>

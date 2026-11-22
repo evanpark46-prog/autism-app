@@ -10,26 +10,15 @@
 /* ---------------------------------------------------------------------- */
 
 const SPEECH_SUPPORTED = typeof window !== 'undefined' && 'speechSynthesis' in window;
-
-let cachedVoices = [];
-function refreshVoiceCache(){
-  if (!SPEECH_SUPPORTED) return;
-  cachedVoices = window.speechSynthesis.getVoices() || [];
-}
-if (SPEECH_SUPPORTED){
-  refreshVoiceCache();
-  window.speechSynthesis.addEventListener('voiceschanged', refreshVoiceCache);
-}
+// Voice ranking, the grown-up's chosen voice (readingVoice) and the voice
+// picker live in js/speechrate.js, which every page loads.
 
 // Lets other modules (the hero music, js/music.js) react to read-aloud
-// without touching speechSynthesis themselves.
+// without touching speechSynthesis themselves. Fired once per read-aloud
+// (not once per sentence) so the music doesn't pump up and down.
 let speechBusy = false;
-function announceSpeech(utter){
-  const fire = name => window.dispatchEvent(new CustomEvent(name));
-  utter.addEventListener('start', () => { speechBusy = true; fire('safetylib:speechstart'); });
-  utter.addEventListener('end', () => { speechBusy = false; fire('safetylib:speechend'); });
-  utter.addEventListener('error', () => { speechBusy = false; fire('safetylib:speechend'); });
-}
+let speechRun = 0;
+function fireSpeech(name){ window.dispatchEvent(new CustomEvent(name)); }
 
 // Tapping a 🔊 button while the app is already talking stops it instead of
 // starting over -- so a learner can always cut reading short.
@@ -52,7 +41,6 @@ function initStopReadingButton(){
   document.body.appendChild(btn);
   let hideTimer = null;
   window.addEventListener('safetylib:speechstart', () => { clearTimeout(hideTimer); label(); btn.hidden = false; });
-  // Small delay so chained utterances don't make the button flicker.
   window.addEventListener('safetylib:speechend', () => { clearTimeout(hideTimer); hideTimer = setTimeout(() => { if (!speechBusy) btn.hidden = true; }, 400); });
 }
 if (typeof document !== 'undefined'){
@@ -66,73 +54,105 @@ function hashStr(s){
   return Math.abs(h);
 }
 
-// Prefer higher-quality network/neural voices over the default, more
-// robotic-sounding local OS voices, when both are present. The Web Speech
-// API only ever exposes whatever voices the browser/OS already ships --
-// this can only rank what's available, not add new voices. Tiers, best to
-// worst: Chrome's Google network voices and Edge/Windows' "Online" neural
-// voices (genuinely natural-sounding); Apple's enhanced/premium voices;
-// any other named voice; explicitly-known low-quality engines (eSpeak and
-// the old compact/robotic voices) always sort last even if nothing else
-// matches, since a browser will otherwise happily default to those.
-function rankVoice(v){
-  const name = v.name || '';
-  // Edge/Windows "Online (Natural)" and other neural voices sound the most
-  // human, then Chrome's Google network voices and Apple's enhanced/premium
-  // voices, then ordinary OS voices; eSpeak/compact/pico always last.
-  if (/natural|neural/i.test(name)) return 0;
-  if (/online/i.test(name)) return 0;
-  if (/google/i.test(name)) return 1;
-  if (/enhanced|premium|siri/i.test(name)) return 1;
-  if (/espeak|compact|pico/i.test(name)) return 3;
-  return 2;
-}
-
-function voicesForLang(lang){
-  const prefix = lang === 'es' ? 'es' : 'en';
-  return cachedVoices
-    .filter(v => v.lang && v.lang.toLowerCase().startsWith(prefix))
-    .sort((a, b) => rankVoice(a) - rankVoice(b));
-}
-
-// Gives each named character a consistent voice across the app, without
-// needing every line of content tagged with age/gender metadata. Characters
-// only ever draw from the BEST quality tier the device has -- a nicer voice
-// for the narrator and a robotic one for a side character sounds worse than
-// fewer, better voices. Pitch-shifting is what makes neural voices sound
-// robotic/chipmunky, so it's kept tiny for high-quality voices and only used
-// more strongly when there's a single voice and nothing else to tell
-// characters apart.
+// One clear voice for everything -- switching voices for each character
+// usually meant dropping to a worse voice, and a steady voice is easier to
+// follow. Characters only get a very slight pitch change (big pitch shifts
+// are what make voices sound robotic / chipmunky).
 function voiceProfileFor(speaker){
-  const all = voicesForLang(getLang());
-  if (!all.length) return { voice: null, pitch: 1, rate: 0.95 };
-  const bestTier = rankVoice(all[0]);
-  const pool = all.filter(v => rankVoice(v) === bestTier);
-  const highQuality = bestTier <= 1;
-  if (!speaker || speaker === 'Narrator'){
-    return { voice: pool[0], pitch: 1, rate: 0.95 };
-  }
+  const voice = typeof readingVoice === 'function' ? readingVoice(getLang()) : null;
+  const rate = 0.92;
+  if (!speaker || speaker === 'Narrator') return { voice, pitch: 1, rate };
   const customName = typeof learnerName === 'function' ? learnerName() : '';
   const isChild = /alex/i.test(speaker) || (!!customName && speaker.indexOf(customName) !== -1);
-  const voice = pool.length > 1 ? pool[hashStr(speaker) % pool.length] : pool[0];
-  let pitch;
-  if (highQuality) pitch = isChild ? 1.06 : 1;
-  else if (pool.length > 1) pitch = isChild ? 1.12 : 1;
-  else pitch = isChild ? 1.2 : 0.92 + (hashStr(speaker) % 10) / 100;
-  return { voice, pitch, rate: isChild ? 1.0 : 0.95 };
+  return { voice, pitch: isChild ? 1.06 : 0.97 + (hashStr(speaker) % 5) / 100, rate };
+}
+
+// Make text sound right WITHOUT changing its length (word highlighting maps
+// the engine's character offsets back onto the page): emoji and symbols
+// become spaces (otherwise they're read out as "star", "superhero"…), dashes
+// become commas (a natural pause), quote marks are dropped.
+function cleanForSpeech(s){
+  return s
+    .replace(/[\p{Extended_Pictographic}\u{1F1E6}-\u{1F1FF}\u{FE0F}\u{200D}\u{20E3}]/gu, m => ' '.repeat(m.length))
+    .replace(/[←→↑↓✓✔✖✕★☆•·…]/g, m => m === '…' ? '.' : ' ')
+    .replace(/[—–]/g, ',')
+    .replace(/[“”«»"]/g, ' ')
+    .replace(/\s\/\s/g, m => ' , ');
+}
+
+// Sentence-sized pieces: Chrome silently stops long utterances after ~15 s
+// with its (much nicer) Google voices, and short pieces give natural pauses.
+function speechChunks(text){
+  const chunks = [];
+  const re = /[^.!?;:\n]*(?:[.!?;:\n]+|$)/g;
+  let m;
+  let buf = null;
+  while ((m = re.exec(text)) && m[0] !== ''){
+    const piece = { start: m.index, text: m[0] };
+    if (buf && buf.text.length + piece.text.length < 60){ buf.text += piece.text; }
+    else { if (buf) chunks.push(buf); buf = piece; }
+    if (re.lastIndex >= text.length) break;
+  }
+  if (buf) chunks.push(buf);
+  // Split any very long sentence at commas.
+  return chunks.flatMap(c => {
+    if (c.text.length <= 220) return [c];
+    const out = []; let start = 0;
+    c.text.replace(/[^,]*(,|$)/g, (p, _c, off) => {
+      if (!p) return p;
+      if (out.length && out[out.length - 1].text.length + p.length < 160) out[out.length - 1].text += p;
+      else out.push({ start: c.start + off, text: p });
+      return p;
+    });
+    return out.length ? out : [c];
+  }).filter(c => /[\p{L}\p{N}]/u.test(c.text));
+}
+
+// Speaks `text` sentence by sentence. hooks: { boundary(globalCharIndex),
+// chunkStart(chunk), done() }.
+function speakQueue(text, profile, hooks){
+  hooks = hooks || {};
+  const run = ++speechRun;
+  const clean = cleanForSpeech(text);
+  const chunks = speechChunks(clean);
+  if (!chunks.length) return;
+  window.speechSynthesis.cancel();
+  speechBusy = true;
+  fireSpeech('safetylib:speechstart');
+  let i = 0;
+  const finish = () => {
+    if (run !== speechRun) return;
+    speechBusy = false;
+    fireSpeech('safetylib:speechend');
+    if (hooks.done) hooks.done();
+  };
+  const next = () => {
+    if (run !== speechRun) return;
+    if (i >= chunks.length){ finish(); return; }
+    const c = chunks[i++];
+    const u = new SpeechSynthesisUtterance(c.text);
+    if (profile.voice){ u.voice = profile.voice; u.lang = profile.voice.lang; }
+    else u.lang = getLang() === 'es' ? 'es-US' : 'en-US';
+    u.pitch = profile.pitch;
+    u.rate = profile.rate * (typeof getSpeechRateMultiplier === 'function' ? getSpeechRateMultiplier() : 1);
+    let started = false;
+    const begin = () => { if (started || run !== speechRun) return; started = true; if (hooks.chunkStart) hooks.chunkStart(c, u.rate); };
+    u.onstart = begin;
+    // Some engines never fire onstart; don't let the highlight wait forever.
+    setTimeout(begin, 350);
+    u.onboundary = e => { if (run === speechRun && hooks.boundary && (!e.name || e.name === 'word')) hooks.boundary(c.start + e.charIndex); };
+    let ended = false;
+    const end = () => { if (ended) return; ended = true; next(); };
+    u.onend = end;
+    u.onerror = e => { if (e && (e.error === 'interrupted' || e.error === 'canceled')) return; end(); };
+    window.speechSynthesis.speak(u);
+  };
+  next();
 }
 
 function speak(text, speaker){
   if (!SPEECH_SUPPORTED || !text) return;
-  window.speechSynthesis.cancel();
-  const utter = new SpeechSynthesisUtterance(text);
-  announceSpeech(utter);
-  utter.lang = getLang() === 'es' ? 'es-ES' : 'en-US';
-  const profile = voiceProfileFor(speaker);
-  if (profile.voice) utter.voice = profile.voice;
-  utter.pitch = profile.pitch;
-  utter.rate = profile.rate * getSpeechRateMultiplier();
-  window.speechSynthesis.speak(utter);
+  speakQueue(text, voiceProfileFor(speaker));
 }
 
 let activeHighlightSpan = null;
@@ -149,24 +169,21 @@ function clearActiveHighlight(){
 }
 
 function stopSpeaking(){
+  speechRun++;
   if (SPEECH_SUPPORTED) window.speechSynthesis.cancel();
   speechBusy = false;
   clearActiveHighlight();
   window.dispatchEvent(new CustomEvent('safetylib:speechend'));
 }
 
-// Reads one or more elements aloud as a single utterance, highlighting the
-// word being spoken as it goes -- a progressive enhancement: it depends on
-// SpeechSynthesisUtterance's `onboundary` event, which reliably fires with
-// word offsets on desktop Chrome/Edge/Firefox/Safari but is inconsistent on
-// many mobile browsers. Where it doesn't fire, this silently falls back to
-// plain read-aloud with no highlighting -- never breaks speech itself.
+// Reads one or more elements aloud, highlighting the word being spoken.
+// Uses the engine's word-boundary events where they exist; where they don't
+// (many mobile browsers) it estimates, re-syncing at every sentence.
 // `segments` is [{ el, text }]; each el's content is replaced with one
 // <span> per word so the matching word can be highlighted.
 function speakWithHighlight(segments, speaker, joiner){
   if (!SPEECH_SUPPORTED) return;
-  window.speechSynthesis.cancel();
-  clearActiveHighlight();
+  stopSpeaking();
 
   let fullText = '';
   const wordSpans = [];
@@ -197,68 +214,43 @@ function speakWithHighlight(segments, speaker, joiner){
       }
       fullText += token;
     });
+    // A sentence break between segments, so each paragraph gets its own pause.
+    if (!/[.!?:;]["”»]?\s*$/.test(seg.text)) fullText += '.';
   });
   if (!fullText) return;
 
-  const utter = new SpeechSynthesisUtterance(fullText);
-  announceSpeech(utter);
-  utter.lang = getLang() === 'es' ? 'es-ES' : 'en-US';
-  const profile = voiceProfileFor(speaker);
-  if (profile.voice) utter.voice = profile.voice;
-  utter.pitch = profile.pitch;
-  utter.rate = profile.rate * getSpeechRateMultiplier();
-
-  // onboundary is the accurate path, but plenty of mobile browsers never
-  // fire it at all, which used to mean no highlight ever appeared there --
-  // if no real boundary shows up shortly after speech starts, fall back to
-  // advancing through the words on an estimated per-word timer instead.
-  // Not perfectly in sync, but far better than nothing. A real boundary
-  // event arriving later (some engines fire it late/sparsely rather than
-  // never) always takes back over from the estimate.
   let usedRealBoundary = false;
-  let fallbackIndex = 0;
-
-  // Swaps which word is highlighted without touching the fallback timer --
-  // clearActiveHighlight() (module-level) also stops that timer, which
-  // would be wrong to do from inside a tick of the timer itself.
-  function highlightSpan(span){
+  const highlightSpan = span => {
     if (activeHighlightSpan) activeHighlightSpan.classList.remove('is-speaking-word');
     span.classList.add('is-speaking-word');
     activeHighlightSpan = span;
-  }
-
-  function stopFallback(){
-    if (activeFallbackTimer){ clearInterval(activeFallbackTimer); activeFallbackTimer = null; }
-  }
-
-  function startFallback(){
-    if (usedRealBoundary || activeFallbackTimer || !wordSpans.length) return;
-    const wordsPerMinute = 165 * (utter.rate || 1);
-    const msPerWord = Math.max(120, 60000 / wordsPerMinute);
-    activeFallbackTimer = setInterval(() => {
-      if (fallbackIndex >= wordSpans.length){ stopFallback(); return; }
-      highlightSpan(wordSpans[fallbackIndex].span);
-      fallbackIndex += 1;
-    }, msPerWord);
-  }
-
-  // Anchored to the speak() call itself, not the onstart event -- some
-  // browsers/OSes are flaky about firing onstart at all, which would
-  // otherwise mean the fallback never even gets a chance to kick in.
-  setTimeout(() => { if (!usedRealBoundary) startFallback(); }, 350);
-  utter.onstart = () => { if (!usedRealBoundary) startFallback(); };
-  utter.onboundary = (e) => {
-    if (e.name && e.name !== 'word') return;
-    const match = wordSpans.find(w => e.charIndex >= w.start && e.charIndex < w.end);
-    if (!match) return;
-    usedRealBoundary = true;
-    stopFallback();
-    highlightSpan(match.span);
   };
-  utter.onend = clearActiveHighlight;
-  utter.onerror = clearActiveHighlight;
+  const stopFallback = () => { if (activeFallbackTimer){ clearInterval(activeFallbackTimer); activeFallbackTimer = null; } };
 
-  window.speechSynthesis.speak(utter);
+  speakQueue(fullText, voiceProfileFor(speaker), {
+    chunkStart(chunk, rate){
+      if (usedRealBoundary) return;
+      stopFallback();
+      const end = chunk.start + chunk.text.length;
+      let idx = wordSpans.findIndex(w => w.end > chunk.start);
+      if (idx < 0) return;
+      const msPerWord = Math.max(140, 60000 / (160 * (rate || 1)));
+      highlightSpan(wordSpans[idx].span);
+      activeFallbackTimer = setInterval(() => {
+        idx += 1;
+        if (idx >= wordSpans.length || wordSpans[idx].start >= end){ stopFallback(); return; }
+        highlightSpan(wordSpans[idx].span);
+      }, msPerWord);
+    },
+    boundary(charIndex){
+      const match = wordSpans.find(w => charIndex >= w.start && charIndex < w.end);
+      if (!match) return;
+      usedRealBoundary = true;
+      stopFallback();
+      highlightSpan(match.span);
+    },
+    done: clearActiveHighlight,
+  });
 }
 
 // `autoRead` (default true): when the learner's profile has "read

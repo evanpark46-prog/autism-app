@@ -2459,3 +2459,88 @@ section[id]{scroll-margin-top:120px;}
 .book-spine__levels{display:grid; grid-template-columns:repeat(3, minmax(0, 1fr)); gap:6px;}
 .book-spine__level{padding:7px 8px; font-size:.95rem;}
 .book-spine__level small{font-size:.72rem;}
+
+/* ---------- Super Reader Challenge (story book quiz) ---------- */
+.book-quiz{display:flex; flex-direction:column; gap:10px;}
+.book-quiz__title{margin:0; font-family:'Fredoka', 'Nunito', sans-serif; font-size:1.5rem; text-align:center;}
+.book-quiz__intro{margin:0; text-align:center; font-weight:700;}
+.book-quiz__progress{margin:0; text-align:center; font-weight:800; color:var(--muted, #5b6474); font-size:.95rem;}
+.book-quiz__q{margin:4px 0 0; font-size:1.3rem; font-weight:800;}
+.book-quiz__choices{display:grid; gap:10px;}
+.book-quiz__choice{
+  text-align:left; min-height:56px; padding:12px 16px; border-radius:16px; border:3px solid var(--border, #d8dde6);
+  background:#fff; color:var(--ink, #1d2330); font:inherit; font-size:1.15rem; font-weight:700; cursor:pointer; line-height:1.35;
+}
+.book-quiz__choice:hover:not([disabled]), .book-quiz__choice:focus-visible{border-color:var(--blue, #2f7fe0); outline:none; box-shadow:0 0 0 3px rgba(47,127,224,.25);}
+.book-quiz__choice.is-right{border-color:#2fbf71; background:#e9f9f0;}
+.book-quiz__choice.is-wrong{border-color:#e7b1b1; background:#fbf1f1; color:#7a5a5a; opacity:.75; cursor:default;}
+.book-quiz__choice[disabled]{cursor:default;}
+.book-quiz__fb{display:flex; flex-direction:column; align-items:flex-start; gap:8px;}
+.book-quiz__fb:empty{display:none;}
+.book-quiz__good{margin:0; font-weight:800; color:#1d7a48; font-size:1.15rem;}
+.book-quiz__try{margin:0; font-weight:700; color:#8a5a00;}
+.book-quiz--done{align-items:center; text-align:center;}
+.book-quiz__medal{font-size:4rem; line-height:1; animation:book-medal-pop .6s ease-out;}
+.book-quiz__done-title{margin:0; font-family:'Fredoka', 'Nunito', sans-serif; font-size:1.6rem; font-weight:700;}
+.book-quiz__stars{margin:0; font-size:1.8rem; letter-spacing:4px;}
+@keyframes book-medal-pop{0%{transform:scale(.3) rotate(-20deg); opacity:0;} 70%{transform:scale(1.15) rotate(6deg); opacity:1;} 100%{transform:scale(1) rotate(0);}}
+@media (prefers-reduced-motion: reduce){ .book-quiz__medal{animation:none;} }
+[data-calm-mode="on"] .book-quiz__medal{animation:none;}
+.book-toolbar__back-q{min-height:44px;}
+.book-spine__star{font-size:.95em;}
+
+/* ---------- Reading voice picker (Display panel) ---------- */
+.voice-picker{display:flex; gap:6px; align-items:center; max-width:100%;}
+.voice-picker select{min-width:0; flex:1 1 auto; max-width:260px;}
+.voice-test-btn{flex:none; min-width:44px; min-height:44px; border-radius:12px; border:2px solid var(--border, #d8dde6); background:#fff; font-size:1rem; cursor:pointer;}
+
+/* ---------- Say It Like a Hero (say-it.html) ---------- */
+.sayit-score{font-weight:800;}
+.sayit-cats{display:flex; flex-wrap:wrap; gap:8px; justify-content:center; max-width:900px; margin:0 auto 16px;}
+.sayit-cat-btn{min-height:44px; padding:8px 14px; border-radius:999px; border:2px solid var(--border, #d8dde6); background:#fff; color:var(--ink, #1d2330); font:inherit; font-weight:800; cursor:pointer;}
+.sayit-cat-btn[aria-pressed="true"]{background:var(--blue, #2f7fe0); border-color:var(--blue, #2f7fe0); color:#fff;}
+.sayit-grid{list-style:none; margin:0 auto; padding:0; max-width:900px; display:grid; gap:12px; grid-template-columns:repeat(auto-fill, minmax(min(100%, 190px), 1fr));}
+.sayit-tile{
+  position:relative; width:100%; min-height:96px; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:4px;
+  padding:14px 10px; border-radius:18px; border:3px solid var(--border, #e3dccb); background:#fffdf6; color:var(--ink, #1d2330);
+  font:inherit; cursor:pointer; box-shadow:0 5px 12px rgba(60,40,10,.07);
+}
+.sayit-tile:hover, .sayit-tile:focus-visible{border-color:var(--amber, #ffb52e); outline:none; transform:translateY(-2px);}
+.sayit-tile.has-star{border-color:#f3cf63; background:#fff8df;}
+.sayit-tile__word{font-family:'Fredoka', 'Nunito', sans-serif; font-size:1.35rem; font-weight:700;}
+.sayit-tile__syl{font-size:.9rem; color:var(--muted, #5b6474); font-weight:700;}
+.sayit-tile__star{position:absolute; top:6px; right:8px;}
+.sayit-toolbar{display:flex; justify-content:space-between; align-items:center; gap:10px; flex-wrap:wrap; max-width:760px; margin:0 auto 10px;}
+.sayit-back{background:none; border:0; font:inherit; cursor:pointer; padding:8px 0; min-height:44px;}
+.sayit-session{margin:0; font-weight:800;}
+.sayit-card{max-width:760px; margin:0 auto; padding:clamp(18px, 4vw, 32px); border-radius:26px; background:#fffdf6; border:3px solid var(--border, #e3dccb); box-shadow:0 10px 24px rgba(60,40,10,.10); text-align:center;}
+.sayit-cat{margin:0; font-weight:800; color:var(--muted, #5b6474);}
+.sayit-word{margin:6px 0 10px; font-family:'Fredoka', 'Nunito', sans-serif; font-size:clamp(2.4rem, 9vw, 3.8rem); line-height:1.1; word-break:break-word;}
+.sayit-word:focus{outline:none;}
+.sayit-chips{display:flex; flex-wrap:wrap; justify-content:center; align-items:center; gap:6px;}
+.sayit-chip{min-width:52px; min-height:52px; padding:6px 14px; border-radius:16px; border:3px solid #b9d7f7; background:#eef6ff; color:var(--ink, #1d2330); font:inherit; font-size:1.5rem; font-weight:800; cursor:pointer; transition:transform .15s, background .15s;}
+.sayit-chip.is-stress{font-size:1.9rem; border-color:#f0a23a; background:#fff1dc;}
+.sayit-chip.is-speaking{background:#ffe066; border-color:#e0a800; transform:scale(1.12);}
+.sayit-dot{font-size:1.6rem; color:var(--muted, #8a93a3);}
+.sayit-sounds{margin:12px 0 0; font-size:1.15rem;}
+.sayit-tip{margin:6px 0 0; color:var(--muted, #5b6474); font-size:.95rem;}
+.sayit-step{margin-top:20px; padding-top:16px; border-top:2px dashed var(--border, #e3dccb);}
+.sayit-step__title{margin:0 0 10px; font-size:1.2rem; display:flex; align-items:center; justify-content:center; gap:8px;}
+.sayit-step__n{display:inline-grid; place-items:center; width:30px; height:30px; border-radius:50%; background:var(--blue, #2f7fe0); color:#fff; font-size:1rem;}
+.sayit-buttons{display:flex; flex-wrap:wrap; gap:10px; justify-content:center;}
+.sayit-mic.is-listening{animation:sayit-pulse 1s ease-in-out infinite;}
+@keyframes sayit-pulse{0%,100%{box-shadow:0 0 0 0 rgba(224,90,90,.45);} 50%{box-shadow:0 0 0 12px rgba(224,90,90,0);}}
+.sayit-mic-dot{display:inline-block; width:12px; height:12px; border-radius:50%; background:#e05a5a; vertical-align:middle;}
+.sayit-fb{margin:12px 0 0; font-weight:800; font-size:1.15rem;}
+.sayit-fb--great{color:#1d7a48;} .sayit-fb--almost{color:#8a5a00;} .sayit-fb--listen{color:#b03a3a;}
+.sayit-heard{display:block; font-weight:600; font-size:.95rem; color:var(--muted, #5b6474);}
+.sayit-selfnote{margin:0; width:100%;}
+.sayit-learn{text-align:left;}
+.sayit-learn p{font-size:1.1rem; margin:0 0 10px;}
+.sayit-example{font-style:italic;}
+.sayit-ex-btn{min-width:44px; min-height:44px; border-radius:12px; border:2px solid var(--border, #d8dde6); background:#fff; cursor:pointer; font-style:normal; margin-right:6px;}
+.sayit-story-link{display:inline-block; font-weight:800; padding:6px 0;}
+.sayit-done__words{display:flex; flex-wrap:wrap; gap:8px; justify-content:center;}
+.sayit-done__words span{padding:6px 12px; border-radius:999px; background:#fff8df; border:2px solid #f3cf63; font-weight:800;}
+@media (prefers-reduced-motion: reduce){ .sayit-mic.is-listening{animation:none;} .sayit-chip{transition:none;} }
+[data-calm-mode="on"] .sayit-mic.is-listening{animation:none;}
