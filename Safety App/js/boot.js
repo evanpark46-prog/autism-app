@@ -136,6 +136,9 @@ document.addEventListener('DOMContentLoaded', () => {
   else if (page === 'villain') initVillainPage();
   else if (page === 'storybook') initStoryBookPage();
   else if (page === 'say-it') initSayItPage();
+  else if (page === 'hero-route') initHeroRoutePage();
+  else if (page === 'spot-danger') initSpotDangerPage();
+  else if (page === 'help-call') initHelpCallPage();
   else if (page === 'hero-rush') initHeroRushPage();
   else if (page === 'vocab-quiz') initVocabQuizPage();
   else if (page === 'sort-it-out') initSortItOutPage();

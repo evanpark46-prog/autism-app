@@ -57,6 +57,20 @@ function sayItSpeak(pieces, rate, onPart, onDone){
       return;
     }
     const idx = i++;
+    const gap = () => setTimeout(next, pieces.length > 1 ? 280 : 0);
+    // The recorded natural voice when this piece has a recording.
+    const lang = getLang();
+    const clean = typeof cleanForSpeech === 'function' ? cleanForSpeech(pieces[idx]) : '';
+    const sent = clean ? speechSentences(clean) : [];
+    const keys = sent.length === 1 && typeof recordedKeys === 'function' ? recordedKeys(lang, sent) : null;
+    if (keys){
+      playVoiceClip(run, lang, keys[0], (rate / 0.92) * getSpeechRateMultiplier(), () => { if (run === speechRun && onPart) onPart(idx); })
+        .then(ok => { if (run !== speechRun) return; if (ok) gap(); else ttsPiece(idx); });
+      return;
+    }
+    ttsPiece(idx);
+  };
+  const ttsPiece = idx => {
     const u = new SpeechSynthesisUtterance(pieces[idx]);
     if (voice){ u.voice = voice; u.lang = voice.lang; } else u.lang = getLang() === 'es' ? 'es-US' : 'en-US';
     u.rate = rate * getSpeechRateMultiplier();

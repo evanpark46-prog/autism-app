@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script>(function(){try{var s=localStorage.getItem('safetylib_skin');if(s)document.documentElement.setAttribute('data-skin', s);}catch(e){}})();</script>
+  <script>(function(){try{var sizes=[87.5,100,115,130,145];var idx=parseInt(localStorage.getItem('safetylib_text_size_idx'),10);if(!(idx>=0&&idx<sizes.length))idx=1;document.documentElement.style.fontSize=sizes[idx]+'%';}catch(e){}})();</script>
+  <script>(function(){try{var f=localStorage.getItem('safetylib_heading_font');if(f==='cursive')document.documentElement.setAttribute('data-heading-font','cursive');}catch(e){}})();</script>
+  <script>(function(){try{var c=localStorage.getItem('safetylib_calm_mode');document.documentElement.setAttribute('data-calm-mode', c==='on'?'on':'off');}catch(e){}})();</script>
+  <script>(function(){try{var p=JSON.parse(localStorage.getItem('safetylib_profile_v1')||'{}')||{};var r=document.documentElement;r.setAttribute('data-look',p.look==='calm'?'calm':'playful');if(p.contrast)r.setAttribute('data-contrast','');if(p.easyFont)r.setAttribute('data-easy-font','');}catch(e){document.documentElement.setAttribute('data-look','playful');}})();</script>
+  <script>(function(){try{var n=+sessionStorage.getItem("safetylib_hero_nav");sessionStorage.removeItem("safetylib_hero_nav");if(n&&Date.now()-n<4000&&localStorage.getItem("safetylib_calm_mode")!=="on")document.documentElement.setAttribute("data-hero-enter","");}catch(e){}})();</script>
+  <title>Hero Route — Safety Superheroes</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Atkinson+Hyperlegible:wght@400;700&family=Nunito:wght@600;700;800;900&family=DM+Sans:wght@400;500;700&family=Dancing+Script:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#c8460a">
+  <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+  <link rel="icon" type="image/png" href="img/icon-192.png">
+  <meta name="robots" content="noindex">
+  <meta name="description" content="Walk a route with your hero: watch the hero model each safe step, then do it yourself.">
+</head>
+<body data-page="hero-route">
+  <a href="#main" class="skip-link">Skip to content</a>
+  <noscript><p class="note-box" style="margin:16px 20px;">Safety Superheroes needs JavaScript turned on to show its lessons. Please enable JavaScript in your browser settings and reload the page.</p></noscript>
+
+  <header class="site-header">
+    <div class="site-header__bar">
+      <a href="index.html" class="brand">
+        <span class="brand__badge" aria-hidden="true"><svg viewBox="0 0 64 64" width="100%" height="100%" fill="none" xmlns="http://www.w3.org/2000/svg" focusable="false"><path d="M32 3 58 12v17c0 18-11 29-26 32C17 58 6 47 6 29V12Z" fill="#c8460a" stroke="#2b2b2b" stroke-width="3.5" stroke-linejoin="round"/><path d="M32 10 50 16v13.5c0 14-8.5 23-18 26-9.5-3-18-12-18-26V16Z" fill="#fff8f0" stroke="#2b2b2b" stroke-width="2.5" stroke-linejoin="round"/><text x="32" y="42" font-family="'Nunito', sans-serif" font-weight="800" font-size="28" text-anchor="middle" fill="#c8460a">S</text></svg></span>
+        <span data-i18n="brand">Safety Superheroes</span>
+      </a>
+      <nav class="site-nav" aria-label="Main">
+        <a href="index.html" data-i18n="nav_library">Home</a>
+        <a href="review.html" data-i18n="nav_review">Review</a>
+        <a href="storybook.html" data-i18n="nav_stories">Hero Stories</a>
+        <a href="games.html" aria-current="page" data-i18n="nav_games">Games</a>
+        <a href="parents.html" data-i18n="nav_parents">Parents &amp; Educators</a>
+        <a href="about.html" data-i18n="nav_about">About</a>
+      </nav>
+      <div class="display-settings">
+        <button type="button" class="display-settings__btn" data-display-toggle aria-expanded="false" aria-haspopup="true" aria-controls="display-panel">
+          <span aria-hidden="true">⚙️</span> <span data-i18n="display_settings_label">Display</span>
+        </button>
+        <div class="display-panel" id="display-panel" data-display-panel hidden>
+          <div class="display-panel__group">
+            <span class="display-panel__label" data-i18n="skin_label">Color theme</span>
+            <div class="skin-switch" data-skin-switch role="group" aria-label="Color theme"></div>
+          </div>
+          <div class="display-panel__group">
+            <span class="display-panel__label" data-i18n="textsize_label">Text size</span>
+            <div class="text-size-switch" data-textsize-switch role="group" aria-label="Text size"></div>
+          </div>
+          <div class="display-panel__group">
+            <label class="display-panel__label" for="headingfont-select" data-i18n="headingfont_label">Heading style</label>
+            <select id="headingfont-select" data-headingfont-select></select>
+          </div>
+          <div class="display-panel__group">
+            <label class="display-panel__label" for="rate-select" data-i18n="rate_label">Voice speed</label>
+            <select id="rate-select" data-rate-select></select>
+          </div>
+          <div class="display-panel__group">
+            <label class="display-panel__label" for="voice-select" data-i18n="voice_label">Reading voice</label>
+            <span class="voice-picker"><select id="voice-select" data-voice-select></select><button type="button" class="voice-test-btn" data-voice-test data-i18n-aria-label="voice_test" aria-label="Hear this voice">▶</button></span>
+          </div>
+          <div class="display-panel__group">
+            <span class="display-panel__label" data-i18n="calmmode_label">Calm Mode</span>
+            <div data-calmmode-switch></div>
+          </div>
+          <div class="display-panel__group">
+            <span class="display-panel__label" data-i18n="symbolmode_label">Symbol Support</span>
+            <div data-symbolmode-switch></div>
+          </div>
+        </div>
+      </div>
+      <div class="lang-switch">
+        <label class="visually-hidden" for="lang-select" data-i18n="lang_label">Language</label>
+        <select id="lang-select" data-lang-select></select>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <div data-hg-root></div>
+  </main>
+
+  <footer class="site-footer">
+    <p data-i18n="footer_note">Safety Superheroes — a free resource.</p>
+    <p><a href="privacy.html" data-i18n="footer_privacy_link">Privacy Policy</a></p>
+  </footer>
+
+  <script src="js/i18n.js"></script>
+  <script src="js/calmmode.js"></script>
+  <script src="js/symbols.js"></script>
+  <script src="js/theme.js"></script>
+  <script src="js/textsize.js"></script>
+  <script src="js/headingfont.js"></script>
+  <script src="js/voice-audio.js"></script>
+  <script src="js/speechrate.js"></script>
+  <script src="js/analytics.js"></script>
+  <script src="js/pwa.js"></script>
+  <script src="js/calmspace.js"></script>
+  <script src="js/topics-index.js"></script>
+  <script src="js/heroes.js"></script>
+  <script src="js/animal-heroes.js"></script>
+  <script src="js/agebands.js"></script>
+  <script src="js/speech.js"></script>
+  <script src="js/hero-games-data.js"></script>
+  <script src="js/soundfx.js"></script>
+  <script src="js/page-hero-games.js"></script>
+  <script src="js/profile.js"></script>
+  <script src="js/music.js"></script>
+  <script src="js/hero-transition.js"></script>
+  <script src="js/boot.js"></script>
+</body>
+</html>

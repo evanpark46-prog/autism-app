@@ -105,7 +105,7 @@ function readingVoice(lang){
   const list = voicesForLang(lang || (typeof getLang === 'function' ? getLang() : 'en'));
   if (!list.length) return null;
   const want = getVoicePrefs()[lang || getLang()];
-  return (want && list.find(v => v.name === want)) || list[0];
+  return (want && want !== '__auto__' && list.find(v => v.name === want)) || list[0];
 }
 
 function voiceLabel(v){
@@ -116,16 +116,18 @@ function voiceLabel(v){
 function initVoicePicker(){
   const groups = document.querySelectorAll('[data-voice-select]');
   if (!groups.length) return;
-  if (!TTS_OK){ groups.forEach(s => { const g = s.closest('.display-panel__group'); if (g) g.hidden = true; }); return; }
   const render = () => groups.forEach(select => {
     const lang = getLang();
     const list = voicesForLang(lang).filter(v => rankVoice(v) < 9);
     const current = readingVoice(lang);
     const testBtn = select.parentElement && select.parentElement.querySelector('[data-voice-test]');
     if (testBtn){ testBtn.setAttribute('aria-label', t('voice_test')); testBtn.title = t('voice_test'); }
-    const auto = getVoicePrefs()[lang] ? '' : 'selected';
-    select.innerHTML = `<option value="" ${auto}>${escapeHtml(t('voice_auto'))}${current ? ` — ${escapeHtml(voiceLabel(current))}` : ''}</option>` +
-      list.map(v => `<option value="${escapeHtml(v.name)}" ${!auto && current && v.name === current.name ? 'selected' : ''}>${escapeHtml(voiceLabel(v))}</option>`).join('');
+    const pref = getVoicePrefs()[lang] || '';
+    const sel = v => (v ? 'selected' : '');
+    // '' = the recorded natural voice (default), '__auto__' = best device voice.
+    select.innerHTML = `<option value="" ${sel(!pref)}>${escapeHtml(t('voice_natural'))}</option>` +
+      `<option value="__auto__" ${sel(pref === '__auto__')}>${escapeHtml(t('voice_auto'))}${current ? ` — ${escapeHtml(voiceLabel(current))}` : ''}</option>` +
+      list.map(v => `<option value="${escapeHtml(v.name)}" ${sel(pref && pref !== '__auto__' && current && v.name === current.name)}>${escapeHtml(voiceLabel(v))}</option>`).join('');
   });
   groups.forEach(select => {
     select.addEventListener('change', () => {
@@ -143,6 +145,20 @@ function initVoicePicker(){
 
 // A short sample in the chosen voice so a grown-up can compare voices.
 function voicePreview(){
+  const lang = getLang();
+  if (typeof naturalVoiceOn === 'function' && naturalVoiceOn(lang)){
+    if (typeof speak === 'function' && typeof speakQueue === 'function'){ speak(t('voice_sample')); return; }
+    loadVoiceManifest(lang).then(set => {
+      const keys = speechSentences(cleanForSpeech(t('voice_sample'))).map(x => voiceKey(x.text));
+      if (!keys.length || !keys.every(k => set.has(k))) return;
+      if (TTS_OK) window.speechSynthesis.cancel();
+      let i = 0;
+      const a = new Audio();
+      const next = () => { if (i >= keys.length) return; fetchVoiceClip(lang, keys[i++]).then(u => { a.src = u; a.playbackRate = getSpeechRateMultiplier(); a.onended = next; a.play().catch(() => {}); }).catch(() => {}); };
+      next();
+    });
+    return;
+  }
   if (!TTS_OK) return;
   const v = readingVoice(getLang());
   window.speechSynthesis.cancel();

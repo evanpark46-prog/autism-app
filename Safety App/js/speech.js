@@ -67,18 +67,8 @@ function voiceProfileFor(speaker){
   return { voice, pitch: isChild ? 1.06 : 0.97 + (hashStr(speaker) % 5) / 100, rate };
 }
 
-// Make text sound right WITHOUT changing its length (word highlighting maps
-// the engine's character offsets back onto the page): emoji and symbols
-// become spaces (otherwise they're read out as "star", "superhero"…), dashes
-// become commas (a natural pause), quote marks are dropped.
-function cleanForSpeech(s){
-  return s
-    .replace(/[\p{Extended_Pictographic}\u{1F1E6}-\u{1F1FF}\u{FE0F}\u{200D}\u{20E3}]/gu, m => ' '.repeat(m.length))
-    .replace(/[←→↑↓✓✔✖✕★☆•·…]/g, m => m === '…' ? '.' : ' ')
-    .replace(/[—–]/g, ',')
-    .replace(/[“”«»"]/g, ' ')
-    .replace(/\s\/\s/g, m => ' , ');
-}
+// cleanForSpeech() lives in js/voice-audio.js (shared with the voice
+// recording build so the recorded sentences always match).
 
 // Sentence-sized pieces: Chrome silently stops long utterances after ~15 s
 // with its (much nicer) Google voices, and short pieces give natural pauses.
@@ -110,22 +100,125 @@ function speechChunks(text){
 
 // Speaks `text` sentence by sentence. hooks: { boundary(globalCharIndex),
 // chunkStart(chunk), done() }.
+// Uses the recorded natural voice (js/voice-audio.js) when every sentence
+// has a recording, otherwise the device voice.
 function speakQueue(text, profile, hooks){
   hooks = hooks || {};
   const run = ++speechRun;
   const clean = cleanForSpeech(text);
+  const lang = getLang();
+  if (typeof recordedKeys === 'function'){
+    const sentences = speechSentences(clean);
+    const keys = sentences.length ? recordedKeys(lang, sentences) : null;
+    if (keys){
+      if (SPEECH_SUPPORTED) window.speechSynthesis.cancel();
+      speechBusy = true;
+      fireSpeech('safetylib:speechstart');
+      playRecordedQueue(run, lang, clean, sentences, keys, profile, hooks);
+      return;
+    }
+  }
+  if (!SPEECH_SUPPORTED) return;
   const chunks = speechChunks(clean);
   if (!chunks.length) return;
   window.speechSynthesis.cancel();
   speechBusy = true;
   fireSpeech('safetylib:speechstart');
+  ttsQueue(run, chunks, profile, hooks);
+}
+
+function speechRateMult(){
+  return typeof getSpeechRateMultiplier === 'function' ? getSpeechRateMultiplier() : 1;
+}
+
+function finishSpeechRun(run, hooks){
+  if (run !== speechRun) return;
+  speechBusy = false;
+  fireSpeech('safetylib:speechend');
+  if (hooks && hooks.done) hooks.done();
+}
+
+// One shared <audio> element: iOS only lets a page play sound from an
+// element that was first started by a tap, so reusing it keeps later
+// sentences (and auto-read) allowed.
+let voiceAudioEl = null;
+function getVoiceAudioEl(){
+  if (!voiceAudioEl && typeof Audio !== 'undefined'){ voiceAudioEl = new Audio(); voiceAudioEl.preload = 'auto'; }
+  return voiceAudioEl;
+}
+function stopVoiceAudio(){
+  if (voiceAudioEl){ try { voiceAudioEl.pause(); } catch (e){} voiceAudioEl.onended = voiceAudioEl.onerror = null; }
+}
+
+// Plays one recorded clip. Resolves true when it finished, false if it
+// could not play (missing file, autoplay blocked) so the caller can fall back.
+function playVoiceClip(run, lang, key, rate, onPlaying){
+  const audio = getVoiceAudioEl();
+  if (!audio) return Promise.resolve(false);
+  return fetchVoiceClip(lang, key).then(url => new Promise(resolve => {
+    if (run !== speechRun){ resolve(true); return; }
+    let settled = false;
+    const done = ok => { if (settled) return; settled = true; audio.onended = audio.onerror = null; resolve(ok); };
+    audio.onended = () => done(true);
+    audio.onerror = () => done(false);
+    audio.src = url;
+    audio.preservesPitch = true;
+    audio.playbackRate = Math.max(0.5, Math.min(2, rate));
+    const p = audio.play();
+    const started = () => { if (run === speechRun && onPlaying) onPlaying(audio); };
+    if (p && p.then) p.then(started, () => done(false)); else started();
+  }), () => false);
+}
+
+function playRecordedQueue(run, lang, clean, sentences, keys, profile, hooks){
+  const rate = speechRateMult();
   let i = 0;
-  const finish = () => {
-    if (run !== speechRun) return;
-    speechBusy = false;
-    fireSpeech('safetylib:speechend');
-    if (hooks.done) hooks.done();
+  let raf = 0;
+  const stopTrack = () => { if (raf) cancelAnimationFrame(raf); raf = 0; };
+  // Word highlight: move through the sentence in step with playback.
+  const track = (s, audio) => {
+    stopTrack();
+    if (!hooks.boundary) return;
+    const lead = s.text.length - s.text.replace(/^\s+/, '').length;
+    const body = s.text.trim().length;
+    const tick = () => {
+      if (run !== speechRun || audio.paused){ raf = 0; return; }
+      const d = audio.duration;
+      if (d && isFinite(d)){
+        const pad = Math.min(0.15, d * 0.08); // the voice starts/ends with a little silence
+        const frac = Math.max(0, Math.min(0.999, (audio.currentTime - pad) / Math.max(0.1, d - 2 * pad)));
+        hooks.boundary(s.start + lead + Math.floor(frac * body));
+      }
+      raf = requestAnimationFrame(tick);
+    };
+    raf = requestAnimationFrame(tick);
   };
+  const next = () => {
+    if (run !== speechRun){ stopTrack(); return; }
+    if (i >= sentences.length){ stopTrack(); finishSpeechRun(run, hooks); return; }
+    const idx = i++;
+    const s = sentences[idx];
+    if (idx + 1 < keys.length) fetchVoiceClip(lang, keys[idx + 1]).catch(() => {}); // no gap before the next sentence
+    playVoiceClip(run, lang, keys[idx], rate, audio => {
+      if (hooks.chunkStart) hooks.chunkStart(s, rate, true);
+      track(s, audio);
+    }).then(ok => {
+      stopTrack();
+      if (run !== speechRun) return;
+      if (ok){ setTimeout(next, 120); return; }
+      // Couldn't play the recording: read the rest with the device voice.
+      if (!SPEECH_SUPPORTED){ finishSpeechRun(run, hooks); return; }
+      const rest = speechChunks(clean).filter(c => c.start + c.text.length > s.start);
+      if (!rest.length){ finishSpeechRun(run, hooks); return; }
+      ttsQueue(run, rest, profile, hooks);
+    });
+  };
+  next();
+}
+
+function ttsQueue(run, chunks, profile, hooks){
+  let i = 0;
+  const finish = () => finishSpeechRun(run, hooks);
   const next = () => {
     if (run !== speechRun) return;
     if (i >= chunks.length){ finish(); return; }
@@ -171,6 +264,7 @@ function clearActiveHighlight(){
 function stopSpeaking(){
   speechRun++;
   if (SPEECH_SUPPORTED) window.speechSynthesis.cancel();
+  stopVoiceAudio();
   speechBusy = false;
   clearActiveHighlight();
   window.dispatchEvent(new CustomEvent('safetylib:speechend'));
@@ -228,8 +322,8 @@ function speakWithHighlight(segments, speaker, joiner){
   const stopFallback = () => { if (activeFallbackTimer){ clearInterval(activeFallbackTimer); activeFallbackTimer = null; } };
 
   speakQueue(fullText, voiceProfileFor(speaker), {
-    chunkStart(chunk, rate){
-      if (usedRealBoundary) return;
+    chunkStart(chunk, rate, recorded){
+      if (usedRealBoundary || recorded) return;
       stopFallback();
       const end = chunk.start + chunk.text.length;
       let idx = wordSpans.findIndex(w => w.end > chunk.start);

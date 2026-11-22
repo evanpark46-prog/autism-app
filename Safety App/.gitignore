@@ -1,0 +1,4 @@
+
+# Kokoro voice model files (downloaded by tools/voice/generate.py)
+tools/voice/model/
+.venv-voice/

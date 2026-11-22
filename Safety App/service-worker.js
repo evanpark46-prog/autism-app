@@ -10,7 +10,12 @@
    returning visitors pick up the change instead of an old cached copy.
    ========================================================================== */
 
-const CACHE_NAME = 'safety-superheroes-shell-v47';
+const CACHE_NAME = 'safety-superheroes-shell-v48';
+
+// Recorded read-aloud voice clips (audio/voice/<lang>/*.mp3) live in their
+// own cache that survives shell updates -- a clip never changes (its file
+// name is a hash of the sentence), so there's no reason to download it twice.
+const VOICE_CACHE = 'safety-superheroes-voice-v1';
 
 const SHELL_FILES = [
   'index.html',
@@ -28,6 +33,9 @@ const SHELL_FILES = [
   'villain.html',
   'storybook.html',
   'say-it.html',
+  'hero-route.html',
+  'spot-danger.html',
+  'help-call.html',
   'hero-rush.html',
   'vocab-quiz.html',
   'sort-it-out.html',
@@ -58,6 +66,9 @@ const SHELL_FILES = [
   'js/page-storybook.js',
   'js/page-say-it.js',
   'js/safety-words.js',
+  'js/hero-games-data.js',
+  'js/page-hero-games.js',
+  'js/voice-audio.js',
   'js/soundfx.js',
   'js/categories.js',
   'js/topics-index.js',
@@ -101,7 +112,7 @@ self.addEventListener('install', event => {
 self.addEventListener('activate', event => {
   event.waitUntil(
     caches.keys()
-      .then(keys => Promise.all(keys.filter(key => key !== CACHE_NAME).map(key => caches.delete(key))))
+      .then(keys => Promise.all(keys.filter(key => key !== CACHE_NAME && key !== VOICE_CACHE).map(key => caches.delete(key))))
       .then(() => self.clients.claim())
   );
 });
@@ -111,7 +122,30 @@ self.addEventListener('fetch', event => {
   if (request.method !== 'GET') return;
   // Music files stream with Range requests; let the browser handle them
   // directly (caching partial responses would break seeking and waste space).
-  if (new URL(request.url).pathname.includes('/audio/music/')) return;
+  const path = new URL(request.url).pathname;
+  if (path.includes('/audio/music/')) return;
+
+  // Voice clips: cache-first in the long-lived voice cache. The list of
+  // recorded sentences (index.json) grows over time, so check the network
+  // first for that.
+  if (path.includes('/audio/voice/')){
+    if (path.endsWith('index.json')){
+      event.respondWith(
+        fetch(request).then(response => {
+          if (response && response.ok){ const copy = response.clone(); caches.open(VOICE_CACHE).then(c => c.put(request, copy)); }
+          return response;
+        }).catch(() => caches.match(request))
+      );
+      return;
+    }
+    event.respondWith(
+      caches.open(VOICE_CACHE).then(cache => cache.match(request).then(hit => hit || fetch(request).then(response => {
+        if (response && response.status === 200) cache.put(request, response.clone());
+        return response;
+      })))
+    );
+    return;
+  }
 
   // Pages: try the network first so edits show up right away; fall back to
   // the cached shell copy when offline. ignoreSearch matters here -- pages
