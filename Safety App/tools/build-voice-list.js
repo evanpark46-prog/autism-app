@@ -69,18 +69,43 @@ function add(lang, str, p){
 const games = loadGlobals('js/hero-games-data.js');
 for (const lang of LANGS){
   const out = [];
-  strings(games.HERO_ROUTES[lang], out); strings(games.DANGER_SCENES[lang], out);
-  strings(games.HELP_CALLS[lang], out);
+  // Every game's data (HERO_ROUTES, DANGER_SCENES, HELPER_SCENES, SAFETY_SIGNS, FREEZE_CUES, GO_BAG...)
+  for (const name of Object.keys(games)) if (name !== 'HELP_CALL_SCRIPT' && games[name] && games[name][lang]) strings(games[name][lang], out);
   const script = JSON.parse(JSON.stringify(games.HELP_CALL_SCRIPT[lang]));
   for (const call of games.HELP_CALLS[lang]) out.push(call.what);
   strings(script, out);
   // Lines the game pages put together themselves.
-  for (const sc of games.DANGER_SCENES[lang]) for (const it of sc.items) out.push(it.name + '.');
+  for (const sc of games.DANGER_SCENES[lang].concat(games.HELPER_SCENES[lang])) for (const it of sc.items) out.push(it.name + '.');
+  for (const it of games.GO_BAG[lang].items) out.push(it.name + '.');
   const ui = loadGlobals('js/page-hero-games.js').HG_UI[lang];
   strings(ui, out);
-  ['rule1', 'rule2', 'rule3'].forEach(k => out.push(ui[k] + '.'));
+  ['rule1', 'rule2', 'rule3', 'hrule1', 'hrule2', 'hrule3'].forEach(k => out.push(ui[k] + '.'));
+  out.push(ui.bag_done + ' ' + games.GO_BAG[lang].end);
   out.push(ui.call_tips.replace(/ · /g, '. ') + '.');
   out.forEach(s => add(lang, s, 0));
+}
+
+// 1: Word Builder (word, meaning, example, the fill-in sentence read with a
+// pause, the filled-in sentence, and the question prompts)
+{
+  const ctxW = vm.createContext({ window: {}, console });
+  vm.runInContext(fs.readFileSync(path.join(ROOT, 'js', 'word-builder-data.js'), 'utf8') + ';this.W = VOCAB_WORDS; this.L = VOCAB_LEVELS;', ctxW);
+  const pw = fs.readFileSync(path.join(ROOT, 'js', 'page-words.js'), 'utf8');
+  vm.runInContext(pw.match(/function wbFillWith[\s\S]*?\n}/)[0] + ';this.wbFillWith = wbFillWith;', ctxW);
+  const wb = loadGlobals('js/page-words.js').WB_UI;
+  for (const lang of LANGS){
+    const out = [];
+    strings(wb[lang], out);
+    for (const lv of ctxW.L) for (const u of lv.units){
+      out.push(u.title[lang]);
+      for (const id of u.words){
+        const w = ctxW.W[lang][id];
+        out.push(w.w, w.def, w.ex, `${w.w}. ${w.def} ${w.ex}`, `${w.w}. ${w.def}`, w.fill.replace(/_{2,}/g, '…'), ctxW.wbFillWith(w.fill, w.w));
+        out.push(lv.id === 'l1' ? wb[lang].which_pic.replace('{w}', w.w) : wb[lang].which_word);
+      }
+    }
+    out.forEach(s => add(lang, s, 1));
+  }
 }
 
 // 1: Say It words (the word, its syllables / sound-it-out parts, meaning, example)

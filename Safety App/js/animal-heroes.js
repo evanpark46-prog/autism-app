@@ -121,44 +121,129 @@ function animalSnoutSvg(a){
   }
 }
 
-// The hero mask across the eyes (theme color), with eye holes + pupils.
-function animalMaskSvg(themeVar, frog){
-  const y = frog ? 22 : 40;
-  if (frog){
-    return `<path d="M22 22 C24 14 44 14 46 22 C44 28 24 28 22 22 Z M54 22 C56 14 76 14 78 22 C76 28 56 28 54 22 Z" fill="${themeVar}" stroke="${INK}" stroke-width="2"/>`
-      + `<ellipse cx="34" cy="21.5" rx="4" ry="3.6" fill="#fff"/><ellipse cx="66" cy="21.5" rx="4" ry="3.6" fill="#fff"/><circle cx="35" cy="22" r="2" fill="${INK}"/><circle cx="67" cy="22" r="2" fill="${INK}"/>`;
-  }
-  return `<path d="M24 ${y} C26 ${y - 9} 46 ${y - 9} 50 ${y - 3} C54 ${y - 9} 74 ${y - 9} 76 ${y} C74 ${y + 8} 56 ${y + 8} 50 ${y + 3} C44 ${y + 8} 26 ${y + 8} 24 ${y} Z" fill="${themeVar}" stroke="${INK}" stroke-width="2" stroke-linejoin="round"/>`
-    + `<ellipse cx="38" cy="${y}" rx="5" ry="4.2" fill="#fff"/><ellipse cx="62" cy="${y}" rx="5" ry="4.2" fill="#fff"/>`
-    + `<circle cx="39" cy="${y + 0.5}" r="2.4" fill="${INK}"/><circle cx="63" cy="${y + 0.5}" r="2.4" fill="${INK}"/>`
-    + `<circle cx="39.8" cy="${y - 0.4}" r="0.8" fill="#fff"/><circle cx="63.8" cy="${y - 0.4}" r="0.8" fill="#fff"/>`;
+// Every hero SVG gets its own ids (gradients) and its own animation timing,
+// so a page full of heroes never blinks in sync.
+let ahUid = 0;
+function ahTiming(topicId){
+  ahUid += 1;
+  const h = (typeof hashStr === 'function' ? hashStr(topicId + ahUid) : ahUid * 7919) % 1000;
+  return { uid: 'ah' + ahUid, d1: -(h % 50) / 10, d2: -((h * 7) % 90) / 10 };
 }
 
-// Full animal-hero bust in a 100x100 box: cape, suit + emblem, head.
+// Big, shiny cartoon eyes inside the hero mask. Each eye has an eyelid (in
+// the mask color) that CSS closes for a blink, and the iris group glances
+// side to side now and then.
+function ahEyeSvg(cx, cy, lid, r){
+  r = r || 1;
+  const rx = 6.2 * r, ry = 6.9 * r;
+  return `<g class="ah-eye">`
+    + `<ellipse cx="${cx}" cy="${cy}" rx="${rx}" ry="${ry}" fill="#fff" stroke="${INK}" stroke-width="1.5"/>`
+    + `<g class="ah-look">`
+    + `<circle cx="${cx}" cy="${cy + 0.8 * r}" r="${4.1 * r}" fill="#5a3a22"/>`
+    + `<circle cx="${cx}" cy="${cy + 1.4 * r}" r="${2.9 * r}" fill="#2a1a10"/>`
+    + `<circle cx="${cx + 1.7 * r}" cy="${cy - 1.2 * r}" r="${1.7 * r}" fill="#fff"/>`
+    + `<circle cx="${cx - 1.5 * r}" cy="${cy + 2.6 * r}" r="${0.8 * r}" fill="#fff" opacity=".85"/>`
+    + `</g>`
+    + `<g class="ah-lid"><path d="M${cx - rx - 0.6} ${cy} A${rx + 0.6} ${ry + 0.6} 0 0 1 ${cx + rx + 0.6} ${cy} A${rx + 0.6} ${ry + 0.6} 0 0 1 ${cx - rx - 0.6} ${cy} Z" fill="${lid}" stroke="${INK}" stroke-width="1.5"/>`
+    + `<path d="M${cx - rx * 0.8} ${cy + ry * 0.15} Q${cx} ${cy + ry * 0.85} ${cx + rx * 0.8} ${cy + ry * 0.15}" stroke="${INK}" stroke-width="${1.7 * r}" fill="none" stroke-linecap="round"/></g>`
+    + `</g>`;
+}
+
+// The hero mask across the eyes (theme color), with the big eyes on top.
+function animalMaskSvg(themeVar, frog){
+  if (frog){
+    return `<path d="M20 22 C22 12 46 12 48 22 C46 30 22 30 20 22 Z M52 22 C54 12 78 12 80 22 C78 30 54 30 52 22 Z" fill="${themeVar}" stroke="${INK}" stroke-width="2"/>`
+      + ahEyeSvg(34, 21.5, themeVar, 0.78) + ahEyeSvg(66, 21.5, themeVar, 0.78);
+  }
+  const y = 40;
+  return `<path d="M22 ${y} C24 ${y - 11} 45 ${y - 11} 50 ${y - 4} C55 ${y - 11} 76 ${y - 11} 78 ${y} C76 ${y + 9} 56 ${y + 9} 50 ${y + 3} C44 ${y + 9} 24 ${y + 9} 22 ${y} Z" fill="${themeVar}" stroke="${INK}" stroke-width="2" stroke-linejoin="round"/>`
+    + `<path d="M27 ${y - 4} C31 ${y - 8} 40 ${y - 9} 45 ${y - 6}" stroke="rgba(255,255,255,.45)" stroke-width="1.6" fill="none" stroke-linecap="round"/>`
+    + ahEyeSvg(38, y - 0.5, themeVar) + ahEyeSvg(62, y - 0.5, themeVar);
+}
+
+// Shared gradient defs: a soft 3D "ball" shade for round shapes and a
+// left-lit / right-shadow shade for the suit. Both are white/black with
+// alpha, laid over the flat color, so they work for every fur and theme.
+function ahDefs(uid){
+  return `<defs>`
+    + `<radialGradient id="${uid}b" cx="38%" cy="30%" r="72%"><stop offset="0" stop-color="#fff" stop-opacity=".42"/><stop offset=".45" stop-color="#fff" stop-opacity="0"/><stop offset="1" stop-color="#000" stop-opacity=".26"/></radialGradient>`
+    + `<linearGradient id="${uid}s" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#fff" stop-opacity=".30"/><stop offset=".45" stop-color="#fff" stop-opacity="0"/><stop offset="1" stop-color="#000" stop-opacity=".24"/></linearGradient>`
+    + `<radialGradient id="${uid}g" cx="35%" cy="30%" r="70%"><stop offset="0" stop-color="#fff8c2"/><stop offset=".55" stop-color="#ffd23f"/><stop offset="1" stop-color="#e0a100"/></radialGradient>`
+    + `</defs>`;
+}
+
+// A chunky limb: dark outline, colored tube, and a light streak on top so it
+// reads as round instead of a stick.
+function ahLimb(x1, y1, x2, y2, w, color){
+  return `<line x1="${x1}" y1="${y1}" x2="${x2}" y2="${y2}" stroke="${INK}" stroke-width="${w + 4.6}" stroke-linecap="round"/>`
+    + `<line x1="${x1}" y1="${y1}" x2="${x2}" y2="${y2}" stroke="${color}" stroke-width="${w}" stroke-linecap="round"/>`
+    + `<line x1="${x1 + (x2 - x1) * 0.1}" y1="${y1 + (y2 - y1) * 0.1 - w * 0.22}" x2="${x1 + (x2 - x1) * 0.75}" y2="${y2 - (y2 - y1) * 0.25 - w * 0.22}" stroke="rgba(255,255,255,.38)" stroke-width="${Math.max(1.6, w * 0.22)}" stroke-linecap="round"/>`;
+}
+
+// The head (ears, fur, face markings, mask + eyes, snout), with shading,
+// a shine and rosy cheeks.
+function ahHeadSvg(a, accent, uid){
+  const frog = a.animal === 'frog';
+  const headShape = frog
+    ? `<ellipse cx="50" cy="40" rx="30" ry="24"`
+    : `<circle cx="50" cy="40" r="27"`;
+  const faceShade = (a.snout === 'beak' || a.snout === 'bill' || a.marks === 'penguin' || a.animal === 'zebra')
+    ? '' : `<ellipse cx="50" cy="49" rx="18.5" ry="13.5" fill="${a.face}" opacity=".6"/>`;
+  const cheeks = (a.snout === 'beak' || a.snout === 'bill' || frog)
+    ? (frog ? `<ellipse cx="27" cy="46" rx="5" ry="3" fill="#ff7f9a" opacity=".45"/><ellipse cx="73" cy="46" rx="5" ry="3" fill="#ff7f9a" opacity=".45"/>` : '')
+    : `<ellipse cx="29" cy="50" rx="5" ry="3.2" fill="#ff7f9a" opacity=".5"/><ellipse cx="71" cy="50" rx="5" ry="3.2" fill="#ff7f9a" opacity=".5"/>`;
+  return `<g class="ah-head">`
+    + animalBackMarksSvg(a)
+    + `<g class="ah-ears">${animalEarsSvg(a)}</g>`
+    + `${headShape} fill="${a.fur}" stroke="${INK}" stroke-width="2.6"/>`
+    + faceShade
+    + animalFaceMarksSvg(a)
+    + `${headShape} fill="url(#${uid}b)"/>`
+    + (frog ? '' : `<ellipse cx="38" cy="22" rx="9" ry="4.5" fill="#fff" opacity=".38" transform="rotate(-22 38 22)"/>`)
+    + cheeks
+    + animalMaskSvg(accent, frog)
+    + animalSnoutSvg(a)
+    + `</g>`;
+}
+
+// Full animal-hero bust in a 100x100 box: cape, suit with emblem + belt,
+// chunky arms (one waves now and then), and the head. Animated by CSS
+// (.ah-* in css/styles.css): blink, glance, gentle bob, cape sway, ear
+// twitch, wave. Calm Mode / reduced motion keep it still (blink only).
 function animalHeroSvg(topicId, theme, emblemInner, opts){
   const a = ANIMAL_HEROES[topicId];
   const headOnly = !!(opts && opts.headOnly);
   if (!a) return '';
   const accent = `var(--${theme})`;
   const accentDark = `var(--${theme}-dark, ${accent})`;
-  const head = a.animal === 'frog'
-    ? `<ellipse cx="50" cy="40" rx="30" ry="24" fill="${a.fur}" stroke="${INK}" stroke-width="2.4"/>`
-    : `<circle cx="50" cy="40" r="27" fill="${a.fur}" stroke="${INK}" stroke-width="2.4"/>`;
-  const faceShade = (a.snout === 'beak' || a.snout === 'bill' || a.marks === 'penguin' || a.animal === 'zebra')
-    ? '' : `<ellipse cx="50" cy="48" rx="18" ry="14" fill="${a.face}" opacity=".55"/>`;
-  return `<svg viewBox="${headOnly ? '12 0 76 74' : '0 0 100 100'}" width="100%" height="100%" fill="none" xmlns="http://www.w3.org/2000/svg" focusable="false">`
-    + (headOnly ? '' : `<path d="M50 58 C26 62 12 80 14 100 L86 100 C88 80 74 62 50 58 Z" fill="${accentDark}" stroke="${INK}" stroke-width="2.4" stroke-linejoin="round"/>`
-    + `<path d="M30 74 C38 66 62 66 70 74 L74 100 L26 100 Z" fill="${accent}" stroke="${INK}" stroke-width="2.2" stroke-linejoin="round"/>`
-    + `<circle cx="50" cy="86" r="9" fill="#ffe066" stroke="${INK}" stroke-width="1.8"/>`
-    + (emblemInner ? `<g transform="translate(50,86) scale(0.5) translate(-12,-12)">${emblemInner.replace(/#fff\b/g, accentDark).replace(/#ffffff/g, accentDark)}</g>` : ''))
-    + animalBackMarksSvg(a)
-    + animalEarsSvg(a)
-    + head
-    + faceShade
-    + animalFaceMarksSvg(a)
-    + animalMaskSvg(accent, a.animal === 'frog')
-    + animalSnoutSvg(a)
-    + '</svg>';
+  const tm = ahTiming(topicId);
+  const style = `style="--ah-d:${tm.d1}s;--ah-d2:${tm.d2}s"`;
+  if (headOnly){
+    return `<svg class="ah ah--head" viewBox="12 0 76 74" width="100%" height="100%" fill="none" xmlns="http://www.w3.org/2000/svg" focusable="false" ${style}>`
+      + ahDefs(tm.uid) + ahHeadSvg(a, accent, tm.uid) + '</svg>';
+  }
+  const paw = (x, y) => `<circle cx="${x}" cy="${y}" r="5.6" fill="#fff" stroke="${INK}" stroke-width="2"/><circle cx="${x}" cy="${y}" r="5.6" fill="url(#${tm.uid}b)"/>`;
+  const torso = 'M33 66 C35 60.5 42 58.5 50 58.5 C58 58.5 65 60.5 67 66 L71 100 L29 100 Z';
+  return `<svg class="ah" viewBox="0 0 100 100" width="100%" height="100%" fill="none" xmlns="http://www.w3.org/2000/svg" focusable="false" ${style}>`
+    + ahDefs(tm.uid)
+    + `<g class="ah-bob">`
+    // cape
+    + `<g class="ah-cape"><path d="M31 63 C17 71 10 86 8 102 L92 102 C90 86 83 71 69 63 Z" fill="${accentDark}" stroke="${INK}" stroke-width="2.4" stroke-linejoin="round"/>`
+    + `<path d="M24 76 C20 84 18 92 17 100" stroke="rgba(255,255,255,.25)" stroke-width="2.4" stroke-linecap="round"/></g>`
+    // suit
+    + `<path d="${torso}" fill="${accent}" stroke="${INK}" stroke-width="2.4" stroke-linejoin="round"/>`
+    + `<path d="${torso}" fill="url(#${tm.uid}s)"/>`
+    + `<path d="M41 60.5 L50 70 L59 60.5" stroke="${accentDark}" stroke-width="3" fill="none" stroke-linejoin="round"/>`
+    + `<rect x="30" y="91" width="40" height="6" rx="2.2" fill="url(#${tm.uid}g)" stroke="${INK}" stroke-width="1.6"/>`
+    + `<rect x="46" y="90" width="8" height="8" rx="1.6" fill="#ffe680" stroke="${INK}" stroke-width="1.4"/>`
+    + `<circle cx="50" cy="79" r="8.8" fill="url(#${tm.uid}g)" stroke="${INK}" stroke-width="1.8"/>`
+    + (emblemInner ? `<g transform="translate(50,79) scale(0.5) translate(-12,-12)">${emblemInner.replace(/#fff\b/g, accentDark).replace(/#ffffff/g, accentDark)}</g>` : '')
+    + `<ellipse cx="46.5" cy="75.5" rx="3" ry="1.6" fill="#fff" opacity=".6" transform="rotate(-30 46.5 75.5)"/>`
+    // arms, in front of the suit so the sleeves show
+    + `<g class="ah-arm-l">${ahLimb(35, 67, 24, 86, 8.5, accent)}${paw(22.5, 89)}</g>`
+    + `<g class="ah-wave">${ahLimb(65, 67, 76, 86, 8.5, accent)}${paw(77.5, 89)}</g>`
+    + ahHeadSvg(a, accent, tm.uid)
+    + `</g></svg>`;
 }
 
 function animalNameFor(topicId, lang){
@@ -168,37 +253,44 @@ function animalNameFor(topicId, lang){
 }
 
 // Full-body flying pose: stretched out, fist forward, cape flapping behind.
-// Faces right. The cape is a separate group so CSS can flutter it.
+// Faces right. Chunky shaded limbs, gloves + boots with shine. The cape is
+// a separate group so CSS can flutter it.
 function flyingHeroSvg(topicId, theme){
   const a = ANIMAL_HEROES[topicId];
   if (!a) return '';
   const accent = `var(--${theme})`;
   const accentDark = `var(--${theme}-dark, ${accent})`;
-  const limb = (x1, y1, x2, y2, w, color) =>
-    `<line x1="${x1}" y1="${y1}" x2="${x2}" y2="${y2}" stroke="${INK}" stroke-width="${w + 4.4}" stroke-linecap="round"/>`
-    + `<line x1="${x1}" y1="${y1}" x2="${x2}" y2="${y2}" stroke="${color}" stroke-width="${w}" stroke-linecap="round"/>`;
-  return '<svg class="fly-hero" viewBox="0 0 240 120" width="100%" height="100%" fill="none" xmlns="http://www.w3.org/2000/svg" focusable="false">'
+  const tm = ahTiming(topicId + 'fly');
+  const u = tm.uid;
+  const shine = (cx, cy, rx, ry) => `<ellipse cx="${cx}" cy="${cy}" rx="${rx}" ry="${ry}" fill="#fff" opacity=".55"/>`;
+  return `<svg class="fly-hero ah" viewBox="0 0 240 120" width="100%" height="100%" fill="none" xmlns="http://www.w3.org/2000/svg" focusable="false" style="--ah-d:${tm.d1}s;--ah-d2:${tm.d2}s">`
+    + ahDefs(u)
     // cape (behind everything)
-    + `<g class="fly-hero__cape"><path d="M152 50 C124 40 84 30 26 20 Q40 32 24 43 Q42 53 22 63 Q40 73 26 86 C80 86 122 82 152 76 Z" fill="${accentDark}" stroke="${INK}" stroke-width="2.4" stroke-linejoin="round"/>`
-    + `<path d="M150 56 C120 50 86 44 52 40" stroke="rgba(255,255,255,.35)" stroke-width="3" stroke-linecap="round"/></g>`
+    + `<g class="fly-hero__cape"><path d="M152 48 C124 38 84 28 24 18 Q40 31 22 43 Q42 54 20 64 Q40 75 24 89 C80 89 122 84 152 78 Z" fill="${accentDark}" stroke="${INK}" stroke-width="2.6" stroke-linejoin="round"/>`
+    + `<path d="M150 55 C120 49 86 43 50 38" stroke="rgba(255,255,255,.35)" stroke-width="3.2" stroke-linecap="round"/>`
+    + `<path d="M150 70 C120 70 90 72 60 78" stroke="rgba(0,0,0,.15)" stroke-width="3.2" stroke-linecap="round"/></g>`
     // legs + boots
-    + limb(104, 60, 62, 56, 13, accentDark) + limb(104, 72, 64, 76, 13, accentDark)
-    + `<ellipse cx="56" cy="55" rx="9" ry="7.5" fill="#ffd23f" stroke="${INK}" stroke-width="2.2"/>`
-    + `<ellipse cx="58" cy="77" rx="9" ry="7.5" fill="#ffd23f" stroke="${INK}" stroke-width="2.2"/>`
-    // back arm
-    + limb(150, 74, 128, 90, 10, accent)
-    + `<circle cx="126" cy="92" r="6.5" fill="${a.fur}" stroke="${INK}" stroke-width="2.2"/>`
+    + ahLimb(108, 60, 66, 55, 17, accent) + ahLimb(108, 73, 68, 78, 17, accent)
+    + `<path d="M50 47 C58 44 68 47 68 55 C68 63 58 65 50 62 C44 60 44 49 50 47 Z" fill="url(#${u}g)" stroke="${INK}" stroke-width="2.4"/>`
+    + `<path d="M52 70 C60 67 70 70 70 78 C70 86 60 88 52 85 C46 83 46 72 52 70 Z" fill="url(#${u}g)" stroke="${INK}" stroke-width="2.4"/>`
+    + shine(55, 51, 4, 2) + shine(57, 74, 4, 2)
+    // back arm + glove
+    + ahLimb(150, 74, 130, 92, 13, accent)
+    + `<circle cx="127" cy="95" r="8" fill="#fff" stroke="${INK}" stroke-width="2.4"/><circle cx="127" cy="95" r="8" fill="url(#${u}b)"/>`
     // body, belt, emblem
-    + `<rect x="96" y="49" width="70" height="31" rx="15.5" fill="${accent}" stroke="${INK}" stroke-width="2.4"/>`
-    + `<rect x="106" y="49.5" width="8" height="30" fill="#ffd23f" stroke="${INK}" stroke-width="1.6"/>`
-    + `<circle cx="142" cy="64.5" r="8.5" fill="#ffe066" stroke="${INK}" stroke-width="1.8"/>`
-    + `<path d="M142 58.5 l1.9 4 4.3.5-3.2 2.9.9 4.3-3.9-2.2-3.9 2.2.9-4.3-3.2-2.9 4.3-.5z" fill="${accentDark}"/>`
-    // front arm, fist forward
-    + limb(160, 57, 220, 56, 11, accent)
-    + `<circle cx="224" cy="56" r="8" fill="${a.fur}" stroke="${INK}" stroke-width="2.2"/>`
+    + `<rect x="94" y="46" width="74" height="36" rx="18" fill="${accent}" stroke="${INK}" stroke-width="2.6"/>`
+    + `<rect x="94" y="46" width="74" height="36" rx="18" fill="url(#${u}b)"/>`
+    + `<rect x="105" y="46.5" width="9" height="35" fill="url(#${u}g)" stroke="${INK}" stroke-width="1.8"/>`
+    + `<circle cx="143" cy="63" r="10" fill="url(#${u}g)" stroke="${INK}" stroke-width="2"/>`
+    + `<path d="M143 56 l2.2 4.6 5 .6-3.7 3.4 1 5-4.5-2.5-4.5 2.5 1-5-3.7-3.4 5-.6z" fill="${accentDark}"/>`
+    + `<path d="M104 52 C120 49 140 49 158 52" stroke="rgba(255,255,255,.4)" stroke-width="3" stroke-linecap="round"/>`
     // head
     + animalHeroSvg(topicId, theme, '', { headOnly: true })
-        .replace(' width="100%" height="100%"', ' x="148" y="-2" width="74" height="72"')
+        .replace(' width="100%" height="100%"', ' x="148" y="-2" width="72" height="70"')
+    // front arm under the chin, glove fist forward
+    + ahLimb(160, 70, 218, 66, 14, accent)
+    + `<circle cx="225" cy="66" r="10" fill="#fff" stroke="${INK}" stroke-width="2.4"/><circle cx="225" cy="66" r="10" fill="url(#${u}b)"/>`
+    + `<path d="M218 61 C222 59 228 59 231 62" stroke="${INK}" stroke-width="1.6" fill="none" stroke-linecap="round"/>`
     + '</svg>';
 }
 

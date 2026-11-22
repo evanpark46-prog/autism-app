@@ -10,7 +10,7 @@
    returning visitors pick up the change instead of an old cached copy.
    ========================================================================== */
 
-const CACHE_NAME = 'safety-superheroes-shell-v48';
+const CACHE_NAME = 'safety-superheroes-shell-v50';
 
 // Recorded read-aloud voice clips (audio/voice/<lang>/*.mp3) live in their
 // own cache that survives shell updates -- a clip never changes (its file
@@ -36,6 +36,11 @@ const SHELL_FILES = [
   'hero-route.html',
   'spot-danger.html',
   'help-call.html',
+  'sign-match.html',
+  'freeze.html',
+  'who-helps.html',
+  'go-bag.html',
+  'words.html',
   'hero-rush.html',
   'vocab-quiz.html',
   'sort-it-out.html',
@@ -69,6 +74,8 @@ const SHELL_FILES = [
   'js/hero-games-data.js',
   'js/page-hero-games.js',
   'js/voice-audio.js',
+  'js/word-builder-data.js',
+  'js/page-words.js',
   'js/soundfx.js',
   'js/categories.js',
   'js/topics-index.js',

@@ -407,3 +407,185 @@ const HELP_CALL_SCRIPT = {
     ] },
   ],
 };
+
+/* ---------------------------------------------------------------------------
+   Round 2 games: Sign Match, Freeze!, Who Can Help?, Pack the Go-Bag
+   --------------------------------------------------------------------------- */
+
+// Sign Match (sign-match.html): a memory game pairing a community safety
+// sign with what it means. `sign` is the look of the sign card (styled in
+// css .sm-sign--<kind>); `label` is the text printed on it.
+const SAFETY_SIGNS = {
+  en: [
+    { id: 'stop', kind: 'stop', label: 'STOP', mean: 'Stop and wait.', e: '✋', say: 'A stop sign means stop and wait.' },
+    { id: 'walk', kind: 'walk', label: '🚶', mean: 'You may walk. Look first!', e: '👀', say: 'The walking person means you may walk. Look both ways first!' },
+    { id: 'dontwalk', kind: 'dontwalk', label: '✋', mean: 'Don’t start walking.', e: '⏸️', say: 'The red hand means don’t start walking.' },
+    { id: 'exit', kind: 'exit', label: 'EXIT', mean: 'The way out.', e: '🚪', say: 'Exit means the way out of a building.' },
+    { id: 'poison', kind: 'poison', label: '☠️', mean: 'Poison. Don’t touch!', e: '🚫', say: 'This sign means poison. Don’t touch it, and tell a grown-up.' },
+    { id: 'restroom', kind: 'restroom', label: '🚻', mean: 'Bathroom.', e: '🚽', say: 'This sign shows where the bathroom is.' },
+    { id: 'hospital', kind: 'hospital', label: 'H', mean: 'Hospital. Doctors help here.', e: '🩺', say: 'A big H means hospital. Doctors and nurses help people there.' },
+    { id: 'noswim', kind: 'noswim', label: '🏊', mean: 'No swimming here.', e: '🚫', say: 'This sign means no swimming here.' },
+  ],
+  es: [
+    { id: 'stop', kind: 'stop', label: 'ALTO', mean: 'Para y espera.', e: '✋', say: 'La señal de alto significa para y espera.' },
+    { id: 'walk', kind: 'walk', label: '🚶', mean: 'Puedes caminar. ¡Mira primero!', e: '👀', say: 'La persona caminando significa que puedes caminar. ¡Primero mira a los dos lados!' },
+    { id: 'dontwalk', kind: 'dontwalk', label: '✋', mean: 'No empieces a caminar.', e: '⏸️', say: 'La mano roja significa que no empieces a caminar.' },
+    { id: 'exit', kind: 'exit', label: 'SALIDA', mean: 'Por aquí se sale.', e: '🚪', say: 'Salida significa por dónde se sale del edificio.' },
+    { id: 'poison', kind: 'poison', label: '☠️', mean: 'Veneno. ¡No lo toques!', e: '🚫', say: 'Esta señal significa veneno. No lo toques y avisa a un adulto.' },
+    { id: 'restroom', kind: 'restroom', label: '🚻', mean: 'Baño.', e: '🚽', say: 'Esta señal muestra dónde está el baño.' },
+    { id: 'hospital', kind: 'hospital', label: 'H', mean: 'Hospital. Aquí ayudan los doctores.', e: '🩺', say: 'Una H grande significa hospital. Ahí los doctores y enfermeros ayudan a la gente.' },
+    { id: 'noswim', kind: 'noswim', label: '🏊', mean: 'Prohibido nadar aquí.', e: '🚫', say: 'Esta señal significa que no se puede nadar aquí.' },
+  ],
+};
+
+// Freeze! (freeze.html): the hero walks; STOP the moment a stop signal
+// shows, and only GO when it's safe again. Practicing a fast, reliable
+// response to "Stop!" is a core skill for staying safe near streets,
+// parking lots and water.
+const FREEZE_CUES = {
+  en: {
+    stop: [
+      { e: '🗣️', t: 'Your grown-up says, “Stop!”' },
+      { e: '🛑', t: 'A stop sign!' },
+      { e: '🚦', t: 'The light turns red.' },
+      { e: '🛣️', t: 'You reach the edge of the street.' },
+      { e: '🌊', t: 'You reach the edge of the pool.' },
+      { e: '🚗', t: 'A car is backing up.' },
+      { e: '✋', t: 'The sign shows a red hand.' },
+      { e: '🅿️', t: 'You are in a busy parking lot.' },
+    ],
+    go: [
+      { e: '👍', t: 'Your grown-up says, “OK, let’s go.”' },
+      { e: '🟢', t: 'The light is green and you looked both ways.' },
+      { e: '🚶', t: 'The walk sign is on. The road is clear.' },
+      { e: '🤝', t: 'You are holding your grown-up’s hand.' },
+    ],
+  },
+  es: {
+    stop: [
+      { e: '🗣️', t: 'Tu adulto dice: “¡Alto!”' },
+      { e: '🛑', t: '¡Una señal de alto!' },
+      { e: '🚦', t: 'El semáforo se pone en rojo.' },
+      { e: '🛣️', t: 'Llegas a la orilla de la calle.' },
+      { e: '🌊', t: 'Llegas a la orilla de la piscina.' },
+      { e: '🚗', t: 'Un carro va en reversa.' },
+      { e: '✋', t: 'La señal muestra una mano roja.' },
+      { e: '🅿️', t: 'Estás en un estacionamiento con muchos carros.' },
+    ],
+    go: [
+      { e: '👍', t: 'Tu adulto dice: “Bien, vamos.”' },
+      { e: '🟢', t: 'El semáforo está en verde y miraste a los dos lados.' },
+      { e: '🚶', t: 'La señal de caminar está encendida. La calle está libre.' },
+      { e: '🤝', t: 'Estás tomando la mano de tu adulto.' },
+    ],
+  },
+};
+
+// Who Can Help? (who-helps.html): you are lost -- tap the safe helpers.
+// Same tap-the-picture engine as Spot the Danger; `ok:true` = safe helper.
+const HELPER_SCENES = {
+  en: [
+    { id: 'store', hero: 'safehelper-safety', emoji: '🏬', title: 'At the Store', wall: '#fff1d9', floor: '#e8d3b0',
+      intro: 'You are lost in the store. Find the 3 safe helpers.',
+      items: [
+        { e: '🧑‍💼', x: 16, y: 40, ok: true, label: 'Name tag', name: 'A worker with a name tag', tip: 'Workers with name tags are safe helpers. Say, “I am lost.”' },
+        { e: '💁', x: 50, y: 34, ok: true, label: 'Cash register', name: 'The person at the cash register', tip: 'The person at the register works here. They can call your grown-up.' },
+        { e: '👩‍👧‍👦', x: 82, y: 42, ok: true, name: 'A mom with kids', tip: 'A mom with kids is a good helper to ask.' },
+        { e: '🚗', x: 82, y: 80, ok: false, name: 'Someone in a car who says, “Come here”', tip: 'Never go to a car. Stay inside and find a worker.' },
+        { e: '🕶️', x: 22, y: 78, ok: false, name: 'Someone who says, “Come with me, I’ll find your mom”', tip: 'Don’t leave with someone. Stay put and find a worker or the register.' },
+        { e: '🛒', x: 52, y: 76, ok: false, name: 'A shopping cart', tip: 'That’s a shopping cart. Look for a person with a name tag.' },
+      ] },
+    { id: 'park', hero: 'lost-safety', emoji: '🌳', title: 'At the Park', wall: '#d6f1ff', floor: '#a8dc8f',
+      intro: 'You can’t find your grown-up at the park. Find the 3 safe helpers.',
+      items: [
+        { e: '👮', x: 18, y: 42, ok: true, name: 'A police officer', tip: 'Police officers help kids who are lost.' },
+        { e: '🧑‍🏫', x: 50, y: 36, ok: true, label: 'Teacher', name: 'A teacher with a class', tip: 'A teacher with a group of kids is a safe helper.' },
+        { e: '👨‍👧', x: 82, y: 44, ok: true, name: 'A dad with his kid', tip: 'A parent with kids is a good helper to ask.' },
+        { e: '🍭', x: 22, y: 78, ok: false, name: 'Someone who offers candy to go with them', tip: 'Never go with someone for candy or a treat. Find a safe helper.' },
+        { e: '🚐', x: 80, y: 78, ok: false, name: 'Someone in a van who says, “Want to see a puppy?”', tip: 'That is a trick. Stay away from the van. Find a police officer or a parent with kids.' },
+        { e: '🐿️', x: 52, y: 70, ok: false, name: 'A squirrel', tip: 'A squirrel can’t help you! Look for a safe grown-up.' },
+      ] },
+    { id: 'school', hero: 'reporting-safety', emoji: '🏫', title: 'At School', wall: '#ffe9ef', floor: '#d9c2a5',
+      intro: 'You feel sick and need help at school. Find the 3 safe helpers.',
+      items: [
+        { e: '🧑‍🏫', x: 18, y: 40, ok: true, name: 'Your teacher', tip: 'Your teacher is a safe helper. Tell them how you feel.' },
+        { e: '🧑‍⚕️', x: 50, y: 34, ok: true, label: 'Nurse', name: 'The school nurse', tip: 'The school nurse helps when you feel sick or hurt.' },
+        { e: '🦺', x: 82, y: 42, ok: true, label: 'Crossing guard', name: 'The crossing guard', tip: 'The crossing guard works at your school and keeps kids safe.' },
+        { e: '📱', x: 22, y: 78, ok: false, name: 'A stranger online', tip: 'Someone online can’t help you at school. Find a grown-up who works there.' },
+        { e: '🧒', x: 78, y: 78, ok: false, name: 'A little kid', tip: 'A little kid can’t help with this. Find a grown-up who works at school.' },
+        { e: '🎒', x: 50, y: 74, ok: false, name: 'A backpack', tip: 'That’s a backpack! Look for a teacher or the nurse.' },
+      ] },
+  ],
+  es: [
+    { id: 'store', hero: 'safehelper-safety', emoji: '🏬', title: 'En la tienda', wall: '#fff1d9', floor: '#e8d3b0',
+      intro: 'Te perdiste en la tienda. Encuentra a los 3 ayudantes seguros.',
+      items: [
+        { e: '🧑‍💼', x: 16, y: 40, ok: true, label: 'Gafete', name: 'Un trabajador con gafete', tip: 'Los trabajadores con gafete son ayudantes seguros. Di: “Estoy perdido.”' },
+        { e: '💁', x: 50, y: 34, ok: true, label: 'Caja', name: 'La persona de la caja', tip: 'La persona de la caja trabaja aquí. Puede llamar a tu adulto.' },
+        { e: '👩‍👧‍👦', x: 82, y: 42, ok: true, name: 'Una mamá con niños', tip: 'Una mamá con niños es buena para pedirle ayuda.' },
+        { e: '🚗', x: 82, y: 80, ok: false, name: 'Alguien en un carro que dice: “Ven acá”', tip: 'Nunca vayas a un carro. Quédate adentro y busca a un trabajador.' },
+        { e: '🕶️', x: 22, y: 78, ok: false, name: 'Alguien que dice: “Ven conmigo, yo busco a tu mamá”', tip: 'No te vayas con nadie. Quédate ahí y busca a un trabajador o la caja.' },
+        { e: '🛒', x: 52, y: 76, ok: false, name: 'Un carrito', tip: 'Es un carrito del súper. Busca a una persona con gafete.' },
+      ] },
+    { id: 'park', hero: 'lost-safety', emoji: '🌳', title: 'En el parque', wall: '#d6f1ff', floor: '#a8dc8f',
+      intro: 'No encuentras a tu adulto en el parque. Encuentra a los 3 ayudantes seguros.',
+      items: [
+        { e: '👮', x: 18, y: 42, ok: true, name: 'Un policía', tip: 'Los policías ayudan a los niños perdidos.' },
+        { e: '🧑‍🏫', x: 50, y: 36, ok: true, label: 'Maestra', name: 'Una maestra con su grupo', tip: 'Una maestra con un grupo de niños es una ayudante segura.' },
+        { e: '👨‍👧', x: 82, y: 44, ok: true, name: 'Un papá con su hija', tip: 'Un papá o una mamá con niños es bueno para pedirle ayuda.' },
+        { e: '🍭', x: 22, y: 78, ok: false, name: 'Alguien que te ofrece dulces para que te vayas con él', tip: 'Nunca te vayas con alguien por un dulce. Busca a un ayudante seguro.' },
+        { e: '🚐', x: 80, y: 78, ok: false, name: 'Alguien en una camioneta que dice: “¿Quieres ver un perrito?”', tip: 'Es una trampa. Aléjate de la camioneta. Busca a un policía o a un papá con niños.' },
+        { e: '🐿️', x: 52, y: 70, ok: false, name: 'Una ardilla', tip: '¡Una ardilla no te puede ayudar! Busca a un adulto seguro.' },
+      ] },
+    { id: 'school', hero: 'reporting-safety', emoji: '🏫', title: 'En la escuela', wall: '#ffe9ef', floor: '#d9c2a5',
+      intro: 'Te sientes mal y necesitas ayuda en la escuela. Encuentra a los 3 ayudantes seguros.',
+      items: [
+        { e: '🧑‍🏫', x: 18, y: 40, ok: true, name: 'Tu maestra', tip: 'Tu maestra es una ayudante segura. Dile cómo te sientes.' },
+        { e: '🧑‍⚕️', x: 50, y: 34, ok: true, label: 'Enfermera', name: 'La enfermera de la escuela', tip: 'La enfermera ayuda cuando te sientes mal o te lastimas.' },
+        { e: '🦺', x: 82, y: 42, ok: true, label: 'Guardia', name: 'El guardia del cruce', tip: 'El guardia del cruce trabaja en tu escuela y cuida a los niños.' },
+        { e: '📱', x: 22, y: 78, ok: false, name: 'Un desconocido en internet', tip: 'Alguien en internet no te puede ayudar en la escuela. Busca a un adulto que trabaje ahí.' },
+        { e: '🧒', x: 78, y: 78, ok: false, name: 'Un niño pequeño', tip: 'Un niño pequeño no puede ayudarte con esto. Busca a un adulto de la escuela.' },
+        { e: '🎒', x: 50, y: 74, ok: false, name: 'Una mochila', tip: '¡Es una mochila! Busca a tu maestra o a la enfermera.' },
+      ] },
+  ],
+};
+
+// Pack the Go-Bag (go-bag.html): tap what belongs in an emergency bag.
+const GO_BAG = {
+  en: {
+    intro: 'A storm is coming! Help pack the family go-bag. Tap the 8 things you need.',
+    items: [
+      { e: '💧', ok: true, name: 'Water', tip: 'Water to drink. Yes!' },
+      { e: '🔦', ok: true, name: 'Flashlight', tip: 'A flashlight helps if the lights go out.' },
+      { e: '🩹', ok: true, name: 'First aid kit', tip: 'Bandages for small cuts.' },
+      { e: '🥫', ok: true, name: 'Snacks', tip: 'Food that won’t go bad.' },
+      { e: '🎧', ok: true, name: 'Headphones', tip: 'Headphones help if things get loud.' },
+      { e: '🧸', ok: true, name: 'Comfort toy', tip: 'Your favorite toy helps you feel calm.' },
+      { e: '📇', ok: true, name: 'Card with phone numbers', tip: 'Your family’s phone numbers, written down.' },
+      { e: '🔋', ok: true, name: 'Batteries', tip: 'Batteries for the flashlight.' },
+      { e: '📺', ok: false, name: 'TV', tip: 'A TV is too big for a bag!' },
+      { e: '🎳', ok: false, name: 'Bowling ball', tip: 'A bowling ball is too heavy!' },
+      { e: '🪴', ok: false, name: 'Plant', tip: 'The plant can stay home.' },
+      { e: '🛹', ok: false, name: 'Skateboard', tip: 'You don’t need a skateboard in an emergency.' },
+    ],
+    end: 'The go-bag is ready! Keep it by the door so your family can grab it fast.',
+  },
+  es: {
+    intro: '¡Viene una tormenta! Ayuda a llenar la mochila de emergencia. Toca las 8 cosas que necesitas.',
+    items: [
+      { e: '💧', ok: true, name: 'Agua', tip: 'Agua para tomar. ¡Sí!' },
+      { e: '🔦', ok: true, name: 'Linterna', tip: 'Una linterna ayuda si se va la luz.' },
+      { e: '🩹', ok: true, name: 'Botiquín', tip: 'Curitas para cortaditas.' },
+      { e: '🥫', ok: true, name: 'Comida', tip: 'Comida que no se echa a perder.' },
+      { e: '🎧', ok: true, name: 'Audífonos', tip: 'Los audífonos ayudan si hay mucho ruido.' },
+      { e: '🧸', ok: true, name: 'Juguete favorito', tip: 'Tu juguete favorito te ayuda a sentirte tranquilo.' },
+      { e: '📇', ok: true, name: 'Tarjeta con teléfonos', tip: 'Los teléfonos de tu familia, escritos en papel.' },
+      { e: '🔋', ok: true, name: 'Pilas', tip: 'Pilas para la linterna.' },
+      { e: '📺', ok: false, name: 'Televisión', tip: '¡La tele es muy grande para una mochila!' },
+      { e: '🎳', ok: false, name: 'Bola de boliche', tip: '¡La bola de boliche pesa mucho!' },
+      { e: '🪴', ok: false, name: 'Planta', tip: 'La planta se puede quedar en casa.' },
+      { e: '🛹', ok: false, name: 'Patineta', tip: 'No necesitas una patineta en una emergencia.' },
+    ],
+    end: '¡La mochila está lista! Déjala junto a la puerta para que tu familia la tome rápido.',
+  },
+};

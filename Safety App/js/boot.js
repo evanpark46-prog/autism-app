@@ -139,6 +139,11 @@ document.addEventListener('DOMContentLoaded', () => {
   else if (page === 'hero-route') initHeroRoutePage();
   else if (page === 'spot-danger') initSpotDangerPage();
   else if (page === 'help-call') initHelpCallPage();
+  else if (page === 'sign-match') initSignMatchPage();
+  else if (page === 'freeze') initFreezePage();
+  else if (page === 'who-helps') initWhoHelpsPage();
+  else if (page === 'go-bag') initGoBagPage();
+  else if (page === 'words') initWordsPage();
   else if (page === 'hero-rush') initHeroRushPage();
   else if (page === 'vocab-quiz') initVocabQuizPage();
   else if (page === 'sort-it-out') initSortItOutPage();
