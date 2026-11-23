@@ -383,10 +383,13 @@ function initTopicPage(){
       ['level2_label', 'level2_desc'],
       ['level3_label', 'level3_desc'],
     ];
+    const hasMovie = typeof MOVIE_EPISODES !== 'undefined' && MOVIE_EPISODES[meta.id] && typeof movieIntro === 'function';
+    const es = getLang() === 'es';
     panel.innerHTML = `
+      ${hasMovie ? `<div class="story-movie" data-movie-inline></div>` : ''}
       <div class="story-stage">
         <div class="story-body">
-          <h2>${t('level_select_heading')}</h2>
+          <h2>${hasMovie ? (es ? 'Más práctica: niveles de la historia' : 'More practice: story levels') : t('level_select_heading')}</h2>
           <p class="story-text">${t('level_select_lead')}</p>
           <div class="level-grid">
             ${levelKeys.map(([labelKey, descKey], i) => `
@@ -399,6 +402,7 @@ function initTopicPage(){
           <p class="book-topic-link"><a href="storybook.html?id=${encodeURIComponent(meta.id)}&level=0">${escapeHtml(t('book_topic_link'))}</a></p>
         </div>
       </div>`;
+    if (hasMovie) movieIntro(panel.querySelector('[data-movie-inline]'), meta.id);
     panel.querySelectorAll('[data-level]').forEach(btn => {
       btn.addEventListener('click', () => {
         storyState.level = Number(btn.dataset.level);
@@ -1688,9 +1692,8 @@ function initTopicPage(){
   }
 
   // Lessons with an interactive Hero Movie (js/movie-data.js) get a big link above the video.
-  const HERO_MOVIE_IDS = ['stranger-safety'];
   function addHeroMovieCallout(panel){
-    if (!HERO_MOVIE_IDS.includes(meta.id) || panel.querySelector('.hero-movie-callout')) return;
+    if (typeof MOVIE_EPISODES === 'undefined' || !MOVIE_EPISODES[meta.id] || panel.querySelector('.hero-movie-callout')) return;
     const es = getLang() === 'es';
     panel.insertAdjacentHTML('afterbegin', `<a class="hero-movie-callout comic-panel" href="movie.html?id=${meta.id}">
       <span class="hero-movie-callout__icon" aria-hidden="true">🎬</span>

@@ -90,7 +90,13 @@ function choiceImageHtml(src, alt){
   return `<img src="${src}" alt="${escapeHtml(alt || '')}" loading="eager">`;
 }
 
+// Story pictures are switched off: the old scene art didn't match the stories,
+// and lessons now teach with Hero Movies (movie.html). The text stories also
+// live in Hero Stories (storybook.html).
+const STORY_PICTURES = false;
+
 function getIllustration(key, wrong){
+  if (!STORY_PICTURES) return '';
   const pic = ILLUSTRATIONS[key];
   if (!pic) return '';
   const file = (wrong && ILLUSTRATION_WRONG_VARIANTS[key]) || pic.file;
@@ -150,6 +156,7 @@ const DIALOGUE_CONSEQUENCE_SCENES = {
 };
 
 function dialogueArtworkFile(topicId, sceneNumber, consequence){
+  if (!STORY_PICTURES) return '';
   const count = DIALOGUE_SCENE_COUNTS[topicId];
   if (!count || sceneNumber < 1 || sceneNumber > count) return '';
   const hasConsequenceArt = DIALOGUE_CONSEQUENCE_SCENES[topicId] && DIALOGUE_CONSEQUENCE_SCENES[topicId].has(sceneNumber);

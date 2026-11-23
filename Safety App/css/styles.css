@@ -3040,3 +3040,7 @@ section[id]{scroll-margin-top:120px;}
 @keyframes mvDust{from{transform:scale(.4); opacity:1;} to{transform:scale(1.5) translateY(-6px); opacity:0;}}
 .movie__svg .mv-trail{animation:mvTrail .8s ease-out both;}
 @keyframes mvTrail{from{transform:scale(1); opacity:1;} to{transform:scale(.2) translateY(20px); opacity:0;}}
+
+.story-movie{margin:0 0 1.2em;}
+.story-movie .movie-intro, .story-movie .movie{padding:0; max-width:none;}
+.story-movie .movie-intro__card{margin:0 auto;}

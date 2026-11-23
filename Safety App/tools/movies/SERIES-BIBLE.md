@@ -17,7 +17,7 @@ Where things live:
 - **Look:** lavender-white bunny with long ears and pink inner ears. Sunflower-yellow hoodie with a pocket and white strings, blue jeans, orange sneakers. Alex is always the brightest thing in the frame.
 - **Personality:** bouncy, cheerful, curious. Rushes a little. Is never "bad".
 - **Signature:** "Boing!" and a hop. Ears droop when unsure and shoot up after a safe choice. Alex looks at the viewer and asks "What should I do?" right before each choice.
-- **Voice:** EN `af_sky`, ES `ef_dora`.
+- **Voice:** a child's voice, around 285 Hz. EN `af_jessica` and ES `ef_dora`, both shifted up in pitch and vocal size (see `SHAPE` in `tools/voice/movie.py`).
 
 ### 2. The lesson's superhero (the calm expert)
 - **Role:** shows the safe path. Patient and never lectures. In this episode it's Captain Caution the owl; each lesson uses its own caped animal hero from `js/animal-heroes.js`.
@@ -31,7 +31,13 @@ Where things live:
 - **Signature:** his tail puffs up and the orange "notice" spark pops when something needs attention.
 - **Running gag:** he drops acorns, usually on his own head ("Oof! Nuts!"). He tells the joke near the end of each episode.
 - **Sign-off:** "Nuts about safety!"
-- **Voice:** EN `am_puck`, ES `em_alex`.
+- **Voice:** EN `am_puck`, ES `em_alex`, both pitched up and squeaky, around 205–230 Hz.
+
+### 4. Dad (Alex's family)
+- **Role:** the trusted grown-up at home and on outings. Warm, patient and goofy. He plays along with every game, invents silly missions and tells terrible jokes. He never scolds, and when Alex tells him something he says thank you first.
+- **Look:** a tall grey-lilac bunny in a floppy straw sun hat with a red band and a green striped polo.
+- **Signature:** gives Alex "Captain" missions, sets one simple rule before each game ("Stay where you can see me, and I can see you"), tells a bad joke ("Not with that attitude!"), then gives a big proud hug.
+- **Voice:** EN `am_eric`, ES `em_alex` shifted lower.
 
 ### Narrator
 - A warm storyteller who opens each episode with "Once upon a time...". Short, simple sentences. Voice: EN `af_heart`, ES `ef_dora`.
@@ -41,7 +47,7 @@ Where things live:
 - **Lifeguard Bruno** (bear): red GUARD shirt, white visor, whistle. A trusted helper who is big, warm and calm. Voice: EN `am_onyx`, ES `em_santa`.
 
 ## World
-- **Sunny Meadow Park** (set `park`): a smiling sun, a rainbow, a pink castle on a far hill, a windmill, a castle-tower slide, swings, Nutty's apple oak, a duck pond with a red bridge, and a pool with a lifeguard chair. Bright fairytale colors and lots of flowers.
+- **Sunny Meadow Park** (set `park`): a smiling sun, a rainbow, a pink castle on a far hill, a windmill, a castle-tower slide, swings, Nutty's apple oak, a duck pond with a red bridge, and a picnic spot under a blossom tree (gingham blanket, basket, lemonade, a kite stuck in the tree). A parking area with a car sits at the left edge. Every place in a set should make sense for that episode's story.
 - **Ideas for future sets:** Alex's cozy house (kitchen, bathroom), Maple Street crosswalk, the school, the library, the beach, the grocery store.
 - **Visual motif:** the orange **"notice" spark** (a star with a "!") pops over whatever the viewer should notice.
 - **Sound motifs:** a 3-note rising sting with the spark, a warm 4-note chime for a safe choice, two gentle falling notes for "uh-oh", and a tape-rewind warble when the hero turns back time.
@@ -55,6 +61,10 @@ Where things live:
 - **Ending:** the hero lands and cheers, Nutty tells a joke, and the rule appears in big words, then the sign-offs. The viewer earns the lesson's **sticker** (the hero's power name), and first-try safe choices earn stars. Both are saved in `safetylib_movies_v1`.
 - **Pace:** lines are recorded slowly, with a pause after each one. 🐢 Slow mode adds more pause. Every line has captions, plus speech bubbles in the scene. Pause and Repeat are always available, and a Hero Tip waits until the viewer taps "Try again".
 
+## Story style
+- Build the episode like a warm family cartoon: a real everyday outing, a pretend game that the safety moment interrupts, a kid who figures it out, and a family moment at the end. Bluey is a good touchstone for tone, but never copy its characters or plots.
+- Each wrong choice acts out a consequence that fits the setting, such as Dad looking up and not being able to find Alex.
+
 ## Content rules
 - Humor comes from the characters (Nutty's acorns, Alex's bounciness, puns), never from harm or the unsafe moment.
 - Consequences stay gentle and realistic. The furthest they go is "nobody can find Alex" or "Alex feels mixed up". Nothing scary or graphic.
@@ -63,5 +73,5 @@ Where things live:
 - The emotional arc of every episode: curiosity, then a little tension, then relief.
 
 ## Continuity log
-- **Ep 1, Someone I Don't Know (stranger-safety):** a goat Alex doesn't know offers candy at Sunny Meadow Park. Alex learns to stay back, say "No, thank you!" and walk to Lifeguard Bruno to tell, including what the person looked like. Alex earns the **Stranger Sense** sticker. Nutty's acorn-bonk gag starts here.
+- **Ep 1, The Golden Acorn (stranger-safety):** Alex and Dad's picnic treasure hunt. Nutty swipes the golden acorn as a joke. A goat Alex doesn't know asks questions, offers candy, then invites Alex to see "a puppy in my car". Alex stays back, says "No, thank you!", says "No!" again and runs back to Dad to tell him, including what the goat looked like. Big hug. Nutty returns the acorn ("I was keeping it safe!") and Dad invents a new game, **Safety Spies**. Alex earns the **Stranger Sense** sticker.
 - **Callback ideas for later episodes:** the Stranger Sense sticker is on Alex's backpack, Lifeguard Bruno waves from the pool, Nutty now checks for acorns overhead (and still misses one), and Alex gradually starts reminding others of the rules.
