@@ -10,7 +10,7 @@
    returning visitors pick up the change instead of an old cached copy.
    ========================================================================== */
 
-const CACHE_NAME = 'safety-superheroes-shell-v53';
+const CACHE_NAME = 'safety-superheroes-shell-v54';
 
 // Recorded read-aloud voice clips (audio/voice/<lang>/*.mp3) live in their
 // own cache that survives shell updates -- a clip never changes (its file
@@ -82,6 +82,8 @@ const SHELL_FILES = [
   'js/movie-sets.js',
   'js/movie-data.js',
   'js/page-movie.js',
+  'js/film-data.js',
+  'js/film-player.js',
   'js/soundfx.js',
   'js/categories.js',
   'js/topics-index.js',
@@ -136,7 +138,7 @@ self.addEventListener('fetch', event => {
   // Music files stream with Range requests; let the browser handle them
   // directly (caching partial responses would break seeking and waste space).
   const path = new URL(request.url).pathname;
-  if (path.includes('/audio/music/') || path.includes('/audio/movie/')) return;
+  if (path.includes('/audio/music/') || path.includes('/audio/movie/') || path.includes('/video/')) return;
 
   // Voice clips: cache-first in the long-lived voice cache. The list of
   // recorded sentences (index.json) grows over time, so check the network

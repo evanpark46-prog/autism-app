@@ -49,7 +49,7 @@ function movieIntro(root, id){
     <div class="movie-intro__card comic-panel">
       <div class="movie-intro__hero">${movieHeroFull(id, ep.theme)}</div>
       <p class="movie-intro__kicker">🎬 ${U.movie} · ${U.episode} ${ep.n}</p>
-      <h1 class="movie-intro__title">${mvEsc(ep.title[lang] || ep.title.en)}</h1>
+      <h1 class="movie-intro__title">${mvEsc(((typeof FILM_EPISODES !== 'undefined' && FILM_EPISODES[id]) ? FILM_EPISODES[id].title : ep.title)[lang] || ep.title.en)}</h1>
       <p class="movie-intro__lead">${U.lead}</p>
       <div class="movie-intro__opts">
         <label class="movie-toggle"><input type="checkbox" data-opt="slow" ${o.slow ? 'checked' : ''}> 🐢 ${U.slow}</label>
@@ -59,7 +59,7 @@ function movieIntro(root, id){
       <button type="button" class="btn btn-primary movie-bigbtn movie-intro__start" data-start>${U.start}</button>
     </div></section>`;
   root.querySelectorAll('[data-opt]').forEach(cb => cb.addEventListener('change', () => { const n = movieOpts(); n[cb.dataset.opt] = cb.checked; saveMovieOpts(n); }));
-  root.querySelector('[data-start]').addEventListener('click', () => { MovieSfx.unlock(); new MoviePlayer(root, id).start(); });
+  root.querySelector('[data-start]').addEventListener('click', () => { MovieSfx.unlock(); if (typeof FILM_EPISODES !== 'undefined' && FILM_EPISODES[id] && typeof FilmPlayer === 'function') new FilmPlayer(root, id).start(); else new MoviePlayer(root, id).start(); });
 }
 
 // Facial expressions: smile (-1..1), brow raise, brow inner-tilt, top lid, open mouth, happy eyes

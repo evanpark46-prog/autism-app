@@ -22,6 +22,13 @@ function walk(steps){
     }
   }
 }
+try {
+  const { FILM_EPISODES } = require('../js/film-data.js');
+  for (const f of Object.values(FILM_EPISODES)) {
+    for (const q of f.questions) { for (const l of ['en', 'es']) add(l, 'narrator', q.q[l]); for (const c of q.choices) if (c.tip) for (const l of ['en', 'es']) add(l, 'hero', c.tip[l]); }
+    for (const l of ['en', 'es']) add(l, 'hero', f.heroTip[l]);
+  }
+} catch (e) { /* no films yet */ }
 for (const ep of Object.values(MOVIE_EPISODES)){
   walk(ep.steps); walk(ep.tag);
   for (const r of ep.rescue || []) for (const l of ['en', 'es']) add(l, 'hero', r[l]);

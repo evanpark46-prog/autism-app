@@ -1,6 +1,102 @@
 [
  {
   "lang": "en",
+  "who": "narrator",
+  "text": "Someone Alex doesn't know is holding the kite. What should Alex do first?",
+  "key": "77a9e6592b"
+ },
+ {
+  "lang": "es",
+  "who": "narrator",
+  "text": "Alguien que Alex no conoce tiene la cometa. ¿Qué debería hacer Alex primero?",
+  "key": "999bf6592e"
+ },
+ {
+  "lang": "en",
+  "who": "hero",
+  "text": "Getting close right away is not safe. Stay back first, about two big hops away.",
+  "key": "d854f8942d"
+ },
+ {
+  "lang": "es",
+  "who": "hero",
+  "text": "Acercarse de inmediato no es seguro. Primero quédate atrás, como a dos saltos grandes.",
+  "key": "d252bbe22k"
+ },
+ {
+  "lang": "en",
+  "who": "hero",
+  "text": "You don't have to hide! Stay back, and go tell your grown-up.",
+  "key": "a1e981cc1v"
+ },
+ {
+  "lang": "es",
+  "who": "hero",
+  "text": "¡No tienes que esconderte! Quédate atrás y ve a contarle a tu adulto.",
+  "key": "b6a3bddb23"
+ },
+ {
+  "lang": "en",
+  "who": "narrator",
+  "text": "The grown-up offers candy. What should Alex do?",
+  "key": "df635c9d1l"
+ },
+ {
+  "lang": "es",
+  "who": "narrator",
+  "text": "El adulto le ofrece un dulce. ¿Qué debería hacer Alex?",
+  "key": "1471339d1s"
+ },
+ {
+  "lang": "en",
+  "who": "hero",
+  "text": "It is not safe to take things from people you don't know. Say, “No, thank you!”",
+  "key": "73babdb32d"
+ },
+ {
+  "lang": "es",
+  "who": "hero",
+  "text": "No es seguro tomar cosas de personas que no conoces. Di: “¡No, gracias!”",
+  "key": "6daf379626"
+ },
+ {
+  "lang": "en",
+  "who": "narrator",
+  "text": "The grown-up asks Alex to come see a puppy in the car. What should Alex do?",
+  "key": "7e76d25c2d"
+ },
+ {
+  "lang": "es",
+  "who": "narrator",
+  "text": "El adulto le pide a Alex ir a ver una perrita en el carro. ¿Qué debería hacer Alex?",
+  "key": "6902987d2l"
+ },
+ {
+  "lang": "en",
+  "who": "hero",
+  "text": "Never go anywhere with someone you don't know, not even to see a puppy. Say no, and go to your grown-up.",
+  "key": "000dc61c32"
+ },
+ {
+  "lang": "es",
+  "who": "hero",
+  "text": "Nunca vayas a ningún lugar con alguien que no conoces, ni siquiera para ver una perrita. Di que no y ve con tu adulto.",
+  "key": "9cb5ef3e3g"
+ },
+ {
+  "lang": "en",
+  "who": "hero",
+  "text": "If someone you don’t know asks you to go with them, say “No!” and go tell a grown-up you trust.",
+  "key": "dd44c3b52t"
+ },
+ {
+  "lang": "es",
+  "who": "hero",
+  "text": "Si alguien que no conoces te pide que vayas con él, di “¡No!” y ve a contarle a un adulto de confianza.",
+  "key": "a61590e231"
+ },
+ {
+  "lang": "en",
   "who": "nutty",
   "text": "One acorn for now... one acorn for later... and one acorn for... oops!",
   "key": "d513b5be25"
@@ -288,12 +384,6 @@
   "key": "45c377961l"
  },
  {
-  "lang": "en",
-  "who": "hero",
-  "text": "Getting close right away is not safe. Stay back first, about two big hops away.",
-  "key": "d854f8942d"
- },
- {
   "lang": "es",
   "who": "hero",
   "text": "Acercarse de inmediato no es seguro. Primero mantente alejado, como a dos saltos grandes.",
@@ -472,12 +562,6 @@
   "who": "hero",
   "text": "It is not safe to take things from people you do not know. Say, “No, thank you!”",
   "key": "9dda4ce72e"
- },
- {
-  "lang": "es",
-  "who": "hero",
-  "text": "No es seguro tomar cosas de personas que no conoces. Di: “¡No, gracias!”",
-  "key": "6daf379626"
  },
  {
   "lang": "en",
@@ -850,17 +934,5 @@
   "who": "nutty",
   "text": "¡Locos por la seguridad!",
   "key": "04b6f67dv"
- },
- {
-  "lang": "en",
-  "who": "hero",
-  "text": "If someone you don’t know asks you to go with them, say “No!” and go tell a grown-up you trust.",
-  "key": "dd44c3b52t"
- },
- {
-  "lang": "es",
-  "who": "hero",
-  "text": "Si alguien que no conoces te pide que vayas con él, di “¡No!” y ve a contarle a un adulto de confianza.",
-  "key": "a61590e231"
  }
 ]
