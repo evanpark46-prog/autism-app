@@ -23,7 +23,7 @@ function walk(steps){
   }
 }
 for (const ep of Object.values(MOVIE_EPISODES)){
-  walk(ep.steps);
+  walk(ep.steps); walk(ep.tag);
   for (const r of ep.rescue || []) for (const l of ['en', 'es']) add(l, 'hero', r[l]);
   for (const s of ep.signoff || []) for (const l of ['en', 'es']) add(l, s.who, s[l]);
   for (const l of ['en', 'es']) add(l, 'hero', ep.heroTip[l]);

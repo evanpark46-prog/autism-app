@@ -138,24 +138,28 @@ function msParkSet(){
     + `<g class="mv-bob mv-bob--c"><g transform="translate(80 -2) scale(.6)"><ellipse cx="0" cy="0" rx="22" ry="13" fill="#ffd93b" ${msS(3)}/><circle cx="16" cy="-14" r="10" fill="#ffd93b" ${msS(3)}/><path d="M24 -14 l12 3 l-12 4 z" fill="#ff8a1a" ${msS(2)}/><circle cx="18" cy="-16" r="2.4" fill="${MS_INK}"/></g></g>`
     + `<path d="M-250 0 q-10 -40 4 -70 M-236 4 q0 -50 16 -76 M230 4 q8 -46 -6 -72" stroke="#3f9b3a" stroke-width="5" fill="none"/><ellipse cx="-246" cy="-70" rx="5" ry="14" fill="#8a5a34"/><ellipse cx="-220" cy="-72" rx="5" ry="14" fill="#8a5a34"/><ellipse cx="224" cy="-68" rx="5" ry="14" fill="#8a5a34"/>`
     + `<path d="M120 20 q60 -80 120 0" fill="none" stroke="#e8453c" stroke-width="12"/><path d="M120 20 q60 -80 120 0" fill="none" ${msS(3)} opacity=".0"/>` + [130, 160, 190, 220].map(x => `<path d="M${x} ${x < 175 ? 16 - (x - 120) * 0.8 : -28 + (x - 180) * 0.8} v22" stroke="#e8453c" stroke-width="5"/>`).join('') + `</g>`;
-  // the pool: water behind a white picket fence, yellow gate, lifeguard chair + umbrella
-  world += `<g transform="translate(0 0)"><rect x="2240" y="610" width="1100" height="80" rx="16" fill="url(#msPool)" ${msS(5)}/>`
-    + `<path d="M2280 640 q30 -10 60 0 t60 0 M2600 660 q30 -10 60 0 t60 0 M2950 636 q30 -10 60 0 t60 0" stroke="#fff" stroke-width="5" fill="none" opacity=".75" stroke-linecap="round"/>`
-    + `<rect x="2230" y="680" width="1120" height="30" fill="#f7f0e0" ${msS(4)}/>`;
-  for (let x = 2240; x < 3340; x += 34){ if (x > 2370 && x < 2470) continue; world += `<path d="M${x} 730 v-90 l12 -14 l12 14 v90 z" fill="#fff" ${msS(3)}/>`; }
-  world += `<rect x="2230" y="664" width="1120" height="12" fill="#fff" ${msS(3)}/><rect x="2230" y="704" width="1120" height="12" fill="#fff" ${msS(3)}/>`
-    + `<g><rect x="2375" y="640" width="90" height="94" rx="8" fill="#ffd23f" ${msS(4)}/>` + [2392, 2412, 2432, 2452].map(x => `<rect x="${x - 4}" y="650" width="8" height="76" fill="#ffb800"/>`).join('') + `</g>`
-    + `<g transform="translate(2420 600)"><rect x="-56" y="-30" width="112" height="44" rx="10" fill="#2f7fe0" ${msS(4)}/><text x="0" y="0" text-anchor="middle" font-family="Fredoka, sans-serif" font-weight="700" font-size="26" fill="#fff">POOL</text></g>`
-    + `<g transform="translate(2300 690)"><circle r="26" fill="#fff" ${msS(4)}/><circle r="26" fill="none" stroke="#ff4d4d" stroke-width="12" stroke-dasharray="20 21"/><circle r="12" fill="url(#msPool)" ${msS(3)}/></g>`
-    + `<g transform="translate(2840 740)"><path d="M-50 0 L-34 -260 M50 0 L34 -260" stroke="#fff" stroke-width="14" stroke-linecap="round"/><path d="M-50 0 L-34 -260 M50 0 L34 -260" ${msS(3)} fill="none" opacity=".0"/>`
-    + [0, 1, 2, 3].map(i => `<rect x="-42" y="${-60 - i * 50}" width="84" height="8" fill="#fff" ${msS(2.5)}/>`).join('')
-    + `<rect x="-46" y="-270" width="92" height="16" rx="5" fill="#fff" ${msS(3.5)}/><rect x="-40" y="-340" width="80" height="72" rx="10" fill="#fff" ${msS(3.5)}/><path d="M-10 -318 h20 v12 h12 v20 h-12 v12 h-20 v-12 h-12 v-20 h12 z" fill="#ff4d4d"/>`
-    + `<path d="M60 -330 v-150" ${msS(4)}/><path d="M-60 -420 Q60 -520 180 -420 Z" fill="#fff" ${msS(4)}/>` + [0, 2, 4].map(i => `<path d="M60 -470 L${-60 + i * 48} -420 L${-36 + i * 48} -420 Z" fill="#ff4d4d"/>`).join('') + `</g></g>`;
+  // the picnic spot: a big blossom tree for shade, gingham blanket, basket, lemonade, Dad's book
+  world += msTree(2620, 640, 1.15, 'blossom', r);
+  world += `<g transform="translate(2470 770)">`
+    + `<path d="M-190 10 L-150 -46 L170 -46 L210 10 Z" fill="#ff6b6b" ${msS(4.5)}/>`
+    + [0, 1, 2, 3, 4, 5, 6, 7].map(i => `<path d="M${-170 + i * 46} 10 L${-136 + i * 40} -46 L${-116 + i * 40} -46 L${-148 + i * 46} 10 Z" fill="#fff" opacity=".85"/>`).join('')
+    + [0, 1].map(i => `<path d="M${-182 + i * 4} ${-8 - i * 20} L${200 - i * 6} ${-8 - i * 20}" stroke="#fff" stroke-width="9" opacity=".7"/>`).join('')
+    + `<g transform="translate(90 -40)"><path d="M-40 0 q-6 -46 6 -50 h68 q12 4 6 50 z" fill="#d9a05b" ${msS(4)}/>`
+    + [0, 1, 2].map(i => `<path d="M-38 ${-14 - i * 12} h76" stroke="#b97f3d" stroke-width="4"/>`).join('')
+    + `<path d="M-30 -50 q30 -40 60 0" fill="none" stroke="#b97f3d" stroke-width="7"/><path d="M-30 -50 q30 -40 60 0" fill="none" ${msS(3)} opacity=".0"/>`
+    + `<path d="M-30 -52 q10 -12 22 -4 q10 -10 22 0 q8 -8 16 2 z" fill="#ff6b6b" ${msS(3)}/></g>`
+    + `<g transform="translate(-60 -46)"><rect x="-14" y="-46" width="28" height="44" rx="8" fill="#fff8b0" opacity=".9" ${msS(3.5)}/><rect x="-14" y="-26" width="28" height="24" rx="6" fill="#ffd93b"/><rect x="-14" y="-46" width="28" height="44" rx="8" fill="none" ${msS(3.5)}/><circle cx="-4" cy="-18" r="4" fill="#fff6a0"/><path d="M14 -36 q12 4 0 18" fill="none" ${msS(3.5)}/></g>`
+    + `<g transform="translate(10 -40)"><path d="M-18 -4 h36 l-4 10 h-28 z" fill="#fff" ${msS(3)}/><path d="M-14 -4 q4 -12 14 -10 q12 -2 14 10" fill="#ffd1a1" ${msS(3)}/><path d="M-13 -6 h26" stroke="#7bd36b" stroke-width="4"/></g>`
+    + `</g>`;
+  // kite stuck in the blossom tree (just for fun)
+  world += `<g transform="translate(2740 450) rotate(18)"><path d="M0 -40 L28 0 L0 46 L-28 0 Z" fill="#4dabf7" ${msS(4)}/><path d="M0 -40 V46 M-28 0 H28" ${msS(3)}/><path d="M0 46 q-20 30 0 50 q20 20 0 50" fill="none" ${msS(3)}/><path class="mv-flag" d="M-6 70 l12 -6 v12 z" fill="#ff6fa8"/></g>`;
+  // a little park lamp + bench along the path
+  world += `<g transform="translate(2160 740)"><rect x="-90" y="-46" width="180" height="12" rx="5" fill="#c98a4b" ${msS(3.5)}/><rect x="-90" y="-80" width="180" height="12" rx="5" fill="#c98a4b" ${msS(3.5)}/><path d="M-76 -34 v34 M76 -34 v34 M-76 -80 v46 M76 -80 v46" ${msS(5)}/></g>`;
   // flower beds along the path (back edge) and a few mushrooms
   const cols = ['#ff6fa8', '#ffd23f', '#9775fa', '#ff8a5c', '#4dabf7', '#ffffff'];
   for (let i = 0; i < 70; i++){
     const x = 600 + i * 40 + r() * 30;
-    if ((x > 950 && x < 1260) || (x > 2360 && x < 2480)) continue;
+    if ((x > 950 && x < 1260) || (x > 2260 && x < 2700)) continue;
     world += r() > 0.4 ? msFlower(x, 742 + r() * 8, cols[i % cols.length], 0.9) : msTulip(x, 744, cols[(i + 2) % cols.length]);
   }
   world += msMushroom(1180, 744, 0.9) + msMushroom(2150, 750, 0.7) + msMushroom(1620, 748, 0.8);

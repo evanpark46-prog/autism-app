@@ -2,14 +2,14 @@
  {
   "lang": "en",
   "who": "nutty",
-  "text": "One acorn for later... and one acorn for... oops!",
-  "key": "d6973d201k"
+  "text": "One acorn for now... one acorn for later... and one acorn for... oops!",
+  "key": "d513b5be25"
  },
  {
   "lang": "es",
   "who": "nutty",
-  "text": "Una bellota para después... y una bellota para... ¡uy!",
-  "key": "465cc5871p"
+  "text": "Una bellota para ahora... una para después... y una para... ¡uy!",
+  "key": "17b636b91z"
  },
  {
   "lang": "en",
@@ -26,74 +26,170 @@
  {
   "lang": "en",
   "who": "narrator",
-  "text": "Once upon a time, in Sunny Meadow Park, there lived a bouncy little bunny named Alex.",
-  "key": "383df5142n"
+  "text": "Once upon a time, Alex and Dad had a picnic at Sunny Meadow Park.",
+  "key": "346b982023"
  },
  {
   "lang": "es",
   "who": "narrator",
-  "text": "Había una vez, en el Parque Pradera Soleada, una conejita muy saltarina llamada Alex.",
-  "key": "55181d592n"
+  "text": "Había una vez, Alex y Papá hicieron un pícnic en el Parque Pradera Soleada.",
+  "key": "a1ba68572d"
+ },
+ {
+  "lang": "en",
+  "who": "dad",
+  "text": "Captain Alex! Your mission: find the golden acorn. I hid it by the castle slide!",
+  "key": "db2be7532d"
+ },
+ {
+  "lang": "es",
+  "who": "dad",
+  "text": "¡Capitana Alex! Tu misión: encontrar la bellota dorada. ¡La escondí junto al tobogán del castillo!",
+  "key": "a7a46c7f2v"
  },
  {
   "lang": "en",
   "who": "alex",
-  "text": "Boing! Boing! I’m the bounciest bunny in the whole wide world!",
-  "key": "b4881f781w"
+  "text": "Aye aye, Captain Dad! Boing! Boing!",
+  "key": "ad76816d15"
  },
  {
   "lang": "es",
   "who": "alex",
-  "text": "¡Boing! ¡Boing! ¡Soy la conejita más saltarina del mundo entero!",
-  "key": "01380ee51y"
+  "text": "¡A la orden, Capitán Papá! ¡Boing! ¡Boing!",
+  "key": "264929451c"
+ },
+ {
+  "lang": "en",
+  "who": "dad",
+  "text": "Remember our rule. Stay where you can see me, and I can see you.",
+  "key": "3c9dec851x"
+ },
+ {
+  "lang": "es",
+  "who": "dad",
+  "text": "Recuerda nuestra regla. Quédate donde tú me puedas ver, y yo te pueda ver.",
+  "key": "8c8b291827"
  },
  {
   "lang": "en",
   "who": "alex",
-  "text": "Hi, ducks!",
-  "key": "25e4fc4dg"
+  "text": "Got it! And if I find the treasure, can I keep it?",
+  "key": "56ba10571k"
  },
  {
   "lang": "es",
   "who": "alex",
-  "text": "¡Hola, patitos!",
-  "key": "c8976429l"
+  "text": "¡Entendido! Y si encuentro el tesoro, ¿me lo puedo quedar?",
+  "key": "641ba9021s"
  },
  {
   "lang": "en",
-  "who": "hero",
-  "text": "Hoo-hoo! I’m Captain Caution! Today, YOU can help Alex make super safe choices.",
-  "key": "702512732d"
+  "who": "dad",
+  "text": "Only if I get the first bite.",
+  "key": "052dfe37y"
  },
  {
   "lang": "es",
-  "who": "hero",
-  "text": "¡Ju-ju! ¡Soy el Capitán Cautela! Hoy, TÚ puedes ayudar a Alex a tomar decisiones súper seguras.",
-  "key": "8aba7ac42t"
+  "who": "dad",
+  "text": "Solo si yo le doy la primera mordida.",
+  "key": "b174cda916"
  },
  {
   "lang": "en",
-  "who": "hero",
-  "text": "Watch closely, hero. I’ll be nearby if anyone needs me!",
-  "key": "7085aa361p"
+  "who": "alex",
+  "text": "Dad! You can’t eat an acorn!",
+  "key": "533eb7f0y"
  },
  {
   "lang": "es",
-  "who": "hero",
-  "text": "Mira con atención, héroe. ¡Estaré cerca por si alguien me necesita!",
-  "key": "5db56fc021"
+  "who": "alex",
+  "text": "¡Papá! ¡No te puedes comer una bellota!",
+  "key": "5dbc7ef619"
+ },
+ {
+  "lang": "en",
+  "who": "dad",
+  "text": "Not with that attitude!",
+  "key": "157c7531s"
+ },
+ {
+  "lang": "es",
+  "who": "dad",
+  "text": "¡No con esa actitud!",
+  "key": "20c1e7aap"
+ },
+ {
+  "lang": "en",
+  "who": "alex",
+  "text": "Hi, ducks! Can’t stop! Treasure hunt!",
+  "key": "625787de17"
+ },
+ {
+  "lang": "es",
+  "who": "alex",
+  "text": "¡Hola, patitos! ¡No puedo parar! ¡Busco un tesoro!",
+  "key": "99822dec1k"
+ },
+ {
+  "lang": "en",
+  "who": "alex",
+  "text": "I found it! The golden acorn!",
+  "key": "cea66a42z"
+ },
+ {
+  "lang": "es",
+  "who": "alex",
+  "text": "¡La encontré! ¡La bellota dorada!",
+  "key": "8442ff8713"
+ },
+ {
+  "lang": "en",
+  "who": "nutty",
+  "text": "Ooh! Shiny!",
+  "key": "19063baei"
+ },
+ {
+  "lang": "es",
+  "who": "nutty",
+  "text": "¡Uy! ¡Qué brillante!",
+  "key": "38ce7163r"
+ },
+ {
+  "lang": "en",
+  "who": "alex",
+  "text": "Hey! Nutty! That’s my treasure!",
+  "key": "bd038d7811"
+ },
+ {
+  "lang": "es",
+  "who": "alex",
+  "text": "¡Oye! ¡Nutty! ¡Ese es mi tesoro!",
+  "key": "a3880f3912"
+ },
+ {
+  "lang": "en",
+  "who": "nutty",
+  "text": "Finders keepers! Hee hee!",
+  "key": "a501e3efw"
+ },
+ {
+  "lang": "es",
+  "who": "nutty",
+  "text": "¡El que lo encuentra se lo queda! ¡Ji, ji!",
+  "key": "cba37e681d"
  },
  {
   "lang": "en",
   "who": "narrator",
-  "text": "A grown-up walks over. Alex does not know them.",
-  "key": "d1426dbd1l"
+  "text": "Just then, a grown-up walks over. Alex does not know them.",
+  "key": "11bb5e4a1w"
  },
  {
   "lang": "es",
   "who": "narrator",
-  "text": "Un adulto se acerca. Alex no lo conoce.",
-  "key": "1265f5aa1d"
+  "text": "En ese momento, un adulto se acerca. Alex no lo conoce.",
+  "key": "8394cbad1t"
  },
  {
   "lang": "en",
@@ -122,14 +218,14 @@
  {
   "lang": "en",
   "who": "goat",
-  "text": "Hello there, little bunny!",
-  "key": "77755671w"
+  "text": "Hello there, little bunny! Lost something?",
+  "key": "95d798c61c"
  },
  {
   "lang": "es",
   "who": "goat",
-  "text": "¡Hola, conejita!",
-  "key": "8850c413m"
+  "text": "¡Hola, conejita! ¿Perdiste algo?",
+  "key": "c915ffc412"
  },
  {
   "lang": "en",
@@ -241,51 +337,51 @@
  },
  {
   "lang": "en",
-  "who": "bear",
-  "text": "Alex? Where did Alex go?",
-  "key": "58468a27u"
+  "who": "dad",
+  "text": "Alex? Alex, where are you?",
+  "key": "cd5687f0v"
  },
  {
   "lang": "es",
-  "who": "bear",
-  "text": "¿Alex? ¿Adónde se fue Alex?",
-  "key": "7b3f94b6x"
+  "who": "dad",
+  "text": "¿Alex? Alex, ¿dónde estás?",
+  "key": "a13c98a0v"
  },
  {
   "lang": "en",
   "who": "narrator",
-  "text": "Nobody can find Alex. Everyone is worried, and Alex feels scared and alone.",
-  "key": "3b4470e92d"
+  "text": "Dad can’t see Alex anymore. Everyone is worried, and Alex feels scared and alone.",
+  "key": "e95c0ae92j"
  },
  {
   "lang": "es",
   "who": "narrator",
-  "text": "Nadie encuentra a Alex. Todos están preocupados, y Alex se siente asustada y sola.",
-  "key": "cc10e7912k"
+  "text": "Papá ya no puede ver a Alex. Todos están preocupados, y Alex se siente asustada y sola.",
+  "key": "be8ceaf62p"
  },
  {
   "lang": "en",
   "who": "hero",
-  "text": "You don’t have to hide! Stay back, and tell a grown-up you trust.",
-  "key": "e5590f211z"
+  "text": "You don’t have to hide! Stay back, and go tell your grown-up.",
+  "key": "e62479061v"
  },
  {
   "lang": "es",
   "who": "hero",
-  "text": "¡No tienes que esconderte! Mantente alejado y cuéntale a un adulto de confianza.",
-  "key": "0481bdfa2e"
+  "text": "¡No tienes que esconderte! Mantente alejado y ve a contarle a tu adulto.",
+  "key": "e836786126"
  },
  {
   "lang": "en",
   "who": "goat",
-  "text": "Hi! Want some candy? It’s yummy!",
-  "key": "6e5e841b12"
+  "text": "Here, I have candy for you. It’s yummy!",
+  "key": "fed3d61319"
  },
  {
   "lang": "es",
   "who": "goat",
-  "text": "¡Hola! ¿Quieres un dulce? ¡Está riquísimo!",
-  "key": "a5aa3c531c"
+  "text": "Toma, tengo un dulce para ti. ¡Está riquísimo!",
+  "key": "fc843ee01g"
  },
  {
   "lang": "en",
@@ -362,14 +458,14 @@
  {
   "lang": "en",
   "who": "narrator",
-  "text": "Now Alex is walking away from the park. It feels harder to say no.",
-  "key": "64265ae124"
+  "text": "Now Alex is walking away from Dad. It feels harder to say no.",
+  "key": "580c3ab31z"
  },
  {
   "lang": "es",
   "who": "narrator",
-  "text": "Ahora Alex se aleja del parque. Es más difícil decir que no.",
-  "key": "02cea7811y"
+  "text": "Ahora Alex se aleja de Papá. Es más difícil decir que no.",
+  "key": "2d7a36971v"
  },
  {
   "lang": "en",
@@ -410,26 +506,26 @@
  {
   "lang": "en",
   "who": "goat",
-  "text": "Are you sure? I have lots and lots of candy...",
-  "key": "51bca2f31g"
+  "text": "I have a cute puppy in my car. Want to come see?",
+  "key": "1a47dd751i"
  },
  {
   "lang": "es",
   "who": "goat",
-  "text": "¿Estás segura? Tengo muchísimos dulces...",
-  "key": "403a9ce91b"
+  "text": "Tengo un perrito muy lindo en mi carro. ¿Quieres venir a verlo?",
+  "key": "495313ad1x"
  },
  {
   "lang": "en",
   "who": "narrator",
-  "text": "The grown-up keeps talking.",
-  "key": "fa94f9b611"
+  "text": "The grown-up wants Alex to go with them.",
+  "key": "c79ba8081e"
  },
  {
   "lang": "es",
   "who": "narrator",
-  "text": "El adulto sigue hablando.",
-  "key": "a468cee4z"
+  "text": "El adulto quiere que Alex vaya con él.",
+  "key": "37b34a461c"
  },
  {
   "lang": "en",
@@ -446,146 +542,170 @@
  {
   "lang": "en",
   "who": "narrator",
-  "text": "The grown-up keeps talking to Alex. What should Alex do now?",
-  "key": "e3f394bc1y"
+  "text": "The grown-up asks Alex to come see a puppy in their car. What should Alex do?",
+  "key": "5b22d5c72f"
  },
  {
   "lang": "es",
   "who": "narrator",
-  "text": "El adulto sigue hablándole a Alex. ¿Qué debería hacer Alex ahora?",
-  "key": "00008bcb23"
+  "text": "El adulto le pide a Alex que vaya a ver un perrito en su carro. ¿Qué debería hacer Alex?",
+  "key": "b646db5c2q"
  },
  {
   "lang": "en",
   "who": "narrator",
-  "text": "Alex stays and keeps talking.",
-  "key": "5f51dae913"
+  "text": "Alex walks to the car to see the puppy.",
+  "key": "059c42f31d"
  },
  {
   "lang": "es",
   "who": "narrator",
-  "text": "Alex se queda y sigue hablando.",
-  "key": "2f54b08f15"
+  "text": "Alex camina al carro para ver el perrito.",
+  "key": "162a856a1f"
+ },
+ {
+  "lang": "en",
+  "who": "dad",
+  "text": "Alex? Where did you go?",
+  "key": "70e422a3s"
+ },
+ {
+  "lang": "es",
+  "who": "dad",
+  "text": "¿Alex? ¿Adónde fuiste?",
+  "key": "a654a18fr"
  },
  {
   "lang": "en",
   "who": "narrator",
-  "text": "The grown-up steps closer.",
-  "key": "6dff954310"
+  "text": "Now Alex is far from the picnic, and Dad can’t see Alex at all.",
+  "key": "ba02220821"
  },
  {
   "lang": "es",
   "who": "narrator",
-  "text": "El adulto se acerca más.",
-  "key": "bc24fd62y"
- },
- {
-  "lang": "en",
-  "who": "narrator",
-  "text": "The lifeguard is far away, watching the pool. No grown-up Alex trusts is close by to help.",
-  "key": "235d12612s"
- },
- {
-  "lang": "es",
-  "who": "narrator",
-  "text": "El salvavidas está lejos, mirando la piscina. No hay ningún adulto de confianza cerca para ayudar.",
-  "key": "c22cdb9730"
+  "text": "Ahora Alex está lejos del pícnic, y Papá no la puede ver.",
+  "key": "b61125471v"
  },
  {
   "lang": "en",
   "who": "hero",
-  "text": "It is safer to walk away to a grown-up you trust, like a lifeguard, a teacher or your family.",
-  "key": "c5651c992r"
+  "text": "Never go anywhere with someone you don’t know, not even to see a puppy. Say no, and go back to your grown-up.",
+  "key": "c580a9ef37"
  },
  {
   "lang": "es",
   "who": "hero",
-  "text": "Es más seguro alejarse e ir con un adulto de confianza, como un salvavidas, un maestro o tu familia.",
-  "key": "9ae0b0682y"
+  "text": "Nunca vayas a ningún lugar con alguien que no conoces, ni siquiera para ver un perrito. Di que no y regresa con tu adulto.",
+  "key": "75b742093k"
  },
  {
   "lang": "en",
   "who": "alex",
-  "text": "I’m going to find Lifeguard Bruno!",
-  "key": "ea4a533814"
+  "text": "No! I’m going back to my dad!",
+  "key": "3f30f61ez"
  },
  {
   "lang": "es",
   "who": "alex",
-  "text": "¡Voy a buscar al salvavidas Bruno!",
-  "key": "302acf5d14"
+  "text": "¡No! ¡Voy a regresar con mi papá!",
+  "key": "800a9c7c13"
  },
  {
   "lang": "en",
   "who": "alex",
-  "text": "Not now, ducks! I’m on a safety mission!",
-  "key": "07bdbc4d1a"
+  "text": "Dad! A grown-up I don’t know gave me candy... and wanted me to see a puppy in their car!",
+  "key": "d4e6afe02m"
  },
  {
   "lang": "es",
   "who": "alex",
-  "text": "¡Ahora no, patitos! ¡Estoy en una misión de seguridad!",
-  "key": "a318f2761o"
+  "text": "¡Papá! Un adulto que no conozco me ofreció un dulce... ¡y quería que fuera a ver un perrito en su carro!",
+  "key": "253a91af32"
+ },
+ {
+  "lang": "en",
+  "who": "dad",
+  "text": "You said no, and you came straight back to tell me. That was exactly right!",
+  "key": "6514aa8728"
+ },
+ {
+  "lang": "es",
+  "who": "dad",
+  "text": "Dijiste que no y viniste directo a contármelo. ¡Eso fue exactamente lo correcto!",
+  "key": "37510f462d"
+ },
+ {
+  "lang": "en",
+  "who": "dad",
+  "text": "Can you tell me what they looked like?",
+  "key": "3bcf228817"
+ },
+ {
+  "lang": "es",
+  "who": "dad",
+  "text": "¿Me puedes decir cómo era?",
+  "key": "5d9c1a4dv"
  },
  {
   "lang": "en",
   "who": "alex",
-  "text": "Lifeguard Bruno! A grown-up I don’t know offered me candy.",
-  "key": "85608fc51s"
+  "text": "A green sweater and round glasses.",
+  "key": "c2d81eff14"
  },
  {
   "lang": "es",
   "who": "alex",
-  "text": "¡Salvavidas Bruno! Un adulto que no conozco me ofreció un dulce.",
-  "key": "d9b9678b1y"
+  "text": "Un suéter verde y lentes redondos.",
+  "key": "12b4543a14"
  },
  {
   "lang": "en",
-  "who": "bear",
-  "text": "You did the right thing telling me! What did they look like?",
-  "key": "468d50321u"
+  "who": "dad",
+  "text": "Thank you. That really helps. From now on, let’s play close together.",
+  "key": "8d9165c722"
  },
  {
   "lang": "es",
-  "who": "bear",
-  "text": "¡Hiciste muy bien en contármelo! ¿Cómo era?",
-  "key": "d7110db61d"
- },
- {
-  "lang": "en",
-  "who": "alex",
-  "text": "They had a green sweater and round glasses.",
-  "key": "3d0623901d"
- },
- {
-  "lang": "es",
-  "who": "alex",
-  "text": "Tenía un suéter verde y lentes redondos.",
-  "key": "19accd291a"
- },
- {
-  "lang": "en",
-  "who": "bear",
-  "text": "Thank you! That helps me a lot. You can stay right here with me.",
-  "key": "8319399a1y"
- },
- {
-  "lang": "es",
-  "who": "bear",
-  "text": "¡Gracias! Eso me ayuda mucho. Puedes quedarte aquí conmigo.",
-  "key": "8229e9151t"
+  "who": "dad",
+  "text": "Gracias. Eso me ayuda mucho. De ahora en adelante, juguemos cerquita.",
+  "key": "b7516bd322"
  },
  {
   "lang": "en",
   "who": "narrator",
-  "text": "The grown-up walks back to their car. Alex is safe.",
-  "key": "f389f98f1p"
+  "text": "The grown-up walks back to their car. Alex is safe with Dad.",
+  "key": "f87983d61y"
  },
  {
   "lang": "es",
   "who": "narrator",
-  "text": "El adulto vuelve a su carro. Alex está a salvo.",
-  "key": "fca7dbee1l"
+  "text": "El adulto vuelve a su carro. Alex está a salvo con Papá.",
+  "key": "3c7491aa1u"
+ },
+ {
+  "lang": "en",
+  "who": "nutty",
+  "text": "Um... I believe this is yours. I was, uh... keeping it safe!",
+  "key": "18c1d5271v"
+ },
+ {
+  "lang": "es",
+  "who": "nutty",
+  "text": "Eh... creo que esto es tuyo. ¡Lo estaba... cuidando!",
+  "key": "06dcbec21n"
+ },
+ {
+  "lang": "en",
+  "who": "dad",
+  "text": "Ha! Nutty the safety squirrel!",
+  "key": "565604cbz"
+ },
+ {
+  "lang": "es",
+  "who": "dad",
+  "text": "¡Ja! ¡Nutty, la ardilla de la seguridad!",
+  "key": "0786039d19"
  },
  {
   "lang": "en",
@@ -625,15 +745,39 @@
  },
  {
   "lang": "en",
-  "who": "bear",
-  "text": "Ha ha! Good one, Nutty.",
-  "key": "3f839663t"
+  "who": "dad",
+  "text": "Ha ha! That’s even worse than my jokes!",
+  "key": "62d9022018"
  },
  {
   "lang": "es",
-  "who": "bear",
-  "text": "¡Ja, ja! Muy bueno, Nutty.",
-  "key": "d813610fw"
+  "who": "dad",
+  "text": "¡Ja, ja! ¡Ese es peor que mis chistes!",
+  "key": "a49a2ae017"
+ },
+ {
+  "lang": "en",
+  "who": "dad",
+  "text": "New game! It’s called... Safety Spies!",
+  "key": "37922c2617"
+ },
+ {
+  "lang": "es",
+  "who": "dad",
+  "text": "¡Nuevo juego! Se llama... ¡Espías de la Seguridad!",
+  "key": "e0b1d5951j"
+ },
+ {
+  "lang": "en",
+  "who": "alex",
+  "text": "Boing! Best game ever!",
+  "key": "420b7870s"
+ },
+ {
+  "lang": "es",
+  "who": "alex",
+  "text": "¡Boing! ¡El mejor juego del mundo!",
+  "key": "f7315e3a14"
  },
  {
   "lang": "en",
@@ -710,13 +854,13 @@
  {
   "lang": "en",
   "who": "hero",
-  "text": "If someone you don’t know asks you to go with them, say “No!” and tell a grown-up you trust.",
-  "key": "597a55392q"
+  "text": "If someone you don’t know asks you to go with them, say “No!” and go tell a grown-up you trust.",
+  "key": "dd44c3b52t"
  },
  {
   "lang": "es",
   "who": "hero",
-  "text": "Si alguien que no conoces te pide que vayas con él, di “¡No!” y avisa a un adulto de confianza.",
-  "key": "c6b92b9a2t"
+  "text": "Si alguien que no conoces te pide que vayas con él, di “¡No!” y ve a contarle a un adulto de confianza.",
+  "key": "a61590e231"
  }
 ]

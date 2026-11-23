@@ -3025,3 +3025,18 @@ section[id]{scroll-margin-top:120px;}
 .hero-movie-callout__icon{font-size:2.4rem;}
 .hero-movie-callout strong{display:block; font:700 1.25rem Fredoka, Nunito, sans-serif;}
 .hero-movie-callout__sub{display:block; font-size:.98rem;}
+
+/* Hero Movies v2: wipes, emotes, dust, sparkle trail */
+.movie__wipe{position:absolute; inset:0; pointer-events:none; background:radial-gradient(circle at 50% 50%, transparent 0, transparent var(--r,0%), #1f2638 calc(var(--r,0%) + 1%));}
+.movie__wipe[hidden]{display:none;}
+.movie__wipe.is-in{animation:mvIrisIn .55s ease-in forwards;}
+.movie__wipe.is-out{animation:mvIrisOut .55s ease-out forwards;}
+@property --r{syntax:'<percentage>'; inherits:false; initial-value:0%;}
+@keyframes mvIrisIn{from{--r:80%;} to{--r:0%;}}
+@keyframes mvIrisOut{from{--r:0%;} to{--r:80%;}}
+.movie__svg .mv-emote-pop{animation:mvEmote .4s cubic-bezier(.3,1.8,.5,1) both;}
+@keyframes mvEmote{from{transform:scale(0);} to{transform:scale(1);}}
+.movie__svg .mv-dust{animation:mvDust .7s ease-out both;}
+@keyframes mvDust{from{transform:scale(.4); opacity:1;} to{transform:scale(1.5) translateY(-6px); opacity:0;}}
+.movie__svg .mv-trail{animation:mvTrail .8s ease-out both;}
+@keyframes mvTrail{from{transform:scale(1); opacity:1;} to{transform:scale(.2) translateY(20px); opacity:0;}}
