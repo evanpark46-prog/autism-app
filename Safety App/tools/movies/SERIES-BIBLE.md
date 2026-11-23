@@ -43,12 +43,19 @@ Where things live:
 - A warm storyteller who opens each episode with "Once upon a time...". Short, simple sentences. Voice: EN `af_heart`, ES `ef_dora`.
 
 ## Guest cast (reuse when a lesson fits)
-- **A grown-up Alex doesn't know** (goat): teal cardigan, round glasses, khaki pants. Deliberately ordinary and friendly-looking, because strangers look like anyone else. Never drawn as scary or mean. Voice: EN `am_michael`, ES `em_alex`.
+- **A grown-up Alex doesn't know** (goat): blue cardigan, round glasses, khaki pants. Deliberately ordinary and friendly-looking, because strangers look like anyone else. Never drawn as scary or mean. Voice: EN `am_michael`, ES `em_alex`.
 - **Lifeguard Bruno** (bear): red GUARD shirt, white visor, whistle. A trusted helper who is big, warm and calm. Voice: EN `am_onyx`, ES `em_santa`.
 
 ## World
 - **Sunny Meadow Park** (set `park`): a smiling sun, a rainbow, a pink castle on a far hill, a windmill, a castle-tower slide, swings, Nutty's apple oak, a duck pond with a red bridge, and a picnic spot under a blossom tree (gingham blanket, basket, lemonade, a kite stuck in the tree). A parking area with a car sits at the left edge. Every place in a set should make sense for that episode's story.
 - **Ideas for future sets:** Alex's cozy house (kitchen, bathroom), Maple Street crosswalk, the school, the library, the beach, the grocery store.
+
+### Hand-painted film look (v2, `videos/stranger-safety-cinematic`)
+- **Heroes:** bold kids'-action-cartoon energy, always original. Big heads, big glossy eyes (colored iris, two catch-lights), and a layered costume: a suit front with gold piping, a bevelled gold chest emblem, a utility belt with a buckle, gauntlet cuffs, chunky boots, and a two-tone cape (outer color + sunflower lining) with a stand-up collar. Signature pose: fist-forward flight when swooping in, hands on hips when landed.
+- **Captain Caution:** a brown owl. Emerald suit and domino mask with gold trim, amber eyes, a gold shield with an emerald "noticing eye". Palette in `OWL` in `src/07_chars.js`.
+- **Hero Valley map:** every place has its own small waving hero in the place's color: zebra at Crosswalk Corner, dalmatian at Firehouse Hill, otter at Splash Lake, mouse at Cozy Home Lane, penguin at Lighthouse Library. Captain Caution's emerald-roofed **Hero Tower** stands in the middle of the valley and on the far hill behind Sunny Meadow Park.
+- **World palette:** lush and natural, not neon. Snowy lilac mountains, a soft distant rainbow, lavender and wheat fields, hedgerows, orchards, a duck pond with a red bridge, a windmill, an apple oak with a rope swing, tulip beds, hydrangea hedges, and a picket fence with roses. Kit: `src/06b_scenery.js`.
+- **Calm rule (autism-friendly):** detail goes in the distance and at the frame edges. The ground behind faces stays quiet. Moving scenery (windmill sails, flags, ducks, butterflies, birds) is slow, sparse and drawn from time only, so nothing flickers.
 - **Visual motif:** the orange **"notice" spark** (a star with a "!") pops over whatever the viewer should notice.
 - **Sound motifs:** a 3-note rising sting with the spark, a warm 4-note chime for a safe choice, two gentle falling notes for "uh-oh", and a tape-rewind warble when the hero turns back time.
 - **Banners:** "What happens next?" (orange, ✗) while a wrong choice plays out, and "Safe choice!" (blue, ✓) for the right one. The ✗ and ✓ shapes carry the meaning, not just the color.

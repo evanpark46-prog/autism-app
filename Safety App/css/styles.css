@@ -776,9 +776,9 @@ main{max-width:1080px; margin:0 auto; padding:28px 20px 64px;}
 
 /* ---------- The Safety Showdown (boss-battle.html) ---------- */
 .battle-arena{display:flex; flex-direction:column; align-items:center; gap:12px; margin-bottom:22px;}
-.battle-monster{width:120px; height:120px; animation:monster-float 3s ease-in-out infinite;}
-.battle-monster--intro{width:140px; height:140px; margin:0 auto 8px;}
-.battle-monster--defeated{width:140px; height:140px; margin:0 auto 8px; animation:none; transform:rotate(8deg);}
+.battle-monster{width:clamp(180px, 46vw, 240px); height:clamp(169px, 43vw, 225px); animation:monster-float 3s ease-in-out infinite;}
+.battle-monster--intro{width:clamp(210px, 60vw, 290px); height:clamp(197px, 56vw, 272px); margin:0 auto 8px;}
+.battle-monster--defeated{width:clamp(210px, 60vw, 290px); height:clamp(197px, 56vw, 272px); margin:0 auto 8px; animation:none;}
 @keyframes monster-float{
   0%, 100%{transform:translateY(0) rotate(-2deg);}
   50%{transform:translateY(-10px) rotate(2deg);}
@@ -2327,6 +2327,58 @@ section[id]{scroll-margin-top:120px;}
 :root[data-calm-mode="on"] .villain-arena__hero, :root[data-calm-mode="on"] .villain-arena__villain,
 :root[data-calm-mode="on"] .villain-callout__art, :root[data-calm-mode="on"] .villain-pow span{animation:none !important;}
 :root[data-calm-mode="on"] .villain-confetti{display:none;}
+
+/* Villain idle motion (js/villains.js wraps moving parts in .vm-* groups):
+   a gentle wing flap, tail wag, wobble... Small, slow and never flashing.
+   Off on the busy lesson map, once defeated (only the dizzy stars turn),
+   under reduced motion, and in Calm Mode. */
+.villain [class^="vm-"]{transform-box:fill-box;}
+.villain .vm-flap{animation:vm-flap 1.1s ease-in-out infinite alternate;}
+.villain .vm-flap2{animation:vm-flap2 1.1s ease-in-out infinite alternate;}
+.villain .vm-wag{animation:vm-wag 1.6s ease-in-out infinite alternate;}
+.villain .vm-sway{animation:vm-wag 2.2s ease-in-out infinite alternate;}
+.villain .vm-sway2{animation:vm-wag 2.6s ease-in-out -1s infinite alternate-reverse;}
+.villain .vm-wobble{animation:vm-wobble 2.4s ease-in-out infinite alternate;}
+.villain .vm-float{animation:vm-float 2.6s ease-in-out infinite alternate;}
+.villain .vm-puff{animation:vm-puff 2.4s ease-in-out infinite alternate;}
+.villain .vm-fizz{animation:vm-puff 1.6s ease-in-out infinite alternate;}
+.villain .vm-flicker{animation:vm-flicker .5s ease-in-out infinite alternate;}
+.villain .vm-wiggle{animation:vm-wobble 1.8s ease-in-out infinite alternate;}
+.villain .vm-wiggle2{animation:vm-wobble 1.8s ease-in-out -.9s infinite alternate-reverse;}
+.villain .vm-wave{animation:vm-wag 1.2s ease-in-out infinite alternate;}
+.villain .vm-grab, .villain .vm-grab2{animation:vm-grab 1.4s ease-in-out infinite alternate;}
+.villain .vm-grab2{animation-delay:-.7s;}
+.villain .vm-shrug{animation:vm-float 1.3s ease-in-out infinite alternate;}
+.villain .vm-flail{animation:vm-wag .9s ease-in-out infinite alternate;}
+.villain .vm-flail2{animation:vm-wag .9s ease-in-out -.45s infinite alternate-reverse;}
+.villain .vm-rattle{animation:vm-rattle .7s ease-in-out infinite alternate;}
+.villain .vm-jiggle{animation:vm-jiggle 1.4s ease-in-out infinite alternate;}
+.villain .vm-rumble{animation:vm-jiggle 1.1s ease-in-out infinite alternate;}
+.villain .vm-shiver{animation:vm-shiver .4s linear infinite alternate;}
+.villain .vm-rain{animation:vm-rain 1.4s ease-in infinite;}
+.villain .vm-orbit{animation:vm-float 1.8s ease-in-out infinite alternate;}
+.villain .vm-spin{animation:vm-spin 1.6s ease-in-out infinite alternate;}
+.villain .vm-flop, .villain .vm-flop2{animation:vm-wobble 2.8s ease-in-out infinite alternate;}
+.villain .vm-flop2{animation-direction:alternate-reverse;}
+.villain .vm-dizzy{animation:vm-dizzy 2.4s ease-in-out infinite;}
+@keyframes vm-flap{from{transform:rotate(-7deg);} to{transform:rotate(9deg);}}
+@keyframes vm-flap2{from{transform:rotate(7deg);} to{transform:rotate(-9deg);}}
+@keyframes vm-wag{from{transform:rotate(-6deg);} to{transform:rotate(6deg);}}
+@keyframes vm-wobble{from{transform:rotate(-3deg);} to{transform:rotate(3deg);}}
+@keyframes vm-float{from{transform:translateY(0);} to{transform:translateY(-3px);}}
+@keyframes vm-puff{from{transform:translateY(1px) scale(.94); opacity:.75;} to{transform:translateY(-2px) scale(1.04); opacity:1;}}
+@keyframes vm-flicker{from{transform:scaleX(.82);} to{transform:scaleX(1.08);}}
+@keyframes vm-grab{from{transform:rotate(-5deg) scale(1);} to{transform:rotate(5deg) scale(.94);}}
+@keyframes vm-rattle{from{transform:translateY(0) rotate(-1.5deg);} to{transform:translateY(-1.5px) rotate(1.5deg);}}
+@keyframes vm-jiggle{from{transform:scale(1,1);} to{transform:scale(1.025,.975);}}
+@keyframes vm-shiver{from{transform:translateX(-.6px);} to{transform:translateX(.6px);}}
+@keyframes vm-rain{from{transform:translateY(-1px); opacity:1;} to{transform:translateY(3px); opacity:.35;}}
+@keyframes vm-spin{from{transform:scaleX(1);} to{transform:scaleX(-1);}}
+@keyframes vm-dizzy{0%,100%{transform:rotate(-8deg);} 50%{transform:rotate(8deg);}}
+.villain--defeated [class^="vm-"]:not(.vm-dizzy),
+.map-stop__villain .villain [class^="vm-"]{animation:none !important;}
+@media (prefers-reduced-motion: reduce){ .villain [class^="vm-"]{animation:none !important;} }
+:root[data-calm-mode="on"] .villain [class^="vm-"]{animation:none !important;}
 
 /* ---------- Home: Map / Cards toggle + Hero Map ---------- */
 [data-topic-grid] > .home-view-toggle, [data-topic-grid] > .lesson-map{grid-column:1/-1;}

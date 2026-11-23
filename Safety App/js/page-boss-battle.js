@@ -45,6 +45,9 @@ function resetBattle(){
 }
 
 function monsterSvg(defeated){
+  // The full-size Safety Monster lives in js/villains.js with the lesson villains;
+  // the tiny drawing below is only a fallback if that script didn't load.
+  if (typeof villainBossSvg === 'function') return villainBossSvg(defeated);
   const eyes = defeated
     ? '<path d="M8 13q2-2 4 0M14 13q2-2 4 0" stroke="#2b2b2b" stroke-width="2" stroke-linecap="round" fill="none"/>'
     : '<circle cx="9.5" cy="12.5" r="2.4" fill="#2b2b2b"/><circle cx="16.5" cy="12.5" r="2.4" fill="#2b2b2b"/>';

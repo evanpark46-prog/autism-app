@@ -87,7 +87,7 @@ function heroBadgeHtml(topicId, lang, theme, size){
   const px = size || 64;
   if (typeof animalHeroSvg === 'function' && ANIMAL_HEROES[topicId]){
     return `<div class="hero-badge hero-badge--animal" data-theme="${theme}" style="width:${px}px;height:${px}px" title="${escapeHtml(data.name)}">
-      ${animalHeroSvg(topicId, theme, heroEmblemInner(hero.emblem))}
+      ${animalHeroSvg(topicId, theme, heroEmblemInner(hero.emblem), { backdrop: true })}
     </div>`;
   }
   return `<div class="hero-badge" data-theme="${theme}" style="width:${px}px;height:${px}px" title="${escapeHtml(data.name)}">
@@ -125,6 +125,6 @@ function heroPortraitHtml(topicId, lang, theme, size){
   const data = hero[lang] || hero.en;
   const px = size || 88;
   return `<div class="hero-portrait" data-theme="${theme}" style="width:${px}px;height:${px}px" title="${escapeHtml(data.name)}">
-    ${typeof animalHeroSvg === 'function' && ANIMAL_HEROES[topicId] ? animalHeroSvg(topicId, theme, heroEmblemInner(hero.emblem)) : heroPortraitSvg(hero.emblem, theme)}
+    ${typeof animalHeroSvg === 'function' && ANIMAL_HEROES[topicId] ? animalHeroSvg(topicId, theme, heroEmblemInner(hero.emblem), { backdrop: true }) : heroPortraitSvg(hero.emblem, theme)}
   </div>`;
 }

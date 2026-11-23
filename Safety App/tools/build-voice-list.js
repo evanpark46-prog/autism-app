@@ -134,6 +134,35 @@ for (const id of Object.keys(ctx.TOPIC_CONTENT)){
   }
 }
 
+// 2-4: the hand-written Hero Stories picture books (content/books/<id>.js):
+// story pages, questions, answer choices and feedback. js/page-storybook.js
+// reads a page as its sentences, adding a full stop where a line has none.
+{
+  const bdir = path.join(ROOT, 'content', 'books');
+  const bctx = vm.createContext({ BOOK_STORIES: {} });
+  if (fs.existsSync(bdir)) for (const f of fs.readdirSync(bdir).filter(f => f.endsWith('.js'))){
+    vm.runInContext(fs.readFileSync(path.join(bdir, f), 'utf8'), bctx);
+  }
+  const stop = s => /[.!?…:;]["”»’)]*$/.test(s.trim()) ? s : s.trim() + '.';
+  for (const book of Object.values(bctx.BOOK_STORIES)){
+    for (const lang of LANGS){
+      const pick = x => (x && typeof x === 'object' && x[lang] != null ? x[lang] : null);
+      book.levels.forEach((lv, i) => {
+        const out = [];
+        lv.pages.forEach(pg => (pg[lang] || []).forEach(t => out.push(t)));
+        const q = src => {
+          [src.q, src.hint, src.why, src.clueWhy, src.guessWhy].map(pick).filter(Boolean).filter(t => !/\{page:/.test(t)).forEach(t => out.push(stop(t)));
+          (src.choices || []).map(pick).filter(Boolean).forEach(t => out.push(stop(t)));
+          if (src.then) q(src.then);
+        };
+        (lv.questions || []).concat(lv.recap || []).forEach(q);
+        ((lv.learned && lv.learned[lang]) || []).forEach(t => out.push(t));
+        out.forEach(t => add(lang, t, 2 + Math.min(i, 2)));
+      });
+    }
+  }
+}
+
 // 5: villains, hero tips, glossary, topic index text
 for (const file of ['js/villains.js', 'js/heroes.js', 'js/animal-heroes.js', 'js/glossary.js', 'js/topics-index.js', 'js/story.js']){
   let g;
