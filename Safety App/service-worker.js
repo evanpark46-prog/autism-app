@@ -10,7 +10,7 @@
    returning visitors pick up the change instead of an old cached copy.
    ========================================================================== */
 
-const CACHE_NAME = 'safety-superheroes-shell-v52';
+const CACHE_NAME = 'safety-superheroes-shell-v53';
 
 // Recorded read-aloud voice clips (audio/voice/<lang>/*.mp3) live in their
 // own cache that survives shell updates -- a clip never changes (its file
@@ -48,6 +48,7 @@ const SHELL_FILES = [
   '404.html',
   'manifest.json',
   'css/styles.css',
+  'css/storybook.css',
   'js/i18n.js',
   'js/theme.js',
   'js/agebands.js',

@@ -1,0 +1,281 @@
+/* ==========================================================================
+   Hero Stories — book format (storybook.html only)
+   Loaded after css/styles.css. Sizes are in rem so the app's text-size
+   setting scales everything. Motion is gentle and switched off in Calm
+   Mode and under prefers-reduced-motion.
+   ========================================================================== */
+
+/* ---------- Theme colors for this page's pieces ---------- */
+:is(.sb, .sb-head, .sb-ribbon, .sb-resume, .sb-resume__ribbon, .sb-keep__btn, .sb-shelf-book){
+  --sb-accent:var(--rose, #c94d3f); --sb-tint:var(--rose-tint, #fff0e8); --sb-deep:var(--rose-dark, #a33e32); --sb-on:#fff;
+}
+:is(.sb, .sb-head, .sb-ribbon, .sb-resume, .sb-resume__ribbon, .sb-keep__btn, .sb-shelf-book)[data-theme="blue"]{--sb-accent:var(--blue); --sb-tint:var(--blue-tint); --sb-deep:var(--blue-dark, #345690);}
+:is(.sb, .sb-head, .sb-ribbon, .sb-resume, .sb-resume__ribbon, .sb-keep__btn, .sb-shelf-book)[data-theme="green"]{--sb-accent:var(--green); --sb-tint:var(--green-tint); --sb-deep:#24664f;}
+:is(.sb, .sb-head, .sb-ribbon, .sb-resume, .sb-resume__ribbon, .sb-keep__btn, .sb-shelf-book)[data-theme="red"]{--sb-accent:var(--red); --sb-tint:var(--red-tint); --sb-deep:#a5473a;}
+:is(.sb, .sb-head, .sb-ribbon, .sb-resume, .sb-resume__ribbon, .sb-keep__btn, .sb-shelf-book)[data-theme="purple"]{--sb-accent:var(--purple); --sb-tint:var(--purple-tint); --sb-deep:#5f4a80;}
+:is(.sb, .sb-head, .sb-ribbon, .sb-resume, .sb-resume__ribbon, .sb-keep__btn, .sb-shelf-book)[data-theme="amber"]{--sb-accent:var(--amber); --sb-tint:var(--amber-tint); --sb-deep:#8a6416; --sb-on:#3b2c05;}
+
+/* ---------- Round hero head (bookmarks, questions, cheers) ---------- */
+.sb-head{
+  display:inline-flex; align-items:center; justify-content:center; flex:none;
+  width:2.6rem; height:2.6rem; border-radius:50%; overflow:hidden;
+  background:radial-gradient(circle at 50% 42%, #fff 0 52%, var(--sb-tint) 100%);
+  border:3px solid var(--sb-accent); box-sizing:border-box;
+}
+.sb-head svg{width:100%; height:100%; display:block;}
+
+/* ---------- Bookshelf ---------- */
+.sb-legend{
+  max-width:900px; margin:0 auto 14px; display:flex; flex-wrap:wrap; justify-content:center; gap:8px 22px;
+  font-weight:700; color:var(--ink-soft); font-size:.95rem;
+}
+.sb-legend__item{display:inline-flex; align-items:center; gap:6px;}
+.sb-legend__mark{
+  display:inline-block; width:.8rem; height:1.15rem; background:var(--rose-dark, #a33e32);
+  clip-path:polygon(0 0, 100% 0, 100% 100%, 50% 78%, 0 100%);
+}
+.sb-shelf .book-spine__levels{row-gap:1.2rem; padding-top:.6rem;}
+.sb-shelf-book{position:relative; overflow:visible;}
+.sb-shelf-book.is-reading{padding-right:2.3rem; border-color:var(--sb-accent); border-width:3px;}
+.sb-shelf-book.is-reading .sb-shelf-book__icon{display:none;}   /* the ribbon stands in for the book icon */
+.sb-shelf-book.is-done{padding-right:1.8rem;}
+.sb-shelf-book small{hyphens:auto; -webkit-hyphens:auto; overflow-wrap:anywhere;}
+.sb-shelf-book__name{white-space:nowrap;}
+/* Superhero bookmark ribbon: hero head poking out of the top of the book,
+   ribbon tail (with the saved page number) hanging out of the bottom. */
+.sb-ribbon{
+  position:absolute; top:-1rem; right:.2rem; width:2rem; z-index:1;
+  display:flex; flex-direction:column; align-items:center; pointer-events:none;
+}
+.sb-ribbon .sb-head{width:2rem; height:2rem; border-width:2px; position:relative; z-index:2; box-shadow:0 2px 4px rgba(0,0,0,.18);}
+.sb-ribbon__tail{
+  display:flex; justify-content:center; align-items:flex-start; padding-top:.55rem;
+  width:1.35rem; height:3.3rem; margin-top:-.45rem; background:var(--sb-deep);
+  clip-path:polygon(0 0, 100% 0, 100% 100%, 50% 80%, 0 100%);
+}
+.sb-ribbon__pg{color:#fff; font-weight:900; font-size:.8rem; line-height:1;}
+.sb-shelf-star{position:absolute; top:-.7rem; right:-.35rem; font-size:1.35rem; line-height:1; filter:drop-shadow(0 1px 1px rgba(0,0,0,.25));}
+
+.sb-keep{max-width:900px; margin:0 auto 18px;}
+.sb-keep__title{font-size:1.2rem; margin:0 0 8px;}
+.sb-keep__list{list-style:none; margin:0; padding:0; display:flex; flex-wrap:wrap; gap:10px;}
+.sb-keep__btn{
+  display:inline-flex; align-items:center; gap:10px; min-height:3.4rem; padding:.45rem 1rem .45rem .5rem;
+  border-radius:999px; border:3px solid var(--sb-accent); background:var(--sb-tint);
+  color:var(--ink); font-weight:800; text-decoration:none; line-height:1.2;
+}
+.sb-keep__btn:hover, .sb-keep__btn:focus-visible{background:#fff; outline:none; box-shadow:0 0 0 4px rgba(75,121,189,.35);}
+
+/* ---------- "Your hero saved your place!" ---------- */
+.sb-resume{
+  max-width:36rem; margin:1.5rem auto; padding:2rem 1.5rem 1.5rem; text-align:center;
+  background:#fffaf0; color:#2a2418; border:4px solid var(--sb-accent); border-radius:1.6rem;
+  box-shadow:0 1rem 2rem rgba(60,40,10,.14);
+}
+.sb-resume__art{position:relative; display:inline-block; margin-bottom:.5rem;}
+.sb-resume__art .hero-portrait{border:4px solid var(--sb-accent); border-radius:50%; overflow:hidden;}
+.sb-resume__ribbon{position:absolute; top:-1rem; right:-1.6rem;}
+.sb-resume__ribbon .sb-ribbon__tail{width:2.2rem; height:5.2rem; padding-top:1.4rem; margin:0;}
+.sb-resume__ribbon .sb-ribbon__pg{font-size:1.15rem;}
+.sb-resume__book{margin:0 0 .3rem; font-weight:800; color:var(--ink-soft);}
+.sb-resume__title{margin:0 0 .4rem; font-size:clamp(1.6rem, 1.2rem + 2vw, 2.2rem); line-height:1.2;}
+.sb-resume__q{margin:0 0 1.2rem; font-size:1.35rem; font-weight:700;}
+.sb-resume__actions{display:flex; flex-wrap:wrap; justify-content:center; gap:.8rem;}
+.sb-resume__shelf{margin:1.2rem 0 0; font-weight:700;}
+
+.sb-big-btn{min-height:3.4rem; padding:.8rem 1.4rem; font-size:1.15rem; border-radius:1rem;}
+
+/* ---------- The open book ---------- */
+.sb{max-width:76rem; margin:0 auto;}
+.sb-toolbar{display:flex; flex-wrap:wrap; align-items:center; gap:.6rem 1rem; margin:0 auto .9rem;}
+.sb-toolbar__shelf{font-weight:800; min-height:2.75rem; display:inline-flex; align-items:center;}
+.sb-toolbar__title{flex:1; margin:0; font-size:1.15rem; line-height:1.25; text-align:center; min-width:12rem;}
+.sb-toolbar__title span{color:var(--ink-soft); font-weight:700;}
+.sb-toolbar__return{min-height:3rem;}
+.sb-toolbar__return[hidden]{display:none;}
+
+.sb-stage{padding:.4rem 0 1rem; overflow-x:clip;}
+.sb-book{
+  position:relative; margin:0 auto; padding:.6rem .6rem .6rem 1rem;
+  background:var(--sb-deep); border-radius:1.4rem;
+  box-shadow:0 .25rem 0 rgba(0,0,0,.12), 0 1.1rem 2rem rgba(60,40,10,.2);
+}
+.sb-book.is-single{max-width:46rem;}
+.sb-book.is-spread.is-single{max-width:38rem;}           /* the closed cover */
+.sb-book.is-pair{display:grid; grid-template-columns:1fr 1fr; max-width:76rem; padding:.6rem;}
+
+.sb-leaf{
+  position:relative; display:flex; flex-direction:column; min-height:clamp(18rem, calc(100vh - 26rem), 38rem);
+  padding:clamp(1.25rem, 3vw, 2.6rem) clamp(1.1rem, 3.4vw, 2.8rem) 3.2rem;
+  background:#fffaf0; color:#2a2418; outline:none;
+}
+.sb-leaf--solo, .sb-leaf--cover{border-radius:.5rem 1.1rem 1.1rem .5rem; box-shadow:inset 1.1rem 0 1.4rem -1.1rem rgba(90,60,20,.4), 0 .2rem 0 #eadfc6, 0 .4rem 0 #f6eedb;}
+.sb-leaf--left{border-radius:1.1rem .25rem .25rem 1.1rem; box-shadow:inset -1.4rem 0 1.6rem -1.3rem rgba(90,60,20,.45), 0 .2rem 0 #eadfc6;}
+.sb-leaf--right{border-radius:.25rem 1.1rem 1.1rem .25rem; box-shadow:inset 1.4rem 0 1.6rem -1.3rem rgba(90,60,20,.45), 0 .2rem 0 #eadfc6;}
+.sb-leaf:focus-visible{box-shadow:0 0 0 4px var(--blue, #4b79bd); z-index:1;}
+.sb-leaf__inner{flex:1; display:flex; flex-direction:column; max-width:36em; width:100%; margin:0 auto;}
+.sb-leaf__tools{display:flex; justify-content:flex-end; margin:-.4rem -.4rem .4rem 0;}
+.sb-leaf__tools .speak-btn{width:3rem; height:3rem; font-size:1.35rem;}
+.sb-leaf__num{position:absolute; bottom:1rem; left:0; right:0; margin:0; text-align:center; font-size:1rem; font-weight:800; color:#8a7a5a;}
+.sb-leaf--left .sb-leaf__num{text-align:left; left:1.6rem;}
+.sb-leaf--right .sb-leaf__num{text-align:right; right:1.6rem;}
+
+/* Story text */
+.sb-p{font-family:var(--font-body); font-size:1.35rem; line-height:1.6; margin:0 0 .85em;}
+.is-pair .sb-p{font-size:1.3rem;}
+.sb-text{margin:auto 0;}
+.sb-text .book-safe{font-weight:800;}
+.sb-text.is-lookback .book-safe{
+  background:#fff3c4; border-radius:.7rem; padding:.3em .5em; margin-left:-.5em; margin-right:-.5em;
+  outline:3px dashed var(--sb-accent); outline-offset:2px;
+}
+.sb-look-tag{
+  display:inline-flex; align-items:center; gap:.25em; margin-right:.3em; padding:.1em .55em; border-radius:999px;
+  background:var(--sb-deep); color:#fff; font-size:.85em; font-style:normal; font-weight:800; vertical-align:middle;
+}
+
+/* Cover */
+.sb-leaf--cover{background:radial-gradient(circle at 50% 30%, #fffdf7 0 38%, var(--sb-tint) 100%); text-align:center;}
+.sb-cover{margin:auto 0; display:flex; flex-direction:column; align-items:center;}
+.sb-cover__series{text-transform:uppercase; letter-spacing:.12em; font-weight:800; font-size:.85rem; color:var(--sb-deep); margin:0 0 .8rem;}
+.sb-cover__title{font-family:var(--font-display); font-size:clamp(2rem, 1.5rem + 2.4vw, 3rem); margin:0 0 1rem; line-height:1.12;}
+.sb-cover__hero .hero-portrait{border:5px solid var(--sb-accent); border-radius:50%; overflow:hidden; box-shadow:0 .5rem 1rem rgba(0,0,0,.12);}
+.sb-cover__with{margin:.7rem 0 .2rem; font-weight:800; font-size:1.15rem; color:var(--sb-deep);}
+.sb-cover__level{font-weight:700; color:#5b4a2e; margin:0 0 1rem;}
+.sb-cover__starring{display:inline-block; margin:0; padding:.55rem 1.3rem; border-radius:999px; border:3px dashed var(--sb-accent); background:#fff; font-weight:800; font-size:1.15rem;}
+
+/* End page */
+.sb-end{margin:auto 0; text-align:center;}
+.sb-end__title{font-family:var(--font-display); font-size:clamp(2rem, 1.5rem + 2.4vw, 3rem); font-weight:800; margin:0 0 .6rem;}
+.sb-end__hero{margin:0 0 .8rem;}
+.sb-end__hero .hero-portrait{display:inline-block; border:4px solid var(--sb-accent); border-radius:50%; overflow:hidden;}
+.sb-end__heading{font-size:1.2rem; margin:0 0 .5rem;}
+.sb-end__list{text-align:left; margin:0 auto 1.4rem; padding-left:1.3em; font-size:1.15rem; line-height:1.5;}
+.sb-end__list li{margin-bottom:.3em;}
+.sb-end__actions{display:flex; flex-wrap:wrap; justify-content:center; gap:.6rem;}
+.sb-end__actions .btn{min-height:3.2rem; font-size:1.05rem;}
+
+/* Blank inside back cover (when The End lands on a left page) */
+.sb-leaf--blank{
+  background:repeating-linear-gradient(45deg, var(--sb-tint) 0 .9rem, #fffaf0 .9rem 1.8rem);
+  align-items:center; justify-content:center;
+}
+.sb-endpaper .sb-head{width:5rem; height:5rem; border-width:4px; opacity:.85;}
+
+/* ---------- Hero questions (inside the book) ---------- */
+.sb-q, .sb-recap{margin:auto 0; display:flex; flex-direction:column; gap:.8rem;}
+.sb-q__tag{
+  display:inline-flex; align-self:flex-start; align-items:center; gap:.55rem; margin:0;
+  padding:.3rem 1rem .3rem .3rem; border-radius:999px; background:var(--sb-tint); border:2px solid var(--sb-accent);
+  font-weight:900; color:var(--sb-deep); font-size:1.05rem;
+}
+.sb-q__ask{margin:0; font-size:1.4rem; font-weight:800; line-height:1.35;}
+.sb-choices{display:grid; gap:.75rem;}
+.sb-choice{
+  display:flex; align-items:center; justify-content:space-between; gap:.8rem; text-align:left;
+  min-height:3.6rem; padding:.85rem 1.1rem; border-radius:1.1rem; border:3px solid var(--border, #d8dde6);
+  background:#fff; color:var(--ink, #1d2330); font:inherit; font-size:1.25rem; font-weight:700; line-height:1.35; cursor:pointer;
+  box-shadow:0 .25rem 0 rgba(41,59,55,.12);
+}
+.sb-choice:hover:not([disabled]){border-color:var(--sb-accent); background:#fffdf7;}
+.sb-choice:focus-visible{outline:none; border-color:var(--blue, #4b79bd); box-shadow:0 0 0 4px rgba(75,121,189,.35);}
+.sb-choice[disabled]{cursor:default; box-shadow:none;}
+.sb-choice.is-right{border-color:#2f9e63; background:#e9f9f0;}
+.sb-choice.is-wrong{border-style:dashed; border-color:#c7a3a3; background:#faf4f3; color:#6e5a5a;}
+.sb-choice__mark{flex:none; font-size:.95rem; font-weight:900; white-space:nowrap;}
+.sb-choice.is-right .sb-choice__mark{color:#1d6f45;}
+.sb-choice.is-wrong .sb-choice__mark{color:#7a4a4a;}
+.sb-fb{display:flex; flex-direction:column; align-items:flex-start; gap:.7rem;}
+.sb-fb:empty{display:none;}
+.sb-hint{margin:0; padding:.6rem .9rem; border-radius:.9rem; background:#fff4d8; color:#5e4410; font-weight:700; font-size:1.1rem; border-left:.4rem solid #dfa92f;}
+
+/* "Super reading!" — the hero cheers */
+.sb-cheer{position:relative; display:flex; align-items:center; gap:.8rem;}
+.sb-cheer > .sb-head{width:3.8rem; height:3.8rem; animation:sb-pop .5s var(--ease-bounce, ease-out) both;}
+.sb-cheer__bubble{
+  position:relative; margin:0; padding:.7rem 1rem; border-radius:1.1rem; background:#fff;
+  border:3px solid var(--sb-accent); font-size:1.1rem; line-height:1.4;
+}
+.sb-cheer__bubble::before{
+  content:""; position:absolute; left:-.75rem; top:50%; margin-top:-.5rem;
+  border:.5rem solid transparent; border-right:.75rem solid var(--sb-accent); border-left:0;
+}
+.sb-cheer__bubble strong{font-size:1.25rem; color:#1d6f45;}
+.sb-sparkles{position:absolute; left:.4rem; top:-.4rem; pointer-events:none;}
+.sb-sparkles i{position:absolute; font-style:normal; font-size:1.1rem; opacity:0; animation:sb-spark 1.1s ease-out forwards;}
+.sb-sparkles i:nth-child(1){left:0; animation-delay:.05s;}
+.sb-sparkles i:nth-child(2){left:1.6rem; animation-delay:.2s;}
+.sb-sparkles i:nth-child(3){left:3rem; animation-delay:.35s;}
+@keyframes sb-pop{0%{transform:scale(.5); opacity:0;} 100%{transform:scale(1); opacity:1;}}
+@keyframes sb-spark{0%{transform:translateY(.6rem) scale(.6); opacity:0;} 30%{opacity:1;} 100%{transform:translateY(-1.4rem) scale(1); opacity:0;}}
+
+/* Super Reader recap */
+.sb-recap__title{margin:0; font-family:'Fredoka', 'Nunito', sans-serif; font-size:1.5rem; text-align:center;}
+.sb-recap__intro{margin:0; text-align:center; font-weight:700; font-size:1.1rem;}
+.sb-recap__progress{margin:0; text-align:center; font-weight:800; color:var(--ink-soft); font-size:1rem;}
+.sb-recap--done{align-items:center; text-align:center;}
+.sb-recap--done p{margin:0; font-size:1.15rem;}
+.sb-recap__medal{font-size:4rem; line-height:1; animation:sb-pop .6s var(--ease-bounce, ease-out) both;}
+.sb-recap__done-title{font-family:'Fredoka', 'Nunito', sans-serif; font-size:1.6rem !important; font-weight:700;}
+.sb-recap__stars{font-size:1.7rem !important; letter-spacing:4px;}
+
+/* ---------- Turning the page ---------- */
+.sb-nav{display:flex; align-items:center; justify-content:space-between; gap:.8rem; max-width:76rem; margin:.4rem auto 0;}
+.sb-nav__btn{min-height:3.6rem; min-width:9.5rem; font-size:1.2rem; border-radius:1rem;}
+.sb-nav__btn[disabled]{opacity:.4;}
+.sb-nav__mid{flex:1; display:flex; flex-direction:column; align-items:center; gap:.4rem; min-width:0;}
+.sb-nav__status{margin:0; font-weight:800; font-size:1.05rem; text-align:center;}
+.sb-dots{display:flex; flex-wrap:wrap; justify-content:center; gap:5px;}
+.sb-dots span{width:.55rem; height:.55rem; border-radius:50%; background:#e0d6bf;}
+.sb-dots span.is-q{border-radius:2px; transform:rotate(45deg);}   /* question pages: little diamonds */
+.sb-dots span.is-on{background:var(--sb-deep);}
+
+/* The page-turn overlay (built by js/page-storybook.js, removed when done) */
+.sb-turn-layer{position:absolute; inset:0; pointer-events:none; z-index:5;}
+.sb-turn-layer > div{position:absolute;}
+.sb-turn-layer .sb-leaf{position:absolute; inset:0; margin:0; min-height:0; height:100%; overflow:hidden;}
+.sb-turn-still{z-index:1;}
+.sb-turn-flip{z-index:2; transform-style:preserve-3d; animation:.7s cubic-bezier(.45,.05,.35,1) forwards;}
+.sb-turn-flip.is-fwd{transform-origin:left center; animation-name:sb-flip-fwd;}
+.sb-turn-flip.is-back{transform-origin:right center; animation-name:sb-flip-back;}
+.sb-turn-face{position:absolute; inset:0; backface-visibility:hidden; -webkit-backface-visibility:hidden;}
+.sb-turn-face--back{transform:rotateY(180deg);}
+.sb-turn-face::after{content:""; position:absolute; inset:0; pointer-events:none; background:linear-gradient(90deg, rgba(60,40,10,.14), transparent 40%);}
+.sb-turn-lift{z-index:2; transform-origin:left center; animation:sb-lift .45s ease-in forwards;}
+.sb-turn-settle{z-index:2; transform-origin:left center; animation:sb-settle .45s ease-out both;}
+@keyframes sb-flip-fwd{from{transform:perspective(2600px) rotateY(0deg);} to{transform:perspective(2600px) rotateY(-180deg);}}
+@keyframes sb-flip-back{from{transform:perspective(2600px) rotateY(0deg);} to{transform:perspective(2600px) rotateY(180deg);}}
+@keyframes sb-lift{from{transform:perspective(1800px) rotateY(0deg); opacity:1;} to{transform:perspective(1800px) rotateY(-70deg); opacity:0;}}
+@keyframes sb-settle{from{transform:perspective(1800px) rotateY(-70deg); opacity:0;} to{transform:perspective(1800px) rotateY(0deg); opacity:1;}}
+
+/* No motion in Calm Mode or with reduced motion */
+@media (prefers-reduced-motion: reduce){
+  .sb-turn-layer{display:none;}
+  .sb-cheer > .sb-head, .sb-recap__medal{animation:none;}
+  .sb-sparkles{display:none;}
+}
+:root[data-calm-mode="on"] .sb-turn-layer{display:none;}
+:root[data-calm-mode="on"] .sb-cheer > .sb-head, :root[data-calm-mode="on"] .sb-recap__medal{animation:none;}
+:root[data-calm-mode="on"] .sb-sparkles{display:none;}
+
+/* High contrast */
+:root[data-contrast] .sb-leaf{background:#fff; color:#000;}
+:root[data-contrast] .sb-leaf--blank{background:#fff;}
+:root[data-contrast] .sb-choice{border-color:#000;}
+:root[data-contrast] .sb-book{background:#000;}
+
+/* ---------- Phones ---------- */
+@media (max-width:600px){
+  .sb-book{padding:.4rem .4rem .4rem .7rem; border-radius:1rem;}
+  .sb-leaf{min-height:clamp(14rem, calc(100vh - 30rem), 26rem); padding:1.1rem 1.1rem 3rem;}
+  .sb-p{font-size:1.25rem;}
+  .sb-q__ask{font-size:1.25rem;}
+  .sb-choice{font-size:1.15rem; flex-direction:column; align-items:flex-start; gap:.3rem;}
+  .sb-dots{display:none;}
+  .sb-nav{gap:.5rem;}
+  .sb-nav__btn{min-width:0; flex:1 1 0; padding-left:.6rem; padding-right:.6rem;}
+  .sb-nav__mid{flex:0 1 auto; max-width:7.5rem;}
+  .sb-nav__status{font-size:.95rem;}
+  .sb-toolbar__title{order:3; flex-basis:100%; text-align:left;}
+  .sb-cheer{align-items:flex-start;}
+}
