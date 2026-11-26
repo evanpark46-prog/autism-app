@@ -81,12 +81,12 @@ const CONTENT = {
                 text: 'Someone Alex does not know is close by. What should Alex do first?',
                 choices: [
                   { text: 'Get very close right away to say hi.', correct: false,
-                    outcome: ['Alex walks right up close.', 'Now the person is very close.', 'Alex feels mixed up. It is hard to step away.'],
+                    outcome: ['Alex walks right up close.', 'The person reaches out and takes Alex’s hand.', 'Now Alex is too close to step away, and no grown-up is watching.'],
                     feedback: 'Getting close right away is not safe. Stay back first.' },
                   { text: 'Stay back a little and watch.', correct: true,
                     feedback: 'Yes! Staying back is smart.' },
                   { text: 'Run away and hide, and don’t tell anyone.', correct: false,
-                    outcome: ['Alex runs and hides behind the slide.', 'Alex’s grown-up cannot find Alex.', 'Everyone is worried. Alex feels scared and alone.'],
+                    outcome: ['Alex runs and hides behind the slide.', 'Alex’s grown-up calls Alex’s name and runs all over the park looking.', 'Nobody knows about the person, so nobody can help.'],
                     feedback: 'You don’t have to hide. Just stay back, and tell a grown-up soon.' },
                 ] },
               { type: 'dialogue', illustration: 'park-approach',
@@ -96,7 +96,7 @@ const CONTENT = {
                 ],
                 choices: [
                   { text: 'Take the candy.', correct: false,
-                    outcome: ['Alex takes the candy.', 'The person smiles and says, “Come get more by my car.”', 'Now it feels harder to say no.'],
+                    outcome: ['Alex takes the candy.', 'The person smiles and says, “Come get more by my car.”', 'The person walks toward the car and waves for Alex to follow.'],
                     feedback: 'It is not safe to take things from people you do not know.' },
                   { text: 'Say “No thank you.”', correct: true,
                     feedback: 'Yes! That is the safe answer.' },
@@ -137,7 +137,7 @@ const CONTENT = {
                 text: 'Is it okay to say “no” to a grown-up you do not know?',
                 choices: [
                   { text: 'No, you always have to say yes.', correct: false,
-                    outcome: ['Alex thinks, “I have to say yes.”', 'The person asks Alex to come with them.', 'Alex says yes, even though it feels wrong.'],
+                    outcome: ['Alex thinks, “I have to say yes.”', 'The person asks Alex to come with them.', 'Alex says yes and walks away with the person, and no grown-up knows.'],
                     feedback: 'That is not true. You can always say no.' },
                   { text: 'Yes, you can always say no.', correct: true,
                     feedback: 'Yes! Saying no is always okay.' },
@@ -146,7 +146,7 @@ const CONTENT = {
                 text: 'A person Alex does not know asks Alex to come see a puppy in their car. What should Alex do?',
                 choices: [
                   { text: 'Go look at the puppy.', correct: false,
-                    outcome: ['Alex walks to the car to see the puppy.', 'Now Alex is far from the park.', 'No grown-up Alex knows can see Alex.'],
+                    outcome: ['Alex walks to the car to see the puppy.', 'The person opens the car door, but there is no puppy inside. It was a trick.', 'Now Alex is far from the park, and no grown-up Alex knows can see Alex.'],
                     feedback: 'Never go anywhere with someone you do not know, even for a puppy.' },
                   { text: 'Say no, and walk to a trusted grown-up.', correct: true,
                     feedback: 'Yes! That is exactly right.' },
@@ -155,7 +155,7 @@ const CONTENT = {
                 text: 'How far away should Alex stay from someone they do not know?',
                 choices: [
                   { text: 'Very close, like a hug.', correct: false,
-                    outcome: ['Alex stands very close to the person.', 'If something feels wrong, there is no room to step back.', 'It is hard for Alex to get away fast.'],
+                    outcome: ['Alex stands very close to the person.', 'The person puts a hand on Alex’s shoulder.', 'Now Alex can’t step back or get away fast.'],
                     feedback: 'That is too close. Stay an arm’s length away, or more.' },
                   { text: 'An arm’s length away, or more.', correct: true,
                     feedback: 'Yes! That is a safe distance.' },
@@ -177,7 +177,7 @@ const CONTENT = {
                 text: 'If a stranger ever makes Alex feel unsafe, what is the first thing to do?',
                 choices: [
                   { text: 'Wait and see what happens.', correct: false,
-                    outcome: ['Alex waits.', 'The person keeps coming closer.', 'Alex feels more scared, and no grown-up knows.'],
+                    outcome: ['Alex waits.', 'The person keeps coming closer, until they are right next to Alex.', 'No grown-up knows, so nobody comes to help.'],
                     feedback: 'Waiting is not safe. Move away and tell a grown-up right away.' },
                   { text: 'Move away and tell a trusted grown-up.', correct: true,
                     feedback: 'Yes! That is always the first step.' },
@@ -7493,12 +7493,12 @@ const CONTENT = {
                 text: 'Alguien que Alex no conoce está cerca. ¿Qué debería hacer Alex primero?',
                 choices: [
                   { text: 'Acercarse mucho de inmediato para saludar.', correct: false,
-                    outcome: ['Alex se acerca mucho.', 'Ahora la persona está muy cerca.', 'Alex se siente confundido. Es difícil alejarse.'],
+                    outcome: ['Alex se acerca mucho.', 'La persona estira la mano y toma la mano de Alex.', 'Ahora Alex está demasiado cerca para alejarse, y ningún adulto está mirando.'],
                     feedback: 'Acercarse de inmediato no es seguro. Primero hay que mantenerse alejado.' },
                   { text: 'Mantenerse un poco alejado y observar.', correct: true,
                     feedback: '¡Sí! Mantenerse alejado es inteligente.' },
                   { text: 'Correr y esconderse, sin contarle a nadie.', correct: false,
-                    outcome: ['Alex corre y se esconde detrás del tobogán.', 'El adulto de Alex no lo puede encontrar.', 'Todos están preocupados. Alex se siente asustado y solo.'],
+                    outcome: ['Alex corre y se esconde detrás del tobogán.', 'El adulto de Alex llama a Alex y corre por todo el parque buscándolo.', 'Nadie sabe de la persona, así que nadie puede ayudar.'],
                     feedback: 'No tienes que esconderte. Solo mantente alejado, y cuéntale a un adulto pronto.' },
                 ] },
               { type: 'dialogue', illustration: 'park-approach',
@@ -7508,7 +7508,7 @@ const CONTENT = {
                 ],
                 choices: [
                   { text: 'Tomar el dulce.', correct: false,
-                    outcome: ['Alex toma el dulce.', 'La persona sonríe y dice: “Ven por más a mi carro.”', 'Ahora es más difícil decir que no.'],
+                    outcome: ['Alex toma el dulce.', 'La persona sonríe y dice: “Ven por más a mi carro.”', 'La persona camina hacia el carro y le hace señas a Alex para que la siga.'],
                     feedback: 'No es seguro tomar cosas de personas que no conoces.' },
                   { text: 'Decir “No, gracias.”', correct: true,
                     feedback: '¡Sí! Esa es la respuesta segura.' },
@@ -7549,7 +7549,7 @@ const CONTENT = {
                 text: '¿Está bien decir “no” a un adulto que no conoces?',
                 choices: [
                   { text: 'No, siempre tienes que decir que sí.', correct: false,
-                    outcome: ['Alex piensa: “Tengo que decir que sí.”', 'La persona le pide a Alex que vaya con ella.', 'Alex dice que sí, aunque se siente mal.'],
+                    outcome: ['Alex piensa: “Tengo que decir que sí.”', 'La persona le pide a Alex que vaya con ella.', 'Alex dice que sí y se va con la persona, y ningún adulto lo sabe.'],
                     feedback: 'Eso no es cierto. Siempre puedes decir que no.' },
                   { text: 'Sí, siempre puedes decir que no.', correct: true,
                     feedback: '¡Sí! Decir que no siempre está bien.' },
@@ -7558,7 +7558,7 @@ const CONTENT = {
                 text: 'Una persona que Alex no conoce le pide que vaya a ver un cachorro en su carro. ¿Qué debería hacer Alex?',
                 choices: [
                   { text: 'Ir a ver el cachorro.', correct: false,
-                    outcome: ['Alex camina al carro para ver el cachorro.', 'Ahora Alex está lejos del parque.', 'Ningún adulto que Alex conoce puede ver a Alex.'],
+                    outcome: ['Alex camina al carro para ver el cachorro.', 'La persona abre la puerta del carro, pero no hay ningún cachorro. Era un truco.', 'Ahora Alex está lejos del parque, y ningún adulto que Alex conoce puede verlo.'],
                     feedback: 'Nunca vayas a ningún lugar con alguien que no conoces, ni siquiera por un cachorro.' },
                   { text: 'Decir que no, y caminar hacia un adulto de confianza.', correct: true,
                     feedback: '¡Sí! Eso es exactamente correcto.' },
@@ -7567,7 +7567,7 @@ const CONTENT = {
                 text: '¿Qué tan lejos debería mantenerse Alex de alguien que no conoce?',
                 choices: [
                   { text: 'Muy cerca, como un abrazo.', correct: false,
-                    outcome: ['Alex se para muy cerca de la persona.', 'Si algo se siente mal, no hay espacio para alejarse.', 'Es difícil para Alex irse rápido.'],
+                    outcome: ['Alex se para muy cerca de la persona.', 'La persona le pone una mano en el hombro a Alex.', 'Ahora Alex no puede alejarse ni irse rápido.'],
                     feedback: 'Eso es demasiado cerca. Mantente al menos la distancia de un brazo.' },
                   { text: 'Al menos la distancia de un brazo.', correct: true,
                     feedback: '¡Sí! Esa es una distancia segura.' },
@@ -7589,7 +7589,7 @@ const CONTENT = {
                 text: 'Si un desconocido alguna vez hace que Alex se sienta inseguro, ¿qué es lo primero que debe hacer?',
                 choices: [
                   { text: 'Esperar a ver qué pasa.', correct: false,
-                    outcome: ['Alex espera.', 'La persona se sigue acercando.', 'Alex tiene más miedo, y ningún adulto lo sabe.'],
+                    outcome: ['Alex espera.', 'La persona se sigue acercando, hasta quedar justo al lado de Alex.', 'Ningún adulto lo sabe, así que nadie viene a ayudar.'],
                     feedback: 'Esperar no es seguro. Aléjate y cuéntale a un adulto de inmediato.' },
                   { text: 'Alejarse y contarle a un adulto de confianza.', correct: true,
                     feedback: '¡Sí! Eso siempre es el primer paso.' },

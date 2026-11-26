@@ -28,8 +28,8 @@
                   "correct": false,
                   "outcome": [
                     "Alex walks right up close.",
-                    "Now the person is very close.",
-                    "Alex feels mixed up. It is hard to step away."
+                    "The person reaches out and takes Alex’s hand.",
+                    "Now Alex is too close to step away, and no grown-up is watching."
                   ],
                   "feedback": "Getting close right away is not safe. Stay back first."
                 },
@@ -43,8 +43,8 @@
                   "correct": false,
                   "outcome": [
                     "Alex runs and hides behind the slide.",
-                    "Alex’s grown-up cannot find Alex.",
-                    "Everyone is worried. Alex feels scared and alone."
+                    "Alex’s grown-up calls Alex’s name and runs all over the park looking.",
+                    "Nobody knows about the person, so nobody can help."
                   ],
                   "feedback": "You don’t have to hide. Just stay back, and tell a grown-up soon."
                 }
@@ -70,7 +70,7 @@
                   "outcome": [
                     "Alex takes the candy.",
                     "The person smiles and says, “Come get more by my car.”",
-                    "Now it feels harder to say no."
+                    "The person walks toward the car and waves for Alex to follow."
                   ],
                   "feedback": "It is not safe to take things from people you do not know."
                 },
@@ -175,7 +175,7 @@
                   "outcome": [
                     "Alex thinks, “I have to say yes.”",
                     "The person asks Alex to come with them.",
-                    "Alex says yes, even though it feels wrong."
+                    "Alex says yes and walks away with the person, and no grown-up knows."
                   ],
                   "feedback": "That is not true. You can always say no."
                 },
@@ -197,8 +197,8 @@
                   "correct": false,
                   "outcome": [
                     "Alex walks to the car to see the puppy.",
-                    "Now Alex is far from the park.",
-                    "No grown-up Alex knows can see Alex."
+                    "The person opens the car door, but there is no puppy inside. It was a trick.",
+                    "Now Alex is far from the park, and no grown-up Alex knows can see Alex."
                   ],
                   "feedback": "Never go anywhere with someone you do not know, even for a puppy."
                 },
@@ -220,8 +220,8 @@
                   "correct": false,
                   "outcome": [
                     "Alex stands very close to the person.",
-                    "If something feels wrong, there is no room to step back.",
-                    "It is hard for Alex to get away fast."
+                    "The person puts a hand on Alex’s shoulder.",
+                    "Now Alex can’t step back or get away fast."
                   ],
                   "feedback": "That is too close. Stay an arm’s length away, or more."
                 },
@@ -275,8 +275,8 @@
                   "correct": false,
                   "outcome": [
                     "Alex waits.",
-                    "The person keeps coming closer.",
-                    "Alex feels more scared, and no grown-up knows."
+                    "The person keeps coming closer, until they are right next to Alex.",
+                    "No grown-up knows, so nobody comes to help."
                   ],
                   "feedback": "Waiting is not safe. Move away and tell a grown-up right away."
                 },
@@ -1143,8 +1143,8 @@
                   "correct": false,
                   "outcome": [
                     "Alex se acerca mucho.",
-                    "Ahora la persona está muy cerca.",
-                    "Alex se siente confundido. Es difícil alejarse."
+                    "La persona estira la mano y toma la mano de Alex.",
+                    "Ahora Alex está demasiado cerca para alejarse, y ningún adulto está mirando."
                   ],
                   "feedback": "Acercarse de inmediato no es seguro. Primero hay que mantenerse alejado."
                 },
@@ -1158,8 +1158,8 @@
                   "correct": false,
                   "outcome": [
                     "Alex corre y se esconde detrás del tobogán.",
-                    "El adulto de Alex no lo puede encontrar.",
-                    "Todos están preocupados. Alex se siente asustado y solo."
+                    "El adulto de Alex llama a Alex y corre por todo el parque buscándolo.",
+                    "Nadie sabe de la persona, así que nadie puede ayudar."
                   ],
                   "feedback": "No tienes que esconderte. Solo mantente alejado, y cuéntale a un adulto pronto."
                 }
@@ -1185,7 +1185,7 @@
                   "outcome": [
                     "Alex toma el dulce.",
                     "La persona sonríe y dice: “Ven por más a mi carro.”",
-                    "Ahora es más difícil decir que no."
+                    "La persona camina hacia el carro y le hace señas a Alex para que la siga."
                   ],
                   "feedback": "No es seguro tomar cosas de personas que no conoces."
                 },
@@ -1290,7 +1290,7 @@
                   "outcome": [
                     "Alex piensa: “Tengo que decir que sí.”",
                     "La persona le pide a Alex que vaya con ella.",
-                    "Alex dice que sí, aunque se siente mal."
+                    "Alex dice que sí y se va con la persona, y ningún adulto lo sabe."
                   ],
                   "feedback": "Eso no es cierto. Siempre puedes decir que no."
                 },
@@ -1312,8 +1312,8 @@
                   "correct": false,
                   "outcome": [
                     "Alex camina al carro para ver el cachorro.",
-                    "Ahora Alex está lejos del parque.",
-                    "Ningún adulto que Alex conoce puede ver a Alex."
+                    "La persona abre la puerta del carro, pero no hay ningún cachorro. Era un truco.",
+                    "Ahora Alex está lejos del parque, y ningún adulto que Alex conoce puede verlo."
                   ],
                   "feedback": "Nunca vayas a ningún lugar con alguien que no conoces, ni siquiera por un cachorro."
                 },
@@ -1335,8 +1335,8 @@
                   "correct": false,
                   "outcome": [
                     "Alex se para muy cerca de la persona.",
-                    "Si algo se siente mal, no hay espacio para alejarse.",
-                    "Es difícil para Alex irse rápido."
+                    "La persona le pone una mano en el hombro a Alex.",
+                    "Ahora Alex no puede alejarse ni irse rápido."
                   ],
                   "feedback": "Eso es demasiado cerca. Mantente al menos la distancia de un brazo."
                 },
@@ -1390,8 +1390,8 @@
                   "correct": false,
                   "outcome": [
                     "Alex espera.",
-                    "La persona se sigue acercando.",
-                    "Alex tiene más miedo, y ningún adulto lo sabe."
+                    "La persona se sigue acercando, hasta quedar justo al lado de Alex.",
+                    "Ningún adulto lo sabe, así que nadie viene a ayudar."
                   ],
                   "feedback": "Esperar no es seguro. Aléjate y cuéntale a un adulto de inmediato."
                 },
