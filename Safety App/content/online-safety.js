@@ -60,7 +60,7 @@
                   "outcome": [
                     "Alex thinks saying yes is fun.",
                     "Next time, Alex accepts without asking.",
-                    "No grown-up knows. Alex is on alone."
+                    "A stranger starts sending Alex messages, and no grown-up knows."
                   ],
                   "feedback": "Accepting right away isn’t safe — checking with a grown-up first was the right move."
                 },
@@ -95,7 +95,7 @@
                   "outcome": [
                     "Alex tells them a name and school.",
                     "The person says, “I know where you go now.”",
-                    "Alex feels worried. That was private."
+                    "Now a stranger knows Alex’s school. That was private."
                   ],
                   "feedback": "Being asked nicely doesn’t make it safe — that information should still stay private."
                 }
@@ -249,7 +249,7 @@
                   "outcome": [
                     "Alex believes parents should never know about online friends.",
                     "Alex hides all game chats and friends from Mom and Dad.",
-                    "When a chat starts to feel weird, no grown-up knows, so Alex has to handle it alone."
+                    "When a player starts asking Alex for private things, no grown-up knows, so nobody steps in to block them."
                   ],
                   "feedback": "It’s actually the opposite — trusted adults knowing about your online friendships and chats is part of what keeps things safe."
                 }
@@ -275,7 +275,7 @@
                   "outcome": [
                     "Alex decides grown-ups shouldn’t know about any online friends.",
                     "Alex stops telling Mom or Dad anything about online chats.",
-                    "If something unsafe happens, Alex has nobody watching out for Alex."
+                    "When a stranger in a chat asks for Alex’s address, no grown-up is there to help block and report them."
                   ],
                   "feedback": "That’s backwards — trusted adults knowing about your online friendships is part of what keeps you safe."
                 },
@@ -337,7 +337,7 @@
                   "outcome": [
                     "Alex sends the photo because the person said everyone does it.",
                     "The person asks for more photos and says, “If you stop, I’ll show this one to people.”",
-                    "Alex feels scared and trapped, and doesn’t know who might see the photo."
+                    "When Alex says no, the person posts the photo in a group chat, and Alex can’t take it back."
                   ],
                   "feedback": "“Everyone does this” is a pressure tactic, not proof that something is actually safe or normal — trust the uncomfortable feeling instead."
                 },
@@ -378,7 +378,7 @@
                   "outcome": [
                     "Alex starts to believe the photo is fine to send because “everyone does it.”",
                     "Alex sends it, and the contact keeps pushing for more.",
-                    "Alex feels uneasy and stuck, with a photo out there that Alex can’t take back."
+                    "The contact saves the photo and sends it to other people, and Alex can’t take it back."
                   ],
                   "feedback": "“Everyone does this” isn’t proof of anything — sending it wouldn’t be safe."
                 },
@@ -412,8 +412,8 @@
                   "correct": false,
                   "outcome": [
                     "Alex believes the phrase literally means every kid does this.",
-                    "Alex feels like the odd one out for being uncomfortable and starts doubting that feeling.",
-                    "Alex ignores the uncomfortable feeling next time — the very signal that was trying to keep Alex safe."
+                    "Alex decides the uncomfortable feeling must be wrong, since everyone else is doing it.",
+                    "The next time someone online pushes, Alex goes along with it instead of stopping and telling an adult."
                   ],
                   "feedback": "It’s not actually true just because someone says it — that phrase is a pressure tactic, not evidence."
                 }
@@ -439,7 +439,7 @@
                   "outcome": [
                     "Alex decides “everyone does this” really is proof something is safe.",
                     "The next time someone online uses that line, Alex goes along with it.",
-                    "Alex ends up in an uncomfortable situation again, believing it was normal when it wasn’t."
+                    "Alex shares private information, and the person uses it to pressure Alex for even more."
                   ],
                   "feedback": "It’s not proof at all — it’s a pressure tactic."
                 },
@@ -609,7 +609,7 @@
                   "outcome": [
                     "Alex piensa que aceptar es divertido.",
                     "La próxima vez, Alex acepta sin preguntar.",
-                    "Ningún adulto sabe. Alex está solo."
+                    "Un desconocido empieza a mandarle mensajes a Alex, y ningún adulto sabe."
                   ],
                   "feedback": "Aceptar de inmediato no es seguro — consultar con un adulto primero fue lo correcto."
                 },
@@ -644,7 +644,7 @@
                   "outcome": [
                     "Alex le dice su nombre y su escuela.",
                     "La persona dice: “Ya sé a dónde vas.”",
-                    "Alex se siente preocupado. Eso era privado."
+                    "Ahora un desconocido sabe cuál es la escuela de Alex. Eso era privado."
                   ],
                   "feedback": "Que pregunten amablemente no lo hace seguro — esa información debe seguir siendo privada."
                 }
@@ -798,7 +798,7 @@
                   "outcome": [
                     "Alex cree que los papás nunca deberían saber de sus amigos en línea.",
                     "Alex esconde todos sus chats y amigos del juego de mamá y papá.",
-                    "Cuando un chat empieza a sentirse raro, ningún adulto sabe, y Alex tiene que manejarlo solo."
+                    "Cuando un jugador empieza a pedirle cosas privadas a Alex, ningún adulto lo sabe, y nadie interviene para bloquearlo."
                   ],
                   "feedback": "Es realmente lo opuesto — que los adultos de confianza sepan sobre tus amistades y chats en línea es parte de lo que te mantiene seguro."
                 }
@@ -824,7 +824,7 @@
                   "outcome": [
                     "Alex decide que los adultos no deberían saber de ningún amigo en línea.",
                     "Alex deja de contarles a mamá o papá sobre sus chats en línea.",
-                    "Si pasa algo inseguro, nadie está cuidando a Alex."
+                    "Cuando un desconocido en un chat le pide su dirección a Alex, ningún adulto está ahí para ayudar a bloquearlo y reportarlo."
                   ],
                   "feedback": "Es al revés — que los adultos de confianza sepan sobre tus amistades en línea es parte de lo que te mantiene seguro."
                 },
@@ -886,7 +886,7 @@
                   "outcome": [
                     "Alex envía la foto porque la persona dijo que todos lo hacen.",
                     "La persona pide más fotos y dice: “Si dejas de enviar, le mostraré esta a otras personas.”",
-                    "Alex se siente asustado y atrapado, y no sabe quién podría ver la foto."
+                    "Cuando Alex dice que no, la persona publica la foto en un chat grupal, y Alex no puede recuperarla."
                   ],
                   "feedback": "“Todos hacen esto” es una táctica de presión, no prueba de que algo sea realmente seguro o normal — confía en el sentimiento incómodo en su lugar."
                 },
@@ -927,7 +927,7 @@
                   "outcome": [
                     "Alex empieza a creer que está bien enviar la foto porque “todos lo hacen”.",
                     "Alex la envía, y el contacto sigue insistiendo en que mande más.",
-                    "Alex se siente incómodo y atrapado, con una foto que ya no puede recuperar."
+                    "El contacto guarda la foto y se la manda a otras personas, y Alex ya no puede recuperarla."
                   ],
                   "feedback": "“Todos hacen esto” no es prueba de nada — enviarla no habría sido seguro."
                 },
@@ -961,8 +961,8 @@
                   "correct": false,
                   "outcome": [
                     "Alex cree que la frase significa literalmente que todos los chicos lo hacen.",
-                    "Alex se siente raro por estar incómodo y empieza a dudar de ese sentimiento.",
-                    "La próxima vez Alex ignora el sentimiento incómodo — justo la señal que intentaba mantenerlo seguro."
+                    "Alex decide que el sentimiento incómodo debe estar equivocado, porque todos los demás lo hacen.",
+                    "La próxima vez que alguien en línea insiste, Alex le hace caso en vez de parar y contarle a un adulto."
                   ],
                   "feedback": "No es realmente cierto solo porque alguien lo diga — esa frase es una táctica de presión, no evidencia."
                 }
@@ -988,7 +988,7 @@
                   "outcome": [
                     "Alex decide que “todos hacen esto” sí es prueba de que algo es seguro.",
                     "La próxima vez que alguien en línea usa esa frase, Alex le hace caso.",
-                    "Alex termina otra vez en una situación incómoda, creyendo que era normal cuando no lo era."
+                    "Alex comparte información privada, y la persona la usa para presionar a Alex a dar todavía más."
                   ],
                   "feedback": "No es prueba de nada — es una táctica de presión."
                 },

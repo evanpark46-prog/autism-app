@@ -29,7 +29,7 @@
                   "outcome": [
                     "Alex steps into the street right there.",
                     "A driver does not expect Alex there.",
-                    "The car has to stop fast. Alex feels scared."
+                    "The car stops fast and honks loudly."
                   ],
                   "feedback": "Crossing away from a crosswalk is harder for drivers to expect — it’s safer to find a marked crossing."
                 },
@@ -44,7 +44,7 @@
                   "outcome": [
                     "Alex steps out between two parked cars.",
                     "A driver cannot see Alex behind them.",
-                    "A car comes close. Alex jumps back, scared."
+                    "A car comes close and honks. Alex jumps back to the curb."
                   ],
                   "feedback": "Parked cars can hide you from drivers — it’s much safer to cross where everyone can see you."
                 }
@@ -70,7 +70,7 @@
                   "outcome": [
                     "Alex crosses where it looks clear.",
                     "A car comes around the corner fast.",
-                    "The driver didn’t expect Alex. Alex feels scared."
+                    "The driver didn’t expect Alex and has to slam on the brakes."
                   ],
                   "feedback": "It’s safer to use the marked crosswalk, where drivers expect people to cross."
                 },
@@ -101,7 +101,7 @@
                   "outcome": [
                     "Alex keeps walking without looking.",
                     "The turning car keeps coming too.",
-                    "The driver stops suddenly. Alex is scared."
+                    "The driver stops suddenly, just a few steps from Alex."
                   ],
                   "feedback": "Even with the signal, it’s safer to check that turning cars have actually stopped for you."
                 },
@@ -132,7 +132,7 @@
                   "outcome": [
                     "Alex keeps walking and hopes.",
                     "The driver did not see Alex.",
-                    "The car honks and stops fast. Alex is scared."
+                    "The car honks and stops fast, very close to Alex."
                   ],
                   "feedback": "Hoping isn’t a safe plan — always make sure the driver has actually stopped."
                 },
@@ -235,7 +235,7 @@
                   "outcome": [
                     "Alex squeezes quickly past the front of the truck.",
                     "Alex steps out, and a car is right there, coming fast.",
-                    "The car honks loudly, and Alex jumps back to the curb feeling shaky."
+                    "The car honks loudly, and Alex has to jump back to the curb and start over."
                   ],
                   "feedback": "Squeezing past a truck blocking the view isn’t safe — finding a clearer spot is worth the extra time."
                 },
@@ -265,7 +265,7 @@
                   "outcome": [
                     "Alex keeps crossing at the same slow pace.",
                     "The ambulance comes around the corner fast while Alex is still in the street.",
-                    "The ambulance has to swerve and slow down, and Alex feels frozen and scared."
+                    "The ambulance has to swerve and slow down, losing time on the way to someone who needs help."
                   ],
                   "feedback": "An emergency vehicle may need to move fast and unexpectedly — it’s safer to get all the way across or back to the curb first, then watch for it."
                 },
@@ -429,7 +429,7 @@
                   "outcome": [
                     "Alex lets the sibling run ahead into the street.",
                     "A car pulls out of a driveway just as the sibling reaches the road.",
-                    "The driver brakes hard, and Alex’s sibling stands frozen and scared, too far away for Alex to grab their hand."
+                    "The driver brakes hard and honks, and Alex is too far away to grab the sibling’s hand."
                   ],
                   "feedback": "A situation can change fast — someone running ahead alone loses the benefit of checking together and being seen together."
                 },
@@ -460,7 +460,7 @@
                   "outcome": [
                     "Alex lets the sibling go first alone.",
                     "The sibling runs out without looking, eyes fixed on the other side of the street.",
-                    "A bike coming down the street has to swerve, and the sibling starts crying, scared and alone in the road."
+                    "A bike coming down the street has to swerve and skids, and the sibling is left standing alone in the middle of the road."
                   ],
                   "feedback": "Letting someone run ahead alone loses the safety of checking and crossing together."
                 },
@@ -488,7 +488,7 @@
                   "outcome": [
                     "Alex agrees that one check is enough and stops checking again.",
                     "Alex checks once, then waits a while before crossing — and a car turns onto the street in that time.",
-                    "Alex steps out without seeing it, and the driver has to stop suddenly; Alex and the sibling both feel shaken."
+                    "Alex steps out without seeing it, and the driver has to stop suddenly, just a few steps from Alex and the sibling."
                   ],
                   "feedback": "A situation, like a car appearing, can change in just a few seconds — one more check is always worth it."
                 },
@@ -598,7 +598,7 @@
                   "outcome": [
                     "Alex baja a la calle justo ahí.",
                     "Un conductor no espera ver a Alex.",
-                    "El carro frena rápido. Alex tiene miedo."
+                    "El carro frena rápido y pita fuerte."
                   ],
                   "feedback": "Cruzar fuera de un cruce peatonal es más difícil de anticipar para los conductores — es más seguro buscar un cruce marcado."
                 },
@@ -613,7 +613,7 @@
                   "outcome": [
                     "Alex sale entre dos carros estacionados.",
                     "Un conductor no puede ver a Alex.",
-                    "Un carro pasa muy cerca. Alex se asusta."
+                    "Un carro pasa muy cerca y pita. Alex salta de vuelta a la acera."
                   ],
                   "feedback": "Los carros estacionados pueden ocultarte de los conductores — es mucho más seguro cruzar donde todos puedan verte."
                 }
@@ -639,7 +639,7 @@
                   "outcome": [
                     "Alex cruza donde se ve despejado.",
                     "Un carro da la vuelta en la esquina rápido.",
-                    "El conductor no esperaba a Alex. Alex se asusta."
+                    "El conductor no esperaba a Alex y tiene que frenar de golpe."
                   ],
                   "feedback": "Es más seguro usar el cruce peatonal marcado, donde los conductores esperan que cruce la gente."
                 },
@@ -670,7 +670,7 @@
                   "outcome": [
                     "Alex sigue caminando sin mirar.",
                     "El carro que gira también sigue.",
-                    "El conductor frena de golpe. Alex se asusta."
+                    "El conductor frena de golpe, a pocos pasos de Alex."
                   ],
                   "feedback": "Aunque tengas la señal, es más seguro revisar que los carros que giran realmente se hayan detenido para ti."
                 },
@@ -701,7 +701,7 @@
                   "outcome": [
                     "Alex sigue caminando y espera.",
                     "El conductor no vio a Alex.",
-                    "El carro pita y frena rápido. Alex se asusta."
+                    "El carro pita y frena rápido, muy cerca de Alex."
                   ],
                   "feedback": "Esperar no es un plan seguro — siempre asegúrate de que el conductor realmente se haya detenido."
                 },
@@ -804,7 +804,7 @@
                   "outcome": [
                     "Alex pasa rápido por delante del camión.",
                     "Alex sale, y hay un carro justo ahí, viniendo rápido.",
-                    "El carro pita fuerte, y Alex regresa a la acera temblando."
+                    "El carro pita fuerte, y Alex tiene que regresar de un salto a la acera y empezar de nuevo."
                   ],
                   "feedback": "Pasar rápido junto a un camión que bloquea la vista no es seguro — buscar un lugar más despejado vale el tiempo extra."
                 },
@@ -834,7 +834,7 @@
                   "outcome": [
                     "Alex sigue cruzando al mismo ritmo lento.",
                     "La ambulancia da la vuelta en la esquina rápido mientras Alex todavía está en la calle.",
-                    "La ambulancia tiene que esquivarlo y frenar, y Alex se queda paralizado del susto."
+                    "La ambulancia tiene que esquivarlo y frenar, y pierde tiempo en camino a alguien que necesita ayuda."
                   ],
                   "feedback": "Un vehículo de emergencia puede necesitar moverse rápido e inesperadamente — es más seguro terminar de cruzar o volver a la acera primero, y luego observar."
                 },
@@ -998,7 +998,7 @@
                   "outcome": [
                     "Alex deja que su hermano corra primero hacia la calle.",
                     "Un carro sale de una entrada justo cuando el hermano llega a la calle.",
-                    "El conductor frena fuerte, y el hermano de Alex se queda congelado y asustado, demasiado lejos para que Alex le tome la mano."
+                    "El conductor frena fuerte y pita, y Alex está demasiado lejos para tomarle la mano a su hermano."
                   ],
                   "feedback": "Una situación puede cambiar rápido — que alguien corra solo hacia adelante pierde el beneficio de revisar juntos y ser vistos juntos."
                 },
@@ -1029,7 +1029,7 @@
                   "outcome": [
                     "Alex deja que su hermano vaya primero solo.",
                     "El hermano sale corriendo sin mirar, con los ojos en el otro lado de la calle.",
-                    "Una bicicleta que viene tiene que esquivarlo, y el hermano empieza a llorar, asustado y solo en la calle."
+                    "Una bicicleta que viene tiene que esquivarlo y derrapa, y el hermano se queda parado solo en medio de la calle."
                   ],
                   "feedback": "Dejar que alguien corra solo hacia adelante pierde la seguridad de revisar y cruzar juntos."
                 },
@@ -1057,7 +1057,7 @@
                   "outcome": [
                     "Alex está de acuerdo en que revisar una vez es suficiente y deja de revisar otra vez.",
                     "Alex revisa una vez, espera un rato antes de cruzar, y en ese tiempo un carro entra a la calle.",
-                    "Alex sale sin verlo, y el conductor tiene que frenar de repente; Alex y su hermano se quedan asustados."
+                    "Alex sale sin verlo, y el conductor tiene que frenar de repente, a pocos pasos de Alex y su hermano."
                   ],
                   "feedback": "Una situación, como un carro apareciendo, puede cambiar en solo unos segundos — una revisión más siempre vale la pena."
                 },

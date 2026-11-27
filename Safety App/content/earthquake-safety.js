@@ -70,7 +70,7 @@
                   "outcome": [
                     "Alex stands up to look.",
                     "The floor shakes and a book falls close by.",
-                    "Alex feels scared and has no cover."
+                    "Alex is out in the open with no cover."
                   ],
                   "feedback": "Standing up leaves you exposed to falling objects — get under the desk instead."
                 },
@@ -193,7 +193,7 @@
                   "outcome": [
                     "Alex stays right next to the tall cabinets.",
                     "The cabinet doors swing open and dishes start sliding out.",
-                    "Things are falling close to Alex, and Alex feels very scared."
+                    "A plate crashes to the floor right next to Alex’s feet."
                   ],
                   "feedback": "Tall cabinets can tip over or spill their contents during shaking — it’s safer to move away from them if you can do it quickly and safely."
                 },
@@ -295,7 +295,7 @@
                   "outcome": [
                     "Alex reaches for the light switch.",
                     "Mom shouts, “Stop!” because a switch can make a spark near gas.",
-                    "Now Alex is scared, and leaving the house takes longer."
+                    "Now Alex has to stop, and leaving the house takes longer."
                   ],
                   "feedback": "A light switch could create a spark near gas — avoid switches and anything electric."
                 },
@@ -433,7 +433,7 @@
                   "outcome": [
                     "Alex decides the big one already happened and keeps standing up.",
                     "The aftershock is strong, and Alex loses balance and falls on the grass.",
-                    "Alex wasn’t ready to protect Alex’s head, and the shaking feels even scarier than the first time."
+                    "Alex wasn’t ready to protect Alex’s head, and there’s nothing to hold onto while the ground keeps moving."
                   ],
                   "feedback": "Aftershocks can still be strong enough to matter — always drop and cover again."
                 },
@@ -493,7 +493,7 @@
                   "outcome": [
                     "Alex believes there’s no need to react again after the big quake.",
                     "When the ground shakes again, Alex keeps walking instead of dropping down.",
-                    "Alex stumbles and gets a scraped hand, and feels shaken and caught by surprise."
+                    "Alex stumbles and scrapes a hand, and a grown-up has to stop to clean it up."
                   ],
                   "feedback": "Aftershocks can still be strong enough to hurt you — always drop and cover again."
                 }
@@ -639,7 +639,7 @@
                   "outcome": [
                     "Alex se levanta para mirar.",
                     "El piso tiembla y un libro cae muy cerca.",
-                    "Alex tiene miedo y no está cubierto."
+                    "Alex queda al descubierto, sin nada que lo cubra."
                   ],
                   "feedback": "Levantarte te deja expuesto a objetos que caen — mejor métete debajo del escritorio."
                 },
@@ -762,7 +762,7 @@
                   "outcome": [
                     "Alex se queda justo al lado de los gabinetes altos.",
                     "Las puertas de los gabinetes se abren y los platos empiezan a resbalar.",
-                    "Las cosas caen cerca de Alex, y Alex tiene mucho miedo."
+                    "Un plato se estrella en el piso justo al lado de los pies de Alex."
                   ],
                   "feedback": "Los gabinetes altos pueden volcarse o derramar su contenido durante un temblor — es más seguro alejarte de ellos si puedes hacerlo rápido y con seguridad."
                 },
@@ -864,7 +864,7 @@
                   "outcome": [
                     "Alex estira la mano hacia el interruptor de luz.",
                     "Mamá grita: “¡Para!” porque un interruptor puede hacer una chispa cerca del gas.",
-                    "Ahora Alex tiene miedo, y salir de la casa toma más tiempo."
+                    "Ahora Alex tiene que parar, y salir de la casa toma más tiempo."
                   ],
                   "feedback": "Un interruptor de luz podría crear una chispa cerca del gas — evita interruptores y cualquier cosa eléctrica."
                 },
@@ -1002,7 +1002,7 @@
                   "outcome": [
                     "Alex decide que el temblor grande ya pasó y se queda de pie.",
                     "La réplica es fuerte, y Alex pierde el equilibrio y cae en el pasto.",
-                    "Alex no estaba listo para protegerse la cabeza, y el temblor da todavía más miedo que la primera vez."
+                    "Alex no estaba listo para protegerse la cabeza, y no hay nada de qué agarrarse mientras la tierra sigue moviéndose."
                   ],
                   "feedback": "Las réplicas pueden ser lo bastante fuertes para importar — siempre agáchate y cúbrete de nuevo."
                 },
@@ -1062,7 +1062,7 @@
                   "outcome": [
                     "Alex cree que no hace falta reaccionar de nuevo después del temblor grande.",
                     "Cuando la tierra vuelve a temblar, Alex sigue caminando en vez de agacharse.",
-                    "Alex se tropieza y se raspa la mano, y se siente asustado y sorprendido."
+                    "Alex se tropieza y se raspa la mano, y un adulto tiene que detenerse para limpiársela."
                   ],
                   "feedback": "Las réplicas pueden ser lo bastante fuertes para lastimarte — siempre agáchate y cúbrete otra vez."
                 }

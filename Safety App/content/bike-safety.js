@@ -95,7 +95,7 @@
                   "outcome": [
                     "Alex thinks short rides need no helmet.",
                     "Alex rides around the block without it.",
-                    "Alex falls at the corner and feels scared."
+                    "Alex falls at the corner and gets a bump on the head."
                   ],
                   "feedback": "Falls can happen on short rides too — wear a helmet every time, no matter the distance."
                 }
@@ -121,7 +121,7 @@
                   "outcome": [
                     "Alex skips the helmet for a quick ride.",
                     "Alex turns too fast and falls.",
-                    "Alex’s knee gets scraped. The grown-up looks worried."
+                    "Alex’s knee gets scraped. The ride is over for today."
                   ],
                   "feedback": "Falls can happen on short rides too — the rule is every ride, every time."
                 },
@@ -183,7 +183,7 @@
                   "outcome": [
                     "Alex keeps riding at the same speed across the driveway.",
                     "The car keeps backing out, and the driver has to slam on the brakes.",
-                    "Alex swerves, tips over onto the sidewalk, and feels shaky and scared."
+                    "Alex swerves, tips over onto the sidewalk, and scrapes a hand."
                   ],
                   "feedback": "Even if you technically have the right of way, a driver who hasn’t seen you yet is a real danger — it’s safer to slow down or stop until you’re sure they’ve noticed you."
                 },
@@ -337,7 +337,7 @@
                   "outcome": [
                     "Alex swerves left at the last second without signaling or looking back.",
                     "A car behind the group wasn’t expecting it and has to brake hard and honk.",
-                    "Alex wobbles through the turn feeling shaken, and the friends behind Alex nearly bump into each other trying to react."
+                    "Alex wobbles through the turn, and the friends behind Alex have to brake hard and nearly bump into each other."
                   ],
                   "feedback": "Turning suddenly without signaling gives drivers no warning — that’s a common cause of bike accidents at intersections."
                 },
@@ -352,7 +352,7 @@
                   "outcome": [
                     "Alex suddenly hops onto the sidewalk to cut through the intersection.",
                     "A person walking at the corner has to jump out of the way, and a turning car stops short.",
-                    "Alex feels embarrassed and rattled, and the group ends up split on two different sides of the street."
+                    "The person walking calls out to Alex to slow down, and the group ends up split on two different sides of the street."
                   ],
                   "feedback": "Riding onto the sidewalk suddenly can surprise pedestrians and drivers turning at the corner — using proper lane position and signals in the street is generally safer for a planned turn like this."
                 }
@@ -378,7 +378,7 @@
                   "outcome": [
                     "Alex listens to the friend and turns right away, without checking or signaling.",
                     "A car Alex didn’t see behind them has to brake hard, and the driver honks.",
-                    "Alex makes it through, but feels shaky and realizes how close that was."
+                    "Alex makes it through, but the car was only a few feet away, and the friends have to stop and regroup."
                   ],
                   "feedback": "Sudden turns without signaling give drivers no warning — checking first was safer."
                 },
@@ -413,7 +413,7 @@
                   "outcome": [
                     "Alex believes signaling is just a formality that drivers ignore anyway.",
                     "Alex stops signaling and moves across the lane whenever it feels right.",
-                    "Drivers keep getting surprised by Alex’s moves, and one has to swerve, leaving Alex rattled and the friends worried."
+                    "Drivers keep getting surprised by Alex’s moves, and one has to swerve into the next lane, honking."
                   ],
                   "feedback": "That’s not accurate — clear, early signals genuinely help drivers anticipate and react safely to your movements."
                 }
@@ -468,7 +468,7 @@
                   "outcome": [
                     "Alex agrees that signaling doesn’t matter and starts skipping it.",
                     "At a busy intersection, Alex turns without any warning.",
-                    "Even the driver who was paying attention has no time to react and stops suddenly, leaving Alex shaken and embarrassed."
+                    "Even the driver who was paying attention has no time to react and stops suddenly, and the car behind nearly bumps into it."
                   ],
                   "feedback": "That’s not accurate — clear, early signals genuinely help drivers anticipate and react safely."
                 },
@@ -714,7 +714,7 @@
                   "outcome": [
                     "Alex cree que en paseos cortos no se necesita casco.",
                     "Alex da la vuelta a la cuadra sin casco.",
-                    "Alex se cae en la esquina y se asusta."
+                    "Alex se cae en la esquina y le sale un chichón en la cabeza."
                   ],
                   "feedback": "Las caídas también pueden pasar en paseos cortos — usa casco cada vez, sin importar la distancia."
                 }
@@ -740,7 +740,7 @@
                   "outcome": [
                     "Alex no se pone el casco para un paseo rápido.",
                     "Alex gira muy rápido y se cae.",
-                    "Alex se raspa la rodilla. El adulto se ve preocupado."
+                    "Alex se raspa la rodilla. El paseo se acaba por hoy."
                   ],
                   "feedback": "Las caídas también pueden pasar en paseos cortos — la regla es cada vez."
                 },
@@ -802,7 +802,7 @@
                   "outcome": [
                     "Alex sigue andando a la misma velocidad por la entrada de auto.",
                     "El carro sigue saliendo en reversa, y el conductor tiene que frenar de golpe.",
-                    "Alex se desvía, se cae en la acera, y se siente tembloroso y asustado."
+                    "Alex se desvía, se cae en la acera, y se raspa una mano."
                   ],
                   "feedback": "Aunque técnicamente tengas el derecho de paso, un conductor que aún no te ha visto es un peligro real — es más seguro reducir la velocidad o detenerte hasta que estés seguro de que te vio."
                 },
@@ -956,7 +956,7 @@
                   "outcome": [
                     "Alex gira a la izquierda de repente en el último segundo, sin señalizar ni mirar atrás.",
                     "Un carro detrás del grupo no lo esperaba y tiene que frenar fuerte y tocar el claxon.",
-                    "Alex termina el giro tambaleándose y asustado, y los amigos de atrás casi chocan entre ellos al intentar reaccionar."
+                    "Alex termina el giro tambaleándose, y los amigos de atrás tienen que frenar fuerte y casi chocan entre ellos."
                   ],
                   "feedback": "Girar de repente sin señalizar no le da ninguna advertencia a los conductores — esa es una causa común de accidentes de bicicleta en intersecciones."
                 },
@@ -971,7 +971,7 @@
                   "outcome": [
                     "Alex se sube de repente a la acera para cruzar la intersección.",
                     "Una persona que camina en la esquina tiene que hacerse a un lado de un salto, y un carro que gira frena de golpe.",
-                    "Alex se siente avergonzado y nervioso, y el grupo termina separado en dos lados distintos de la calle."
+                    "La persona que caminaba le grita a Alex que vaya más despacio, y el grupo termina separado en dos lados distintos de la calle."
                   ],
                   "feedback": "Subirse de repente a la acera puede sorprender a peatones y conductores que giran en la esquina — usar la posición correcta del carril y las señales en la calle suele ser más seguro para un giro planeado como este."
                 }
@@ -997,7 +997,7 @@
                   "outcome": [
                     "Alex le hace caso a su amigo y gira de inmediato, sin revisar ni señalizar.",
                     "Un carro que Alex no vio detrás tiene que frenar fuerte, y el conductor toca el claxon.",
-                    "Alex logra pasar, pero se siente tembloroso y se da cuenta de lo cerca que estuvo."
+                    "Alex logra pasar, pero el carro estaba a solo unos pasos, y los amigos tienen que detenerse y reunirse otra vez."
                   ],
                   "feedback": "Los giros repentinos sin señalizar no dan advertencia a los conductores — revisar primero fue más seguro."
                 },
@@ -1032,7 +1032,7 @@
                   "outcome": [
                     "Alex cree que señalizar es solo una formalidad que los conductores ignoran de todos modos.",
                     "Alex deja de señalizar y se mueve por el carril cuando le parece.",
-                    "Los conductores se sorprenden una y otra vez con los movimientos de Alex, y uno tiene que desviarse, dejando a Alex nervioso y a sus amigos preocupados."
+                    "Los conductores se sorprenden una y otra vez con los movimientos de Alex, y uno tiene que desviarse al otro carril tocando el claxon."
                   ],
                   "feedback": "Eso no es exacto — las señales claras y tempranas realmente ayudan a los conductores a anticipar y reaccionar de forma segura a tus movimientos."
                 }
@@ -1087,7 +1087,7 @@
                   "outcome": [
                     "Alex está de acuerdo en que señalizar no importa y deja de hacerlo.",
                     "En una intersección con mucho tráfico, Alex gira sin ningún aviso.",
-                    "Incluso el conductor que sí estaba prestando atención no tiene tiempo de reaccionar y frena de golpe, dejando a Alex asustado y avergonzado."
+                    "Incluso el conductor que sí estaba prestando atención no tiene tiempo de reaccionar y frena de golpe, y el carro de atrás casi lo choca."
                   ],
                   "feedback": "Eso no es exacto — las señales claras y tempranas realmente ayudan a los conductores a anticipar y reaccionar de forma segura."
                 },

@@ -29,7 +29,7 @@
                   "outcome": [
                     "Alex keeps looking down at the toy.",
                     "A car backs out right near Alex.",
-                    "The grown-up pulls Alex back fast. Alex feels scared."
+                    "The grown-up pulls Alex back fast. The car honks."
                   ],
                   "feedback": "Even with a grown-up nearby, it’s important to look up and pay attention in a parking lot, since cars can move unexpectedly."
                 },
@@ -60,7 +60,7 @@
                   "outcome": [
                     "Alex lets go and looks at the toy.",
                     "A car starts to move near Alex.",
-                    "The driver can’t see Alex. Alex feels scared."
+                    "The driver can’t see Alex. The grown-up has to run and grab Alex."
                   ],
                   "feedback": "Even with a grown-up nearby, Alex needs to watch too — parking lots need everyone’s attention."
                 },
@@ -121,7 +121,7 @@
                   "outcome": [
                     "Alex thinks only parking lots need care.",
                     "On the sidewalk, Alex looks at the toy again.",
-                    "A bike almost bumps Alex. Alex feels scared."
+                    "A bike almost bumps Alex. The rider has to stop fast."
                   ],
                   "feedback": "It’s not just parking lots — any place with moving cars or bikes needs extra attention."
                 },
@@ -337,7 +337,7 @@
                   "outcome": [
                     "The group keeps wandering, hoping something will look familiar.",
                     "Every hallway starts to look the same, and they end up on the far side of the mall.",
-                    "Now they’re late for their ride, phones are running low, and everyone feels stressed and lost."
+                    "Now they’re late for their ride, phones are running low, and the driver is circling the parking lot looking for them."
                   ],
                   "feedback": "Hoping to recognize the way back isn’t a reliable plan in a big, unfamiliar place — it’s smarter to actively check for landmarks or ask staff for directions to a known spot."
                 },
@@ -368,7 +368,7 @@
                   "outcome": [
                     "Alex tells the group to just keep wandering and hope for the best.",
                     "An hour later, they still can’t find the entrance where their ride is waiting.",
-                    "The worried texts keep coming, and the fun trip turns into a stressful search."
+                    "The “Where are you?” texts keep coming, and their ride has to leave and come back later."
                   ],
                   "feedback": "Wandering and hoping isn’t reliable in a big, unfamiliar place — checking a directory or asking staff is smarter."
                 },
@@ -403,7 +403,7 @@
                   "outcome": [
                     "Alex believes landmarks only matter if Alex already knows trouble is coming.",
                     "Alex stops noticing exits and staffed areas, since everything seems fine.",
-                    "When a loud alarm suddenly goes off, Alex has no idea which way to go and feels panicky."
+                    "When a loud alarm suddenly goes off, Alex has no idea which way to go and ends up at a locked side door, having to turn back."
                   ],
                   "feedback": "The whole point is building the habit before anything happens, so you’re ready either way — not waiting until trouble starts."
                 }
@@ -429,7 +429,7 @@
                   "outcome": [
                     "Alex tells the friend that checking landmarks only helps once something goes wrong.",
                     "The group stops paying attention and splits up to shop.",
-                    "When one friend gets separated and calls, nobody can describe where to meet, and it takes a long, worried time to find each other."
+                    "When one friend gets separated and calls, nobody can describe where to meet, and they spend half an hour walking in circles looking for each other."
                   ],
                   "feedback": "The habit is most useful built before anything happens, not started only once trouble starts."
                 },
@@ -458,7 +458,7 @@
                   "outcome": [
                     "Alex agrees and decides to notice exits only after feeling unsafe.",
                     "Later, a crowd suddenly gets loud and pushy, and Alex starts feeling uneasy.",
-                    "Now Alex is trying to find a way out while already stressed, which makes it much harder to think clearly."
+                    "Alex has to search for a way out in the middle of the crowd and ends up walking the wrong way, deeper into it."
                   ],
                   "feedback": "Waiting until you feel unsafe defeats the purpose — the habit works best built ahead of time."
                 },
@@ -568,7 +568,7 @@
                   "outcome": [
                     "Alex sigue mirando el juguete.",
                     "Un carro sale en reversa cerca de Alex.",
-                    "El adulto jala a Alex rápido. Alex siente miedo."
+                    "El adulto jala a Alex rápido. El carro pita."
                   ],
                   "feedback": "Aunque haya un adulto cerca, es importante mirar hacia arriba y prestar atención en un estacionamiento, ya que los carros pueden moverse inesperadamente."
                 },
@@ -599,7 +599,7 @@
                   "outcome": [
                     "Alex suelta la mano y mira el juguete.",
                     "Un carro empieza a moverse cerca de Alex.",
-                    "El conductor no ve a Alex. Alex siente miedo."
+                    "El conductor no ve a Alex. El adulto tiene que correr a agarrar a Alex."
                   ],
                   "feedback": "Aunque haya un adulto cerca, Alex también necesita estar atento — los estacionamientos necesitan la atención de todos."
                 },
@@ -660,7 +660,7 @@
                   "outcome": [
                     "Alex cree que solo los estacionamientos importan.",
                     "En la acera, Alex mira el juguete otra vez.",
-                    "Una bicicleta casi choca con Alex. Alex se asusta."
+                    "Una bicicleta casi choca con Alex. El ciclista tiene que frenar rápido."
                   ],
                   "feedback": "No es solo en estacionamientos — cualquier lugar con carros o bicicletas en movimiento necesita atención extra."
                 },
@@ -876,7 +876,7 @@
                   "outcome": [
                     "El grupo sigue vagando, esperando que algo se vea conocido.",
                     "Todos los pasillos empiezan a verse iguales, y terminan al otro lado del centro comercial.",
-                    "Ahora van tarde para que los recojan, los teléfonos tienen poca batería, y todos se sienten estresados y perdidos."
+                    "Ahora van tarde para que los recojan, los teléfonos tienen poca batería, y el conductor da vueltas por el estacionamiento buscándolos."
                   ],
                   "feedback": "Esperar reconocer el camino de vuelta no es un plan confiable en un lugar grande y desconocido — es más inteligente buscar activamente puntos de referencia o pedirle direcciones al personal."
                 },
@@ -907,7 +907,7 @@
                   "outcome": [
                     "Alex le dice al grupo que sigan vagando y esperen lo mejor.",
                     "Una hora después, todavía no encuentran la entrada donde los están esperando para recogerlos.",
-                    "Siguen llegando mensajes preocupados, y el paseo divertido se convierte en una búsqueda estresante."
+                    "Siguen llegando mensajes de “¿Dónde están?”, y quien los recoge tiene que irse y volver más tarde."
                   ],
                   "feedback": "Vagar y esperar no es confiable en un lugar grande y desconocido — buscar un directorio o preguntar al personal es más inteligente."
                 },
@@ -942,7 +942,7 @@
                   "outcome": [
                     "Alex cree que los puntos de referencia solo importan si ya sabe que viene un problema.",
                     "Alex deja de notar las salidas y las áreas con personal, porque todo parece estar bien.",
-                    "Cuando de repente suena una alarma fuerte, Alex no tiene idea de hacia dónde ir y siente pánico."
+                    "Cuando de repente suena una alarma fuerte, Alex no tiene idea de hacia dónde ir y termina en una puerta lateral cerrada, teniendo que dar la vuelta."
                   ],
                   "feedback": "El punto es desarrollar el hábito antes de que pase algo, para que estés listo de cualquier manera — no esperar hasta que empiecen los problemas."
                 }
@@ -968,7 +968,7 @@
                   "outcome": [
                     "Alex le dice a su amigo que revisar puntos de referencia solo sirve cuando algo ya salió mal.",
                     "El grupo deja de prestar atención y se separa para ir de compras.",
-                    "Cuando un amigo se pierde y llama, nadie sabe explicar dónde encontrarse, y tardan mucho tiempo preocupados en volver a reunirse."
+                    "Cuando un amigo se pierde y llama, nadie sabe explicar dónde encontrarse, y pasan media hora dando vueltas buscándose."
                   ],
                   "feedback": "El hábito es más útil cuando se desarrolla antes de que pase algo, no solo cuando empiezan los problemas."
                 },
@@ -997,7 +997,7 @@
                   "outcome": [
                     "Alex está de acuerdo y decide notar las salidas solo cuando ya se sienta inseguro.",
                     "Más tarde, una multitud se pone ruidosa y empuja, y Alex empieza a sentirse incómodo.",
-                    "Ahora Alex está buscando una salida mientras ya está estresado, lo que hace mucho más difícil pensar con claridad."
+                    "Alex tiene que buscar una salida en medio de la multitud y termina caminando en la dirección equivocada, más adentro."
                   ],
                   "feedback": "Esperar hasta sentirte inseguro le quita el propósito — el hábito funciona mejor cuando se desarrolla con anticipación."
                 },

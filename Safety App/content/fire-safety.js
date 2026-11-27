@@ -131,7 +131,7 @@
                   "outcome": [
                     "Alex waits by a tree, far away.",
                     "The teacher counts. Alex is not there.",
-                    "Everyone is worried. Nobody knows where Alex is."
+                    "Everyone has to wait while the teacher searches for Alex."
                   ],
                   "feedback": "It’s safer to go to the assigned meeting spot, where a teacher or staff member expects to find you."
                 },
@@ -459,7 +459,7 @@
                   "outcome": [
                     "Alex believes one exit is always enough.",
                     "Alex never learns that the bedroom window could be a second way out.",
-                    "If smoke ever filled the hallway, Alex would feel trapped with no backup plan."
+                    "If smoke ever filled the hallway, Alex wouldn’t know the window was another way out."
                   ],
                   "feedback": "A fire could block that one exit — that’s exactly why a second way out matters."
                 },
@@ -728,7 +728,7 @@
                   "outcome": [
                     "Alex espera junto a un árbol, lejos.",
                     "El maestro cuenta. Alex no está.",
-                    "Todos están preocupados. Nadie sabe dónde está Alex."
+                    "Todos tienen que esperar mientras el maestro busca a Alex."
                   ],
                   "feedback": "Es más seguro ir al punto de encuentro asignado, donde un maestro o miembro del personal espera encontrarte."
                 },
@@ -1056,7 +1056,7 @@
                   "outcome": [
                     "Alex cree que una salida siempre es suficiente.",
                     "Alex nunca aprende que la ventana de su habitación podría ser una segunda salida.",
-                    "Si el humo llenara el pasillo, Alex se sentiría atrapado y sin plan de respaldo."
+                    "Si el humo llenara el pasillo, Alex no sabría que la ventana es otra salida."
                   ],
                   "feedback": "Un incendio podría bloquear esa única salida — por eso importa una segunda ruta."
                 },

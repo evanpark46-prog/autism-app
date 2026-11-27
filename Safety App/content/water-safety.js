@@ -121,7 +121,7 @@
                   "outcome": [
                     "Alex tells a friend good swimmers can swim alone.",
                     "The friend swims alone in the deep end.",
-                    "The friend gets tired, and no grown-up sees."
+                    "The friend gets tired and swallows water. The lifeguard has to jump in to help."
                   ],
                   "feedback": "Even good swimmers should always have a grown-up watching."
                 },
@@ -337,7 +337,7 @@
                   "outcome": [
                     "Alex turns toward shore and swims as hard as possible straight against the current.",
                     "The current keeps pulling, and Alex barely gets any closer to shore.",
-                    "Alex’s arms and legs get very tired, the panicky feeling grows, and Alex still hasn’t waved for help."
+                    "Alex’s arms and legs wear out, and since Alex never waved, the lifeguard has to swim out to help."
                   ],
                   "feedback": "Fighting directly against a strong current can tire you out quickly — a smarter approach is to swim parallel to the shore first, then angle in once free of the current, and to call for help."
                 },
@@ -352,7 +352,7 @@
                   "outcome": [
                     "Alex stops swimming and reaches down with their feet, trying to find the bottom.",
                     "The water is too deep to touch, and the current keeps pulling Alex farther out.",
-                    "Alex has used up energy, is farther from shore, and feels even more panicked."
+                    "Alex swallows a mouthful of water, and the lifeguard has to swim out to bring Alex in."
                   ],
                   "feedback": "In deep or uncertain water, trying to reach the bottom can be risky — it’s safer to stay calm, call for help, and swim parallel to the shore."
                 }
@@ -472,7 +472,7 @@
                   "outcome": [
                     "Alex believes staying calm will make the current disappear.",
                     "Alex stays calm and just waits, but the current keeps pulling just as hard.",
-                    "Alex drifts farther from shore and starts to feel confused and panicked."
+                    "Alex drifts farther from shore without waving, until the lifeguard spots Alex and swims out to help."
                   ],
                   "feedback": "Staying calm doesn’t remove the current — but it helps you respond to it more effectively."
                 }
@@ -669,7 +669,7 @@
                   "outcome": [
                     "Alex le dice a un amigo que puede nadar solo.",
                     "El amigo nada solo en la parte honda.",
-                    "El amigo se cansa, y ningún adulto lo ve."
+                    "El amigo se cansa y traga agua. El salvavidas tiene que entrar a ayudar."
                   ],
                   "feedback": "Incluso los buenos nadadores siempre deben tener un adulto mirando."
                 },
@@ -885,7 +885,7 @@
                   "outcome": [
                     "Alex se voltea hacia la orilla y nada lo más fuerte posible directamente contra la corriente.",
                     "La corriente sigue jalando, y Alex casi no se acerca a la orilla.",
-                    "Los brazos y piernas de Alex se cansan mucho, el pánico crece, y todavía no ha hecho señas de ayuda."
+                    "Los brazos y piernas de Alex se agotan, y como nunca hizo señas, el salvavidas tiene que nadar hasta Alex para ayudar."
                   ],
                   "feedback": "Luchar directamente contra una corriente fuerte puede cansarte rápido — un enfoque más inteligente es nadar en paralelo a la orilla primero, luego dirigirse hacia la orilla una vez libre de la corriente, y pedir ayuda."
                 },
@@ -900,7 +900,7 @@
                   "outcome": [
                     "Alex deja de nadar y estira los pies hacia abajo, buscando el fondo.",
                     "El agua es demasiado profunda para tocarlo, y la corriente sigue alejando a Alex.",
-                    "Alex ha gastado energía, está más lejos de la orilla y siente todavía más pánico."
+                    "Alex traga agua, y el salvavidas tiene que nadar para traer a Alex a la orilla."
                   ],
                   "feedback": "En agua profunda o incierta, intentar alcanzar el fondo puede ser riesgoso — es más seguro mantener la calma, pedir ayuda, y nadar en paralelo a la orilla."
                 }
@@ -1020,7 +1020,7 @@
                   "outcome": [
                     "Alex cree que mantener la calma hará que la corriente desaparezca.",
                     "Alex se queda tranquilo y solo espera, pero la corriente sigue jalando igual de fuerte.",
-                    "Alex se aleja más de la orilla y empieza a sentirse confundido y con pánico."
+                    "Alex se aleja más de la orilla sin hacer señas, hasta que el salvavidas lo ve y nada para ayudar."
                   ],
                   "feedback": "Mantener la calma no elimina la corriente — pero te ayuda a responder de forma más efectiva."
                 }

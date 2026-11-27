@@ -29,7 +29,7 @@
                   "outcome": [
                     "Alex runs to the balloons alone.",
                     "Mom turns around. Alex is gone.",
-                    "Mom can’t find Alex. Alex feels scared."
+                    "Mom calls, “Alex!” and searches everywhere."
                   ],
                   "feedback": "Running off without telling a grown-up means they won’t know where you are."
                 },
@@ -60,7 +60,7 @@
                   "outcome": [
                     "Alex runs off alone next time.",
                     "Alex can’t see Mom anymore.",
-                    "Mom is worried. Alex feels lost."
+                    "Mom calls Alex’s name and searches all over."
                   ],
                   "feedback": "Running over alone could mean getting separated from Mom."
                 },
@@ -95,7 +95,7 @@
                   "outcome": [
                     "Alex walks to the next aisle.",
                     "Mom looks up and can’t see Alex.",
-                    "Mom calls for Alex. Everyone feels worried."
+                    "Mom calls for Alex and checks every aisle."
                   ],
                   "feedback": "Even a quick trip should be checked first — a second is enough time to get separated."
                 }
@@ -121,7 +121,7 @@
                   "outcome": [
                     "Alex goes without asking next time.",
                     "Alex turns a corner and Mom is gone.",
-                    "Alex feels scared and alone."
+                    "Mom stops everything to search for Alex."
                   ],
                   "feedback": "Going without asking makes it easy to get separated."
                 },
@@ -183,7 +183,7 @@
                   "outcome": [
                     "Alex follows the trail into the trees without telling Dad.",
                     "The trees get thick, and Alex can’t see the park anymore.",
-                    "Dad doesn’t know where Alex went, and Alex feels lost."
+                    "Dad doesn’t know where Alex went, so he searches the whole park."
                   ],
                   "feedback": "Exploring alone, even somewhere exciting, can take you out of sight of your safe adult."
                 },
@@ -214,7 +214,7 @@
                   "outcome": [
                     "Alex goes down the trail alone next time.",
                     "Dad looks around the park and can’t see Alex anywhere.",
-                    "Dad is worried, and Alex is too far away to hear him call."
+                    "Dad calls Alex’s name again and again, but Alex is too far away to hear."
                   ],
                   "feedback": "Going alone could mean getting separated from Dad."
                 },
@@ -244,7 +244,7 @@
                   "outcome": [
                     "Alex keeps walking to look for Dad.",
                     "Dad comes back to the spot, but Alex isn’t there anymore.",
-                    "Now they are both searching in different places, and Alex feels scared."
+                    "Now they are both searching in different places, and it takes much longer to find each other."
                   ],
                   "feedback": "Walking around to search can take you even farther from where your safe adult is looking."
                 },
@@ -275,7 +275,7 @@
                   "outcome": [
                     "Alex keeps moving to look for Dad next time.",
                     "Alex goes one way while Dad goes the other way.",
-                    "It takes much longer to find each other, and Alex feels lost."
+                    "They keep missing each other until a park worker helps them meet up."
                   ],
                   "feedback": "Moving around to search makes it harder to be found."
                 },
@@ -337,7 +337,7 @@
                   "outcome": [
                     "Alex lets go and runs ahead into the crowd toward the music.",
                     "Within seconds, Alex looks back and Grandma is nowhere in sight.",
-                    "Alex is surrounded by strangers, can’t see over people, and feels panicked."
+                    "Alex can’t see over the people, and Grandma has to ask a security guard to help search."
                   ],
                   "feedback": "In a crowded place, running ahead can get you lost in seconds — the urge to go is strong, but pausing keeps you safe."
                 },
@@ -352,7 +352,7 @@
                   "outcome": [
                     "Alex yells for everyone to move out of the way.",
                     "People stare and some get annoyed, but the crowd doesn’t really move.",
-                    "Alex still wants to run, feels more overwhelmed, and hasn’t talked with Grandma at all."
+                    "Alex still hasn’t told Grandma what’s wrong, so they stay stuck in the same spot."
                   ],
                   "feedback": "That doesn’t solve the real problem — pausing and asking to go together does."
                 }
@@ -378,7 +378,7 @@
                   "outcome": [
                     "Alex decides that when the urge is strong, it’s okay to run ahead.",
                     "At the next crowded spot, Alex dashes off before Grandma can say anything.",
-                    "Grandma loses sight of Alex, and both of them end up scared and searching."
+                    "Grandma loses sight of Alex and has to ask people nearby to help her look."
                   ],
                   "feedback": "Running ahead, even with a strong urge, can lead to getting lost in a crowd."
                 },
@@ -578,7 +578,7 @@
                   "outcome": [
                     "Alex corre solo a los globos.",
                     "Mamá se voltea. Alex no está.",
-                    "Mamá no encuentra a Alex. Alex tiene miedo."
+                    "Mamá llama: “¡Alex!” y busca por todos lados."
                   ],
                   "feedback": "Salir corriendo sin avisarle a un adulto significa que no sabrán dónde estás."
                 },
@@ -609,7 +609,7 @@
                   "outcome": [
                     "Alex corre solo la próxima vez.",
                     "Alex ya no puede ver a Mamá.",
-                    "Mamá está preocupada. Alex se siente perdido."
+                    "Mamá llama a Alex y lo busca por todos lados."
                   ],
                   "feedback": "Correr solo podría significar separarse de Mamá."
                 },
@@ -644,7 +644,7 @@
                   "outcome": [
                     "Alex camina al siguiente pasillo.",
                     "Mamá mira y no ve a Alex.",
-                    "Mamá llama a Alex. Todos están preocupados."
+                    "Mamá llama a Alex y revisa todos los pasillos."
                   ],
                   "feedback": "Incluso un viaje rápido debe avisarse primero — un segundo es suficiente para separarse."
                 }
@@ -670,7 +670,7 @@
                   "outcome": [
                     "Alex se va sin preguntar la próxima vez.",
                     "Alex da vuelta en una esquina y Mamá no está.",
-                    "Alex tiene miedo y se siente solo."
+                    "Mamá deja todo para buscar a Alex."
                   ],
                   "feedback": "Irse sin avisar hace que sea fácil separarse."
                 },
@@ -732,7 +732,7 @@
                   "outcome": [
                     "Alex sigue el sendero hacia el bosque sin avisarle a Papá.",
                     "Los árboles se hacen más tupidos, y Alex ya no puede ver el parque.",
-                    "Papá no sabe adónde fue Alex, y Alex se siente perdido."
+                    "Papá no sabe adónde fue Alex, así que busca por todo el parque."
                   ],
                   "feedback": "Explorar solo, aunque sea algo emocionante, puede alejarte de la vista de tu adulto de confianza."
                 },
@@ -763,7 +763,7 @@
                   "outcome": [
                     "Alex va solo por el sendero la próxima vez.",
                     "Papá mira por todo el parque y no ve a Alex por ningún lado.",
-                    "Papá está preocupado, y Alex está muy lejos para oírlo llamar."
+                    "Papá llama a Alex una y otra vez, pero Alex está muy lejos para oírlo."
                   ],
                   "feedback": "Ir solo podría significar separarse de Papá."
                 },
@@ -793,7 +793,7 @@
                   "outcome": [
                     "Alex sigue caminando para buscar a Papá.",
                     "Papá regresa al lugar, pero Alex ya no está ahí.",
-                    "Ahora los dos buscan en lugares diferentes, y Alex tiene miedo."
+                    "Ahora los dos buscan en lugares diferentes, y tardan mucho más en encontrarse."
                   ],
                   "feedback": "Caminar para buscar puede alejarte todavía más de donde tu adulto de confianza está mirando."
                 },
@@ -824,7 +824,7 @@
                   "outcome": [
                     "Alex sigue moviéndose para buscar a Papá la próxima vez.",
                     "Alex va por un lado mientras Papá va por el otro.",
-                    "Tardan mucho más en encontrarse, y Alex se siente perdido."
+                    "Siguen sin encontrarse hasta que un trabajador del parque los ayuda a reunirse."
                   ],
                   "feedback": "Moverse para buscar hace que sea más difícil ser encontrado."
                 },
@@ -886,7 +886,7 @@
                   "outcome": [
                     "Alex se suelta y corre entre la multitud hacia la música.",
                     "En segundos, Alex mira hacia atrás y no ve a la Abuela por ningún lado.",
-                    "Alex está rodeado de desconocidos, no puede ver por encima de la gente, y siente pánico."
+                    "Alex no puede ver por encima de la gente, y la Abuela tiene que pedirle a un guardia que la ayude a buscar."
                   ],
                   "feedback": "En un lugar lleno de gente, correr puede hacer que te pierdas en segundos — el impulso de ir es fuerte, pero detenerte te mantiene seguro."
                 },
@@ -901,7 +901,7 @@
                   "outcome": [
                     "Alex le grita a todos que se muevan.",
                     "La gente se queda mirando y algunos se molestan, pero la multitud casi no se mueve.",
-                    "Alex todavía quiere correr, se siente más abrumado, y no ha hablado con la Abuela."
+                    "Alex todavía no le ha dicho a la Abuela qué pasa, así que siguen atorados en el mismo lugar."
                   ],
                   "feedback": "Eso no resuelve el problema real — detenerse y pedir ir juntos sí lo hace."
                 }
@@ -927,7 +927,7 @@
                   "outcome": [
                     "Alex decide que cuando el impulso es fuerte, está bien correr.",
                     "En el siguiente lugar lleno de gente, Alex sale corriendo antes de que la Abuela pueda decir algo.",
-                    "La Abuela pierde de vista a Alex, y los dos terminan asustados y buscándose."
+                    "La Abuela pierde de vista a Alex y tiene que pedirle a la gente cerca que la ayude a buscar."
                   ],
                   "feedback": "Correr, incluso con un impulso fuerte, puede llevar a perderse en una multitud."
                 },

@@ -29,7 +29,7 @@
                   "outcome": [
                     "Alex keeps playing. The alarm beeps.",
                     "Smoke starts coming from the kitchen.",
-                    "No grown-up knows yet. Alex feels scared."
+                    "No grown-up knows yet. The smoke keeps coming."
                   ],
                   "feedback": "An alarm going off means something needs a grown-up’s attention right away, even if nothing looks wrong yet."
                 },
@@ -105,7 +105,7 @@
                   "outcome": [
                     "Alex calls a friend’s phone.",
                     "The friend says, “I don’t know what to do!”",
-                    "No help is coming yet. Alex feels scared."
+                    "Nobody calls 911, so no help comes yet."
                   ],
                   "feedback": "A friend can’t send help the way emergency services can — 911 is the number for real emergencies."
                 }
@@ -296,7 +296,7 @@
                   "outcome": [
                     "Alex hangs up as soon as help is called.",
                     "The dispatcher was about to tell Alex how to help Grandma and unlock the door.",
-                    "Now Alex isn’t sure what to do while waiting, and feels worried and alone."
+                    "Grandma still needs help, and the door is still locked when the paramedics arrive."
                   ],
                   "feedback": "It’s safer to stay on the line and follow the dispatcher’s instructions until they say it’s okay to hang up."
                 },
@@ -358,7 +358,7 @@
                   "outcome": [
                     "Alex steps outside into the storm to see what made the crash.",
                     "It’s dark and windy, and Alex slips on the wet steps.",
-                    "Alex is outside in the storm, soaked and scared, and no trusted adult knows what’s going on."
+                    "Alex gets soaked and scrapes a knee, and no trusted adult knows what’s going on."
                   ],
                   "feedback": "Going outside during a storm to investigate isn’t safe — it’s better to stay inside and check in with a trusted adult first."
                 },
@@ -373,7 +373,7 @@
                   "outcome": [
                     "Alex decides the crash was nothing and goes back to playing a game in the dark.",
                     "A while later, Alex hears more strange noises and the house stays dark.",
-                    "Alex starts to feel nervous, and Dad still has no idea the power is out or that anything happened."
+                    "Dad still has no idea the power is out, so no one checks the crash or calls for help."
                   ],
                   "feedback": "A loud crash during a power outage is worth telling a trusted adult about, even if it turns out to be something ordinary like a branch falling."
                 }
@@ -460,7 +460,7 @@
                   "outcome": [
                     "Alex agrees that waiting quietly is always better than calling for help.",
                     "Next time there’s a real emergency and Dad can’t be reached, Alex just waits.",
-                    "Alex sits alone feeling scared while the problem grows, and no help is on the way."
+                    "Alex just sits while the problem grows, and no help comes because nobody called 911."
                   ],
                   "feedback": "Waiting quietly during a real emergency isn’t safe — calling 911 directly is the right move if you can’t reach a trusted adult."
                 },
@@ -599,7 +599,7 @@
                   "outcome": [
                     "Alex sigue jugando. La alarma suena.",
                     "Empieza a salir humo de la cocina.",
-                    "Ningún adulto sabe todavía. Alex tiene miedo."
+                    "Ningún adulto sabe todavía. El humo sigue saliendo."
                   ],
                   "feedback": "Que una alarma suene significa que algo necesita la atención de un adulto de inmediato, aunque nada se vea mal todavía."
                 },
@@ -675,7 +675,7 @@
                   "outcome": [
                     "Alex llama al celular de un amigo.",
                     "El amigo dice: “¡No sé qué hacer!”",
-                    "Todavía no viene ayuda. Alex tiene miedo."
+                    "Nadie llama al 911, así que todavía no viene ayuda."
                   ],
                   "feedback": "Un amigo no puede enviar ayuda como lo hacen los servicios de emergencia — el 911 es el número para emergencias reales."
                 }
@@ -866,7 +866,7 @@
                   "outcome": [
                     "Alex cuelga en cuanto se pide la ayuda.",
                     "El operador iba a decirle a Alex cómo ayudar a la abuela y abrir la puerta.",
-                    "Ahora Alex no sabe qué hacer mientras espera, y se siente preocupado y solo."
+                    "La abuela todavía necesita ayuda, y la puerta sigue cerrada con llave cuando llegan los paramédicos."
                   ],
                   "feedback": "Es más seguro quedarse en la línea y seguir las instrucciones del operador hasta que digan que está bien colgar."
                 },
@@ -928,7 +928,7 @@
                   "outcome": [
                     "Alex sale a la tormenta para ver qué causó el golpe.",
                     "Está oscuro y hace mucho viento, y Alex se resbala en los escalones mojados.",
-                    "Alex está afuera en la tormenta, empapado y asustado, y ningún adulto de confianza sabe lo que pasa."
+                    "Alex se empapa y se raspa la rodilla, y ningún adulto de confianza sabe lo que pasa."
                   ],
                   "feedback": "Salir durante una tormenta para investigar no es seguro — es mejor quedarse adentro y avisar primero a un adulto de confianza."
                 },
@@ -943,7 +943,7 @@
                   "outcome": [
                     "Alex decide que el golpe no fue nada y vuelve a jugar en la oscuridad.",
                     "Un rato después, Alex escucha más ruidos raros y la casa sigue a oscuras.",
-                    "Alex empieza a ponerse nervioso, y papá todavía no sabe que se fue la luz ni que pasó algo."
+                    "Papá todavía no sabe que se fue la luz, así que nadie revisa el golpe ni pide ayuda."
                   ],
                   "feedback": "Un golpe fuerte durante un apagón vale la pena contárselo a un adulto de confianza, aunque resulte ser algo común como una rama caída."
                 }
@@ -1030,7 +1030,7 @@
                   "outcome": [
                     "Alex está de acuerdo en que esperar en silencio siempre es mejor que pedir ayuda.",
                     "La próxima vez que hay una emergencia real y no puede contactar a papá, Alex solo espera.",
-                    "Alex se queda solo y con miedo mientras el problema crece, y no viene ninguna ayuda."
+                    "Alex solo se queda sentado mientras el problema crece, y no viene ninguna ayuda porque nadie llamó al 911."
                   ],
                   "feedback": "Esperar en silencio durante una emergencia real no es seguro — llamar directamente al 911 es lo correcto si no puedes contactar a un adulto de confianza."
                 },

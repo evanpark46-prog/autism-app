@@ -29,7 +29,7 @@
                   "outcome": [
                     "Alex stops talking and puts the hand down.",
                     "Alex never shares an idea again.",
-                    "Alex’s good ideas stay stuck inside. Alex feels sad."
+                    "Alex’s good ideas stay stuck inside. The class never hears them."
                   ],
                   "feedback": "You don’t have to give up — you have the right to be heard, and it’s okay to try again or ask for a turn to talk."
                 },
@@ -60,7 +60,7 @@
                   "outcome": [
                     "Alex gives up and stays quiet.",
                     "The group keeps talking without Alex.",
-                    "Nobody hears Alex’s idea. Alex feels left out."
+                    "Nobody hears Alex’s idea. The group picks a different plan."
                   ],
                   "feedback": "Giving up wouldn’t have helped — asking to finish was the right move."
                 },
@@ -121,7 +121,7 @@
                   "outcome": [
                     "Alex believes kids’ ideas don’t matter.",
                     "Alex stays quiet at sharing time.",
-                    "Alex feels small and left out."
+                    "The teacher calls on other kids. Alex’s idea is never heard."
                   ],
                   "feedback": "That’s not true — every kid’s voice and ideas matter too."
                 },
@@ -183,7 +183,7 @@
                   "outcome": [
                     "Alex sits out again and doesn’t ask why.",
                     "Week after week, Alex keeps sitting on the bench.",
-                    "Alex feels confused and sad, and nothing changes."
+                    "The coach never learns Alex wants to play, so nothing changes."
                   ],
                   "feedback": "You have the right to ask respectfully why something is happening, especially if it feels unfair or confusing."
                 },
@@ -249,7 +249,7 @@
                   "outcome": [
                     "Alex believes kids should never question an adult’s decision.",
                     "When something feels unfair, Alex keeps quiet every time.",
-                    "Alex feels upset inside, and the unfair thing just keeps happening."
+                    "No adult hears about it, so the unfair thing just keeps happening."
                   ],
                   "feedback": "That’s not accurate — respectfully asking about a decision that feels unfair is a reasonable right to use."
                 }
@@ -275,7 +275,7 @@
                   "outcome": [
                     "Alex decides it was wrong to ask the coach.",
                     "The next time a rule feels unfair, Alex says nothing.",
-                    "Alex never gets answers and feels stuck."
+                    "Alex never gets answers, and the rule stays the same."
                   ],
                   "feedback": "That’s not accurate — respectfully asking about something unfair is a reasonable right."
                 },
@@ -337,7 +337,7 @@
                   "outcome": [
                     "Alex decides feelings just don’t matter and stops bringing them up at home.",
                     "The family member never learns how much the comments hurt, so they keep happening.",
-                    "Alex starts bottling everything up and feels more alone, even around family."
+                    "Alex starts skipping family dinners to avoid the comments, and nobody at home knows why."
                   ],
                   "feedback": "Your feelings do matter, and having them dismissed repeatedly is worth addressing, even though it can feel harder within your own family."
                 },
@@ -378,7 +378,7 @@
                   "outcome": [
                     "Alex decides it would have been better to stop mentioning feelings altogether.",
                     "Alex goes quiet at home, and the family member assumes everything is fine.",
-                    "The hurtful pattern keeps going, and Alex feels unheard by the people closest to Alex."
+                    "The hurtful comments keep coming, because nobody at home knows they hurt."
                   ],
                   "feedback": "Staying silent wouldn’t have addressed the pattern — calmly naming it was better."
                 },
@@ -413,7 +413,7 @@
                   "outcome": [
                     "Alex believes rights only apply outside the family.",
                     "Alex decides the dismissive comments at home are just something to put up with.",
-                    "Alex keeps feeling hurt at home without realizing it’s okay to ask for respect there too."
+                    "The comments keep coming, and Alex never asks for respect at home."
                   ],
                   "feedback": "That’s not accurate — rights like being heard and respected apply within families too, not just outside them."
                 }
@@ -578,7 +578,7 @@
                   "outcome": [
                     "Alex deja de hablar y baja la mano.",
                     "Alex nunca vuelve a compartir una idea.",
-                    "Las buenas ideas de Alex se quedan guardadas. Alex se siente triste."
+                    "Las buenas ideas de Alex se quedan guardadas. La clase nunca las escucha."
                   ],
                   "feedback": "No tienes que rendirte — tienes el derecho de ser escuchado, y está bien intentar de nuevo o pedir un turno para hablar."
                 },
@@ -609,7 +609,7 @@
                   "outcome": [
                     "Alex se rinde y se queda callado.",
                     "El grupo sigue hablando sin Alex.",
-                    "Nadie escucha la idea de Alex. Alex se siente excluido."
+                    "Nadie escucha la idea de Alex. El grupo elige otro plan."
                   ],
                   "feedback": "Rendirse no habría ayudado — pedir terminar fue la decisión correcta."
                 },
@@ -670,7 +670,7 @@
                   "outcome": [
                     "Alex cree que las ideas de los niños no importan.",
                     "Alex se queda callado a la hora de compartir.",
-                    "Alex se siente pequeño y excluido."
+                    "La maestra llama a otros niños. Nadie escucha la idea de Alex."
                   ],
                   "feedback": "Eso no es cierto — la voz e ideas de todo niño también importan."
                 },
@@ -732,7 +732,7 @@
                   "outcome": [
                     "Alex se queda sentado otra vez y no pregunta por qué.",
                     "Semana tras semana, Alex sigue en la banca.",
-                    "Alex se siente confundido y triste, y nada cambia."
+                    "El entrenador nunca se entera de que Alex quiere jugar, así que nada cambia."
                   ],
                   "feedback": "Tienes el derecho de preguntar respetuosamente por qué está pasando algo, especialmente si se siente injusto o confuso."
                 },
@@ -798,7 +798,7 @@
                   "outcome": [
                     "Alex cree que los niños nunca deberían cuestionar la decisión de un adulto.",
                     "Cada vez que algo se siente injusto, Alex se queda callado.",
-                    "Alex se siente mal por dentro, y lo injusto sigue pasando."
+                    "Ningún adulto se entera, así que lo injusto sigue pasando."
                   ],
                   "feedback": "Eso no es exacto — preguntar respetuosamente sobre una decisión que se siente injusta es un derecho razonable de usar."
                 }
@@ -824,7 +824,7 @@
                   "outcome": [
                     "Alex decide que estuvo mal preguntarle al entrenador.",
                     "La próxima vez que una regla se siente injusta, Alex no dice nada.",
-                    "Alex nunca obtiene respuestas y se siente atrapado."
+                    "Alex nunca obtiene respuestas, y la regla sigue igual."
                   ],
                   "feedback": "Eso no es exacto — preguntar respetuosamente sobre algo injusto es un derecho razonable."
                 },
@@ -886,7 +886,7 @@
                   "outcome": [
                     "Alex supone que los sentimientos no importan y deja de mencionarlos en casa.",
                     "El familiar nunca se entera de cuánto duelen sus comentarios, así que siguen pasando.",
-                    "Alex empieza a guardarse todo y se siente más solo, incluso con su familia."
+                    "Alex empieza a saltarse las cenas familiares para evitar los comentarios, y nadie en casa sabe por qué."
                   ],
                   "feedback": "Tus sentimientos sí importan, y que los descarten repetidamente vale la pena abordarlo, aunque se sienta más difícil dentro de tu propia familia."
                 },
@@ -927,7 +927,7 @@
                   "outcome": [
                     "Alex decide que habría sido mejor dejar de mencionar sus sentimientos por completo.",
                     "Alex se queda callado en casa, y el familiar supone que todo está bien.",
-                    "El patrón hiriente continúa, y Alex se siente ignorado por las personas más cercanas."
+                    "Los comentarios hirientes siguen, porque nadie en casa sabe que duelen."
                   ],
                   "feedback": "Quedarse callado no habría abordado el patrón — nombrarlo con calma fue mejor."
                 },
@@ -962,7 +962,7 @@
                   "outcome": [
                     "Alex cree que los derechos solo aplican fuera de la familia.",
                     "Alex decide que los comentarios despectivos en casa son algo que simplemente hay que aguantar.",
-                    "Alex sigue sintiéndose herido en casa sin darse cuenta de que también ahí está bien pedir respeto."
+                    "Los comentarios siguen, y Alex nunca pide respeto en casa."
                   ],
                   "feedback": "Eso no es exacto — derechos como ser escuchado y respetado también aplican dentro de las familias, no solo fuera de ellas."
                 }

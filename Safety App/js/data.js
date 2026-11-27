@@ -547,11 +547,11 @@ const CONTENT = {
               { type: 'decision', illustration: 'street-corner', kicker: 'What should Alex do first?',
                 text: 'What is the safest way for Alex to start crossing?',
                 choices: [
-                  { text: 'Walk into the street right where you’re standing.', correct: false, outcome: ['Alex steps into the street right there.', 'A driver does not expect Alex there.', 'The car has to stop fast. Alex feels scared.'],
+                  { text: 'Walk into the street right where you’re standing.', correct: false, outcome: ['Alex steps into the street right there.', 'A driver does not expect Alex there.', 'The car stops fast and honks loudly.'],
                     feedback: 'Crossing away from a crosswalk is harder for drivers to expect — it’s safer to find a marked crossing.' },
                   { text: 'Go to the crosswalk and look both ways before stepping off the curb.', correct: true,
                     feedback: 'Right! Crosswalks are where drivers expect people to cross, and looking both ways checks for traffic.' },
-                  { text: 'Cross between two parked cars so it’s a shorter walk.', correct: false, outcome: ['Alex steps out between two parked cars.', 'A driver cannot see Alex behind them.', 'A car comes close. Alex jumps back, scared.'],
+                  { text: 'Cross between two parked cars so it’s a shorter walk.', correct: false, outcome: ['Alex steps out between two parked cars.', 'A driver cannot see Alex behind them.', 'A car comes close and honks. Alex jumps back to the curb.'],
                     feedback: 'Parked cars can hide you from drivers — it’s much safer to cross where everyone can see you.' },
                 ] },
               { type: 'dialogue', illustration: 'street-corner',
@@ -560,7 +560,7 @@ const CONTENT = {
                   { speaker: 'Alex', text: 'Yes! What’s the best way to cross here?' },
                 ],
                 choices: [
-                  { text: 'Just cross wherever looks clear.', correct: false, outcome: ['Alex crosses where it looks clear.', 'A car comes around the corner fast.', 'The driver didn’t expect Alex. Alex feels scared.'],
+                  { text: 'Just cross wherever looks clear.', correct: false, outcome: ['Alex crosses where it looks clear.', 'A car comes around the corner fast.', 'The driver didn’t expect Alex and has to slam on the brakes.'],
                     feedback: 'It’s safer to use the marked crosswalk, where drivers expect people to cross.' },
                   { text: 'Cross at the crosswalk and look both ways first.', correct: true,
                     feedback: 'Yes! That’s exactly the safe way to cross.' },
@@ -572,7 +572,7 @@ const CONTENT = {
               { type: 'decision', illustration: 'street-crossing', kicker: 'One more check',
                 text: 'A car is turning at the corner while Alex is crossing. What’s the safest habit?',
                 choices: [
-                  { text: 'Keep walking without checking the car.', correct: false, outcome: ['Alex keeps walking without looking.', 'The turning car keeps coming too.', 'The driver stops suddenly. Alex is scared.'],
+                  { text: 'Keep walking without checking the car.', correct: false, outcome: ['Alex keeps walking without looking.', 'The turning car keeps coming too.', 'The driver stops suddenly, just a few steps from Alex.'],
                     feedback: 'Even with the signal, it’s safer to check that turning cars have actually stopped for you.' },
                   { text: 'Make eye contact with the driver and make sure they’ve stopped before continuing.', correct: true,
                     feedback: 'Yes — eye contact helps make sure the driver has seen you and is actually going to stop.' },
@@ -583,7 +583,7 @@ const CONTENT = {
                   { speaker: 'Crossing Guard', text: 'Great job! What should you do if you’re not sure a driver has seen you?' },
                 ],
                 choices: [
-                  { text: 'Just keep walking and hope they see you.', correct: false, outcome: ['Alex keeps walking and hopes.', 'The driver did not see Alex.', 'The car honks and stops fast. Alex is scared.'],
+                  { text: 'Just keep walking and hope they see you.', correct: false, outcome: ['Alex keeps walking and hopes.', 'The driver did not see Alex.', 'The car honks and stops fast, very close to Alex.'],
                     feedback: 'Hoping isn’t a safe plan — always make sure the driver has actually stopped.' },
                   { text: 'Wait until you’re sure the driver has stopped.', correct: true,
                     feedback: 'Exactly — waiting until you’re sure is always the safe choice.' },
@@ -626,7 +626,7 @@ const CONTENT = {
                   { speaker: 'Alex', text: 'Almost! There’s a truck blocking my view here, so I’m looking for a clearer spot.' },
                 ],
                 choices: [
-                  { text: 'Just squeeze past the truck quickly.', correct: false, outcome: ['Alex squeezes quickly past the front of the truck.', 'Alex steps out, and a car is right there, coming fast.', 'The car honks loudly, and Alex jumps back to the curb feeling shaky.'],
+                  { text: 'Just squeeze past the truck quickly.', correct: false, outcome: ['Alex squeezes quickly past the front of the truck.', 'Alex steps out, and a car is right there, coming fast.', 'The car honks loudly, and Alex has to jump back to the curb and start over.'],
                     feedback: 'Squeezing past a truck blocking the view isn’t safe — finding a clearer spot is worth the extra time.' },
                   { text: 'Keep walking to find a spot with a clear view both ways.', correct: true,
                     feedback: 'Yes — taking a bit longer to find a clear spot is the safe choice.' },
@@ -637,7 +637,7 @@ const CONTENT = {
               { type: 'decision', illustration: 'street-crossing', kicker: 'One more check',
                 text: 'While crossing, Alex hears a siren getting louder. What’s the safest thing to do?',
                 choices: [
-                  { text: 'Keep crossing at the same pace — sirens don’t change anything.', correct: false, outcome: ['Alex keeps crossing at the same slow pace.', 'The ambulance comes around the corner fast while Alex is still in the street.', 'The ambulance has to swerve and slow down, and Alex feels frozen and scared.'],
+                  { text: 'Keep crossing at the same pace — sirens don’t change anything.', correct: false, outcome: ['Alex keeps crossing at the same slow pace.', 'The ambulance comes around the corner fast while Alex is still in the street.', 'The ambulance has to swerve and slow down, losing time on the way to someone who needs help.'],
                     feedback: 'An emergency vehicle may need to move fast and unexpectedly — it’s safer to get all the way across or back to the curb first, then watch for it.' },
                   { text: 'Finish crossing to the nearest curb quickly and safely, then watch to see where the emergency vehicle goes.', correct: true,
                     feedback: 'Exactly — get fully off the road first, then pay attention, so you’re not caught in the middle of the street.' },
@@ -702,7 +702,7 @@ const CONTENT = {
               { type: 'decision', illustration: 'street-crossing', kicker: 'One more check',
                 text: 'Alex is now walking with a younger sibling who wants to run ahead into the street. What should Alex do?',
                 choices: [
-                  { text: 'Let the sibling run ahead since Alex already checked the street.', correct: false, outcome: ['Alex lets the sibling run ahead into the street.', 'A car pulls out of a driveway just as the sibling reaches the road.', 'The driver brakes hard, and Alex’s sibling stands frozen and scared, too far away for Alex to grab their hand.'],
+                  { text: 'Let the sibling run ahead since Alex already checked the street.', correct: false, outcome: ['Alex lets the sibling run ahead into the street.', 'A car pulls out of a driveway just as the sibling reaches the road.', 'The driver brakes hard and honks, and Alex is too far away to grab the sibling’s hand.'],
                     feedback: 'A situation can change fast — someone running ahead alone loses the benefit of checking together and being seen together.' },
                   { text: 'Hold the sibling’s hand or have them wait, and cross together after checking again.', correct: true,
                     feedback: 'Yes — crossing together, after checking again, keeps both Alex and the younger sibling safe.' },
@@ -713,7 +713,7 @@ const CONTENT = {
                   { speaker: 'Alex', text: 'Let’s hold hands and cross together instead.' },
                 ],
                 choices: [
-                  { text: 'Let the sibling go first alone since they’re excited.', correct: false, outcome: ['Alex lets the sibling go first alone.', 'The sibling runs out without looking, eyes fixed on the other side of the street.', 'A bike coming down the street has to swerve, and the sibling starts crying, scared and alone in the road.'],
+                  { text: 'Let the sibling go first alone since they’re excited.', correct: false, outcome: ['Alex lets the sibling go first alone.', 'The sibling runs out without looking, eyes fixed on the other side of the street.', 'A bike coming down the street has to swerve and skids, and the sibling is left standing alone in the middle of the road.'],
                     feedback: 'Letting someone run ahead alone loses the safety of checking and crossing together.' },
                   { text: 'Hold hands and check the street together before crossing.', correct: true,
                     feedback: 'Exactly — crossing together after checking again is the safest choice.' },
@@ -726,7 +726,7 @@ const CONTENT = {
                 ],
                 text: 'A younger sibling later says checking again is pointless since Alex already checked once. What should Alex remember?',
                 choices: [
-                  { text: 'Once you’ve checked the street, there’s no need to check again.', correct: false, outcome: ['Alex agrees that one check is enough and stops checking again.', 'Alex checks once, then waits a while before crossing — and a car turns onto the street in that time.', 'Alex steps out without seeing it, and the driver has to stop suddenly; Alex and the sibling both feel shaken.'],
+                  { text: 'Once you’ve checked the street, there’s no need to check again.', correct: false, outcome: ['Alex agrees that one check is enough and stops checking again.', 'Alex checks once, then waits a while before crossing — and a car turns onto the street in that time.', 'Alex steps out without seeing it, and the driver has to stop suddenly, just a few steps from Alex and the sibling.'],
                     feedback: 'A situation, like a car appearing, can change in just a few seconds — one more check is always worth it.' },
                   { text: 'A situation, like a car appearing, can change in just a few seconds, so checking again is always worth it.', correct: true,
                     feedback: 'Exactly — things can change fast, so one more check is always worth it.' },
@@ -795,7 +795,7 @@ const CONTENT = {
                   { speaker: 'Cashier', text: 'Hi there, are you looking for someone?' },
                 ],
                 choices: [
-                  { text: 'Just keep looking around the same aisle.', correct: false, outcome: ['Alex walks past the cashier and looks in the same aisle.', 'Mom is not there. The aisle stays empty.', 'Alex is still lost and starts to feel scared.'],
+                  { text: 'Just keep looking around the same aisle.', correct: false, outcome: ['Alex walks past the cashier and looks in the same aisle.', 'Mom is not there. The aisle stays empty.', 'Mom is in another part of the store, and no one knows Alex is lost.'],
                     feedback: 'Looking around alone doesn’t help as much as asking a worker directly.' },
                   { text: 'Say “Yes, I can’t find my parent. Can you help me?”', correct: true,
                     feedback: 'Yes! Asking directly for help is exactly the right thing to do.' },
@@ -818,7 +818,7 @@ const CONTENT = {
                   { speaker: 'Alex', text: 'Okay! What if I get lost again another time?' },
                 ],
                 choices: [
-                  { text: 'Try to find my own way out next time instead.', correct: false, outcome: ['Next time, Alex tries to find the way alone.', 'Alex walks up and down and gets more mixed up.', 'Alex feels scared, and nobody is helping.'],
+                  { text: 'Try to find my own way out next time instead.', correct: false, outcome: ['Next time, Alex tries to find the way alone.', 'Alex walks up and down and gets more mixed up.', 'Alex ends up even farther from Mom, and nobody knows Alex is lost.'],
                     feedback: 'Finding a worker is still the fastest, safest way — don’t try to handle it alone.' },
                   { text: 'Find a worker with a uniform or name tag and ask for help, every time.', correct: true,
                     feedback: 'Exactly — that’s the reliable rule, every single time.' },
@@ -1018,7 +1018,7 @@ const CONTENT = {
               { type: 'decision', illustration: 'emergency-call', kicker: 'What should Alex do?',
                 text: 'The smoke alarm is going off and Alex doesn’t see any fire or smoke yet. What’s the safest first step?',
                 choices: [
-                  { text: 'Ignore it since nothing looks wrong.', correct: false, outcome: ['Alex keeps playing. The alarm beeps.', 'Smoke starts coming from the kitchen.', 'No grown-up knows yet. Alex feels scared.'],
+                  { text: 'Ignore it since nothing looks wrong.', correct: false, outcome: ['Alex keeps playing. The alarm beeps.', 'Smoke starts coming from the kitchen.', 'No grown-up knows yet. The smoke keeps coming.'],
                     feedback: 'An alarm going off means something needs a grown-up’s attention right away, even if nothing looks wrong yet.' },
                   { text: 'Find a grown-up right away and tell them the alarm is going off.', correct: true,
                     feedback: 'Yes! Getting a grown-up immediately is always the right first move when an alarm goes off.' },
@@ -1044,7 +1044,7 @@ const CONTENT = {
                 choices: [
                   { text: '911 (or the local emergency number).', correct: true,
                     feedback: 'Exactly right. 911 connects you to people whose job is to help in emergencies.' },
-                  { text: 'A friend’s cell phone number.', correct: false, outcome: ['Alex calls a friend’s phone.', 'The friend says, “I don’t know what to do!”', 'No help is coming yet. Alex feels scared.'],
+                  { text: 'A friend’s cell phone number.', correct: false, outcome: ['Alex calls a friend’s phone.', 'The friend says, “I don’t know what to do!”', 'Nobody calls 911, so no help comes yet.'],
                     feedback: 'A friend can’t send help the way emergency services can — 911 is the number for real emergencies.' },
                 ] },
               { type: 'dialogue', illustration: 'emergency-help',
@@ -1119,7 +1119,7 @@ const CONTENT = {
                   { speaker: 'Alex', text: 'Should I hang up now?' },
                 ],
                 choices: [
-                  { text: 'Yes, hang up as soon as help is called.', correct: false, outcome: ['Alex hangs up as soon as help is called.', 'The dispatcher was about to tell Alex how to help Grandma and unlock the door.', 'Now Alex isn’t sure what to do while waiting, and feels worried and alone.'],
+                  { text: 'Yes, hang up as soon as help is called.', correct: false, outcome: ['Alex hangs up as soon as help is called.', 'The dispatcher was about to tell Alex how to help Grandma and unlock the door.', 'Grandma still needs help, and the door is still locked when the paramedics arrive.'],
                     feedback: 'It’s safer to stay on the line and follow the dispatcher’s instructions until they say it’s okay to hang up.' },
                   { text: 'Stay on the line and follow the dispatcher’s instructions.', correct: true,
                     feedback: 'Exactly right — stay on the line until they tell you it’s okay.' },
@@ -1149,11 +1149,11 @@ const CONTENT = {
               { type: 'decision', illustration: 'emergency-call', kicker: 'What should Alex do?',
                 text: 'It’s dark, the power is out, and there was a loud crash outside. What’s the safest first step?',
                 choices: [
-                  { text: 'Go outside right away to see what made the crash.', correct: false, outcome: ['Alex steps outside into the storm to see what made the crash.', 'It’s dark and windy, and Alex slips on the wet steps.', 'Alex is outside in the storm, soaked and scared, and no trusted adult knows what’s going on.'],
+                  { text: 'Go outside right away to see what made the crash.', correct: false, outcome: ['Alex steps outside into the storm to see what made the crash.', 'It’s dark and windy, and Alex slips on the wet steps.', 'Alex gets soaked and scrapes a knee, and no trusted adult knows what’s going on.'],
                     feedback: 'Going outside during a storm to investigate isn’t safe — it’s better to stay inside and check in with a trusted adult first.' },
                   { text: 'Stay inside, find a flashlight, and call or text a trusted adult to let them know what happened.', correct: true,
                     feedback: 'Yes — staying inside and reaching a trusted adult first is the safest move when something unexpected happens during a storm.' },
-                  { text: 'Assume it’s nothing and go back to what Alex was doing.', correct: false, outcome: ['Alex decides the crash was nothing and goes back to playing a game in the dark.', 'A while later, Alex hears more strange noises and the house stays dark.', 'Alex starts to feel nervous, and Dad still has no idea the power is out or that anything happened.'],
+                  { text: 'Assume it’s nothing and go back to what Alex was doing.', correct: false, outcome: ['Alex decides the crash was nothing and goes back to playing a game in the dark.', 'A while later, Alex hears more strange noises and the house stays dark.', 'Dad still has no idea the power is out, so no one checks the crash or calls for help.'],
                     feedback: 'A loud crash during a power outage is worth telling a trusted adult about, even if it turns out to be something ordinary like a branch falling.' },
                 ] },
               { type: 'dialogue', illustration: 'emergency-call',
@@ -1184,7 +1184,7 @@ const CONTENT = {
                   { speaker: 'Alex', text: 'I’d try calling 911 if it felt like a real emergency.' },
                 ],
                 choices: [
-                  { text: 'Say waiting quietly is always better than calling for help.', correct: false, outcome: ['Alex agrees that waiting quietly is always better than calling for help.', 'Next time there’s a real emergency and Dad can’t be reached, Alex just waits.', 'Alex sits alone feeling scared while the problem grows, and no help is on the way.'],
+                  { text: 'Say waiting quietly is always better than calling for help.', correct: false, outcome: ['Alex agrees that waiting quietly is always better than calling for help.', 'Next time there’s a real emergency and Dad can’t be reached, Alex just waits.', 'Alex just sits while the problem grows, and no help comes because nobody called 911.'],
                     feedback: 'Waiting quietly during a real emergency isn’t safe — calling 911 directly is the right move if you can’t reach a trusted adult.' },
                   { text: 'Say calling 911 directly is the right move if it’s a real emergency.', correct: true,
                     feedback: 'Exactly right — that’s exactly the correct backup plan.' },
@@ -1289,7 +1289,7 @@ const CONTENT = {
                   { speaker: 'Alex', text: 'What if I ever get separated from the class?' },
                 ],
                 choices: [
-                  { text: 'Just wait somewhere randomly.', correct: false, outcome: ['Alex waits by a tree, far away.', 'The teacher counts. Alex is not there.', 'Everyone is worried. Nobody knows where Alex is.'],
+                  { text: 'Just wait somewhere randomly.', correct: false, outcome: ['Alex waits by a tree, far away.', 'The teacher counts. Alex is not there.', 'Everyone has to wait while the teacher searches for Alex.'],
                     feedback: 'It’s safer to go to the assigned meeting spot, where a teacher or staff member expects to find you.' },
                   { text: 'Go to the assigned meeting spot and tell a teacher or staff member.', correct: true,
                     feedback: 'Yes — the meeting spot is exactly where to go so you can be found and counted.' },
@@ -1419,7 +1419,7 @@ const CONTENT = {
                   { speaker: 'Alex', text: 'Why do we need two ways out of our home?' },
                 ],
                 choices: [
-                  { text: 'Because one exit is always enough, no matter what.', correct: false, outcome: ['Alex believes one exit is always enough.', 'Alex never learns that the bedroom window could be a second way out.', 'If smoke ever filled the hallway, Alex would feel trapped with no backup plan.'],
+                  { text: 'Because one exit is always enough, no matter what.', correct: false, outcome: ['Alex believes one exit is always enough.', 'Alex never learns that the bedroom window could be a second way out.', 'If smoke ever filled the hallway, Alex wouldn’t know the window was another way out.'],
                     feedback: 'A fire could block that one exit — that’s exactly why a second way out matters.' },
                   { text: 'Because a fire could block one path, so a backup route matters.', correct: true,
                     feedback: 'Exactly right — a second way out is a real backup, not just a formality.' },
@@ -1512,7 +1512,7 @@ const CONTENT = {
                   { speaker: 'Alex', text: 'Drop, cover, and hold on — get under your desk!' },
                 ],
                 choices: [
-                  { text: 'Stand up to see what’s falling.', correct: false, outcome: ['Alex stands up to look.', 'The floor shakes and a book falls close by.', 'Alex feels scared and has no cover.'],
+                  { text: 'Stand up to see what’s falling.', correct: false, outcome: ['Alex stands up to look.', 'The floor shakes and a book falls close by.', 'Alex is out in the open with no cover.'],
                     feedback: 'Standing up leaves you exposed to falling objects — get under the desk instead.' },
                   { text: 'Get under the desk and cover your head and neck.', correct: true,
                     feedback: 'Yes — drop, cover, and hold on is exactly right.' },
@@ -1564,7 +1564,7 @@ const CONTENT = {
               { type: 'decision', illustration: 'earthquake-shake', kicker: 'What should Alex do?',
                 text: 'There’s no desk nearby, just tall cabinets and open floor. What’s the safest choice?',
                 choices: [
-                  { text: 'Stay right next to the tall cabinets since they’re close.', correct: false, outcome: ['Alex stays right next to the tall cabinets.', 'The cabinet doors swing open and dishes start sliding out.', 'Things are falling close to Alex, and Alex feels very scared.'],
+                  { text: 'Stay right next to the tall cabinets since they’re close.', correct: false, outcome: ['Alex stays right next to the tall cabinets.', 'The cabinet doors swing open and dishes start sliding out.', 'A plate crashes to the floor right next to Alex’s feet.'],
                     feedback: 'Tall cabinets can tip over or spill their contents during shaking — it’s safer to move away from them if you can do it quickly and safely.' },
                   { text: 'Move a few steps away from the tall cabinets, then drop, cover your head and neck with your arms, and hold on.', correct: true,
                     feedback: 'Right — getting clear of things that could fall or tip, then dropping and covering, is the safest combination here.' },
@@ -1599,7 +1599,7 @@ const CONTENT = {
                   { speaker: 'Alex', text: 'Should I turn on a light so I can see better?' },
                 ],
                 choices: [
-                  { text: 'Yes, turn on the light switch.', correct: false, outcome: ['Alex reaches for the light switch.', 'Mom shouts, “Stop!” because a switch can make a spark near gas.', 'Now Alex is scared, and leaving the house takes longer.'],
+                  { text: 'Yes, turn on the light switch.', correct: false, outcome: ['Alex reaches for the light switch.', 'Mom shouts, “Stop!” because a switch can make a spark near gas.', 'Now Alex has to stop, and leaving the house takes longer.'],
                     feedback: 'A light switch could create a spark near gas — avoid switches and anything electric.' },
                   { text: 'No, avoid switches and anything electric, and just leave the area.', correct: true,
                     feedback: 'Exactly — avoiding sparks and leaving the area is the safe move when you smell gas.' },
@@ -1658,7 +1658,7 @@ const CONTENT = {
                 ],
                 text: 'The ground suddenly starts shaking again. What should Alex remember?',
                 choices: [
-                  { text: 'Since the big one already happened, there’s no need to react again.', correct: false, outcome: ['Alex decides the big one already happened and keeps standing up.', 'The aftershock is strong, and Alex loses balance and falls on the grass.', 'Alex wasn’t ready to protect Alex’s head, and the shaking feels even scarier than the first time.'],
+                  { text: 'Since the big one already happened, there’s no need to react again.', correct: false, outcome: ['Alex decides the big one already happened and keeps standing up.', 'The aftershock is strong, and Alex loses balance and falls on the grass.', 'Alex wasn’t ready to protect Alex’s head, and there’s nothing to hold onto while the ground keeps moving.'],
                     feedback: 'Aftershocks can still be strong enough to matter — always drop and cover again.' },
                   { text: 'It could be an aftershock, so stay alert and drop and cover again right away.', correct: true,
                     feedback: 'Exactly — aftershocks can come suddenly, so remembering what to do keeps you ready.' },
@@ -1680,7 +1680,7 @@ const CONTENT = {
                 choices: [
                   { text: 'It could be an aftershock, so drop and cover again right away.', correct: true,
                     feedback: 'Exactly — treat any new shaking the same way: drop, cover, and hold on.' },
-                  { text: 'Since the big one already happened, you don’t need to react again.', correct: false, outcome: ['Alex believes there’s no need to react again after the big quake.', 'When the ground shakes again, Alex keeps walking instead of dropping down.', 'Alex stumbles and gets a scraped hand, and feels shaken and caught by surprise.'],
+                  { text: 'Since the big one already happened, you don’t need to react again.', correct: false, outcome: ['Alex believes there’s no need to react again after the big quake.', 'When the ground shakes again, Alex keeps walking instead of dropping down.', 'Alex stumbles and scrapes a hand, and a grown-up has to stop to clean it up.'],
                     feedback: 'Aftershocks can still be strong enough to hurt you — always drop and cover again.' },
                 ] },
             ],
@@ -1738,7 +1738,7 @@ const CONTENT = {
                     feedback: 'Thunder means lightning is nearby — even a little rain with thunder means it’s time to head inside.' },
                   { text: 'Go inside right away, away from windows, until the storm passes.', correct: true,
                     feedback: 'Yes — heading inside as soon as you hear thunder is the safest move.' },
-                  { text: 'Stand under a tall tree until the rain stops.', correct: false, outcome: ['Alex stands under a tall tree.', 'Lightning flashes close by.', 'Alex feels scared and is not safe there.'],
+                  { text: 'Stand under a tall tree until the rain stops.', correct: false, outcome: ['Alex stands under a tall tree.', 'Lightning flashes close by.', 'Thunder booms, and Alex is still outside instead of safe inside.'],
                     feedback: 'Tall trees can attract lightning — standing under one during a storm isn’t safe. Going inside is best.' },
                 ] },
               { type: 'dialogue', illustration: 'storm-outside',
@@ -1825,7 +1825,7 @@ const CONTENT = {
                 choices: [
                   { text: 'Because rain and gray skies make it harder for drivers to see people walking.', correct: true,
                     feedback: 'Yes — in rain, drivers’ visibility is already reduced, so being extra noticeable helps keep you safe.' },
-                  { text: 'Because rain makes cars go slower automatically, so it doesn’t matter.', correct: false, outcome: ['Alex believes rain makes every car slow down.', 'Alex steps toward the street without looking carefully.', 'A driver doesn’t see Alex in the rain and has to brake hard, and Alex feels scared.'],
+                  { text: 'Because rain makes cars go slower automatically, so it doesn’t matter.', correct: false, outcome: ['Alex believes rain makes every car slow down.', 'Alex steps toward the street without looking carefully.', 'A driver doesn’t see Alex in the rain and has to brake hard and honk.'],
                     feedback: 'Rain doesn’t automatically make every driver slow down or notice pedestrians — staying visible is still important.' },
                 ] },
               { type: 'dialogue', illustration: 'storm-safe',
@@ -1836,7 +1836,7 @@ const CONTENT = {
                 choices: [
                   { text: 'Because drivers have a harder time seeing pedestrians in the rain.', correct: true,
                     feedback: 'Exactly — reduced visibility means you need to be extra noticeable near streets.' },
-                  { text: 'Because cars can’t drive at all when it’s raining.', correct: false, outcome: ['Alex believes cars can’t drive when it’s raining.', 'Alex walks right by the street without watching for cars.', 'A car splashes past very close, and Alex jumps back, scared.'],
+                  { text: 'Because cars can’t drive at all when it’s raining.', correct: false, outcome: ['Alex believes cars can’t drive when it’s raining.', 'Alex walks right by the street without watching for cars.', 'A car splashes past very close, and Alex gets soaked with muddy water.'],
                     feedback: 'Cars can absolutely still drive in the rain — that’s exactly why staying visible matters.' },
                 ],
                 replySpeaker: 'Mom' },
@@ -1877,7 +1877,7 @@ const CONTENT = {
                   { speaker: 'Alex', text: 'No, let’s tell Mom and Dad right away instead.' },
                 ],
                 choices: [
-                  { text: 'Go check the water together.', correct: false, outcome: ['Alex and the sibling slip out the door together to check the water.', 'The water is deeper than it looked, and the sibling trips on something hidden underneath.', 'Now they’re both outside in rising water, scared, and Mom and Dad don’t know where they are.'],
+                  { text: 'Go check the water together.', correct: false, outcome: ['Alex and the sibling slip out the door together to check the water.', 'The water is deeper than it looked, and the sibling trips on something hidden underneath.', 'Now they’re both outside in rising water while Mom and Dad search the house for them.'],
                     feedback: 'Floodwater can be more dangerous than it looks — checking it yourselves isn’t safe.' },
                   { text: 'Tell a grown-up right away and stay away from the water.', correct: true,
                     feedback: 'Exactly — that’s the safest response to a flood warning.' },
@@ -1906,7 +1906,7 @@ const CONTENT = {
                 choices: [
                   { text: 'Because floodwater can be deeper or faster-moving than it looks.', correct: true,
                     feedback: 'Exactly right — looks can be deceiving, so it’s never safe to guess.' },
-                  { text: 'Because floodwater is always shallow and safe to check.', correct: false, outcome: ['Alex believes floodwater is always shallow and safe to check.', 'Alex guesses the depth by looking and steps off the porch.', 'The water is much deeper than it looked, and Alex ends up soaked to the waist and scared.'],
+                  { text: 'Because floodwater is always shallow and safe to check.', correct: false, outcome: ['Alex believes floodwater is always shallow and safe to check.', 'Alex guesses the depth by looking and steps off the porch.', 'The water is much deeper than it looked, and Alex ends up soaked to the waist and has to wade back to the porch.'],
                     feedback: 'That’s not true — floodwater is often unpredictable and can hide real danger.' },
                 ],
                 replySpeaker: 'Dad' },
@@ -1969,11 +1969,11 @@ const CONTENT = {
               { type: 'decision', illustration: 'advocacy-uncomfortable', kicker: 'What should Alex do?',
                 text: 'Alex feels overwhelmed by the noise and lights. What’s the safest, most helpful choice?',
                 choices: [
-                  { text: 'Stay quiet and try to push through the uncomfortable feeling.', correct: false, outcome: ['Alex stays quiet and keeps working.', 'The noise and lights feel bigger and bigger.', 'Alex feels worse, and the teacher doesn’t know.'],
+                  { text: 'Stay quiet and try to push through the uncomfortable feeling.', correct: false, outcome: ['Alex stays quiet and keeps working.', 'The noise and lights feel bigger and bigger.', 'Alex puts down the pencil and can’t finish. The teacher doesn’t know why.'],
                     feedback: 'You don’t have to just push through — telling a trusted adult how you’re feeling is always okay, and it helps them help you.' },
                   { text: 'Tell a trusted adult, like a teacher, “I’m feeling overwhelmed, can I have a break?”', correct: true,
                     feedback: 'Yes! Naming how you feel and asking for what you need is exactly the right move.' },
-                  { text: 'Get upset and leave the room without telling anyone.', correct: false, outcome: ['Alex gets upset and runs out of the room.', 'The teacher looks up and can’t see Alex.', 'Everyone is worried. Alex is alone in the hall.'],
+                  { text: 'Get upset and leave the room without telling anyone.', correct: false, outcome: ['Alex gets upset and runs out of the room.', 'The teacher looks up and can’t see Alex.', 'The teacher stops the lesson and hurries out to find Alex.'],
                     feedback: 'Leaving without telling anyone can worry people and makes it harder for them to help — it’s better to say something first, even briefly.' },
                 ] },
               { type: 'dialogue', illustration: 'advocacy-help',
@@ -1982,7 +1982,7 @@ const CONTENT = {
                   { speaker: 'Teacher', text: 'Of course — thank you for telling me.' },
                 ],
                 choices: [
-                  { text: 'Say Alex should’ve stayed quiet and just pushed through instead.', correct: false, outcome: ['Alex thinks, “I should have stayed quiet.”', 'Next time, Alex doesn’t ask for a break.', 'Alex feels overwhelmed, and no one knows.'],
+                  { text: 'Say Alex should’ve stayed quiet and just pushed through instead.', correct: false, outcome: ['Alex thinks, “I should have stayed quiet.”', 'Next time, Alex doesn’t ask for a break.', 'Alex covers both ears and stops working. No one knows why.'],
                     feedback: 'Pushing through quietly wouldn’t have helped — speaking up was exactly the right move.' },
                   { text: 'Say telling the teacher was the right choice.', correct: true,
                     feedback: 'Yes — naming the feeling and asking for what you need is exactly right.' },
@@ -1995,7 +1995,7 @@ const CONTENT = {
                 choices: [
                   { text: 'Because trusted adults can’t help with something they don’t know about.', correct: true,
                     feedback: 'Exactly — speaking up gives people the chance to actually help you.' },
-                  { text: 'Because staying quiet always makes uncomfortable feelings go away on their own.', correct: false, outcome: ['Alex thinks staying quiet makes bad feelings go away.', 'Alex stays quiet, but the feeling stays.', 'Alex still feels bad. No grown-up can help.'],
+                  { text: 'Because staying quiet always makes uncomfortable feelings go away on their own.', correct: false, outcome: ['Alex thinks staying quiet makes bad feelings go away.', 'Alex stays quiet. The noise keeps going.', 'No grown-up knows, so the noise and lights stay the same.'],
                     feedback: 'Uncomfortable feelings don’t always just disappear — speaking up is a more reliable way to get things to change.' },
                 ] },
               { type: 'dialogue', illustration: 'advocacy-help',
@@ -2004,7 +2004,7 @@ const CONTENT = {
                   { speaker: 'Alex', text: 'Yes, thank you for listening. What if you hadn’t noticed I was overwhelmed?' },
                 ],
                 choices: [
-                  { text: 'Wait quietly for a trusted adult to notice on their own.', correct: false, outcome: ['Alex waits quietly for the teacher to notice.', 'The teacher is busy helping other kids.', 'Alex keeps waiting and feels worse and worse.'],
+                  { text: 'Wait quietly for a trusted adult to notice on their own.', correct: false, outcome: ['Alex waits quietly for the teacher to notice.', 'The teacher is busy helping other kids.', 'Alex keeps waiting, and the teacher never comes over.'],
                     feedback: 'Trusted adults can’t always tell how you’re feeling — it’s better to say it directly.' },
                   { text: 'Tell them directly, since they can’t read your mind.', correct: true,
                     feedback: 'Exactly right — saying it directly is the most reliable way to get help.' },
@@ -2038,7 +2038,7 @@ const CONTENT = {
                     feedback: 'Hoping it stops on its own often doesn’t work — telling a trusted adult gives the situation a real chance to change.' },
                   { text: 'Tell the classmate clearly, “Please stop, that’s not okay,” and also tell a trusted adult about what’s been happening.', correct: true,
                     feedback: 'Yes — speaking up in the moment and also letting a trusted adult know gives you support and a better chance the teasing stops.' },
-                  { text: 'Tease the classmate back to make it even.', correct: false, outcome: ['Alex teases the classmate back to make it even.', 'The classmate gets mad and teases Alex even more.', 'Now both kids are upset, and Alex might get in trouble too.'],
+                  { text: 'Tease the classmate back to make it even.', correct: false, outcome: ['Alex teases the classmate back to make it even.', 'The classmate gets mad and teases Alex even more.', 'The teacher only hears Alex’s tease, so Alex gets in trouble too.'],
                     feedback: 'Teasing back usually makes things worse, not better — it’s more effective to say it’s not okay and get a trusted adult involved.' },
                 ] },
               { type: 'dialogue', illustration: 'advocacy-uncomfortable',
@@ -2060,7 +2060,7 @@ const CONTENT = {
                 choices: [
                   { text: 'Trusted adults can often solve the problem in a way that actually helps, even if it feels a little scary to bring up.', correct: true,
                     feedback: 'Exactly — that worry is understandable, but trusted adults are there to help handle these situations, often better than handling it alone.' },
-                  { text: 'It’s better to never tell an adult about anything, just in case it makes things worse.', correct: false, outcome: ['Alex decides to never tell a grown-up about anything.', 'When the teasing starts again, Alex keeps it a secret.', 'The problem keeps growing, and Alex has to handle it all alone.'],
+                  { text: 'It’s better to never tell an adult about anything, just in case it makes things worse.', correct: false, outcome: ['Alex decides to never tell a grown-up about anything.', 'When the teasing starts again, Alex keeps it a secret.', 'The teasing happens again and again, and no grown-up steps in to stop it.'],
                     feedback: 'Avoiding trusted adults entirely usually leaves problems unresolved — most of the time, telling them helps more than it hurts.' },
                 ] },
               { type: 'dialogue', illustration: 'advocacy-help',
@@ -2069,7 +2069,7 @@ const CONTENT = {
                   { speaker: 'Alex', text: 'I was worried telling you might make it worse.' },
                 ],
                 choices: [
-                  { text: 'Say that worry means you should never tell an adult.', correct: false, outcome: ['Alex believes feeling worried means Alex should never tell.', 'Next time something bothers Alex, Alex hides it from the teacher.', 'Alex feels stuck and alone with the problem.'],
+                  { text: 'Say that worry means you should never tell an adult.', correct: false, outcome: ['Alex believes feeling worried means Alex should never tell.', 'Next time something bothers Alex, Alex hides it from the teacher.', 'The teacher never finds out, so the problem keeps happening every day.'],
                     feedback: 'That worry is understandable, but avoiding adults entirely usually leaves problems unresolved.' },
                   { text: 'Say trusted adults can often help, even though it feels a little scary to bring up.', correct: true,
                     feedback: 'Exactly right — that fear is normal, but adults are usually able to help.' },
@@ -2099,7 +2099,7 @@ const CONTENT = {
               { type: 'decision', illustration: 'advocacy-uncomfortable', kicker: 'What should Alex do?',
                 text: 'Alex feels unheard but the other student isn’t being mean, just pushy. What’s the most helpful choice?',
                 choices: [
-                  { text: 'Go along with everything to avoid any conflict.', correct: false, outcome: ['Alex goes along with every decision the other student makes, saying nothing.', 'Alex’s part of the project ends up full of ideas that aren’t Alex’s.', 'Alex feels frustrated and invisible for the rest of the project, and the teacher thinks everything is fine.'],
+                  { text: 'Go along with everything to avoid any conflict.', correct: false, outcome: ['Alex goes along with every decision the other student makes, saying nothing.', 'Alex’s part of the project ends up full of ideas that aren’t Alex’s.', 'The teacher grades it as a team effort and never hears what Alex wanted to add.'],
                     feedback: 'Going along with everything can leave you feeling unheard for the whole project — it’s okay to speak up even when no one is being mean.' },
                   { text: 'Say clearly, “I have ideas for this part too — can we talk about it together?” and ask a teacher for support if it keeps happening.', correct: true,
                     feedback: 'Yes — asking to be included, and getting a teacher’s support if needed, is a strong way to advocate for yourself.' },
@@ -2125,7 +2125,7 @@ const CONTENT = {
                 choices: [
                   { text: 'Because it’s less obvious that something is “wrong,” so it can feel harder to know it’s still okay to speak up.', correct: true,
                     feedback: 'Exactly — needs like being heard or included can feel less urgent than something like being lost, but they matter too, and it’s still okay to speak up.' },
-                  { text: 'Because self-advocacy is never actually important compared to bigger emergencies.', correct: false, outcome: ['Alex believes self-advocacy isn’t important unless it’s an emergency.', 'So Alex stays quiet in group work, in class, and with friends whenever something isn’t a big deal.', 'Small things pile up, and Alex often feels unheard and unhappy without anyone knowing why.'],
+                  { text: 'Because self-advocacy is never actually important compared to bigger emergencies.', correct: false, outcome: ['Alex believes self-advocacy isn’t important unless it’s an emergency.', 'So Alex stays quiet in group work, in class, and with friends whenever something isn’t a big deal.', 'Small problems pile up, like a seat by the noisy door that never gets changed, because no one knows Alex wants something different.'],
                     feedback: 'Self-advocacy matters even when the situation isn’t an emergency — feeling heard and respected is important too.' },
                 ] },
               { type: 'dialogue', illustration: 'advocacy-help',
@@ -2134,7 +2134,7 @@ const CONTENT = {
                   { speaker: 'Alex', text: 'Is it okay that I spoke up even though no one was being mean?' },
                 ],
                 choices: [
-                  { text: 'Say it’s only okay to speak up when someone is being mean.', correct: false, outcome: ['Alex believes speaking up is only okay when someone is being mean.', 'The next time a friend talks over Alex, Alex stays quiet because the friend isn’t being mean.', 'Alex keeps feeling left out, and the friend has no idea anything is wrong.'],
+                  { text: 'Say it’s only okay to speak up when someone is being mean.', correct: false, outcome: ['Alex believes speaking up is only okay when someone is being mean.', 'The next time a friend talks over Alex, Alex stays quiet because the friend isn’t being mean.', 'The friend keeps talking over Alex in every conversation, because the friend has no idea anything is wrong.'],
                     feedback: 'Speaking up matters any time you feel unheard, whether or not anyone is being mean.' },
                   { text: 'Say it’s okay to speak up any time you feel unheard, mean or not.', correct: true,
                     feedback: 'Exactly right — feeling unheard is reason enough to speak up.' },
@@ -2148,7 +2148,7 @@ const CONTENT = {
                 ],
                 text: 'Self-advocacy means speaking up for your own needs. Another classmate says Alex probably didn’t need to speak up since nothing was really wrong. What should Alex remember?',
                 choices: [
-                  { text: 'Self-advocacy only really matters for big emergencies, not everyday moments.', correct: false, outcome: ['Alex agrees with the classmate that self-advocacy is only for emergencies.', 'Alex stops speaking up about everyday things, like needing more time or a quieter seat.', 'Those everyday needs go unmet, and Alex feels more stressed at school day after day.'],
+                  { text: 'Self-advocacy only really matters for big emergencies, not everyday moments.', correct: false, outcome: ['Alex agrees with the classmate that self-advocacy is only for emergencies.', 'Alex stops speaking up about everyday things, like needing more time or a quieter seat.', 'Alex runs out of time on tests and keeps sitting in the loud seat, and no teacher knows to change it.'],
                     feedback: 'Self-advocacy matters in everyday moments too, not just emergencies.' },
                   { text: 'It’s still okay to speak up any time you feel unheard, even when it’s less obvious that something is wrong.', correct: true,
                     feedback: 'Exactly — needs like being heard or included matter too, even when nothing urgent is happening.' },
@@ -2229,11 +2229,11 @@ const CONTENT = {
               { type: 'decision', illustration: 'boundaries-uncomfortable', kicker: 'What should Alex do?',
                 text: 'Alex doesn’t feel like hugging right now. What’s okay for Alex to do?',
                 choices: [
-                  { text: 'Hug and kiss the aunt anyway so she doesn’t feel bad.', correct: false, outcome: ['Alex hugs and kisses the aunt anyway.', 'Alex’s tummy feels tight and yucky.', 'Alex feels like Alex didn’t get a choice.'],
+                  { text: 'Hug and kiss the aunt anyway so she doesn’t feel bad.', correct: false, outcome: ['Alex hugs and kisses the aunt anyway.', 'Alex’s tummy feels tight and yucky.', 'The aunt doesn’t know, so she asks for more kisses.'],
                     feedback: 'Alex’s body belongs to Alex — you never have to hug or kiss someone just to make them feel good, even a relative.' },
                   { text: 'Say, “I don’t feel like hugging right now, but I can wave or give a high-five!”', correct: true,
                     feedback: 'Yes! It’s always okay to say no to a hug and offer something else instead, like a wave or a high-five.' },
-                  { text: 'Run away without saying anything.', correct: false, outcome: ['Alex runs away without a word.', 'The aunt looks sad and confused.', 'Nobody knows what Alex wanted. Alex hides alone.'],
+                  { text: 'Run away without saying anything.', correct: false, outcome: ['Alex runs away without a word.', 'The aunt calls, “Alex? Where did you go?”', 'Nobody knows what Alex wanted. Mom looks all over for Alex.'],
                     feedback: 'You don’t have to hug, but it’s kind to say something instead of just running off — like offering a wave or a high-five.' },
                 ] },
               { type: 'dialogue', illustration: 'boundaries-uncomfortable',
@@ -2242,7 +2242,7 @@ const CONTENT = {
                   { speaker: 'Alex', text: 'I don’t feel like hugging right now, but I can wave or give a high-five!' },
                 ],
                 choices: [
-                  { text: 'Say Alex should have hugged anyway to be polite.', correct: false, outcome: ['Alex thinks hugging is the polite rule.', 'Alex hugs even when Alex doesn’t want to.', 'Alex feels uncomfortable and stays quiet about it.'],
+                  { text: 'Say Alex should have hugged anyway to be polite.', correct: false, outcome: ['Alex thinks hugging is the polite rule.', 'Alex hugs even when Alex doesn’t want to.', 'Alex says nothing. Grown-ups keep asking for hugs.'],
                     feedback: 'Alex never has to hug someone just to be polite — offering something else instead is okay.' },
                   { text: 'Say offering a high-five instead was okay.', correct: true,
                     feedback: 'Yes — offering something else instead of a hug is always okay.' },
@@ -2255,7 +2255,7 @@ const CONTENT = {
                 choices: [
                   { text: 'Alex’s choice — it’s Alex’s own body.', correct: true,
                     feedback: 'Exactly right! Your body belongs to you, and you always get to decide about hugs and touches.' },
-                  { text: 'Whoever is asking for the hug gets to decide.', correct: false, outcome: ['Alex thinks the person asking gets to choose.', 'Alex lets everyone at the party hug Alex.', 'Alex feels squished and upset but doesn’t say no.'],
+                  { text: 'Whoever is asking for the hug gets to decide.', correct: false, outcome: ['Alex thinks the person asking gets to choose.', 'Alex lets everyone at the party hug Alex.', 'Alex gets squished again and again, and never says no.'],
                     feedback: 'Not quite — the person asking doesn’t get to decide for you. It’s always your own choice.' },
                 ] },
               { type: 'dialogue', illustration: 'boundaries-safe',
@@ -2264,7 +2264,7 @@ const CONTENT = {
                   { speaker: 'Alex', text: 'Does that mean I never have to hug anyone I don’t want to?' },
                 ],
                 choices: [
-                  { text: 'Say you always have to hug family no matter what.', correct: false, outcome: ['Alex thinks family hugs are a must.', 'At the next party, Alex hugs everyone anyway.', 'Alex feels uncomfortable and doesn’t enjoy the party.'],
+                  { text: 'Say you always have to hug family no matter what.', correct: false, outcome: ['Alex thinks family hugs are a must.', 'At the next party, Alex hugs everyone anyway.', 'Alex hides in the hall for the rest of the party.'],
                     feedback: 'That’s not true — it’s always your choice, even with family.' },
                   { text: 'Say yes, it’s always your choice, even with family.', correct: true,
                     feedback: 'Exactly right — your body belongs to you, always.' },
@@ -2294,11 +2294,11 @@ const CONTENT = {
               { type: 'decision', illustration: 'boundaries-uncomfortable', kicker: 'What should Alex do?',
                 text: 'The classmate keeps touching Alex after being asked to stop. What’s the best choice?',
                 choices: [
-                  { text: 'Just put up with it since it’s supposed to be funny.', correct: false, outcome: ['Alex stops saying anything and lets the tickling keep going.', 'The classmate thinks it’s okay and tickles Alex every day.', 'Alex starts dreading school and feels upset, and no grown-up knows why.'],
+                  { text: 'Just put up with it since it’s supposed to be funny.', correct: false, outcome: ['Alex stops saying anything and lets the tickling keep going.', 'The classmate thinks it’s okay and tickles Alex every day.', 'Alex asks to stay home from school, and no grown-up knows why.'],
                     feedback: 'Even if something is meant as a joke, if it doesn’t feel okay and continues after you say stop, you don’t have to just put up with it.' },
                   { text: 'Say firmly, “Stop, I don’t like that,” and if it keeps happening, tell a trusted adult.', correct: true,
                     feedback: 'Yes — saying it firmly and telling a trusted adult if it continues is exactly the right response.' },
-                  { text: 'Tickle the classmate back to make them stop.', correct: false, outcome: ['Alex tickles the classmate back, hard.', 'The classmate tickles even more, and it turns into a big tickle fight.', 'A teacher tells both kids to stop, and Alex feels confused and frustrated.'],
+                  { text: 'Tickle the classmate back to make them stop.', correct: false, outcome: ['Alex tickles the classmate back, hard.', 'The classmate tickles even more, and it turns into a big tickle fight.', 'A teacher stops the tickle fight, and both kids lose recess.'],
                     feedback: 'Touching someone back usually doesn’t solve the problem and can make things more confusing — it’s more effective to say stop clearly and tell an adult.' },
                 ] },
               { type: 'dialogue', illustration: 'boundaries-uncomfortable',
@@ -2307,7 +2307,7 @@ const CONTENT = {
                   { speaker: 'Alex', text: 'Stop, I don’t like that.' },
                 ],
                 choices: [
-                  { text: 'Say Alex should let it go since it’s just messing around.', correct: false, outcome: ['Alex decides to let it go, since it’s just messing around.', 'The classmate keeps tickling Alex at recess and in line.', 'Alex feels uncomfortable every day and starts staying away from the whole group.'],
+                  { text: 'Say Alex should let it go since it’s just messing around.', correct: false, outcome: ['Alex decides to let it go, since it’s just messing around.', 'The classmate keeps tickling Alex at recess and in line.', 'Alex starts eating lunch alone to get away from the whole group.'],
                     feedback: 'If it doesn’t feel okay, it doesn’t matter that it’s meant as a joke — saying stop is right.' },
                   { text: 'Say telling the classmate to stop firmly was right.', correct: true,
                     feedback: 'Yes — saying stop firmly and clearly is exactly the right move.' },
@@ -2320,7 +2320,7 @@ const CONTENT = {
                 choices: [
                   { text: 'Because how a touch feels to you matters, no matter how small it seems to someone else.', correct: true,
                     feedback: 'Exactly — your feelings about your own body are what matter, even if someone else thinks it’s not a big deal.' },
-                  { text: 'Because only big, obviously painful touches are worth mentioning.', correct: false, outcome: ['Alex believes only big, painful touches are worth telling about.', 'Alex doesn’t tell the teacher, since the tickling doesn’t really hurt.', 'The tickling keeps going, and Alex keeps feeling uncomfortable with nobody helping.'],
+                  { text: 'Because only big, obviously painful touches are worth mentioning.', correct: false, outcome: ['Alex believes only big, painful touches are worth telling about.', 'Alex doesn’t tell the teacher, since the tickling doesn’t really hurt.', 'The tickling keeps going every day, because nobody knows to stop it.'],
                     feedback: 'Any touch that doesn’t feel okay to you is worth mentioning — it doesn’t have to be big or painful.' },
                 ] },
               { type: 'dialogue', illustration: 'boundaries-safe',
@@ -2329,7 +2329,7 @@ const CONTENT = {
                   { speaker: 'Alex', text: 'I wasn’t sure if it was a big enough deal to mention.' },
                 ],
                 choices: [
-                  { text: 'Say only big, painful touches are worth mentioning.', correct: false, outcome: ['Alex decides small touches don’t count and stops telling grown-ups.', 'Next time someone pokes Alex in a way Alex doesn’t like, Alex stays quiet.', 'Alex keeps the bad feeling inside, and no grown-up knows to help.'],
+                  { text: 'Say only big, painful touches are worth mentioning.', correct: false, outcome: ['Alex decides small touches don’t count and stops telling grown-ups.', 'Next time someone pokes Alex in a way Alex doesn’t like, Alex stays quiet.', 'The poking keeps happening, and no grown-up knows to help.'],
                     feedback: 'Any touch that doesn’t feel okay is worth mentioning, big or small.' },
                   { text: 'Say any touch that doesn’t feel okay is worth mentioning.', correct: true,
                     feedback: 'Exactly right — how it feels to you is what matters, not the size of it.' },
@@ -2359,11 +2359,11 @@ const CONTENT = {
               { type: 'decision', illustration: 'boundaries-uncomfortable', kicker: 'What should Alex do?',
                 text: 'Something about this feels off to Alex, and there’s a request to keep a secret. What’s the safest choice?',
                 choices: [
-                  { text: 'Keep watching and keep it secret since they asked nicely.', correct: false, outcome: ['Alex stays, keeps watching the phone, and promises to keep it secret.', 'The older kid scoots even closer and says, “Good — remember, this stays between us.”', 'Alex goes home with an uneasy feeling and a secret that no trusted adult knows about.'],
+                  { text: 'Keep watching and keep it secret since they asked nicely.', correct: false, outcome: ['Alex stays, keeps watching the phone, and promises to keep it secret.', 'The older kid scoots even closer and says, “Good — remember, this stays between us.”', 'Alex goes home and says nothing, and the older kid asks to meet again next week.'],
                     feedback: 'Being asked to keep something secret from your parents, especially about how someone is acting toward you, is exactly the kind of thing to tell a trusted adult about instead.' },
                   { text: 'Say Alex needs to leave, and tell a trusted adult what happened, including the request to keep it secret.', correct: true,
                     feedback: 'Yes — leaving the situation and telling a trusted adult, especially about being asked to keep a secret, is exactly the right response.' },
-                  { text: 'Go along with it but plan to mention it much later, maybe next year.', correct: false, outcome: ['Alex goes along with it and plans to maybe mention it next year.', 'The older kid starts asking to hang out alone with Alex again.', 'Alex carries the uncomfortable feeling alone for weeks, and nobody who could help even knows.'],
+                  { text: 'Go along with it but plan to mention it much later, maybe next year.', correct: false, outcome: ['Alex goes along with it and plans to maybe mention it next year.', 'The older kid starts asking to hang out alone with Alex again.', 'Weeks go by, the older kid keeps asking, and nobody who could help even knows.'],
                     feedback: 'Waiting a long time to tell someone means you’re carrying an uncomfortable feeling alone for no reason — telling a trusted adult as soon as you can is safer.' },
                 ] },
               { type: 'dialogue', illustration: 'boundaries-uncomfortable',
@@ -2372,7 +2372,7 @@ const CONTENT = {
                   { speaker: 'Alex (thinking)', text: 'That doesn’t feel right — I need to leave and tell someone.' },
                 ],
                 choices: [
-                  { text: 'Agree to keep it secret since they seem nice.', correct: false, outcome: ['Alex agrees to keep the secret because the older kid seems nice.', 'The older kid smiles, says, “I knew I could trust you,” and asks to meet again.', 'Alex feels stuck — it doesn’t feel right, but now it feels even harder to tell anyone.'],
+                  { text: 'Agree to keep it secret since they seem nice.', correct: false, outcome: ['Alex agrees to keep the secret because the older kid seems nice.', 'The older kid smiles, says, “I knew I could trust you,” and asks to meet again.', 'Alex says yes to meeting again, and still no trusted adult knows anything.'],
                     feedback: 'Seeming nice doesn’t make that request safe — it’s still a warning sign worth telling a trusted adult about.' },
                   { text: 'Leave and tell a trusted adult about the secret request.', correct: true,
                     feedback: 'Yes — leaving and telling a trusted adult is exactly the right response.' },
@@ -2385,7 +2385,7 @@ const CONTENT = {
                 choices: [
                   { text: 'Because trusted adults in a kid’s life generally don’t need things kept secret from parents or caregivers.', correct: true,
                     feedback: 'Exactly — that specific kind of secret-keeping request is a common warning sign, no matter how nice or familiar the person seems.' },
-                  { text: 'Because all secrets of any kind are automatically dangerous, even surprise gifts.', correct: false, outcome: ['Alex starts believing every secret is dangerous — even a surprise gift for Dad.', 'Alex gets anxious whenever anyone whispers, and blurts out a cousin’s surprise birthday plan.', 'Alex feels stressed and confused, and it gets harder to spot which secrets really need to be told.'],
+                  { text: 'Because all secrets of any kind are automatically dangerous, even surprise gifts.', correct: false, outcome: ['Alex starts believing every secret is dangerous — even a surprise gift for Dad.', 'When the family whispers about a cousin’s surprise party, Alex blurts it out.', 'The cousin’s surprise is ruined, and the family stops sharing plans with Alex.'],
                     feedback: 'Not all secrets are unsafe — a surprise party is a fun secret. The warning sign is specifically being told to hide something from your parents about how someone is treating you.' },
                 ] },
               { type: 'dialogue', illustration: 'boundaries-safe',
@@ -2394,7 +2394,7 @@ const CONTENT = {
                   { speaker: 'Alex', text: 'Are all secrets like that unsafe?' },
                 ],
                 choices: [
-                  { text: 'Say yes, every single secret is dangerous, even surprise parties.', correct: false, outcome: ['Alex tells the parent that every secret must be dangerous, even surprise parties.', 'When the family plans a surprise party for Grandma, Alex feels too worried to join in.', 'Alex misses out on the fun and feels stressed, without being any safer.'],
+                  { text: 'Say yes, every single secret is dangerous, even surprise parties.', correct: false, outcome: ['Alex tells the parent that every secret must be dangerous, even surprise parties.', 'When the family plans a surprise party for Grandma, Alex refuses to help and stays in Alex’s room.', 'The party happens without Alex, and Alex is no safer for skipping it.'],
                     feedback: 'That’s not true — surprise parties are a fun, safe kind of secret.' },
                   { text: 'Say no, but secrets about your body or safety that hide things from parents are a warning sign.', correct: true,
                     feedback: 'Exactly right — that specific kind of secret is what matters here.' },
@@ -2408,7 +2408,7 @@ const CONTENT = {
                 ],
                 text: 'A cousin later asks Alex to do something similar and says it’s fine since it worked out okay last time. What should Alex remember?',
                 choices: [
-                  { text: 'Since it worked out fine before, it’s okay to just go along with it this time.', correct: false, outcome: ['Alex decides it’s fine to go along with the cousin, since it worked out last time.', 'The cousin says, “See? No need to tell your parents,” and asks Alex to keep another secret.', 'Alex is back to holding an uneasy secret alone, and no trusted adult knows what’s going on.'],
+                  { text: 'Since it worked out fine before, it’s okay to just go along with it this time.', correct: false, outcome: ['Alex decides it’s fine to go along with the cousin, since it worked out last time.', 'The cousin says, “See? No need to tell your parents,” and asks Alex to keep another secret.', 'Alex keeps the new secret too, and no trusted adult knows what’s going on.'],
                     feedback: 'Whether it “worked out” before doesn’t change the rule — that kind of secret request is still a warning sign.' },
                   { text: 'Being asked to hide something from parents about how someone is treating you is always worth telling a trusted adult, no matter who asks.', correct: true,
                     feedback: 'Exactly — that request itself is the warning sign, regardless of who asks or how it went before.' },
@@ -2471,7 +2471,7 @@ const CONTENT = {
                 choices: [
                   { text: 'Yes — a surprise present is a fun, safe secret to keep for a short time.', correct: true,
                     feedback: 'Right! A surprise party or gift is a safe secret because it makes people happy and isn’t hiding anything scary or unsafe.' },
-                  { text: 'No — Alex should never keep any secret, ever.', correct: false, outcome: ['Alex runs to tell Mom about the present.', 'The surprise is ruined.', 'Alex’s sibling feels sad and let down.'],
+                  { text: 'No — Alex should never keep any secret, ever.', correct: false, outcome: ['Alex runs to tell Mom about the present.', 'The surprise is ruined.', 'Alex’s sibling wraps the present, but Mom already knows what it is.'],
                     feedback: 'Not quite — some secrets, like fun surprises, are safe to keep. The important thing is knowing the difference between safe and unsafe secrets.' },
                 ] },
               { type: 'dialogue', illustration: 'secret-worried',
@@ -2480,7 +2480,7 @@ const CONTENT = {
                   { speaker: 'Alex', text: 'Okay, that’s a fun secret to keep until Saturday!' },
                 ],
                 choices: [
-                  { text: 'Say Alex should never keep any secret at all.', correct: false, outcome: ['Alex tells Mom about the present.', 'Mom isn’t surprised on Saturday.', 'Alex’s sibling feels let down.'],
+                  { text: 'Say Alex should never keep any secret at all.', correct: false, outcome: ['Alex tells Mom about the present.', 'Mom isn’t surprised on Saturday.', 'Alex’s sibling worked hard, but the surprise is spoiled.'],
                     feedback: 'Some secrets, like fun surprises, are safe to keep — this isn’t one to worry about.' },
                   { text: 'Say a surprise present is a safe secret to keep for a little while.', correct: true,
                     feedback: 'Yes — a fun surprise like this is a safe secret.' },
@@ -2493,7 +2493,7 @@ const CONTENT = {
                 choices: [
                   { text: 'No — that’s an unsafe secret, and Alex should tell a trusted adult right away.', correct: true,
                     feedback: 'Exactly right. A secret that uses a scary threat, or that you’re told to NEVER tell a grown-up, is an unsafe secret to tell right away.' },
-                  { text: 'Yes — Alex should keep it because they were told to.', correct: false, outcome: ['Alex keeps the scary secret.', 'No grown-up knows what happened.', 'Alex feels scared and alone with it.'],
+                  { text: 'Yes — Alex should keep it because they were told to.', correct: false, outcome: ['Alex keeps the scary secret.', 'No grown-up knows what happened.', 'So no grown-up can help or make it stop.'],
                     feedback: 'Being told to keep a secret forever, especially with a scary warning, is exactly the sign of an unsafe secret — tell a trusted adult.' },
                 ] },
               { type: 'dialogue', illustration: 'secret-worried',
@@ -2531,11 +2531,11 @@ const CONTENT = {
               { type: 'decision', illustration: 'secret-worried', kicker: 'What should Alex do?',
                 text: 'The friend wants Alex to keep this a secret. What’s the best choice?',
                 choices: [
-                  { text: 'Promise and never say anything to anyone.', correct: false, outcome: ['Alex promises and never says a word.', 'The friend’s mom finds the hidden pieces and is confused and upset.', 'The friend is in more trouble for hiding it, and Alex feels bad for being part of it.'],
+                  { text: 'Promise and never say anything to anyone.', correct: false, outcome: ['Alex promises and never says a word.', 'The friend’s mom finds the hidden pieces and asks, “Who broke my mug?”', 'The friend gets in more trouble for hiding it, and Mom finds out Alex knew all along.'],
                     feedback: 'This kind of secret is about hiding something from a parent that they’ll probably need to know about — it’s better to gently encourage the friend to tell, or tell a trusted adult yourself.' },
                   { text: 'Say, “I think you should tell your mom — it was an accident,” and encourage them, or tell a trusted adult if it’s really bothering Alex.', correct: true,
                     feedback: 'Yes — gently encouraging honesty, or telling a trusted adult if you’re worried, is a good way to handle secrets that involve hiding something from a parent.' },
-                  { text: 'Tell everyone at school about it right away to be funny.', correct: false, outcome: ['Alex tells everyone at school about the broken mug to be funny.', 'Kids laugh and tease the friend about it.', 'The friend feels embarrassed and hurt, and doesn’t trust Alex anymore.'],
+                  { text: 'Tell everyone at school about it right away to be funny.', correct: false, outcome: ['Alex tells everyone at school about the broken mug to be funny.', 'Kids laugh and tease the friend about it.', 'The friend stops sitting with Alex and doesn’t tell Alex secrets anymore.'],
                     feedback: 'Spreading someone’s secret around to be funny isn’t kind and isn’t really the point — the goal is honesty with the parent, not embarrassing your friend.' },
                 ] },
               { type: 'dialogue', illustration: 'secret-worried',
@@ -2596,11 +2596,11 @@ const CONTENT = {
               { type: 'decision', illustration: 'secret-worried', kicker: 'What should Alex do?',
                 text: 'The adult is offering something Alex wants in exchange for a secret from parents. What’s the safest choice?',
                 choices: [
-                  { text: 'Accept the game and keep the secret since it seems like a nice gift.', correct: false, outcome: ['Alex takes the game and agrees not to tell Alex’s parents about the visits.', 'The adult starts asking for more visits and keeps reminding Alex to stay quiet.', 'Alex feels uneasy and stuck, and no trusted adult knows what’s going on.'],
+                  { text: 'Accept the game and keep the secret since it seems like a nice gift.', correct: false, outcome: ['Alex takes the game and agrees not to tell Alex’s parents about the visits.', 'The adult starts asking for more visits and keeps reminding Alex to stay quiet.', 'Alex’s parents never hear about it, so no trusted adult can step in and stop it.'],
                     feedback: 'An adult offering gifts in exchange for secrecy from your parents is a serious warning sign, no matter how nice the gift is or how nice the adult seems.' },
                   { text: 'Say no to keeping it secret, and tell a trusted adult about the offer and the request for secrecy.', correct: true,
                     feedback: 'Yes — telling a trusted adult about being offered something in exchange for a secret from your parents is exactly the right move.' },
-                  { text: 'Accept the gift now, but tell a parent about it in a few months.', correct: false, outcome: ['Alex accepts the game and plans to tell a parent later.', 'Over the next few months, the visits keep happening and the adult keeps asking Alex to stay quiet.', 'The longer Alex waits, the harder it feels to tell, and no trusted adult can step in.'],
+                  { text: 'Accept the gift now, but tell a parent about it in a few months.', correct: false, outcome: ['Alex accepts the game and plans to tell a parent later.', 'Over the next few months, the visits keep happening and the adult keeps asking Alex to stay quiet.', 'By the time Alex finally speaks up, the secret has gone on for months with no trusted adult able to step in.'],
                     feedback: 'Waiting to tell someone means the situation continues in the meantime — it’s safer to tell a trusted adult as soon as possible.' },
                 ] },
               { type: 'dialogue', illustration: 'secret-worried',
@@ -2609,7 +2609,7 @@ const CONTENT = {
                   { speaker: 'Alex (thinking)', text: 'That doesn’t feel right — I need to tell someone.' },
                 ],
                 choices: [
-                  { text: 'Accept the gift and keep the secret.', correct: false, outcome: ['Alex accepts the gift and keeps the visits a secret.', 'The adult brings more gifts and keeps saying, “Remember, this is just between us.”', 'Alex feels more and more uncomfortable but trapped by the secret, and no trusted adult knows.'],
+                  { text: 'Accept the gift and keep the secret.', correct: false, outcome: ['Alex accepts the gift and keeps the visits a secret.', 'The adult brings more gifts and keeps saying, “Remember, this is just between us.”', 'Alex’s parents still don’t know, so the visits and gifts keep coming and nobody steps in.'],
                     feedback: 'A gift tied to secrecy from parents is a serious warning sign — don’t keep that secret.' },
                   { text: 'Say no and tell a trusted adult about the offer.', correct: true,
                     feedback: 'Exactly right — telling a trusted adult is the safe response here.' },
@@ -2622,7 +2622,7 @@ const CONTENT = {
                 choices: [
                   { text: 'Because it combines a reward with a rule of hiding something specifically from parents, which is a known way people try to keep kids quiet.', correct: true,
                     feedback: 'Exactly — that specific combination (a gift or reward plus secrecy from parents) is a well-known warning sign taught in safety programs for exactly this reason.' },
-                  { text: 'Because receiving any gift from any adult is always unsafe.', correct: false, outcome: ['Alex believes any gift from any adult is always unsafe.', 'When Grandpa gives Alex a birthday present, Alex refuses it and gets upset.', 'Grandpa feels hurt, and Alex is confused — the real warning sign, secrecy from parents, gets mixed up with normal gifts.'],
+                  { text: 'Because receiving any gift from any adult is always unsafe.', correct: false, outcome: ['Alex believes any gift from any adult is always unsafe.', 'When Grandpa gives Alex a birthday present, Alex refuses it and pushes it away.', 'Grandpa puts the present back in the bag, and the party stops for a moment — all over a normal, safe gift.'],
                     feedback: 'Gifts by themselves aren’t automatically unsafe — the warning sign is a gift paired with pressure to hide something specifically from your parents.' },
                 ] },
               { type: 'dialogue', illustration: 'secret-safe',
@@ -2712,7 +2712,7 @@ const CONTENT = {
                   { speaker: 'Classmate', text: 'Oh sorry, here you go!' },
                 ],
                 choices: [
-                  { text: 'Say Alex should have told the teacher immediately instead.', correct: false, outcome: ['Alex runs to tell the teacher.', 'The classmate feels embarrassed and upset.', 'Now both kids feel grumpy with each other.'],
+                  { text: 'Say Alex should have told the teacher immediately instead.', correct: false, outcome: ['Alex runs to tell the teacher.', 'The teacher stops the class to talk to the classmate.', 'The classmate won’t play with Alex at recess.'],
                     feedback: 'For something this small, trying words first is the better first step.' },
                   { text: 'Say trying words first was the right approach.', correct: true,
                     feedback: 'Yes — for small, everyday stuff, using your words first is exactly right.' },
@@ -2768,7 +2768,7 @@ const CONTENT = {
                     feedback: 'Telling a trusted adult when you see someone else being hurt or upset isn’t tattling — it’s a caring, helpful thing to do.' },
                   { text: 'Check on the classmate, and tell a trusted adult what happened.', correct: true,
                     feedback: 'Yes — checking on someone and telling a trusted adult is a kind, responsible way to help.' },
-                  { text: 'Tell other kids about it so everyone knows what happened.', correct: false, outcome: ['Alex tells a bunch of kids what happened.', 'The story spreads, and kids start whispering about the classmate.', 'The classmate feels even more embarrassed, and still no grown-up knows.'],
+                  { text: 'Tell other kids about it so everyone knows what happened.', correct: false, outcome: ['Alex tells a bunch of kids what happened.', 'The story spreads, and kids start whispering about the classmate.', 'The classmate sits alone at lunch, and still no grown-up knows.'],
                     feedback: 'Spreading the story around doesn’t help the classmate — telling a trusted adult, quietly and directly, is more helpful.' },
                 ] },
               { type: 'dialogue', illustration: 'report-unsure',
@@ -2777,7 +2777,7 @@ const CONTENT = {
                   { speaker: 'Classmate', text: 'Not really, that really hurt my feelings.' },
                 ],
                 choices: [
-                  { text: 'Say Alex should have minded their own business instead.', correct: false, outcome: ['Alex walks away without asking if the classmate is okay.', 'The classmate sits alone, still crying.', 'The classmate feels like nobody cares.'],
+                  { text: 'Say Alex should have minded their own business instead.', correct: false, outcome: ['Alex walks away without asking if the classmate is okay.', 'The classmate sits alone, still crying.', 'No one tells a grown-up, so the classmate gets no help.'],
                     feedback: 'Checking on someone who’s hurting is a caring thing to do, not overstepping.' },
                   { text: 'Say checking on the classmate was a caring thing to do.', correct: true,
                     feedback: 'Yes — checking in shows care and is exactly the right move.' },
@@ -2833,7 +2833,7 @@ const CONTENT = {
                     feedback: 'A pattern like this — frequent bruises, withdrawal, and fear of going home — is exactly the kind of serious concern that’s important to tell a trusted adult about, even if you’re not fully sure what’s happening.' },
                   { text: 'Tell a trusted adult, like a school counselor or teacher, calmly and privately about what Alex has noticed.', correct: true,
                     feedback: 'Yes — telling a trusted adult privately about a pattern like this is exactly the right, responsible thing to do.' },
-                  { text: 'Ask the classmate directly, in front of other students, to explain everything right away.', correct: false, outcome: ['In the middle of class, Alex loudly asks the classmate to explain everything.', 'Other students turn and stare, and the classmate’s face goes red.', 'The classmate says, “It’s nothing,” shuts down, and now feels less safe sharing with anyone.'],
+                  { text: 'Ask the classmate directly, in front of other students, to explain everything right away.', correct: false, outcome: ['In the middle of class, Alex loudly asks the classmate to explain everything.', 'Other students turn and stare, and the classmate’s face goes red.', 'The classmate says, “It’s nothing,” and walks away, so no adult ever finds out what’s wrong.'],
                     feedback: 'Asking in front of others could feel embarrassing or unsafe for the classmate — it’s better to quietly tell a trusted adult, who can handle it carefully.' },
                 ] },
               { type: 'dialogue', illustration: 'report-unsure',
@@ -2939,7 +2939,7 @@ const CONTENT = {
               { type: 'decision', illustration: 'awareness-scan', kicker: 'What should Alex do?',
                 text: 'Parking lots have cars moving around. What’s the safest thing for Alex to do?',
                 choices: [
-                  { text: 'Keep looking at the toy since the grown-up is right there.', correct: false, outcome: ['Alex keeps looking down at the toy.', 'A car backs out right near Alex.', 'The grown-up pulls Alex back fast. Alex feels scared.'],
+                  { text: 'Keep looking at the toy since the grown-up is right there.', correct: false, outcome: ['Alex keeps looking down at the toy.', 'A car backs out right near Alex.', 'The grown-up pulls Alex back fast. The car honks.'],
                     feedback: 'Even with a grown-up nearby, it’s important to look up and pay attention in a parking lot, since cars can move unexpectedly.' },
                   { text: 'Put the toy away for now and look around, holding the grown-up’s hand.', correct: true,
                     feedback: 'Yes! Looking around and holding a grown-up’s hand in a parking lot helps you notice cars and stay safe.' },
@@ -2950,7 +2950,7 @@ const CONTENT = {
                   { speaker: 'Alex', text: 'Okay, I’ll put my toy away.' },
                 ],
                 choices: [
-                  { text: 'Say Alex should keep looking at the toy since the grown-up is watching.', correct: false, outcome: ['Alex lets go and looks at the toy.', 'A car starts to move near Alex.', 'The driver can’t see Alex. Alex feels scared.'],
+                  { text: 'Say Alex should keep looking at the toy since the grown-up is watching.', correct: false, outcome: ['Alex lets go and looks at the toy.', 'A car starts to move near Alex.', 'The driver can’t see Alex. The grown-up has to run and grab Alex.'],
                     feedback: 'Even with a grown-up nearby, Alex needs to watch too — parking lots need everyone’s attention.' },
                   { text: 'Say putting the toy away and holding hands was the right choice.', correct: true,
                     feedback: 'Yes — putting the toy away and holding hands is exactly right in a parking lot.' },
@@ -2972,7 +2972,7 @@ const CONTENT = {
                   { speaker: 'Alex', text: 'Are parking lots the only place I need to pay extra attention?' },
                 ],
                 choices: [
-                  { text: 'Say yes, only parking lots need extra attention.', correct: false, outcome: ['Alex thinks only parking lots need care.', 'On the sidewalk, Alex looks at the toy again.', 'A bike almost bumps Alex. Alex feels scared.'],
+                  { text: 'Say yes, only parking lots need extra attention.', correct: false, outcome: ['Alex thinks only parking lots need care.', 'On the sidewalk, Alex looks at the toy again.', 'A bike almost bumps Alex. The rider has to stop fast.'],
                     feedback: 'It’s not just parking lots — any place with moving cars or bikes needs extra attention.' },
                   { text: 'Say no, any place with moving cars or bikes needs extra attention.', correct: true,
                     feedback: 'Exactly right — the rule applies anywhere vehicles are moving.' },
@@ -3065,7 +3065,7 @@ const CONTENT = {
               { type: 'decision', illustration: 'awareness-scan', kicker: 'What should Alex do?',
                 text: 'Nobody in the group has been tracking where they are. What’s a smart habit to build for next time, and now?',
                 choices: [
-                  { text: 'Just keep wandering and hope to recognize the way back eventually.', correct: false, outcome: ['The group keeps wandering, hoping something will look familiar.', 'Every hallway starts to look the same, and they end up on the far side of the mall.', 'Now they’re late for their ride, phones are running low, and everyone feels stressed and lost.'],
+                  { text: 'Just keep wandering and hope to recognize the way back eventually.', correct: false, outcome: ['The group keeps wandering, hoping something will look familiar.', 'Every hallway starts to look the same, and they end up on the far side of the mall.', 'Now they’re late for their ride, phones are running low, and the driver is circling the parking lot looking for them.'],
                     feedback: 'Hoping to recognize the way back isn’t a reliable plan in a big, unfamiliar place — it’s smarter to actively check for landmarks or ask staff for directions to a known spot.' },
                   { text: 'Look for a directory map, a recognizable landmark, or ask a staff member to help get oriented.', correct: true,
                     feedback: 'Yes — actively using a directory, landmark, or staff member to get oriented is a smart way to stay aware in an unfamiliar place.' },
@@ -3076,7 +3076,7 @@ const CONTENT = {
                   { speaker: 'Alex', text: 'I’m not sure, let’s find a directory map or ask staff.' },
                 ],
                 choices: [
-                  { text: 'Say the group should just keep wandering and hope to recognize it.', correct: false, outcome: ['Alex tells the group to just keep wandering and hope for the best.', 'An hour later, they still can’t find the entrance where their ride is waiting.', 'The worried texts keep coming, and the fun trip turns into a stressful search.'],
+                  { text: 'Say the group should just keep wandering and hope to recognize it.', correct: false, outcome: ['Alex tells the group to just keep wandering and hope for the best.', 'An hour later, they still can’t find the entrance where their ride is waiting.', 'The “Where are you?” texts keep coming, and their ride has to leave and come back later.'],
                     feedback: 'Wandering and hoping isn’t reliable in a big, unfamiliar place — checking a directory or asking staff is smarter.' },
                   { text: 'Say looking for a directory map or asking staff was the smart choice.', correct: true,
                     feedback: 'Yes — that’s exactly the smart way to get oriented.' },
@@ -3089,7 +3089,7 @@ const CONTENT = {
                 choices: [
                   { text: 'Because if something unexpected happens later, you’ll already know where to go for help or safety.', correct: true,
                     feedback: 'Exactly — building this habit before anything goes wrong means you’re prepared if you ever do need it.' },
-                  { text: 'Because it’s only useful if you already know something bad is about to happen.', correct: false, outcome: ['Alex believes landmarks only matter if Alex already knows trouble is coming.', 'Alex stops noticing exits and staffed areas, since everything seems fine.', 'When a loud alarm suddenly goes off, Alex has no idea which way to go and feels panicky.'],
+                  { text: 'Because it’s only useful if you already know something bad is about to happen.', correct: false, outcome: ['Alex believes landmarks only matter if Alex already knows trouble is coming.', 'Alex stops noticing exits and staffed areas, since everything seems fine.', 'When a loud alarm suddenly goes off, Alex has no idea which way to go and ends up at a locked side door, having to turn back.'],
                     feedback: 'The whole point is building the habit before anything happens, so you’re ready either way — not waiting until trouble starts.' },
                 ] },
               { type: 'dialogue', illustration: 'awareness-safe',
@@ -3098,7 +3098,7 @@ const CONTENT = {
                   { speaker: 'Alex', text: 'Is it weird that we’re checking landmarks when nothing’s wrong?' },
                 ],
                 choices: [
-                  { text: 'Say it’s only useful once something bad is already happening.', correct: false, outcome: ['Alex tells the friend that checking landmarks only helps once something goes wrong.', 'The group stops paying attention and splits up to shop.', 'When one friend gets separated and calls, nobody can describe where to meet, and it takes a long, worried time to find each other.'],
+                  { text: 'Say it’s only useful once something bad is already happening.', correct: false, outcome: ['Alex tells the friend that checking landmarks only helps once something goes wrong.', 'The group stops paying attention and splits up to shop.', 'When one friend gets separated and calls, nobody can describe where to meet, and they spend half an hour walking in circles looking for each other.'],
                     feedback: 'The habit is most useful built before anything happens, not started only once trouble starts.' },
                   { text: 'Say building the habit before anything happens means you’re prepared either way.', correct: true,
                     feedback: 'Exactly right — that’s exactly why it’s a smart, steady habit.' },
@@ -3112,7 +3112,7 @@ const CONTENT = {
                 ],
                 text: 'A friend later says there’s no point noticing landmarks unless something bad is already happening. What should Alex remember?',
                 choices: [
-                  { text: 'Landmarks and exits are only worth noticing once you already feel unsafe.', correct: false, outcome: ['Alex agrees and decides to notice exits only after feeling unsafe.', 'Later, a crowd suddenly gets loud and pushy, and Alex starts feeling uneasy.', 'Now Alex is trying to find a way out while already stressed, which makes it much harder to think clearly.'],
+                  { text: 'Landmarks and exits are only worth noticing once you already feel unsafe.', correct: false, outcome: ['Alex agrees and decides to notice exits only after feeling unsafe.', 'Later, a crowd suddenly gets loud and pushy, and Alex starts feeling uneasy.', 'Alex has to search for a way out in the middle of the crowd and ends up walking the wrong way, deeper into it.'],
                     feedback: 'Waiting until you feel unsafe defeats the purpose — the habit works best built ahead of time.' },
                   { text: 'Noticing landmarks ahead of time means you’re prepared no matter what happens.', correct: true,
                     feedback: 'Exactly — awareness is a steady habit, not a reaction to fear.' },
@@ -3168,7 +3168,7 @@ const CONTENT = {
               { type: 'decision', illustration: 'plan-before', kicker: 'What should Alex do?',
                 text: 'Alex wants to change plans suddenly. What’s the safest first step?',
                 choices: [
-                  { text: 'Just go, and explain later.', correct: false, outcome: ['Alex goes to the friend’s house.', 'Alex’s grown-up comes to get Alex.', 'Alex is not there. Everyone is worried.'],
+                  { text: 'Just go, and explain later.', correct: false, outcome: ['Alex goes to the friend’s house.', 'Alex’s grown-up comes to get Alex.', 'Alex is not there. The grown-up searches everywhere.'],
                     feedback: 'Going somewhere without asking first means your grown-up doesn’t know where you are — always ask permission before changing plans.' },
                   { text: 'Ask a grown-up for permission first, and tell them where Alex will be.', correct: true,
                     feedback: 'Yes! Asking first and saying where you’ll be is exactly the safe way to change plans.' },
@@ -3231,7 +3231,7 @@ const CONTENT = {
               { type: 'decision', illustration: 'plan-before', kicker: 'What should Alex do?',
                 text: 'This is a new place and a new driver. What information matters most before saying yes?',
                 choices: [
-                  { text: 'Just go, since the friend seems nice.', correct: false, outcome: ['Alex gets in the car with the friend and goes.', 'At home, Alex’s parent waits and wonders why Alex isn’t back from school.', 'Nobody knows where Alex is, so Alex’s parent gets very worried.'],
+                  { text: 'Just go, since the friend seems nice.', correct: false, outcome: ['Alex gets in the car with the friend and goes.', 'At home, Alex’s parent waits and wonders why Alex isn’t back from school.', 'Nobody knows where Alex is, so Alex’s parent starts calling the school and other families.'],
                     feedback: 'Even with a nice friend, going to a brand-new place with a new driver needs a grown-up’s permission and some details first.' },
                   { text: 'Call a parent to ask permission, and share the address, the driver’s name, and when Alex will be picked up or come home.', correct: true,
                     feedback: 'Yes — permission, the location (address), who’s involved (the driver’s name), and a plan for getting home are exactly the right details to share.' },
@@ -3298,7 +3298,7 @@ const CONTENT = {
                     feedback: 'Even if it feels awkward compared to the group, checking in with a trusted adult about a new last-minute plan is still the safer choice.' },
                   { text: 'Quickly message a parent with the Location, who’s going, and the plan for getting home, and wait for a yes before heading over.', correct: true,
                     feedback: 'Yes — even a quick message covering the key P.L.A.N. details, and waiting for a yes, is exactly the responsible move.' },
-                  { text: 'Go, and just mention it to a parent whenever Alex happens to see them next.', correct: false, outcome: ['Alex heads over, planning to mention it to a parent sometime later.', 'Meanwhile, Alex’s parent texts and calls to ask where Alex is after the game, but Alex doesn’t notice in the noise.', 'Alex’s parent spends the evening worried and searching, and the next outing gets a lot harder to get permission for.'],
+                  { text: 'Go, and just mention it to a parent whenever Alex happens to see them next.', correct: false, outcome: ['Alex heads over, planning to mention it to a parent sometime later.', 'Meanwhile, Alex’s parent texts and calls to ask where Alex is after the game, but Alex doesn’t notice in the noise.', 'Alex’s parent spends the evening calling around and searching, and the next outing gets a lot harder to get permission for.'],
                     feedback: 'Mentioning it later means your parent doesn’t actually know where you are during the time you’re there — asking first, even quickly, matters.' },
                 ] },
               { type: 'dialogue', illustration: 'plan-before',
@@ -3401,7 +3401,7 @@ const CONTENT = {
                 choices: [
                   { text: 'Say, “Please knock and wait — I need privacy right now,” and ask them to close the door.', correct: true,
                     feedback: 'Yes! It’s okay to ask for privacy and for people to knock first.' },
-                  { text: 'Just let them come in since they’re family.', correct: false, outcome: ['Alex lets the cousin come in.', 'Alex is still changing clothes.', 'Alex feels embarrassed and uncomfortable.'],
+                  { text: 'Just let them come in since they’re family.', correct: false, outcome: ['Alex lets the cousin come in.', 'Alex is still changing clothes.', 'The cousin walks right in before Alex is dressed.'],
                     feedback: 'Even family should knock and respect your privacy — it’s okay to ask for that, every time.' },
                 ] },
               { type: 'dialogue', illustration: 'privacy-safe',
@@ -3410,7 +3410,7 @@ const CONTENT = {
                   { speaker: 'Alex', text: 'Thanks, I just needed a little privacy.' },
                 ],
                 choices: [
-                  { text: 'Say Alex should have just let the cousin walk in since it’s family.', correct: false, outcome: ['Alex thinks family can always walk in.', 'Next time, Alex doesn’t ask them to knock.', 'Alex never gets private time. Alex feels upset.'],
+                  { text: 'Say Alex should have just let the cousin walk in since it’s family.', correct: false, outcome: ['Alex thinks family can always walk in.', 'Next time, Alex doesn’t ask them to knock.', 'People keep walking in. Alex never gets private time.'],
                     feedback: 'Even family should knock and wait — asking for privacy was fine.' },
                   { text: 'Say asking for privacy was okay, even with family.', correct: true,
                     feedback: 'Yes — asking for privacy is always okay, even with family.' },
@@ -3423,7 +3423,7 @@ const CONTENT = {
                 choices: [
                   { text: 'Yes — that’s a normal, healthy thing to ask for.', correct: true,
                     feedback: 'Exactly right. Everyone deserves privacy for things like changing clothes or using the bathroom.' },
-                  { text: 'No — you should never close a door or ask for space.', correct: false, outcome: ['Alex thinks doors must stay open.', 'Alex changes with the door open.', 'People walk by. Alex feels uncomfortable.'],
+                  { text: 'No — you should never close a door or ask for space.', correct: false, outcome: ['Alex thinks doors must stay open.', 'Alex changes with the door open.', 'People walk by and look in. Alex has no privacy.'],
                     feedback: 'Not true — closing the door and asking for privacy in those moments is healthy and normal.' },
                 ] },
               { type: 'dialogue', illustration: 'privacy-safe',
@@ -3432,7 +3432,7 @@ const CONTENT = {
                   { speaker: 'Parent', text: 'Not at all — everyone deserves privacy for that.' },
                 ],
                 choices: [
-                  { text: 'Say you should never close a door or ask for space.', correct: false, outcome: ['Alex thinks asking for space is wrong.', 'Alex stops closing the bathroom door.', 'Alex feels embarrassed and has no private space.'],
+                  { text: 'Say you should never close a door or ask for space.', correct: false, outcome: ['Alex thinks asking for space is wrong.', 'Alex stops closing the bathroom door.', 'People can walk in anytime. Alex has no private space.'],
                     feedback: 'That’s not right — closing the door for privacy is healthy and normal.' },
                   { text: 'Say it’s a normal, healthy thing to want privacy.', correct: true,
                     feedback: 'Exactly right — wanting privacy is completely normal.' },
@@ -3495,7 +3495,7 @@ const CONTENT = {
                   { speaker: 'Alex', text: 'Is my favorite color private too?' },
                 ],
                 choices: [
-                  { text: 'Say every single detail about yourself is equally private.', correct: false, outcome: ['Alex decides every detail is just as private as an address.', 'Alex won’t even say a favorite color or snack and feels nervous chatting at all.', 'Alex feels stressed and left out, and it gets harder to tell which details really matter.'],
+                  { text: 'Say every single detail about yourself is equally private.', correct: false, outcome: ['Alex decides every detail is just as private as an address.', 'Alex won’t even say a favorite color or snack, and the chat goes quiet.', 'Friends start chatting without Alex, and the next game invite goes to someone else.'],
                     feedback: 'Not everything is equally private — a favorite color usually isn’t risky to share.' },
                   { text: 'Say things like your address or school matter more than something like a favorite color.', correct: true,
                     feedback: 'Exactly right — the real concern is identifying details, not every little fact.' },
@@ -3525,11 +3525,11 @@ const CONTENT = {
               { type: 'decision', illustration: 'privacy-uncomfortable', kicker: 'What should Alex do?',
                 text: 'The photo would be posted publicly and shows identifying details. What’s the best choice?',
                 choices: [
-                  { text: 'Let them post it since it’s just a photo.', correct: false, outcome: ['Alex lets the friend post the photo with the school name showing.', 'The public post gets shared around, and people Alex doesn’t know can see exactly which school Alex goes to.', 'Alex feels uneasy knowing strangers can figure out where Alex spends every weekday, and the post is hard to take back.'],
+                  { text: 'Let them post it since it’s just a photo.', correct: false, outcome: ['Alex lets the friend post the photo with the school name showing.', 'The public post gets shared around, and people Alex doesn’t know can see exactly which school Alex goes to.', 'Now strangers can figure out where Alex is every weekday, and the post has been copied too many times to fully take back.'],
                     feedback: 'A public photo showing identifying details like a school name can reveal more than it seems — it’s worth asking your friend to check first or crop that part out.' },
                   { text: 'Ask the friend to check with Alex before posting, and suggest cropping out or blurring the school name if it does get posted.', correct: true,
                     feedback: 'Yes — asking to be consulted first, and being thoughtful about identifying details in the background, is a smart privacy habit.' },
-                  { text: 'Get upset and never speak to the friend again over one photo.', correct: false, outcome: ['Alex gets upset and stops talking to the friend completely over the photo.', 'The friend is confused and hurt, and other friends start taking sides.', 'Alex loses a friendship, and the photo question never actually gets worked out.'],
+                  { text: 'Get upset and never speak to the friend again over one photo.', correct: false, outcome: ['Alex gets upset and stops talking to the friend completely over the photo.', 'The friend keeps texting to ask what’s wrong, and other friends start taking sides.', 'Alex loses a friendship, and the photo question never actually gets worked out.'],
                     feedback: 'That’s an extreme reaction — a calm conversation about asking first and being careful with identifying details works better.' },
                 ] },
               { type: 'dialogue', illustration: 'privacy-uncomfortable',
@@ -3551,7 +3551,7 @@ const CONTENT = {
                 choices: [
                   { text: 'Because those details can help a stranger figure out where you spend time, even without meaning to share that.', correct: true,
                     feedback: 'Exactly — privacy isn’t just about what you say directly, it’s also about details that show up by accident, like in a photo’s background.' },
-                  { text: 'Because photos with any background at all should never be posted by anyone.', correct: false, outcome: ['Alex believes no photo with any background should ever be posted.', 'Alex starts refusing every photo — at birthdays, games, and school trips — and asks friends to delete harmless pictures.', 'Alex feels stressed and left out, and friends get confused about what Alex actually wants.'],
+                  { text: 'Because photos with any background at all should never be posted by anyone.', correct: false, outcome: ['Alex believes no photo with any background should ever be posted.', 'Alex starts refusing every photo — at birthdays, games, and school trips — and asks friends to delete harmless pictures.', 'Friends stop inviting Alex into group pictures, and Alex is missing from the class trip photos.'],
                     feedback: 'That’s too strict — the specific concern is identifying details like a school name or address, not backgrounds in general.' },
                 ] },
               { type: 'dialogue', illustration: 'privacy-safe',
@@ -3641,7 +3641,7 @@ const CONTENT = {
                   { speaker: 'Alex', text: 'Stop, that’s not nice — I’m telling my teacher.' },
                 ],
                 choices: [
-                  { text: 'Say Alex should have just ignored it and said nothing.', correct: false, outcome: ['Alex stays quiet and ignores it.', 'The bigger kid laughs and says it louder.', 'Alex feels sad every day at recess.'],
+                  { text: 'Say Alex should have just ignored it and said nothing.', correct: false, outcome: ['Alex stays quiet and ignores it.', 'The bigger kid laughs and says it louder.', 'No teacher hears about it, so it happens again the next day.'],
                     feedback: 'Ignoring it usually doesn’t make bullying stop — speaking up and telling a teacher was right.' },
                   { text: 'Say telling the bully to stop and telling a teacher was right.', correct: true,
                     feedback: 'Yes — that’s exactly the right response to bullying.' },
@@ -3654,7 +3654,7 @@ const CONTENT = {
                 choices: [
                   { text: 'No — bullying is never the fault of the person being bullied.', correct: true,
                     feedback: 'Exactly right. It’s never your fault if someone else chooses to bully you.' },
-                  { text: 'Yes — Alex must have done something to deserve it.', correct: false, outcome: ['Alex thinks it is Alex’s own fault.', 'Alex feels too bad to tell a grown-up.', 'The mean names keep coming. Alex feels sad inside.'],
+                  { text: 'Yes — Alex must have done something to deserve it.', correct: false, outcome: ['Alex thinks it is Alex’s own fault.', 'Alex does not tell a grown-up.', 'The mean names keep coming, every day at recess.'],
                     feedback: 'That’s not true at all — bullying is a choice the bully makes, and it’s never the victim’s fault.' },
                 ] },
               { type: 'dialogue', illustration: 'bully-help',
@@ -3663,7 +3663,7 @@ const CONTENT = {
                   { speaker: 'Alex', text: 'Did I do something to deserve being called names?' },
                 ],
                 choices: [
-                  { text: 'Say yes, Alex must have done something to deserve it.', correct: false, outcome: ['Alex thinks Alex deserved the mean names.', 'Alex starts to feel bad about Alex.', 'Alex stops playing and stays alone at recess.'],
+                  { text: 'Say yes, Alex must have done something to deserve it.', correct: false, outcome: ['Alex thinks Alex deserved the mean names.', 'Alex keeps it a secret from the teacher.', 'Alex stops playing and stays alone at recess.'],
                     feedback: 'That’s not true — bullying is never the fault of the person being bullied.' },
                   { text: 'Say no, bullying is never the fault of the person being bullied.', correct: true,
                     feedback: 'Exactly right — it’s always the bully’s choice, never the victim’s fault.' },
@@ -3693,11 +3693,11 @@ const CONTENT = {
               { type: 'decision', illustration: 'bully-uncomfortable', kicker: 'What should Alex do?',
                 text: 'This is a pattern of being excluded and whispered about, not just a one-time thing. What’s the best choice?',
                 choices: [
-                  { text: 'Try to force your way into the group even if they clearly don’t want you there.', correct: false, outcome: ['Alex pushes into the game even though the group clearly doesn’t want Alex there.', 'The kids roll their eyes, quit the game, and whisper even more.', 'Alex feels embarrassed and more left out than before.'],
+                  { text: 'Try to force your way into the group even if they clearly don’t want you there.', correct: false, outcome: ['Alex pushes into the game even though the group clearly doesn’t want Alex there.', 'The kids roll their eyes, quit the game, and whisper even more.', 'No grown-up knows, and the next day they leave Alex out again.'],
                     feedback: 'Trying to force your way in usually doesn’t fix the actual problem — it’s more effective to tell a trusted adult about the pattern.' },
                   { text: 'Tell a trusted adult about the pattern, and spend time with other friends who do include Alex.', correct: true,
                     feedback: 'Yes — telling a trusted adult, and finding other friends who treat you well, are both strong responses to social exclusion.' },
-                  { text: 'Start excluding them back to get even.', correct: false, outcome: ['Alex starts leaving the group out and whispering about them too.', 'The group gets mad, and now both sides are being mean every day.', 'Recess feels worse for everyone, and Alex still feels hurt inside.'],
+                  { text: 'Start excluding them back to get even.', correct: false, outcome: ['Alex starts leaving the group out and whispering about them too.', 'The group gets mad, and now both sides are being mean every day.', 'The recess teacher sees Alex whispering too, and Alex is the one who gets a talking-to.'],
                     feedback: 'Excluding them back usually just continues the cycle — it doesn’t solve the real problem or make you feel better long-term.' },
                 ] },
               { type: 'dialogue', illustration: 'bully-uncomfortable',
@@ -3706,7 +3706,7 @@ const CONTENT = {
                   { speaker: 'Alex', text: 'I know, I’m going to tell the counselor.' },
                 ],
                 choices: [
-                  { text: 'Say Alex should try to force their way into the group instead.', correct: false, outcome: ['Alex skips the counselor and tries to force a way into the group.', 'The group says, “Go away,” in front of everyone.', 'Alex feels embarrassed, and the whispering keeps going with no grown-up helping.'],
+                  { text: 'Say Alex should try to force their way into the group instead.', correct: false, outcome: ['Alex skips the counselor and tries to force a way into the group.', 'The group says, “Go away,” in front of everyone.', 'The counselor never hears about it, so the whispering keeps going every day.'],
                     feedback: 'Forcing their way in usually doesn’t fix anything — telling the counselor was the better move.' },
                   { text: 'Say telling the counselor about the pattern was the right choice.', correct: true,
                     feedback: 'Yes — telling a trusted adult about the pattern is exactly right.' },
@@ -3719,7 +3719,7 @@ const CONTENT = {
                 choices: [
                   { text: 'Yes — bullying can be physical, verbal, or social (like exclusion), and all forms are worth telling an adult about.', correct: true,
                     feedback: 'Exactly — social exclusion is a real form of bullying, just as worth addressing as name-calling or hitting.' },
-                  { text: 'No — only hitting or name-calling counts as real bullying.', correct: false, outcome: ['Alex believes being left out doesn’t count as real bullying.', 'Alex doesn’t tell anyone, because nobody hit Alex or called Alex names.', 'The group keeps leaving Alex out every day, and Alex feels lonely and stuck.'],
+                  { text: 'No — only hitting or name-calling counts as real bullying.', correct: false, outcome: ['Alex believes being left out doesn’t count as real bullying.', 'Alex doesn’t tell anyone, because nobody hit Alex or called Alex names.', 'The group keeps leaving Alex out every day, and no grown-up ever steps in to help.'],
                     feedback: 'That’s not accurate — deliberately excluding someone, again and again, is a form of bullying too.' },
                 ] },
               { type: 'dialogue', illustration: 'bully-help',
@@ -3728,7 +3728,7 @@ const CONTENT = {
                   { speaker: 'Alex', text: 'Does it count as bullying if nobody hit me or called me names?' },
                 ],
                 choices: [
-                  { text: 'Say only hitting or name-calling counts as real bullying.', correct: false, outcome: ['Alex decides being left out isn’t real bullying.', 'Next time kids leave Alex out on purpose, Alex doesn’t tell the counselor.', 'Alex keeps feeling lonely, and the counselor never gets the chance to help.'],
+                  { text: 'Say only hitting or name-calling counts as real bullying.', correct: false, outcome: ['Alex decides being left out isn’t real bullying.', 'Next time kids leave Alex out on purpose, Alex doesn’t tell the counselor.', 'The counselor never finds out, so Alex keeps eating lunch alone all month.'],
                     feedback: 'That’s not accurate — exclusion is a real form of bullying too.' },
                   { text: 'Say yes, social exclusion is a real form of bullying too.', correct: true,
                     feedback: 'Exactly right — social exclusion counts just as much.' },
@@ -3758,11 +3758,11 @@ const CONTENT = {
               { type: 'decision', illustration: 'bully-uncomfortable', kicker: 'What should Alex do as a bystander?',
                 text: 'Alex isn’t the one being bullied, but sees it happening often. What’s the most helpful choice?',
                 choices: [
-                  { text: 'Ignore it since it’s not happening to Alex.', correct: false, outcome: ['Alex looks away every time the group picks on the classmate.', 'The group notices nobody is stopping them, and it keeps getting worse.', 'The classmate starts eating lunch alone and looks miserable, and Alex carries a heavy, guilty feeling about staying silent.'],
+                  { text: 'Ignore it since it’s not happening to Alex.', correct: false, outcome: ['Alex looks away every time the group picks on the classmate.', 'The group notices nobody is stopping them, and it keeps getting worse.', 'The classmate starts eating lunch alone and stops raising a hand in class, and no adult ever hears what is going on.'],
                     feedback: 'Bystanders play a real role — staying silent can make bullying feel more accepted, even if you’re not the one doing it.' },
                   { text: 'Tell a trusted adult about what’s being witnessed, and if it feels safe, offer support to the classmate being bullied.', correct: true,
                     feedback: 'Yes — telling a trusted adult, and offering quiet support to the person being bullied, are both meaningful ways to help as a bystander.' },
-                  { text: 'Join in with the group to avoid becoming a target too.', correct: false, outcome: ['Alex laughs along with the group so Alex won’t become a target.', 'The classmate sees Alex laughing and looks even more hurt and alone.', 'Alex feels guilty afterward, and the group now expects Alex to join in every time.'],
+                  { text: 'Join in with the group to avoid becoming a target too.', correct: false, outcome: ['Alex laughs along with the group so Alex won’t become a target.', 'The classmate sees Alex laughing and looks even more hurt and alone.', 'The next day, the group waves Alex over to join in again, and the classmate stops sitting near Alex.'],
                     feedback: 'Joining in makes the situation worse and hurts the classmate more — it’s better to tell a trusted adult instead, even if it feels risky.' },
                 ] },
               { type: 'dialogue', illustration: 'bully-uncomfortable',
@@ -3771,7 +3771,7 @@ const CONTENT = {
                   { speaker: 'Alex', text: 'I’m going to tell the counselor what I’ve seen too.' },
                 ],
                 choices: [
-                  { text: 'Say Alex should just join in with the group instead.', correct: false, outcome: ['Alex decides to just join the group instead of telling the counselor.', 'The classmate who thanked Alex sees Alex with the group and stops talking to Alex.', 'The classmate loses the one person who seemed kind, and Alex feels awful about it.'],
+                  { text: 'Say Alex should just join in with the group instead.', correct: false, outcome: ['Alex decides to just join the group instead of telling the counselor.', 'The classmate who thanked Alex sees Alex with the group and stops talking to Alex.', 'The classmate starts eating lunch alone, and the counselor never hears what the group is doing.'],
                     feedback: 'Joining in would only hurt the classmate more — telling the counselor was the right move.' },
                   { text: 'Say telling a trusted adult as a bystander was the right choice.', correct: true,
                     feedback: 'Yes — that’s exactly a meaningful way to help as a bystander.' },
@@ -3784,7 +3784,7 @@ const CONTENT = {
                 choices: [
                   { text: 'Because bullying often continues partly because bystanders don’t say anything, so telling an adult or supporting the target can shift that.', correct: true,
                     feedback: 'Exactly — bystanders speaking up (to an adult, or offering support) removes some of the “audience” effect that can make bullying continue.' },
-                  { text: 'Because bystanders have no real influence on whether bullying continues.', correct: false, outcome: ['Alex believes bystanders can’t change anything about bullying.', 'Alex stays quiet the next time the group targets someone.', 'The bullying keeps going because everyone watching thinks the same thing, and the target feels completely alone.'],
+                  { text: 'Because bystanders have no real influence on whether bullying continues.', correct: false, outcome: ['Alex believes bystanders can’t change anything about bullying.', 'Alex stays quiet the next time the group targets someone.', 'The bullying keeps going because everyone watching thinks the same thing, and the target starts skipping lunch to stay away from the group.'],
                     feedback: 'That’s not accurate — bystanders often have more influence than they realize, especially by telling a trusted adult.' },
                 ] },
               { type: 'dialogue', illustration: 'bully-help',
@@ -3807,7 +3807,7 @@ const CONTENT = {
                 ],
                 text: 'A different bystander later says it’s not their business to say anything since it’s not happening to them. What should Alex remember?',
                 choices: [
-                  { text: 'If bullying isn’t happening to you directly, it’s not your place to say anything.', correct: false, outcome: ['Alex agrees with the other bystander that it’s not their business.', 'Both of them keep quiet when the bullying happens again.', 'The group keeps going, the classmate feels like nobody cares, and the adults who could step in never hear about it.'],
+                  { text: 'If bullying isn’t happening to you directly, it’s not your place to say anything.', correct: false, outcome: ['Alex agrees with the other bystander that it’s not their business.', 'Both of them keep quiet when the bullying happens again.', 'The group keeps going, the classmate starts sitting alone, and the adults who could step in never hear about it.'],
                     feedback: 'Staying silent as a bystander can make bullying feel more accepted, even if it’s not happening to you.' },
                   { text: 'Bystanders speaking up to a trusted adult can shift the situation, even when they’re not the target.', correct: true,
                     feedback: 'Exactly — bystanders often have more influence than they realize.' },
@@ -3874,7 +3874,7 @@ const CONTENT = {
                   { speaker: 'Alex', text: 'I’m going to show this to my parent first.' },
                 ],
                 choices: [
-                  { text: 'Say Alex should have accepted right away since it could be fun.', correct: false, outcome: ['Alex thinks saying yes is fun.', 'Next time, Alex accepts without asking.', 'No grown-up knows. Alex is on alone.'],
+                  { text: 'Say Alex should have accepted right away since it could be fun.', correct: false, outcome: ['Alex thinks saying yes is fun.', 'Next time, Alex accepts without asking.', 'A stranger starts sending Alex messages, and no grown-up knows.'],
                     feedback: 'Accepting right away isn’t safe — checking with a grown-up first was the right move.' },
                   { text: 'Say showing the message to a grown-up was the right choice.', correct: true,
                     feedback: 'Yes — showing a grown-up a message from a stranger is exactly right.' },
@@ -3887,7 +3887,7 @@ const CONTENT = {
                 choices: [
                   { text: 'No — that kind of information should stay private from online-only contacts.', correct: true,
                     feedback: 'Exactly right — keep that private information away from people you only know online.' },
-                  { text: 'Yes, if they ask nicely.', correct: false, outcome: ['Alex tells them a name and school.', 'The person says, “I know where you go now.”', 'Alex feels worried. That was private.'],
+                  { text: 'Yes, if they ask nicely.', correct: false, outcome: ['Alex tells them a name and school.', 'The person says, “I know where you go now.”', 'Now a stranger knows Alex’s school. That was private.'],
                     feedback: 'Being asked nicely doesn’t make it safe — that information should still stay private.' },
                 ] },
               { type: 'dialogue', illustration: 'online-safe',
@@ -3950,7 +3950,7 @@ const CONTENT = {
                 choices: [
                   { text: 'Because it’s trying to remove a trusted adult’s ability to notice if something unsafe is happening.', correct: true,
                     feedback: 'Exactly — that request tries to cut a trusted adult out of the loop, which is a common pattern in unsafe online situations.' },
-                  { text: 'Because parents should never know about any online friendships at all.', correct: false, outcome: ['Alex believes parents should never know about online friends.', 'Alex hides all game chats and friends from Mom and Dad.', 'When a chat starts to feel weird, no grown-up knows, so Alex has to handle it alone.'],
+                  { text: 'Because parents should never know about any online friendships at all.', correct: false, outcome: ['Alex believes parents should never know about online friends.', 'Alex hides all game chats and friends from Mom and Dad.', 'When a player starts asking Alex for private things, no grown-up knows, so nobody steps in to block them.'],
                     feedback: 'It’s actually the opposite — trusted adults knowing about your online friendships and chats is part of what keeps things safe.' },
                 ] },
               { type: 'dialogue', illustration: 'online-safe',
@@ -3959,7 +3959,7 @@ const CONTENT = {
                   { speaker: 'Alex', text: 'Does that mean you don’t trust any of my online friends?' },
                 ],
                 choices: [
-                  { text: 'Say trusted adults should never know about any online friendships.', correct: false, outcome: ['Alex decides grown-ups shouldn’t know about any online friends.', 'Alex stops telling Mom or Dad anything about online chats.', 'If something unsafe happens, Alex has nobody watching out for Alex.'],
+                  { text: 'Say trusted adults should never know about any online friendships.', correct: false, outcome: ['Alex decides grown-ups shouldn’t know about any online friends.', 'Alex stops telling Mom or Dad anything about online chats.', 'When a stranger in a chat asks for Alex’s address, no grown-up is there to help block and report them.'],
                     feedback: 'That’s backwards — trusted adults knowing about your online friendships is part of what keeps you safe.' },
                   { text: 'Say trusted adults knowing about your online activity is part of what keeps you safe.', correct: true,
                     feedback: 'Exactly right — that’s the whole point, not about distrust.' },
@@ -3989,7 +3989,7 @@ const CONTENT = {
               { type: 'decision', illustration: 'online-screen', kicker: 'What should Alex do?',
                 text: 'The request feels uncomfortable, and there’s pressure using “everyone does this.” What’s the safest choice?',
                 choices: [
-                  { text: 'Send the photo since the person said it’s normal and everyone does it.', correct: false, outcome: ['Alex sends the photo because the person said everyone does it.', 'The person asks for more photos and says, “If you stop, I’ll show this one to people.”', 'Alex feels scared and trapped, and doesn’t know who might see the photo.'],
+                  { text: 'Send the photo since the person said it’s normal and everyone does it.', correct: false, outcome: ['Alex sends the photo because the person said everyone does it.', 'The person asks for more photos and says, “If you stop, I’ll show this one to people.”', 'When Alex says no, the person posts the photo in a group chat, and Alex can’t take it back.'],
                     feedback: '“Everyone does this” is a pressure tactic, not proof that something is actually safe or normal — trust the uncomfortable feeling instead.' },
                   { text: 'Say no, stop responding, and tell a trusted adult about the whole conversation, including screenshots if possible.', correct: true,
                     feedback: 'Yes — saying no, stopping contact, and telling a trusted adult with any evidence (like screenshots) is exactly the right response.' },
@@ -4002,7 +4002,7 @@ const CONTENT = {
                   { speaker: 'Alex', text: 'No, and I’m going to show my parent this conversation.' },
                 ],
                 choices: [
-                  { text: 'Say Alex should send the photo since everyone reportedly does it.', correct: false, outcome: ['Alex starts to believe the photo is fine to send because “everyone does it.”', 'Alex sends it, and the contact keeps pushing for more.', 'Alex feels uneasy and stuck, with a photo out there that Alex can’t take back.'],
+                  { text: 'Say Alex should send the photo since everyone reportedly does it.', correct: false, outcome: ['Alex starts to believe the photo is fine to send because “everyone does it.”', 'Alex sends it, and the contact keeps pushing for more.', 'The contact saves the photo and sends it to other people, and Alex can’t take it back.'],
                     feedback: '“Everyone does this” isn’t proof of anything — sending it wouldn’t be safe.' },
                   { text: 'Say refusing and telling a trusted adult was exactly the right response.', correct: true,
                     feedback: 'Yes — that’s exactly the right response to this kind of pressure.' },
@@ -4015,7 +4015,7 @@ const CONTENT = {
                 choices: [
                   { text: 'Because it tries to make an uncomfortable or unsafe request seem ordinary, even though your own uncomfortable feeling is a more reliable signal.', correct: true,
                     feedback: 'Exactly — that phrase is designed to override your judgment, but your own uncomfortable feeling is the more trustworthy signal here.' },
-                  { text: 'Because it’s always literally true that everyone does whatever is being asked.', correct: false, outcome: ['Alex believes the phrase literally means every kid does this.', 'Alex feels like the odd one out for being uncomfortable and starts doubting that feeling.', 'Alex ignores the uncomfortable feeling next time — the very signal that was trying to keep Alex safe.'],
+                  { text: 'Because it’s always literally true that everyone does whatever is being asked.', correct: false, outcome: ['Alex believes the phrase literally means every kid does this.', 'Alex decides the uncomfortable feeling must be wrong, since everyone else is doing it.', 'The next time someone online pushes, Alex goes along with it instead of stopping and telling an adult.'],
                     feedback: 'It’s not actually true just because someone says it — that phrase is a pressure tactic, not evidence.' },
                 ] },
               { type: 'dialogue', illustration: 'online-safe',
@@ -4024,7 +4024,7 @@ const CONTENT = {
                   { speaker: 'Alex', text: 'I almost believed them that it was normal.' },
                 ],
                 choices: [
-                  { text: 'Say “everyone does this” is solid proof something is safe.', correct: false, outcome: ['Alex decides “everyone does this” really is proof something is safe.', 'The next time someone online uses that line, Alex goes along with it.', 'Alex ends up in an uncomfortable situation again, believing it was normal when it wasn’t.'],
+                  { text: 'Say “everyone does this” is solid proof something is safe.', correct: false, outcome: ['Alex decides “everyone does this” really is proof something is safe.', 'The next time someone online uses that line, Alex goes along with it.', 'Alex shares private information, and the person uses it to pressure Alex for even more.'],
                     feedback: 'It’s not proof at all — it’s a pressure tactic.' },
                   { text: 'Say “everyone does this” is a pressure tactic, not real proof.', correct: true,
                     feedback: 'Exactly right — trusting your own uncomfortable feeling was the better signal.' },
@@ -4094,7 +4094,7 @@ const CONTENT = {
               { type: 'decision', illustration: 'cyberbully-uncomfortable', kicker: 'What should Alex do?',
                 text: 'A message made Alex feel bad. What’s the safest choice?',
                 choices: [
-                  { text: 'Send an even meaner message back.', correct: false, outcome: ['Alex types a meaner message back.', 'The player gets mad and sends more mean words.', 'Now Alex feels even worse.'],
+                  { text: 'Send an even meaner message back.', correct: false, outcome: ['Alex types a meaner message back.', 'The player gets mad and sends more mean words.', 'Now there are even more mean messages on the screen.'],
                     feedback: 'Sending something mean back usually makes things worse — it’s better to show a grown-up instead.' },
                   { text: 'Show a grown-up the message and stop playing with that person.', correct: true,
                     feedback: 'Yes! Showing a grown-up and stepping away from that person is exactly the right response.' },
@@ -4105,7 +4105,7 @@ const CONTENT = {
                   { speaker: 'Alex', text: 'I’m showing this to my parent and I’m done playing with you.' },
                 ],
                 choices: [
-                  { text: 'Say Alex should have sent an even meaner message back.', correct: false, outcome: ['Alex sends a meaner message next time.', 'The mean player sends even more mean messages.', 'No grown-up knows. Alex feels upset and alone.'],
+                  { text: 'Say Alex should have sent an even meaner message back.', correct: false, outcome: ['Alex sends a meaner message next time.', 'The mean player sends even more mean messages.', 'No grown-up knows, so nobody can help make it stop.'],
                     feedback: 'Sending something mean back usually makes the situation worse.' },
                   { text: 'Say showing a grown-up and stepping away was exactly right.', correct: true,
                     feedback: 'Yes — that’s exactly the right response.' },
@@ -4118,7 +4118,7 @@ const CONTENT = {
                 choices: [
                   { text: 'No — it still hurts feelings and is never okay, even through a screen.', correct: true,
                     feedback: 'Exactly right. Mean words hurt whether they’re said in person or typed online.' },
-                  { text: 'Yes — online meanness doesn’t really count or matter.', correct: false, outcome: ['Alex thinks online meanness doesn’t count.', 'Alex types something mean to another player.', 'That player feels sad, just like Alex did.'],
+                  { text: 'Yes — online meanness doesn’t really count or matter.', correct: false, outcome: ['Alex thinks online meanness doesn’t count.', 'Alex types something mean to another player.', 'That player stops playing and leaves the game.'],
                     feedback: 'That’s not true — online meanness is just as real and hurtful as in-person meanness.' },
                 ] },
               { type: 'dialogue', illustration: 'cyberbully-help',
@@ -4127,7 +4127,7 @@ const CONTENT = {
                   { speaker: 'Alex', text: 'Does online meanness really count the same as in person?' },
                 ],
                 choices: [
-                  { text: 'Say online meanness doesn’t really count or matter.', correct: false, outcome: ['Alex thinks online meanness doesn’t matter.', 'Alex keeps reading mean messages and tells no one.', 'Alex still feels hurt inside, but no grown-up knows.'],
+                  { text: 'Say online meanness doesn’t really count or matter.', correct: false, outcome: ['Alex thinks online meanness doesn’t matter.', 'Alex keeps reading mean messages and tells no one.', 'The mean messages keep coming, and no grown-up knows.'],
                     feedback: 'That’s not true — it hurts just as much as in-person meanness.' },
                   { text: 'Say it hurts just as much and is never okay, even through a screen.', correct: true,
                     feedback: 'Exactly right — mean words hurt regardless of how they’re delivered.' },
@@ -4161,7 +4161,7 @@ const CONTENT = {
                     feedback: 'That’s a bigger step than needed — the goal is dealing with this specific situation, not avoiding being online forever.' },
                   { text: 'Save or screenshot the messages, leave the chat, and tell a trusted adult.', correct: true,
                     feedback: 'Yes — saving evidence, stepping away from the chat, and telling a trusted adult is exactly the right response.' },
-                  { text: 'Try to defend the photo by arguing with everyone in the chat.', correct: false, outcome: ['Alex starts arguing with everyone in the group chat.', 'More classmates join in and the mean comments get worse.', 'Alex feels more upset, and the pile-on keeps growing.'],
+                  { text: 'Try to defend the photo by arguing with everyone in the chat.', correct: false, outcome: ['Alex starts arguing with everyone in the group chat.', 'More classmates join in and the mean comments get worse.', 'Classmates screenshot Alex’s angry replies, and the pile-on keeps growing.'],
                     feedback: 'Arguing back in the moment often makes a pile-on worse — it’s more effective to step away and get a trusted adult involved.' },
                 ] },
               { type: 'dialogue', illustration: 'cyberbully-uncomfortable',
@@ -4170,7 +4170,7 @@ const CONTENT = {
                   { speaker: 'Alex', text: 'I’m taking screenshots and leaving before I tell my mom.' },
                 ],
                 choices: [
-                  { text: 'Say Alex should try to defend the photo by arguing with everyone.', correct: false, outcome: ['Alex goes back into the chat to argue with everyone.', 'The classmates make even more jokes about Alex’s replies.', 'Now there are more mean messages, and Alex feels worse.'],
+                  { text: 'Say Alex should try to defend the photo by arguing with everyone.', correct: false, outcome: ['Alex goes back into the chat to argue with everyone.', 'The classmates make even more jokes about Alex’s replies.', 'Now there are more mean messages, and Alex’s replies get shared around.'],
                     feedback: 'Arguing back usually makes a pile-on worse — leaving and telling a trusted adult was right.' },
                   { text: 'Say saving screenshots and leaving the chat was the right move.', correct: true,
                     feedback: 'Yes — that’s exactly the right response to a pile-on.' },
@@ -4257,7 +4257,7 @@ const CONTENT = {
                   { speaker: 'Alex', text: 'Does that mean everything’s fixed now?' },
                 ],
                 choices: [
-                  { text: 'Say yes, reporting to the platform alone fixes everything immediately.', correct: false, outcome: ['Alex decides the platform report fixed everything and doesn’t tell the school.', 'At school, classmates still talk about the fake posts they saw.', 'Alex feels embarrassed, and no teacher knows why the teasing is happening.'],
+                  { text: 'Say yes, reporting to the platform alone fixes everything immediately.', correct: false, outcome: ['Alex decides the platform report fixed everything and doesn’t tell the school.', 'At school, classmates still talk about the fake posts they saw.', 'The teasing goes on for days, and no teacher knows why it’s happening.'],
                     feedback: 'It doesn’t undo classmates already having seen it — the school still needed to be involved.' },
                   { text: 'Say the school still needs to know since classmates already saw it.', correct: true,
                     feedback: 'Exactly right — that’s the other half of addressing this properly.' },
@@ -4342,7 +4342,7 @@ const CONTENT = {
               { type: 'decision', illustration: 'citizenship-bystander', kicker: 'What should Alex do?',
                 text: 'Other kids are just watching. What’s the kind, helpful thing for Alex to do?',
                 choices: [
-                  { text: 'Watch along with everyone else.', correct: false, outcome: ['Alex just stands and watches.', 'The kid keeps crying on the ground.', 'No grown-up comes. The kid feels alone.'],
+                  { text: 'Watch along with everyone else.', correct: false, outcome: ['Alex just stands and watches.', 'The kid keeps crying on the ground.', 'No grown-up comes, so nobody cleans the scrape.'],
                     feedback: 'Just watching doesn’t help the kid who fell — checking on them or getting a grown-up does.' },
                   { text: 'Check if they’re okay, and get a grown-up to help.', correct: true,
                     feedback: 'Yes! Checking on someone and getting a grown-up is exactly the kind, helpful thing to do.' },
@@ -4353,7 +4353,7 @@ const CONTENT = {
                   { speaker: 'Alex', text: 'Are you okay? Let me get a grown-up.' },
                 ],
                 choices: [
-                  { text: 'Say Alex should have just watched with everyone else.', correct: false, outcome: ['Alex watches like everyone else.', 'Nobody goes to get a grown-up.', 'The kid’s scrape gets no help. The kid feels sad.'],
+                  { text: 'Say Alex should have just watched with everyone else.', correct: false, outcome: ['Alex watches like everyone else.', 'Nobody goes to get a grown-up.', 'The kid’s scrape stays dirty. Nobody brings a bandage.'],
                     feedback: 'Just watching wouldn’t have helped the kid who fell.' },
                   { text: 'Say checking on them and getting a grown-up was the kind thing to do.', correct: true,
                     feedback: 'Yes — that’s exactly the kind, helpful response.' },
@@ -4375,7 +4375,7 @@ const CONTENT = {
                   { speaker: 'Alex', text: 'Does it really matter that I did something small like that?' },
                 ],
                 choices: [
-                  { text: 'Say it doesn’t matter either way what you do.', correct: false, outcome: ['Alex thinks small help doesn’t matter.', 'Next time, Alex doesn’t get a grown-up.', 'The hurt kid waits alone and feels sad.'],
+                  { text: 'Say it doesn’t matter either way what you do.', correct: false, outcome: ['Alex thinks small help doesn’t matter.', 'Next time, Alex doesn’t get a grown-up.', 'The hurt kid waits a long time. No one brings help.'],
                     feedback: 'It actually does matter — small actions make a real difference.' },
                   { text: 'Say doing something small, like getting help, makes a real difference.', correct: true,
                     feedback: 'Exactly right — that small action really helped.' },
@@ -4405,7 +4405,7 @@ const CONTENT = {
               { type: 'decision', illustration: 'citizenship-bystander', kicker: 'What should Alex do?',
                 text: 'No one is being mean, but no one is including the new student either. What’s a good choice?',
                 choices: [
-                  { text: 'Assume someone else will invite them eventually.', correct: false, outcome: ['Alex assumes someone else will invite the new student.', 'Day after day, nobody does, and the new student keeps eating alone.', 'The new student starts to feel like nobody at school wants them there.'],
+                  { text: 'Assume someone else will invite them eventually.', correct: false, outcome: ['Alex assumes someone else will invite the new student.', 'Day after day, nobody does, and the new student keeps eating alone.', 'By Friday, the new student stops coming to the lunch table and eats alone in the library instead.'],
                     feedback: 'Assuming someone else will do it often means no one actually does — a small action from you could make a real difference.' },
                   { text: 'Invite the new student to sit with Alex’s group.', correct: true,
                     feedback: 'Yes! A simple invitation can make a big difference for someone who feels left out.' },
@@ -4416,7 +4416,7 @@ const CONTENT = {
                   { speaker: 'Alex', text: 'Of course, come join us!' },
                 ],
                 choices: [
-                  { text: 'Say Alex should have assumed someone else would invite them.', correct: false, outcome: ['Alex decides someone else will probably invite the new student.', 'Everyone else thinks the same thing, so nobody says anything.', 'The new student keeps sitting alone and feels lonelier every day.'],
+                  { text: 'Say Alex should have assumed someone else would invite them.', correct: false, outcome: ['Alex decides someone else will probably invite the new student.', 'Everyone else thinks the same thing, so nobody says anything.', 'The new student sits alone every day, and nobody finds out they love the same games Alex does.'],
                     feedback: 'Assuming that often means nobody actually does it — inviting them was better.' },
                   { text: 'Say inviting the new student to sit was exactly right.', correct: true,
                     feedback: 'Yes — a simple invitation is exactly the right move.' },
@@ -4429,7 +4429,7 @@ const CONTENT = {
                 choices: [
                   { text: 'No — noticing someone left out or lonely is also a good reason to help, even without meanness involved.', correct: true,
                     feedback: 'Exactly — good citizenship includes noticing loneliness or exclusion, not just responding to obvious meanness.' },
-                  { text: 'Yes — you should only help if you see someone being clearly mean.', correct: false, outcome: ['Alex believes you only help when someone is being clearly mean.', 'Alex sees the new student alone but walks past, since nobody is being mean.', 'The new student stays lonely, and a friendship that could have started never does.'],
+                  { text: 'Yes — you should only help if you see someone being clearly mean.', correct: false, outcome: ['Alex believes you only help when someone is being clearly mean.', 'Alex sees the new student alone but walks past, since nobody is being mean.', 'The new student eats lunch alone again, and a friendship that could have started never does.'],
                     feedback: 'That’s too narrow — noticing someone left out, even without meanness, is also a good reason to step in and help.' },
                 ] },
               { type: 'dialogue', illustration: 'citizenship-help',
@@ -4438,7 +4438,7 @@ const CONTENT = {
                   { speaker: 'Alex', text: 'I almost didn’t say anything since nobody was being mean to you.' },
                 ],
                 choices: [
-                  { text: 'Say you should only help if you see someone being clearly mean.', correct: false, outcome: ['Alex decides helping only matters when someone is being mean.', 'Next time Alex sees a kid alone on the bench at recess, Alex keeps walking.', 'That kid spends recess alone again, feeling invisible.'],
+                  { text: 'Say you should only help if you see someone being clearly mean.', correct: false, outcome: ['Alex decides helping only matters when someone is being mean.', 'Next time Alex sees a kid alone on the bench at recess, Alex keeps walking.', 'That kid spends recess alone again, sitting on the bench until the bell rings.'],
                     feedback: 'That’s too narrow — noticing someone left out is reason enough.' },
                   { text: 'Say noticing someone left out is also a good reason to help, even without meanness.', correct: true,
                     feedback: 'Exactly right — good citizenship includes noticing loneliness, not just meanness.' },
@@ -4468,11 +4468,11 @@ const CONTENT = {
               { type: 'decision', illustration: 'citizenship-bystander', kicker: 'What should Alex do?',
                 text: 'The classmate seems pressured and uncomfortable in front of a group. What’s the most helpful choice?',
                 choices: [
-                  { text: 'Join in with the group to avoid seeming different.', correct: false, outcome: ['Alex joins in and cheers the classmate on with the group.', 'The pressure gets stronger, and the classmate goes along with it even though they don’t want to.', 'The classmate ends up in trouble and feels let down, and Alex feels uneasy about being part of it.'],
+                  { text: 'Join in with the group to avoid seeming different.', correct: false, outcome: ['Alex joins in and cheers the classmate on with the group.', 'The pressure gets stronger, and the classmate goes along with it even though they don’t want to.', 'The classmate ends up in trouble with a teacher, and afterward won’t sit with Alex or the group.'],
                     feedback: 'Joining in adds to the pressure the classmate is already feeling — stepping back or offering support helps more.' },
                   { text: 'Find a way to quietly support the classmate, like suggesting a different activity, or telling a trusted adult if it feels serious.', correct: true,
                     feedback: 'Yes — quietly offering an alternative, or involving a trusted adult if needed, are both strong ways to help someone under group pressure.' },
-                  { text: 'Say nothing and just watch to see what happens.', correct: false, outcome: ['Alex stays quiet and watches, like everyone else.', 'With nobody offering another option, the classmate gives in to the group.', 'The classmate gets in trouble and feels completely alone, and Alex leaves with a heavy, uneasy feeling.'],
+                  { text: 'Say nothing and just watch to see what happens.', correct: false, outcome: ['Alex stays quiet and watches, like everyone else.', 'With nobody offering another option, the classmate gives in to the group.', 'The classmate gets in trouble with a teacher, and later tells Alex, “Nobody even tried to help me.”'],
                     feedback: 'Watching without acting is exactly the “bystander effect” — a small action, even a quiet one, can genuinely change what happens next.' },
                 ] },
               { type: 'dialogue', illustration: 'citizenship-bystander',
@@ -4481,7 +4481,7 @@ const CONTENT = {
                   { speaker: 'Alex', text: 'Hey, let’s go do something else instead.' },
                 ],
                 choices: [
-                  { text: 'Say Alex should have joined in with the group instead.', correct: false, outcome: ['Alex skips offering an alternative and joins the group instead.', 'The classmate looks at Alex, sees one more person pushing, and gives in.', 'The classmate ends up in trouble and stops trusting Alex, and Alex feels bad about it.'],
+                  { text: 'Say Alex should have joined in with the group instead.', correct: false, outcome: ['Alex skips offering an alternative and joins the group instead.', 'The classmate looks at Alex, sees one more person pushing, and gives in.', 'The classmate ends up in trouble, stops trusting Alex, and starts sitting at a different lunch table.'],
                     feedback: 'Joining in would have added to the pressure — offering an alternative was better.' },
                   { text: 'Say quietly offering an alternative activity was a strong way to help.', correct: true,
                     feedback: 'Yes — that’s exactly a strong, quiet way to help.' },
@@ -4503,7 +4503,7 @@ const CONTENT = {
                   { speaker: 'Alex', text: 'Everyone else was just watching, so I almost did too.' },
                 ],
                 choices: [
-                  { text: 'Say the bystander effect means only one person is ever allowed to help.', correct: false, outcome: ['Alex tells the adult that only one person is ever allowed to help.', 'Next time someone needs help in a group, Alex waits for “the one person” to act.', 'Everyone waits, nobody acts, and Alex feels frozen and confused.'],
+                  { text: 'Say the bystander effect means only one person is ever allowed to help.', correct: false, outcome: ['Alex tells the adult that only one person is ever allowed to help.', 'Next time someone needs help in a group, Alex waits for “the one person” to act.', 'Everyone waits, nobody acts, and the person who needs help is still on their own when the group walks away.'],
                     feedback: 'That’s not what it means — anyone can choose to act, regardless of others.' },
                   { text: 'Say the bystander effect describes why people freeze when others are just watching, and you can choose to act instead.', correct: true,
                     feedback: 'Exactly right — knowing about the pattern helps you break it.' },
@@ -4517,7 +4517,7 @@ const CONTENT = {
                 ],
                 text: 'A friend later says there was no point saying anything since everyone else was just watching too. What should Alex remember?',
                 choices: [
-                  { text: 'If everyone else is just watching, that means it’s not actually your place to act.', correct: false, outcome: ['Alex agrees that if everyone is watching, it’s not Alex’s place to act.', 'Next time a classmate is being pressured, Alex stays frozen with the crowd.', 'Nobody steps in, the classmate gets pushed into trouble, and Alex feels uneasy for days.'],
+                  { text: 'If everyone else is just watching, that means it’s not actually your place to act.', correct: false, outcome: ['Alex agrees that if everyone is watching, it’s not Alex’s place to act.', 'Next time a classmate is being pressured, Alex stays frozen with the crowd.', 'Nobody steps in, the classmate gets pushed into trouble, and the next week the same group pressures someone else.'],
                     feedback: 'That’s exactly the bystander effect — everyone assuming it’s not their place is why nobody acts.' },
                   { text: 'Recognizing the bystander effect in yourself makes it easier to choose to act anyway.', correct: true,
                     feedback: 'Exactly — awareness of the pattern is what makes it easier to break.' },
@@ -4573,7 +4573,7 @@ const CONTENT = {
               { type: 'decision', illustration: 'rights-voice', kicker: 'What should Alex do?',
                 text: 'Alex has something to say but isn’t being heard. What’s okay for Alex to do?',
                 choices: [
-                  { text: 'Give up and never try to share ideas again.', correct: false, outcome: ['Alex stops talking and puts the hand down.', 'Alex never shares an idea again.', 'Alex’s good ideas stay stuck inside. Alex feels sad.'],
+                  { text: 'Give up and never try to share ideas again.', correct: false, outcome: ['Alex stops talking and puts the hand down.', 'Alex never shares an idea again.', 'Alex’s good ideas stay stuck inside. The class never hears them.'],
                     feedback: 'You don’t have to give up — you have the right to be heard, and it’s okay to try again or ask for a turn to talk.' },
                   { text: 'Say, “Can I finish my idea, please?” and try again.', correct: true,
                     feedback: 'Yes! You have the right to be heard, and it’s okay to ask for a turn to finish sharing.' },
@@ -4584,7 +4584,7 @@ const CONTENT = {
                   { speaker: 'Alex', text: 'Can I finish my idea, please?' },
                 ],
                 choices: [
-                  { text: 'Say Alex should have just given up on sharing.', correct: false, outcome: ['Alex gives up and stays quiet.', 'The group keeps talking without Alex.', 'Nobody hears Alex’s idea. Alex feels left out.'],
+                  { text: 'Say Alex should have just given up on sharing.', correct: false, outcome: ['Alex gives up and stays quiet.', 'The group keeps talking without Alex.', 'Nobody hears Alex’s idea. The group picks a different plan.'],
                     feedback: 'Giving up wouldn’t have helped — asking to finish was the right move.' },
                   { text: 'Say asking to finish sharing was exactly right.', correct: true,
                     feedback: 'Yes — asking for a turn to finish is exactly the right thing to do.' },
@@ -4606,7 +4606,7 @@ const CONTENT = {
                   { speaker: 'Alex', text: 'Do only grown-ups’ ideas really matter?' },
                 ],
                 choices: [
-                  { text: 'Say only grown-ups get to share ideas that matter.', correct: false, outcome: ['Alex believes kids’ ideas don’t matter.', 'Alex stays quiet at sharing time.', 'Alex feels small and left out.'],
+                  { text: 'Say only grown-ups get to share ideas that matter.', correct: false, outcome: ['Alex believes kids’ ideas don’t matter.', 'Alex stays quiet at sharing time.', 'The teacher calls on other kids. Alex’s idea is never heard.'],
                     feedback: 'That’s not true — every kid’s voice and ideas matter too.' },
                   { text: 'Say every kid has the right to have a voice and be listened to.', correct: true,
                     feedback: 'Exactly right — that right belongs to every kid.' },
@@ -4636,7 +4636,7 @@ const CONTENT = {
               { type: 'decision', illustration: 'rights-voice', kicker: 'What should Alex do?',
                 text: 'Alex doesn’t understand why this keeps happening and it doesn’t feel fair. What’s a good choice?',
                 choices: [
-                  { text: 'Just accept it without ever asking why.', correct: false, outcome: ['Alex sits out again and doesn’t ask why.', 'Week after week, Alex keeps sitting on the bench.', 'Alex feels confused and sad, and nothing changes.'],
+                  { text: 'Just accept it without ever asking why.', correct: false, outcome: ['Alex sits out again and doesn’t ask why.', 'Week after week, Alex keeps sitting on the bench.', 'The coach never learns Alex wants to play, so nothing changes.'],
                     feedback: 'You have the right to ask respectfully why something is happening, especially if it feels unfair or confusing.' },
                   { text: 'Respectfully ask the coach why, and tell a parent about the pattern too.', correct: true,
                     feedback: 'Yes — asking respectfully, and also telling a parent, are both good ways to use your right to be treated fairly.' },
@@ -4660,7 +4660,7 @@ const CONTENT = {
                 choices: [
                   { text: 'Yes — asking respectfully is a reasonable way to understand or address something that feels unfair.', correct: true,
                     feedback: 'Exactly — respectfully asking “why” is a healthy, reasonable thing to do.' },
-                  { text: 'No — kids should never question any adult’s decision, ever.', correct: false, outcome: ['Alex believes kids should never question an adult’s decision.', 'When something feels unfair, Alex keeps quiet every time.', 'Alex feels upset inside, and the unfair thing just keeps happening.'],
+                  { text: 'No — kids should never question any adult’s decision, ever.', correct: false, outcome: ['Alex believes kids should never question an adult’s decision.', 'When something feels unfair, Alex keeps quiet every time.', 'No adult hears about it, so the unfair thing just keeps happening.'],
                     feedback: 'That’s not accurate — respectfully asking about a decision that feels unfair is a reasonable right to use.' },
                 ] },
               { type: 'dialogue', illustration: 'rights-safe',
@@ -4669,7 +4669,7 @@ const CONTENT = {
                   { speaker: 'Alex', text: 'Was I wrong to ask the coach directly?' },
                 ],
                 choices: [
-                  { text: 'Say kids should never question any adult’s decision, ever.', correct: false, outcome: ['Alex decides it was wrong to ask the coach.', 'The next time a rule feels unfair, Alex says nothing.', 'Alex never gets answers and feels stuck.'],
+                  { text: 'Say kids should never question any adult’s decision, ever.', correct: false, outcome: ['Alex decides it was wrong to ask the coach.', 'The next time a rule feels unfair, Alex says nothing.', 'Alex never gets answers, and the rule stays the same.'],
                     feedback: 'That’s not accurate — respectfully asking about something unfair is a reasonable right.' },
                   { text: 'Say asking respectfully is a reasonable way to address something that feels unfair.', correct: true,
                     feedback: 'Exactly right — that’s exactly what Alex did.' },
@@ -4699,7 +4699,7 @@ const CONTENT = {
               { type: 'decision', illustration: 'rights-voice', kicker: 'What should Alex do?',
                 text: 'This is a pattern, not a one-time thing, and it’s about Alex’s own family. What’s a thoughtful choice?',
                 choices: [
-                  { text: 'Assume feelings just don’t matter and stop mentioning them.', correct: false, outcome: ['Alex decides feelings just don’t matter and stops bringing them up at home.', 'The family member never learns how much the comments hurt, so they keep happening.', 'Alex starts bottling everything up and feels more alone, even around family.'],
+                  { text: 'Assume feelings just don’t matter and stop mentioning them.', correct: false, outcome: ['Alex decides feelings just don’t matter and stops bringing them up at home.', 'The family member never learns how much the comments hurt, so they keep happening.', 'Alex starts skipping family dinners to avoid the comments, and nobody at home knows why.'],
                     feedback: 'Your feelings do matter, and having them dismissed repeatedly is worth addressing, even though it can feel harder within your own family.' },
                   { text: 'Calmly tell the family member how the dismissiveness feels, and if it continues, talk to another trusted adult, like a school counselor, about it.', correct: true,
                     feedback: 'Yes — calmly naming how it feels, and involving another trusted adult if it continues, is a thoughtful way to stand up for your own rights.' },
@@ -4712,7 +4712,7 @@ const CONTENT = {
                   { speaker: 'Family member', text: 'I didn’t realize that’s how it felt.' },
                 ],
                 choices: [
-                  { text: 'Say Alex should have just stopped mentioning feelings altogether.', correct: false, outcome: ['Alex decides it would have been better to stop mentioning feelings altogether.', 'Alex goes quiet at home, and the family member assumes everything is fine.', 'The hurtful pattern keeps going, and Alex feels unheard by the people closest to Alex.'],
+                  { text: 'Say Alex should have just stopped mentioning feelings altogether.', correct: false, outcome: ['Alex decides it would have been better to stop mentioning feelings altogether.', 'Alex goes quiet at home, and the family member assumes everything is fine.', 'The hurtful comments keep coming, because nobody at home knows they hurt.'],
                     feedback: 'Staying silent wouldn’t have addressed the pattern — calmly naming it was better.' },
                   { text: 'Say calmly naming how the dismissiveness felt was a thoughtful choice.', correct: true,
                     feedback: 'Yes — calmly naming it is exactly the thoughtful way to stand up for your rights.' },
@@ -4725,7 +4725,7 @@ const CONTENT = {
                 choices: [
                   { text: 'Because rights apply everywhere, including at home, and knowing them helps you recognize when something isn’t okay, even with people you love.', correct: true,
                     feedback: 'Exactly — rights aren’t just about strangers or school; they apply within families too, and knowing them helps you notice and address patterns that don’t feel okay.' },
-                  { text: 'Because rights only apply to relationships outside of your own family.', correct: false, outcome: ['Alex believes rights only apply outside the family.', 'Alex decides the dismissive comments at home are just something to put up with.', 'Alex keeps feeling hurt at home without realizing it’s okay to ask for respect there too.'],
+                  { text: 'Because rights only apply to relationships outside of your own family.', correct: false, outcome: ['Alex believes rights only apply outside the family.', 'Alex decides the dismissive comments at home are just something to put up with.', 'The comments keep coming, and Alex never asks for respect at home.'],
                     feedback: 'That’s not accurate — rights like being heard and respected apply within families too, not just outside them.' },
                 ] },
               { type: 'dialogue', illustration: 'rights-safe',
@@ -4837,7 +4837,7 @@ const CONTENT = {
                   { speaker: 'Alex', text: 'Do I still need someone watching even though I’m a good swimmer?' },
                 ],
                 choices: [
-                  { text: 'Say yes, if you’re a good swimmer you can swim alone.', correct: false, outcome: ['Alex tells a friend good swimmers can swim alone.', 'The friend swims alone in the deep end.', 'The friend gets tired, and no grown-up sees.'],
+                  { text: 'Say yes, if you’re a good swimmer you can swim alone.', correct: false, outcome: ['Alex tells a friend good swimmers can swim alone.', 'The friend swims alone in the deep end.', 'The friend gets tired and swallows water. The lifeguard has to jump in to help.'],
                     feedback: 'Even good swimmers should always have a grown-up watching.' },
                   { text: 'Say yes, always swim with a grown-up watching, every time.', correct: true,
                     feedback: 'Exactly right — the rule is the same no matter how well you swim.' },
@@ -4930,11 +4930,11 @@ const CONTENT = {
               { type: 'decision', illustration: 'water-play', kicker: 'What should Alex do?',
                 text: 'There’s an unexpected current and a rising feeling of panic. What’s the safest response?',
                 choices: [
-                  { text: 'Swim directly against the current straight back to shore as hard as possible.', correct: false, outcome: ['Alex turns toward shore and swims as hard as possible straight against the current.', 'The current keeps pulling, and Alex barely gets any closer to shore.', 'Alex’s arms and legs get very tired, the panicky feeling grows, and Alex still hasn’t waved for help.'],
+                  { text: 'Swim directly against the current straight back to shore as hard as possible.', correct: false, outcome: ['Alex turns toward shore and swims as hard as possible straight against the current.', 'The current keeps pulling, and Alex barely gets any closer to shore.', 'Alex’s arms and legs wear out, and since Alex never waved, the lifeguard has to swim out to help.'],
                     feedback: 'Fighting directly against a strong current can tire you out quickly — a smarter approach is to swim parallel to the shore first, then angle in once free of the current, and to call for help.' },
                   { text: 'Stay calm, wave and call for help, and if possible swim parallel to the shore to get out of the current before heading in.', correct: true,
                     feedback: 'Yes — staying as calm as possible, calling for help, and swimming parallel to escape the current before heading to shore is the safer approach.' },
-                  { text: 'Try to touch the bottom to push off, no matter how deep it might be.', correct: false, outcome: ['Alex stops swimming and reaches down with their feet, trying to find the bottom.', 'The water is too deep to touch, and the current keeps pulling Alex farther out.', 'Alex has used up energy, is farther from shore, and feels even more panicked.'],
+                  { text: 'Try to touch the bottom to push off, no matter how deep it might be.', correct: false, outcome: ['Alex stops swimming and reaches down with their feet, trying to find the bottom.', 'The water is too deep to touch, and the current keeps pulling Alex farther out.', 'Alex swallows a mouthful of water, and the lifeguard has to swim out to bring Alex in.'],
                     feedback: 'In deep or uncertain water, trying to reach the bottom can be risky — it’s safer to stay calm, call for help, and swim parallel to the shore.' },
                 ] },
               { type: 'dialogue', illustration: 'water-play',
@@ -4980,7 +4980,7 @@ const CONTENT = {
                 choices: [
                   { text: 'Because panicking wastes energy and makes it harder to think clearly and swim effectively.', correct: true,
                     feedback: 'Exactly — staying calm preserves energy and clear thinking, both of which matter.' },
-                  { text: 'Because staying calm makes the current disappear completely.', correct: false, outcome: ['Alex believes staying calm will make the current disappear.', 'Alex stays calm and just waits, but the current keeps pulling just as hard.', 'Alex drifts farther from shore and starts to feel confused and panicked.'],
+                  { text: 'Because staying calm makes the current disappear completely.', correct: false, outcome: ['Alex believes staying calm will make the current disappear.', 'Alex stays calm and just waits, but the current keeps pulling just as hard.', 'Alex drifts farther from shore without waving, until the lifeguard spots Alex and swims out to help.'],
                     feedback: 'Staying calm doesn’t remove the current — but it helps you respond to it more effectively.' },
                 ] },
             ],
@@ -5034,7 +5034,7 @@ const CONTENT = {
               { type: 'decision', illustration: 'home-alone', kicker: 'What should Alex do?',
                 text: 'Someone Alex doesn’t know is at the door. What’s the safest choice?',
                 choices: [
-                  { text: 'Open the door to see who it is.', correct: false, outcome: ['Alex opens the door.', 'The person steps closer and asks questions.', 'No grown-up is there. Alex feels unsure and scared.'],
+                  { text: 'Open the door to see who it is.', correct: false, outcome: ['Alex opens the door.', 'The person steps closer and asks questions.', 'No grown-up knows the door is open.'],
                     feedback: 'Opening the door to someone unfamiliar isn’t safe — it’s better to not open it and get a grown-up.' },
                   { text: 'Don’t open the door, and get a grown-up right away.', correct: true,
                     feedback: 'Yes! Not opening the door and getting a grown-up is exactly the safe choice.' },
@@ -5120,7 +5120,7 @@ const CONTENT = {
                 choices: [
                   { text: 'Because stoves and ovens have real risks like burns or fire that are worth double-checking on.', correct: true,
                     feedback: 'Exactly — checking in about stove or oven use is a reasonable safety habit, not just an arbitrary rule.' },
-                  { text: 'Because kids should never be in the kitchen at all, ever.', correct: false, outcome: ['Alex believes kids should never be in the kitchen at all.', 'Alex won’t even go in to get a glass of water or help set the table.', 'Alex feels stressed and left out, and still doesn’t understand what makes the stove risky.'],
+                  { text: 'Because kids should never be in the kitchen at all, ever.', correct: false, outcome: ['Alex believes kids should never be in the kitchen at all.', 'Alex won’t even go in to get a glass of water or help set the table.', 'Alex misses helping with dinner, and still doesn’t learn what makes the stove risky.'],
                     feedback: 'That’s too strict — the point is checking in about specific risky tasks like the stove, not avoiding the kitchen altogether.' },
                 ] },
               { type: 'dialogue', illustration: 'home-safe',
@@ -5188,7 +5188,7 @@ const CONTENT = {
                 ],
                 text: 'A grown-up says the fire was already handled, so maybe calling wasn’t needed. What should Alex remember?',
                 choices: [
-                  { text: 'Every single fire, no matter how small, always requires firefighters to come out.', correct: false, outcome: ['Alex believes every tiny fire needs firefighters to come out in person.', 'Alex feels panicked and embarrassed after even a small flare-up that was handled quickly.', 'Worried about making a big fuss, Alex starts to hesitate about calling or telling anyone at all.'],
+                  { text: 'Every single fire, no matter how small, always requires firefighters to come out.', correct: false, outcome: ['Alex believes every tiny fire needs firefighters to come out in person.', 'After a tiny flare-up is put out in seconds, Alex panics and insists the fire trucks must come.', 'Next time something small happens, Alex stays quiet instead of telling anyone, so no grown-up checks it.'],
                     feedback: 'Not every situation requires firefighters in person, but calling to report it is always a reasonable, safe choice.' },
                   { text: 'It’s always better to have professionals aware, even if things end up fine — you’re never in trouble for calling.', correct: true,
                     feedback: 'Exactly — calling is always an acceptable choice, even for something that turns out okay.' },
@@ -5199,7 +5199,7 @@ const CONTENT = {
                   { speaker: 'Alex', text: 'Was I wrong to call since it turned out fine?' },
                 ],
                 choices: [
-                  { text: 'Say every single fire always requires firefighters to come out in person.', correct: false, outcome: ['Alex tells the parent that every fire needs firefighters in person.', 'Alex starts to feel like even a quick call means something huge went wrong.', 'Next time, Alex feels too nervous to call at all, worried it will turn into a big scene.'],
+                  { text: 'Say every single fire always requires firefighters to come out in person.', correct: false, outcome: ['Alex tells the parent that every fire needs firefighters in person.', 'Alex starts treating even a quick call as a sign that something huge went wrong.', 'Next time a small fire starts, Alex doesn’t call or tell anyone, so no help is on the way.'],
                     feedback: 'Not every fire needs firefighters in person — but calling to report it is always reasonable.' },
                   { text: 'Say you’re never wrong for calling, even if it turns out to be manageable.', correct: true,
                     feedback: 'Exactly right — calling is always an acceptable choice.' },
@@ -5210,7 +5210,7 @@ const CONTENT = {
                 choices: [
                   { text: 'Because water can spread a grease fire instead of smothering it.', correct: true,
                     feedback: 'Exactly — that’s why water isn’t a safe default for every kitchen fire.' },
-                  { text: 'Because water always makes every single type of fire completely worse.', correct: false, outcome: ['Alex believes water makes every type of fire worse.', 'On a camping trip, Alex panics when the grown-ups use water to put out the campfire.', 'Alex feels confused and scared, and can’t tell which fires are truly risky.'],
+                  { text: 'Because water always makes every single type of fire completely worse.', correct: false, outcome: ['Alex believes water makes every type of fire worse.', 'On a camping trip, Alex panics when the grown-ups use water to put out the campfire.', 'Alex argues with the grown-ups instead of helping, and never learns which fires water is safe for.'],
                     feedback: 'Not every fire, but specific types like grease fires — that’s exactly why it’s risky to guess.' },
                 ] },
             ],
@@ -5288,7 +5288,7 @@ const CONTENT = {
                 choices: [
                   { text: 'Yes — every time, no matter how short the ride.', correct: true,
                     feedback: 'Exactly right! Every ride, every time, helmet on.' },
-                  { text: 'Only for long bike rides.', correct: false, outcome: ['Alex thinks short rides need no helmet.', 'Alex rides around the block without it.', 'Alex falls at the corner and feels scared.'],
+                  { text: 'Only for long bike rides.', correct: false, outcome: ['Alex thinks short rides need no helmet.', 'Alex rides around the block without it.', 'Alex falls at the corner and gets a bump on the head.'],
                     feedback: 'Falls can happen on short rides too — wear a helmet every time, no matter the distance.' },
                 ] },
               { type: 'dialogue', illustration: 'bike-safe',
@@ -5297,7 +5297,7 @@ const CONTENT = {
                   { speaker: 'Alex', text: 'Do I really need it just for a quick ride around the block?' },
                 ],
                 choices: [
-                  { text: 'Say a helmet is only needed for long bike rides.', correct: false, outcome: ['Alex skips the helmet for a quick ride.', 'Alex turns too fast and falls.', 'Alex’s knee gets scraped. The grown-up looks worried.'],
+                  { text: 'Say a helmet is only needed for long bike rides.', correct: false, outcome: ['Alex skips the helmet for a quick ride.', 'Alex turns too fast and falls.', 'Alex’s knee gets scraped. The ride is over for today.'],
                     feedback: 'Falls can happen on short rides too — the rule is every ride, every time.' },
                   { text: 'Say yes, every time, no matter how short the ride.', correct: true,
                     feedback: 'Exactly right — the rule never changes based on distance.' },
@@ -5327,7 +5327,7 @@ const CONTENT = {
               { type: 'decision', illustration: 'bike-ride', kicker: 'What should Alex do?',
                 text: 'A car is backing out and hasn’t seen Alex yet. What’s the safest choice?',
                 choices: [
-                  { text: 'Keep riding through at the same speed since Alex has the right of way.', correct: false, outcome: ['Alex keeps riding at the same speed across the driveway.', 'The car keeps backing out, and the driver has to slam on the brakes.', 'Alex swerves, tips over onto the sidewalk, and feels shaky and scared.'],
+                  { text: 'Keep riding through at the same speed since Alex has the right of way.', correct: false, outcome: ['Alex keeps riding at the same speed across the driveway.', 'The car keeps backing out, and the driver has to slam on the brakes.', 'Alex swerves, tips over onto the sidewalk, and scrapes a hand.'],
                     feedback: 'Even if you technically have the right of way, a driver who hasn’t seen you yet is a real danger — it’s safer to slow down or stop until you’re sure they’ve noticed you.' },
                   { text: 'Slow down or stop, and make sure the driver sees you before continuing.', correct: true,
                     feedback: 'Yes — slowing down and making sure the driver notices you is exactly the safe choice at a driveway.' },
@@ -5390,11 +5390,11 @@ const CONTENT = {
               { type: 'decision', illustration: 'bike-ride', kicker: 'What should Alex do?',
                 text: 'Turning left on a bike in traffic takes some planning. What’s the safest approach?',
                 choices: [
-                  { text: 'Turn suddenly at the last second without signaling.', correct: false, outcome: ['Alex swerves left at the last second without signaling or looking back.', 'A car behind the group wasn’t expecting it and has to brake hard and honk.', 'Alex wobbles through the turn feeling shaken, and the friends behind Alex nearly bump into each other trying to react.'],
+                  { text: 'Turn suddenly at the last second without signaling.', correct: false, outcome: ['Alex swerves left at the last second without signaling or looking back.', 'A car behind the group wasn’t expecting it and has to brake hard and honk.', 'Alex wobbles through the turn, and the friends behind Alex have to brake hard and nearly bump into each other.'],
                     feedback: 'Turning suddenly without signaling gives drivers no warning — that’s a common cause of bike accidents at intersections.' },
                   { text: 'Look back for traffic, signal the turn with a hand signal, and move into the proper lane position well before the intersection.', correct: true,
                     feedback: 'Yes — checking traffic, signaling clearly, and positioning early are exactly the right steps for a safe turn.' },
-                  { text: 'Ride on the sidewalk through the intersection to avoid dealing with traffic at all.', correct: false, outcome: ['Alex suddenly hops onto the sidewalk to cut through the intersection.', 'A person walking at the corner has to jump out of the way, and a turning car stops short.', 'Alex feels embarrassed and rattled, and the group ends up split on two different sides of the street.'],
+                  { text: 'Ride on the sidewalk through the intersection to avoid dealing with traffic at all.', correct: false, outcome: ['Alex suddenly hops onto the sidewalk to cut through the intersection.', 'A person walking at the corner has to jump out of the way, and a turning car stops short.', 'The person walking calls out to Alex to slow down, and the group ends up split on two different sides of the street.'],
                     feedback: 'Riding onto the sidewalk suddenly can surprise pedestrians and drivers turning at the corner — using proper lane position and signals in the street is generally safer for a planned turn like this.' },
                 ] },
               { type: 'dialogue', illustration: 'bike-ride',
@@ -5403,7 +5403,7 @@ const CONTENT = {
                   { speaker: 'Alex', text: 'Let me check behind and signal first, just to be sure.' },
                 ],
                 choices: [
-                  { text: 'Say Alex should turn suddenly at the last second without signaling.', correct: false, outcome: ['Alex listens to the friend and turns right away, without checking or signaling.', 'A car Alex didn’t see behind them has to brake hard, and the driver honks.', 'Alex makes it through, but feels shaky and realizes how close that was.'],
+                  { text: 'Say Alex should turn suddenly at the last second without signaling.', correct: false, outcome: ['Alex listens to the friend and turns right away, without checking or signaling.', 'A car Alex didn’t see behind them has to brake hard, and the driver honks.', 'Alex makes it through, but the car was only a few feet away, and the friends have to stop and regroup.'],
                     feedback: 'Sudden turns without signaling give drivers no warning — checking first was safer.' },
                   { text: 'Say checking behind and signaling first was the right approach.', correct: true,
                     feedback: 'Yes — that’s exactly the right approach for a safe turn.' },
@@ -5416,7 +5416,7 @@ const CONTENT = {
                 choices: [
                   { text: 'Because drivers need time to notice and react to your intentions — last-second moves in traffic leave much less room for error.', correct: true,
                     feedback: 'Exactly — in real traffic, drivers need advance warning to adjust, so early, clear signals matter a lot more than in a quiet driveway.' },
-                  { text: 'Because signaling is only a formality that doesn’t actually affect what drivers do.', correct: false, outcome: ['Alex believes signaling is just a formality that drivers ignore anyway.', 'Alex stops signaling and moves across the lane whenever it feels right.', 'Drivers keep getting surprised by Alex’s moves, and one has to swerve, leaving Alex rattled and the friends worried.'],
+                  { text: 'Because signaling is only a formality that doesn’t actually affect what drivers do.', correct: false, outcome: ['Alex believes signaling is just a formality that drivers ignore anyway.', 'Alex stops signaling and moves across the lane whenever it feels right.', 'Drivers keep getting surprised by Alex’s moves, and one has to swerve into the next lane, honking.'],
                     feedback: 'That’s not accurate — clear, early signals genuinely help drivers anticipate and react safely to your movements.' },
                 ] },
               { type: 'dialogue', illustration: 'bike-safe',
@@ -5439,7 +5439,7 @@ const CONTENT = {
                 ],
                 text: 'A friend later says signaling doesn’t really matter since most drivers aren’t paying attention anyway. What should Alex remember?',
                 choices: [
-                  { text: 'Signaling is just a formality that doesn’t actually change what drivers do.', correct: false, outcome: ['Alex agrees that signaling doesn’t matter and starts skipping it.', 'At a busy intersection, Alex turns without any warning.', 'Even the driver who was paying attention has no time to react and stops suddenly, leaving Alex shaken and embarrassed.'],
+                  { text: 'Signaling is just a formality that doesn’t actually change what drivers do.', correct: false, outcome: ['Alex agrees that signaling doesn’t matter and starts skipping it.', 'At a busy intersection, Alex turns without any warning.', 'Even the driver who was paying attention has no time to react and stops suddenly, and the car behind nearly bumps into it.'],
                     feedback: 'That’s not accurate — clear, early signals genuinely help drivers anticipate and react safely.' },
                   { text: 'Drivers need advance warning to react safely, and last-second moves leave little room for error.', correct: true,
                     feedback: 'Exactly — that advance warning is what makes it work in real traffic.' },
@@ -5520,7 +5520,7 @@ const CONTENT = {
               { type: 'decision', illustration: 'peer-pressure-moment', kicker: 'What should Alex do?',
                 text: 'The other kids want Alex to climb somewhere that isn’t allowed. What’s the safest choice?',
                 choices: [
-                  { text: 'Climb up too so Alex isn’t left out.', correct: false, outcome: ['Alex climbs up high with the kids.', 'Alex’s foot slips on the bar.', 'Alex’s knee gets scraped. Alex feels scared.'],
+                  { text: 'Climb up too so Alex isn’t left out.', correct: false, outcome: ['Alex climbs up high with the kids.', 'Alex’s foot slips on the bar.', 'Alex’s knee gets scraped. Alex has to stop playing.'],
                     feedback: 'Doing something unsafe just to fit in isn’t worth it — it’s okay to say no, even if others are doing it.' },
                   { text: 'Say, “That’s not allowed, I’m going to stay down here,” and maybe get a teacher.', correct: true,
                     feedback: 'Yes! Saying no to something unsafe, even when others are doing it, is exactly the brave, safe choice.' },
@@ -5544,7 +5544,7 @@ const CONTENT = {
                 choices: [
                   { text: 'No — you can always make your own safe choice.', correct: true,
                     feedback: 'Exactly right! You always get to make your own choice, even if others are doing something different.' },
-                  { text: 'Yes — you always have to do what the group does.', correct: false, outcome: ['Alex thinks Alex must copy the group.', 'The group climbs high, so Alex does too.', 'A teacher calls Alex down. Alex feels upset.'],
+                  { text: 'Yes — you always have to do what the group does.', correct: false, outcome: ['Alex thinks Alex must copy the group.', 'The group climbs high, so Alex does too.', 'A teacher calls Alex down. Alex has to sit on the bench.'],
                     feedback: 'Not true — you always get to choose your own safe behavior, no matter what others are doing.' },
                 ] },
               { type: 'dialogue', illustration: 'peer-pressure-safe',
@@ -5594,7 +5594,7 @@ const CONTENT = {
                   { speaker: 'Alex', text: 'I’d rather just do it.' },
                 ],
                 choices: [
-                  { text: 'Say Alex should have skipped it too since it seems like everyone is doing it.', correct: false, outcome: ['Alex starts thinking skipping would have been fine.', 'The next time friends say “everyone’s doing it,” Alex skips an assignment.', 'Alex falls behind in class and feels stressed trying to catch up.'],
+                  { text: 'Say Alex should have skipped it too since it seems like everyone is doing it.', correct: false, outcome: ['Alex starts thinking skipping would have been fine.', 'The next time friends say “everyone’s doing it,” Alex skips an assignment.', 'Alex falls behind in class and has to stay in at recess to catch up.'],
                     feedback: 'That phrase often isn’t even true, and it doesn’t make skipping the responsible choice.' },
                   { text: 'Say sticking with the choice to do the assignment anyway was right.', correct: true,
                     feedback: 'Yes — sticking with your own choice shows real independence.' },
@@ -5646,11 +5646,11 @@ const CONTENT = {
               { type: 'decision', illustration: 'peer-pressure-moment', kicker: 'What should Alex do?',
                 text: 'There’s direct pressure and some teasing involved now. What’s the most effective response?',
                 choices: [
-                  { text: 'Give in to avoid being teased or called names.', correct: false, outcome: ['Alex gives in so the teasing will stop and goes along with the risky thing.', 'The group laughs for a second, then pushes Alex to do something even riskier next.', 'Alex feels uneasy and unlike themself, and now it feels even harder to say no.'],
+                  { text: 'Give in to avoid being teased or called names.', correct: false, outcome: ['Alex gives in so the teasing will stop and goes along with the risky thing.', 'The group laughs for a second, then pushes Alex to do something even riskier next.', 'Now the group knows teasing works, so they use it on Alex again the very next day.'],
                     feedback: 'Giving in to avoid teasing usually leads to a choice you didn’t actually want to make — the teasing itself is a pressure tactic, not a real reason to go along.' },
                   { text: 'Calmly but firmly say no, and if needed, leave the situation or find another trusted person nearby.', correct: true,
                     feedback: 'Yes — a calm, firm no, and being willing to leave the situation if needed, is exactly the confident response that works best.' },
-                  { text: 'Get into a long argument trying to convince everyone else they’re wrong.', correct: false, outcome: ['Alex starts a long argument, trying to prove everyone wrong.', 'Voices get louder, more kids crowd around, and the teasing gets worse instead of stopping.', 'Alex is still stuck in the middle of the pressure, more upset than before, and nobody’s mind has changed.'],
+                  { text: 'Get into a long argument trying to convince everyone else they’re wrong.', correct: false, outcome: ['Alex starts a long argument, trying to prove everyone wrong.', 'Voices get louder, more kids crowd around, and the teasing gets worse instead of stopping.', 'Alex is still stuck in the middle, the teasing keeps going, and nobody’s mind has changed.'],
                     feedback: 'Long arguments in the moment often don’t change anyone’s mind and can escalate things — a calm, firm no and stepping away is usually more effective.' },
                 ] },
               { type: 'dialogue', illustration: 'peer-pressure-moment',
@@ -5659,7 +5659,7 @@ const CONTENT = {
                   { speaker: 'Alex', text: 'No thanks, I’m going to go find my other friend.' },
                 ],
                 choices: [
-                  { text: 'Say Alex should have given in to avoid being teased.', correct: false, outcome: ['Alex starts believing giving in would have been easier.', 'At the next party, when someone says “don’t be a baby,” Alex goes along with it right away.', 'Alex ends up doing something Alex didn’t want to do, and feels bad about it afterward.'],
+                  { text: 'Say Alex should have given in to avoid being teased.', correct: false, outcome: ['Alex starts believing giving in would have been easier.', 'At the next party, when someone says “don’t be a baby,” Alex goes along with it right away.', 'Alex ends up doing something Alex didn’t want to do, and the group expects the same thing at the next party.'],
                     feedback: 'Giving in to avoid teasing leads to a choice you don’t actually want — finding another friend was better.' },
                   { text: 'Say calmly saying no and finding another friend was the most effective response.', correct: true,
                     feedback: 'Yes — that’s exactly the confident, effective response.' },
@@ -5681,7 +5681,7 @@ const CONTENT = {
                   { speaker: 'Alex', text: 'I almost gave in because I didn’t want to be called a baby.' },
                 ],
                 choices: [
-                  { text: 'Say phrases like “don’t be a baby” are only ever used in harmless situations.', correct: false, outcome: ['Alex decides “don’t be a baby” means the thing must be harmless.', 'The next time Alex hears it, Alex brushes off the uneasy feeling and goes along.', 'Alex ends up somewhere risky, confused about how a harmless-sounding phrase led there.'],
+                  { text: 'Say phrases like “don’t be a baby” are only ever used in harmless situations.', correct: false, outcome: ['Alex decides “don’t be a baby” means the thing must be harmless.', 'The next time Alex hears it, Alex brushes off the uneasy feeling and goes along.', 'Alex ends up with the group inside a closed-off construction site, where nobody is watching.'],
                     feedback: 'They’re actually commonly used to pressure people into risky things — that’s the pattern to recognize.' },
                   { text: 'Say those phrases are designed to make saying no feel embarrassing.', correct: true,
                     feedback: 'Exactly right — recognizing that helps you resist it.' },
@@ -5750,7 +5750,7 @@ const CONTENT = {
               { type: 'decision', illustration: 'store-balloons', kicker: 'What should Alex do?',
                 text: 'Alex really wants to see the balloons. What should Alex do first?',
                 choices: [
-                  { text: 'Run over right away without saying anything.', correct: false, outcome: ['Alex runs to the balloons alone.', 'Mom turns around. Alex is gone.', 'Mom can’t find Alex. Alex feels scared.'],
+                  { text: 'Run over right away without saying anything.', correct: false, outcome: ['Alex runs to the balloons alone.', 'Mom turns around. Alex is gone.', 'Mom calls, “Alex!” and searches everywhere.'],
                     feedback: 'Running off without telling a grown-up means they won’t know where you are.' },
                   { text: 'Ask Mom first, “Can we go look at the balloons?”', correct: true,
                     feedback: 'Yes! Checking with your safe adult first keeps you together and safe.' },
@@ -5761,7 +5761,7 @@ const CONTENT = {
                   { speaker: 'Mom', text: 'Sure, let’s walk over together.' },
                 ],
                 choices: [
-                  { text: 'Say Alex should have just run over alone.', correct: false, outcome: ['Alex runs off alone next time.', 'Alex can’t see Mom anymore.', 'Mom is worried. Alex feels lost.'],
+                  { text: 'Say Alex should have just run over alone.', correct: false, outcome: ['Alex runs off alone next time.', 'Alex can’t see Mom anymore.', 'Mom calls Alex’s name and searches all over.'],
                     feedback: 'Running over alone could mean getting separated from Mom.' },
                   { text: 'Say asking first and walking together was the safe choice.', correct: true,
                     feedback: 'Yes! Asking first and staying together is exactly right.' },
@@ -5774,7 +5774,7 @@ const CONTENT = {
                 choices: [
                   { text: 'Tell Mom first, “I’m going to that aisle,” and wait for a yes.', correct: true,
                     feedback: 'Yes! Checking first, even for a quick trip, is always the safe choice.' },
-                  { text: 'Just walk off without saying anything, since it’s only for a second.', correct: false, outcome: ['Alex walks to the next aisle.', 'Mom looks up and can’t see Alex.', 'Mom calls for Alex. Everyone feels worried.'],
+                  { text: 'Just walk off without saying anything, since it’s only for a second.', correct: false, outcome: ['Alex walks to the next aisle.', 'Mom looks up and can’t see Alex.', 'Mom calls for Alex and checks every aisle.'],
                     feedback: 'Even a quick trip should be checked first — a second is enough time to get separated.' },
                 ] },
               { type: 'dialogue', illustration: 'store-together',
@@ -5783,7 +5783,7 @@ const CONTENT = {
                   { speaker: 'Alex', text: 'I want to go to that aisle, is that okay?' },
                 ],
                 choices: [
-                  { text: 'Say Alex should have just gone without asking.', correct: false, outcome: ['Alex goes without asking next time.', 'Alex turns a corner and Mom is gone.', 'Alex feels scared and alone.'],
+                  { text: 'Say Alex should have just gone without asking.', correct: false, outcome: ['Alex goes without asking next time.', 'Alex turns a corner and Mom is gone.', 'Mom stops everything to search for Alex.'],
                     feedback: 'Going without asking makes it easy to get separated.' },
                   { text: 'Say telling Mom first was the safe choice.', correct: true,
                     feedback: 'Yes! Telling Mom first was exactly right.' },
@@ -5813,7 +5813,7 @@ const CONTENT = {
               { type: 'decision', illustration: 'park-trail', kicker: 'What should Alex do?',
                 text: 'The trail looks fun, but Dad isn’t in sight. What should Alex do first?',
                 choices: [
-                  { text: 'Follow the trail to see where it goes.', correct: false, outcome: ['Alex follows the trail into the trees without telling Dad.', 'The trees get thick, and Alex can’t see the park anymore.', 'Dad doesn’t know where Alex went, and Alex feels lost.'],
+                  { text: 'Follow the trail to see where it goes.', correct: false, outcome: ['Alex follows the trail into the trees without telling Dad.', 'The trees get thick, and Alex can’t see the park anymore.', 'Dad doesn’t know where Alex went, so he searches the whole park.'],
                     feedback: 'Exploring alone, even somewhere exciting, can take you out of sight of your safe adult.' },
                   { text: 'Stop, look around, and find Dad before going anywhere.', correct: true,
                     feedback: 'Yes! Stopping and finding your safe adult first is always the safe first step.' },
@@ -5824,7 +5824,7 @@ const CONTENT = {
                   { speaker: 'Alex', text: 'Dad, can we check out that trail together?' },
                 ],
                 choices: [
-                  { text: 'Say Alex should have gone down the trail alone.', correct: false, outcome: ['Alex goes down the trail alone next time.', 'Dad looks around the park and can’t see Alex anywhere.', 'Dad is worried, and Alex is too far away to hear him call.'],
+                  { text: 'Say Alex should have gone down the trail alone.', correct: false, outcome: ['Alex goes down the trail alone next time.', 'Dad looks around the park and can’t see Alex anywhere.', 'Dad calls Alex’s name again and again, but Alex is too far away to hear.'],
                     feedback: 'Going alone could mean getting separated from Dad.' },
                   { text: 'Say stopping and asking Dad first was the safe choice.', correct: true,
                     feedback: 'Yes! Stopping and asking first was exactly right.' },
@@ -5835,7 +5835,7 @@ const CONTENT = {
               { type: 'decision', illustration: 'park-together', kicker: 'One more check',
                 text: 'If Alex ever looks up and can’t find Dad, what’s the safest thing to do?',
                 choices: [
-                  { text: 'Keep walking to try to find Dad.', correct: false, outcome: ['Alex keeps walking to look for Dad.', 'Dad comes back to the spot, but Alex isn’t there anymore.', 'Now they are both searching in different places, and Alex feels scared.'],
+                  { text: 'Keep walking to try to find Dad.', correct: false, outcome: ['Alex keeps walking to look for Dad.', 'Dad comes back to the spot, but Alex isn’t there anymore.', 'Now they are both searching in different places, and it takes much longer to find each other.'],
                     feedback: 'Walking around to search can take you even farther from where your safe adult is looking.' },
                   { text: 'Stop right where you are and stay there.', correct: true,
                     feedback: 'Yes! Stopping and staying in one place makes it much easier for your safe adult to find you.' },
@@ -5846,7 +5846,7 @@ const CONTENT = {
                   { speaker: 'Alex', text: 'I stopped right where I was so you could find me.' },
                 ],
                 choices: [
-                  { text: 'Say Alex should have kept moving to look for Dad.', correct: false, outcome: ['Alex keeps moving to look for Dad next time.', 'Alex goes one way while Dad goes the other way.', 'It takes much longer to find each other, and Alex feels lost.'],
+                  { text: 'Say Alex should have kept moving to look for Dad.', correct: false, outcome: ['Alex keeps moving to look for Dad next time.', 'Alex goes one way while Dad goes the other way.', 'They keep missing each other until a park worker helps them meet up.'],
                     feedback: 'Moving around to search makes it harder to be found.' },
                   { text: 'Say stopping in place was exactly the right choice.', correct: true,
                     feedback: 'Yes! Stopping in place was exactly right.' },
@@ -5876,11 +5876,11 @@ const CONTENT = {
               { type: 'decision', illustration: 'fair-crowd', kicker: 'What should Alex do?',
                 text: 'The urge to run ahead is strong, but the crowd is thick. What’s the safest choice?',
                 choices: [
-                  { text: 'Run ahead through the crowd toward the music.', correct: false, outcome: ['Alex lets go and runs ahead into the crowd toward the music.', 'Within seconds, Alex looks back and Grandma is nowhere in sight.', 'Alex is surrounded by strangers, can’t see over people, and feels panicked.'],
+                  { text: 'Run ahead through the crowd toward the music.', correct: false, outcome: ['Alex lets go and runs ahead into the crowd toward the music.', 'Within seconds, Alex looks back and Grandma is nowhere in sight.', 'Alex can’t see over the people, and Grandma has to ask a security guard to help search.'],
                     feedback: 'In a crowded place, running ahead can get you lost in seconds — the urge to go is strong, but pausing keeps you safe.' },
                   { text: 'Take a breath, hold onto Grandma’s hand, and ask to walk there together.', correct: true,
                     feedback: 'Yes! Naming the urge, taking a breath, and asking to go together is exactly how to handle a strong urge to run off.' },
-                  { text: 'Yell for everyone to move out of the way.', correct: false, outcome: ['Alex yells for everyone to move out of the way.', 'People stare and some get annoyed, but the crowd doesn’t really move.', 'Alex still wants to run, feels more overwhelmed, and hasn’t talked with Grandma at all.'],
+                  { text: 'Yell for everyone to move out of the way.', correct: false, outcome: ['Alex yells for everyone to move out of the way.', 'People stare and some get annoyed, but the crowd doesn’t really move.', 'Alex still hasn’t told Grandma what’s wrong, so they stay stuck in the same spot.'],
                     feedback: 'That doesn’t solve the real problem — pausing and asking to go together does.' },
                 ] },
               { type: 'dialogue', illustration: 'fair-crowd',
@@ -5889,7 +5889,7 @@ const CONTENT = {
                   { speaker: 'Grandma', text: 'Yes, let’s hold hands and go together.' },
                 ],
                 choices: [
-                  { text: 'Say Alex should have run ahead since the urge was so strong.', correct: false, outcome: ['Alex decides that when the urge is strong, it’s okay to run ahead.', 'At the next crowded spot, Alex dashes off before Grandma can say anything.', 'Grandma loses sight of Alex, and both of them end up scared and searching.'],
+                  { text: 'Say Alex should have run ahead since the urge was so strong.', correct: false, outcome: ['Alex decides that when the urge is strong, it’s okay to run ahead.', 'At the next crowded spot, Alex dashes off before Grandma can say anything.', 'Grandma loses sight of Alex and has to ask people nearby to help her look.'],
                     feedback: 'Running ahead, even with a strong urge, can lead to getting lost in a crowd.' },
                   { text: 'Say pausing and asking to go together was the safe choice.', correct: true,
                     feedback: 'Yes! Pausing and asking to go together was exactly right.' },
@@ -5980,7 +5980,7 @@ const CONTENT = {
               { type: 'decision', illustration: 'store-lost', kicker: 'What should Alex do?',
                 text: 'Alex can’t see Mom anywhere nearby. What should Alex do?',
                 choices: [
-                  { text: 'Walk around the whole store looking.', correct: false, outcome: ['Alex walks all around the store.', 'Mom looks, but Alex has moved far away.', 'Now Mom can’t find Alex. Both feel worried.'],
+                  { text: 'Walk around the whole store looking.', correct: false, outcome: ['Alex walks all around the store.', 'Mom looks, but Alex has moved far away.', 'Mom calls Alex’s name, but Alex is too far away to hear.'],
                     feedback: 'Walking all over can make it harder for Mom to find you — look for a safe helper instead.' },
                   { text: 'Look for a worker wearing a store uniform or name tag.', correct: true,
                     feedback: 'Yes! A worker in a uniform is a safe helper who can help you.' },
@@ -5991,7 +5991,7 @@ const CONTENT = {
                   { speaker: 'Worker', text: 'Let’s find her together. Stay right here with me.' },
                 ],
                 choices: [
-                  { text: 'Say Alex should have kept walking alone.', correct: false, outcome: ['Alex keeps walking alone.', 'Alex gets farther and farther from Mom.', 'Mom can’t find Alex. Alex feels scared.'],
+                  { text: 'Say Alex should have kept walking alone.', correct: false, outcome: ['Alex keeps walking alone.', 'Alex gets farther and farther from Mom.', 'Mom searches every aisle but can’t find Alex.'],
                     feedback: 'Walking alone makes it harder to be found — asking the worker was better.' },
                   { text: 'Say asking the worker for help was the safe choice.', correct: true,
                     feedback: 'Yes! Asking the worker for help was exactly right.' },
@@ -6054,7 +6054,7 @@ const CONTENT = {
                   { speaker: 'Park visitor', text: 'Let’s ask that park ranger over there to help.' },
                 ],
                 choices: [
-                  { text: 'Say Alex should have asked just any stranger walking by.', correct: false, outcome: ['Alex asks a random person walking by instead.', 'The person says, “Sorry, I’m busy,” and keeps walking.', 'Alex is still alone and doesn’t know who to ask next.'],
+                  { text: 'Say Alex should have asked just any stranger walking by.', correct: false, outcome: ['Alex asks a random person walking by instead.', 'The person says, “Sorry, I’m busy,” and keeps walking.', 'Alex is still lost, and the family with kids who could have helped has walked away.'],
                     feedback: 'Just any stranger isn’t a reliable choice — asking a parent with kids nearby was better.' },
                   { text: 'Say asking a parent with kids, who then found a ranger, was smart.', correct: true,
                     feedback: 'Yes! Asking a parent with kids, who then found a ranger, was smart.' },
@@ -6210,7 +6210,7 @@ const CONTENT = {
               { type: 'decision', illustration: 'doctor-waiting', kicker: 'What should Alex do?',
                 text: 'The visit feels a little scary since Alex isn’t sure what will happen. What should Alex do?',
                 choices: [
-                  { text: 'Refuse to go into the room at all.', correct: false, outcome: ['Alex will not go into the room.', 'The doctor has to wait. Mom has to wait.', 'Alex still feels scared, and the checkup can’t happen.'],
+                  { text: 'Refuse to go into the room at all.', correct: false, outcome: ['Alex will not go into the room.', 'The doctor has to wait. Mom has to wait.', 'The doctor sees other kids. Alex has to come back another day.'],
                     feedback: 'It’s okay to feel nervous, but there are ways to feel calmer instead of refusing to go in.' },
                   { text: 'Ask a grown-up what will happen, and bring something comforting like a favorite toy.', correct: true,
                     feedback: 'Yes! Asking what to expect and bringing something comforting can help a visit feel less scary.' },
@@ -6221,7 +6221,7 @@ const CONTENT = {
                   { speaker: 'Mom', text: 'The doctor will check your ears, listen to your heart, and check your height. It won’t hurt.' },
                 ],
                 choices: [
-                  { text: 'Say Alex should have just waited to be surprised.', correct: false, outcome: ['Alex thinks, “Next time, I won’t ask.”', 'At the next visit, the doctor does something new.', 'Alex didn’t know it was coming and feels very scared.'],
+                  { text: 'Say Alex should have just waited to be surprised.', correct: false, outcome: ['Alex thinks, “Next time, I won’t ask.”', 'At the next visit, the doctor does something new.', 'Alex didn’t know it was coming, jumps, and the doctor has to stop and start over.'],
                     feedback: 'Asking ahead of time helps a visit feel less scary than being surprised.' },
                   { text: 'Say asking what would happen ahead of time was a good idea.', correct: true,
                     feedback: 'Yes! Asking ahead of time was a good idea.' },
@@ -6232,7 +6232,7 @@ const CONTENT = {
               { type: 'decision', illustration: 'doctor-checkup', kicker: 'One more check',
                 text: 'If something feels uncomfortable during the checkup, what can Alex do?',
                 choices: [
-                  { text: 'Just stay quiet and hope it ends soon.', correct: false, outcome: ['Alex stays quiet and holds very still.', 'The part that feels bad keeps going.', 'Alex feels upset inside, and nobody knows.'],
+                  { text: 'Just stay quiet and hope it ends soon.', correct: false, outcome: ['Alex stays quiet and holds very still.', 'The part that feels bad keeps going.', 'Nobody knows, so the doctor doesn’t stop or slow down.'],
                     feedback: 'You don’t have to just wait quietly — you can say something or ask for a short break.' },
                   { text: 'Tell the doctor or the trusted grown-up in the room, or ask for a short break.', correct: true,
                     feedback: 'Yes! It’s always okay to speak up or ask for a break during a checkup.' },
@@ -6243,7 +6243,7 @@ const CONTENT = {
                   { speaker: 'Doctor', text: 'Of course, take your time.' },
                 ],
                 choices: [
-                  { text: 'Say Alex shouldn’t have asked for a break.', correct: false, outcome: ['Alex thinks asking for a break was wrong.', 'Next time, Alex doesn’t ask, even when it’s too much.', 'Alex gets more and more upset, and nobody knows.'],
+                  { text: 'Say Alex shouldn’t have asked for a break.', correct: false, outcome: ['Alex thinks asking for a break was wrong.', 'Next time, Alex doesn’t ask, even when it’s too much.', 'Alex starts crying, and the doctor has to stop the checkup.'],
                     feedback: 'Asking for a break is always okay during a checkup.' },
                   { text: 'Say asking for a short break was a good choice.', correct: true,
                     feedback: 'Yes! Asking for a short break was a good choice.' },
@@ -6273,7 +6273,7 @@ const CONTENT = {
               { type: 'decision', illustration: 'dentist-sounds', kicker: 'What should Alex do?',
                 text: 'The sounds and light feel like too much. What should Alex do?',
                 choices: [
-                  { text: 'Cover ears and refuse to sit in the chair.', correct: false, outcome: ['Alex covers both ears and won’t sit in the dentist chair.', 'The dentist can’t check Alex’s teeth, and the visit stops.', 'Alex still feels overwhelmed, and they have to come back another day.'],
+                  { text: 'Cover ears and refuse to sit in the chair.', correct: false, outcome: ['Alex covers both ears and won’t sit in the dentist chair.', 'The dentist can’t check Alex’s teeth, and the visit stops.', 'Mom has to make a new appointment, and they go home with Alex’s teeth still not checked.'],
                     feedback: 'It’s okay to feel overwhelmed, but there’s a way to get things adjusted instead of refusing entirely.' },
                   { text: 'Tell the dentist the sounds or light feel too much, and ask if anything can be adjusted or explained first.', correct: true,
                     feedback: 'Yes! Telling the dentist what feels like too much, and asking questions, can really help.' },
@@ -6284,7 +6284,7 @@ const CONTENT = {
                   { speaker: 'Dentist', text: 'Sure, I’ll always tell you the next step before I start.' },
                 ],
                 choices: [
-                  { text: 'Say Alex should have just endured it without saying anything.', correct: false, outcome: ['Alex decides to stay quiet next time, even when sounds feel too loud.', 'The buzzing and bright light keep going, and Alex feels more and more overwhelmed.', 'Alex gets so upset that it’s hard to sit still, and the dentist doesn’t know why.'],
+                  { text: 'Say Alex should have just endured it without saying anything.', correct: false, outcome: ['Alex decides to stay quiet next time, even when sounds feel too loud.', 'The buzzing and bright light keep going, and Alex starts squirming in the chair.', 'The dentist doesn’t know why, so the cleaning keeps stopping and takes much longer.'],
                     feedback: 'Speaking up about what felt like too much helped a lot.' },
                   { text: 'Say asking the dentist to explain each step first was a great idea.', correct: true,
                     feedback: 'Yes! Asking the dentist to explain each step was a great idea.' },
@@ -6295,7 +6295,7 @@ const CONTENT = {
               { type: 'decision', illustration: 'dentist-explain', kicker: 'One more check',
                 text: 'Is it okay to ask the dentist to slow down or pause?',
                 choices: [
-                  { text: 'No, once it starts you have to keep going no matter what.', correct: false, outcome: ['Alex believes there’s no way to pause once the dentist starts.', 'When something feels like too much, Alex holds it in instead of raising a hand.', 'Alex feels trapped and upset, and the visit feels much scarier than it needed to.'],
+                  { text: 'No, once it starts you have to keep going no matter what.', correct: false, outcome: ['Alex believes there’s no way to pause once the dentist starts.', 'When something feels like too much, Alex holds it in instead of raising a hand.', 'Alex grips the chair and pulls away, so the dentist has to stop without knowing why.'],
                     feedback: 'That’s not true — you can ask to pause or slow down at almost any point.' },
                   { text: 'Yes, you can raise your hand or say “wait” to pause almost any time.', correct: true,
                     feedback: 'Exactly! You have a lot more say in the visit than it might feel like.' },
@@ -6306,7 +6306,7 @@ const CONTENT = {
                   { speaker: 'Alex', text: 'Okay, that makes me feel a lot better.' },
                 ],
                 choices: [
-                  { text: 'Say Alex shouldn’t rely on a pause signal.', correct: false, outcome: ['Alex decides not to use the pause signal.', 'When the water spray feels strange, Alex keeps quiet and tenses up.', 'Alex feels more and more stressed, and the dentist doesn’t know Alex needs a moment.'],
+                  { text: 'Say Alex shouldn’t rely on a pause signal.', correct: false, outcome: ['Alex decides not to use the pause signal.', 'When the water spray feels strange, Alex keeps quiet and tenses up.', 'Alex jerks away, water sprays everywhere, and the dentist has to stop without knowing Alex needed a moment.'],
                     feedback: 'A pause signal is a helpful tool Alex can use anytime.' },
                   { text: 'Say having a pause signal made Alex feel a lot better.', correct: true,
                     feedback: 'Yes! Having a pause signal made Alex feel a lot better.' },
@@ -6347,7 +6347,7 @@ const CONTENT = {
                   { speaker: 'Doctor', text: 'I need to look at the rash to help it get better, and yes, Mom can absolutely stay right here.' },
                 ],
                 choices: [
-                  { text: 'Say Alex shouldn’t have asked why.', correct: false, outcome: ['Alex decides asking why was rude and stops asking questions.', 'At the next appointment, Alex goes along with things without understanding them.', 'Alex feels uneasy and confused, and loses a simple way to tell what’s okay and what isn’t.'],
+                  { text: 'Say Alex shouldn’t have asked why.', correct: false, outcome: ['Alex decides asking why was rude and stops asking questions.', 'At the next appointment, Alex goes along with things without understanding them.', 'When a nurse does something Alex doesn’t understand, Alex doesn’t ask, so Alex can’t tell if it’s okay or not.'],
                     feedback: 'Asking why is always a fair question to ask.' },
                   { text: 'Say asking why and asking Mom to stay was exactly right.', correct: true,
                     feedback: 'Yes! Asking why and asking Mom to stay was exactly right.' },
@@ -6369,7 +6369,7 @@ const CONTENT = {
                   { speaker: 'Alex', text: 'A little strange, but okay, since you explained it and stayed with me.' },
                 ],
                 choices: [
-                  { text: 'Say Alex should have felt exactly the same as a warning-sign moment.', correct: false, outcome: ['Alex decides this checkup should have felt just like a warning-sign moment.', 'Alex starts feeling alarmed at every doctor visit, even when everything is explained.', 'Alex feels confused about what’s safe, and the real difference gets harder to notice.'],
+                  { text: 'Say Alex should have felt exactly the same as a warning-sign moment.', correct: false, outcome: ['Alex decides this checkup should have felt just like a warning-sign moment.', 'Alex starts refusing to go into the exam room at every visit, even when everything is explained.', 'Mom has to reschedule visits again and again, and Alex treats every normal exam like a warning sign.'],
                     feedback: 'This moment was explained and had a trusted adult present, which makes it different.' },
                   { text: 'Say it was different because it was explained and Mom stayed.', correct: true,
                     feedback: 'Yes! It was different because it was explained and Mom stayed.' },
@@ -6383,7 +6383,7 @@ const CONTENT = {
                 ],
                 text: 'Later, Alex feels a sharp pinch from a routine shot the nurse didn’t fully explain first. What should Alex do?',
                 choices: [
-                  { text: 'Stay quiet since it’s a doctor’s office, so anything goes.', correct: false, outcome: ['Alex stays quiet about the pinch, thinking anything goes at a doctor’s office.', 'Alex leaves without knowing what the shot was for, and the sore arm feels worrying.', 'Alex starts to think speaking up doesn’t matter there, which could make it harder to say something if anything ever feels truly wrong.'],
+                  { text: 'Stay quiet since it’s a doctor’s office, so anything goes.', correct: false, outcome: ['Alex stays quiet about the pinch, thinking anything goes at a doctor’s office.', 'Alex leaves without knowing what the shot was for, and nobody explains why the arm is sore.', 'Next time something hurts at a checkup, Alex stays quiet again, so the doctor never hears about it.'],
                     feedback: 'Even at a checkup, it’s always okay to say if something hurts or feels wrong — that’s true no matter where you are.' },
                   { text: 'Say “ouch, that hurt” and ask what it was for, since it’s always okay to speak up, even during a checkup.', correct: true,
                     feedback: 'Yes! It’s always okay to speak up, even during a checkup.' },
@@ -6449,7 +6449,7 @@ const CONTENT = {
                   { speaker: 'Alex', text: 'I’m going to try some slow breaths.' },
                 ],
                 choices: [
-                  { text: 'Say Alex should have kept ignoring it.', correct: false, outcome: ['Alex stops the slow breaths.', 'Alex’s hands get even tighter.', 'The big feeling keeps growing.'],
+                  { text: 'Say Alex should have kept ignoring it.', correct: false, outcome: ['Alex stops the slow breaths.', 'Alex’s hands get even tighter.', 'Alex yells and has to leave the group.'],
                     feedback: 'Ignoring the feeling would likely let it grow bigger.' },
                   { text: 'Say noticing the feeling and trying slow breaths was smart.', correct: true,
                     feedback: 'Yes! Noticing the feeling and trying slow breaths was smart.' },
@@ -6460,7 +6460,7 @@ const CONTENT = {
               { type: 'decision', illustration: 'classroom-breathing', kicker: 'One more check',
                 text: 'If slow breathing isn’t enough, what else can Alex do?',
                 choices: [
-                  { text: 'Keep breathing forever and never ask for anything else.', correct: false, outcome: ['Alex keeps breathing and breathing.', 'The room is still too loud.', 'Alex still feels bad but asks no one.'],
+                  { text: 'Keep breathing forever and never ask for anything else.', correct: false, outcome: ['Alex keeps breathing and breathing.', 'The room is still too loud.', 'Alex asks no one, so nobody turns the noise down.'],
                     feedback: 'One strategy doesn’t have to be the only one — it’s okay to ask for more help too.' },
                   { text: 'Ask a trusted adult for a short break in a quieter spot.', correct: true,
                     feedback: 'Yes! Asking for a break in a quieter spot is a great next step.' },
@@ -6471,7 +6471,7 @@ const CONTENT = {
                   { speaker: 'Teacher', text: 'Of course, take the time you need.' },
                 ],
                 choices: [
-                  { text: 'Say Alex shouldn’t have asked for a break.', correct: false, outcome: ['Alex thinks asking was wrong.', 'Next time, Alex doesn’t ask for a break.', 'The feeling stays big. No grown-up helps.'],
+                  { text: 'Say Alex shouldn’t have asked for a break.', correct: false, outcome: ['Alex thinks asking was wrong.', 'Next time, Alex doesn’t ask for a break.', 'Alex starts to cry. No grown-up knew Alex needed help.'],
                     feedback: 'Asking for a break is always okay when a feeling gets big.' },
                   { text: 'Say asking for a break was a great choice.', correct: true,
                     feedback: 'Yes! Asking for a break was a great choice.' },
@@ -6501,7 +6501,7 @@ const CONTENT = {
               { type: 'decision', illustration: 'party-overwhelm', kicker: 'What should Alex do?',
                 text: 'The tight, hot feeling is starting again. What should Alex do?',
                 choices: [
-                  { text: 'Wait until the feeling gets really big before doing anything.', correct: false, outcome: ['Alex waits and keeps playing at the loud party.', 'More balloons pop, and the tight, hot feeling grows much bigger.', 'Now the feeling is so big that calming down is much harder.'],
+                  { text: 'Wait until the feeling gets really big before doing anything.', correct: false, outcome: ['Alex waits and keeps playing at the loud party.', 'More balloons pop, and the tight, hot feeling grows much bigger.', 'Alex can’t calm down, covers both ears, and has to leave the party early.'],
                     feedback: 'Waiting until a feeling gets really big makes it much harder to calm down — using a strategy early works better.' },
                   { text: 'Use a calm-down tool right away, like squeezing a stress ball or finding a quieter corner.', correct: true,
                     feedback: 'Yes! Using a calm-down tool as soon as you notice the feeling works much better than waiting.' },
@@ -6512,7 +6512,7 @@ const CONTENT = {
                   { speaker: 'Alex', text: 'I’m going to squeeze my stress ball and step over there for a second.' },
                 ],
                 choices: [
-                  { text: 'Say Alex should have waited until the feeling got much bigger.', correct: false, outcome: ['Alex decides to wait next time until the feeling is really big.', 'At the next loud party, Alex leaves the stress ball in a pocket.', 'The feeling gets huge, and Alex has a much harder time calming down.'],
+                  { text: 'Say Alex should have waited until the feeling got much bigger.', correct: false, outcome: ['Alex decides to wait next time until the feeling is really big.', 'At the next loud party, Alex leaves the stress ball in a pocket.', 'The feeling gets huge, and Alex has to leave the party before the cake.'],
                     feedback: 'Waiting would make the feeling much harder to calm down.' },
                   { text: 'Say using the stress ball right away was smart.', correct: true,
                     feedback: 'Yes! Using the stress ball right away was smart.' },
@@ -6523,7 +6523,7 @@ const CONTENT = {
               { type: 'decision', illustration: 'party-calmer', kicker: 'One more check',
                 text: 'Why is it helpful to have more than one calming strategy ready?',
                 choices: [
-                  { text: 'Because one strategy works for absolutely every feeling and every place.', correct: false, outcome: ['Alex believes one strategy works for every feeling and every place.', 'On a noisy bus, Alex has left the stress ball at home.', 'Alex has no other strategy ready and feels stuck with the big feeling.'],
+                  { text: 'Because one strategy works for absolutely every feeling and every place.', correct: false, outcome: ['Alex believes one strategy works for every feeling and every place.', 'On a noisy bus, Alex has left the stress ball at home.', 'With no other strategy ready, Alex cries and kicks the seat the whole ride.'],
                     feedback: 'Different situations can call for different strategies — that’s exactly why having more than one is helpful.' },
                   { text: 'Because different places and feelings might call for different strategies.', correct: true,
                     feedback: 'Exactly right! Having a few options ready helps you pick what fits the moment.' },
@@ -6564,7 +6564,7 @@ const CONTENT = {
               { type: 'decision', illustration: 'alarm-surprise', kicker: 'What should Alex do?',
                 text: 'This feeling is bigger than the usual tools can handle. What should Alex do?',
                 choices: [
-                  { text: 'Feel embarrassed and never use any strategy again since it “didn’t work.”', correct: false, outcome: ['Alex feels embarrassed and decides strategies are useless because they “didn’t work.”', 'The next time a big feeling starts, Alex doesn’t try breathing or a quiet corner at all.', 'The feeling builds with nothing to slow it down, and Alex ends up feeling even more overwhelmed and alone.'],
+                  { text: 'Feel embarrassed and never use any strategy again since it “didn’t work.”', correct: false, outcome: ['Alex feels embarrassed and decides strategies are useless because they “didn’t work.”', 'The next time a big feeling starts, Alex doesn’t try breathing or a quiet corner at all.', 'With nothing to slow it down, Alex ends up shouting in class and has to leave the room.'],
                     feedback: 'One hard moment doesn’t mean your strategies stopped working — sometimes a feeling is just bigger than usual, and that’s okay.' },
                   { text: 'Use the family’s bigger-feelings plan, like going to a pre-agreed calm spot with a trusted adult.', correct: true,
                     feedback: 'Yes! Having a bigger-feelings plan ready for moments like this is exactly what it’s for.' },
@@ -6575,7 +6575,7 @@ const CONTENT = {
                   { speaker: 'Teacher', text: 'That’s okay — let’s go to the calm room like your plan says.' },
                 ],
                 choices: [
-                  { text: 'Say Alex should feel bad that the usual strategies weren’t enough this time.', correct: false, outcome: ['Alex starts to feel bad that the usual strategies weren’t enough.', 'Instead of going to the calm room, Alex stays put, feeling ashamed and stuck.', 'The big feeling and the shame pile on top of each other, making it even harder to recover.'],
+                  { text: 'Say Alex should feel bad that the usual strategies weren’t enough this time.', correct: false, outcome: ['Alex starts to feel bad that the usual strategies weren’t enough.', 'Instead of going to the calm room, Alex stays at the desk with head down.', 'Alex misses the rest of the lesson and isn’t ready to join in again until lunch.'],
                     feedback: 'Feeling bad about it isn’t needed — using the backup plan was exactly right.' },
                   { text: 'Say using the bigger-feelings plan was exactly the right move.', correct: true,
                     feedback: 'Yes! Using the bigger-feelings plan was exactly the right move.' },
@@ -6597,7 +6597,7 @@ const CONTENT = {
                   { speaker: 'Alex', text: 'Better. I still felt bad it got that big, but the calm room really helped.' },
                 ],
                 choices: [
-                  { text: 'Say Alex should feel bad forever about it.', correct: false, outcome: ['Alex believes they should feel bad about it forever.', 'Alex keeps thinking about the fire alarm day and feels embarrassed every time.', 'Alex starts avoiding school events, worried it will happen again, and misses out on fun things.'],
+                  { text: 'Say Alex should feel bad forever about it.', correct: false, outcome: ['Alex believes they should feel bad about it forever.', 'Alex keeps replaying the fire alarm day instead of practicing the plan.', 'Alex starts skipping school events, like the assembly and the field trip, and misses out on fun things.'],
                     feedback: 'Feeling bad forever isn’t needed — the plan helped Alex recover.' },
                   { text: 'Say it’s okay that it happened, and the plan helped Alex recover.', correct: true,
                     feedback: 'Yes! It’s okay that it happened, and the plan helped Alex recover.' },
@@ -6611,7 +6611,7 @@ const CONTENT = {
                 ],
                 text: 'The next day, Alex feels worried the same thing might happen again. What should Alex remember?',
                 choices: [
-                  { text: 'There’s nothing to do but hope it never happens again.', correct: false, outcome: ['Alex decides all they can do is hope it never happens again.', 'Alex doesn’t talk to anyone about it, and the plan stays the same.', 'Alex keeps worrying about the next fire drill, and still feels unready when it comes.'],
+                  { text: 'There’s nothing to do but hope it never happens again.', correct: false, outcome: ['Alex decides all they can do is hope it never happens again.', 'Alex doesn’t talk to anyone about it, and the plan stays the same.', 'When the next fire drill comes, the plan is still the same, and the hard moment happens all over again.'],
                     feedback: 'You can do more than just hope — talking about it with a trusted adult and maybe updating the plan can help you feel more ready.' },
                   { text: 'Talk with a trusted adult about what happened, and update the bigger-feelings plan if it would help.', correct: true,
                     feedback: 'Yes! Talking about it and updating the plan can help you feel more ready.' },
@@ -6669,9 +6669,9 @@ const CONTENT = {
                 choices: [
                   { text: 'Yell for a grown-up right away.', correct: true,
                     feedback: 'Yes! Getting a grown-up fast is exactly right.' },
-                  { text: 'Wait quietly to see if Sam stops coughing on their own.', correct: false, outcome: ['Alex sits quietly and watches Sam.', 'Sam keeps coughing. No grown-up knows.', 'Sam looks scared, and help is not coming.'],
+                  { text: 'Wait quietly to see if Sam stops coughing on their own.', correct: false, outcome: ['Alex sits quietly and watches Sam.', 'Sam keeps coughing. No grown-up knows.', 'Time goes by, and no one gets help.'],
                     feedback: 'Don’t just wait and watch — telling a grown-up right away is safer.' },
-                  { text: 'Try to fix it by patting Sam’s back really hard.', correct: false, outcome: ['Alex pats Sam’s back really hard.', 'Sam jumps and coughs even more.', 'Sam is upset, and still no grown-up is helping.'],
+                  { text: 'Try to fix it by patting Sam’s back really hard.', correct: false, outcome: ['Alex pats Sam’s back really hard.', 'Sam jumps and coughs even more.', 'Sam pulls away, and still no grown-up is helping.'],
                     feedback: 'That’s a grown-up’s job, not yours — go get help right away.' },
                 ] },
               { type: 'dialogue', illustration: 'firstaid-alert',
@@ -6682,7 +6682,7 @@ const CONTENT = {
                 choices: [
                   { text: 'Say the teacher will handle it now, and Alex helped by telling fast.', correct: true,
                     feedback: 'Exactly — telling fast is the biggest help you can give.' },
-                  { text: 'Say Alex should have tried to help more by himself.', correct: false, outcome: ['Alex thinks, “I should have helped more by myself.”', 'Next time, Alex tries to fix it alone and does not call anyone.', 'The grown-up comes much later. Alex feels scared and stuck.'],
+                  { text: 'Say Alex should have tried to help more by himself.', correct: false, outcome: ['Alex thinks, “I should have helped more by myself.”', 'Next time, Alex tries to fix it alone and does not call anyone.', 'No grown-up knows, so help comes much later.'],
                     feedback: 'Getting the grown-up was the right amount of help — that’s not something to do alone.' },
                 ] },
               { type: 'narrative', illustration: 'firstaid-safe', kicker: 'Step 2',
@@ -6818,7 +6818,7 @@ const CONTENT = {
                 choices: [
                   { text: 'Your real job is to notice, stay calm, get help fast (a grown-up or 911), and give clear information — not to perform first aid alone.', correct: true,
                     feedback: 'Exactly right — noticing, staying calm, and getting help fast is the real skill.' },
-                  { text: 'Your job is to handle it completely by yourself so grown-ups don’t have to.', correct: false, outcome: ['Alex believes the job is to handle emergencies alone so grown-ups don’t have to.', 'When a friend gets hurt, Alex tries to fix everything and doesn’t call anyone.', 'Alex feels overwhelmed and scared, and real help arrives much later than it could have.'],
+                  { text: 'Your job is to handle it completely by yourself so grown-ups don’t have to.', correct: false, outcome: ['Alex believes the job is to handle emergencies alone so grown-ups don’t have to.', 'When a friend gets hurt, Alex tries to fix everything and doesn’t call anyone.', 'No one calls a grown-up, so real help arrives much later than it could have.'],
                     feedback: 'That’s not the goal — getting help fast is what actually helps.' },
                 ] },
             ],
@@ -6952,7 +6952,7 @@ const CONTENT = {
                 choices: [
                   { text: 'Stay nearby, speak gently, and let Casey rest until they feel like themselves again.', correct: true,
                     feedback: 'Yes — staying calm and kind while they recover is exactly right.' },
-                  { text: 'Ask lots of questions right away about what happened.', correct: false, outcome: ['Alex asks Casey lots of questions right away.', 'Casey is tired and confused and can’t answer them.', 'Casey feels upset and overwhelmed instead of getting to rest.'],
+                  { text: 'Ask lots of questions right away about what happened.', correct: false, outcome: ['Alex asks Casey lots of questions right away.', 'Casey is tired and confused and can’t answer them.', 'Casey turns away and starts to cry instead of getting to rest.'],
                     feedback: 'Right after a seizure isn’t the time for lots of questions — give them space to rest first.' },
                 ] },
               { type: 'sequence', illustration: 'seizure-safe', kicker: 'What comes next?',
@@ -6965,7 +6965,7 @@ const CONTENT = {
                 choices: [
                   { text: 'No — it’s kind to treat Casey normally and not bring it up to embarrass them.', correct: true,
                     feedback: 'Exactly right — being kind means not making it a big deal or teasing.' },
-                  { text: 'Yes, it’s funny and worth talking about.', correct: false, outcome: ['The next day, Alex jokes about Casey shaking.', 'Other kids laugh, and Casey hears them.', 'Casey feels embarrassed and doesn’t want to come back to club.'],
+                  { text: 'Yes, it’s funny and worth talking about.', correct: false, outcome: ['The next day, Alex jokes about Casey shaking.', 'Other kids laugh, and Casey hears them.', 'The next week, Casey doesn’t come back to club.'],
                     feedback: 'That’s not kind — seizures aren’t something to tease someone about.' },
                 ] },
             ],
@@ -6989,7 +6989,7 @@ const CONTENT = {
                     feedback: 'Yes — Stay and Safe are exactly the first two steps.' },
                   { text: 'Leave to find a coach without staying with Morgan at all.', correct: false, outcome: ['Alex runs off to find the coach, leaving Morgan alone on the ground.', 'While Alex is gone, nobody moves the hard equipment away from Morgan.', 'No one is with Morgan to keep the area safe or notice how long the seizure lasts.'],
                     feedback: 'It’s safer to have someone stay while another person gets help — don’t leave the person completely alone if you can help it.' },
-                  { text: 'Try to stop the shaking by holding Morgan down.', correct: false, outcome: ['Alex presses down on Morgan’s arms to try to stop the shaking.', 'The shaking doesn’t stop — holding someone down can’t end a seizure.', 'Pushing against the movement could hurt Morgan’s arms or shoulders, and Alex feels even more panicked.'],
+                  { text: 'Try to stop the shaking by holding Morgan down.', correct: false, outcome: ['Alex presses down on Morgan’s arms to try to stop the shaking.', 'The shaking doesn’t stop — holding someone down can’t end a seizure.', 'Pushing against the movement could hurt Morgan’s arms or shoulders, and nobody has started timing the seizure.'],
                     feedback: 'Never hold someone down during a seizure — that can cause injury.' },
                 ] },
               { type: 'dialogue', illustration: 'seizure-alert',
@@ -7093,7 +7093,7 @@ const CONTENT = {
                 choices: [
                   { text: 'Say yes, real bills don’t get paid with gift cards over the phone.', correct: true,
                     feedback: 'Exactly right — that’s a common trick.' },
-                  { text: 'Say maybe it was true and Alex should have paid it.', correct: false, outcome: ['Alex thinks the call was real.', 'The caller calls back the next day.', 'Alex almost pays. Alex feels confused.'],
+                  { text: 'Say maybe it was true and Alex should have paid it.', correct: false, outcome: ['Alex thinks the call was real.', 'The caller calls back the next day.', 'Alex almost sends money to a trickster.'],
                     feedback: 'It wasn’t true — real bills aren’t paid that way, and telling a grown-up was correct.' },
                 ] },
               { type: 'narrative', illustration: 'money-safe', kicker: 'Step 2',
@@ -7104,7 +7104,7 @@ const CONTENT = {
                 choices: [
                   { text: 'Tell a grown-up before doing anything — real prizes don’t ask you to pay first.', correct: true,
                     feedback: 'Yes — that’s a classic trick; always check with a grown-up.' },
-                  { text: 'Pay the small fee since the prize sounds big.', correct: false, outcome: ['Alex pays the small fee.', 'No prize comes. They ask for more money.', 'The money is gone. Alex feels tricked.'],
+                  { text: 'Pay the small fee since the prize sounds big.', correct: false, outcome: ['Alex pays the small fee.', 'No prize comes. They ask for more money.', 'The money is gone. Alex was tricked.'],
                     feedback: 'That’s the trick — never pay to get a “prize.”' },
                 ] },
               { type: 'matching', illustration: 'money-safe', kicker: 'Match them up!',
@@ -7157,7 +7157,7 @@ const CONTENT = {
                 choices: [
                   { text: 'Asking to keep money stuff secret from a grown-up is itself a big warning sign.', correct: true,
                     feedback: 'Yes — real, safe requests don’t need to be kept secret from a trusted grown-up.' },
-                  { text: 'It’s fine to keep it secret since they asked nicely.', correct: false, outcome: ['Alex keeps the message a secret and sends the gift card code.', 'The person says, “Thanks! Now send another one, and don’t tell.”', 'Alex feels stuck and worried, and no grown-up knows what is happening.'],
+                  { text: 'It’s fine to keep it secret since they asked nicely.', correct: false, outcome: ['Alex keeps the message a secret and sends the gift card code.', 'The person says, “Thanks! Now send another one, and don’t tell.”', 'Alex sends another code, and no grown-up knows what is happening.'],
                     feedback: 'That secrecy request is exactly the warning sign — tell a grown-up.' },
                 ] },
               { type: 'sequence', illustration: 'money-safe', kicker: 'What comes next?',
@@ -7192,9 +7192,9 @@ const CONTENT = {
                 choices: [
                   { text: 'Say you’ll check and call that relative back directly using a number you already have, or tell a trusted grown-up right away.', correct: true,
                     feedback: 'Yes — verifying independently, not through the caller, is exactly the safe move.' },
-                  { text: 'Send the money quickly since it sounds like an emergency.', correct: false, outcome: ['Alex sends the money right away and doesn’t tell anyone in the family.', 'Later, Alex finds out the real relative was safe at home the whole time.', 'The money is gone, it can’t be gotten back, and Alex feels embarrassed and upset.'],
+                  { text: 'Send the money quickly since it sounds like an emergency.', correct: false, outcome: ['Alex sends the money right away and doesn’t tell anyone in the family.', 'Later, Alex finds out the real relative was safe at home the whole time.', 'The money is gone and can’t be gotten back, and Alex has to tell the family what happened.'],
                     feedback: 'Urgency and secrecy are exactly what scammers rely on — verify first instead.' },
-                  { text: 'Ask the caller more questions to decide if they’re real.', correct: false, outcome: ['Alex keeps the caller on the line and asks questions only a relative should know.', 'The caller answers smoothly, guessing some details and using what Alex accidentally gives away.', 'Now Alex feels even more sure it’s real, and the pressure to send money gets stronger.'],
+                  { text: 'Ask the caller more questions to decide if they’re real.', correct: false, outcome: ['Alex keeps the caller on the line and asks questions only a relative should know.', 'The caller answers smoothly, guessing some details and using what Alex accidentally gives away.', 'Now Alex believes it’s real, and the caller pushes harder: “Send the money now.”'],
                     feedback: 'Skilled scammers can answer questions convincingly — the safer move is independent verification, not more questions to the caller.' },
                 ] },
               { type: 'dialogue', illustration: 'money-alert',
@@ -7286,9 +7286,9 @@ const CONTENT = {
                 choices: [
                   { text: 'Say “I’m not ready for that yet” — it’s okay to say so, even if Jamie asked nicely.', correct: true,
                     feedback: 'Yes — you’re always allowed to say not yet, or no, even to someone you like.' },
-                  { text: 'Go along with it anyway so Jamie doesn’t feel bad.', correct: false, outcome: ['Alex holds hands anyway.', 'Alex’s tummy feels funny and tight.', 'Alex feels upset, and Jamie doesn’t know.'],
+                  { text: 'Go along with it anyway so Jamie doesn’t feel bad.', correct: false, outcome: ['Alex holds hands anyway.', 'Alex’s tummy feels funny and tight.', 'Jamie doesn’t know, so Jamie takes Alex’s hand again the next day.'],
                     feedback: 'Your own comfort matters too — you don’t have to go along with something just to avoid disappointing someone.' },
-                  { text: 'Avoid Jamie completely from now on.', correct: false, outcome: ['Alex stops talking to Jamie.', 'Jamie is confused and feels sad.', 'Alex misses Jamie and feels lonely.'],
+                  { text: 'Avoid Jamie completely from now on.', correct: false, outcome: ['Alex stops talking to Jamie.', 'Jamie waves at Alex, but Alex walks away.', 'Now Alex and Jamie don’t play together anymore.'],
                     feedback: 'You don’t have to avoid someone completely — you can just say how you feel honestly.' },
                 ] },
               { type: 'dialogue', illustration: 'dating-alert',
@@ -7299,7 +7299,7 @@ const CONTENT = {
                 choices: [
                   { text: 'Say that’s what a respectful friend or partner does — accepts your “not yet” without pressure.', correct: true,
                     feedback: 'Exactly — respecting your answer without pushing back is what respect looks like.' },
-                  { text: 'Say Jamie should have kept asking until Alex agreed.', correct: false, outcome: ['Alex thinks Jamie should keep asking.', 'Alex keeps asking a friend after the friend says no.', 'The friend feels pushed and walks away.'],
+                  { text: 'Say Jamie should have kept asking until Alex agreed.', correct: false, outcome: ['Alex thinks Jamie should keep asking.', 'Alex keeps asking a friend after the friend says no.', 'The friend says, “I said no!” and goes to play with someone else.'],
                     feedback: 'Someone who respects you accepts your answer the first time, without repeating the ask to wear you down.' },
                 ] },
               { type: 'narrative', illustration: 'dating-safe', kicker: 'Step 2',
@@ -7310,7 +7310,7 @@ const CONTENT = {
                 choices: [
                   { text: 'Because it’s Alex’s choice every single time, even if the answer was different before.', correct: true,
                     feedback: 'Yes — your answer today matters, no matter what it was last time. You can always change your mind.' },
-                  { text: 'Because Jamie forgot the earlier answer.', correct: false, outcome: ['Alex thinks Jamie just forgot.', 'Alex gets grumpy at Jamie for asking again.', 'Jamie feels sad for being kind.'],
+                  { text: 'Because Jamie forgot the earlier answer.', correct: false, outcome: ['Alex thinks Jamie just forgot.', 'Alex gets grumpy at Jamie for asking again.', 'Jamie walks away, and the game ends.'],
                     feedback: 'Asking first is about respect, not forgetting — checking each time is exactly right.' },
                 ] },
               { type: 'matching', illustration: 'dating-safe', kicker: 'Match them up!',
@@ -7339,9 +7339,9 @@ const CONTENT = {
                 choices: [
                   { text: 'That’s a pressure tactic, not a sign of real caring — a healthy relationship doesn’t ask you to give up your other friendships.', correct: true,
                     feedback: 'Yes — exactly. Wanting to isolate you from friends is a warning sign, not affection.' },
-                  { text: 'Riley must be right, since caring means proving it by giving things up.', correct: false, outcome: ['Alex stops hanging out with other friends to prove caring to Riley.', 'Alex’s friends stop inviting Alex to lunch and games.', 'Now Alex only has Riley to talk to and feels left out.'],
+                  { text: 'Riley must be right, since caring means proving it by giving things up.', correct: false, outcome: ['Alex stops hanging out with other friends to prove caring to Riley.', 'Alex’s friends stop inviting Alex to lunch and games.', 'At lunch, the friends’ table is full, and Alex can only sit with Riley.'],
                     feedback: 'That’s actually a common pressure tactic — real caring doesn’t require giving up your other friendships.' },
-                  { text: 'Ignore it, but keep everything exactly the same anyway.', correct: false, outcome: ['Alex ignores what Riley said and doesn’t tell anyone.', 'Riley says it again, and Alex starts skipping time with friends.', 'Alex feels confused and stuck, and no trusted adult knows.'],
+                  { text: 'Ignore it, but keep everything exactly the same anyway.', correct: false, outcome: ['Alex ignores what Riley said and doesn’t tell anyone.', 'Riley says it again, and Alex starts skipping time with friends.', 'Soon Alex misses a friend’s birthday party, and no trusted adult knows why.'],
                     feedback: 'It’s worth actually noticing this as a warning sign, not just ignoring it — consider talking to a trusted friend or adult about it.' },
                 ] },
               { type: 'dialogue', illustration: 'dating-alert',
@@ -7364,7 +7364,7 @@ const CONTENT = {
                 choices: [
                   { text: 'By respecting Alex’s other friendships, even if it means not getting everything they originally asked for.', correct: true,
                     feedback: 'Yes — respect means accepting boundaries, not getting your way regardless.' },
-                  { text: 'By being upset until Alex gives in.', correct: false, outcome: ['Alex thinks Riley staying upset is normal.', 'Riley stays upset, so Alex gives in and skips time with friends.', 'Alex feels sad and pressured, and Riley keeps getting upset to get their way.'],
+                  { text: 'By being upset until Alex gives in.', correct: false, outcome: ['Alex thinks Riley staying upset is normal.', 'Riley stays upset, so Alex gives in and skips time with friends.', 'The next week, Riley gets upset again, and Alex gives up another plan with friends.'],
                     feedback: 'Staying upset until you give in is more pressure, not respect.' },
                 ] },
               { type: 'sequence', illustration: 'dating-safe', kicker: 'What comes next?',
@@ -7399,9 +7399,9 @@ const CONTENT = {
                 choices: [
                   { text: 'This is a controlling pattern, not normal closeness — healthy relationships don’t require constant monitoring or instant replies.', correct: true,
                     feedback: 'Yes — constant monitoring and control over your time are warning signs of an unhealthy dynamic.' },
-                  { text: 'This is just what caring a lot looks like.', correct: false, outcome: ['Alex decides the constant location checks just mean the partner cares a lot.', 'The partner starts asking for more check-ins and getting upset more often.', 'Alex feels watched all the time and starts to feel anxious whenever the phone buzzes.'],
+                  { text: 'This is just what caring a lot looks like.', correct: false, outcome: ['Alex decides the constant location checks just mean the partner cares a lot.', 'The partner starts asking for more check-ins and getting upset more often.', 'Soon Alex has to send a location update every hour, and gets an angry text whenever one is late.'],
                     feedback: 'Constant monitoring is a control pattern, not a healthy sign of caring.' },
-                  { text: 'It’s fine as long as Alex just always replies fast enough to avoid upset.', correct: false, outcome: ['Alex starts replying to every text within seconds to keep the partner from getting upset.', 'Alex checks the phone during class, meals, and time with friends.', 'Alex is tired and stressed, and the partner’s rules keep growing anyway.'],
+                  { text: 'It’s fine as long as Alex just always replies fast enough to avoid upset.', correct: false, outcome: ['Alex starts replying to every text within seconds to keep the partner from getting upset.', 'Alex checks the phone during class, meals, and time with friends.', 'Alex gets in trouble for using the phone in class, and the partner adds new rules anyway.'],
                     feedback: 'Changing your own behavior to manage someone else’s control isn’t the goal — recognizing the pattern is what matters here.' },
                 ] },
               { type: 'dialogue', illustration: 'dating-alert',
@@ -7424,7 +7424,7 @@ const CONTENT = {
                 choices: [
                   { text: 'Because having a plan ready means Alex can get help fast and without a long explanation, if it’s ever needed.', correct: true,
                     feedback: 'Yes — a safety plan is useful precisely because it’s ready before it’s needed.' },
-                  { text: 'It’s not useful unless something has already gone wrong.', correct: false, outcome: ['Alex decides a code word isn’t needed since nothing bad has happened yet.', 'One night at a party, Alex feels uncomfortable and wants to leave quietly.', 'With no plan ready, Alex has to explain everything out loud or just stay feeling stuck.'],
+                  { text: 'It’s not useful unless something has already gone wrong.', correct: false, outcome: ['Alex decides a code word isn’t needed since nothing bad has happened yet.', 'One night at a party, Alex feels uncomfortable and wants to leave quietly.', 'With no code word to text home, Alex can’t leave quietly and ends up staying until the party is over.'],
                     feedback: 'A safety plan is most useful when it’s set up ahead of time, before anything happens.' },
                 ] },
               { type: 'sequence', illustration: 'dating-safe', kicker: 'What comes next?',
@@ -7437,7 +7437,7 @@ const CONTENT = {
                 choices: [
                   { text: 'You can always change your mind, ask for help, or leave a situation — you never need a “good enough” reason, and trusted adults are there to help.', correct: true,
                     feedback: 'Exactly right — you never need to justify wanting to feel safe, and help is always available.' },
-                  { text: 'You have to have a very serious reason before it’s okay to ask for help or leave.', correct: false, outcome: ['Alex believes there has to be a very serious reason before asking for help or leaving.', 'On a date, something feels off, but Alex stays because it doesn’t seem serious enough.', 'Alex feels more and more uncomfortable and alone, and no trusted adult knows.'],
+                  { text: 'You have to have a very serious reason before it’s okay to ask for help or leave.', correct: false, outcome: ['Alex believes there has to be a very serious reason before asking for help or leaving.', 'On a date, something feels off, but Alex stays because it doesn’t seem serious enough.', 'Alex stays on the date for hours, and no trusted adult knows where Alex is or that anything was wrong.'],
                     feedback: 'That’s not true — you’re always allowed to ask for help or leave a situation, for any reason, including just a feeling that something’s wrong.' },
                 ] },
             ],
@@ -7959,11 +7959,11 @@ const CONTENT = {
               { type: 'decision', illustration: 'street-corner', kicker: '¿Qué debería hacer Alex primero?',
                 text: '¿Cuál es la forma más segura para que Alex empiece a cruzar?',
                 choices: [
-                  { text: 'Caminar hacia la calle justo donde está parado.', correct: false, outcome: ['Alex baja a la calle justo ahí.', 'Un conductor no espera ver a Alex.', 'El carro frena rápido. Alex tiene miedo.'],
+                  { text: 'Caminar hacia la calle justo donde está parado.', correct: false, outcome: ['Alex baja a la calle justo ahí.', 'Un conductor no espera ver a Alex.', 'El carro frena rápido y pita fuerte.'],
                     feedback: 'Cruzar fuera de un cruce peatonal es más difícil de anticipar para los conductores — es más seguro buscar un cruce marcado.' },
                   { text: 'Ir al cruce peatonal y mirar en ambas direcciones antes de bajar de la acera.', correct: true,
                     feedback: '¡Correcto! Los cruces peatonales son donde los conductores esperan que cruce la gente, y mirar en ambas direcciones revisa si hay tráfico.' },
-                  { text: 'Cruzar entre dos carros estacionados porque es un camino más corto.', correct: false, outcome: ['Alex sale entre dos carros estacionados.', 'Un conductor no puede ver a Alex.', 'Un carro pasa muy cerca. Alex se asusta.'],
+                  { text: 'Cruzar entre dos carros estacionados porque es un camino más corto.', correct: false, outcome: ['Alex sale entre dos carros estacionados.', 'Un conductor no puede ver a Alex.', 'Un carro pasa muy cerca y pita. Alex salta de vuelta a la acera.'],
                     feedback: 'Los carros estacionados pueden ocultarte de los conductores — es mucho más seguro cruzar donde todos puedan verte.' },
                 ] },
               { type: 'dialogue', illustration: 'street-corner',
@@ -7972,7 +7972,7 @@ const CONTENT = {
                   { speaker: 'Alex', text: '¡Sí! ¿Cuál es la mejor manera de cruzar aquí?' },
                 ],
                 choices: [
-                  { text: 'Simplemente cruzar donde se vea despejado.', correct: false, outcome: ['Alex cruza donde se ve despejado.', 'Un carro da la vuelta en la esquina rápido.', 'El conductor no esperaba a Alex. Alex se asusta.'],
+                  { text: 'Simplemente cruzar donde se vea despejado.', correct: false, outcome: ['Alex cruza donde se ve despejado.', 'Un carro da la vuelta en la esquina rápido.', 'El conductor no esperaba a Alex y tiene que frenar de golpe.'],
                     feedback: 'Es más seguro usar el cruce peatonal marcado, donde los conductores esperan que cruce la gente.' },
                   { text: 'Cruzar en el cruce peatonal y mirar en ambas direcciones primero.', correct: true,
                     feedback: '¡Sí! Esa es exactamente la forma segura de cruzar.' },
@@ -7984,7 +7984,7 @@ const CONTENT = {
               { type: 'decision', illustration: 'street-crossing', kicker: 'Una pregunta más',
                 text: 'Un carro está girando en la esquina mientras Alex cruza. ¿Cuál es el hábito más seguro?',
                 choices: [
-                  { text: 'Seguir caminando sin revisar el carro.', correct: false, outcome: ['Alex sigue caminando sin mirar.', 'El carro que gira también sigue.', 'El conductor frena de golpe. Alex se asusta.'],
+                  { text: 'Seguir caminando sin revisar el carro.', correct: false, outcome: ['Alex sigue caminando sin mirar.', 'El carro que gira también sigue.', 'El conductor frena de golpe, a pocos pasos de Alex.'],
                     feedback: 'Aunque tengas la señal, es más seguro revisar que los carros que giran realmente se hayan detenido para ti.' },
                   { text: 'Hacer contacto visual con el conductor y asegurarse de que se haya detenido antes de continuar.', correct: true,
                     feedback: 'Sí — el contacto visual ayuda a asegurarse de que el conductor te ha visto y realmente va a detenerse.' },
@@ -7995,7 +7995,7 @@ const CONTENT = {
                   { speaker: 'Guardia de cruce', text: '¡Muy bien! ¿Qué deberías hacer si no estás seguro de que un conductor te vio?' },
                 ],
                 choices: [
-                  { text: 'Simplemente seguir caminando y esperar que te vean.', correct: false, outcome: ['Alex sigue caminando y espera.', 'El conductor no vio a Alex.', 'El carro pita y frena rápido. Alex se asusta.'],
+                  { text: 'Simplemente seguir caminando y esperar que te vean.', correct: false, outcome: ['Alex sigue caminando y espera.', 'El conductor no vio a Alex.', 'El carro pita y frena rápido, muy cerca de Alex.'],
                     feedback: 'Esperar no es un plan seguro — siempre asegúrate de que el conductor realmente se haya detenido.' },
                   { text: 'Esperar hasta estar seguro de que el conductor se ha detenido.', correct: true,
                     feedback: 'Exactamente — esperar hasta estar seguro siempre es la opción segura.' },
@@ -8038,7 +8038,7 @@ const CONTENT = {
                   { speaker: 'Alex', text: 'Casi. Hay un camión bloqueando mi vista aquí, así que busco un lugar más despejado.' },
                 ],
                 choices: [
-                  { text: 'Simplemente pasar rápido junto al camión.', correct: false, outcome: ['Alex pasa rápido por delante del camión.', 'Alex sale, y hay un carro justo ahí, viniendo rápido.', 'El carro pita fuerte, y Alex regresa a la acera temblando.'],
+                  { text: 'Simplemente pasar rápido junto al camión.', correct: false, outcome: ['Alex pasa rápido por delante del camión.', 'Alex sale, y hay un carro justo ahí, viniendo rápido.', 'El carro pita fuerte, y Alex tiene que regresar de un salto a la acera y empezar de nuevo.'],
                     feedback: 'Pasar rápido junto a un camión que bloquea la vista no es seguro — buscar un lugar más despejado vale el tiempo extra.' },
                   { text: 'Seguir caminando para encontrar un lugar con buena vista en ambas direcciones.', correct: true,
                     feedback: 'Sí — tomarte un poco más de tiempo para encontrar un lugar despejado es la opción segura.' },
@@ -8049,7 +8049,7 @@ const CONTENT = {
               { type: 'decision', illustration: 'street-crossing', kicker: 'Una pregunta más',
                 text: 'Mientras cruza, Alex escucha una sirena que se hace más fuerte. ¿Qué es lo más seguro?',
                 choices: [
-                  { text: 'Seguir cruzando al mismo ritmo — las sirenas no cambian nada.', correct: false, outcome: ['Alex sigue cruzando al mismo ritmo lento.', 'La ambulancia da la vuelta en la esquina rápido mientras Alex todavía está en la calle.', 'La ambulancia tiene que esquivarlo y frenar, y Alex se queda paralizado del susto.'],
+                  { text: 'Seguir cruzando al mismo ritmo — las sirenas no cambian nada.', correct: false, outcome: ['Alex sigue cruzando al mismo ritmo lento.', 'La ambulancia da la vuelta en la esquina rápido mientras Alex todavía está en la calle.', 'La ambulancia tiene que esquivarlo y frenar, y pierde tiempo en camino a alguien que necesita ayuda.'],
                     feedback: 'Un vehículo de emergencia puede necesitar moverse rápido e inesperadamente — es más seguro terminar de cruzar o volver a la acera primero, y luego observar.' },
                   { text: 'Terminar de cruzar hacia la acera más cercana rápida y seguramente, y luego observar hacia dónde va el vehículo de emergencia.', correct: true,
                     feedback: 'Exactamente — salir completamente de la calle primero, y luego prestar atención, para no quedar atrapado en medio de la calle.' },
@@ -8114,7 +8114,7 @@ const CONTENT = {
               { type: 'decision', illustration: 'street-crossing', kicker: 'Una pregunta más',
                 text: 'Ahora Alex camina con un hermano menor que quiere correr hacia la calle. ¿Qué debería hacer Alex?',
                 choices: [
-                  { text: 'Dejar que el hermano corra primero ya que Alex ya revisó la calle.', correct: false, outcome: ['Alex deja que su hermano corra primero hacia la calle.', 'Un carro sale de una entrada justo cuando el hermano llega a la calle.', 'El conductor frena fuerte, y el hermano de Alex se queda congelado y asustado, demasiado lejos para que Alex le tome la mano.'],
+                  { text: 'Dejar que el hermano corra primero ya que Alex ya revisó la calle.', correct: false, outcome: ['Alex deja que su hermano corra primero hacia la calle.', 'Un carro sale de una entrada justo cuando el hermano llega a la calle.', 'El conductor frena fuerte y pita, y Alex está demasiado lejos para tomarle la mano a su hermano.'],
                     feedback: 'Una situación puede cambiar rápido — que alguien corra solo hacia adelante pierde el beneficio de revisar juntos y ser vistos juntos.' },
                   { text: 'Tomar la mano del hermano o pedirle que espere, y cruzar juntos después de revisar de nuevo.', correct: true,
                     feedback: 'Sí — cruzar juntos, después de revisar otra vez, mantiene seguros tanto a Alex como al hermano menor.' },
@@ -8125,7 +8125,7 @@ const CONTENT = {
                   { speaker: 'Alex', text: 'Mejor tomémonos de la mano y crucemos juntos.' },
                 ],
                 choices: [
-                  { text: 'Dejar que el hermano vaya primero solo ya que está emocionado.', correct: false, outcome: ['Alex deja que su hermano vaya primero solo.', 'El hermano sale corriendo sin mirar, con los ojos en el otro lado de la calle.', 'Una bicicleta que viene tiene que esquivarlo, y el hermano empieza a llorar, asustado y solo en la calle.'],
+                  { text: 'Dejar que el hermano vaya primero solo ya que está emocionado.', correct: false, outcome: ['Alex deja que su hermano vaya primero solo.', 'El hermano sale corriendo sin mirar, con los ojos en el otro lado de la calle.', 'Una bicicleta que viene tiene que esquivarlo y derrapa, y el hermano se queda parado solo en medio de la calle.'],
                     feedback: 'Dejar que alguien corra solo hacia adelante pierde la seguridad de revisar y cruzar juntos.' },
                   { text: 'Tomarse de la mano y revisar la calle juntos antes de cruzar.', correct: true,
                     feedback: 'Exactamente — cruzar juntos después de revisar de nuevo es la opción más segura.' },
@@ -8138,7 +8138,7 @@ const CONTENT = {
                 ],
                 text: 'Un hermano menor después dice que revisar de nuevo no tiene sentido ya que Alex ya revisó una vez. ¿Qué debería recordar Alex?',
                 choices: [
-                  { text: 'Una vez que revisaste la calle, no hace falta volver a revisar.', correct: false, outcome: ['Alex está de acuerdo en que revisar una vez es suficiente y deja de revisar otra vez.', 'Alex revisa una vez, espera un rato antes de cruzar, y en ese tiempo un carro entra a la calle.', 'Alex sale sin verlo, y el conductor tiene que frenar de repente; Alex y su hermano se quedan asustados.'],
+                  { text: 'Una vez que revisaste la calle, no hace falta volver a revisar.', correct: false, outcome: ['Alex está de acuerdo en que revisar una vez es suficiente y deja de revisar otra vez.', 'Alex revisa una vez, espera un rato antes de cruzar, y en ese tiempo un carro entra a la calle.', 'Alex sale sin verlo, y el conductor tiene que frenar de repente, a pocos pasos de Alex y su hermano.'],
                     feedback: 'Una situación, como un carro apareciendo, puede cambiar en solo unos segundos — una revisión más siempre vale la pena.' },
                   { text: 'Una situación, como un carro apareciendo, puede cambiar en solo unos segundos, así que revisar de nuevo siempre vale la pena.', correct: true,
                     feedback: 'Exactamente — las cosas pueden cambiar rápido, así que una revisión más siempre vale la pena.' },
@@ -8207,7 +8207,7 @@ const CONTENT = {
                   { speaker: 'Cajera', text: 'Hola, ¿estás buscando a alguien?' },
                 ],
                 choices: [
-                  { text: 'Solo seguir mirando por el mismo pasillo.', correct: false, outcome: ['Alex pasa junto a la cajera y sigue mirando el mismo pasillo.', 'Su mamá no está ahí. El pasillo sigue vacío.', 'Alex sigue perdido y empieza a sentir miedo.'],
+                  { text: 'Solo seguir mirando por el mismo pasillo.', correct: false, outcome: ['Alex pasa junto a la cajera y sigue mirando el mismo pasillo.', 'Su mamá no está ahí. El pasillo sigue vacío.', 'Su mamá está en otra parte de la tienda, y nadie sabe que Alex está perdido.'],
                     feedback: 'Mirar solo por tu cuenta no ayuda tanto como pedirle ayuda directamente a alguien del personal.' },
                   { text: 'Decir “Sí, no encuentro a mi papá o mamá. ¿Me puede ayudar?”', correct: true,
                     feedback: '¡Sí! Pedir ayuda directamente es exactamente lo correcto.' },
@@ -8230,7 +8230,7 @@ const CONTENT = {
                   { speaker: 'Alex', text: 'Está bien. ¿Qué hago si me pierdo otra vez?' },
                 ],
                 choices: [
-                  { text: 'Intentar encontrar mi propio camino la próxima vez.', correct: false, outcome: ['La próxima vez, Alex intenta encontrar el camino solo.', 'Alex camina de aquí para allá y se confunde más.', 'Alex siente miedo, y nadie lo está ayudando.'],
+                  { text: 'Intentar encontrar mi propio camino la próxima vez.', correct: false, outcome: ['La próxima vez, Alex intenta encontrar el camino solo.', 'Alex camina de aquí para allá y se confunde más.', 'Alex termina todavía más lejos de su mamá, y nadie sabe que está perdido.'],
                     feedback: 'Buscar a alguien del personal sigue siendo la forma más rápida y segura — no intentes manejarlo solo.' },
                   { text: 'Buscar a un trabajador con uniforme o gafete y pedir ayuda, siempre.', correct: true,
                     feedback: 'Exactamente — esa es la regla confiable, siempre.' },
@@ -8430,7 +8430,7 @@ const CONTENT = {
               { type: 'decision', illustration: 'emergency-call', kicker: '¿Qué debería hacer Alex?',
                 text: 'La alarma de humo está sonando y Alex no ve fuego ni humo todavía. ¿Cuál es el primer paso más seguro?',
                 choices: [
-                  { text: 'Ignorarla ya que nada se ve mal.', correct: false, outcome: ['Alex sigue jugando. La alarma suena.', 'Empieza a salir humo de la cocina.', 'Ningún adulto sabe todavía. Alex tiene miedo.'],
+                  { text: 'Ignorarla ya que nada se ve mal.', correct: false, outcome: ['Alex sigue jugando. La alarma suena.', 'Empieza a salir humo de la cocina.', 'Ningún adulto sabe todavía. El humo sigue saliendo.'],
                     feedback: 'Que una alarma suene significa que algo necesita la atención de un adulto de inmediato, aunque nada se vea mal todavía.' },
                   { text: 'Buscar a un adulto de inmediato y decirle que la alarma está sonando.', correct: true,
                     feedback: '¡Sí! Buscar a un adulto de inmediato siempre es la acción correcta cuando suena una alarma.' },
@@ -8456,7 +8456,7 @@ const CONTENT = {
                 choices: [
                   { text: 'Al 911 (o el número de emergencia local).', correct: true,
                     feedback: 'Exactamente correcto. El 911 te conecta con personas cuyo trabajo es ayudar en emergencias.' },
-                  { text: 'Al número de celular de un amigo.', correct: false, outcome: ['Alex llama al celular de un amigo.', 'El amigo dice: “¡No sé qué hacer!”', 'Todavía no viene ayuda. Alex tiene miedo.'],
+                  { text: 'Al número de celular de un amigo.', correct: false, outcome: ['Alex llama al celular de un amigo.', 'El amigo dice: “¡No sé qué hacer!”', 'Nadie llama al 911, así que todavía no viene ayuda.'],
                     feedback: 'Un amigo no puede enviar ayuda como lo hacen los servicios de emergencia — el 911 es el número para emergencias reales.' },
                 ] },
               { type: 'dialogue', illustration: 'emergency-help',
@@ -8531,7 +8531,7 @@ const CONTENT = {
                   { speaker: 'Alex', text: '¿Debo colgar ahora?' },
                 ],
                 choices: [
-                  { text: 'Sí, colgar en cuanto se pide la ayuda.', correct: false, outcome: ['Alex cuelga en cuanto se pide la ayuda.', 'El operador iba a decirle a Alex cómo ayudar a la abuela y abrir la puerta.', 'Ahora Alex no sabe qué hacer mientras espera, y se siente preocupado y solo.'],
+                  { text: 'Sí, colgar en cuanto se pide la ayuda.', correct: false, outcome: ['Alex cuelga en cuanto se pide la ayuda.', 'El operador iba a decirle a Alex cómo ayudar a la abuela y abrir la puerta.', 'La abuela todavía necesita ayuda, y la puerta sigue cerrada con llave cuando llegan los paramédicos.'],
                     feedback: 'Es más seguro quedarse en la línea y seguir las instrucciones del operador hasta que digan que está bien colgar.' },
                   { text: 'Quedarse en la línea y seguir las instrucciones del operador.', correct: true,
                     feedback: 'Exactamente correcto — quédate en la línea hasta que te digan que está bien.' },
@@ -8561,11 +8561,11 @@ const CONTENT = {
               { type: 'decision', illustration: 'emergency-call', kicker: '¿Qué debería hacer Alex?',
                 text: 'Está oscuro, no hay luz, y hubo un golpe fuerte afuera. ¿Cuál es el primer paso más seguro?',
                 choices: [
-                  { text: 'Salir de inmediato a ver qué causó el golpe.', correct: false, outcome: ['Alex sale a la tormenta para ver qué causó el golpe.', 'Está oscuro y hace mucho viento, y Alex se resbala en los escalones mojados.', 'Alex está afuera en la tormenta, empapado y asustado, y ningún adulto de confianza sabe lo que pasa.'],
+                  { text: 'Salir de inmediato a ver qué causó el golpe.', correct: false, outcome: ['Alex sale a la tormenta para ver qué causó el golpe.', 'Está oscuro y hace mucho viento, y Alex se resbala en los escalones mojados.', 'Alex se empapa y se raspa la rodilla, y ningún adulto de confianza sabe lo que pasa.'],
                     feedback: 'Salir durante una tormenta para investigar no es seguro — es mejor quedarse adentro y avisar primero a un adulto de confianza.' },
                   { text: 'Quedarse adentro, buscar una linterna, y llamar o enviar un mensaje a un adulto de confianza para contarle lo que pasó.', correct: true,
                     feedback: 'Sí — quedarse adentro y contactar primero a un adulto de confianza es lo más seguro cuando algo inesperado pasa durante una tormenta.' },
-                  { text: 'Suponer que no es nada y volver a lo que Alex estaba haciendo.', correct: false, outcome: ['Alex decide que el golpe no fue nada y vuelve a jugar en la oscuridad.', 'Un rato después, Alex escucha más ruidos raros y la casa sigue a oscuras.', 'Alex empieza a ponerse nervioso, y papá todavía no sabe que se fue la luz ni que pasó algo.'],
+                  { text: 'Suponer que no es nada y volver a lo que Alex estaba haciendo.', correct: false, outcome: ['Alex decide que el golpe no fue nada y vuelve a jugar en la oscuridad.', 'Un rato después, Alex escucha más ruidos raros y la casa sigue a oscuras.', 'Papá todavía no sabe que se fue la luz, así que nadie revisa el golpe ni pide ayuda.'],
                     feedback: 'Un golpe fuerte durante un apagón vale la pena contárselo a un adulto de confianza, aunque resulte ser algo común como una rama caída.' },
                 ] },
               { type: 'dialogue', illustration: 'emergency-call',
@@ -8596,7 +8596,7 @@ const CONTENT = {
                   { speaker: 'Alex', text: 'Intentaría llamar al 911 si se sintiera como una emergencia real.' },
                 ],
                 choices: [
-                  { text: 'Decir que esperar en silencio siempre es mejor que pedir ayuda.', correct: false, outcome: ['Alex está de acuerdo en que esperar en silencio siempre es mejor que pedir ayuda.', 'La próxima vez que hay una emergencia real y no puede contactar a papá, Alex solo espera.', 'Alex se queda solo y con miedo mientras el problema crece, y no viene ninguna ayuda.'],
+                  { text: 'Decir que esperar en silencio siempre es mejor que pedir ayuda.', correct: false, outcome: ['Alex está de acuerdo en que esperar en silencio siempre es mejor que pedir ayuda.', 'La próxima vez que hay una emergencia real y no puede contactar a papá, Alex solo espera.', 'Alex solo se queda sentado mientras el problema crece, y no viene ninguna ayuda porque nadie llamó al 911.'],
                     feedback: 'Esperar en silencio durante una emergencia real no es seguro — llamar directamente al 911 es lo correcto si no puedes contactar a un adulto de confianza.' },
                   { text: 'Decir que llamar directamente al 911 es lo correcto si es una emergencia real.', correct: true,
                     feedback: 'Exactamente correcto — ese es exactamente el plan de respaldo correcto.' },
@@ -8701,7 +8701,7 @@ const CONTENT = {
                   { speaker: 'Alex', text: '¿Qué pasa si alguna vez me separo de la clase?' },
                 ],
                 choices: [
-                  { text: 'Simplemente esperar en algún lugar al azar.', correct: false, outcome: ['Alex espera junto a un árbol, lejos.', 'El maestro cuenta. Alex no está.', 'Todos están preocupados. Nadie sabe dónde está Alex.'],
+                  { text: 'Simplemente esperar en algún lugar al azar.', correct: false, outcome: ['Alex espera junto a un árbol, lejos.', 'El maestro cuenta. Alex no está.', 'Todos tienen que esperar mientras el maestro busca a Alex.'],
                     feedback: 'Es más seguro ir al punto de encuentro asignado, donde un maestro o miembro del personal espera encontrarte.' },
                   { text: 'Ir al punto de encuentro asignado y avisarle a un maestro o miembro del personal.', correct: true,
                     feedback: 'Sí — el punto de encuentro es exactamente donde ir para que te encuentren y te cuenten.' },
@@ -8831,7 +8831,7 @@ const CONTENT = {
                   { speaker: 'Alex', text: '¿Por qué necesitamos dos salidas de nuestra casa?' },
                 ],
                 choices: [
-                  { text: 'Porque una salida siempre es suficiente, sin importar qué.', correct: false, outcome: ['Alex cree que una salida siempre es suficiente.', 'Alex nunca aprende que la ventana de su habitación podría ser una segunda salida.', 'Si el humo llenara el pasillo, Alex se sentiría atrapado y sin plan de respaldo.'],
+                  { text: 'Porque una salida siempre es suficiente, sin importar qué.', correct: false, outcome: ['Alex cree que una salida siempre es suficiente.', 'Alex nunca aprende que la ventana de su habitación podría ser una segunda salida.', 'Si el humo llenara el pasillo, Alex no sabría que la ventana es otra salida.'],
                     feedback: 'Un incendio podría bloquear esa única salida — por eso importa una segunda ruta.' },
                   { text: 'Porque un incendio podría bloquear un camino, así que una ruta de respaldo importa.', correct: true,
                     feedback: 'Exactamente correcto — una segunda salida es un respaldo real, no solo una formalidad.' },
@@ -8924,7 +8924,7 @@ const CONTENT = {
                   { speaker: 'Alex', text: '¡Agáchate, cúbrete y sujétate — métete debajo de tu escritorio!' },
                 ],
                 choices: [
-                  { text: 'Levantarse para ver qué se está cayendo.', correct: false, outcome: ['Alex se levanta para mirar.', 'El piso tiembla y un libro cae muy cerca.', 'Alex tiene miedo y no está cubierto.'],
+                  { text: 'Levantarse para ver qué se está cayendo.', correct: false, outcome: ['Alex se levanta para mirar.', 'El piso tiembla y un libro cae muy cerca.', 'Alex queda al descubierto, sin nada que lo cubra.'],
                     feedback: 'Levantarte te deja expuesto a objetos que caen — mejor métete debajo del escritorio.' },
                   { text: 'Meterse debajo del escritorio y cubrirse la cabeza y el cuello.', correct: true,
                     feedback: 'Sí — agacharse, cubrirse y sujetarse es exactamente lo correcto.' },
@@ -8976,7 +8976,7 @@ const CONTENT = {
               { type: 'decision', illustration: 'earthquake-shake', kicker: '¿Qué debería hacer Alex?',
                 text: 'No hay un escritorio cerca, solo gabinetes altos y piso abierto. ¿Cuál es la opción más segura?',
                 choices: [
-                  { text: 'Quedarse justo al lado de los gabinetes altos porque están cerca.', correct: false, outcome: ['Alex se queda justo al lado de los gabinetes altos.', 'Las puertas de los gabinetes se abren y los platos empiezan a resbalar.', 'Las cosas caen cerca de Alex, y Alex tiene mucho miedo.'],
+                  { text: 'Quedarse justo al lado de los gabinetes altos porque están cerca.', correct: false, outcome: ['Alex se queda justo al lado de los gabinetes altos.', 'Las puertas de los gabinetes se abren y los platos empiezan a resbalar.', 'Un plato se estrella en el piso justo al lado de los pies de Alex.'],
                     feedback: 'Los gabinetes altos pueden volcarse o derramar su contenido durante un temblor — es más seguro alejarte de ellos si puedes hacerlo rápido y con seguridad.' },
                   { text: 'Alejarse unos pasos de los gabinetes altos, luego agacharse, cubrirse la cabeza y el cuello con los brazos, y sujetarse.', correct: true,
                     feedback: 'Correcto — alejarte de cosas que puedan caer o volcarse, y luego agacharte y cubrirte, es la combinación más segura aquí.' },
@@ -9011,7 +9011,7 @@ const CONTENT = {
                   { speaker: 'Alex', text: '¿Debería encender una luz para ver mejor?' },
                 ],
                 choices: [
-                  { text: 'Sí, encender el interruptor de luz.', correct: false, outcome: ['Alex estira la mano hacia el interruptor de luz.', 'Mamá grita: “¡Para!” porque un interruptor puede hacer una chispa cerca del gas.', 'Ahora Alex tiene miedo, y salir de la casa toma más tiempo.'],
+                  { text: 'Sí, encender el interruptor de luz.', correct: false, outcome: ['Alex estira la mano hacia el interruptor de luz.', 'Mamá grita: “¡Para!” porque un interruptor puede hacer una chispa cerca del gas.', 'Ahora Alex tiene que parar, y salir de la casa toma más tiempo.'],
                     feedback: 'Un interruptor de luz podría crear una chispa cerca del gas — evita interruptores y cualquier cosa eléctrica.' },
                   { text: 'No, evitar interruptores y cualquier cosa eléctrica, y simplemente salir del área.', correct: true,
                     feedback: 'Exactamente — evitar chispas y salir del área es lo correcto cuando huele a gas.' },
@@ -9070,7 +9070,7 @@ const CONTENT = {
                 ],
                 text: 'La tierra de repente empieza a temblar otra vez. ¿Qué debería recordar Alex?',
                 choices: [
-                  { text: 'Como el temblor grande ya pasó, no hay que reaccionar de nuevo.', correct: false, outcome: ['Alex decide que el temblor grande ya pasó y se queda de pie.', 'La réplica es fuerte, y Alex pierde el equilibrio y cae en el pasto.', 'Alex no estaba listo para protegerse la cabeza, y el temblor da todavía más miedo que la primera vez.'],
+                  { text: 'Como el temblor grande ya pasó, no hay que reaccionar de nuevo.', correct: false, outcome: ['Alex decide que el temblor grande ya pasó y se queda de pie.', 'La réplica es fuerte, y Alex pierde el equilibrio y cae en el pasto.', 'Alex no estaba listo para protegerse la cabeza, y no hay nada de qué agarrarse mientras la tierra sigue moviéndose.'],
                     feedback: 'Las réplicas pueden ser lo bastante fuertes para importar — siempre agáchate y cúbrete de nuevo.' },
                   { text: 'Podría ser una réplica, así que hay que estar alerta y agacharse y cubrirse de inmediato.', correct: true,
                     feedback: 'Exactamente — las réplicas pueden llegar de repente, así que recordar qué hacer te mantiene listo.' },
@@ -9092,7 +9092,7 @@ const CONTENT = {
                 choices: [
                   { text: 'Podría ser una réplica, así que hay que agacharse y cubrirse de inmediato otra vez.', correct: true,
                     feedback: 'Exactamente — trata cualquier temblor nuevo igual: agáchate, cúbrete y sujétate.' },
-                  { text: 'Como el grande ya pasó, no hace falta reaccionar de nuevo.', correct: false, outcome: ['Alex cree que no hace falta reaccionar de nuevo después del temblor grande.', 'Cuando la tierra vuelve a temblar, Alex sigue caminando en vez de agacharse.', 'Alex se tropieza y se raspa la mano, y se siente asustado y sorprendido.'],
+                  { text: 'Como el grande ya pasó, no hace falta reaccionar de nuevo.', correct: false, outcome: ['Alex cree que no hace falta reaccionar de nuevo después del temblor grande.', 'Cuando la tierra vuelve a temblar, Alex sigue caminando en vez de agacharse.', 'Alex se tropieza y se raspa la mano, y un adulto tiene que detenerse para limpiársela.'],
                     feedback: 'Las réplicas pueden ser lo bastante fuertes para lastimarte — siempre agáchate y cúbrete otra vez.' },
                 ] },
             ],
@@ -9150,7 +9150,7 @@ const CONTENT = {
                     feedback: 'Un trueno significa que hay un rayo cerca — incluso con poca lluvia, escuchar truenos significa que es momento de entrar.' },
                   { text: 'Entrar de inmediato, lejos de las ventanas, hasta que pase la tormenta.', correct: true,
                     feedback: 'Sí — entrar en cuanto escuchas un trueno es lo más seguro.' },
-                  { text: 'Quedarse debajo de un árbol alto hasta que deje de llover.', correct: false, outcome: ['Alex se queda debajo de un árbol alto.', 'Un rayo brilla muy cerca.', 'Alex siente miedo y ahí no está a salvo.'],
+                  { text: 'Quedarse debajo de un árbol alto hasta que deje de llover.', correct: false, outcome: ['Alex se queda debajo de un árbol alto.', 'Un rayo brilla muy cerca.', 'Truena fuerte, y Alex sigue afuera en vez de estar a salvo adentro.'],
                     feedback: 'Los árboles altos pueden atraer los rayos — quedarse debajo de uno durante una tormenta no es seguro. Entrar es lo mejor.' },
                 ] },
               { type: 'dialogue', illustration: 'storm-outside',
@@ -9237,7 +9237,7 @@ const CONTENT = {
                 choices: [
                   { text: 'Porque la lluvia y el cielo gris hacen más difícil que los conductores vean a las personas caminando.', correct: true,
                     feedback: 'Sí — con lluvia, la visibilidad de los conductores ya está reducida, así que ser más notorio ayuda a mantenerte seguro.' },
-                  { text: 'Porque la lluvia hace que los carros vayan más lento automáticamente, así que no importa.', correct: false, outcome: ['Alex cree que la lluvia hace que todos los carros vayan más lento.', 'Alex se acerca a la calle sin mirar con cuidado.', 'Un conductor no ve a Alex por la lluvia y tiene que frenar fuerte, y Alex se asusta.'],
+                  { text: 'Porque la lluvia hace que los carros vayan más lento automáticamente, así que no importa.', correct: false, outcome: ['Alex cree que la lluvia hace que todos los carros vayan más lento.', 'Alex se acerca a la calle sin mirar con cuidado.', 'Un conductor no ve a Alex por la lluvia y tiene que frenar fuerte y tocar la bocina.'],
                     feedback: 'La lluvia no hace que todos los conductores vayan más lento o noten a los peatones automáticamente — seguir siendo visible sigue siendo importante.' },
                 ] },
               { type: 'dialogue', illustration: 'storm-safe',
@@ -9248,7 +9248,7 @@ const CONTENT = {
                 choices: [
                   { text: 'Porque a los conductores les cuesta más ver a los peatones con lluvia.', correct: true,
                     feedback: 'Exactamente — la visibilidad reducida significa que necesitas ser extra notorio cerca de las calles.' },
-                  { text: 'Porque los carros no pueden manejar en absoluto cuando llueve.', correct: false, outcome: ['Alex cree que los carros no pueden manejar cuando llueve.', 'Alex camina junto a la calle sin fijarse en los carros.', 'Un carro pasa salpicando muy cerca, y Alex brinca hacia atrás, asustado.'],
+                  { text: 'Porque los carros no pueden manejar en absoluto cuando llueve.', correct: false, outcome: ['Alex cree que los carros no pueden manejar cuando llueve.', 'Alex camina junto a la calle sin fijarse en los carros.', 'Un carro pasa salpicando muy cerca, y Alex queda empapado de agua sucia.'],
                     feedback: 'Los carros sí pueden seguir manejando en la lluvia — precisamente por eso ser visible importa.' },
                 ],
                 replySpeaker: 'Mamá' },
@@ -9289,7 +9289,7 @@ const CONTENT = {
                   { speaker: 'Alex', text: 'No, mejor avisémosle a mamá y papá de inmediato.' },
                 ],
                 choices: [
-                  { text: 'Salir a revisar el agua juntos.', correct: false, outcome: ['Alex y su hermano salen juntos por la puerta a revisar el agua.', 'El agua es más profunda de lo que parecía, y el hermano se tropieza con algo escondido debajo.', 'Ahora los dos están afuera en el agua que sube, asustados, y mamá y papá no saben dónde están.'],
+                  { text: 'Salir a revisar el agua juntos.', correct: false, outcome: ['Alex y su hermano salen juntos por la puerta a revisar el agua.', 'El agua es más profunda de lo que parecía, y el hermano se tropieza con algo escondido debajo.', 'Ahora los dos están afuera en el agua que sube, mientras mamá y papá los buscan por toda la casa.'],
                     feedback: 'El agua de una inundación puede ser más peligrosa de lo que parece — revisarla ustedes mismos no es seguro.' },
                   { text: 'Avisarle a un adulto de inmediato y mantenerse alejados del agua.', correct: true,
                     feedback: 'Exactamente — esa es la respuesta más segura a una alerta de inundación.' },
@@ -9318,7 +9318,7 @@ const CONTENT = {
                 choices: [
                   { text: 'Porque el agua de una inundación puede ser más profunda o rápida de lo que parece.', correct: true,
                     feedback: 'Exactamente correcto — las apariencias pueden engañar, así que nunca es seguro adivinar.' },
-                  { text: 'Porque el agua de una inundación siempre es poco profunda y segura de revisar.', correct: false, outcome: ['Alex cree que el agua de la inundación siempre es poco profunda y segura de revisar.', 'Alex adivina la profundidad mirándola y baja del porche.', 'El agua es mucho más profunda de lo que parecía, y Alex queda empapado hasta la cintura y asustado.'],
+                  { text: 'Porque el agua de una inundación siempre es poco profunda y segura de revisar.', correct: false, outcome: ['Alex cree que el agua de la inundación siempre es poco profunda y segura de revisar.', 'Alex adivina la profundidad mirándola y baja del porche.', 'El agua es mucho más profunda de lo que parecía, y Alex queda empapado hasta la cintura y tiene que regresar con dificultad al porche.'],
                     feedback: 'Eso no es cierto — el agua de una inundación suele ser impredecible y puede ocultar peligro real.' },
                 ],
                 replySpeaker: 'Papá' },
@@ -9381,11 +9381,11 @@ const CONTENT = {
               { type: 'decision', illustration: 'advocacy-uncomfortable', kicker: '¿Qué debería hacer Alex?',
                 text: 'Alex se siente abrumado por el ruido y las luces. ¿Cuál es la opción más segura y útil?',
                 choices: [
-                  { text: 'Quedarse callado e intentar aguantar el sentimiento incómodo.', correct: false, outcome: ['Alex se queda callado y sigue trabajando.', 'El ruido y las luces se sienten cada vez más fuertes.', 'Alex se siente peor, y el maestro no sabe.'],
+                  { text: 'Quedarse callado e intentar aguantar el sentimiento incómodo.', correct: false, outcome: ['Alex se queda callado y sigue trabajando.', 'El ruido y las luces se sienten cada vez más fuertes.', 'Alex suelta el lápiz y no puede terminar. El maestro no sabe por qué.'],
                     feedback: 'No tienes que simplemente aguantar — decirle a un adulto de confianza cómo te sientes siempre está bien, y les ayuda a ayudarte.' },
                   { text: 'Decirle a un adulto de confianza, como un maestro, “Me siento abrumado, ¿puedo tomar un descanso?”', correct: true,
                     feedback: '¡Sí! Nombrar cómo te sientes y pedir lo que necesitas es exactamente lo correcto.' },
-                  { text: 'Molestarse e irse del salón sin decirle a nadie.', correct: false, outcome: ['Alex se molesta y sale corriendo del salón.', 'El maestro levanta la vista y no ve a Alex.', 'Todos se preocupan. Alex está solo en el pasillo.'],
+                  { text: 'Molestarse e irse del salón sin decirle a nadie.', correct: false, outcome: ['Alex se molesta y sale corriendo del salón.', 'El maestro levanta la vista y no ve a Alex.', 'El maestro detiene la clase y sale corriendo a buscar a Alex.'],
                     feedback: 'Irse sin decirle a nadie puede preocupar a las personas y hace más difícil que te ayuden — es mejor decir algo primero, aunque sea breve.' },
                 ] },
               { type: 'dialogue', illustration: 'advocacy-help',
@@ -9394,7 +9394,7 @@ const CONTENT = {
                   { speaker: 'Maestro', text: 'Claro — gracias por decírmelo.' },
                 ],
                 choices: [
-                  { text: 'Decir que Alex debería haberse quedado callado y aguantar.', correct: false, outcome: ['Alex piensa: “Debí quedarme callado.”', 'La próxima vez, Alex no pide un descanso.', 'Alex se siente abrumado, y nadie sabe.'],
+                  { text: 'Decir que Alex debería haberse quedado callado y aguantar.', correct: false, outcome: ['Alex piensa: “Debí quedarme callado.”', 'La próxima vez, Alex no pide un descanso.', 'Alex se tapa los oídos y deja de trabajar. Nadie sabe por qué.'],
                     feedback: 'Aguantar en silencio no habría ayudado — hablar fue exactamente lo correcto.' },
                   { text: 'Decir que hablarle al maestro fue la decisión correcta.', correct: true,
                     feedback: 'Sí — nombrar el sentimiento y pedir lo que necesitas es exactamente lo correcto.' },
@@ -9407,7 +9407,7 @@ const CONTENT = {
                 choices: [
                   { text: 'Porque los adultos de confianza no pueden ayudar con algo que no saben.', correct: true,
                     feedback: 'Exactamente — hablar les da a las personas la oportunidad de realmente ayudarte.' },
-                  { text: 'Porque quedarse callado siempre hace que los sentimientos incómodos desaparezcan solos.', correct: false, outcome: ['Alex cree que callarse hace que los sentimientos feos se vayan.', 'Alex se queda callado, pero el sentimiento sigue.', 'Alex todavía se siente mal. Ningún adulto puede ayudar.'],
+                  { text: 'Porque quedarse callado siempre hace que los sentimientos incómodos desaparezcan solos.', correct: false, outcome: ['Alex cree que callarse hace que los sentimientos feos se vayan.', 'Alex se queda callado. El ruido sigue y sigue.', 'Ningún adulto sabe, así que el ruido y las luces siguen igual.'],
                     feedback: 'Los sentimientos incómodos no siempre desaparecen solos — hablar es una forma más confiable de lograr que las cosas cambien.' },
                 ] },
               { type: 'dialogue', illustration: 'advocacy-help',
@@ -9416,7 +9416,7 @@ const CONTENT = {
                   { speaker: 'Alex', text: 'Sí, gracias por escucharme. ¿Y si no hubieras notado que estaba abrumado?' },
                 ],
                 choices: [
-                  { text: 'Esperar en silencio a que un adulto de confianza se dé cuenta solo.', correct: false, outcome: ['Alex espera en silencio a que el maestro se dé cuenta.', 'El maestro está ocupado ayudando a otros niños.', 'Alex sigue esperando y se siente cada vez peor.'],
+                  { text: 'Esperar en silencio a que un adulto de confianza se dé cuenta solo.', correct: false, outcome: ['Alex espera en silencio a que el maestro se dé cuenta.', 'El maestro está ocupado ayudando a otros niños.', 'Alex sigue esperando, y el maestro nunca se acerca.'],
                     feedback: 'Los adultos de confianza no siempre pueden saber cómo te sientes — es mejor decirlo directamente.' },
                   { text: 'Decírselo directamente, ya que no pueden leer tu mente.', correct: true,
                     feedback: 'Exactamente correcto — decirlo directamente es la forma más confiable de obtener ayuda.' },
@@ -9450,7 +9450,7 @@ const CONTENT = {
                     feedback: 'Esperar que se detenga solo a menudo no funciona — decirle a un adulto de confianza le da a la situación una oportunidad real de cambiar.' },
                   { text: 'Decirle claramente al compañero, “Por favor detente, eso no está bien,” y también contarle a un adulto de confianza lo que ha estado pasando.', correct: true,
                     feedback: 'Sí — hablar en el momento y también avisarle a un adulto de confianza te da apoyo y una mejor oportunidad de que las burlas se detengan.' },
-                  { text: 'Burlarse del compañero también para estar a mano.', correct: false, outcome: ['Alex se burla del compañero también para estar a mano.', 'El compañero se enoja y se burla de Alex todavía más.', 'Ahora los dos están molestos, y Alex también podría meterse en problemas.'],
+                  { text: 'Burlarse del compañero también para estar a mano.', correct: false, outcome: ['Alex se burla del compañero también para estar a mano.', 'El compañero se enoja y se burla de Alex todavía más.', 'El maestro solo escucha la burla de Alex, y Alex también se mete en problemas.'],
                     feedback: 'Burlarse de vuelta usualmente empeora las cosas, no las mejora — es más efectivo decir que no está bien e involucrar a un adulto de confianza.' },
                 ] },
               { type: 'dialogue', illustration: 'advocacy-uncomfortable',
@@ -9472,7 +9472,7 @@ const CONTENT = {
                 choices: [
                   { text: 'Los adultos de confianza a menudo pueden resolver el problema de una manera que realmente ayuda, aunque se sienta un poco atemorizante decirlo.', correct: true,
                     feedback: 'Exactamente — esa preocupación es comprensible, pero los adultos de confianza están ahí para ayudar a manejar estas situaciones, a menudo mejor que manejarlas solo.' },
-                  { text: 'Es mejor nunca contarle nada a un adulto, por si acaso empeora las cosas.', correct: false, outcome: ['Alex decide nunca contarle nada a un adulto.', 'Cuando las burlas empiezan otra vez, Alex se lo guarda en secreto.', 'El problema sigue creciendo, y Alex tiene que enfrentarlo completamente solo.'],
+                  { text: 'Es mejor nunca contarle nada a un adulto, por si acaso empeora las cosas.', correct: false, outcome: ['Alex decide nunca contarle nada a un adulto.', 'Cuando las burlas empiezan otra vez, Alex se lo guarda en secreto.', 'Las burlas pasan una y otra vez, y ningún adulto interviene para detenerlas.'],
                     feedback: 'Evitar completamente a los adultos de confianza usualmente deja los problemas sin resolver — la mayoría de las veces, contarles ayuda más de lo que perjudica.' },
                 ] },
               { type: 'dialogue', illustration: 'advocacy-help',
@@ -9481,7 +9481,7 @@ const CONTENT = {
                   { speaker: 'Alex', text: 'Me preocupaba que contarte lo empeorara.' },
                 ],
                 choices: [
-                  { text: 'Decir que esa preocupación significa que nunca debería contarle a un adulto.', correct: false, outcome: ['Alex cree que estar preocupado significa que nunca debe contar nada.', 'La próxima vez que algo le molesta, Alex se lo oculta al maestro.', 'Alex se siente atrapado y solo con el problema.'],
+                  { text: 'Decir que esa preocupación significa que nunca debería contarle a un adulto.', correct: false, outcome: ['Alex cree que estar preocupado significa que nunca debe contar nada.', 'La próxima vez que algo le molesta, Alex se lo oculta al maestro.', 'El maestro nunca se entera, así que el problema sigue pasando todos los días.'],
                     feedback: 'Esa preocupación es comprensible, pero evitar a los adultos por completo usualmente deja los problemas sin resolver.' },
                   { text: 'Decir que los adultos de confianza a menudo pueden ayudar, aunque se sienta un poco atemorizante decirlo.', correct: true,
                     feedback: 'Exactamente correcto — ese miedo es normal, pero los adultos usualmente pueden ayudar.' },
@@ -9511,7 +9511,7 @@ const CONTENT = {
               { type: 'decision', illustration: 'advocacy-uncomfortable', kicker: '¿Qué debería hacer Alex?',
                 text: 'Alex se siente ignorado pero el otro estudiante no está siendo malo, solo insistente. ¿Cuál es la opción más útil?',
                 choices: [
-                  { text: 'Seguir la corriente en todo para evitar cualquier conflicto.', correct: false, outcome: ['Alex sigue la corriente en cada decisión del otro estudiante, sin decir nada.', 'La parte de Alex en el proyecto termina llena de ideas que no son suyas.', 'Alex se siente frustrado e invisible durante el resto del proyecto, y el maestro cree que todo está bien.'],
+                  { text: 'Seguir la corriente en todo para evitar cualquier conflicto.', correct: false, outcome: ['Alex sigue la corriente en cada decisión del otro estudiante, sin decir nada.', 'La parte de Alex en el proyecto termina llena de ideas que no son suyas.', 'El maestro lo califica como trabajo en equipo y nunca escucha lo que Alex quería aportar.'],
                     feedback: 'Seguir la corriente en todo puede dejarte sintiéndote ignorado durante todo el proyecto — está bien hablar aunque nadie esté siendo malo.' },
                   { text: 'Decir claramente, “Yo también tengo ideas para esta parte, ¿podemos hablarlo juntos?” y pedirle apoyo a un maestro si sigue pasando.', correct: true,
                     feedback: 'Sí — pedir ser incluido, y conseguir el apoyo de un maestro si es necesario, es una forma fuerte de defender tus propias necesidades.' },
@@ -9537,7 +9537,7 @@ const CONTENT = {
                 choices: [
                   { text: 'Porque es menos obvio que algo está “mal,” así que puede sentirse más difícil saber que todavía está bien hablar.', correct: true,
                     feedback: 'Exactamente — necesidades como ser escuchado o incluido pueden sentirse menos urgentes que algo como estar perdido, pero también importan, y siempre está bien hablar.' },
-                  { text: 'Porque la autodefensa nunca es realmente importante comparada con emergencias más grandes.', correct: false, outcome: ['Alex cree que la autodefensa no es importante a menos que sea una emergencia.', 'Entonces Alex se queda callado en el trabajo en grupo, en clase y con amigos cada vez que algo no parece grave.', 'Las cosas pequeñas se acumulan, y Alex a menudo se siente ignorado e infeliz sin que nadie sepa por qué.'],
+                  { text: 'Porque la autodefensa nunca es realmente importante comparada con emergencias más grandes.', correct: false, outcome: ['Alex cree que la autodefensa no es importante a menos que sea una emergencia.', 'Entonces Alex se queda callado en el trabajo en grupo, en clase y con amigos cada vez que algo no parece grave.', 'Los problemas pequeños se acumulan, como el asiento junto a la puerta ruidosa que nunca cambia, porque nadie sabe que Alex quiere algo diferente.'],
                     feedback: 'La autodefensa importa incluso cuando la situación no es una emergencia — sentirse escuchado y respetado también es importante.' },
                 ] },
               { type: 'dialogue', illustration: 'advocacy-help',
@@ -9546,7 +9546,7 @@ const CONTENT = {
                   { speaker: 'Alex', text: '¿Está bien que hablara aunque nadie estaba siendo malo?' },
                 ],
                 choices: [
-                  { text: 'Decir que solo está bien hablar cuando alguien está siendo malo.', correct: false, outcome: ['Alex cree que solo está bien hablar cuando alguien está siendo malo.', 'La próxima vez que un amigo no lo deja hablar, Alex se queda callado porque el amigo no está siendo malo.', 'Alex sigue sintiéndose excluido, y el amigo no tiene idea de que algo anda mal.'],
+                  { text: 'Decir que solo está bien hablar cuando alguien está siendo malo.', correct: false, outcome: ['Alex cree que solo está bien hablar cuando alguien está siendo malo.', 'La próxima vez que un amigo no lo deja hablar, Alex se queda callado porque el amigo no está siendo malo.', 'El amigo sigue interrumpiendo a Alex en cada conversación, porque no tiene idea de que algo anda mal.'],
                     feedback: 'Hablar importa cada vez que te sientes ignorado, sea que alguien esté siendo malo o no.' },
                   { text: 'Decir que está bien hablar cualquier vez que te sientas ignorado, sea malo o no.', correct: true,
                     feedback: 'Exactamente correcto — sentirse ignorado ya es razón suficiente para hablar.' },
@@ -9560,7 +9560,7 @@ const CONTENT = {
                 ],
                 text: 'La autodefensa significa hablar por tus propias necesidades. Otro compañero dice que Alex probablemente no necesitaba hablar porque nada estaba realmente mal. ¿Qué debería recordar Alex?',
                 choices: [
-                  { text: 'La autodefensa solo importa realmente en grandes emergencias, no en momentos cotidianos.', correct: false, outcome: ['Alex le da la razón al compañero: la autodefensa es solo para emergencias.', 'Alex deja de hablar de cosas cotidianas, como necesitar más tiempo o un asiento más tranquilo.', 'Esas necesidades cotidianas no se atienden, y Alex se siente más estresado en la escuela día tras día.'],
+                  { text: 'La autodefensa solo importa realmente en grandes emergencias, no en momentos cotidianos.', correct: false, outcome: ['Alex le da la razón al compañero: la autodefensa es solo para emergencias.', 'Alex deja de hablar de cosas cotidianas, como necesitar más tiempo o un asiento más tranquilo.', 'A Alex se le acaba el tiempo en los exámenes y sigue en el asiento ruidoso, y ningún maestro sabe que debe cambiarlo.'],
                     feedback: 'La autodefensa importa en los momentos cotidianos también, no solo en emergencias.' },
                   { text: 'Todavía está bien hablar cada vez que te sientes ignorado, aunque sea menos obvio que algo está mal.', correct: true,
                     feedback: 'Exactamente — necesidades como ser escuchado o incluido también importan, incluso cuando no pasa nada urgente.' },
@@ -9641,11 +9641,11 @@ const CONTENT = {
               { type: 'decision', illustration: 'boundaries-uncomfortable', kicker: '¿Qué debería hacer Alex?',
                 text: 'Alex no tiene ganas de abrazar en este momento. ¿Qué está bien que Alex haga?',
                 choices: [
-                  { text: 'Abrazar y besar a la tía de todos modos para que no se sienta mal.', correct: false, outcome: ['Alex abraza y besa a la tía de todos modos.', 'A Alex le duele un poco la pancita.', 'Alex siente que no pudo decidir.'],
+                  { text: 'Abrazar y besar a la tía de todos modos para que no se sienta mal.', correct: false, outcome: ['Alex abraza y besa a la tía de todos modos.', 'A Alex le duele un poco la pancita.', 'La tía no lo sabe, y pide más besos.'],
                     feedback: 'El cuerpo de Alex le pertenece a Alex — nunca tienes que abrazar o besar a alguien solo para que se sienta bien, ni siquiera un familiar.' },
                   { text: 'Decir: “No tengo ganas de abrazar ahora, ¡pero puedo saludar con la mano o chocar los cinco!”', correct: true,
                     feedback: '¡Sí! Siempre está bien decir que no a un abrazo y ofrecer otra cosa en su lugar, como un saludo o un choque de manos.' },
-                  { text: 'Salir corriendo sin decir nada.', correct: false, outcome: ['Alex sale corriendo sin decir nada.', 'La tía se ve triste y confundida.', 'Nadie sabe qué quería Alex. Alex se esconde solo.'],
+                  { text: 'Salir corriendo sin decir nada.', correct: false, outcome: ['Alex sale corriendo sin decir nada.', 'La tía llama: “¿Alex? ¿Adónde fuiste?”', 'Nadie sabe qué quería Alex. Mamá busca a Alex por toda la casa.'],
                     feedback: 'No tienes que abrazar, pero es amable decir algo en lugar de simplemente salir corriendo — como ofrecer un saludo o un choque de manos.' },
                 ] },
               { type: 'dialogue', illustration: 'boundaries-uncomfortable',
@@ -9654,7 +9654,7 @@ const CONTENT = {
                   { speaker: 'Alex', text: 'No tengo ganas de abrazar ahora, ¡pero puedo saludar con la mano o chocar los cinco!' },
                 ],
                 choices: [
-                  { text: 'Decir que Alex debería haber abrazado de todos modos por cortesía.', correct: false, outcome: ['Alex cree que abrazar es lo cortés.', 'Alex abraza aunque no quiere.', 'Alex se siente incómodo y no dice nada.'],
+                  { text: 'Decir que Alex debería haber abrazado de todos modos por cortesía.', correct: false, outcome: ['Alex cree que abrazar es lo cortés.', 'Alex abraza aunque no quiere.', 'Alex no dice nada. Los adultos siguen pidiendo abrazos.'],
                     feedback: 'Alex nunca tiene que abrazar solo por cortesía — ofrecer otra cosa está bien.' },
                   { text: 'Decir que ofrecer un choque de manos en su lugar estuvo bien.', correct: true,
                     feedback: 'Sí — ofrecer otra cosa en lugar de un abrazo siempre está bien.' },
@@ -9667,7 +9667,7 @@ const CONTENT = {
                 choices: [
                   { text: 'La decisión de Alex — es su propio cuerpo.', correct: true,
                     feedback: '¡Exactamente! Tu cuerpo te pertenece, y siempre tú decides sobre abrazos y toques.' },
-                  { text: 'Quien pide el abrazo es quien decide.', correct: false, outcome: ['Alex cree que quien pide el abrazo decide.', 'Alex deja que todos en la fiesta lo abracen.', 'Alex se siente apretado y molesto, pero no dice que no.'],
+                  { text: 'Quien pide el abrazo es quien decide.', correct: false, outcome: ['Alex cree que quien pide el abrazo decide.', 'Alex deja que todos en la fiesta lo abracen.', 'A Alex lo aprietan una y otra vez, y no dice que no.'],
                     feedback: 'No exactamente — la persona que pide no decide por ti. Siempre es tu propia decisión.' },
                 ] },
               { type: 'dialogue', illustration: 'boundaries-safe',
@@ -9676,7 +9676,7 @@ const CONTENT = {
                   { speaker: 'Alex', text: '¿Eso significa que nunca tengo que abrazar a nadie que no quiera?' },
                 ],
                 choices: [
-                  { text: 'Decir que siempre tienes que abrazar a la familia sin importar qué.', correct: false, outcome: ['Alex cree que siempre debe abrazar a la familia.', 'En la siguiente fiesta, Alex abraza a todos de todos modos.', 'Alex se siente incómodo y no disfruta la fiesta.'],
+                  { text: 'Decir que siempre tienes que abrazar a la familia sin importar qué.', correct: false, outcome: ['Alex cree que siempre debe abrazar a la familia.', 'En la siguiente fiesta, Alex abraza a todos de todos modos.', 'Alex se esconde en el pasillo el resto de la fiesta.'],
                     feedback: 'Eso no es cierto — siempre es tu decisión, incluso con la familia.' },
                   { text: 'Decir que sí, siempre es tu decisión, incluso con la familia.', correct: true,
                     feedback: 'Exactamente correcto — tu cuerpo te pertenece, siempre.' },
@@ -9706,11 +9706,11 @@ const CONTENT = {
               { type: 'decision', illustration: 'boundaries-uncomfortable', kicker: '¿Qué debería hacer Alex?',
                 text: 'El compañero sigue tocando a Alex después de que le pidieron que se detuviera. ¿Cuál es la mejor opción?',
                 choices: [
-                  { text: 'Simplemente aguantarlo porque se supone que es gracioso.', correct: false, outcome: ['Alex deja de decir algo y deja que las cosquillas sigan.', 'El compañero cree que está bien y le hace cosquillas a Alex todos los días.', 'Alex empieza a no querer ir a la escuela, y ningún adulto sabe por qué.'],
+                  { text: 'Simplemente aguantarlo porque se supone que es gracioso.', correct: false, outcome: ['Alex deja de decir algo y deja que las cosquillas sigan.', 'El compañero cree que está bien y le hace cosquillas a Alex todos los días.', 'Alex pide quedarse en casa en vez de ir a la escuela, y ningún adulto sabe por qué.'],
                     feedback: 'Aunque algo se haga en broma, si no se siente bien y continúa después de que dices basta, no tienes que simplemente aguantarlo.' },
                   { text: 'Decir firmemente: “Basta, no me gusta eso,” y si sigue pasando, contarle a un adulto de confianza.', correct: true,
                     feedback: 'Sí — decirlo firmemente y contarle a un adulto de confianza si continúa es exactamente la respuesta correcta.' },
-                  { text: 'Hacerle cosquillas de vuelta al compañero para que se detenga.', correct: false, outcome: ['Alex le hace cosquillas de vuelta al compañero, fuerte.', 'El compañero le hace todavía más cosquillas, y se convierte en una gran pelea de cosquillas.', 'Una maestra les dice a los dos que se detengan, y Alex se siente confundido y frustrado.'],
+                  { text: 'Hacerle cosquillas de vuelta al compañero para que se detenga.', correct: false, outcome: ['Alex le hace cosquillas de vuelta al compañero, fuerte.', 'El compañero le hace todavía más cosquillas, y se convierte en una gran pelea de cosquillas.', 'Una maestra detiene la pelea de cosquillas, y los dos se quedan sin recreo.'],
                     feedback: 'Tocar de vuelta a alguien usualmente no resuelve el problema y puede confundir más las cosas — es más efectivo decir basta claramente y avisarle a un adulto.' },
                 ] },
               { type: 'dialogue', illustration: 'boundaries-uncomfortable',
@@ -9719,7 +9719,7 @@ const CONTENT = {
                   { speaker: 'Alex', text: 'Basta, no me gusta eso.' },
                 ],
                 choices: [
-                  { text: 'Decir que Alex debería dejarlo pasar porque solo es un juego.', correct: false, outcome: ['Alex decide dejarlo pasar, porque solo es un juego.', 'El compañero sigue haciéndole cosquillas a Alex en el recreo y en la fila.', 'Alex se siente incómodo todos los días y empieza a alejarse de todo el grupo.'],
+                  { text: 'Decir que Alex debería dejarlo pasar porque solo es un juego.', correct: false, outcome: ['Alex decide dejarlo pasar, porque solo es un juego.', 'El compañero sigue haciéndole cosquillas a Alex en el recreo y en la fila.', 'Alex empieza a almorzar solo para alejarse de todo el grupo.'],
                     feedback: 'Si no se siente bien, no importa que sea en broma — decir basta es lo correcto.' },
                   { text: 'Decir que decirle firmemente basta al compañero fue lo correcto.', correct: true,
                     feedback: 'Sí — decir basta con firmeza y claridad es exactamente lo correcto.' },
@@ -9732,7 +9732,7 @@ const CONTENT = {
                 choices: [
                   { text: 'Porque cómo se siente un toque para ti importa, sin importar qué tan pequeño le parezca a otra persona.', correct: true,
                     feedback: 'Exactamente — tus sentimientos sobre tu propio cuerpo son lo que importa, aunque otra persona piense que no es gran cosa.' },
-                  { text: 'Porque solo los toques grandes y obviamente dolorosos merecen mencionarse.', correct: false, outcome: ['Alex cree que solo vale la pena contar los toques grandes y dolorosos.', 'Alex no le cuenta a la maestra, porque las cosquillas en realidad no duelen.', 'Las cosquillas siguen, y Alex sigue sintiéndose incómodo sin que nadie lo ayude.'],
+                  { text: 'Porque solo los toques grandes y obviamente dolorosos merecen mencionarse.', correct: false, outcome: ['Alex cree que solo vale la pena contar los toques grandes y dolorosos.', 'Alex no le cuenta a la maestra, porque las cosquillas en realidad no duelen.', 'Las cosquillas siguen todos los días, porque nadie sabe que hay que detenerlas.'],
                     feedback: 'Cualquier toque que no se sienta bien para ti merece mencionarse — no tiene que ser grande o doloroso.' },
                 ] },
               { type: 'dialogue', illustration: 'boundaries-safe',
@@ -9741,7 +9741,7 @@ const CONTENT = {
                   { speaker: 'Alex', text: 'No estaba segura de si era suficientemente importante para mencionarlo.' },
                 ],
                 choices: [
-                  { text: 'Decir que solo los toques grandes y dolorosos merecen mencionarse.', correct: false, outcome: ['Alex decide que los toques pequeños no cuentan y deja de contarle a los adultos.', 'La próxima vez que alguien toca a Alex de una forma que no le gusta, Alex se queda callado.', 'Alex guarda el mal sentimiento por dentro, y ningún adulto sabe que tiene que ayudar.'],
+                  { text: 'Decir que solo los toques grandes y dolorosos merecen mencionarse.', correct: false, outcome: ['Alex decide que los toques pequeños no cuentan y deja de contarle a los adultos.', 'La próxima vez que alguien toca a Alex de una forma que no le gusta, Alex se queda callado.', 'Los toques siguen pasando, y ningún adulto sabe que tiene que ayudar.'],
                     feedback: 'Cualquier toque que no se sienta bien merece mencionarse, sea grande o pequeño.' },
                   { text: 'Decir que cualquier toque que no se sienta bien merece mencionarse.', correct: true,
                     feedback: 'Exactamente correcto — lo que importa es cómo se siente para ti, no su tamaño.' },
@@ -9771,11 +9771,11 @@ const CONTENT = {
               { type: 'decision', illustration: 'boundaries-uncomfortable', kicker: '¿Qué debería hacer Alex?',
                 text: 'Algo de esto se siente extraño para Alex, y hay una petición de guardar un secreto. ¿Cuál es la opción más segura?',
                 choices: [
-                  { text: 'Seguir mirando y guardar el secreto porque lo pidió amablemente.', correct: false, outcome: ['Alex se queda, sigue mirando el teléfono, y promete guardar el secreto.', 'El chico mayor se acerca todavía más y dice: “Bien — recuerda, esto queda entre nosotros.”', 'Alex se va a casa con un sentimiento incómodo y un secreto que ningún adulto de confianza conoce.'],
+                  { text: 'Seguir mirando y guardar el secreto porque lo pidió amablemente.', correct: false, outcome: ['Alex se queda, sigue mirando el teléfono, y promete guardar el secreto.', 'El chico mayor se acerca todavía más y dice: “Bien — recuerda, esto queda entre nosotros.”', 'Alex se va a casa sin decir nada, y el chico mayor le pide volver a verse la próxima semana.'],
                     feedback: 'Que te pidan guardar un secreto de tus papás, especialmente sobre cómo alguien te está tratando, es exactamente el tipo de cosa que debes contarle a un adulto de confianza en su lugar.' },
                   { text: 'Decir que Alex necesita irse, y contarle a un adulto de confianza lo que pasó, incluyendo la petición de guardar el secreto.', correct: true,
                     feedback: 'Sí — salir de la situación y contarle a un adulto de confianza, especialmente sobre que te pidieron guardar un secreto, es exactamente la respuesta correcta.' },
-                  { text: 'Seguir la corriente pero planear mencionarlo mucho después, tal vez el próximo año.', correct: false, outcome: ['Alex sigue la corriente y planea mencionarlo tal vez el próximo año.', 'El chico mayor empieza a pedirle a Alex que se vean a solas otra vez.', 'Alex carga el sentimiento incómodo en soledad por semanas, y nadie que podría ayudar lo sabe.'],
+                  { text: 'Seguir la corriente pero planear mencionarlo mucho después, tal vez el próximo año.', correct: false, outcome: ['Alex sigue la corriente y planea mencionarlo tal vez el próximo año.', 'El chico mayor empieza a pedirle a Alex que se vean a solas otra vez.', 'Pasan las semanas, el chico mayor sigue insistiendo, y nadie que podría ayudar lo sabe.'],
                     feedback: 'Esperar mucho tiempo para contarle a alguien significa que cargas un sentimiento incómodo solo sin necesidad — contarle a un adulto de confianza lo antes posible es más seguro.' },
                 ] },
               { type: 'dialogue', illustration: 'boundaries-uncomfortable',
@@ -9784,7 +9784,7 @@ const CONTENT = {
                   { speaker: 'Alex (pensando)', text: 'Esto no se siente bien — necesito irme y contarle a alguien.' },
                 ],
                 choices: [
-                  { text: 'Aceptar guardar el secreto porque parece agradable.', correct: false, outcome: ['Alex acepta guardar el secreto porque el chico mayor parece agradable.', 'El chico mayor sonríe, dice: “Sabía que podía confiar en ti,” y le pide volver a verse.', 'Alex se siente atrapado — no se siente bien, pero ahora parece aún más difícil contarle a alguien.'],
+                  { text: 'Aceptar guardar el secreto porque parece agradable.', correct: false, outcome: ['Alex acepta guardar el secreto porque el chico mayor parece agradable.', 'El chico mayor sonríe, dice: “Sabía que podía confiar en ti,” y le pide volver a verse.', 'Alex acepta volver a verse, y todavía ningún adulto de confianza sabe nada.'],
                     feedback: 'Parecer agradable no hace que esa petición sea segura — sigue siendo una señal de advertencia.' },
                   { text: 'Irse y contarle a un adulto de confianza sobre la petición del secreto.', correct: true,
                     feedback: 'Sí — irse y contarle a un adulto de confianza es exactamente la respuesta correcta.' },
@@ -9797,7 +9797,7 @@ const CONTENT = {
                 choices: [
                   { text: 'Porque los adultos de confianza en la vida de un niño generalmente no necesitan que se les oculten cosas a los papás o cuidadores.', correct: true,
                     feedback: 'Exactamente — ese tipo específico de pedido de guardar secretos es una señal de advertencia común, sin importar qué tan agradable o conocida parezca la persona.' },
-                  { text: 'Porque todos los secretos de cualquier tipo son automáticamente peligrosos, incluso los regalos sorpresa.', correct: false, outcome: ['Alex empieza a creer que todo secreto es peligroso — incluso un regalo sorpresa para papá.', 'Alex se pone ansioso cada vez que alguien susurra, y revela sin querer la fiesta sorpresa de un primo.', 'Alex se siente estresado y confundido, y se vuelve más difícil notar cuáles secretos de verdad hay que contar.'],
+                  { text: 'Porque todos los secretos de cualquier tipo son automáticamente peligrosos, incluso los regalos sorpresa.', correct: false, outcome: ['Alex empieza a creer que todo secreto es peligroso — incluso un regalo sorpresa para papá.', 'Cuando la familia susurra sobre la fiesta sorpresa de un primo, Alex la revela sin querer.', 'La sorpresa del primo se arruina, y la familia deja de contarle sus planes a Alex.'],
                     feedback: 'No todos los secretos son peligrosos — una fiesta sorpresa es un secreto divertido. La señal de advertencia es específicamente que te digan que ocultes de tus papás cómo alguien te está tratando.' },
                 ] },
               { type: 'dialogue', illustration: 'boundaries-safe',
@@ -9806,7 +9806,7 @@ const CONTENT = {
                   { speaker: 'Alex', text: '¿Todos los secretos así son peligrosos?' },
                 ],
                 choices: [
-                  { text: 'Decir que sí, todos los secretos son peligrosos, incluso las fiestas sorpresa.', correct: false, outcome: ['Alex le dice a su papá que todo secreto debe ser peligroso, incluso las fiestas sorpresa.', 'Cuando la familia planea una fiesta sorpresa para la abuela, Alex está demasiado preocupado para participar.', 'Alex se pierde la diversión y se siente estresado, sin estar más seguro.'],
+                  { text: 'Decir que sí, todos los secretos son peligrosos, incluso las fiestas sorpresa.', correct: false, outcome: ['Alex le dice a su papá que todo secreto debe ser peligroso, incluso las fiestas sorpresa.', 'Cuando la familia planea una fiesta sorpresa para la abuela, Alex se niega a ayudar y se queda en su cuarto.', 'La fiesta se hace sin Alex, y Alex no está más seguro por perdérsela.'],
                     feedback: 'Eso no es cierto — las fiestas sorpresa son un tipo de secreto divertido y seguro.' },
                   { text: 'Decir que no, pero los secretos sobre tu cuerpo o seguridad que ocultan cosas de tus papás son una señal de advertencia.', correct: true,
                     feedback: 'Exactamente correcto — ese tipo específico de secreto es lo que importa aquí.' },
@@ -9820,7 +9820,7 @@ const CONTENT = {
                 ],
                 text: 'Un primo después le pide a Alex algo parecido y dice que está bien porque la última vez todo salió bien. ¿Qué debería recordar Alex?',
                 choices: [
-                  { text: 'Ya que salió bien la última vez, está bien seguir la corriente esta vez.', correct: false, outcome: ['Alex decide que está bien seguirle la corriente al primo, porque salió bien la última vez.', 'El primo dice: “¿Ves? No hace falta contarle a tus papás,” y le pide a Alex guardar otro secreto.', 'Alex otra vez carga un secreto incómodo en soledad, y ningún adulto de confianza sabe lo que está pasando.'],
+                  { text: 'Ya que salió bien la última vez, está bien seguir la corriente esta vez.', correct: false, outcome: ['Alex decide que está bien seguirle la corriente al primo, porque salió bien la última vez.', 'El primo dice: “¿Ves? No hace falta contarle a tus papás,” y le pide a Alex guardar otro secreto.', 'Alex guarda también el nuevo secreto, y ningún adulto de confianza sabe lo que está pasando.'],
                     feedback: 'Que haya "salido bien" antes no cambia la regla — ese tipo de petición de secreto sigue siendo una señal de advertencia.' },
                   { text: 'Que te pidan ocultar de tus papás cómo alguien te está tratando siempre vale la pena contárselo a un adulto de confianza, sin importar quién lo pida.', correct: true,
                     feedback: 'Exactamente — esa petición en sí misma es la señal de advertencia, sin importar quién la haga o cómo haya salido antes.' },
@@ -9883,7 +9883,7 @@ const CONTENT = {
                 choices: [
                   { text: 'Sí — un regalo sorpresa es un secreto divertido y seguro para guardar por un tiempo corto.', correct: true,
                     feedback: '¡Correcto! Una fiesta sorpresa o un regalo es un secreto seguro porque hace feliz a la gente y no oculta nada aterrador o peligroso.' },
-                  { text: 'No — Alex nunca debería guardar ningún secreto, jamás.', correct: false, outcome: ['Alex corre a contarle a mamá sobre el regalo.', 'La sorpresa se arruina.', 'El hermano de Alex se siente triste y decepcionado.'],
+                  { text: 'No — Alex nunca debería guardar ningún secreto, jamás.', correct: false, outcome: ['Alex corre a contarle a mamá sobre el regalo.', 'La sorpresa se arruina.', 'El hermano de Alex envuelve el regalo, pero mamá ya sabe qué es.'],
                     feedback: 'No exactamente — algunos secretos, como las sorpresas divertidas, son seguros de guardar. Lo importante es saber la diferencia entre secretos seguros y no seguros.' },
                 ] },
               { type: 'dialogue', illustration: 'secret-worried',
@@ -9892,7 +9892,7 @@ const CONTENT = {
                   { speaker: 'Alex', text: '¡Está bien, es un secreto divertido de guardar hasta el sábado!' },
                 ],
                 choices: [
-                  { text: 'Decir que Alex nunca debería guardar ningún secreto.', correct: false, outcome: ['Alex le cuenta a mamá sobre el regalo.', 'El sábado, mamá no se sorprende.', 'El hermano de Alex se siente decepcionado.'],
+                  { text: 'Decir que Alex nunca debería guardar ningún secreto.', correct: false, outcome: ['Alex le cuenta a mamá sobre el regalo.', 'El sábado, mamá no se sorprende.', 'El hermano de Alex se esforzó mucho, pero la sorpresa se arruinó.'],
                     feedback: 'Algunos secretos, como las sorpresas divertidas, son seguros de guardar — este no es motivo de preocupación.' },
                   { text: 'Decir que un regalo sorpresa es un secreto seguro para guardar por un rato.', correct: true,
                     feedback: 'Sí — una sorpresa divertida como esta es un secreto seguro.' },
@@ -9905,7 +9905,7 @@ const CONTENT = {
                 choices: [
                   { text: 'No — ese es un secreto no seguro, y Alex debería contarle a un adulto de confianza de inmediato.', correct: true,
                     feedback: 'Exactamente correcto. Un secreto que usa una amenaza aterradora, o que te dicen que NUNCA le cuentes a un adulto, es un secreto no seguro que hay que contar de inmediato.' },
-                  { text: 'Sí — Alex debería guardarlo porque le dijeron que lo hiciera.', correct: false, outcome: ['Alex guarda el secreto aterrador.', 'Ningún adulto sabe lo que pasó.', 'Alex se siente asustado y solo con eso.'],
+                  { text: 'Sí — Alex debería guardarlo porque le dijeron que lo hiciera.', correct: false, outcome: ['Alex guarda el secreto aterrador.', 'Ningún adulto sabe lo que pasó.', 'Así que ningún adulto puede ayudar ni hacer que pare.'],
                     feedback: 'Que te digan que guardes un secreto para siempre, especialmente con una advertencia aterradora, es exactamente la señal de un secreto no seguro — cuéntale a un adulto de confianza.' },
                 ] },
               { type: 'dialogue', illustration: 'secret-worried',
@@ -9943,11 +9943,11 @@ const CONTENT = {
               { type: 'decision', illustration: 'secret-worried', kicker: '¿Qué debería hacer Alex?',
                 text: 'El amigo quiere que Alex guarde esto en secreto. ¿Cuál es la mejor opción?',
                 choices: [
-                  { text: 'Prometer y nunca decirle nada a nadie.', correct: false, outcome: ['Alex lo promete y nunca dice nada.', 'La mamá del amigo encuentra los pedazos escondidos y se siente confundida y molesta.', 'El amigo está en más problemas por esconderlo, y Alex se siente mal por haber sido parte de eso.'],
+                  { text: 'Prometer y nunca decirle nada a nadie.', correct: false, outcome: ['Alex lo promete y nunca dice nada.', 'La mamá del amigo encuentra los pedazos escondidos y pregunta: “¿Quién rompió mi taza?”', 'El amigo se mete en más problemas por esconderlo, y la mamá descubre que Alex lo sabía desde el principio.'],
                     feedback: 'Este tipo de secreto es sobre ocultarle algo a un padre que probablemente necesite saber — es mejor animar suavemente al amigo a contarlo, o contarle a un adulto de confianza tú mismo.' },
                   { text: 'Decir: “Creo que deberías contarle a tu mamá, fue un accidente,” y animarlo, o contarle a un adulto de confianza si realmente le preocupa a Alex.', correct: true,
                     feedback: 'Sí — animar suavemente a ser honesto, o contarle a un adulto de confianza si te preocupa, es una buena manera de manejar secretos que involucran ocultarle algo a un padre.' },
-                  { text: 'Contarle a todos en la escuela de inmediato para ser gracioso.', correct: false, outcome: ['Alex le cuenta a todos en la escuela sobre la taza rota para ser gracioso.', 'Los niños se ríen y se burlan del amigo.', 'El amigo se siente avergonzado y herido, y ya no confía en Alex.'],
+                  { text: 'Contarle a todos en la escuela de inmediato para ser gracioso.', correct: false, outcome: ['Alex le cuenta a todos en la escuela sobre la taza rota para ser gracioso.', 'Los niños se ríen y se burlan del amigo.', 'El amigo deja de sentarse con Alex y ya no le cuenta sus secretos.'],
                     feedback: 'Difundir el secreto de alguien para ser gracioso no es amable y no es el punto — la meta es la honestidad con el padre, no avergonzar a tu amigo.' },
                 ] },
               { type: 'dialogue', illustration: 'secret-worried',
@@ -10008,11 +10008,11 @@ const CONTENT = {
               { type: 'decision', illustration: 'secret-worried', kicker: '¿Qué debería hacer Alex?',
                 text: 'El adulto está ofreciendo algo que Alex quiere a cambio de un secreto de sus papás. ¿Cuál es la opción más segura?',
                 choices: [
-                  { text: 'Aceptar el juego y guardar el secreto porque parece un regalo agradable.', correct: false, outcome: ['Alex acepta el juego y promete no contarles a sus papás sobre las visitas.', 'El adulto empieza a pedir más visitas y le recuerda a Alex que no diga nada.', 'Alex se siente incómodo y atrapado, y ningún adulto de confianza sabe lo que está pasando.'],
+                  { text: 'Aceptar el juego y guardar el secreto porque parece un regalo agradable.', correct: false, outcome: ['Alex acepta el juego y promete no contarles a sus papás sobre las visitas.', 'El adulto empieza a pedir más visitas y le recuerda a Alex que no diga nada.', 'Los papás de Alex nunca se enteran, así que ningún adulto de confianza puede intervenir y detenerlo.'],
                     feedback: 'Un adulto que ofrece regalos a cambio de secreto de tus papás es una señal de advertencia seria, sin importar qué tan agradable sea el regalo o el adulto.' },
                   { text: 'Decir que no a guardar el secreto, y contarle a un adulto de confianza sobre la oferta y la petición de secreto.', correct: true,
                     feedback: 'Sí — contarle a un adulto de confianza sobre que te ofrecieron algo a cambio de un secreto de tus papás es exactamente lo correcto.' },
-                  { text: 'Aceptar el regalo ahora, pero contarle a un padre en unos meses.', correct: false, outcome: ['Alex acepta el regalo y planea contarle a un padre más adelante.', 'Durante los siguientes meses, las visitas siguen y el adulto sigue pidiéndole a Alex que no diga nada.', 'Mientras más espera Alex, más difícil se siente contarlo, y ningún adulto de confianza puede intervenir.'],
+                  { text: 'Aceptar el regalo ahora, pero contarle a un padre en unos meses.', correct: false, outcome: ['Alex acepta el regalo y planea contarle a un padre más adelante.', 'Durante los siguientes meses, las visitas siguen y el adulto sigue pidiéndole a Alex que no diga nada.', 'Cuando Alex por fin lo cuenta, el secreto ya lleva meses y ningún adulto de confianza pudo intervenir.'],
                     feedback: 'Esperar para contarle a alguien significa que la situación continúa mientras tanto — es más seguro contarle a un adulto de confianza lo antes posible.' },
                 ] },
               { type: 'dialogue', illustration: 'secret-worried',
@@ -10021,7 +10021,7 @@ const CONTENT = {
                   { speaker: 'Alex (pensando)', text: 'Esto no se siente bien — necesito contarle a alguien.' },
                 ],
                 choices: [
-                  { text: 'Aceptar el regalo y guardar el secreto.', correct: false, outcome: ['Alex acepta el regalo y guarda en secreto las visitas.', 'El adulto trae más regalos y sigue diciendo: “Recuerda, esto es solo entre nosotros.”', 'Alex se siente cada vez más incómodo pero atrapado por el secreto, y ningún adulto de confianza lo sabe.'],
+                  { text: 'Aceptar el regalo y guardar el secreto.', correct: false, outcome: ['Alex acepta el regalo y guarda en secreto las visitas.', 'El adulto trae más regalos y sigue diciendo: “Recuerda, esto es solo entre nosotros.”', 'Los papás de Alex siguen sin saberlo, así que las visitas y los regalos continúan y nadie interviene.'],
                     feedback: 'Un regalo unido al secreto de los papás es una señal de advertencia seria — no guardes ese secreto.' },
                   { text: 'Decir que no y contarle a un adulto de confianza sobre la oferta.', correct: true,
                     feedback: 'Exactamente correcto — contarle a un adulto de confianza es la respuesta segura aquí.' },
@@ -10034,7 +10034,7 @@ const CONTENT = {
                 choices: [
                   { text: 'Porque combina una recompensa con una regla de ocultar algo específicamente de los papás, que es una forma conocida en que la gente intenta mantener a los niños callados.', correct: true,
                     feedback: 'Exactamente — esa combinación específica (un regalo o recompensa más el secreto de los papás) es una señal de advertencia bien conocida que se enseña en programas de seguridad exactamente por esta razón.' },
-                  { text: 'Porque recibir cualquier regalo de cualquier adulto siempre es peligroso.', correct: false, outcome: ['Alex cree que recibir cualquier regalo de cualquier adulto siempre es peligroso.', 'Cuando el abuelo le da un regalo de cumpleaños, Alex lo rechaza y se altera.', 'El abuelo se siente herido, y Alex se confunde — la verdadera señal de advertencia, el secreto de los papás, se mezcla con regalos normales.'],
+                  { text: 'Porque recibir cualquier regalo de cualquier adulto siempre es peligroso.', correct: false, outcome: ['Alex cree que recibir cualquier regalo de cualquier adulto siempre es peligroso.', 'Cuando el abuelo le da un regalo de cumpleaños, Alex lo rechaza y lo empuja lejos.', 'El abuelo vuelve a guardar el regalo en la bolsa, y la fiesta se detiene un momento, todo por un regalo normal y seguro.'],
                     feedback: 'Los regalos por sí solos no son automáticamente peligrosos — la señal de advertencia es un regalo combinado con presión para ocultar algo específicamente de tus papás.' },
                 ] },
               { type: 'dialogue', illustration: 'secret-safe',
@@ -10124,7 +10124,7 @@ const CONTENT = {
                   { speaker: 'Compañero', text: 'Ay, perdón, aquí tienes.' },
                 ],
                 choices: [
-                  { text: 'Decir que Alex debería haberle contado a la maestra de inmediato.', correct: false, outcome: ['Alex corre a contarle a la maestra.', 'El compañero se siente avergonzado y molesto.', 'Ahora los dos están enojados entre sí.'],
+                  { text: 'Decir que Alex debería haberle contado a la maestra de inmediato.', correct: false, outcome: ['Alex corre a contarle a la maestra.', 'La maestra detiene la clase para hablar con el compañero.', 'El compañero no quiere jugar con Alex en el recreo.'],
                     feedback: 'Para algo tan pequeño, intentar con palabras primero es el mejor primer paso.' },
                   { text: 'Decir que intentar con palabras primero fue el enfoque correcto.', correct: true,
                     feedback: 'Sí — para cosas pequeñas y cotidianas, usar tus palabras primero es exactamente correcto.' },
@@ -10180,7 +10180,7 @@ const CONTENT = {
                     feedback: 'Contarle a un adulto de confianza cuando ves a alguien lastimado o molesto no es acusar — es algo amable y útil.' },
                   { text: 'Ver cómo está el compañero, y contarle a un adulto de confianza lo que pasó.', correct: true,
                     feedback: 'Sí — ver cómo está alguien y contarle a un adulto de confianza es una manera amable y responsable de ayudar.' },
-                  { text: 'Contarle a otros niños para que todos sepan lo que pasó.', correct: false, outcome: ['Alex les cuenta a varios niños lo que pasó.', 'La historia se difunde, y los niños empiezan a cuchichear sobre el compañero.', 'El compañero se siente todavía más avergonzado, y aún ningún adulto lo sabe.'],
+                  { text: 'Contarle a otros niños para que todos sepan lo que pasó.', correct: false, outcome: ['Alex les cuenta a varios niños lo que pasó.', 'La historia se difunde, y los niños empiezan a cuchichear sobre el compañero.', 'El compañero se sienta solo en el almuerzo, y aún ningún adulto lo sabe.'],
                     feedback: 'Difundir la historia no ayuda al compañero — contarle a un adulto de confianza, en silencio y directamente, es más útil.' },
                 ] },
               { type: 'dialogue', illustration: 'report-unsure',
@@ -10189,7 +10189,7 @@ const CONTENT = {
                   { speaker: 'Compañero', text: 'No mucho, eso realmente me lastimó los sentimientos.' },
                 ],
                 choices: [
-                  { text: 'Decir que Alex debería haberse mantenido al margen.', correct: false, outcome: ['Alex se aleja sin preguntarle al compañero si está bien.', 'El compañero se queda solo, todavía llorando.', 'El compañero siente que a nadie le importa.'],
+                  { text: 'Decir que Alex debería haberse mantenido al margen.', correct: false, outcome: ['Alex se aleja sin preguntarle al compañero si está bien.', 'El compañero se queda solo, todavía llorando.', 'Nadie le avisa a un adulto, así que el compañero no recibe ayuda.'],
                     feedback: 'Ver cómo está alguien que sufre es un gesto de cuidado, no meterse de más.' },
                   { text: 'Decir que ver cómo estaba el compañero fue un gesto de cuidado.', correct: true,
                     feedback: 'Sí — preguntar cómo está alguien muestra cuidado y es exactamente lo correcto.' },
@@ -10245,7 +10245,7 @@ const CONTENT = {
                     feedback: 'Un patrón como este —moretones frecuentes, retraimiento, y miedo de ir a casa— es exactamente el tipo de preocupación seria que es importante contarle a un adulto de confianza, aunque no estés completamente seguro de qué está pasando.' },
                   { text: 'Contarle a un adulto de confianza, como un consejero escolar o maestro, con calma y en privado sobre lo que Alex ha notado.', correct: true,
                     feedback: 'Sí — contarle a un adulto de confianza en privado sobre un patrón como este es exactamente lo correcto y responsable.' },
-                  { text: 'Preguntarle al compañero directamente, frente a otros estudiantes, que explique todo de inmediato.', correct: false, outcome: ['En plena clase, Alex le pide en voz alta al compañero que explique todo.', 'Los demás estudiantes voltean a mirar, y el compañero se pone rojo.', 'El compañero dice: “No es nada,” se cierra, y ahora se siente menos seguro para hablar con cualquiera.'],
+                  { text: 'Preguntarle al compañero directamente, frente a otros estudiantes, que explique todo de inmediato.', correct: false, outcome: ['En plena clase, Alex le pide en voz alta al compañero que explique todo.', 'Los demás estudiantes voltean a mirar, y el compañero se pone rojo.', 'El compañero dice: “No es nada,” y se va, así que ningún adulto se entera de lo que pasa.'],
                     feedback: 'Preguntar frente a otros podría sentirse vergonzoso o inseguro para el compañero — es mejor contarle en silencio a un adulto de confianza, quien puede manejarlo con cuidado.' },
                 ] },
               { type: 'dialogue', illustration: 'report-unsure',
@@ -10351,7 +10351,7 @@ const CONTENT = {
               { type: 'decision', illustration: 'awareness-scan', kicker: '¿Qué debería hacer Alex?',
                 text: 'Los estacionamientos tienen carros moviéndose. ¿Qué es lo más seguro que Alex puede hacer?',
                 choices: [
-                  { text: 'Seguir mirando el juguete ya que el adulto está ahí.', correct: false, outcome: ['Alex sigue mirando el juguete.', 'Un carro sale en reversa cerca de Alex.', 'El adulto jala a Alex rápido. Alex siente miedo.'],
+                  { text: 'Seguir mirando el juguete ya que el adulto está ahí.', correct: false, outcome: ['Alex sigue mirando el juguete.', 'Un carro sale en reversa cerca de Alex.', 'El adulto jala a Alex rápido. El carro pita.'],
                     feedback: 'Aunque haya un adulto cerca, es importante mirar hacia arriba y prestar atención en un estacionamiento, ya que los carros pueden moverse inesperadamente.' },
                   { text: 'Guardar el juguete por ahora y mirar alrededor, tomando la mano del adulto.', correct: true,
                     feedback: '¡Sí! Mirar alrededor y tomar la mano de un adulto en un estacionamiento te ayuda a notar los carros y mantenerte seguro.' },
@@ -10362,7 +10362,7 @@ const CONTENT = {
                   { speaker: 'Alex', text: 'Está bien, voy a guardar mi juguete.' },
                 ],
                 choices: [
-                  { text: 'Decir que Alex debería seguir mirando el juguete ya que el adulto está vigilando.', correct: false, outcome: ['Alex suelta la mano y mira el juguete.', 'Un carro empieza a moverse cerca de Alex.', 'El conductor no ve a Alex. Alex siente miedo.'],
+                  { text: 'Decir que Alex debería seguir mirando el juguete ya que el adulto está vigilando.', correct: false, outcome: ['Alex suelta la mano y mira el juguete.', 'Un carro empieza a moverse cerca de Alex.', 'El conductor no ve a Alex. El adulto tiene que correr a agarrar a Alex.'],
                     feedback: 'Aunque haya un adulto cerca, Alex también necesita estar atento — los estacionamientos necesitan la atención de todos.' },
                   { text: 'Decir que guardar el juguete y tomar la mano fue la decisión correcta.', correct: true,
                     feedback: 'Sí — guardar el juguete y tomar la mano es exactamente correcto en un estacionamiento.' },
@@ -10384,7 +10384,7 @@ const CONTENT = {
                   { speaker: 'Alex', text: '¿Los estacionamientos son el único lugar donde necesito prestar más atención?' },
                 ],
                 choices: [
-                  { text: 'Decir que sí, solo los estacionamientos necesitan atención extra.', correct: false, outcome: ['Alex cree que solo los estacionamientos importan.', 'En la acera, Alex mira el juguete otra vez.', 'Una bicicleta casi choca con Alex. Alex se asusta.'],
+                  { text: 'Decir que sí, solo los estacionamientos necesitan atención extra.', correct: false, outcome: ['Alex cree que solo los estacionamientos importan.', 'En la acera, Alex mira el juguete otra vez.', 'Una bicicleta casi choca con Alex. El ciclista tiene que frenar rápido.'],
                     feedback: 'No es solo en estacionamientos — cualquier lugar con carros o bicicletas en movimiento necesita atención extra.' },
                   { text: 'Decir que no, cualquier lugar con carros o bicicletas en movimiento necesita atención extra.', correct: true,
                     feedback: 'Exactamente correcto — esa regla aplica en cualquier lugar con vehículos en movimiento.' },
@@ -10477,7 +10477,7 @@ const CONTENT = {
               { type: 'decision', illustration: 'awareness-scan', kicker: '¿Qué debería hacer Alex?',
                 text: 'Nadie en el grupo ha estado siguiendo dónde están. ¿Cuál es un hábito inteligente para desarrollar, ahora y la próxima vez?',
                 choices: [
-                  { text: 'Simplemente seguir vagando y esperar reconocer el camino de vuelta eventualmente.', correct: false, outcome: ['El grupo sigue vagando, esperando que algo se vea conocido.', 'Todos los pasillos empiezan a verse iguales, y terminan al otro lado del centro comercial.', 'Ahora van tarde para que los recojan, los teléfonos tienen poca batería, y todos se sienten estresados y perdidos.'],
+                  { text: 'Simplemente seguir vagando y esperar reconocer el camino de vuelta eventualmente.', correct: false, outcome: ['El grupo sigue vagando, esperando que algo se vea conocido.', 'Todos los pasillos empiezan a verse iguales, y terminan al otro lado del centro comercial.', 'Ahora van tarde para que los recojan, los teléfonos tienen poca batería, y el conductor da vueltas por el estacionamiento buscándolos.'],
                     feedback: 'Esperar reconocer el camino de vuelta no es un plan confiable en un lugar grande y desconocido — es más inteligente buscar activamente puntos de referencia o pedirle direcciones al personal.' },
                   { text: 'Buscar un mapa del directorio, un punto de referencia reconocible, o pedirle a un miembro del personal que ayude a orientarse.', correct: true,
                     feedback: 'Sí — usar activamente un directorio, un punto de referencia, o un miembro del personal para orientarse es una forma inteligente de estar consciente en un lugar desconocido.' },
@@ -10488,7 +10488,7 @@ const CONTENT = {
                   { speaker: 'Alex', text: 'No estoy seguro, busquemos un mapa del directorio o preguntémosle al personal.' },
                 ],
                 choices: [
-                  { text: 'Decir que el grupo debería seguir vagando y esperar reconocerlo.', correct: false, outcome: ['Alex le dice al grupo que sigan vagando y esperen lo mejor.', 'Una hora después, todavía no encuentran la entrada donde los están esperando para recogerlos.', 'Siguen llegando mensajes preocupados, y el paseo divertido se convierte en una búsqueda estresante.'],
+                  { text: 'Decir que el grupo debería seguir vagando y esperar reconocerlo.', correct: false, outcome: ['Alex le dice al grupo que sigan vagando y esperen lo mejor.', 'Una hora después, todavía no encuentran la entrada donde los están esperando para recogerlos.', 'Siguen llegando mensajes de “¿Dónde están?”, y quien los recoge tiene que irse y volver más tarde.'],
                     feedback: 'Vagar y esperar no es confiable en un lugar grande y desconocido — buscar un directorio o preguntar al personal es más inteligente.' },
                   { text: 'Decir que buscar un mapa del directorio o preguntar al personal fue la decisión inteligente.', correct: true,
                     feedback: 'Sí — esa es exactamente la forma inteligente de orientarse.' },
@@ -10501,7 +10501,7 @@ const CONTENT = {
                 choices: [
                   { text: 'Porque si algo inesperado pasa después, ya sabrás a dónde ir para pedir ayuda o seguridad.', correct: true,
                     feedback: 'Exactamente — desarrollar este hábito antes de que algo salga mal significa que estás preparado si alguna vez lo necesitas.' },
-                  { text: 'Porque solo es útil si ya sabes que algo malo está a punto de pasar.', correct: false, outcome: ['Alex cree que los puntos de referencia solo importan si ya sabe que viene un problema.', 'Alex deja de notar las salidas y las áreas con personal, porque todo parece estar bien.', 'Cuando de repente suena una alarma fuerte, Alex no tiene idea de hacia dónde ir y siente pánico.'],
+                  { text: 'Porque solo es útil si ya sabes que algo malo está a punto de pasar.', correct: false, outcome: ['Alex cree que los puntos de referencia solo importan si ya sabe que viene un problema.', 'Alex deja de notar las salidas y las áreas con personal, porque todo parece estar bien.', 'Cuando de repente suena una alarma fuerte, Alex no tiene idea de hacia dónde ir y termina en una puerta lateral cerrada, teniendo que dar la vuelta.'],
                     feedback: 'El punto es desarrollar el hábito antes de que pase algo, para que estés listo de cualquier manera — no esperar hasta que empiecen los problemas.' },
                 ] },
               { type: 'dialogue', illustration: 'awareness-safe',
@@ -10510,7 +10510,7 @@ const CONTENT = {
                   { speaker: 'Alex', text: '¿Es raro que estemos revisando puntos de referencia cuando nada está mal?' },
                 ],
                 choices: [
-                  { text: 'Decir que solo es útil una vez que algo malo ya está pasando.', correct: false, outcome: ['Alex le dice a su amigo que revisar puntos de referencia solo sirve cuando algo ya salió mal.', 'El grupo deja de prestar atención y se separa para ir de compras.', 'Cuando un amigo se pierde y llama, nadie sabe explicar dónde encontrarse, y tardan mucho tiempo preocupados en volver a reunirse.'],
+                  { text: 'Decir que solo es útil una vez que algo malo ya está pasando.', correct: false, outcome: ['Alex le dice a su amigo que revisar puntos de referencia solo sirve cuando algo ya salió mal.', 'El grupo deja de prestar atención y se separa para ir de compras.', 'Cuando un amigo se pierde y llama, nadie sabe explicar dónde encontrarse, y pasan media hora dando vueltas buscándose.'],
                     feedback: 'El hábito es más útil cuando se desarrolla antes de que pase algo, no solo cuando empiezan los problemas.' },
                   { text: 'Decir que desarrollar el hábito antes de que pase algo significa estar preparado de cualquier manera.', correct: true,
                     feedback: 'Exactamente correcto — esa es exactamente la razón por la que es un hábito inteligente y constante.' },
@@ -10524,7 +10524,7 @@ const CONTENT = {
                 ],
                 text: 'Un amigo después dice que no tiene sentido notar puntos de referencia a menos que algo malo ya esté pasando. ¿Qué debería recordar Alex?',
                 choices: [
-                  { text: 'Los puntos de referencia y las salidas solo vale la pena notarlos una vez que ya te sientes inseguro.', correct: false, outcome: ['Alex está de acuerdo y decide notar las salidas solo cuando ya se sienta inseguro.', 'Más tarde, una multitud se pone ruidosa y empuja, y Alex empieza a sentirse incómodo.', 'Ahora Alex está buscando una salida mientras ya está estresado, lo que hace mucho más difícil pensar con claridad.'],
+                  { text: 'Los puntos de referencia y las salidas solo vale la pena notarlos una vez que ya te sientes inseguro.', correct: false, outcome: ['Alex está de acuerdo y decide notar las salidas solo cuando ya se sienta inseguro.', 'Más tarde, una multitud se pone ruidosa y empuja, y Alex empieza a sentirse incómodo.', 'Alex tiene que buscar una salida en medio de la multitud y termina caminando en la dirección equivocada, más adentro.'],
                     feedback: 'Esperar hasta sentirte inseguro le quita el propósito — el hábito funciona mejor cuando se desarrolla con anticipación.' },
                   { text: 'Notar puntos de referencia con anticipación significa estar preparado sin importar qué pase.', correct: true,
                     feedback: 'Exactamente — la atención es un hábito constante, no una reacción al miedo.' },
@@ -10580,7 +10580,7 @@ const CONTENT = {
               { type: 'decision', illustration: 'plan-before', kicker: '¿Qué debería hacer Alex?',
                 text: 'Alex quiere cambiar de planes de repente. ¿Cuál es el primer paso más seguro?',
                 choices: [
-                  { text: 'Simplemente ir, y explicar después.', correct: false, outcome: ['Alex va a la casa del amigo.', 'El adulto de Alex viene a buscarlo.', 'Alex no está. Todos están preocupados.'],
+                  { text: 'Simplemente ir, y explicar después.', correct: false, outcome: ['Alex va a la casa del amigo.', 'El adulto de Alex viene a buscarlo.', 'Alex no está. El adulto lo busca por todos lados.'],
                     feedback: 'Ir a algún lugar sin preguntar primero significa que tu adulto no sabe dónde estás — siempre pide permiso antes de cambiar de planes.' },
                   { text: 'Pedirle permiso a un adulto primero, y decirle dónde estará Alex.', correct: true,
                     feedback: '¡Sí! Pedir primero y decir dónde estarás es exactamente la forma segura de cambiar de planes.' },
@@ -10643,7 +10643,7 @@ const CONTENT = {
               { type: 'decision', illustration: 'plan-before', kicker: '¿Qué debería hacer Alex?',
                 text: 'Este es un lugar nuevo y un conductor nuevo. ¿Qué información importa más antes de decir que sí?',
                 choices: [
-                  { text: 'Simplemente ir, ya que el amigo parece agradable.', correct: false, outcome: ['Alex sube al carro con el amigo y se va.', 'En casa, el padre de Alex espera y se pregunta por qué Alex no ha vuelto de la escuela.', 'Nadie sabe dónde está Alex, así que su padre se preocupa mucho.'],
+                  { text: 'Simplemente ir, ya que el amigo parece agradable.', correct: false, outcome: ['Alex sube al carro con el amigo y se va.', 'En casa, el padre de Alex espera y se pregunta por qué Alex no ha vuelto de la escuela.', 'Nadie sabe dónde está Alex, así que su padre empieza a llamar a la escuela y a otras familias.'],
                     feedback: 'Aunque el amigo sea agradable, ir a un lugar completamente nuevo con un conductor nuevo necesita el permiso de un adulto y algunos detalles primero.' },
                   { text: 'Llamar a un padre para pedir permiso, y compartir la dirección, el nombre del conductor, y cuándo Alex será recogido o volverá a casa.', correct: true,
                     feedback: 'Sí — el permiso, el lugar (dirección), quién está involucrado (el nombre del conductor), y un plan para volver a casa son exactamente los detalles correctos para compartir.' },
@@ -10710,7 +10710,7 @@ const CONTENT = {
                     feedback: 'Aunque se sienta incómodo comparado con el grupo, avisarle a un adulto de confianza sobre un plan nuevo de último momento sigue siendo la opción más segura.' },
                   { text: 'Enviarle rápidamente un mensaje a un padre con el Lugar, quién va, y el plan para volver a casa, y esperar un sí antes de ir.', correct: true,
                     feedback: 'Sí — incluso un mensaje rápido cubriendo los detalles clave del P.L.A.N., y esperar un sí, es exactamente la acción responsable.' },
-                  { text: 'Ir, y solo mencionarlo a un padre la próxima vez que Alex lo vea.', correct: false, outcome: ['Alex va, pensando mencionárselo a un padre en algún momento después.', 'Mientras tanto, el padre de Alex le escribe y lo llama para preguntar dónde está después del partido, pero Alex no lo nota por el ruido.', 'El padre de Alex pasa la noche preocupado buscándolo, y la próxima salida va a ser mucho más difícil de conseguir permiso.'],
+                  { text: 'Ir, y solo mencionarlo a un padre la próxima vez que Alex lo vea.', correct: false, outcome: ['Alex va, pensando mencionárselo a un padre en algún momento después.', 'Mientras tanto, el padre de Alex le escribe y lo llama para preguntar dónde está después del partido, pero Alex no lo nota por el ruido.', 'El padre de Alex pasa la noche llamando y buscándolo, y la próxima salida va a ser mucho más difícil de conseguir permiso.'],
                     feedback: 'Mencionarlo después significa que tu padre no sabe realmente dónde estás durante el tiempo que estás ahí — preguntar primero, aunque sea rápido, importa.' },
                 ] },
               { type: 'dialogue', illustration: 'plan-before',
@@ -10813,7 +10813,7 @@ const CONTENT = {
                 choices: [
                   { text: 'Decir: “Por favor toca la puerta y espera — necesito privacidad ahora,” y pedirle que cierre la puerta.', correct: true,
                     feedback: '¡Sí! Está bien pedir privacidad y que la gente toque la puerta primero.' },
-                  { text: 'Simplemente dejarlo entrar ya que es familia.', correct: false, outcome: ['Alex deja entrar al primo.', 'Alex todavía se está cambiando de ropa.', 'Alex se siente avergonzado e incómodo.'],
+                  { text: 'Simplemente dejarlo entrar ya que es familia.', correct: false, outcome: ['Alex deja entrar al primo.', 'Alex todavía se está cambiando de ropa.', 'El primo entra antes de que Alex esté vestido.'],
                     feedback: 'Incluso la familia debería tocar la puerta y respetar tu privacidad — está bien pedir eso, siempre.' },
                 ] },
               { type: 'dialogue', illustration: 'privacy-safe',
@@ -10822,7 +10822,7 @@ const CONTENT = {
                   { speaker: 'Alex', text: 'Gracias, solo necesitaba un poco de privacidad.' },
                 ],
                 choices: [
-                  { text: 'Decir que Alex debería haber dejado entrar al primo ya que es familia.', correct: false, outcome: ['Alex cree que la familia siempre puede entrar.', 'La próxima vez, Alex no pide que toquen.', 'Alex nunca tiene tiempo privado. Se siente mal.'],
+                  { text: 'Decir que Alex debería haber dejado entrar al primo ya que es familia.', correct: false, outcome: ['Alex cree que la familia siempre puede entrar.', 'La próxima vez, Alex no pide que toquen.', 'La gente sigue entrando. Alex nunca tiene tiempo privado.'],
                     feedback: 'Incluso la familia debería tocar y esperar — pedir privacidad estuvo bien.' },
                   { text: 'Decir que pedir privacidad estuvo bien, incluso con familia.', correct: true,
                     feedback: 'Sí — pedir privacidad siempre está bien, incluso con familia.' },
@@ -10835,7 +10835,7 @@ const CONTENT = {
                 choices: [
                   { text: 'Sí — eso es algo normal y saludable de pedir.', correct: true,
                     feedback: 'Exactamente correcto. Todos merecen privacidad para cosas como cambiarse de ropa o usar el baño.' },
-                  { text: 'No — nunca deberías cerrar una puerta o pedir espacio.', correct: false, outcome: ['Alex cree que la puerta debe estar abierta.', 'Alex se cambia con la puerta abierta.', 'La gente pasa. Alex se siente incómodo.'],
+                  { text: 'No — nunca deberías cerrar una puerta o pedir espacio.', correct: false, outcome: ['Alex cree que la puerta debe estar abierta.', 'Alex se cambia con la puerta abierta.', 'La gente pasa y mira hacia adentro. Alex no tiene privacidad.'],
                     feedback: 'No es cierto — cerrar la puerta y pedir privacidad en esos momentos es saludable y normal.' },
                 ] },
               { type: 'dialogue', illustration: 'privacy-safe',
@@ -10844,7 +10844,7 @@ const CONTENT = {
                   { speaker: 'Padre', text: 'Para nada — todos merecen privacidad para eso.' },
                 ],
                 choices: [
-                  { text: 'Decir que nunca deberías cerrar una puerta o pedir espacio.', correct: false, outcome: ['Alex cree que pedir espacio está mal.', 'Alex deja de cerrar la puerta del baño.', 'Alex se siente avergonzado y sin espacio privado.'],
+                  { text: 'Decir que nunca deberías cerrar una puerta o pedir espacio.', correct: false, outcome: ['Alex cree que pedir espacio está mal.', 'Alex deja de cerrar la puerta del baño.', 'La gente puede entrar en cualquier momento. Alex no tiene espacio privado.'],
                     feedback: 'Eso no es correcto — cerrar la puerta para privacidad es saludable y normal.' },
                   { text: 'Decir que es algo normal y saludable querer privacidad.', correct: true,
                     feedback: 'Exactamente correcto — querer privacidad es completamente normal.' },
@@ -10907,7 +10907,7 @@ const CONTENT = {
                   { speaker: 'Alex', text: '¿Mi color favorito también es privado?' },
                 ],
                 choices: [
-                  { text: 'Decir que cada detalle sobre ti mismo es igualmente privado.', correct: false, outcome: ['Alex decide que cada detalle es tan privado como una dirección.', 'Alex ni siquiera dice su color o botana favorita y se pone nervioso al chatear.', 'Alex se siente estresado y excluido, y le cuesta más saber qué detalles realmente importan.'],
+                  { text: 'Decir que cada detalle sobre ti mismo es igualmente privado.', correct: false, outcome: ['Alex decide que cada detalle es tan privado como una dirección.', 'Alex ni siquiera dice su color o botana favorita, y el chat se queda en silencio.', 'Los amigos empiezan a chatear sin Alex, y la próxima invitación a jugar es para otra persona.'],
                     feedback: 'No todo es igualmente privado — un color favorito usualmente no es riesgoso de compartir.' },
                   { text: 'Decir que cosas como tu dirección o escuela importan más que algo como un color favorito.', correct: true,
                     feedback: 'Exactamente correcto — la preocupación real son los detalles identificables, no cada pequeño dato.' },
@@ -10937,11 +10937,11 @@ const CONTENT = {
               { type: 'decision', illustration: 'privacy-uncomfortable', kicker: '¿Qué debería hacer Alex?',
                 text: 'La foto se publicaría públicamente y muestra detalles identificables. ¿Cuál es la mejor opción?',
                 choices: [
-                  { text: 'Dejar que la publique ya que es solo una foto.', correct: false, outcome: ['Alex deja que el amigo publique la foto con el nombre de la escuela visible.', 'La publicación se comparte, y personas que Alex no conoce pueden ver exactamente a qué escuela va Alex.', 'Alex se siente inquieto sabiendo que desconocidos pueden saber dónde pasa cada día de semana, y es difícil borrar la publicación.'],
+                  { text: 'Dejar que la publique ya que es solo una foto.', correct: false, outcome: ['Alex deja que el amigo publique la foto con el nombre de la escuela visible.', 'La publicación se comparte, y personas que Alex no conoce pueden ver exactamente a qué escuela va Alex.', 'Ahora desconocidos pueden saber dónde está Alex cada día de semana, y la publicación ya se copió tantas veces que no se puede borrar del todo.'],
                     feedback: 'Una foto pública que muestra detalles identificables como el nombre de una escuela puede revelar más de lo que parece — vale la pena pedirle a tu amigo que revise primero o recorte esa parte.' },
                   { text: 'Pedirle al amigo que consulte con Alex antes de publicar, y sugerir recortar o difuminar el nombre de la escuela si se llega a publicar.', correct: true,
                     feedback: 'Sí — pedir que te consulten primero, y ser cuidadoso con los detalles identificables en el fondo, es un buen hábito de privacidad.' },
-                  { text: 'Molestarse y no volver a hablarle nunca al amigo por una foto.', correct: false, outcome: ['Alex se molesta y deja de hablarle al amigo por completo por la foto.', 'El amigo se siente confundido y herido, y otros amigos empiezan a tomar partido.', 'Alex pierde una amistad, y el tema de la foto nunca se resuelve de verdad.'],
+                  { text: 'Molestarse y no volver a hablarle nunca al amigo por una foto.', correct: false, outcome: ['Alex se molesta y deja de hablarle al amigo por completo por la foto.', 'El amigo sigue mandando mensajes para preguntar qué pasa, y otros amigos empiezan a tomar partido.', 'Alex pierde una amistad, y el tema de la foto nunca se resuelve de verdad.'],
                     feedback: 'Esa es una reacción extrema — una conversación calmada sobre preguntar primero y tener cuidado con los detalles identificables funciona mejor.' },
                 ] },
               { type: 'dialogue', illustration: 'privacy-uncomfortable',
@@ -10963,7 +10963,7 @@ const CONTENT = {
                 choices: [
                   { text: 'Porque esos detalles pueden ayudar a un desconocido a descubrir dónde pasas tiempo, incluso sin querer compartir eso.', correct: true,
                     feedback: 'Exactamente — la privacidad no es solo sobre lo que dices directamente, también es sobre detalles que aparecen por accidente, como en el fondo de una foto.' },
-                  { text: 'Porque las fotos con cualquier fondo nunca deberían publicarse, por nadie.', correct: false, outcome: ['Alex cree que ninguna foto con fondo debería publicarse nunca.', 'Alex empieza a rechazar todas las fotos — en cumpleaños, partidos y excursiones — y pide borrar fotos inofensivas.', 'Alex se siente estresado y excluido, y sus amigos se confunden sobre lo que Alex realmente quiere.'],
+                  { text: 'Porque las fotos con cualquier fondo nunca deberían publicarse, por nadie.', correct: false, outcome: ['Alex cree que ninguna foto con fondo debería publicarse nunca.', 'Alex empieza a rechazar todas las fotos — en cumpleaños, partidos y excursiones — y pide borrar fotos inofensivas.', 'Los amigos dejan de invitar a Alex a las fotos de grupo, y Alex no aparece en las fotos de la excursión.'],
                     feedback: 'Eso es demasiado estricto — la preocupación específica son los detalles identificables como el nombre de una escuela o dirección, no los fondos en general.' },
                 ] },
               { type: 'dialogue', illustration: 'privacy-safe',
@@ -11053,7 +11053,7 @@ const CONTENT = {
                   { speaker: 'Alex', text: 'Basta, eso no es amable — le voy a contar a mi maestra.' },
                 ],
                 choices: [
-                  { text: 'Decir que Alex debería haberlo ignorado y no decir nada.', correct: false, outcome: ['Alex se queda callado y lo ignora.', 'El niño más grande se ríe y lo dice más fuerte.', 'Alex se siente triste todos los días en el recreo.'],
+                  { text: 'Decir que Alex debería haberlo ignorado y no decir nada.', correct: false, outcome: ['Alex se queda callado y lo ignora.', 'El niño más grande se ríe y lo dice más fuerte.', 'La maestra no se entera, así que pasa otra vez al día siguiente.'],
                     feedback: 'Ignorarlo usualmente no hace que el acoso se detenga — hablar y contarle a la maestra fue lo correcto.' },
                   { text: 'Decir que decirle al acosador que se detenga y contarle a la maestra fue lo correcto.', correct: true,
                     feedback: 'Sí — esa es exactamente la respuesta correcta al acoso.' },
@@ -11066,7 +11066,7 @@ const CONTENT = {
                 choices: [
                   { text: 'No — el acoso nunca es culpa de la persona que lo sufre.', correct: true,
                     feedback: 'Exactamente correcto. Nunca es tu culpa si alguien decide acosarte.' },
-                  { text: 'Sí — Alex debe haber hecho algo para merecerlo.', correct: false, outcome: ['Alex cree que es su propia culpa.', 'Alex se siente muy mal para contarle a un adulto.', 'Los apodos feos siguen. Alex se siente triste por dentro.'],
+                  { text: 'Sí — Alex debe haber hecho algo para merecerlo.', correct: false, outcome: ['Alex cree que es su propia culpa.', 'Alex no le cuenta a ningún adulto.', 'Los apodos feos siguen, todos los días en el recreo.'],
                     feedback: 'Eso no es cierto en absoluto — el acoso es una decisión que toma quien acosa, y nunca es culpa de la víctima.' },
                 ] },
               { type: 'dialogue', illustration: 'bully-help',
@@ -11075,7 +11075,7 @@ const CONTENT = {
                   { speaker: 'Alex', text: '¿Hice algo para merecer que me llamaran así?' },
                 ],
                 choices: [
-                  { text: 'Decir que sí, Alex debe haber hecho algo para merecerlo.', correct: false, outcome: ['Alex cree que se merecía los apodos.', 'Alex empieza a sentirse mal consigo mismo.', 'Alex deja de jugar y se queda solo en el recreo.'],
+                  { text: 'Decir que sí, Alex debe haber hecho algo para merecerlo.', correct: false, outcome: ['Alex cree que se merecía los apodos.', 'Alex no le cuenta nada a la maestra.', 'Alex deja de jugar y se queda solo en el recreo.'],
                     feedback: 'Eso no es cierto — el acoso nunca es culpa de la persona que lo sufre.' },
                   { text: 'Decir que no, el acoso nunca es culpa de la persona que lo sufre.', correct: true,
                     feedback: 'Exactamente correcto — siempre es decisión de quien acosa, nunca culpa de la víctima.' },
@@ -11105,11 +11105,11 @@ const CONTENT = {
               { type: 'decision', illustration: 'bully-uncomfortable', kicker: '¿Qué debería hacer Alex?',
                 text: 'Este es un patrón de exclusión y susurros, no solo algo de una vez. ¿Cuál es la mejor opción?',
                 choices: [
-                  { text: 'Intentar forzar su entrada al grupo aunque claramente no quieran que Alex esté ahí.', correct: false, outcome: ['Alex se mete al juego aunque el grupo claramente no quiere que esté ahí.', 'Los niños ponen los ojos en blanco, dejan de jugar, y susurran todavía más.', 'Alex se siente avergonzado y más excluido que antes.'],
+                  { text: 'Intentar forzar su entrada al grupo aunque claramente no quieran que Alex esté ahí.', correct: false, outcome: ['Alex se mete al juego aunque el grupo claramente no quiere que esté ahí.', 'Los niños ponen los ojos en blanco, dejan de jugar, y susurran todavía más.', 'Ningún adulto sabe, y al día siguiente vuelven a dejar a Alex fuera.'],
                     feedback: 'Intentar forzar tu entrada usualmente no resuelve el problema real — es más efectivo contarle a un adulto de confianza sobre el patrón.' },
                   { text: 'Contarle a un adulto de confianza sobre el patrón, y pasar tiempo con otros amigos que sí incluyan a Alex.', correct: true,
                     feedback: 'Sí — contarle a un adulto de confianza, y encontrar otros amigos que te trata bien, son ambas respuestas fuertes a la exclusión social.' },
-                  { text: 'Empezar a excluirlos también para desquitarse.', correct: false, outcome: ['Alex empieza a dejar fuera al grupo y a susurrar sobre ellos también.', 'El grupo se enoja, y ahora los dos lados son crueles todos los días.', 'El recreo se siente peor para todos, y Alex sigue sintiéndose herido por dentro.'],
+                  { text: 'Empezar a excluirlos también para desquitarse.', correct: false, outcome: ['Alex empieza a dejar fuera al grupo y a susurrar sobre ellos también.', 'El grupo se enoja, y ahora los dos lados son crueles todos los días.', 'La maestra del recreo ve a Alex susurrando también, y es Alex quien recibe un regaño.'],
                     feedback: 'Excluirlos también usualmente solo continúa el ciclo — no resuelve el problema real ni te hace sentir mejor a largo plazo.' },
                 ] },
               { type: 'dialogue', illustration: 'bully-uncomfortable',
@@ -11118,7 +11118,7 @@ const CONTENT = {
                   { speaker: 'Alex', text: 'Lo sé, voy a contarle al consejero.' },
                 ],
                 choices: [
-                  { text: 'Decir que Alex debería intentar forzar su entrada al grupo en su lugar.', correct: false, outcome: ['Alex no le cuenta al consejero y trata de forzar su entrada al grupo.', 'El grupo le dice: “Vete,” frente a todos.', 'Alex se siente avergonzado, y los susurros siguen sin que ningún adulto ayude.'],
+                  { text: 'Decir que Alex debería intentar forzar su entrada al grupo en su lugar.', correct: false, outcome: ['Alex no le cuenta al consejero y trata de forzar su entrada al grupo.', 'El grupo le dice: “Vete,” frente a todos.', 'El consejero nunca se entera, así que los susurros siguen todos los días.'],
                     feedback: 'Forzar su entrada usualmente no resuelve nada — contarle al consejero fue la mejor decisión.' },
                   { text: 'Decir que contarle al consejero sobre el patrón fue la decisión correcta.', correct: true,
                     feedback: 'Sí — contarle a un adulto de confianza sobre el patrón es exactamente correcto.' },
@@ -11131,7 +11131,7 @@ const CONTENT = {
                 choices: [
                   { text: 'Sí — el acoso puede ser físico, verbal, o social (como la exclusión), y todas las formas valen la pena contárselas a un adulto.', correct: true,
                     feedback: 'Exactamente — la exclusión social es una forma real de acoso, tan importante de abordar como los apodos o los golpes.' },
-                  { text: 'No — solo golpear o decir apodos cuenta como acoso real.', correct: false, outcome: ['Alex cree que ser excluido no cuenta como acoso real.', 'Alex no le cuenta a nadie, porque nadie lo golpeó ni le dijo apodos.', 'El grupo sigue dejando a Alex fuera todos los días, y Alex se siente solo y atrapado.'],
+                  { text: 'No — solo golpear o decir apodos cuenta como acoso real.', correct: false, outcome: ['Alex cree que ser excluido no cuenta como acoso real.', 'Alex no le cuenta a nadie, porque nadie lo golpeó ni le dijo apodos.', 'El grupo sigue dejando a Alex fuera todos los días, y ningún adulto interviene para ayudar.'],
                     feedback: 'Eso no es exacto — excluir a alguien deliberadamente, una y otra vez, también es una forma de acoso.' },
                 ] },
               { type: 'dialogue', illustration: 'bully-help',
@@ -11140,7 +11140,7 @@ const CONTENT = {
                   { speaker: 'Alex', text: '¿Cuenta como acoso si nadie me golpeó ni me dijo apodos?' },
                 ],
                 choices: [
-                  { text: 'Decir que solo golpear o decir apodos cuenta como acoso real.', correct: false, outcome: ['Alex decide que ser excluido no es acoso real.', 'La próxima vez que lo dejan fuera a propósito, Alex no le cuenta al consejero.', 'Alex sigue sintiéndose solo, y el consejero nunca tiene la oportunidad de ayudar.'],
+                  { text: 'Decir que solo golpear o decir apodos cuenta como acoso real.', correct: false, outcome: ['Alex decide que ser excluido no es acoso real.', 'La próxima vez que lo dejan fuera a propósito, Alex no le cuenta al consejero.', 'El consejero nunca se entera, así que Alex sigue almorzando solo todo el mes.'],
                     feedback: 'Eso no es exacto — la exclusión también es una forma real de acoso.' },
                   { text: 'Decir que sí, la exclusión social también es una forma real de acoso.', correct: true,
                     feedback: 'Exactamente correcto — la exclusión social cuenta igual.' },
@@ -11170,11 +11170,11 @@ const CONTENT = {
               { type: 'decision', illustration: 'bully-uncomfortable', kicker: '¿Qué debería hacer Alex como testigo?',
                 text: 'No le está pasando a Alex, pero lo ve pasar a menudo. ¿Cuál es la opción más útil?',
                 choices: [
-                  { text: 'Ignorarlo ya que no le está pasando a Alex.', correct: false, outcome: ['Alex mira hacia otro lado cada vez que el grupo molesta al compañero.', 'El grupo nota que nadie los detiene, y la situación sigue empeorando.', 'El compañero empieza a almorzar solo y se ve muy triste, y Alex carga un sentimiento pesado de culpa por quedarse callado.'],
+                  { text: 'Ignorarlo ya que no le está pasando a Alex.', correct: false, outcome: ['Alex mira hacia otro lado cada vez que el grupo molesta al compañero.', 'El grupo nota que nadie los detiene, y la situación sigue empeorando.', 'El compañero empieza a almorzar solo y deja de levantar la mano en clase, y ningún adulto se entera de lo que está pasando.'],
                     feedback: 'Los testigos tienen un papel real — quedarse en silencio puede hacer que el acoso se sienta más aceptado, aunque no seas quien lo hace.' },
                   { text: 'Contarle a un adulto de confianza lo que ha visto, y si se siente seguro, ofrecer apoyo al compañero que está siendo acosado.', correct: true,
                     feedback: 'Sí — contarle a un adulto de confianza, y ofrecer apoyo silencioso a la persona acosada, son ambas formas significativas de ayudar como testigo.' },
-                  { text: 'Unirse al grupo para evitar convertirse también en un objetivo.', correct: false, outcome: ['Alex se ríe con el grupo para no convertirse en un objetivo.', 'El compañero ve a Alex riéndose y se ve todavía más herido y solo.', 'Alex se siente culpable después, y ahora el grupo espera que Alex se una cada vez.'],
+                  { text: 'Unirse al grupo para evitar convertirse también en un objetivo.', correct: false, outcome: ['Alex se ríe con el grupo para no convertirse en un objetivo.', 'El compañero ve a Alex riéndose y se ve todavía más herido y solo.', 'Al día siguiente, el grupo llama a Alex para que se una otra vez, y el compañero deja de sentarse cerca de Alex.'],
                     feedback: 'Unirse empeora la situación y lastima más al compañero — es mejor contarle a un adulto de confianza en su lugar, aunque se sienta arriesgado.' },
                 ] },
               { type: 'dialogue', illustration: 'bully-uncomfortable',
@@ -11183,7 +11183,7 @@ const CONTENT = {
                   { speaker: 'Alex', text: 'También le voy a contar al consejero lo que he visto.' },
                 ],
                 choices: [
-                  { text: 'Decir que Alex debería simplemente unirse al grupo en su lugar.', correct: false, outcome: ['Alex decide simplemente unirse al grupo en lugar de contarle al consejero.', 'El compañero que le dio las gracias ve a Alex con el grupo y deja de hablarle.', 'El compañero pierde a la única persona que parecía amable, y Alex se siente muy mal por eso.'],
+                  { text: 'Decir que Alex debería simplemente unirse al grupo en su lugar.', correct: false, outcome: ['Alex decide simplemente unirse al grupo en lugar de contarle al consejero.', 'El compañero que le dio las gracias ve a Alex con el grupo y deja de hablarle.', 'El compañero empieza a almorzar solo, y el consejero nunca se entera de lo que hace el grupo.'],
                     feedback: 'Unirse solo lastimaría más al compañero — contarle al consejero fue la decisión correcta.' },
                   { text: 'Decir que contarle a un adulto de confianza como testigo fue la decisión correcta.', correct: true,
                     feedback: 'Sí — esa es exactamente una forma significativa de ayudar como testigo.' },
@@ -11196,7 +11196,7 @@ const CONTENT = {
                 choices: [
                   { text: 'Porque el acoso a menudo continúa en parte porque los testigos no dicen nada, así que contarle a un adulto o apoyar al objetivo puede cambiar eso.', correct: true,
                     feedback: 'Exactamente — que los testigos hablen (con un adulto, u ofreciendo apoyo) elimina parte del efecto de “audiencia” que puede hacer que el acoso continúe.' },
-                  { text: 'Porque los testigos no tienen ninguna influencia real sobre si el acoso continúa.', correct: false, outcome: ['Alex cree que los testigos no pueden cambiar nada sobre el acoso.', 'Alex se queda callado la próxima vez que el grupo molesta a alguien.', 'El acoso sigue porque todos los que miran piensan lo mismo, y la persona acosada se siente completamente sola.'],
+                  { text: 'Porque los testigos no tienen ninguna influencia real sobre si el acoso continúa.', correct: false, outcome: ['Alex cree que los testigos no pueden cambiar nada sobre el acoso.', 'Alex se queda callado la próxima vez que el grupo molesta a alguien.', 'El acoso sigue porque todos los que miran piensan lo mismo, y la persona acosada empieza a saltarse el almuerzo para alejarse del grupo.'],
                     feedback: 'Eso no es exacto — los testigos a menudo tienen más influencia de la que creen, especialmente al contarle a un adulto de confianza.' },
                 ] },
               { type: 'dialogue', illustration: 'bully-help',
@@ -11219,7 +11219,7 @@ const CONTENT = {
                 ],
                 text: 'Otro testigo después dice que no es asunto suyo decir algo ya que no le está pasando a él. ¿Qué debería recordar Alex?',
                 choices: [
-                  { text: 'Si el acoso no te está pasando a ti directamente, no es tu lugar decir algo.', correct: false, outcome: ['Alex está de acuerdo con el otro testigo en que no es asunto suyo.', 'Los dos se quedan callados cuando el acoso vuelve a pasar.', 'El grupo sigue, el compañero siente que a nadie le importa, y los adultos que podrían intervenir nunca se enteran.'],
+                  { text: 'Si el acoso no te está pasando a ti directamente, no es tu lugar decir algo.', correct: false, outcome: ['Alex está de acuerdo con el otro testigo en que no es asunto suyo.', 'Los dos se quedan callados cuando el acoso vuelve a pasar.', 'El grupo sigue, el compañero empieza a sentarse solo, y los adultos que podrían intervenir nunca se enteran.'],
                     feedback: 'Quedarse en silencio como testigo puede hacer que el acoso se sienta más aceptado, aunque no te esté pasando a ti.' },
                   { text: 'Los testigos que hablan con un adulto de confianza pueden cambiar la situación, incluso sin ser el objetivo.', correct: true,
                     feedback: 'Exactamente — los testigos a menudo tienen más influencia de la que creen.' },
@@ -11286,7 +11286,7 @@ const CONTENT = {
                   { speaker: 'Alex', text: 'Le voy a mostrar esto a mi papá primero.' },
                 ],
                 choices: [
-                  { text: 'Decir que Alex debería haber aceptado de inmediato ya que podría ser divertido.', correct: false, outcome: ['Alex piensa que aceptar es divertido.', 'La próxima vez, Alex acepta sin preguntar.', 'Ningún adulto sabe. Alex está solo.'],
+                  { text: 'Decir que Alex debería haber aceptado de inmediato ya que podría ser divertido.', correct: false, outcome: ['Alex piensa que aceptar es divertido.', 'La próxima vez, Alex acepta sin preguntar.', 'Un desconocido empieza a mandarle mensajes a Alex, y ningún adulto sabe.'],
                     feedback: 'Aceptar de inmediato no es seguro — consultar con un adulto primero fue lo correcto.' },
                   { text: 'Decir que mostrarle el mensaje a un adulto fue la decisión correcta.', correct: true,
                     feedback: 'Sí — mostrarle a un adulto un mensaje de un desconocido es exactamente lo correcto.' },
@@ -11299,7 +11299,7 @@ const CONTENT = {
                 choices: [
                   { text: 'No — ese tipo de información debe mantenerse privada de los contactos que solo conoces en línea.', correct: true,
                     feedback: 'Exactamente correcto — mantén esa información privada lejos de las personas que solo conoces en línea.' },
-                  { text: 'Sí, si preguntan amablemente.', correct: false, outcome: ['Alex le dice su nombre y su escuela.', 'La persona dice: “Ya sé a dónde vas.”', 'Alex se siente preocupado. Eso era privado.'],
+                  { text: 'Sí, si preguntan amablemente.', correct: false, outcome: ['Alex le dice su nombre y su escuela.', 'La persona dice: “Ya sé a dónde vas.”', 'Ahora un desconocido sabe cuál es la escuela de Alex. Eso era privado.'],
                     feedback: 'Que pregunten amablemente no lo hace seguro — esa información debe seguir siendo privada.' },
                 ] },
               { type: 'dialogue', illustration: 'online-safe',
@@ -11362,7 +11362,7 @@ const CONTENT = {
                 choices: [
                   { text: 'Porque intenta quitarle a un adulto de confianza la capacidad de notar si algo inseguro está pasando.', correct: true,
                     feedback: 'Exactamente — esa petición intenta dejar fuera a un adulto de confianza, que es un patrón común en situaciones inseguras en línea.' },
-                  { text: 'Porque los papás nunca deberían saber sobre ninguna amistad en línea.', correct: false, outcome: ['Alex cree que los papás nunca deberían saber de sus amigos en línea.', 'Alex esconde todos sus chats y amigos del juego de mamá y papá.', 'Cuando un chat empieza a sentirse raro, ningún adulto sabe, y Alex tiene que manejarlo solo.'],
+                  { text: 'Porque los papás nunca deberían saber sobre ninguna amistad en línea.', correct: false, outcome: ['Alex cree que los papás nunca deberían saber de sus amigos en línea.', 'Alex esconde todos sus chats y amigos del juego de mamá y papá.', 'Cuando un jugador empieza a pedirle cosas privadas a Alex, ningún adulto lo sabe, y nadie interviene para bloquearlo.'],
                     feedback: 'Es realmente lo opuesto — que los adultos de confianza sepan sobre tus amistades y chats en línea es parte de lo que te mantiene seguro.' },
                 ] },
               { type: 'dialogue', illustration: 'online-safe',
@@ -11371,7 +11371,7 @@ const CONTENT = {
                   { speaker: 'Alex', text: '¿Significa eso que no confías en ninguno de mis amigos en línea?' },
                 ],
                 choices: [
-                  { text: 'Decir que los adultos de confianza nunca deberían saber sobre ninguna amistad en línea.', correct: false, outcome: ['Alex decide que los adultos no deberían saber de ningún amigo en línea.', 'Alex deja de contarles a mamá o papá sobre sus chats en línea.', 'Si pasa algo inseguro, nadie está cuidando a Alex.'],
+                  { text: 'Decir que los adultos de confianza nunca deberían saber sobre ninguna amistad en línea.', correct: false, outcome: ['Alex decide que los adultos no deberían saber de ningún amigo en línea.', 'Alex deja de contarles a mamá o papá sobre sus chats en línea.', 'Cuando un desconocido en un chat le pide su dirección a Alex, ningún adulto está ahí para ayudar a bloquearlo y reportarlo.'],
                     feedback: 'Es al revés — que los adultos de confianza sepan sobre tus amistades en línea es parte de lo que te mantiene seguro.' },
                   { text: 'Decir que los adultos de confianza sabiendo sobre tu actividad en línea es parte de lo que te mantiene seguro.', correct: true,
                     feedback: 'Exactamente correcto — ese es el punto, no se trata de desconfianza.' },
@@ -11401,7 +11401,7 @@ const CONTENT = {
               { type: 'decision', illustration: 'online-screen', kicker: '¿Qué debería hacer Alex?',
                 text: 'La petición se siente incómoda, y hay presión usando “todos hacen esto.” ¿Cuál es la opción más segura?',
                 choices: [
-                  { text: 'Enviar la foto ya que la persona dijo que es normal y todos lo hacen.', correct: false, outcome: ['Alex envía la foto porque la persona dijo que todos lo hacen.', 'La persona pide más fotos y dice: “Si dejas de enviar, le mostraré esta a otras personas.”', 'Alex se siente asustado y atrapado, y no sabe quién podría ver la foto.'],
+                  { text: 'Enviar la foto ya que la persona dijo que es normal y todos lo hacen.', correct: false, outcome: ['Alex envía la foto porque la persona dijo que todos lo hacen.', 'La persona pide más fotos y dice: “Si dejas de enviar, le mostraré esta a otras personas.”', 'Cuando Alex dice que no, la persona publica la foto en un chat grupal, y Alex no puede recuperarla.'],
                     feedback: '“Todos hacen esto” es una táctica de presión, no prueba de que algo sea realmente seguro o normal — confía en el sentimiento incómodo en su lugar.' },
                   { text: 'Decir que no, dejar de responder, y contarle a un adulto de confianza sobre toda la conversación, incluyendo capturas de pantalla si es posible.', correct: true,
                     feedback: 'Sí — decir que no, dejar de tener contacto, y contarle a un adulto de confianza con cualquier evidencia (como capturas de pantalla) es exactamente la respuesta correcta.' },
@@ -11414,7 +11414,7 @@ const CONTENT = {
                   { speaker: 'Alex', text: 'No, y le voy a mostrar esta conversación a mi papá.' },
                 ],
                 choices: [
-                  { text: 'Decir que Alex debería enviar la foto ya que supuestamente todos lo hacen.', correct: false, outcome: ['Alex empieza a creer que está bien enviar la foto porque “todos lo hacen”.', 'Alex la envía, y el contacto sigue insistiendo en que mande más.', 'Alex se siente incómodo y atrapado, con una foto que ya no puede recuperar.'],
+                  { text: 'Decir que Alex debería enviar la foto ya que supuestamente todos lo hacen.', correct: false, outcome: ['Alex empieza a creer que está bien enviar la foto porque “todos lo hacen”.', 'Alex la envía, y el contacto sigue insistiendo en que mande más.', 'El contacto guarda la foto y se la manda a otras personas, y Alex ya no puede recuperarla.'],
                     feedback: '“Todos hacen esto” no es prueba de nada — enviarla no habría sido seguro.' },
                   { text: 'Decir que negarse y contarle a un adulto de confianza fue exactamente la respuesta correcta.', correct: true,
                     feedback: 'Sí — esa es exactamente la respuesta correcta a este tipo de presión.' },
@@ -11427,7 +11427,7 @@ const CONTENT = {
                 choices: [
                   { text: 'Porque intenta hacer que una petición incómoda o insegura parezca ordinaria, aunque tu propio sentimiento incómodo sea una señal más confiable.', correct: true,
                     feedback: 'Exactamente — esa frase está diseñada para anular tu juicio, pero tu propio sentimiento incómodo es la señal más confiable aquí.' },
-                  { text: 'Porque siempre es literalmente cierto que todos hacen lo que se está pidiendo.', correct: false, outcome: ['Alex cree que la frase significa literalmente que todos los chicos lo hacen.', 'Alex se siente raro por estar incómodo y empieza a dudar de ese sentimiento.', 'La próxima vez Alex ignora el sentimiento incómodo — justo la señal que intentaba mantenerlo seguro.'],
+                  { text: 'Porque siempre es literalmente cierto que todos hacen lo que se está pidiendo.', correct: false, outcome: ['Alex cree que la frase significa literalmente que todos los chicos lo hacen.', 'Alex decide que el sentimiento incómodo debe estar equivocado, porque todos los demás lo hacen.', 'La próxima vez que alguien en línea insiste, Alex le hace caso en vez de parar y contarle a un adulto.'],
                     feedback: 'No es realmente cierto solo porque alguien lo diga — esa frase es una táctica de presión, no evidencia.' },
                 ] },
               { type: 'dialogue', illustration: 'online-safe',
@@ -11436,7 +11436,7 @@ const CONTENT = {
                   { speaker: 'Alex', text: 'Casi les creí que era normal.' },
                 ],
                 choices: [
-                  { text: 'Decir que “todos hacen esto” es prueba sólida de que algo es seguro.', correct: false, outcome: ['Alex decide que “todos hacen esto” sí es prueba de que algo es seguro.', 'La próxima vez que alguien en línea usa esa frase, Alex le hace caso.', 'Alex termina otra vez en una situación incómoda, creyendo que era normal cuando no lo era.'],
+                  { text: 'Decir que “todos hacen esto” es prueba sólida de que algo es seguro.', correct: false, outcome: ['Alex decide que “todos hacen esto” sí es prueba de que algo es seguro.', 'La próxima vez que alguien en línea usa esa frase, Alex le hace caso.', 'Alex comparte información privada, y la persona la usa para presionar a Alex a dar todavía más.'],
                     feedback: 'No es prueba de nada — es una táctica de presión.' },
                   { text: 'Decir que “todos hacen esto” es una táctica de presión, no prueba real.', correct: true,
                     feedback: 'Exactamente correcto — confiar en tu propio sentimiento incómodo fue la mejor señal.' },
@@ -11506,7 +11506,7 @@ const CONTENT = {
               { type: 'decision', illustration: 'cyberbully-uncomfortable', kicker: '¿Qué debería hacer Alex?',
                 text: 'Un mensaje hizo que Alex se sintiera mal. ¿Cuál es la opción más segura?',
                 choices: [
-                  { text: 'Enviar un mensaje todavía más cruel de vuelta.', correct: false, outcome: ['Alex escribe un mensaje más cruel.', 'El jugador se enoja y envía más palabras crueles.', 'Ahora Alex se siente peor.'],
+                  { text: 'Enviar un mensaje todavía más cruel de vuelta.', correct: false, outcome: ['Alex escribe un mensaje más cruel.', 'El jugador se enoja y envía más palabras crueles.', 'Ahora hay todavía más mensajes crueles en la pantalla.'],
                     feedback: 'Enviar algo cruel de vuelta usualmente empeora las cosas — es mejor mostrarle a un adulto en su lugar.' },
                   { text: 'Mostrarle el mensaje a un adulto y dejar de jugar con esa persona.', correct: true,
                     feedback: '¡Sí! Mostrarle a un adulto y alejarse de esa persona es exactamente la respuesta correcta.' },
@@ -11517,7 +11517,7 @@ const CONTENT = {
                   { speaker: 'Alex', text: 'Le voy a mostrar esto a mi papá y ya no voy a jugar contigo.' },
                 ],
                 choices: [
-                  { text: 'Decir que Alex debería haber enviado un mensaje todavía más cruel de vuelta.', correct: false, outcome: ['Alex envía un mensaje más cruel la próxima vez.', 'El jugador cruel envía todavía más mensajes crueles.', 'Ningún adulto sabe. Alex se siente triste y solo.'],
+                  { text: 'Decir que Alex debería haber enviado un mensaje todavía más cruel de vuelta.', correct: false, outcome: ['Alex envía un mensaje más cruel la próxima vez.', 'El jugador cruel envía todavía más mensajes crueles.', 'Ningún adulto sabe, así que nadie puede ayudar a pararlo.'],
                     feedback: 'Enviar algo cruel de vuelta usualmente empeora la situación.' },
                   { text: 'Decir que mostrarle a un adulto y alejarse fue exactamente correcto.', correct: true,
                     feedback: 'Sí — esa es exactamente la respuesta correcta.' },
@@ -11530,7 +11530,7 @@ const CONTENT = {
                 choices: [
                   { text: 'No — igual lastima los sentimientos y nunca está bien, aunque sea a través de una pantalla.', correct: true,
                     feedback: 'Exactamente correcto. Las palabras crueles lastiman sea que se digan en persona o se escriban en línea.' },
-                  { text: 'Sí — la crueldad en línea realmente no cuenta ni importa.', correct: false, outcome: ['Alex cree que la crueldad en línea no cuenta.', 'Alex le escribe algo cruel a otro jugador.', 'Ese jugador se siente triste, igual que Alex.'],
+                  { text: 'Sí — la crueldad en línea realmente no cuenta ni importa.', correct: false, outcome: ['Alex cree que la crueldad en línea no cuenta.', 'Alex le escribe algo cruel a otro jugador.', 'Ese jugador deja de jugar y se va del juego.'],
                     feedback: 'Eso no es cierto — la crueldad en línea es tan real y dolorosa como la crueldad en persona.' },
                 ] },
               { type: 'dialogue', illustration: 'cyberbully-help',
@@ -11539,7 +11539,7 @@ const CONTENT = {
                   { speaker: 'Alex', text: '¿De verdad la crueldad en línea cuenta igual que en persona?' },
                 ],
                 choices: [
-                  { text: 'Decir que la crueldad en línea realmente no cuenta ni importa.', correct: false, outcome: ['Alex cree que la crueldad en línea no importa.', 'Alex sigue leyendo mensajes crueles y no le dice a nadie.', 'Alex sigue sintiéndose mal, y ningún adulto lo sabe.'],
+                  { text: 'Decir que la crueldad en línea realmente no cuenta ni importa.', correct: false, outcome: ['Alex cree que la crueldad en línea no importa.', 'Alex sigue leyendo mensajes crueles y no le dice a nadie.', 'Los mensajes crueles siguen llegando, y ningún adulto lo sabe.'],
                     feedback: 'Eso no es cierto — lastima igual que la crueldad en persona.' },
                   { text: 'Decir que lastima igual y nunca está bien, aunque sea a través de una pantalla.', correct: true,
                     feedback: 'Exactamente correcto — las palabras crueles lastiman sin importar cómo se entreguen.' },
@@ -11573,7 +11573,7 @@ const CONTENT = {
                     feedback: 'Eso es un paso más grande de lo necesario — la meta es manejar esta situación específica, no evitar estar en línea para siempre.' },
                   { text: 'Guardar o tomar capturas de pantalla de los mensajes, salir del chat, y contarle a un adulto de confianza.', correct: true,
                     feedback: 'Sí — guardar evidencia, alejarse del chat, y contarle a un adulto de confianza es exactamente la respuesta correcta.' },
-                  { text: 'Intentar defender la foto discutiendo con todos en el chat.', correct: false, outcome: ['Alex empieza a discutir con todos en el chat de grupo.', 'Más compañeros se unen y los comentarios crueles empeoran.', 'Alex se siente más triste, y la avalancha de comentarios sigue creciendo.'],
+                  { text: 'Intentar defender la foto discutiendo con todos en el chat.', correct: false, outcome: ['Alex empieza a discutir con todos en el chat de grupo.', 'Más compañeros se unen y los comentarios crueles empeoran.', 'Los compañeros toman capturas de las respuestas enojadas de Alex, y la avalancha de comentarios sigue creciendo.'],
                     feedback: 'Discutir en el momento a menudo empeora una avalancha de comentarios — es más efectivo alejarse e involucrar a un adulto de confianza.' },
                 ] },
               { type: 'dialogue', illustration: 'cyberbully-uncomfortable',
@@ -11582,7 +11582,7 @@ const CONTENT = {
                   { speaker: 'Alex', text: 'Voy a tomar capturas de pantalla y salir antes de contarle a mi mamá.' },
                 ],
                 choices: [
-                  { text: 'Decir que Alex debería intentar defender la foto discutiendo con todos.', correct: false, outcome: ['Alex regresa al chat para discutir con todos.', 'Los compañeros hacen todavía más bromas sobre las respuestas de Alex.', 'Ahora hay más mensajes crueles, y Alex se siente peor.'],
+                  { text: 'Decir que Alex debería intentar defender la foto discutiendo con todos.', correct: false, outcome: ['Alex regresa al chat para discutir con todos.', 'Los compañeros hacen todavía más bromas sobre las respuestas de Alex.', 'Ahora hay más mensajes crueles, y las respuestas de Alex se comparten por todos lados.'],
                     feedback: 'Discutir de vuelta usualmente empeora una avalancha de comentarios — salir y contarle a un adulto de confianza fue lo correcto.' },
                   { text: 'Decir que guardar capturas de pantalla y salir del chat fue la decisión correcta.', correct: true,
                     feedback: 'Sí — esa es exactamente la respuesta correcta a una avalancha de comentarios.' },
@@ -11669,7 +11669,7 @@ const CONTENT = {
                   { speaker: 'Alex', text: '¿Eso significa que todo está arreglado ya?' },
                 ],
                 choices: [
-                  { text: 'Decir que sí, reportar a la plataforma sola resuelve todo de inmediato.', correct: false, outcome: ['Alex decide que el reporte a la plataforma arregló todo y no le cuenta a la escuela.', 'En la escuela, los compañeros siguen hablando de las publicaciones falsas que vieron.', 'Alex siente vergüenza, y ningún maestro sabe por qué siguen las burlas.'],
+                  { text: 'Decir que sí, reportar a la plataforma sola resuelve todo de inmediato.', correct: false, outcome: ['Alex decide que el reporte a la plataforma arregló todo y no le cuenta a la escuela.', 'En la escuela, los compañeros siguen hablando de las publicaciones falsas que vieron.', 'Las burlas siguen por días, y ningún maestro sabe por qué está pasando.'],
                     feedback: 'No deshace que los compañeros ya la hayan visto — la escuela todavía necesitaba involucrarse.' },
                   { text: 'Decir que la escuela todavía necesita saber ya que los compañeros ya la vieron.', correct: true,
                     feedback: 'Exactamente correcto — esa es la otra mitad de resolver esto correctamente.' },
@@ -11754,7 +11754,7 @@ const CONTENT = {
               { type: 'decision', illustration: 'citizenship-bystander', kicker: '¿Qué debería hacer Alex?',
                 text: 'Otros niños solo están mirando. ¿Cuál es la cosa amable y útil que Alex puede hacer?',
                 choices: [
-                  { text: 'Mirar junto con todos los demás.', correct: false, outcome: ['Alex solo se queda mirando.', 'El niño sigue llorando en el suelo.', 'Ningún adulto viene. El niño se siente solo.'],
+                  { text: 'Mirar junto con todos los demás.', correct: false, outcome: ['Alex solo se queda mirando.', 'El niño sigue llorando en el suelo.', 'Ningún adulto viene, así que nadie limpia el raspón.'],
                     feedback: 'Solo mirar no ayuda al niño que se cayó — revisar cómo está o buscar a un adulto sí ayuda.' },
                   { text: 'Revisar si está bien, y buscar a un adulto para que ayude.', correct: true,
                     feedback: '¡Sí! Revisar cómo está alguien y buscar a un adulto es exactamente la cosa amable y útil de hacer.' },
@@ -11765,7 +11765,7 @@ const CONTENT = {
                   { speaker: 'Alex', text: '¿Estás bien? Voy a buscar a un adulto.' },
                 ],
                 choices: [
-                  { text: 'Decir que Alex debería haber solo mirado con todos los demás.', correct: false, outcome: ['Alex mira como todos los demás.', 'Nadie va a buscar a un adulto.', 'Nadie ayuda con el raspón. El niño se siente triste.'],
+                  { text: 'Decir que Alex debería haber solo mirado con todos los demás.', correct: false, outcome: ['Alex mira como todos los demás.', 'Nadie va a buscar a un adulto.', 'El raspón del niño sigue sucio. Nadie trae una curita.'],
                     feedback: 'Solo mirar no habría ayudado al niño que se cayó.' },
                   { text: 'Decir que revisar cómo estaba y buscar a un adulto fue lo amable de hacer.', correct: true,
                     feedback: 'Sí — esa es exactamente la respuesta amable y útil.' },
@@ -11787,7 +11787,7 @@ const CONTENT = {
                   { speaker: 'Alex', text: '¿De verdad importa que haya hecho algo tan pequeño?' },
                 ],
                 choices: [
-                  { text: 'Decir que no importa de ninguna manera lo que hagas.', correct: false, outcome: ['Alex cree que ayudar un poco no importa.', 'La próxima vez, Alex no busca a un adulto.', 'El niño lastimado espera solo y se siente triste.'],
+                  { text: 'Decir que no importa de ninguna manera lo que hagas.', correct: false, outcome: ['Alex cree que ayudar un poco no importa.', 'La próxima vez, Alex no busca a un adulto.', 'El niño lastimado espera mucho tiempo. Nadie trae ayuda.'],
                     feedback: 'En realidad sí importa — las pequeñas acciones hacen una diferencia real.' },
                   { text: 'Decir que hacer algo pequeño, como buscar ayuda, hace una diferencia real.', correct: true,
                     feedback: 'Exactamente correcto — esa pequeña acción realmente ayudó.' },
@@ -11817,7 +11817,7 @@ const CONTENT = {
               { type: 'decision', illustration: 'citizenship-bystander', kicker: '¿Qué debería hacer Alex?',
                 text: 'Nadie está siendo cruel, pero tampoco nadie incluye al estudiante nuevo. ¿Cuál es una buena opción?',
                 choices: [
-                  { text: 'Suponer que alguien más lo invitará eventualmente.', correct: false, outcome: ['Alex supone que alguien más invitará al estudiante nuevo.', 'Día tras día, nadie lo hace, y el estudiante nuevo sigue almorzando solo.', 'El estudiante nuevo empieza a sentir que nadie en la escuela lo quiere ahí.'],
+                  { text: 'Suponer que alguien más lo invitará eventualmente.', correct: false, outcome: ['Alex supone que alguien más invitará al estudiante nuevo.', 'Día tras día, nadie lo hace, y el estudiante nuevo sigue almorzando solo.', 'Para el viernes, el estudiante nuevo deja de ir al comedor y almuerza solo en la biblioteca.'],
                     feedback: 'Suponer que alguien más lo hará a menudo significa que nadie realmente lo hace — una pequeña acción tuya podría hacer una diferencia real.' },
                   { text: 'Invitar al estudiante nuevo a sentarse con el grupo de Alex.', correct: true,
                     feedback: '¡Sí! Una simple invitación puede hacer una gran diferencia para alguien que se siente excluido.' },
@@ -11828,7 +11828,7 @@ const CONTENT = {
                   { speaker: 'Alex', text: '¡Claro, ven con nosotros!' },
                 ],
                 choices: [
-                  { text: 'Decir que Alex debería haber supuesto que alguien más lo invitaría.', correct: false, outcome: ['Alex decide que probablemente alguien más invitará al estudiante nuevo.', 'Todos los demás piensan lo mismo, así que nadie dice nada.', 'El estudiante nuevo sigue sentándose solo y se siente más solo cada día.'],
+                  { text: 'Decir que Alex debería haber supuesto que alguien más lo invitaría.', correct: false, outcome: ['Alex decide que probablemente alguien más invitará al estudiante nuevo.', 'Todos los demás piensan lo mismo, así que nadie dice nada.', 'El estudiante nuevo se sienta solo todos los días, y nadie descubre que le gustan los mismos juegos que a Alex.'],
                     feedback: 'Suponer eso a menudo significa que nadie lo hace — invitarlo fue mejor.' },
                   { text: 'Decir que invitar al estudiante nuevo a sentarse fue exactamente correcto.', correct: true,
                     feedback: 'Sí — una simple invitación es exactamente lo correcto.' },
@@ -11841,7 +11841,7 @@ const CONTENT = {
                 choices: [
                   { text: 'No — notar a alguien excluido o solo también es una buena razón para ayudar, aunque no haya crueldad de por medio.', correct: true,
                     feedback: 'Exactamente — la buena ciudadanía incluye notar la soledad o exclusión, no solo responder a la crueldad obvia.' },
-                  { text: 'Sí — solo deberías ayudar si ves a alguien siendo claramente cruel.', correct: false, outcome: ['Alex cree que solo hay que ayudar cuando alguien está siendo claramente cruel.', 'Alex ve al estudiante nuevo solo pero sigue de largo, porque nadie está siendo cruel.', 'El estudiante nuevo sigue solo, y una amistad que podría haber empezado nunca empieza.'],
+                  { text: 'Sí — solo deberías ayudar si ves a alguien siendo claramente cruel.', correct: false, outcome: ['Alex cree que solo hay que ayudar cuando alguien está siendo claramente cruel.', 'Alex ve al estudiante nuevo solo pero sigue de largo, porque nadie está siendo cruel.', 'El estudiante nuevo almuerza solo otra vez, y una amistad que podría haber empezado nunca empieza.'],
                     feedback: 'Eso es demasiado limitado — notar a alguien excluido, aunque no haya crueldad, también es una buena razón para intervenir y ayudar.' },
                 ] },
               { type: 'dialogue', illustration: 'citizenship-help',
@@ -11850,7 +11850,7 @@ const CONTENT = {
                   { speaker: 'Alex', text: 'Casi no dije nada porque nadie estaba siendo cruel contigo.' },
                 ],
                 choices: [
-                  { text: 'Decir que solo deberías ayudar si ves a alguien siendo claramente cruel.', correct: false, outcome: ['Alex decide que ayudar solo importa cuando alguien está siendo cruel.', 'La próxima vez que Alex ve a un niño solo en una banca en el recreo, sigue caminando.', 'Ese niño pasa el recreo solo otra vez, sintiéndose invisible.'],
+                  { text: 'Decir que solo deberías ayudar si ves a alguien siendo claramente cruel.', correct: false, outcome: ['Alex decide que ayudar solo importa cuando alguien está siendo cruel.', 'La próxima vez que Alex ve a un niño solo en una banca en el recreo, sigue caminando.', 'Ese niño pasa el recreo solo otra vez, sentado en la banca hasta que suena el timbre.'],
                     feedback: 'Eso es demasiado limitado — notar a alguien excluido ya es razón suficiente.' },
                   { text: 'Decir que notar a alguien excluido también es una buena razón para ayudar, aunque no haya crueldad.', correct: true,
                     feedback: 'Exactamente correcto — la buena ciudadanía incluye notar la soledad, no solo la crueldad.' },
@@ -11880,11 +11880,11 @@ const CONTENT = {
               { type: 'decision', illustration: 'citizenship-bystander', kicker: '¿Qué debería hacer Alex?',
                 text: 'El compañero parece presionado e incómodo frente a un grupo. ¿Cuál es la opción más útil?',
                 choices: [
-                  { text: 'Unirse al grupo para evitar parecer diferente.', correct: false, outcome: ['Alex se une y anima al compañero junto con el grupo.', 'La presión se hace más fuerte, y el compañero sigue la corriente aunque no quiere.', 'El compañero termina en problemas y se siente decepcionado, y Alex se siente incómodo por haber sido parte de eso.'],
+                  { text: 'Unirse al grupo para evitar parecer diferente.', correct: false, outcome: ['Alex se une y anima al compañero junto con el grupo.', 'La presión se hace más fuerte, y el compañero sigue la corriente aunque no quiere.', 'El compañero termina en problemas con un maestro, y después ya no quiere sentarse con Alex ni con el grupo.'],
                     feedback: 'Unirse aumenta la presión que el compañero ya está sintiendo — retirarse u ofrecer apoyo ayuda más.' },
                   { text: 'Encontrar una manera de apoyar silenciosamente al compañero, como sugerir una actividad diferente, o contarle a un adulto de confianza si se siente serio.', correct: true,
                     feedback: 'Sí — ofrecer silenciosamente una alternativa, o involucrar a un adulto de confianza si es necesario, son ambas formas fuertes de ayudar a alguien bajo presión de grupo.' },
-                  { text: 'No decir nada y solo mirar para ver qué pasa.', correct: false, outcome: ['Alex se queda callado y mira, como todos los demás.', 'Como nadie le ofrece otra opción, el compañero cede ante el grupo.', 'El compañero se mete en problemas y se siente completamente solo, y Alex se va con un sentimiento pesado e incómodo.'],
+                  { text: 'No decir nada y solo mirar para ver qué pasa.', correct: false, outcome: ['Alex se queda callado y mira, como todos los demás.', 'Como nadie le ofrece otra opción, el compañero cede ante el grupo.', 'El compañero se mete en problemas con un maestro, y después le dice a Alex: “Nadie intentó ayudarme.”'],
                     feedback: 'Mirar sin actuar es exactamente el “efecto espectador” — una pequeña acción, incluso una silenciosa, puede cambiar genuinamente lo que pasa después.' },
                 ] },
               { type: 'dialogue', illustration: 'citizenship-bystander',
@@ -11893,7 +11893,7 @@ const CONTENT = {
                   { speaker: 'Alex', text: 'Oye, vamos a hacer otra cosa en su lugar.' },
                 ],
                 choices: [
-                  { text: 'Decir que Alex debería haberse unido al grupo en su lugar.', correct: false, outcome: ['Alex no ofrece una alternativa y se une al grupo en su lugar.', 'El compañero mira a Alex, ve a una persona más presionándolo, y cede.', 'El compañero termina en problemas y deja de confiar en Alex, y Alex se siente mal por eso.'],
+                  { text: 'Decir que Alex debería haberse unido al grupo en su lugar.', correct: false, outcome: ['Alex no ofrece una alternativa y se une al grupo en su lugar.', 'El compañero mira a Alex, ve a una persona más presionándolo, y cede.', 'El compañero termina en problemas, deja de confiar en Alex, y empieza a sentarse en otra mesa a la hora del almuerzo.'],
                     feedback: 'Unirse habría aumentado la presión — ofrecer una alternativa fue mejor.' },
                   { text: 'Decir que ofrecer silenciosamente una actividad alternativa fue una forma fuerte de ayudar.', correct: true,
                     feedback: 'Sí — esa es exactamente una forma fuerte y silenciosa de ayudar.' },
@@ -11915,7 +11915,7 @@ const CONTENT = {
                   { speaker: 'Alex', text: 'Todos los demás solo estaban mirando, así que casi hice lo mismo.' },
                 ],
                 choices: [
-                  { text: 'Decir que el efecto espectador significa que solo una persona puede ayudar.', correct: false, outcome: ['Alex le dice al adulto que solo una persona puede ayudar.', 'La próxima vez que alguien necesita ayuda en un grupo, Alex espera a que actúe “esa persona.”', 'Todos esperan, nadie actúa, y Alex se siente paralizado y confundido.'],
+                  { text: 'Decir que el efecto espectador significa que solo una persona puede ayudar.', correct: false, outcome: ['Alex le dice al adulto que solo una persona puede ayudar.', 'La próxima vez que alguien necesita ayuda en un grupo, Alex espera a que actúe “esa persona.”', 'Todos esperan, nadie actúa, y la persona que necesita ayuda sigue sola cuando el grupo se va.'],
                     feedback: 'Eso no es lo que significa — cualquiera puede elegir actuar, sin importar los demás.' },
                   { text: 'Decir que el efecto espectador explica por qué la gente se paraliza cuando otros solo miran, y que puedes elegir actuar en su lugar.', correct: true,
                     feedback: 'Exactamente correcto — saber sobre el patrón te ayuda a romperlo.' },
@@ -11929,7 +11929,7 @@ const CONTENT = {
                 ],
                 text: 'Un amigo después dice que no valía la pena decir nada ya que todos los demás también solo estaban mirando. ¿Qué debería recordar Alex?',
                 choices: [
-                  { text: 'Si todos los demás solo están mirando, eso significa que no es tu lugar actuar.', correct: false, outcome: ['Alex está de acuerdo en que si todos solo están mirando, no es su lugar actuar.', 'La próxima vez que presionan a un compañero, Alex se queda paralizado con los demás.', 'Nadie interviene, el compañero termina en problemas, y Alex se siente incómodo por días.'],
+                  { text: 'Si todos los demás solo están mirando, eso significa que no es tu lugar actuar.', correct: false, outcome: ['Alex está de acuerdo en que si todos solo están mirando, no es su lugar actuar.', 'La próxima vez que presionan a un compañero, Alex se queda paralizado con los demás.', 'Nadie interviene, el compañero termina en problemas, y a la semana siguiente el mismo grupo presiona a otra persona.'],
                     feedback: 'Ese es exactamente el efecto espectador — que todos supongan que no es su lugar es por qué nadie actúa.' },
                   { text: 'Reconocer el efecto espectador en ti mismo hace más fácil elegir actuar de todos modos.', correct: true,
                     feedback: 'Exactamente — la conciencia del patrón es lo que facilita romperlo.' },
@@ -11985,7 +11985,7 @@ const CONTENT = {
               { type: 'decision', illustration: 'rights-voice', kicker: '¿Qué debería hacer Alex?',
                 text: 'Alex tiene algo que decir pero no lo están escuchando. ¿Qué está bien que Alex haga?',
                 choices: [
-                  { text: 'Rendirse y nunca volver a intentar compartir ideas.', correct: false, outcome: ['Alex deja de hablar y baja la mano.', 'Alex nunca vuelve a compartir una idea.', 'Las buenas ideas de Alex se quedan guardadas. Alex se siente triste.'],
+                  { text: 'Rendirse y nunca volver a intentar compartir ideas.', correct: false, outcome: ['Alex deja de hablar y baja la mano.', 'Alex nunca vuelve a compartir una idea.', 'Las buenas ideas de Alex se quedan guardadas. La clase nunca las escucha.'],
                     feedback: 'No tienes que rendirte — tienes el derecho de ser escuchado, y está bien intentar de nuevo o pedir un turno para hablar.' },
                   { text: 'Decir, “¿Puedo terminar mi idea, por favor?” e intentar de nuevo.', correct: true,
                     feedback: '¡Sí! Tienes el derecho de ser escuchado, y está bien pedir un turno para terminar de compartir.' },
@@ -11996,7 +11996,7 @@ const CONTENT = {
                   { speaker: 'Alex', text: '¿Puedo terminar mi idea, por favor?' },
                 ],
                 choices: [
-                  { text: 'Decir que Alex debería haberse rendido respecto a compartir.', correct: false, outcome: ['Alex se rinde y se queda callado.', 'El grupo sigue hablando sin Alex.', 'Nadie escucha la idea de Alex. Alex se siente excluido.'],
+                  { text: 'Decir que Alex debería haberse rendido respecto a compartir.', correct: false, outcome: ['Alex se rinde y se queda callado.', 'El grupo sigue hablando sin Alex.', 'Nadie escucha la idea de Alex. El grupo elige otro plan.'],
                     feedback: 'Rendirse no habría ayudado — pedir terminar fue la decisión correcta.' },
                   { text: 'Decir que pedir terminar de compartir fue exactamente correcto.', correct: true,
                     feedback: 'Sí — pedir un turno para terminar es exactamente lo correcto.' },
@@ -12018,7 +12018,7 @@ const CONTENT = {
                   { speaker: 'Alex', text: '¿Solo las ideas de los adultos importan de verdad?' },
                 ],
                 choices: [
-                  { text: 'Decir que solo los adultos pueden compartir ideas que importan.', correct: false, outcome: ['Alex cree que las ideas de los niños no importan.', 'Alex se queda callado a la hora de compartir.', 'Alex se siente pequeño y excluido.'],
+                  { text: 'Decir que solo los adultos pueden compartir ideas que importan.', correct: false, outcome: ['Alex cree que las ideas de los niños no importan.', 'Alex se queda callado a la hora de compartir.', 'La maestra llama a otros niños. Nadie escucha la idea de Alex.'],
                     feedback: 'Eso no es cierto — la voz e ideas de todo niño también importan.' },
                   { text: 'Decir que todo niño tiene el derecho de tener una voz y ser escuchado.', correct: true,
                     feedback: 'Exactamente correcto — ese derecho le pertenece a todo niño.' },
@@ -12048,7 +12048,7 @@ const CONTENT = {
               { type: 'decision', illustration: 'rights-voice', kicker: '¿Qué debería hacer Alex?',
                 text: 'Alex no entiende por qué sigue pasando esto y no se siente justo. ¿Cuál es una buena opción?',
                 choices: [
-                  { text: 'Simplemente aceptarlo sin nunca preguntar por qué.', correct: false, outcome: ['Alex se queda sentado otra vez y no pregunta por qué.', 'Semana tras semana, Alex sigue en la banca.', 'Alex se siente confundido y triste, y nada cambia.'],
+                  { text: 'Simplemente aceptarlo sin nunca preguntar por qué.', correct: false, outcome: ['Alex se queda sentado otra vez y no pregunta por qué.', 'Semana tras semana, Alex sigue en la banca.', 'El entrenador nunca se entera de que Alex quiere jugar, así que nada cambia.'],
                     feedback: 'Tienes el derecho de preguntar respetuosamente por qué está pasando algo, especialmente si se siente injusto o confuso.' },
                   { text: 'Preguntarle respetuosamente al entrenador por qué, y también contarle a un padre sobre el patrón.', correct: true,
                     feedback: 'Sí — preguntar respetuosamente, y también contarle a un padre, son ambas buenas formas de usar tu derecho a ser tratado con justicia.' },
@@ -12072,7 +12072,7 @@ const CONTENT = {
                 choices: [
                   { text: 'Sí — preguntar respetuosamente es una forma razonable de entender o abordar algo que se siente injusto.', correct: true,
                     feedback: 'Exactamente — preguntar “por qué” respetuosamente es algo saludable y razonable de hacer.' },
-                  { text: 'No — los niños nunca deberían cuestionar la decisión de ningún adulto, nunca.', correct: false, outcome: ['Alex cree que los niños nunca deberían cuestionar la decisión de un adulto.', 'Cada vez que algo se siente injusto, Alex se queda callado.', 'Alex se siente mal por dentro, y lo injusto sigue pasando.'],
+                  { text: 'No — los niños nunca deberían cuestionar la decisión de ningún adulto, nunca.', correct: false, outcome: ['Alex cree que los niños nunca deberían cuestionar la decisión de un adulto.', 'Cada vez que algo se siente injusto, Alex se queda callado.', 'Ningún adulto se entera, así que lo injusto sigue pasando.'],
                     feedback: 'Eso no es exacto — preguntar respetuosamente sobre una decisión que se siente injusta es un derecho razonable de usar.' },
                 ] },
               { type: 'dialogue', illustration: 'rights-safe',
@@ -12081,7 +12081,7 @@ const CONTENT = {
                   { speaker: 'Alex', text: '¿Estuvo mal que le preguntara directamente al entrenador?' },
                 ],
                 choices: [
-                  { text: 'Decir que los niños nunca deberían cuestionar la decisión de ningún adulto.', correct: false, outcome: ['Alex decide que estuvo mal preguntarle al entrenador.', 'La próxima vez que una regla se siente injusta, Alex no dice nada.', 'Alex nunca obtiene respuestas y se siente atrapado.'],
+                  { text: 'Decir que los niños nunca deberían cuestionar la decisión de ningún adulto.', correct: false, outcome: ['Alex decide que estuvo mal preguntarle al entrenador.', 'La próxima vez que una regla se siente injusta, Alex no dice nada.', 'Alex nunca obtiene respuestas, y la regla sigue igual.'],
                     feedback: 'Eso no es exacto — preguntar respetuosamente sobre algo injusto es un derecho razonable.' },
                   { text: 'Decir que preguntar respetuosamente es una forma razonable de abordar algo que se siente injusto.', correct: true,
                     feedback: 'Exactamente correcto — eso es exactamente lo que hizo Alex.' },
@@ -12111,7 +12111,7 @@ const CONTENT = {
               { type: 'decision', illustration: 'rights-voice', kicker: '¿Qué debería hacer Alex?',
                 text: 'Este es un patrón, no algo de una sola vez, y es sobre la propia familia de Alex. ¿Cuál es una opción reflexiva?',
                 choices: [
-                  { text: 'Suponer que los sentimientos simplemente no importan y dejar de mencionarlos.', correct: false, outcome: ['Alex supone que los sentimientos no importan y deja de mencionarlos en casa.', 'El familiar nunca se entera de cuánto duelen sus comentarios, así que siguen pasando.', 'Alex empieza a guardarse todo y se siente más solo, incluso con su familia.'],
+                  { text: 'Suponer que los sentimientos simplemente no importan y dejar de mencionarlos.', correct: false, outcome: ['Alex supone que los sentimientos no importan y deja de mencionarlos en casa.', 'El familiar nunca se entera de cuánto duelen sus comentarios, así que siguen pasando.', 'Alex empieza a saltarse las cenas familiares para evitar los comentarios, y nadie en casa sabe por qué.'],
                     feedback: 'Tus sentimientos sí importan, y que los descarten repetidamente vale la pena abordarlo, aunque se sienta más difícil dentro de tu propia familia.' },
                   { text: 'Contarle con calma al familiar cómo se siente ese descarte, y si continúa, hablar con otro adulto de confianza, como un consejero escolar.', correct: true,
                     feedback: 'Sí — nombrar con calma cómo se siente, e involucrar a otro adulto de confianza si continúa, es una forma reflexiva de defender tus propios derechos.' },
@@ -12124,7 +12124,7 @@ const CONTENT = {
                   { speaker: 'Familiar', text: 'No me di cuenta de que se sentía así.' },
                 ],
                 choices: [
-                  { text: 'Decir que Alex debería haber dejado de mencionar sus sentimientos por completo.', correct: false, outcome: ['Alex decide que habría sido mejor dejar de mencionar sus sentimientos por completo.', 'Alex se queda callado en casa, y el familiar supone que todo está bien.', 'El patrón hiriente continúa, y Alex se siente ignorado por las personas más cercanas.'],
+                  { text: 'Decir que Alex debería haber dejado de mencionar sus sentimientos por completo.', correct: false, outcome: ['Alex decide que habría sido mejor dejar de mencionar sus sentimientos por completo.', 'Alex se queda callado en casa, y el familiar supone que todo está bien.', 'Los comentarios hirientes siguen, porque nadie en casa sabe que duelen.'],
                     feedback: 'Quedarse callado no habría abordado el patrón — nombrarlo con calma fue mejor.' },
                   { text: 'Decir que nombrar con calma cómo se sentía el descarte fue una decisión reflexiva.', correct: true,
                     feedback: 'Sí — nombrarlo con calma es exactamente la forma reflexiva de defender tus derechos.' },
@@ -12137,7 +12137,7 @@ const CONTENT = {
                 choices: [
                   { text: 'Porque los derechos aplican en todos lados, incluyendo en casa, y saberlos te ayuda a reconocer cuando algo no está bien, aunque sea con personas que quieres.', correct: true,
                     feedback: 'Exactamente — los derechos no son solo sobre desconocidos o la escuela; también aplican dentro de las familias, y saberlos te ayuda a notar y abordar patrones que no se sienten bien.' },
-                  { text: 'Porque los derechos solo aplican a relaciones fuera de tu propia familia.', correct: false, outcome: ['Alex cree que los derechos solo aplican fuera de la familia.', 'Alex decide que los comentarios despectivos en casa son algo que simplemente hay que aguantar.', 'Alex sigue sintiéndose herido en casa sin darse cuenta de que también ahí está bien pedir respeto.'],
+                  { text: 'Porque los derechos solo aplican a relaciones fuera de tu propia familia.', correct: false, outcome: ['Alex cree que los derechos solo aplican fuera de la familia.', 'Alex decide que los comentarios despectivos en casa son algo que simplemente hay que aguantar.', 'Los comentarios siguen, y Alex nunca pide respeto en casa.'],
                     feedback: 'Eso no es exacto — derechos como ser escuchado y respetado también aplican dentro de las familias, no solo fuera de ellas.' },
                 ] },
               { type: 'dialogue', illustration: 'rights-safe',
@@ -12249,7 +12249,7 @@ const CONTENT = {
                   { speaker: 'Alex', text: '¿Sigo necesitando que alguien me mire aunque sea buen nadador?' },
                 ],
                 choices: [
-                  { text: 'Decir que sí, si eres buen nadador puedes nadar solo.', correct: false, outcome: ['Alex le dice a un amigo que puede nadar solo.', 'El amigo nada solo en la parte honda.', 'El amigo se cansa, y ningún adulto lo ve.'],
+                  { text: 'Decir que sí, si eres buen nadador puedes nadar solo.', correct: false, outcome: ['Alex le dice a un amigo que puede nadar solo.', 'El amigo nada solo en la parte honda.', 'El amigo se cansa y traga agua. El salvavidas tiene que entrar a ayudar.'],
                     feedback: 'Incluso los buenos nadadores siempre deben tener un adulto mirando.' },
                   { text: 'Decir que sí, siempre nada con un adulto mirando, cada vez.', correct: true,
                     feedback: 'Exactamente correcto — la regla es la misma sin importar qué tan bien nades.' },
@@ -12342,11 +12342,11 @@ const CONTENT = {
               { type: 'decision', illustration: 'water-play', kicker: '¿Qué debería hacer Alex?',
                 text: 'Hay una corriente inesperada y un sentimiento creciente de pánico. ¿Cuál es la respuesta más segura?',
                 choices: [
-                  { text: 'Nadar directamente contra la corriente de vuelta a la orilla lo más fuerte posible.', correct: false, outcome: ['Alex se voltea hacia la orilla y nada lo más fuerte posible directamente contra la corriente.', 'La corriente sigue jalando, y Alex casi no se acerca a la orilla.', 'Los brazos y piernas de Alex se cansan mucho, el pánico crece, y todavía no ha hecho señas de ayuda.'],
+                  { text: 'Nadar directamente contra la corriente de vuelta a la orilla lo más fuerte posible.', correct: false, outcome: ['Alex se voltea hacia la orilla y nada lo más fuerte posible directamente contra la corriente.', 'La corriente sigue jalando, y Alex casi no se acerca a la orilla.', 'Los brazos y piernas de Alex se agotan, y como nunca hizo señas, el salvavidas tiene que nadar hasta Alex para ayudar.'],
                     feedback: 'Luchar directamente contra una corriente fuerte puede cansarte rápido — un enfoque más inteligente es nadar en paralelo a la orilla primero, luego dirigirse hacia la orilla una vez libre de la corriente, y pedir ayuda.' },
                   { text: 'Mantener la calma, saludar y pedir ayuda, y si es posible nadar en paralelo a la orilla para salir de la corriente antes de dirigirse hacia la orilla.', correct: true,
                     feedback: 'Sí — mantener la calma lo más posible, pedir ayuda, y nadar en paralelo para escapar de la corriente antes de dirigirse a la orilla es el enfoque más seguro.' },
-                  { text: 'Intentar tocar el fondo para empujarse, sin importar qué tan profundo pueda ser.', correct: false, outcome: ['Alex deja de nadar y estira los pies hacia abajo, buscando el fondo.', 'El agua es demasiado profunda para tocarlo, y la corriente sigue alejando a Alex.', 'Alex ha gastado energía, está más lejos de la orilla y siente todavía más pánico.'],
+                  { text: 'Intentar tocar el fondo para empujarse, sin importar qué tan profundo pueda ser.', correct: false, outcome: ['Alex deja de nadar y estira los pies hacia abajo, buscando el fondo.', 'El agua es demasiado profunda para tocarlo, y la corriente sigue alejando a Alex.', 'Alex traga agua, y el salvavidas tiene que nadar para traer a Alex a la orilla.'],
                     feedback: 'En agua profunda o incierta, intentar alcanzar el fondo puede ser riesgoso — es más seguro mantener la calma, pedir ayuda, y nadar en paralelo a la orilla.' },
                 ] },
               { type: 'dialogue', illustration: 'water-play',
@@ -12392,7 +12392,7 @@ const CONTENT = {
                 choices: [
                   { text: 'Porque el pánico desperdicia energía y hace más difícil pensar con claridad y nadar de forma efectiva.', correct: true,
                     feedback: 'Exactamente — mantener la calma conserva la energía y el pensamiento claro que necesitas.' },
-                  { text: 'Porque mantener la calma hace que la corriente desaparezca por completo.', correct: false, outcome: ['Alex cree que mantener la calma hará que la corriente desaparezca.', 'Alex se queda tranquilo y solo espera, pero la corriente sigue jalando igual de fuerte.', 'Alex se aleja más de la orilla y empieza a sentirse confundido y con pánico.'],
+                  { text: 'Porque mantener la calma hace que la corriente desaparezca por completo.', correct: false, outcome: ['Alex cree que mantener la calma hará que la corriente desaparezca.', 'Alex se queda tranquilo y solo espera, pero la corriente sigue jalando igual de fuerte.', 'Alex se aleja más de la orilla sin hacer señas, hasta que el salvavidas lo ve y nada para ayudar.'],
                     feedback: 'Mantener la calma no elimina la corriente — pero te ayuda a responder de forma más efectiva.' },
                 ] },
             ],
@@ -12446,7 +12446,7 @@ const CONTENT = {
               { type: 'decision', illustration: 'home-alone', kicker: '¿Qué debería hacer Alex?',
                 text: 'Alguien que Alex no conoce está en la puerta. ¿Cuál es la opción más segura?',
                 choices: [
-                  { text: 'Abrir la puerta para ver quién es.', correct: false, outcome: ['Alex abre la puerta.', 'La persona se acerca y hace preguntas.', 'No hay ningún adulto. Alex se siente inseguro y asustado.'],
+                  { text: 'Abrir la puerta para ver quién es.', correct: false, outcome: ['Alex abre la puerta.', 'La persona se acerca y hace preguntas.', 'Ningún adulto sabe que la puerta está abierta.'],
                     feedback: 'Abrirle la puerta a alguien desconocido no es seguro — es mejor no abrirla y buscar a un adulto.' },
                   { text: 'No abrir la puerta, y buscar a un adulto de inmediato.', correct: true,
                     feedback: '¡Sí! No abrir la puerta y buscar a un adulto es exactamente la opción segura.' },
@@ -12532,7 +12532,7 @@ const CONTENT = {
                 choices: [
                   { text: 'Porque las estufas y hornos tienen riesgos reales como quemaduras o incendios que vale la pena verificar.', correct: true,
                     feedback: 'Exactamente — consultar sobre el uso de la estufa u horno es un hábito de seguridad razonable, no solo una regla arbitraria.' },
-                  { text: 'Porque los niños nunca deberían estar en la cocina, nunca.', correct: false, outcome: ['Alex cree que los niños nunca deberían estar en la cocina.', 'Alex ni siquiera entra a buscar un vaso de agua o a ayudar a poner la mesa.', 'Alex se siente estresado y excluido, y todavía no entiende qué hace riesgosa a la estufa.'],
+                  { text: 'Porque los niños nunca deberían estar en la cocina, nunca.', correct: false, outcome: ['Alex cree que los niños nunca deberían estar en la cocina.', 'Alex ni siquiera entra a buscar un vaso de agua o a ayudar a poner la mesa.', 'Alex se pierde ayudar con la cena, y todavía no aprende qué hace riesgosa a la estufa.'],
                     feedback: 'Eso es demasiado estricto — el punto es consultar sobre tareas riesgosas específicas como la estufa, no evitar la cocina por completo.' },
                 ] },
               { type: 'dialogue', illustration: 'home-safe',
@@ -12600,7 +12600,7 @@ const CONTENT = {
                 ],
                 text: 'Un adulto dice que el incendio ya estaba controlado, así que tal vez no era necesario llamar. ¿Qué debería recordar Alex?',
                 choices: [
-                  { text: 'Cada incendio, sin importar qué tan pequeño, siempre requiere que vengan bomberos.', correct: false, outcome: ['Alex cree que cada pequeño incendio necesita que vengan bomberos en persona.', 'Alex se siente asustado y avergonzado incluso después de un fuego pequeño que se apagó rápido.', 'Preocupado por armar un gran escándalo, Alex empieza a dudar si llamar o contarle a alguien.'],
+                  { text: 'Cada incendio, sin importar qué tan pequeño, siempre requiere que vengan bomberos.', correct: false, outcome: ['Alex cree que cada pequeño incendio necesita que vengan bomberos en persona.', 'Después de que un fueguito se apaga en segundos, Alex entra en pánico e insiste en que vengan los camiones de bomberos.', 'La próxima vez que pasa algo pequeño, Alex se queda callado en vez de contarle a alguien, y ningún adulto lo revisa.'],
                     feedback: 'No toda situación requiere bomberos en persona, pero llamar para reportarlo siempre es una opción razonable y segura.' },
                   { text: 'Siempre es mejor que los profesionales estén al tanto, aunque las cosas terminen bien — nunca estás en problemas por llamar.', correct: true,
                     feedback: 'Exactamente — llamar siempre es una opción aceptable, aunque algo termine bien.' },
@@ -12611,7 +12611,7 @@ const CONTENT = {
                   { speaker: 'Alex', text: '¿Estuvo mal llamar ya que resultó estar bien?' },
                 ],
                 choices: [
-                  { text: 'Decir que cada incendio siempre requiere que vengan bomberos en persona.', correct: false, outcome: ['Alex le dice a su padre que cada incendio necesita bomberos en persona.', 'Alex empieza a sentir que hasta una llamada rápida significa que algo enorme salió mal.', 'La próxima vez, Alex se siente demasiado nervioso para llamar, preocupado de que se vuelva un gran escándalo.'],
+                  { text: 'Decir que cada incendio siempre requiere que vengan bomberos en persona.', correct: false, outcome: ['Alex le dice a su padre que cada incendio necesita bomberos en persona.', 'Alex empieza a pensar que hasta una llamada rápida significa que algo enorme salió mal.', 'La próxima vez que empieza un fuego pequeño, Alex no llama ni le cuenta a nadie, así que nadie viene a ayudar.'],
                     feedback: 'No todo incendio necesita bomberos en persona — pero llamar para reportarlo siempre es razonable.' },
                   { text: 'Decir que nunca te equivocas por llamar, aunque resulte ser manejable.', correct: true,
                     feedback: 'Exactamente correcto — llamar siempre es una opción aceptable.' },
@@ -12622,7 +12622,7 @@ const CONTENT = {
                 choices: [
                   { text: 'Porque el agua puede esparcir un incendio de grasa en lugar de sofocarlo.', correct: true,
                     feedback: 'Exactamente — por eso el agua no es una opción segura por defecto para todo incendio de cocina.' },
-                  { text: 'Porque el agua siempre empeora completamente cada tipo de incendio.', correct: false, outcome: ['Alex cree que el agua empeora cada tipo de incendio.', 'En un campamento, Alex se asusta cuando los adultos usan agua para apagar la fogata.', 'Alex se siente confundido y asustado, y no puede distinguir qué incendios son realmente riesgosos.'],
+                  { text: 'Porque el agua siempre empeora completamente cada tipo de incendio.', correct: false, outcome: ['Alex cree que el agua empeora cada tipo de incendio.', 'En un campamento, Alex se asusta cuando los adultos usan agua para apagar la fogata.', 'Alex discute con los adultos en vez de ayudar, y nunca aprende en qué incendios sí se puede usar agua.'],
                     feedback: 'No todo incendio, pero tipos específicos como los de grasa — por eso adivinar es riesgoso.' },
                 ] },
             ],
@@ -12700,7 +12700,7 @@ const CONTENT = {
                 choices: [
                   { text: 'Sí — cada vez, sin importar qué tan corto sea el paseo.', correct: true,
                     feedback: '¡Exactamente correcto! Cada paseo, cada vez, casco puesto.' },
-                  { text: 'Solo para paseos largos en bicicleta.', correct: false, outcome: ['Alex cree que en paseos cortos no se necesita casco.', 'Alex da la vuelta a la cuadra sin casco.', 'Alex se cae en la esquina y se asusta.'],
+                  { text: 'Solo para paseos largos en bicicleta.', correct: false, outcome: ['Alex cree que en paseos cortos no se necesita casco.', 'Alex da la vuelta a la cuadra sin casco.', 'Alex se cae en la esquina y le sale un chichón en la cabeza.'],
                     feedback: 'Las caídas también pueden pasar en paseos cortos — usa casco cada vez, sin importar la distancia.' },
                 ] },
               { type: 'dialogue', illustration: 'bike-safe',
@@ -12709,7 +12709,7 @@ const CONTENT = {
                   { speaker: 'Alex', text: '¿De verdad lo necesito solo para dar la vuelta a la cuadra?' },
                 ],
                 choices: [
-                  { text: 'Decir que un casco solo se necesita para paseos largos en bicicleta.', correct: false, outcome: ['Alex no se pone el casco para un paseo rápido.', 'Alex gira muy rápido y se cae.', 'Alex se raspa la rodilla. El adulto se ve preocupado.'],
+                  { text: 'Decir que un casco solo se necesita para paseos largos en bicicleta.', correct: false, outcome: ['Alex no se pone el casco para un paseo rápido.', 'Alex gira muy rápido y se cae.', 'Alex se raspa la rodilla. El paseo se acaba por hoy.'],
                     feedback: 'Las caídas también pueden pasar en paseos cortos — la regla es cada vez.' },
                   { text: 'Decir que sí, cada vez, sin importar qué tan corto sea el paseo.', correct: true,
                     feedback: 'Exactamente correcto — la regla nunca cambia según la distancia.' },
@@ -12739,7 +12739,7 @@ const CONTENT = {
               { type: 'decision', illustration: 'bike-ride', kicker: '¿Qué debería hacer Alex?',
                 text: 'Un carro está saliendo en reversa y no ha visto a Alex todavía. ¿Cuál es la opción más segura?',
                 choices: [
-                  { text: 'Seguir andando a la misma velocidad ya que Alex tiene el derecho de paso.', correct: false, outcome: ['Alex sigue andando a la misma velocidad por la entrada de auto.', 'El carro sigue saliendo en reversa, y el conductor tiene que frenar de golpe.', 'Alex se desvía, se cae en la acera, y se siente tembloroso y asustado.'],
+                  { text: 'Seguir andando a la misma velocidad ya que Alex tiene el derecho de paso.', correct: false, outcome: ['Alex sigue andando a la misma velocidad por la entrada de auto.', 'El carro sigue saliendo en reversa, y el conductor tiene que frenar de golpe.', 'Alex se desvía, se cae en la acera, y se raspa una mano.'],
                     feedback: 'Aunque técnicamente tengas el derecho de paso, un conductor que aún no te ha visto es un peligro real — es más seguro reducir la velocidad o detenerte hasta que estés seguro de que te vio.' },
                   { text: 'Reducir la velocidad o detenerse, y asegurarse de que el conductor te vea antes de continuar.', correct: true,
                     feedback: 'Sí — reducir la velocidad y asegurarte de que el conductor te note es exactamente la opción segura en una entrada de auto.' },
@@ -12802,11 +12802,11 @@ const CONTENT = {
               { type: 'decision', illustration: 'bike-ride', kicker: '¿Qué debería hacer Alex?',
                 text: 'Girar a la izquierda en bicicleta en el tráfico requiere algo de planeación. ¿Cuál es el enfoque más seguro?',
                 choices: [
-                  { text: 'Girar de repente en el último segundo sin señalizar.', correct: false, outcome: ['Alex gira a la izquierda de repente en el último segundo, sin señalizar ni mirar atrás.', 'Un carro detrás del grupo no lo esperaba y tiene que frenar fuerte y tocar el claxon.', 'Alex termina el giro tambaleándose y asustado, y los amigos de atrás casi chocan entre ellos al intentar reaccionar.'],
+                  { text: 'Girar de repente en el último segundo sin señalizar.', correct: false, outcome: ['Alex gira a la izquierda de repente en el último segundo, sin señalizar ni mirar atrás.', 'Un carro detrás del grupo no lo esperaba y tiene que frenar fuerte y tocar el claxon.', 'Alex termina el giro tambaleándose, y los amigos de atrás tienen que frenar fuerte y casi chocan entre ellos.'],
                     feedback: 'Girar de repente sin señalizar no le da ninguna advertencia a los conductores — esa es una causa común de accidentes de bicicleta en intersecciones.' },
                   { text: 'Mirar atrás para ver el tráfico, señalizar el giro con una señal de mano, y moverse a la posición correcta del carril bien antes de la intersección.', correct: true,
                     feedback: 'Sí — revisar el tráfico, señalizar claramente, y posicionarse temprano son exactamente los pasos correctos para un giro seguro.' },
-                  { text: 'Andar por la acera a través de la intersección para evitar el tráfico por completo.', correct: false, outcome: ['Alex se sube de repente a la acera para cruzar la intersección.', 'Una persona que camina en la esquina tiene que hacerse a un lado de un salto, y un carro que gira frena de golpe.', 'Alex se siente avergonzado y nervioso, y el grupo termina separado en dos lados distintos de la calle.'],
+                  { text: 'Andar por la acera a través de la intersección para evitar el tráfico por completo.', correct: false, outcome: ['Alex se sube de repente a la acera para cruzar la intersección.', 'Una persona que camina en la esquina tiene que hacerse a un lado de un salto, y un carro que gira frena de golpe.', 'La persona que caminaba le grita a Alex que vaya más despacio, y el grupo termina separado en dos lados distintos de la calle.'],
                     feedback: 'Subirse de repente a la acera puede sorprender a peatones y conductores que giran en la esquina — usar la posición correcta del carril y las señales en la calle suele ser más seguro para un giro planeado como este.' },
                 ] },
               { type: 'dialogue', illustration: 'bike-ride',
@@ -12815,7 +12815,7 @@ const CONTENT = {
                   { speaker: 'Alex', text: 'Déjame revisar atrás y señalizar primero, solo para estar seguro.' },
                 ],
                 choices: [
-                  { text: 'Decir que Alex debería girar de repente en el último segundo sin señalizar.', correct: false, outcome: ['Alex le hace caso a su amigo y gira de inmediato, sin revisar ni señalizar.', 'Un carro que Alex no vio detrás tiene que frenar fuerte, y el conductor toca el claxon.', 'Alex logra pasar, pero se siente tembloroso y se da cuenta de lo cerca que estuvo.'],
+                  { text: 'Decir que Alex debería girar de repente en el último segundo sin señalizar.', correct: false, outcome: ['Alex le hace caso a su amigo y gira de inmediato, sin revisar ni señalizar.', 'Un carro que Alex no vio detrás tiene que frenar fuerte, y el conductor toca el claxon.', 'Alex logra pasar, pero el carro estaba a solo unos pasos, y los amigos tienen que detenerse y reunirse otra vez.'],
                     feedback: 'Los giros repentinos sin señalizar no dan advertencia a los conductores — revisar primero fue más seguro.' },
                   { text: 'Decir que revisar atrás y señalizar primero fue el enfoque correcto.', correct: true,
                     feedback: 'Sí — ese es exactamente el enfoque correcto para un giro seguro.' },
@@ -12828,7 +12828,7 @@ const CONTENT = {
                 choices: [
                   { text: 'Porque los conductores necesitan tiempo para notar y reaccionar a tus intenciones — los movimientos de último segundo en el tráfico dejan mucho menos margen de error.', correct: true,
                     feedback: 'Exactamente — en tráfico real, los conductores necesitan aviso anticipado para ajustarse, así que las señales claras y tempranas importan mucho más que en una entrada de auto tranquila.' },
-                  { text: 'Porque señalizar es solo una formalidad que realmente no afecta lo que hacen los conductores.', correct: false, outcome: ['Alex cree que señalizar es solo una formalidad que los conductores ignoran de todos modos.', 'Alex deja de señalizar y se mueve por el carril cuando le parece.', 'Los conductores se sorprenden una y otra vez con los movimientos de Alex, y uno tiene que desviarse, dejando a Alex nervioso y a sus amigos preocupados.'],
+                  { text: 'Porque señalizar es solo una formalidad que realmente no afecta lo que hacen los conductores.', correct: false, outcome: ['Alex cree que señalizar es solo una formalidad que los conductores ignoran de todos modos.', 'Alex deja de señalizar y se mueve por el carril cuando le parece.', 'Los conductores se sorprenden una y otra vez con los movimientos de Alex, y uno tiene que desviarse al otro carril tocando el claxon.'],
                     feedback: 'Eso no es exacto — las señales claras y tempranas realmente ayudan a los conductores a anticipar y reaccionar de forma segura a tus movimientos.' },
                 ] },
               { type: 'dialogue', illustration: 'bike-safe',
@@ -12851,7 +12851,7 @@ const CONTENT = {
                 ],
                 text: 'Un amigo después dice que señalizar realmente no importa porque la mayoría de los conductores no está prestando atención de todos modos. ¿Qué debería recordar Alex?',
                 choices: [
-                  { text: 'Señalizar es solo una formalidad que realmente no cambia lo que hacen los conductores.', correct: false, outcome: ['Alex está de acuerdo en que señalizar no importa y deja de hacerlo.', 'En una intersección con mucho tráfico, Alex gira sin ningún aviso.', 'Incluso el conductor que sí estaba prestando atención no tiene tiempo de reaccionar y frena de golpe, dejando a Alex asustado y avergonzado.'],
+                  { text: 'Señalizar es solo una formalidad que realmente no cambia lo que hacen los conductores.', correct: false, outcome: ['Alex está de acuerdo en que señalizar no importa y deja de hacerlo.', 'En una intersección con mucho tráfico, Alex gira sin ningún aviso.', 'Incluso el conductor que sí estaba prestando atención no tiene tiempo de reaccionar y frena de golpe, y el carro de atrás casi lo choca.'],
                     feedback: 'Eso no es exacto — las señales claras y tempranas realmente ayudan a los conductores a anticipar y reaccionar de forma segura.' },
                   { text: 'Los conductores necesitan aviso anticipado para reaccionar de forma segura, y los movimientos de último segundo dejan poco margen de error.', correct: true,
                     feedback: 'Exactamente — ese aviso anticipado es lo que hace que funcione en tráfico real.' },
@@ -12932,7 +12932,7 @@ const CONTENT = {
               { type: 'decision', illustration: 'peer-pressure-moment', kicker: '¿Qué debería hacer Alex?',
                 text: 'Los otros niños quieren que Alex suba a un lugar que no está permitido. ¿Cuál es la opción más segura?',
                 choices: [
-                  { text: 'Subir también para que Alex no se quede afuera.', correct: false, outcome: ['Alex sube alto con los niños.', 'El pie de Alex se resbala de la barra.', 'Alex se raspa la rodilla. Alex siente miedo.'],
+                  { text: 'Subir también para que Alex no se quede afuera.', correct: false, outcome: ['Alex sube alto con los niños.', 'El pie de Alex se resbala de la barra.', 'Alex se raspa la rodilla. Alex tiene que dejar de jugar.'],
                     feedback: 'Hacer algo inseguro solo para encajar no vale la pena — está bien decir que no, aunque otros lo estén haciendo.' },
                   { text: 'Decir, “Eso no está permitido, me voy a quedar aquí abajo,” y tal vez buscar a un maestro.', correct: true,
                     feedback: '¡Sí! Decir que no a algo inseguro, aunque otros lo estén haciendo, es exactamente la decisión valiente y segura.' },
@@ -12956,7 +12956,7 @@ const CONTENT = {
                 choices: [
                   { text: 'No — siempre puedes tomar tu propia decisión segura.', correct: true,
                     feedback: '¡Exactamente correcto! Siempre puedes elegir tu propia decisión, aunque otros estén haciendo algo diferente.' },
-                  { text: 'Sí — siempre tienes que hacer lo que hace el grupo.', correct: false, outcome: ['Alex cree que debe copiar al grupo.', 'El grupo sube alto, y Alex también.', 'Un maestro llama a Alex. Alex se siente mal.'],
+                  { text: 'Sí — siempre tienes que hacer lo que hace el grupo.', correct: false, outcome: ['Alex cree que debe copiar al grupo.', 'El grupo sube alto, y Alex también.', 'Un maestro llama a Alex para que baje. Alex tiene que esperar en la banca.'],
                     feedback: 'No es cierto — siempre puedes elegir tu propio comportamiento seguro, sin importar qué estén haciendo otros.' },
                 ] },
               { type: 'dialogue', illustration: 'peer-pressure-safe',
@@ -13006,7 +13006,7 @@ const CONTENT = {
                   { speaker: 'Alex', text: 'Prefiero simplemente hacerla.' },
                 ],
                 choices: [
-                  { text: 'Decir que Alex debería haberla saltado también ya que parece que todos lo hacen.', correct: false, outcome: ['Alex empieza a pensar que saltarla habría estado bien.', 'La próxima vez que sus amigos dicen “todos lo hacen”, Alex se salta una tarea.', 'Alex se atrasa en clase y se siente estresado tratando de ponerse al día.'],
+                  { text: 'Decir que Alex debería haberla saltado también ya que parece que todos lo hacen.', correct: false, outcome: ['Alex empieza a pensar que saltarla habría estado bien.', 'La próxima vez que sus amigos dicen “todos lo hacen”, Alex se salta una tarea.', 'Alex se atrasa en clase y tiene que quedarse en el recreo para ponerse al día.'],
                     feedback: 'Esa frase a menudo ni siquiera es cierta, y no convierte saltarla en la decisión responsable.' },
                   { text: 'Decir que mantener la decisión de hacer la tarea de todos modos fue correcto.', correct: true,
                     feedback: 'Sí — mantener tu propia decisión muestra independencia real.' },
@@ -13058,11 +13058,11 @@ const CONTENT = {
               { type: 'decision', illustration: 'peer-pressure-moment', kicker: '¿Qué debería hacer Alex?',
                 text: 'Ahora hay presión directa y algo de burla involucrada. ¿Cuál es la respuesta más efectiva?',
                 choices: [
-                  { text: 'Ceder para evitar que se burlen o le pongan apodos.', correct: false, outcome: ['Alex cede para que paren las burlas y hace la cosa riesgosa.', 'El grupo se ríe un momento, y luego presiona a Alex para hacer algo aún más riesgoso.', 'Alex se siente incómodo y como si no fuera Alex mismo, y ahora se siente aún más difícil decir que no.'],
+                  { text: 'Ceder para evitar que se burlen o le pongan apodos.', correct: false, outcome: ['Alex cede para que paren las burlas y hace la cosa riesgosa.', 'El grupo se ríe un momento, y luego presiona a Alex para hacer algo aún más riesgoso.', 'Ahora el grupo sabe que las burlas funcionan, así que las usan con Alex otra vez al día siguiente.'],
                     feedback: 'Ceder para evitar burlas usualmente lleva a una decisión que en realidad no querías tomar — la burla misma es una táctica de presión, no una razón real para seguir la corriente.' },
                   { text: 'Decir que no con calma pero firmeza, y si es necesario, salir de la situación o buscar a otra persona de confianza cerca.', correct: true,
                     feedback: 'Sí — un no calmado y firme, y estar dispuesto a salir de la situación si es necesario, es exactamente la respuesta segura que funciona mejor.' },
-                  { text: 'Meterse en una larga discusión tratando de convencer a todos de que están equivocados.', correct: false, outcome: ['Alex empieza una larga discusión, tratando de demostrar que todos están equivocados.', 'Las voces suben, más chicos se acercan, y las burlas empeoran en vez de parar.', 'Alex sigue atrapado en medio de la presión, más molesto que antes, y nadie cambió de opinión.'],
+                  { text: 'Meterse en una larga discusión tratando de convencer a todos de que están equivocados.', correct: false, outcome: ['Alex empieza una larga discusión, tratando de demostrar que todos están equivocados.', 'Las voces suben, más chicos se acercan, y las burlas empeoran en vez de parar.', 'Alex sigue atrapado en medio, las burlas continúan, y nadie cambió de opinión.'],
                     feedback: 'Las discusiones largas en el momento a menudo no cambian la mente de nadie y pueden escalar las cosas — un no calmado y firme, y alejarse, suele ser más efectivo.' },
                 ] },
               { type: 'dialogue', illustration: 'peer-pressure-moment',
@@ -13071,7 +13071,7 @@ const CONTENT = {
                   { speaker: 'Alex', text: 'No gracias, voy a buscar a mi otro amigo.' },
                 ],
                 choices: [
-                  { text: 'Decir que Alex debería haber cedido para evitar que se burlaran.', correct: false, outcome: ['Alex empieza a creer que ceder habría sido más fácil.', 'En la próxima fiesta, cuando alguien dice “no seas bebé”, Alex le hace caso de inmediato.', 'Alex termina haciendo algo que no quería hacer, y después se siente mal.'],
+                  { text: 'Decir que Alex debería haber cedido para evitar que se burlaran.', correct: false, outcome: ['Alex empieza a creer que ceder habría sido más fácil.', 'En la próxima fiesta, cuando alguien dice “no seas bebé”, Alex le hace caso de inmediato.', 'Alex termina haciendo algo que no quería hacer, y el grupo espera lo mismo en la próxima fiesta.'],
                     feedback: 'Ceder para evitar burlas lleva a una decisión que en realidad no quieres — buscar a otro amigo fue mejor.' },
                   { text: 'Decir que decir que no con calma y buscar a otro amigo fue la respuesta más efectiva.', correct: true,
                     feedback: 'Sí — esa es exactamente la respuesta segura y efectiva.' },
@@ -13093,7 +13093,7 @@ const CONTENT = {
                   { speaker: 'Alex', text: 'Casi cedí porque no quería que me dijeran bebé.' },
                 ],
                 choices: [
-                  { text: 'Decir que frases como “no seas bebé” solo se usan en situaciones inofensivas.', correct: false, outcome: ['Alex decide que “no seas bebé” significa que la cosa debe ser inofensiva.', 'La próxima vez que lo escucha, Alex ignora el sentimiento incómodo y le sigue la corriente.', 'Alex termina en algo riesgoso, confundido de cómo una frase que sonaba inofensiva lo llevó ahí.'],
+                  { text: 'Decir que frases como “no seas bebé” solo se usan en situaciones inofensivas.', correct: false, outcome: ['Alex decide que “no seas bebé” significa que la cosa debe ser inofensiva.', 'La próxima vez que lo escucha, Alex ignora el sentimiento incómodo y le sigue la corriente.', 'Alex termina con el grupo dentro de una obra cerrada, donde nadie está vigilando.'],
                     feedback: 'En realidad se usan comúnmente para presionar a la gente hacia cosas riesgosas — ese es el patrón a reconocer.' },
                   { text: 'Decir que esas frases están diseñadas para hacer que decir no se sienta vergonzoso.', correct: true,
                     feedback: 'Exactamente correcto — reconocer eso te ayuda a resistir.' },
@@ -13162,7 +13162,7 @@ const CONTENT = {
               { type: 'decision', illustration: 'store-balloons', kicker: '¿Qué debería hacer Alex?',
                 text: 'Alex realmente quiere ver los globos. ¿Qué debería hacer Alex primero?',
                 choices: [
-                  { text: 'Correr allá de inmediato sin decir nada.', correct: false, outcome: ['Alex corre solo a los globos.', 'Mamá se voltea. Alex no está.', 'Mamá no encuentra a Alex. Alex tiene miedo.'],
+                  { text: 'Correr allá de inmediato sin decir nada.', correct: false, outcome: ['Alex corre solo a los globos.', 'Mamá se voltea. Alex no está.', 'Mamá llama: “¡Alex!” y busca por todos lados.'],
                     feedback: 'Salir corriendo sin avisarle a un adulto significa que no sabrán dónde estás.' },
                   { text: 'Preguntarle primero a Mamá, “¿Podemos ir a ver los globos?”', correct: true,
                     feedback: '¡Sí! Consultar primero con tu adulto de confianza los mantiene juntos y seguros.' },
@@ -13173,7 +13173,7 @@ const CONTENT = {
                   { speaker: 'Mamá', text: 'Claro, vamos caminando juntos.' },
                 ],
                 choices: [
-                  { text: 'Decir que Alex debería haber corrido solo.', correct: false, outcome: ['Alex corre solo la próxima vez.', 'Alex ya no puede ver a Mamá.', 'Mamá está preocupada. Alex se siente perdido.'],
+                  { text: 'Decir que Alex debería haber corrido solo.', correct: false, outcome: ['Alex corre solo la próxima vez.', 'Alex ya no puede ver a Mamá.', 'Mamá llama a Alex y lo busca por todos lados.'],
                     feedback: 'Correr solo podría significar separarse de Mamá.' },
                   { text: 'Decir que preguntar primero y caminar juntos fue la decisión segura.', correct: true,
                     feedback: '¡Sí! Preguntar primero y quedarse juntos es exactamente correcto.' },
@@ -13186,7 +13186,7 @@ const CONTENT = {
                 choices: [
                   { text: 'Avisarle primero a Mamá, “voy a ese pasillo”, y esperar un sí.', correct: true,
                     feedback: '¡Sí! Avisar primero, aunque sea rápido, siempre es la opción segura.' },
-                  { text: 'Simplemente irse sin decir nada, ya que es solo un segundo.', correct: false, outcome: ['Alex camina al siguiente pasillo.', 'Mamá mira y no ve a Alex.', 'Mamá llama a Alex. Todos están preocupados.'],
+                  { text: 'Simplemente irse sin decir nada, ya que es solo un segundo.', correct: false, outcome: ['Alex camina al siguiente pasillo.', 'Mamá mira y no ve a Alex.', 'Mamá llama a Alex y revisa todos los pasillos.'],
                     feedback: 'Incluso un viaje rápido debe avisarse primero — un segundo es suficiente para separarse.' },
                 ] },
               { type: 'dialogue', illustration: 'store-together',
@@ -13195,7 +13195,7 @@ const CONTENT = {
                   { speaker: 'Alex', text: 'Quiero ir a ese pasillo, ¿está bien?' },
                 ],
                 choices: [
-                  { text: 'Decir que Alex debería haber ido sin preguntar.', correct: false, outcome: ['Alex se va sin preguntar la próxima vez.', 'Alex da vuelta en una esquina y Mamá no está.', 'Alex tiene miedo y se siente solo.'],
+                  { text: 'Decir que Alex debería haber ido sin preguntar.', correct: false, outcome: ['Alex se va sin preguntar la próxima vez.', 'Alex da vuelta en una esquina y Mamá no está.', 'Mamá deja todo para buscar a Alex.'],
                     feedback: 'Irse sin avisar hace que sea fácil separarse.' },
                   { text: 'Decir que avisarle primero a Mamá fue la decisión segura.', correct: true,
                     feedback: '¡Sí! Avisarle primero a Mamá fue exactamente correcto.' },
@@ -13225,7 +13225,7 @@ const CONTENT = {
               { type: 'decision', illustration: 'park-trail', kicker: '¿Qué debería hacer Alex?',
                 text: 'El sendero se ve divertido, pero Papá no está a la vista. ¿Qué debería hacer Alex primero?',
                 choices: [
-                  { text: 'Seguir el sendero para ver adónde lleva.', correct: false, outcome: ['Alex sigue el sendero hacia el bosque sin avisarle a Papá.', 'Los árboles se hacen más tupidos, y Alex ya no puede ver el parque.', 'Papá no sabe adónde fue Alex, y Alex se siente perdido.'],
+                  { text: 'Seguir el sendero para ver adónde lleva.', correct: false, outcome: ['Alex sigue el sendero hacia el bosque sin avisarle a Papá.', 'Los árboles se hacen más tupidos, y Alex ya no puede ver el parque.', 'Papá no sabe adónde fue Alex, así que busca por todo el parque.'],
                     feedback: 'Explorar solo, aunque sea algo emocionante, puede alejarte de la vista de tu adulto de confianza.' },
                   { text: 'Detenerse, mirar alrededor y encontrar a Papá antes de ir a cualquier lado.', correct: true,
                     feedback: '¡Sí! Detenerse y encontrar primero a tu adulto de confianza siempre es el primer paso seguro.' },
@@ -13236,7 +13236,7 @@ const CONTENT = {
                   { speaker: 'Alex', text: 'Papá, ¿podemos explorar ese sendero juntos?' },
                 ],
                 choices: [
-                  { text: 'Decir que Alex debería haber ido solo por el sendero.', correct: false, outcome: ['Alex va solo por el sendero la próxima vez.', 'Papá mira por todo el parque y no ve a Alex por ningún lado.', 'Papá está preocupado, y Alex está muy lejos para oírlo llamar.'],
+                  { text: 'Decir que Alex debería haber ido solo por el sendero.', correct: false, outcome: ['Alex va solo por el sendero la próxima vez.', 'Papá mira por todo el parque y no ve a Alex por ningún lado.', 'Papá llama a Alex una y otra vez, pero Alex está muy lejos para oírlo.'],
                     feedback: 'Ir solo podría significar separarse de Papá.' },
                   { text: 'Decir que detenerse y preguntarle primero a Papá fue la decisión segura.', correct: true,
                     feedback: '¡Sí! Detenerse y preguntar primero fue exactamente correcto.' },
@@ -13247,7 +13247,7 @@ const CONTENT = {
               { type: 'decision', illustration: 'park-together', kicker: 'Una pregunta más',
                 text: 'Si Alex mira hacia arriba y no puede encontrar a Papá, ¿qué es lo más seguro?',
                 choices: [
-                  { text: 'Seguir caminando para intentar encontrar a Papá.', correct: false, outcome: ['Alex sigue caminando para buscar a Papá.', 'Papá regresa al lugar, pero Alex ya no está ahí.', 'Ahora los dos buscan en lugares diferentes, y Alex tiene miedo.'],
+                  { text: 'Seguir caminando para intentar encontrar a Papá.', correct: false, outcome: ['Alex sigue caminando para buscar a Papá.', 'Papá regresa al lugar, pero Alex ya no está ahí.', 'Ahora los dos buscan en lugares diferentes, y tardan mucho más en encontrarse.'],
                     feedback: 'Caminar para buscar puede alejarte todavía más de donde tu adulto de confianza está mirando.' },
                   { text: 'Detenerse justo donde está y quedarse ahí.', correct: true,
                     feedback: '¡Sí! Detenerse y quedarse en un lugar hace que sea mucho más fácil que tu adulto de confianza te encuentre.' },
@@ -13258,7 +13258,7 @@ const CONTENT = {
                   { speaker: 'Alex', text: 'Me detuve justo donde estaba para que pudieras encontrarme.' },
                 ],
                 choices: [
-                  { text: 'Decir que Alex debería haber seguido moviéndose para buscar a Papá.', correct: false, outcome: ['Alex sigue moviéndose para buscar a Papá la próxima vez.', 'Alex va por un lado mientras Papá va por el otro.', 'Tardan mucho más en encontrarse, y Alex se siente perdido.'],
+                  { text: 'Decir que Alex debería haber seguido moviéndose para buscar a Papá.', correct: false, outcome: ['Alex sigue moviéndose para buscar a Papá la próxima vez.', 'Alex va por un lado mientras Papá va por el otro.', 'Siguen sin encontrarse hasta que un trabajador del parque los ayuda a reunirse.'],
                     feedback: 'Moverse para buscar hace que sea más difícil ser encontrado.' },
                   { text: 'Decir que quedarse quieto fue exactamente la decisión correcta.', correct: true,
                     feedback: '¡Sí! Quedarse quieto fue exactamente la decisión correcta.' },
@@ -13288,11 +13288,11 @@ const CONTENT = {
               { type: 'decision', illustration: 'fair-crowd', kicker: '¿Qué debería hacer Alex?',
                 text: 'El impulso de correr es fuerte, pero la multitud es densa. ¿Cuál es la decisión más segura?',
                 choices: [
-                  { text: 'Correr entre la multitud hacia la música.', correct: false, outcome: ['Alex se suelta y corre entre la multitud hacia la música.', 'En segundos, Alex mira hacia atrás y no ve a la Abuela por ningún lado.', 'Alex está rodeado de desconocidos, no puede ver por encima de la gente, y siente pánico.'],
+                  { text: 'Correr entre la multitud hacia la música.', correct: false, outcome: ['Alex se suelta y corre entre la multitud hacia la música.', 'En segundos, Alex mira hacia atrás y no ve a la Abuela por ningún lado.', 'Alex no puede ver por encima de la gente, y la Abuela tiene que pedirle a un guardia que la ayude a buscar.'],
                     feedback: 'En un lugar lleno de gente, correr puede hacer que te pierdas en segundos — el impulso de ir es fuerte, pero detenerte te mantiene seguro.' },
                   { text: 'Respirar, sujetar la mano de la Abuela, y pedir ir caminando juntos.', correct: true,
                     feedback: '¡Sí! Reconocer el impulso, respirar, y pedir ir juntos es exactamente cómo manejar un impulso fuerte de salir corriendo.' },
-                  { text: 'Gritarle a todos que se muevan.', correct: false, outcome: ['Alex le grita a todos que se muevan.', 'La gente se queda mirando y algunos se molestan, pero la multitud casi no se mueve.', 'Alex todavía quiere correr, se siente más abrumado, y no ha hablado con la Abuela.'],
+                  { text: 'Gritarle a todos que se muevan.', correct: false, outcome: ['Alex le grita a todos que se muevan.', 'La gente se queda mirando y algunos se molestan, pero la multitud casi no se mueve.', 'Alex todavía no le ha dicho a la Abuela qué pasa, así que siguen atorados en el mismo lugar.'],
                     feedback: 'Eso no resuelve el problema real — detenerse y pedir ir juntos sí lo hace.' },
                 ] },
               { type: 'dialogue', illustration: 'fair-crowd',
@@ -13301,7 +13301,7 @@ const CONTENT = {
                   { speaker: 'Abuela', text: 'Sí, tomémonos de las manos y vayamos juntos.' },
                 ],
                 choices: [
-                  { text: 'Decir que Alex debería haber corrido ya que el impulso era muy fuerte.', correct: false, outcome: ['Alex decide que cuando el impulso es fuerte, está bien correr.', 'En el siguiente lugar lleno de gente, Alex sale corriendo antes de que la Abuela pueda decir algo.', 'La Abuela pierde de vista a Alex, y los dos terminan asustados y buscándose.'],
+                  { text: 'Decir que Alex debería haber corrido ya que el impulso era muy fuerte.', correct: false, outcome: ['Alex decide que cuando el impulso es fuerte, está bien correr.', 'En el siguiente lugar lleno de gente, Alex sale corriendo antes de que la Abuela pueda decir algo.', 'La Abuela pierde de vista a Alex y tiene que pedirle a la gente cerca que la ayude a buscar.'],
                     feedback: 'Correr, incluso con un impulso fuerte, puede llevar a perderse en una multitud.' },
                   { text: 'Decir que detenerse y pedir ir juntos fue la decisión segura.', correct: true,
                     feedback: '¡Sí! Detenerse y pedir ir juntos fue exactamente correcto.' },
@@ -13392,7 +13392,7 @@ const CONTENT = {
               { type: 'decision', illustration: 'store-lost', kicker: '¿Qué debería hacer Alex?',
                 text: 'Alex no puede ver a Mamá por ningún lado cerca. ¿Qué debería hacer Alex?',
                 choices: [
-                  { text: 'Caminar por toda la tienda buscando.', correct: false, outcome: ['Alex camina por toda la tienda.', 'Mamá busca, pero Alex ya se fue lejos.', 'Ahora Mamá no encuentra a Alex. Los dos se preocupan.'],
+                  { text: 'Caminar por toda la tienda buscando.', correct: false, outcome: ['Alex camina por toda la tienda.', 'Mamá busca, pero Alex ya se fue lejos.', 'Mamá llama a Alex, pero Alex está demasiado lejos para oír.'],
                     feedback: 'Caminar por todos lados puede hacer que sea más difícil que Mamá te encuentre — busca a un ayudante seguro en su lugar.' },
                   { text: 'Buscar a un trabajador con uniforme o gafete de la tienda.', correct: true,
                     feedback: '¡Sí! Un trabajador con uniforme es un ayudante seguro que puede ayudarte.' },
@@ -13403,7 +13403,7 @@ const CONTENT = {
                   { speaker: 'Trabajador', text: 'Vamos a buscarla juntos. Quédate aquí conmigo.' },
                 ],
                 choices: [
-                  { text: 'Decir que Alex debería haber seguido caminando solo.', correct: false, outcome: ['Alex sigue caminando solo.', 'Alex se aleja más y más de Mamá.', 'Mamá no encuentra a Alex. Alex siente miedo.'],
+                  { text: 'Decir que Alex debería haber seguido caminando solo.', correct: false, outcome: ['Alex sigue caminando solo.', 'Alex se aleja más y más de Mamá.', 'Mamá busca en cada pasillo, pero no encuentra a Alex.'],
                     feedback: 'Caminar solo hace que sea más difícil ser encontrado — pedirle ayuda al trabajador fue mejor.' },
                   { text: 'Decir que pedirle ayuda al trabajador fue la decisión segura.', correct: true,
                     feedback: '¡Sí! Pedirle ayuda al trabajador fue exactamente correcto.' },
@@ -13466,7 +13466,7 @@ const CONTENT = {
                   { speaker: 'Visitante del parque', text: 'Vamos a pedirle ayuda a ese guardabosques de allá.' },
                 ],
                 choices: [
-                  { text: 'Decir que Alex debería haberle preguntado a cualquier desconocido que pasara.', correct: false, outcome: ['Alex le pregunta a un desconocido cualquiera que va pasando.', 'La persona dice: “Perdón, tengo prisa,” y sigue caminando.', 'Alex sigue solo y no sabe a quién preguntarle después.'],
+                  { text: 'Decir que Alex debería haberle preguntado a cualquier desconocido que pasara.', correct: false, outcome: ['Alex le pregunta a un desconocido cualquiera que va pasando.', 'La persona dice: “Perdón, tengo prisa,” y sigue caminando.', 'Alex sigue perdido, y la familia con niños que podía ayudar ya se fue.'],
                     feedback: 'Cualquier desconocido no es una opción confiable — pedirle ayuda a un padre con hijos cerca fue mejor.' },
                   { text: 'Decir que pedirle ayuda a un padre con hijos, que luego encontró a un guardabosques, fue inteligente.', correct: true,
                     feedback: '¡Sí! Pedirle ayuda a un padre con hijos, que luego encontró a un guardabosques, fue inteligente.' },
@@ -13622,7 +13622,7 @@ const CONTENT = {
               { type: 'decision', illustration: 'doctor-waiting', kicker: '¿Qué debería hacer Alex?',
                 text: 'La visita se siente un poco aterradora porque Alex no está seguro de qué pasará. ¿Qué debería hacer Alex?',
                 choices: [
-                  { text: 'Negarse por completo a entrar al consultorio.', correct: false, outcome: ['Alex no quiere entrar al consultorio.', 'El médico tiene que esperar. Mamá también.', 'Alex sigue con miedo, y el chequeo no puede pasar.'],
+                  { text: 'Negarse por completo a entrar al consultorio.', correct: false, outcome: ['Alex no quiere entrar al consultorio.', 'El médico tiene que esperar. Mamá también.', 'El médico atiende a otros niños. Alex tiene que volver otro día.'],
                     feedback: 'Está bien sentirse nervioso, pero hay formas de sentirse más tranquilo en vez de negarse a entrar.' },
                   { text: 'Preguntarle a un adulto qué va a pasar, y traer algo que dé consuelo, como un juguete favorito.', correct: true,
                     feedback: '¡Sí! Preguntar qué esperar y traer algo que dé consuelo puede ayudar a que una visita se sienta menos aterradora.' },
@@ -13633,7 +13633,7 @@ const CONTENT = {
                   { speaker: 'Mamá', text: 'El médico revisará tus oídos, escuchará tu corazón, y medirá tu estatura. No dolerá.' },
                 ],
                 choices: [
-                  { text: 'Decir que Alex debería haber esperado para que fuera una sorpresa.', correct: false, outcome: ['Alex piensa: “La próxima vez, no voy a preguntar.”', 'En la próxima visita, el médico hace algo nuevo.', 'Alex no sabía que venía y siente mucho miedo.'],
+                  { text: 'Decir que Alex debería haber esperado para que fuera una sorpresa.', correct: false, outcome: ['Alex piensa: “La próxima vez, no voy a preguntar.”', 'En la próxima visita, el médico hace algo nuevo.', 'Alex no sabía que venía, brinca, y el médico tiene que parar y empezar otra vez.'],
                     feedback: 'Preguntar de antemano ayuda a que una visita se sienta menos aterradora que ser sorprendido.' },
                   { text: 'Decir que preguntar qué pasaría de antemano fue una buena idea.', correct: true,
                     feedback: '¡Sí! Preguntar de antemano fue una buena idea.' },
@@ -13644,7 +13644,7 @@ const CONTENT = {
               { type: 'decision', illustration: 'doctor-checkup', kicker: 'Una pregunta más',
                 text: 'Si algo se siente incómodo durante el chequeo, ¿qué puede hacer Alex?',
                 choices: [
-                  { text: 'Quedarse callado y esperar que termine pronto.', correct: false, outcome: ['Alex se queda callado y muy quieto.', 'La parte que se siente mal sigue.', 'Alex se siente mal por dentro, y nadie lo sabe.'],
+                  { text: 'Quedarse callado y esperar que termine pronto.', correct: false, outcome: ['Alex se queda callado y muy quieto.', 'La parte que se siente mal sigue.', 'Nadie lo sabe, así que el médico no para ni va más despacio.'],
                     feedback: 'No tienes que esperar en silencio — puedes decir algo o pedir un descanso corto.' },
                   { text: 'Decírselo al médico o al adulto de confianza en la sala, o pedir un descanso corto.', correct: true,
                     feedback: '¡Sí! Siempre está bien hablar o pedir un descanso durante un chequeo.' },
@@ -13655,7 +13655,7 @@ const CONTENT = {
                   { speaker: 'Médico', text: 'Claro, tómate tu tiempo.' },
                 ],
                 choices: [
-                  { text: 'Decir que Alex no debería haber pedido un descanso.', correct: false, outcome: ['Alex piensa que pedir un descanso estuvo mal.', 'La próxima vez, Alex no pide uno, aunque sea demasiado.', 'Alex se siente cada vez peor, y nadie lo sabe.'],
+                  { text: 'Decir que Alex no debería haber pedido un descanso.', correct: false, outcome: ['Alex piensa que pedir un descanso estuvo mal.', 'La próxima vez, Alex no pide uno, aunque sea demasiado.', 'Alex empieza a llorar, y el médico tiene que parar el chequeo.'],
                     feedback: 'Pedir un descanso siempre está bien durante un chequeo.' },
                   { text: 'Decir que pedir un descanso corto fue una buena decisión.', correct: true,
                     feedback: '¡Sí! Pedir un descanso corto fue una buena decisión.' },
@@ -13685,7 +13685,7 @@ const CONTENT = {
               { type: 'decision', illustration: 'dentist-sounds', kicker: '¿Qué debería hacer Alex?',
                 text: 'Los sonidos y la luz se sienten demasiado. ¿Qué debería hacer Alex?',
                 choices: [
-                  { text: 'Cubrirse los oídos y negarse a sentarse en la silla.', correct: false, outcome: ['Alex se cubre los oídos y no se quiere sentar en la silla.', 'El dentista no puede revisar los dientes de Alex, y la visita se detiene.', 'Alex sigue abrumado, y tienen que volver otro día.'],
+                  { text: 'Cubrirse los oídos y negarse a sentarse en la silla.', correct: false, outcome: ['Alex se cubre los oídos y no se quiere sentar en la silla.', 'El dentista no puede revisar los dientes de Alex, y la visita se detiene.', 'Mamá tiene que hacer otra cita, y se van a casa sin que revisen los dientes de Alex.'],
                     feedback: 'Está bien sentirse abrumado, pero hay una manera de ajustar las cosas en vez de negarse por completo.' },
                   { text: 'Decirle al dentista que los sonidos o la luz se sienten demasiado, y preguntar si algo se puede ajustar o explicar primero.', correct: true,
                     feedback: '¡Sí! Decirle al dentista lo que se siente demasiado, y hacer preguntas, puede ayudar mucho.' },
@@ -13696,7 +13696,7 @@ const CONTENT = {
                   { speaker: 'Dentista', text: 'Claro, siempre te diré el siguiente paso antes de empezar.' },
                 ],
                 choices: [
-                  { text: 'Decir que Alex debería haberlo soportado sin decir nada.', correct: false, outcome: ['Alex decide quedarse callado la próxima vez, aunque los sonidos sean muy fuertes.', 'El zumbido y la luz brillante siguen, y Alex se siente cada vez más abrumado.', 'Alex se altera tanto que le cuesta quedarse quieto, y el dentista no sabe por qué.'],
+                  { text: 'Decir que Alex debería haberlo soportado sin decir nada.', correct: false, outcome: ['Alex decide quedarse callado la próxima vez, aunque los sonidos sean muy fuertes.', 'El zumbido y la luz brillante siguen, y Alex empieza a moverse en la silla.', 'El dentista no sabe por qué, así que la limpieza se detiene una y otra vez y tarda mucho más.'],
                     feedback: 'Hablar sobre lo que se sentía demasiado ayudó mucho.' },
                   { text: 'Decir que pedirle al dentista que explicara cada paso fue una gran idea.', correct: true,
                     feedback: '¡Sí! Pedirle al dentista que explicara cada paso fue una gran idea.' },
@@ -13707,7 +13707,7 @@ const CONTENT = {
               { type: 'decision', illustration: 'dentist-explain', kicker: 'Una pregunta más',
                 text: '¿Está bien pedirle al dentista que vaya más despacio o que se detenga?',
                 choices: [
-                  { text: 'No, una vez que empieza tienes que seguir sin importar qué.', correct: false, outcome: ['Alex cree que no hay forma de pausar una vez que el dentista empieza.', 'Cuando algo se siente demasiado, Alex se aguanta en vez de levantar la mano.', 'Alex se siente atrapado y molesto, y la visita se siente mucho más aterradora de lo necesario.'],
+                  { text: 'No, una vez que empieza tienes que seguir sin importar qué.', correct: false, outcome: ['Alex cree que no hay forma de pausar una vez que el dentista empieza.', 'Cuando algo se siente demasiado, Alex se aguanta en vez de levantar la mano.', 'Alex aprieta la silla y se echa para atrás, así que el dentista tiene que parar sin saber por qué.'],
                     feedback: 'Eso no es cierto — puedes pedir una pausa o ir más despacio casi en cualquier momento.' },
                   { text: 'Sí, puedes levantar la mano o decir “espera” para pausar casi en cualquier momento.', correct: true,
                     feedback: '¡Exacto! Tienes mucho más control sobre la visita de lo que parece.' },
@@ -13718,7 +13718,7 @@ const CONTENT = {
                   { speaker: 'Alex', text: 'Está bien, eso me hace sentir mucho mejor.' },
                 ],
                 choices: [
-                  { text: 'Decir que Alex no debería confiar en una señal de pausa.', correct: false, outcome: ['Alex decide no usar la señal de pausa.', 'Cuando el rocío de agua se siente raro, Alex se queda callado y se pone tenso.', 'Alex se siente cada vez más estresado, y el dentista no sabe que Alex necesita un momento.'],
+                  { text: 'Decir que Alex no debería confiar en una señal de pausa.', correct: false, outcome: ['Alex decide no usar la señal de pausa.', 'Cuando el rocío de agua se siente raro, Alex se queda callado y se pone tenso.', 'Alex se mueve de golpe, el agua salpica por todos lados, y el dentista tiene que parar sin saber que Alex necesitaba un momento.'],
                     feedback: 'Una señal de pausa es una herramienta útil que Alex puede usar en cualquier momento.' },
                   { text: 'Decir que tener una señal de pausa hizo que Alex se sintiera mucho mejor.', correct: true,
                     feedback: '¡Sí! Tener una señal de pausa hizo que Alex se sintiera mucho mejor.' },
@@ -13759,7 +13759,7 @@ const CONTENT = {
                   { speaker: 'Médico', text: 'Necesito ver el sarpullido para ayudar a que mejore, y sí, Mamá puede quedarse justo aquí.' },
                 ],
                 choices: [
-                  { text: 'Decir que Alex no debería haber preguntado por qué.', correct: false, outcome: ['Alex decide que preguntar por qué fue de mala educación y deja de hacer preguntas.', 'En la próxima cita, Alex acepta las cosas sin entenderlas.', 'Alex se siente incómodo y confundido, y pierde una forma sencilla de saber qué está bien y qué no.'],
+                  { text: 'Decir que Alex no debería haber preguntado por qué.', correct: false, outcome: ['Alex decide que preguntar por qué fue de mala educación y deja de hacer preguntas.', 'En la próxima cita, Alex acepta las cosas sin entenderlas.', 'Cuando una enfermera hace algo que Alex no entiende, Alex no pregunta, así que no puede saber si está bien o no.'],
                     feedback: 'Preguntar por qué siempre es una pregunta justa de hacer.' },
                   { text: 'Decir que preguntar por qué y pedir que Mamá se quedara fue exactamente correcto.', correct: true,
                     feedback: '¡Sí! Preguntar por qué y pedir que Mamá se quedara fue exactamente correcto.' },
@@ -13781,7 +13781,7 @@ const CONTENT = {
                   { speaker: 'Alex', text: 'Un poco extraño, pero bien, ya que lo explicaste y te quedaste conmigo.' },
                 ],
                 choices: [
-                  { text: 'Decir que Alex debería haberse sentido exactamente igual que en un momento de señal de advertencia.', correct: false, outcome: ['Alex decide que este chequeo debería haberse sentido igual que un momento de señal de advertencia.', 'Alex empieza a alarmarse en cada visita al médico, aunque todo se explique.', 'Alex se siente confundido sobre qué es seguro, y la diferencia real se vuelve más difícil de notar.'],
+                  { text: 'Decir que Alex debería haberse sentido exactamente igual que en un momento de señal de advertencia.', correct: false, outcome: ['Alex decide que este chequeo debería haberse sentido igual que un momento de señal de advertencia.', 'Alex empieza a negarse a entrar al consultorio en cada visita, aunque todo se explique.', 'Mamá tiene que cambiar las citas una y otra vez, y Alex trata cada revisión normal como una señal de advertencia.'],
                     feedback: 'Este momento fue explicado y tuvo presente a un adulto de confianza, lo cual lo hace diferente.' },
                   { text: 'Decir que fue diferente porque se explicó y Mamá se quedó.', correct: true,
                     feedback: '¡Sí! Fue diferente porque se explicó y Mamá se quedó.' },
@@ -13795,7 +13795,7 @@ const CONTENT = {
                 ],
                 text: 'Más tarde, Alex siente un pinchazo agudo de una vacuna de rutina que la enfermera no explicó del todo primero. ¿Qué debería hacer Alex?',
                 choices: [
-                  { text: 'Quedarse callado ya que es el consultorio del médico, así que todo se permite.', correct: false, outcome: ['Alex se queda callado sobre el pinchazo, pensando que en el consultorio todo se permite.', 'Alex se va sin saber para qué era la vacuna, y el brazo adolorido le preocupa.', 'Alex empieza a pensar que hablar no importa ahí, lo que podría hacer más difícil decir algo si alguna vez algo se siente realmente mal.'],
+                  { text: 'Quedarse callado ya que es el consultorio del médico, así que todo se permite.', correct: false, outcome: ['Alex se queda callado sobre el pinchazo, pensando que en el consultorio todo se permite.', 'Alex se va sin saber para qué era la vacuna, y nadie le explica por qué le duele el brazo.', 'La próxima vez que algo duele en un chequeo, Alex se vuelve a quedar callado, y el médico nunca se entera.'],
                     feedback: 'Incluso en un chequeo, siempre está bien decir si algo duele o se siente mal — eso es cierto sin importar dónde estés.' },
                   { text: 'Decir “ay, eso dolió” y preguntar para qué era, ya que siempre está bien hablar, incluso durante un chequeo.', correct: true,
                     feedback: '¡Sí! Siempre está bien hablar, incluso durante un chequeo.' },
@@ -13861,7 +13861,7 @@ const CONTENT = {
                   { speaker: 'Alex', text: 'Voy a intentar respirar despacio.' },
                 ],
                 choices: [
-                  { text: 'Decir que Alex debería haber seguido ignorándolo.', correct: false, outcome: ['Alex deja de respirar despacio.', 'Las manos de Alex se aprietan más.', 'El sentimiento grande sigue creciendo.'],
+                  { text: 'Decir que Alex debería haber seguido ignorándolo.', correct: false, outcome: ['Alex deja de respirar despacio.', 'Las manos de Alex se aprietan más.', 'Alex grita y tiene que salir del grupo.'],
                     feedback: 'Ignorar el sentimiento probablemente lo haría crecer más.' },
                   { text: 'Decir que notar el sentimiento e intentar respirar despacio fue inteligente.', correct: true,
                     feedback: '¡Sí! Notar el sentimiento e intentar respirar despacio fue inteligente.' },
@@ -13872,7 +13872,7 @@ const CONTENT = {
               { type: 'decision', illustration: 'classroom-breathing', kicker: 'Una pregunta más',
                 text: 'Si respirar despacio no es suficiente, ¿qué más puede hacer Alex?',
                 choices: [
-                  { text: 'Seguir respirando para siempre y nunca pedir nada más.', correct: false, outcome: ['Alex sigue respirando y respirando.', 'El salón todavía está muy ruidoso.', 'Alex sigue mal, pero no le pide a nadie.'],
+                  { text: 'Seguir respirando para siempre y nunca pedir nada más.', correct: false, outcome: ['Alex sigue respirando y respirando.', 'El salón todavía está muy ruidoso.', 'Alex no le pide a nadie, así que nadie baja el ruido.'],
                     feedback: 'Una estrategia no tiene que ser la única — también está bien pedir más ayuda.' },
                   { text: 'Pedirle a un adulto de confianza un descanso corto en un lugar más tranquilo.', correct: true,
                     feedback: '¡Sí! Pedir un descanso en un lugar más tranquilo es un gran siguiente paso.' },
@@ -13883,7 +13883,7 @@ const CONTENT = {
                   { speaker: 'Maestro', text: 'Claro, tómate el tiempo que necesites.' },
                 ],
                 choices: [
-                  { text: 'Decir que Alex no debería haber pedido un descanso.', correct: false, outcome: ['Alex piensa que pedir fue un error.', 'Otro día, Alex no pide un descanso.', 'El sentimiento sigue grande. Ningún adulto ayuda.'],
+                  { text: 'Decir que Alex no debería haber pedido un descanso.', correct: false, outcome: ['Alex piensa que pedir fue un error.', 'Otro día, Alex no pide un descanso.', 'Alex empieza a llorar. Ningún adulto sabía que Alex necesitaba ayuda.'],
                     feedback: 'Pedir un descanso siempre está bien cuando un sentimiento crece.' },
                   { text: 'Decir que pedir un descanso fue una gran decisión.', correct: true,
                     feedback: '¡Sí! Pedir un descanso fue una gran decisión.' },
@@ -13913,7 +13913,7 @@ const CONTENT = {
               { type: 'decision', illustration: 'party-overwhelm', kicker: '¿Qué debería hacer Alex?',
                 text: 'La sensación apretada y caliente está empezando otra vez. ¿Qué debería hacer Alex?',
                 choices: [
-                  { text: 'Esperar hasta que el sentimiento sea realmente grande antes de hacer algo.', correct: false, outcome: ['Alex espera y sigue jugando en la fiesta ruidosa.', 'Revientan más globos, y la sensación apretada y caliente crece mucho.', 'Ahora el sentimiento es tan grande que calmarse es mucho más difícil.'],
+                  { text: 'Esperar hasta que el sentimiento sea realmente grande antes de hacer algo.', correct: false, outcome: ['Alex espera y sigue jugando en la fiesta ruidosa.', 'Revientan más globos, y la sensación apretada y caliente crece mucho.', 'Alex no puede calmarse, se tapa los oídos y tiene que irse temprano de la fiesta.'],
                     feedback: 'Esperar hasta que un sentimiento sea realmente grande hace que sea mucho más difícil calmarse — usar una estrategia temprano funciona mejor.' },
                   { text: 'Usar una herramienta calmante de inmediato, como apretar una pelota antiestrés o buscar un rincón más tranquilo.', correct: true,
                     feedback: '¡Sí! Usar una herramienta calmante en cuanto notas el sentimiento funciona mucho mejor que esperar.' },
@@ -13924,7 +13924,7 @@ const CONTENT = {
                   { speaker: 'Alex', text: 'Voy a apretar mi pelota antiestrés e ir allá por un segundo.' },
                 ],
                 choices: [
-                  { text: 'Decir que Alex debería haber esperado hasta que el sentimiento fuera mucho más grande.', correct: false, outcome: ['Alex decide que la próxima vez esperará hasta que el sentimiento sea muy grande.', 'En la siguiente fiesta ruidosa, Alex deja la pelota antiestrés en el bolsillo.', 'El sentimiento se vuelve enorme, y a Alex le cuesta mucho más calmarse.'],
+                  { text: 'Decir que Alex debería haber esperado hasta que el sentimiento fuera mucho más grande.', correct: false, outcome: ['Alex decide que la próxima vez esperará hasta que el sentimiento sea muy grande.', 'En la siguiente fiesta ruidosa, Alex deja la pelota antiestrés en el bolsillo.', 'El sentimiento se vuelve enorme, y Alex tiene que irse de la fiesta antes del pastel.'],
                     feedback: 'Esperar haría que el sentimiento fuera mucho más difícil de calmar.' },
                   { text: 'Decir que usar la pelota antiestrés de inmediato fue inteligente.', correct: true,
                     feedback: '¡Sí! Usar la pelota antiestrés de inmediato fue inteligente.' },
@@ -13935,7 +13935,7 @@ const CONTENT = {
               { type: 'decision', illustration: 'party-calmer', kicker: 'Una pregunta más',
                 text: '¿Por qué es útil tener más de una estrategia calmante lista?',
                 choices: [
-                  { text: 'Porque una sola estrategia funciona para absolutamente cualquier sentimiento y cualquier lugar.', correct: false, outcome: ['Alex cree que una sola estrategia funciona para cualquier sentimiento y cualquier lugar.', 'En un autobús ruidoso, Alex se dio cuenta de que dejó la pelota antiestrés en casa.', 'Alex no tiene otra estrategia lista y se siente atrapado con el sentimiento grande.'],
+                  { text: 'Porque una sola estrategia funciona para absolutamente cualquier sentimiento y cualquier lugar.', correct: false, outcome: ['Alex cree que una sola estrategia funciona para cualquier sentimiento y cualquier lugar.', 'En un autobús ruidoso, Alex se dio cuenta de que dejó la pelota antiestrés en casa.', 'Sin otra estrategia lista, Alex llora y patea el asiento todo el camino.'],
                     feedback: 'Diferentes situaciones pueden necesitar diferentes estrategias — por eso es útil tener más de una.' },
                   { text: 'Porque diferentes lugares y sentimientos podrían necesitar diferentes estrategias.', correct: true,
                     feedback: '¡Exacto! Tener algunas opciones listas te ayuda a elegir lo que se ajusta al momento.' },
@@ -13976,7 +13976,7 @@ const CONTENT = {
               { type: 'decision', illustration: 'alarm-surprise', kicker: '¿Qué debería hacer Alex?',
                 text: 'Este sentimiento es más grande de lo que las herramientas usuales pueden manejar. ¿Qué debería hacer Alex?',
                 choices: [
-                  { text: 'Sentirse avergonzado y nunca usar ninguna estrategia otra vez ya que “no funcionó.”', correct: false, outcome: ['Alex se siente avergonzado y decide que las estrategias no sirven porque “no funcionaron.”', 'La próxima vez que empieza un sentimiento grande, Alex no intenta respirar ni buscar un rincón tranquilo.', 'El sentimiento crece sin nada que lo frene, y Alex termina sintiéndose aún más abrumado y solo.'],
+                  { text: 'Sentirse avergonzado y nunca usar ninguna estrategia otra vez ya que “no funcionó.”', correct: false, outcome: ['Alex se siente avergonzado y decide que las estrategias no sirven porque “no funcionaron.”', 'La próxima vez que empieza un sentimiento grande, Alex no intenta respirar ni buscar un rincón tranquilo.', 'Sin nada que lo frene, Alex termina gritando en clase y tiene que salir del salón.'],
                     feedback: 'Un momento difícil no significa que tus estrategias dejaron de funcionar — a veces un sentimiento es simplemente más grande de lo usual, y eso está bien.' },
                   { text: 'Usar el plan de sentimientos grandes de la familia, como ir a un lugar tranquilo acordado de antemano con un adulto de confianza.', correct: true,
                     feedback: '¡Sí! Tener un plan de sentimientos grandes listo para momentos como este es exactamente para lo que sirve.' },
@@ -13987,7 +13987,7 @@ const CONTENT = {
                   { speaker: 'Maestro', text: 'Está bien — vamos al cuarto de calma como dice tu plan.' },
                 ],
                 choices: [
-                  { text: 'Decir que Alex debería sentirse mal porque las estrategias usuales no fueron suficientes esta vez.', correct: false, outcome: ['Alex empieza a sentirse mal porque las estrategias usuales no fueron suficientes.', 'En vez de ir al cuarto de calma, Alex se queda donde está, avergonzado y atrapado.', 'El sentimiento grande y la vergüenza se juntan, y recuperarse se vuelve aún más difícil.'],
+                  { text: 'Decir que Alex debería sentirse mal porque las estrategias usuales no fueron suficientes esta vez.', correct: false, outcome: ['Alex empieza a sentirse mal porque las estrategias usuales no fueron suficientes.', 'En vez de ir al cuarto de calma, Alex se queda en su escritorio con la cabeza agachada.', 'Alex se pierde el resto de la clase y no puede volver a participar hasta la hora del almuerzo.'],
                     feedback: 'Sentirse mal por eso no es necesario — usar el plan de respaldo fue exactamente correcto.' },
                   { text: 'Decir que usar el plan de sentimientos grandes fue exactamente la decisión correcta.', correct: true,
                     feedback: '¡Sí! Usar el plan de sentimientos grandes fue exactamente la decisión correcta.' },
@@ -14009,7 +14009,7 @@ const CONTENT = {
                   { speaker: 'Alex', text: 'Mejor. Todavía me sentí mal de que creciera tanto, pero el cuarto de calma ayudó mucho.' },
                 ],
                 choices: [
-                  { text: 'Decir que Alex debería sentirse mal para siempre por eso.', correct: false, outcome: ['Alex cree que debe sentirse mal para siempre por lo que pasó.', 'Alex sigue pensando en el día de la alarma y se siente avergonzado cada vez.', 'Alex empieza a evitar eventos de la escuela por miedo a que vuelva a pasar, y se pierde cosas divertidas.'],
+                  { text: 'Decir que Alex debería sentirse mal para siempre por eso.', correct: false, outcome: ['Alex cree que debe sentirse mal para siempre por lo que pasó.', 'Alex sigue repasando el día de la alarma en vez de practicar el plan.', 'Alex empieza a faltar a eventos de la escuela, como la asamblea y la excursión, y se pierde cosas divertidas.'],
                     feedback: 'Sentirse mal para siempre no es necesario — el plan ayudó a Alex a recuperarse.' },
                   { text: 'Decir que está bien que haya pasado, y que el plan ayudó a Alex a recuperarse.', correct: true,
                     feedback: '¡Sí! Está bien que haya pasado, y el plan ayudó a Alex a recuperarse.' },
@@ -14023,7 +14023,7 @@ const CONTENT = {
                 ],
                 text: 'Al día siguiente, Alex se preocupa de que lo mismo pueda pasar otra vez. ¿Qué debería recordar Alex?',
                 choices: [
-                  { text: 'No hay nada que hacer más que esperar que nunca vuelva a pasar.', correct: false, outcome: ['Alex decide que lo único que puede hacer es esperar que nunca vuelva a pasar.', 'Alex no habla con nadie sobre eso, y el plan sigue igual.', 'Alex sigue preocupándose por el próximo simulacro de incendio, y se siente igual de poco preparado cuando llega.'],
+                  { text: 'No hay nada que hacer más que esperar que nunca vuelva a pasar.', correct: false, outcome: ['Alex decide que lo único que puede hacer es esperar que nunca vuelva a pasar.', 'Alex no habla con nadie sobre eso, y el plan sigue igual.', 'Cuando llega el próximo simulacro de incendio, el plan sigue igual, y el momento difícil vuelve a pasar.'],
                     feedback: 'Puedes hacer más que solo esperar — hablar de ello con un adulto de confianza y quizás actualizar el plan puede ayudarte a sentirte más preparado.' },
                   { text: 'Hablar con un adulto de confianza sobre lo que pasó, y actualizar el plan de sentimientos grandes si ayudaría.', correct: true,
                     feedback: '¡Sí! Hablar de ello y actualizar el plan puede ayudarte a sentirte más preparado.' },
@@ -14081,9 +14081,9 @@ const CONTENT = {
                 choices: [
                   { text: 'Gritar por un adulto de inmediato.', correct: true,
                     feedback: '¡Sí! Buscar a un adulto rápido es exactamente lo correcto.' },
-                  { text: 'Esperar en silencio para ver si Sam deja de toser solo.', correct: false, outcome: ['Alex se queda callado mirando a Sam.', 'Sam sigue tosiendo. Ningún adulto sabe.', 'Sam se ve asustado, y la ayuda no viene.'],
+                  { text: 'Esperar en silencio para ver si Sam deja de toser solo.', correct: false, outcome: ['Alex se queda callado mirando a Sam.', 'Sam sigue tosiendo. Ningún adulto sabe.', 'Pasa el tiempo, y nadie busca ayuda.'],
                     feedback: 'No solo esperes y observes — avisarle a un adulto de inmediato es más seguro.' },
-                  { text: 'Intentar arreglarlo dándole palmadas muy fuertes en la espalda a Sam.', correct: false, outcome: ['Alex le da palmadas muy fuertes a Sam.', 'Sam se asusta y tose más.', 'Sam está molesto, y todavía ningún adulto ayuda.'],
+                  { text: 'Intentar arreglarlo dándole palmadas muy fuertes en la espalda a Sam.', correct: false, outcome: ['Alex le da palmadas muy fuertes a Sam.', 'Sam se asusta y tose más.', 'Sam se aleja, y todavía ningún adulto ayuda.'],
                     feedback: 'Eso es trabajo de un adulto, no el tuyo — ve a buscar ayuda de inmediato.' },
                 ] },
               { type: 'dialogue', illustration: 'firstaid-alert',
@@ -14094,7 +14094,7 @@ const CONTENT = {
                 choices: [
                   { text: 'Decir que el maestro se encargará ahora, y que Alex ayudó al avisar rápido.', correct: true,
                     feedback: 'Exactamente — avisar rápido es la mayor ayuda que puedes dar.' },
-                  { text: 'Decir que Alex debería haber intentado ayudar más por sí solo.', correct: false, outcome: ['Alex piensa: “Debí ayudar más yo solo.”', 'La próxima vez, Alex intenta arreglarlo solo y no llama a nadie.', 'El adulto llega mucho después. Alex se siente asustado.'],
+                  { text: 'Decir que Alex debería haber intentado ayudar más por sí solo.', correct: false, outcome: ['Alex piensa: “Debí ayudar más yo solo.”', 'La próxima vez, Alex intenta arreglarlo solo y no llama a nadie.', 'Ningún adulto sabe, así que la ayuda llega mucho después.'],
                     feedback: 'Buscar al adulto fue la cantidad correcta de ayuda — eso no es algo para hacer solo.' },
                 ] },
               { type: 'narrative', illustration: 'firstaid-safe', kicker: 'Paso 2',
@@ -14231,7 +14231,7 @@ const CONTENT = {
                 choices: [
                   { text: 'Tu verdadero trabajo es notar, mantener la calma, buscar ayuda rápido (un adulto o el 911), y dar información clara — no realizar primeros auxilios solo.', correct: true,
                     feedback: 'Exactamente correcto — notar, mantener la calma y buscar ayuda rápido es la verdadera habilidad.' },
-                  { text: 'Tu trabajo es encargarte de todo por tu cuenta para que los adultos no tengan que hacerlo.', correct: false, outcome: ['Alex cree que su trabajo es encargarse de las emergencias solo, para que los adultos no tengan que hacerlo.', 'Cuando un amigo se lastima, Alex intenta arreglarlo todo y no llama a nadie.', 'Alex se siente abrumado y asustado, y la ayuda real llega mucho más tarde de lo que pudo llegar.'],
+                  { text: 'Tu trabajo es encargarte de todo por tu cuenta para que los adultos no tengan que hacerlo.', correct: false, outcome: ['Alex cree que su trabajo es encargarse de las emergencias solo, para que los adultos no tengan que hacerlo.', 'Cuando un amigo se lastima, Alex intenta arreglarlo todo y no llama a nadie.', 'Nadie llama a un adulto, así que la ayuda real llega mucho más tarde de lo que pudo llegar.'],
                     feedback: 'Esa no es la meta — buscar ayuda rápido es lo que realmente ayuda.' },
                 ] },
             ],
@@ -14365,7 +14365,7 @@ const CONTENT = {
                 choices: [
                   { text: 'Quedarse cerca, hablar con calma, y dejar que Casey descanse hasta sentirse como siempre.', correct: true,
                     feedback: 'Sí — mantenerte calmado y amable mientras se recupera es exactamente correcto.' },
-                  { text: 'Hacer muchas preguntas de inmediato sobre lo que pasó.', correct: false, outcome: ['Alex le hace muchas preguntas a Casey de inmediato.', 'Casey está cansada y confundida, y no puede responder.', 'Casey se siente molesta y abrumada en lugar de poder descansar.'],
+                  { text: 'Hacer muchas preguntas de inmediato sobre lo que pasó.', correct: false, outcome: ['Alex le hace muchas preguntas a Casey de inmediato.', 'Casey está cansada y confundida, y no puede responder.', 'Casey se voltea y empieza a llorar en lugar de poder descansar.'],
                     feedback: 'Justo después de una convulsión no es momento de muchas preguntas — dale espacio para descansar primero.' },
                 ] },
               { type: 'sequence', illustration: 'seizure-safe', kicker: '¿Qué sigue?',
@@ -14378,7 +14378,7 @@ const CONTENT = {
                 choices: [
                   { text: 'No — es amable tratar a Casey con normalidad y no mencionarlo para avergonzarla.', correct: true,
                     feedback: 'Exactamente correcto — ser amable significa no hacerlo un gran problema ni burlarse.' },
-                  { text: 'Sí, es gracioso y vale la pena hablar de ello.', correct: false, outcome: ['Al día siguiente, Alex hace bromas sobre cuando Casey temblaba.', 'Otros niños se ríen, y Casey los escucha.', 'Casey se siente avergonzada y ya no quiere volver al club.'],
+                  { text: 'Sí, es gracioso y vale la pena hablar de ello.', correct: false, outcome: ['Al día siguiente, Alex hace bromas sobre cuando Casey temblaba.', 'Otros niños se ríen, y Casey los escucha.', 'La semana siguiente, Casey no vuelve al club.'],
                     feedback: 'Eso no es amable — las convulsiones no son algo de qué burlarse.' },
                 ] },
             ],
@@ -14402,7 +14402,7 @@ const CONTENT = {
                     feedback: 'Sí — Quedarse y Seguro son exactamente los primeros dos pasos.' },
                   { text: 'Irse a buscar a un entrenador sin quedarse con Morgan en absoluto.', correct: false, outcome: ['Alex sale corriendo a buscar al entrenador y deja a Morgan solo en el suelo.', 'Mientras Alex no está, nadie aparta el equipo duro que está cerca de Morgan.', 'Nadie se queda con Morgan para mantener el área segura ni para fijarse cuánto dura la convulsión.'],
                     feedback: 'Es más seguro que alguien se quede mientras otra persona busca ayuda — no dejes a la persona completamente sola si puedes evitarlo.' },
-                  { text: 'Intentar detener el temblor sujetando a Morgan.', correct: false, outcome: ['Alex presiona los brazos de Morgan hacia abajo para detener el temblor.', 'El temblor no se detiene — sujetar a alguien no termina una convulsión.', 'Empujar contra el movimiento podría lastimar los brazos u hombros de Morgan, y Alex siente aún más pánico.'],
+                  { text: 'Intentar detener el temblor sujetando a Morgan.', correct: false, outcome: ['Alex presiona los brazos de Morgan hacia abajo para detener el temblor.', 'El temblor no se detiene — sujetar a alguien no termina una convulsión.', 'Empujar contra el movimiento podría lastimar los brazos u hombros de Morgan, y nadie ha empezado a medir el tiempo de la convulsión.'],
                     feedback: 'Nunca sujetes a alguien durante una convulsión — eso puede causar lesiones.' },
                 ] },
               { type: 'dialogue', illustration: 'seizure-alert',
@@ -14506,7 +14506,7 @@ const CONTENT = {
                 choices: [
                   { text: 'Decir que sí, las cuentas reales no se pagan con tarjetas de regalo por teléfono.', correct: true,
                     feedback: 'Exactamente correcto — ese es un engaño común.' },
-                  { text: 'Decir que tal vez era verdad y Alex debería haberlo pagado.', correct: false, outcome: ['Alex cree que la llamada era real.', 'La persona vuelve a llamar al otro día.', 'Alex casi paga. Alex se siente confundido.'],
+                  { text: 'Decir que tal vez era verdad y Alex debería haberlo pagado.', correct: false, outcome: ['Alex cree que la llamada era real.', 'La persona vuelve a llamar al otro día.', 'Alex casi le manda dinero a un tramposo.'],
                     feedback: 'No era verdad — las cuentas reales no se pagan así, y avisarle a un adulto fue correcto.' },
                 ] },
               { type: 'narrative', illustration: 'money-safe', kicker: 'Paso 2',
@@ -14517,7 +14517,7 @@ const CONTENT = {
                 choices: [
                   { text: 'Avisarle a un adulto antes de hacer nada — los premios reales no te piden pagar primero.', correct: true,
                     feedback: 'Sí — ese es un engaño clásico; siempre consulta con un adulto.' },
-                  { text: 'Pagar la pequeña cuota ya que el premio suena grande.', correct: false, outcome: ['Alex paga la pequeña cuota.', 'No llega ningún premio. Piden más dinero.', 'El dinero se pierde. Alex se siente engañado.'],
+                  { text: 'Pagar la pequeña cuota ya que el premio suena grande.', correct: false, outcome: ['Alex paga la pequeña cuota.', 'No llega ningún premio. Piden más dinero.', 'El dinero se perdió. Engañaron a Alex.'],
                     feedback: 'Ese es el engaño — nunca pagues para recibir un “premio”.' },
                 ] },
               { type: 'matching', illustration: 'money-safe', kicker: '¡Empareja!',
@@ -14570,7 +14570,7 @@ const CONTENT = {
                 choices: [
                   { text: 'Pedir que mantengas algo de dinero en secreto de un adulto es en sí mismo una gran señal de alerta.', correct: true,
                     feedback: 'Sí — los pedidos reales y seguros no necesitan mantenerse en secreto de un adulto de confianza.' },
-                  { text: 'Está bien mantenerlo en secreto ya que preguntaron amablemente.', correct: false, outcome: ['Alex guarda el secreto y envía el código de la tarjeta de regalo.', 'La persona dice: “¡Gracias! Ahora envía otro, y no le digas a nadie.”', 'Alex se siente atrapado y preocupado, y ningún adulto sabe lo que está pasando.'],
+                  { text: 'Está bien mantenerlo en secreto ya que preguntaron amablemente.', correct: false, outcome: ['Alex guarda el secreto y envía el código de la tarjeta de regalo.', 'La persona dice: “¡Gracias! Ahora envía otro, y no le digas a nadie.”', 'Alex envía otro código, y ningún adulto sabe lo que está pasando.'],
                     feedback: 'Ese pedido de secreto es exactamente la señal de alerta — avísale a un adulto.' },
                 ] },
               { type: 'sequence', illustration: 'money-safe', kicker: '¿Qué sigue?',
@@ -14605,9 +14605,9 @@ const CONTENT = {
                 choices: [
                   { text: 'Decir que vas a verificar y llamar a ese familiar directamente usando un número que ya tienes, o avisarle a un adulto de confianza de inmediato.', correct: true,
                     feedback: 'Sí — verificar de forma independiente, no a través de quien llama, es exactamente la decisión segura.' },
-                  { text: 'Enviar el dinero rápido ya que suena como una emergencia.', correct: false, outcome: ['Alex envía el dinero de inmediato y no se lo dice a nadie de la familia.', 'Más tarde, Alex descubre que su familiar real estuvo seguro en casa todo el tiempo.', 'El dinero se perdió, no se puede recuperar, y Alex se siente avergonzado y triste.'],
+                  { text: 'Enviar el dinero rápido ya que suena como una emergencia.', correct: false, outcome: ['Alex envía el dinero de inmediato y no se lo dice a nadie de la familia.', 'Más tarde, Alex descubre que su familiar real estuvo seguro en casa todo el tiempo.', 'El dinero se perdió y no se puede recuperar, y Alex tiene que contarle a la familia lo que pasó.'],
                     feedback: 'La urgencia y el secreto son exactamente en lo que confían los estafadores — verifica primero en cambio.' },
-                  { text: 'Hacerle más preguntas a quien llama para decidir si es real.', correct: false, outcome: ['Alex sigue en la llamada y hace preguntas que solo un familiar sabría.', 'La persona responde con calma, adivinando algunos detalles y usando lo que Alex deja escapar sin querer.', 'Ahora Alex está aún más seguro de que es real, y la presión para enviar dinero crece.'],
+                  { text: 'Hacerle más preguntas a quien llama para decidir si es real.', correct: false, outcome: ['Alex sigue en la llamada y hace preguntas que solo un familiar sabría.', 'La persona responde con calma, adivinando algunos detalles y usando lo que Alex deja escapar sin querer.', 'Ahora Alex cree que es real, y la persona insiste más: “Envía el dinero ya.”'],
                     feedback: 'Los estafadores hábiles pueden responder preguntas de forma convincente — la decisión más segura es verificar de forma independiente, no hacer más preguntas a quien llama.' },
                 ] },
               { type: 'dialogue', illustration: 'money-alert',
@@ -14699,9 +14699,9 @@ const CONTENT = {
                 choices: [
                   { text: 'Decir “todavía no estoy listo para eso” — está bien decirlo, aunque Jamie haya preguntado amablemente.', correct: true,
                     feedback: 'Sí — siempre puedes decir todavía no, o no, incluso a alguien que te gusta.' },
-                  { text: 'Seguir la corriente de todas formas para que Jamie no se sienta mal.', correct: false, outcome: ['Alex se toma de las manos igual.', 'Alex siente algo raro en la pancita.', 'Alex se siente mal, y Jamie no lo sabe.'],
+                  { text: 'Seguir la corriente de todas formas para que Jamie no se sienta mal.', correct: false, outcome: ['Alex se toma de las manos igual.', 'Alex siente algo raro en la pancita.', 'Jamie no lo sabe, así que al día siguiente vuelve a tomar la mano de Alex.'],
                     feedback: 'Tu propia comodidad también importa — no tienes que seguir la corriente solo para evitar decepcionar a alguien.' },
-                  { text: 'Evitar a Jamie por completo desde ahora.', correct: false, outcome: ['Alex deja de hablarle a Jamie.', 'Jamie se confunde y se pone triste.', 'Alex extraña a Jamie y se siente solo.'],
+                  { text: 'Evitar a Jamie por completo desde ahora.', correct: false, outcome: ['Alex deja de hablarle a Jamie.', 'Jamie saluda a Alex, pero Alex se va.', 'Ahora Alex y Jamie ya no juegan juntos.'],
                     feedback: 'No tienes que evitar a alguien por completo — puedes simplemente decir cómo te sientes con honestidad.' },
                 ] },
               { type: 'dialogue', illustration: 'dating-alert',
@@ -14712,7 +14712,7 @@ const CONTENT = {
                 choices: [
                   { text: 'Decir que eso es lo que hace un amigo o pareja respetuoso — aceptar tu “todavía no” sin presionar.', correct: true,
                     feedback: 'Exactamente — respetar tu respuesta sin insistir es lo que se ve el respeto.' },
-                  { text: 'Decir que Jamie debería haber seguido preguntando hasta que Alex aceptara.', correct: false, outcome: ['Alex cree que Jamie debería seguir preguntando.', 'Alex sigue preguntándole a un amigo después de que dice que no.', 'El amigo se siente presionado y se va.'],
+                  { text: 'Decir que Jamie debería haber seguido preguntando hasta que Alex aceptara.', correct: false, outcome: ['Alex cree que Jamie debería seguir preguntando.', 'Alex sigue preguntándole a un amigo después de que dice que no.', 'El amigo dice: “¡Dije que no!” y se va a jugar con otra persona.'],
                     feedback: 'Alguien que te respeta acepta tu respuesta la primera vez, sin repetir el pedido para cansarte.' },
                 ] },
               { type: 'narrative', illustration: 'dating-safe', kicker: 'Paso 2',
@@ -14723,7 +14723,7 @@ const CONTENT = {
                 choices: [
                   { text: 'Porque es la elección de Alex cada vez, aunque la respuesta haya sido diferente antes.', correct: true,
                     feedback: 'Sí — tu respuesta de hoy importa, sin importar cuál fue la última vez. Siempre puedes cambiar de opinión.' },
-                  { text: 'Porque Jamie olvidó la respuesta anterior.', correct: false, outcome: ['Alex cree que Jamie solo olvidó.', 'Alex se enoja con Jamie por preguntar otra vez.', 'Jamie se pone triste por ser amable.'],
+                  { text: 'Porque Jamie olvidó la respuesta anterior.', correct: false, outcome: ['Alex cree que Jamie solo olvidó.', 'Alex se enoja con Jamie por preguntar otra vez.', 'Jamie se va, y el juego se acaba.'],
                     feedback: 'Preguntar primero es sobre respeto, no sobre olvidar — verificar cada vez es exactamente correcto.' },
                 ] },
               { type: 'matching', illustration: 'dating-safe', kicker: '¡Empareja!',
@@ -14752,9 +14752,9 @@ const CONTENT = {
                 choices: [
                   { text: 'Eso es una táctica de presión, no una señal de cariño real — una relación sana no te pide renunciar a tus otras amistades.', correct: true,
                     feedback: 'Sí — exactamente. Querer aislarte de tus amigos es una señal de alerta, no de cariño.' },
-                  { text: 'Riley debe tener razón, ya que querer a alguien significa demostrarlo renunciando a cosas.', correct: false, outcome: ['Alex deja de pasar tiempo con otros amigos para demostrarle cariño a Riley.', 'Los amigos de Alex dejan de invitarlo a comer y a jugar.', 'Ahora Alex solo tiene a Riley para hablar y se siente excluido.'],
+                  { text: 'Riley debe tener razón, ya que querer a alguien significa demostrarlo renunciando a cosas.', correct: false, outcome: ['Alex deja de pasar tiempo con otros amigos para demostrarle cariño a Riley.', 'Los amigos de Alex dejan de invitarlo a comer y a jugar.', 'En el almuerzo, la mesa de los amigos está llena, y Alex solo puede sentarse con Riley.'],
                     feedback: 'En realidad esa es una táctica de presión común — el cariño real no requiere renunciar a tus otras amistades.' },
-                  { text: 'Ignorarlo, pero dejar todo exactamente igual de todas formas.', correct: false, outcome: ['Alex ignora lo que dijo Riley y no le cuenta a nadie.', 'Riley lo vuelve a decir, y Alex empieza a faltar a planes con sus amigos.', 'Alex se siente confundido y atrapado, y ningún adulto de confianza lo sabe.'],
+                  { text: 'Ignorarlo, pero dejar todo exactamente igual de todas formas.', correct: false, outcome: ['Alex ignora lo que dijo Riley y no le cuenta a nadie.', 'Riley lo vuelve a decir, y Alex empieza a faltar a planes con sus amigos.', 'Pronto Alex falta a la fiesta de cumpleaños de un amigo, y ningún adulto de confianza sabe por qué.'],
                     feedback: 'Vale la pena notar esto de verdad como una señal de alerta, no solo ignorarlo — considera hablar con un amigo o adulto de confianza al respecto.' },
                 ] },
               { type: 'dialogue', illustration: 'dating-alert',
@@ -14777,7 +14777,7 @@ const CONTENT = {
                 choices: [
                   { text: 'Respetando las otras amistades de Alex, aunque eso signifique no conseguir todo lo que pidió al principio.', correct: true,
                     feedback: 'Sí — el respeto significa aceptar los límites, no conseguir lo que quieres sin importar qué.' },
-                  { text: 'Estando molesto hasta que Alex ceda.', correct: false, outcome: ['Alex cree que es normal que Riley siga molesto.', 'Riley sigue molesto, así que Alex cede y deja de ver a sus amigos.', 'Alex se siente triste y presionado, y Riley sigue molestándose para salirse con la suya.'],
+                  { text: 'Estando molesto hasta que Alex ceda.', correct: false, outcome: ['Alex cree que es normal que Riley siga molesto.', 'Riley sigue molesto, así que Alex cede y deja de ver a sus amigos.', 'La semana siguiente, Riley vuelve a molestarse, y Alex cancela otro plan con sus amigos.'],
                     feedback: 'Seguir molesto hasta que cedas es más presión, no respeto.' },
                 ] },
               { type: 'sequence', illustration: 'dating-safe', kicker: '¿Qué sigue?',
@@ -14812,9 +14812,9 @@ const CONTENT = {
                 choices: [
                   { text: 'Este es un patrón de control, no cercanía normal — las relaciones sanas no requieren vigilancia constante ni respuestas instantáneas.', correct: true,
                     feedback: 'Sí — la vigilancia constante y el control sobre tu tiempo son señales de alerta de una dinámica poco sana.' },
-                  { text: 'Esto es solo cómo se ve querer mucho a alguien.', correct: false, outcome: ['Alex decide que revisar su ubicación todo el tiempo solo significa que la pareja lo quiere mucho.', 'La pareja empieza a pedir más reportes y a molestarse más seguido.', 'Alex se siente vigilado todo el tiempo y se pone nervioso cada vez que vibra el teléfono.'],
+                  { text: 'Esto es solo cómo se ve querer mucho a alguien.', correct: false, outcome: ['Alex decide que revisar su ubicación todo el tiempo solo significa que la pareja lo quiere mucho.', 'La pareja empieza a pedir más reportes y a molestarse más seguido.', 'Pronto Alex tiene que mandar su ubicación cada hora, y recibe un mensaje enojado cada vez que se atrasa.'],
                     feedback: 'La vigilancia constante es un patrón de control, no una señal sana de cariño.' },
-                  { text: 'Está bien mientras Alex siempre responda lo bastante rápido para evitar molestias.', correct: false, outcome: ['Alex empieza a responder cada mensaje en segundos para que la pareja no se moleste.', 'Alex revisa el teléfono en clase, en la comida y cuando está con amigos.', 'Alex está cansado y estresado, y las reglas de la pareja siguen creciendo de todas formas.'],
+                  { text: 'Está bien mientras Alex siempre responda lo bastante rápido para evitar molestias.', correct: false, outcome: ['Alex empieza a responder cada mensaje en segundos para que la pareja no se moleste.', 'Alex revisa el teléfono en clase, en la comida y cuando está con amigos.', 'A Alex lo regañan por usar el teléfono en clase, y la pareja agrega reglas nuevas de todas formas.'],
                     feedback: 'Cambiar tu propio comportamiento para manejar el control de otra persona no es la meta — reconocer el patrón es lo que importa aquí.' },
                 ] },
               { type: 'dialogue', illustration: 'dating-alert',
@@ -14837,7 +14837,7 @@ const CONTENT = {
                 choices: [
                   { text: 'Porque tener un plan listo significa que Alex puede conseguir ayuda rápido y sin una explicación larga, si alguna vez la necesita.', correct: true,
                     feedback: 'Sí — un plan de seguridad es útil precisamente porque está listo antes de necesitarlo.' },
-                  { text: 'No es útil a menos que algo ya haya salido mal.', correct: false, outcome: ['Alex decide que no necesita una palabra clave porque todavía no ha pasado nada malo.', 'Una noche en una fiesta, Alex se siente incómodo y quiere irse sin llamar la atención.', 'Sin un plan listo, Alex tiene que explicar todo en voz alta o quedarse sintiéndose atrapado.'],
+                  { text: 'No es útil a menos que algo ya haya salido mal.', correct: false, outcome: ['Alex decide que no necesita una palabra clave porque todavía no ha pasado nada malo.', 'Una noche en una fiesta, Alex se siente incómodo y quiere irse sin llamar la atención.', 'Sin una palabra clave para mandar a casa, Alex no puede irse sin llamar la atención y se queda hasta que termina la fiesta.'],
                     feedback: 'Un plan de seguridad es más útil cuando se prepara con anticipación, antes de que pase algo.' },
                 ] },
               { type: 'sequence', illustration: 'dating-safe', kicker: '¿Qué sigue?',
@@ -14850,7 +14850,7 @@ const CONTENT = {
                 choices: [
                   { text: 'Siempre puedes cambiar de opinión, pedir ayuda, o dejar una situación — nunca necesitas una razón “suficientemente buena”, y los adultos de confianza están ahí para ayudar.', correct: true,
                     feedback: 'Exactamente correcto — nunca necesitas justificar querer sentirte seguro, y siempre hay ayuda disponible.' },
-                  { text: 'Hay que tener una razón muy seria antes de que esté bien pedir ayuda o irse.', correct: false, outcome: ['Alex cree que necesita una razón muy seria antes de pedir ayuda o irse.', 'En una cita, algo no se siente bien, pero Alex se queda porque no parece suficientemente serio.', 'Alex se siente cada vez más incómodo y solo, y ningún adulto de confianza lo sabe.'],
+                  { text: 'Hay que tener una razón muy seria antes de que esté bien pedir ayuda o irse.', correct: false, outcome: ['Alex cree que necesita una razón muy seria antes de pedir ayuda o irse.', 'En una cita, algo no se siente bien, pero Alex se queda porque no parece suficientemente serio.', 'Alex se queda en la cita por horas, y ningún adulto de confianza sabe dónde está ni que algo andaba mal.'],
                     feedback: 'Eso no es cierto — siempre puedes pedir ayuda o dejar una situación, por cualquier razón, incluyendo solo un presentimiento de que algo está mal.' },
                 ] },
             ],

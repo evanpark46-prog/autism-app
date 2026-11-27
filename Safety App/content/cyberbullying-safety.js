@@ -29,7 +29,7 @@
                   "outcome": [
                     "Alex types a meaner message back.",
                     "The player gets mad and sends more mean words.",
-                    "Now Alex feels even worse."
+                    "Now there are even more mean messages on the screen."
                   ],
                   "feedback": "Sending something mean back usually makes things worse — it’s better to show a grown-up instead."
                 },
@@ -60,7 +60,7 @@
                   "outcome": [
                     "Alex sends a meaner message next time.",
                     "The mean player sends even more mean messages.",
-                    "No grown-up knows. Alex feels upset and alone."
+                    "No grown-up knows, so nobody can help make it stop."
                   ],
                   "feedback": "Sending something mean back usually makes the situation worse."
                 },
@@ -95,7 +95,7 @@
                   "outcome": [
                     "Alex thinks online meanness doesn’t count.",
                     "Alex types something mean to another player.",
-                    "That player feels sad, just like Alex did."
+                    "That player stops playing and leaves the game."
                   ],
                   "feedback": "That’s not true — online meanness is just as real and hurtful as in-person meanness."
                 }
@@ -121,7 +121,7 @@
                   "outcome": [
                     "Alex thinks online meanness doesn’t matter.",
                     "Alex keeps reading mean messages and tells no one.",
-                    "Alex still feels hurt inside, but no grown-up knows."
+                    "The mean messages keep coming, and no grown-up knows."
                   ],
                   "feedback": "That’s not true — it hurts just as much as in-person meanness."
                 },
@@ -198,7 +198,7 @@
                   "outcome": [
                     "Alex starts arguing with everyone in the group chat.",
                     "More classmates join in and the mean comments get worse.",
-                    "Alex feels more upset, and the pile-on keeps growing."
+                    "Classmates screenshot Alex’s angry replies, and the pile-on keeps growing."
                   ],
                   "feedback": "Arguing back in the moment often makes a pile-on worse — it’s more effective to step away and get a trusted adult involved."
                 }
@@ -224,7 +224,7 @@
                   "outcome": [
                     "Alex goes back into the chat to argue with everyone.",
                     "The classmates make even more jokes about Alex’s replies.",
-                    "Now there are more mean messages, and Alex feels worse."
+                    "Now there are more mean messages, and Alex’s replies get shared around."
                   ],
                   "feedback": "Arguing back usually makes a pile-on worse — leaving and telling a trusted adult was right."
                 },
@@ -449,7 +449,7 @@
                   "outcome": [
                     "Alex decides the platform report fixed everything and doesn’t tell the school.",
                     "At school, classmates still talk about the fake posts they saw.",
-                    "Alex feels embarrassed, and no teacher knows why the teasing is happening."
+                    "The teasing goes on for days, and no teacher knows why it’s happening."
                   ],
                   "feedback": "It doesn’t undo classmates already having seen it — the school still needed to be involved."
                 },
@@ -630,7 +630,7 @@
                   "outcome": [
                     "Alex escribe un mensaje más cruel.",
                     "El jugador se enoja y envía más palabras crueles.",
-                    "Ahora Alex se siente peor."
+                    "Ahora hay todavía más mensajes crueles en la pantalla."
                   ],
                   "feedback": "Enviar algo cruel de vuelta usualmente empeora las cosas — es mejor mostrarle a un adulto en su lugar."
                 },
@@ -661,7 +661,7 @@
                   "outcome": [
                     "Alex envía un mensaje más cruel la próxima vez.",
                     "El jugador cruel envía todavía más mensajes crueles.",
-                    "Ningún adulto sabe. Alex se siente triste y solo."
+                    "Ningún adulto sabe, así que nadie puede ayudar a pararlo."
                   ],
                   "feedback": "Enviar algo cruel de vuelta usualmente empeora la situación."
                 },
@@ -696,7 +696,7 @@
                   "outcome": [
                     "Alex cree que la crueldad en línea no cuenta.",
                     "Alex le escribe algo cruel a otro jugador.",
-                    "Ese jugador se siente triste, igual que Alex."
+                    "Ese jugador deja de jugar y se va del juego."
                   ],
                   "feedback": "Eso no es cierto — la crueldad en línea es tan real y dolorosa como la crueldad en persona."
                 }
@@ -722,7 +722,7 @@
                   "outcome": [
                     "Alex cree que la crueldad en línea no importa.",
                     "Alex sigue leyendo mensajes crueles y no le dice a nadie.",
-                    "Alex sigue sintiéndose mal, y ningún adulto lo sabe."
+                    "Los mensajes crueles siguen llegando, y ningún adulto lo sabe."
                   ],
                   "feedback": "Eso no es cierto — lastima igual que la crueldad en persona."
                 },
@@ -799,7 +799,7 @@
                   "outcome": [
                     "Alex empieza a discutir con todos en el chat de grupo.",
                     "Más compañeros se unen y los comentarios crueles empeoran.",
-                    "Alex se siente más triste, y la avalancha de comentarios sigue creciendo."
+                    "Los compañeros toman capturas de las respuestas enojadas de Alex, y la avalancha de comentarios sigue creciendo."
                   ],
                   "feedback": "Discutir en el momento a menudo empeora una avalancha de comentarios — es más efectivo alejarse e involucrar a un adulto de confianza."
                 }
@@ -825,7 +825,7 @@
                   "outcome": [
                     "Alex regresa al chat para discutir con todos.",
                     "Los compañeros hacen todavía más bromas sobre las respuestas de Alex.",
-                    "Ahora hay más mensajes crueles, y Alex se siente peor."
+                    "Ahora hay más mensajes crueles, y las respuestas de Alex se comparten por todos lados."
                   ],
                   "feedback": "Discutir de vuelta usualmente empeora una avalancha de comentarios — salir y contarle a un adulto de confianza fue lo correcto."
                 },
@@ -1050,7 +1050,7 @@
                   "outcome": [
                     "Alex decide que el reporte a la plataforma arregló todo y no le cuenta a la escuela.",
                     "En la escuela, los compañeros siguen hablando de las publicaciones falsas que vieron.",
-                    "Alex siente vergüenza, y ningún maestro sabe por qué siguen las burlas."
+                    "Las burlas siguen por días, y ningún maestro sabe por qué está pasando."
                   ],
                   "feedback": "No deshace que los compañeros ya la hayan visto — la escuela todavía necesitaba involucrarse."
                 },

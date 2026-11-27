@@ -29,7 +29,7 @@
                   "outcome": [
                     "Alex opens the door.",
                     "The person steps closer and asks questions.",
-                    "No grown-up is there. Alex feels unsure and scared."
+                    "No grown-up knows the door is open."
                   ],
                   "feedback": "Opening the door to someone unfamiliar isn’t safe — it’s better to not open it and get a grown-up."
                 },
@@ -248,7 +248,7 @@
                   "outcome": [
                     "Alex believes kids should never be in the kitchen at all.",
                     "Alex won’t even go in to get a glass of water or help set the table.",
-                    "Alex feels stressed and left out, and still doesn’t understand what makes the stove risky."
+                    "Alex misses helping with dinner, and still doesn’t learn what makes the stove risky."
                   ],
                   "feedback": "That’s too strict — the point is checking in about specific risky tasks like the stove, not avoiding the kitchen altogether."
                 }
@@ -411,8 +411,8 @@
                   "correct": false,
                   "outcome": [
                     "Alex believes every tiny fire needs firefighters to come out in person.",
-                    "Alex feels panicked and embarrassed after even a small flare-up that was handled quickly.",
-                    "Worried about making a big fuss, Alex starts to hesitate about calling or telling anyone at all."
+                    "After a tiny flare-up is put out in seconds, Alex panics and insists the fire trucks must come.",
+                    "Next time something small happens, Alex stays quiet instead of telling anyone, so no grown-up checks it."
                   ],
                   "feedback": "Not every situation requires firefighters in person, but calling to report it is always a reasonable, safe choice."
                 },
@@ -442,8 +442,8 @@
                   "correct": false,
                   "outcome": [
                     "Alex tells the parent that every fire needs firefighters in person.",
-                    "Alex starts to feel like even a quick call means something huge went wrong.",
-                    "Next time, Alex feels too nervous to call at all, worried it will turn into a big scene."
+                    "Alex starts treating even a quick call as a sign that something huge went wrong.",
+                    "Next time a small fire starts, Alex doesn’t call or tell anyone, so no help is on the way."
                   ],
                   "feedback": "Not every fire needs firefighters in person — but calling to report it is always reasonable."
                 },
@@ -472,7 +472,7 @@
                   "outcome": [
                     "Alex believes water makes every type of fire worse.",
                     "On a camping trip, Alex panics when the grown-ups use water to put out the campfire.",
-                    "Alex feels confused and scared, and can’t tell which fires are truly risky."
+                    "Alex argues with the grown-ups instead of helping, and never learns which fires water is safe for."
                   ],
                   "feedback": "Not every fire, but specific types like grease fires — that’s exactly why it’s risky to guess."
                 }
@@ -577,7 +577,7 @@
                   "outcome": [
                     "Alex abre la puerta.",
                     "La persona se acerca y hace preguntas.",
-                    "No hay ningún adulto. Alex se siente inseguro y asustado."
+                    "Ningún adulto sabe que la puerta está abierta."
                   ],
                   "feedback": "Abrirle la puerta a alguien desconocido no es seguro — es mejor no abrirla y buscar a un adulto."
                 },
@@ -796,7 +796,7 @@
                   "outcome": [
                     "Alex cree que los niños nunca deberían estar en la cocina.",
                     "Alex ni siquiera entra a buscar un vaso de agua o a ayudar a poner la mesa.",
-                    "Alex se siente estresado y excluido, y todavía no entiende qué hace riesgosa a la estufa."
+                    "Alex se pierde ayudar con la cena, y todavía no aprende qué hace riesgosa a la estufa."
                   ],
                   "feedback": "Eso es demasiado estricto — el punto es consultar sobre tareas riesgosas específicas como la estufa, no evitar la cocina por completo."
                 }
@@ -959,8 +959,8 @@
                   "correct": false,
                   "outcome": [
                     "Alex cree que cada pequeño incendio necesita que vengan bomberos en persona.",
-                    "Alex se siente asustado y avergonzado incluso después de un fuego pequeño que se apagó rápido.",
-                    "Preocupado por armar un gran escándalo, Alex empieza a dudar si llamar o contarle a alguien."
+                    "Después de que un fueguito se apaga en segundos, Alex entra en pánico e insiste en que vengan los camiones de bomberos.",
+                    "La próxima vez que pasa algo pequeño, Alex se queda callado en vez de contarle a alguien, y ningún adulto lo revisa."
                   ],
                   "feedback": "No toda situación requiere bomberos en persona, pero llamar para reportarlo siempre es una opción razonable y segura."
                 },
@@ -990,8 +990,8 @@
                   "correct": false,
                   "outcome": [
                     "Alex le dice a su padre que cada incendio necesita bomberos en persona.",
-                    "Alex empieza a sentir que hasta una llamada rápida significa que algo enorme salió mal.",
-                    "La próxima vez, Alex se siente demasiado nervioso para llamar, preocupado de que se vuelva un gran escándalo."
+                    "Alex empieza a pensar que hasta una llamada rápida significa que algo enorme salió mal.",
+                    "La próxima vez que empieza un fuego pequeño, Alex no llama ni le cuenta a nadie, así que nadie viene a ayudar."
                   ],
                   "feedback": "No todo incendio necesita bomberos en persona — pero llamar para reportarlo siempre es razonable."
                 },
@@ -1020,7 +1020,7 @@
                   "outcome": [
                     "Alex cree que el agua empeora cada tipo de incendio.",
                     "En un campamento, Alex se asusta cuando los adultos usan agua para apagar la fogata.",
-                    "Alex se siente confundido y asustado, y no puede distinguir qué incendios son realmente riesgosos."
+                    "Alex discute con los adultos en vez de ayudar, y nunca aprende en qué incendios sí se puede usar agua."
                   ],
                   "feedback": "No todo incendio, pero tipos específicos como los de grasa — por eso adivinar es riesgoso."
                 }

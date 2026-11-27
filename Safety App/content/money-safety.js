@@ -75,7 +75,7 @@
                   "outcome": [
                     "Alex thinks the call was real.",
                     "The caller calls back the next day.",
-                    "Alex almost pays. Alex feels confused."
+                    "Alex almost sends money to a trickster."
                   ],
                   "feedback": "It wasn’t true — real bills aren’t paid that way, and telling a grown-up was correct."
                 }
@@ -105,7 +105,7 @@
                   "outcome": [
                     "Alex pays the small fee.",
                     "No prize comes. They ask for more money.",
-                    "The money is gone. Alex feels tricked."
+                    "The money is gone. Alex was tricked."
                   ],
                   "feedback": "That’s the trick — never pay to get a “prize.”"
                 }
@@ -237,7 +237,7 @@
                   "outcome": [
                     "Alex keeps the message a secret and sends the gift card code.",
                     "The person says, “Thanks! Now send another one, and don’t tell.”",
-                    "Alex feels stuck and worried, and no grown-up knows what is happening."
+                    "Alex sends another code, and no grown-up knows what is happening."
                   ],
                   "feedback": "That secrecy request is exactly the warning sign — tell a grown-up."
                 }
@@ -306,7 +306,7 @@
                   "outcome": [
                     "Alex sends the money right away and doesn’t tell anyone in the family.",
                     "Later, Alex finds out the real relative was safe at home the whole time.",
-                    "The money is gone, it can’t be gotten back, and Alex feels embarrassed and upset."
+                    "The money is gone and can’t be gotten back, and Alex has to tell the family what happened."
                   ],
                   "feedback": "Urgency and secrecy are exactly what scammers rely on — verify first instead."
                 },
@@ -316,7 +316,7 @@
                   "outcome": [
                     "Alex keeps the caller on the line and asks questions only a relative should know.",
                     "The caller answers smoothly, guessing some details and using what Alex accidentally gives away.",
-                    "Now Alex feels even more sure it’s real, and the pressure to send money gets stronger."
+                    "Now Alex believes it’s real, and the caller pushes harder: “Send the money now.”"
                   ],
                   "feedback": "Skilled scammers can answer questions convincingly — the safer move is independent verification, not more questions to the caller."
                 }
@@ -557,7 +557,7 @@
                   "outcome": [
                     "Alex cree que la llamada era real.",
                     "La persona vuelve a llamar al otro día.",
-                    "Alex casi paga. Alex se siente confundido."
+                    "Alex casi le manda dinero a un tramposo."
                   ],
                   "feedback": "No era verdad — las cuentas reales no se pagan así, y avisarle a un adulto fue correcto."
                 }
@@ -587,7 +587,7 @@
                   "outcome": [
                     "Alex paga la pequeña cuota.",
                     "No llega ningún premio. Piden más dinero.",
-                    "El dinero se pierde. Alex se siente engañado."
+                    "El dinero se perdió. Engañaron a Alex."
                   ],
                   "feedback": "Ese es el engaño — nunca pagues para recibir un “premio”."
                 }
@@ -719,7 +719,7 @@
                   "outcome": [
                     "Alex guarda el secreto y envía el código de la tarjeta de regalo.",
                     "La persona dice: “¡Gracias! Ahora envía otro, y no le digas a nadie.”",
-                    "Alex se siente atrapado y preocupado, y ningún adulto sabe lo que está pasando."
+                    "Alex envía otro código, y ningún adulto sabe lo que está pasando."
                   ],
                   "feedback": "Ese pedido de secreto es exactamente la señal de alerta — avísale a un adulto."
                 }
@@ -788,7 +788,7 @@
                   "outcome": [
                     "Alex envía el dinero de inmediato y no se lo dice a nadie de la familia.",
                     "Más tarde, Alex descubre que su familiar real estuvo seguro en casa todo el tiempo.",
-                    "El dinero se perdió, no se puede recuperar, y Alex se siente avergonzado y triste."
+                    "El dinero se perdió y no se puede recuperar, y Alex tiene que contarle a la familia lo que pasó."
                   ],
                   "feedback": "La urgencia y el secreto son exactamente en lo que confían los estafadores — verifica primero en cambio."
                 },
@@ -798,7 +798,7 @@
                   "outcome": [
                     "Alex sigue en la llamada y hace preguntas que solo un familiar sabría.",
                     "La persona responde con calma, adivinando algunos detalles y usando lo que Alex deja escapar sin querer.",
-                    "Ahora Alex está aún más seguro de que es real, y la presión para enviar dinero crece."
+                    "Ahora Alex cree que es real, y la persona insiste más: “Envía el dinero ya.”"
                   ],
                   "feedback": "Los estafadores hábiles pueden responder preguntas de forma convincente — la decisión más segura es verificar de forma independiente, no hacer más preguntas a quien llama."
                 }

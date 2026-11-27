@@ -29,7 +29,7 @@
                   "outcome": [
                     "Alex just stands and watches.",
                     "The kid keeps crying on the ground.",
-                    "No grown-up comes. The kid feels alone."
+                    "No grown-up comes, so nobody cleans the scrape."
                   ],
                   "feedback": "Just watching doesn’t help the kid who fell — checking on them or getting a grown-up does."
                 },
@@ -60,7 +60,7 @@
                   "outcome": [
                     "Alex watches like everyone else.",
                     "Nobody goes to get a grown-up.",
-                    "The kid’s scrape gets no help. The kid feels sad."
+                    "The kid’s scrape stays dirty. Nobody brings a bandage."
                   ],
                   "feedback": "Just watching wouldn’t have helped the kid who fell."
                 },
@@ -121,7 +121,7 @@
                   "outcome": [
                     "Alex thinks small help doesn’t matter.",
                     "Next time, Alex doesn’t get a grown-up.",
-                    "The hurt kid waits alone and feels sad."
+                    "The hurt kid waits a long time. No one brings help."
                   ],
                   "feedback": "It actually does matter — small actions make a real difference."
                 },
@@ -183,7 +183,7 @@
                   "outcome": [
                     "Alex assumes someone else will invite the new student.",
                     "Day after day, nobody does, and the new student keeps eating alone.",
-                    "The new student starts to feel like nobody at school wants them there."
+                    "By Friday, the new student stops coming to the lunch table and eats alone in the library instead."
                   ],
                   "feedback": "Assuming someone else will do it often means no one actually does — a small action from you could make a real difference."
                 },
@@ -214,7 +214,7 @@
                   "outcome": [
                     "Alex decides someone else will probably invite the new student.",
                     "Everyone else thinks the same thing, so nobody says anything.",
-                    "The new student keeps sitting alone and feels lonelier every day."
+                    "The new student sits alone every day, and nobody finds out they love the same games Alex does."
                   ],
                   "feedback": "Assuming that often means nobody actually does it — inviting them was better."
                 },
@@ -249,7 +249,7 @@
                   "outcome": [
                     "Alex believes you only help when someone is being clearly mean.",
                     "Alex sees the new student alone but walks past, since nobody is being mean.",
-                    "The new student stays lonely, and a friendship that could have started never does."
+                    "The new student eats lunch alone again, and a friendship that could have started never does."
                   ],
                   "feedback": "That’s too narrow — noticing someone left out, even without meanness, is also a good reason to step in and help."
                 }
@@ -275,7 +275,7 @@
                   "outcome": [
                     "Alex decides helping only matters when someone is being mean.",
                     "Next time Alex sees a kid alone on the bench at recess, Alex keeps walking.",
-                    "That kid spends recess alone again, feeling invisible."
+                    "That kid spends recess alone again, sitting on the bench until the bell rings."
                   ],
                   "feedback": "That’s too narrow — noticing someone left out is reason enough."
                 },
@@ -337,7 +337,7 @@
                   "outcome": [
                     "Alex joins in and cheers the classmate on with the group.",
                     "The pressure gets stronger, and the classmate goes along with it even though they don’t want to.",
-                    "The classmate ends up in trouble and feels let down, and Alex feels uneasy about being part of it."
+                    "The classmate ends up in trouble with a teacher, and afterward won’t sit with Alex or the group."
                   ],
                   "feedback": "Joining in adds to the pressure the classmate is already feeling — stepping back or offering support helps more."
                 },
@@ -352,7 +352,7 @@
                   "outcome": [
                     "Alex stays quiet and watches, like everyone else.",
                     "With nobody offering another option, the classmate gives in to the group.",
-                    "The classmate gets in trouble and feels completely alone, and Alex leaves with a heavy, uneasy feeling."
+                    "The classmate gets in trouble with a teacher, and later tells Alex, “Nobody even tried to help me.”"
                   ],
                   "feedback": "Watching without acting is exactly the “bystander effect” — a small action, even a quiet one, can genuinely change what happens next."
                 }
@@ -378,7 +378,7 @@
                   "outcome": [
                     "Alex skips offering an alternative and joins the group instead.",
                     "The classmate looks at Alex, sees one more person pushing, and gives in.",
-                    "The classmate ends up in trouble and stops trusting Alex, and Alex feels bad about it."
+                    "The classmate ends up in trouble, stops trusting Alex, and starts sitting at a different lunch table."
                   ],
                   "feedback": "Joining in would have added to the pressure — offering an alternative was better."
                 },
@@ -439,7 +439,7 @@
                   "outcome": [
                     "Alex tells the adult that only one person is ever allowed to help.",
                     "Next time someone needs help in a group, Alex waits for “the one person” to act.",
-                    "Everyone waits, nobody acts, and Alex feels frozen and confused."
+                    "Everyone waits, nobody acts, and the person who needs help is still on their own when the group walks away."
                   ],
                   "feedback": "That’s not what it means — anyone can choose to act, regardless of others."
                 },
@@ -468,7 +468,7 @@
                   "outcome": [
                     "Alex agrees that if everyone is watching, it’s not Alex’s place to act.",
                     "Next time a classmate is being pressured, Alex stays frozen with the crowd.",
-                    "Nobody steps in, the classmate gets pushed into trouble, and Alex feels uneasy for days."
+                    "Nobody steps in, the classmate gets pushed into trouble, and the next week the same group pressures someone else."
                   ],
                   "feedback": "That’s exactly the bystander effect — everyone assuming it’s not their place is why nobody acts."
                 },
@@ -578,7 +578,7 @@
                   "outcome": [
                     "Alex solo se queda mirando.",
                     "El niño sigue llorando en el suelo.",
-                    "Ningún adulto viene. El niño se siente solo."
+                    "Ningún adulto viene, así que nadie limpia el raspón."
                   ],
                   "feedback": "Solo mirar no ayuda al niño que se cayó — revisar cómo está o buscar a un adulto sí ayuda."
                 },
@@ -609,7 +609,7 @@
                   "outcome": [
                     "Alex mira como todos los demás.",
                     "Nadie va a buscar a un adulto.",
-                    "Nadie ayuda con el raspón. El niño se siente triste."
+                    "El raspón del niño sigue sucio. Nadie trae una curita."
                   ],
                   "feedback": "Solo mirar no habría ayudado al niño que se cayó."
                 },
@@ -670,7 +670,7 @@
                   "outcome": [
                     "Alex cree que ayudar un poco no importa.",
                     "La próxima vez, Alex no busca a un adulto.",
-                    "El niño lastimado espera solo y se siente triste."
+                    "El niño lastimado espera mucho tiempo. Nadie trae ayuda."
                   ],
                   "feedback": "En realidad sí importa — las pequeñas acciones hacen una diferencia real."
                 },
@@ -732,7 +732,7 @@
                   "outcome": [
                     "Alex supone que alguien más invitará al estudiante nuevo.",
                     "Día tras día, nadie lo hace, y el estudiante nuevo sigue almorzando solo.",
-                    "El estudiante nuevo empieza a sentir que nadie en la escuela lo quiere ahí."
+                    "Para el viernes, el estudiante nuevo deja de ir al comedor y almuerza solo en la biblioteca."
                   ],
                   "feedback": "Suponer que alguien más lo hará a menudo significa que nadie realmente lo hace — una pequeña acción tuya podría hacer una diferencia real."
                 },
@@ -763,7 +763,7 @@
                   "outcome": [
                     "Alex decide que probablemente alguien más invitará al estudiante nuevo.",
                     "Todos los demás piensan lo mismo, así que nadie dice nada.",
-                    "El estudiante nuevo sigue sentándose solo y se siente más solo cada día."
+                    "El estudiante nuevo se sienta solo todos los días, y nadie descubre que le gustan los mismos juegos que a Alex."
                   ],
                   "feedback": "Suponer eso a menudo significa que nadie lo hace — invitarlo fue mejor."
                 },
@@ -798,7 +798,7 @@
                   "outcome": [
                     "Alex cree que solo hay que ayudar cuando alguien está siendo claramente cruel.",
                     "Alex ve al estudiante nuevo solo pero sigue de largo, porque nadie está siendo cruel.",
-                    "El estudiante nuevo sigue solo, y una amistad que podría haber empezado nunca empieza."
+                    "El estudiante nuevo almuerza solo otra vez, y una amistad que podría haber empezado nunca empieza."
                   ],
                   "feedback": "Eso es demasiado limitado — notar a alguien excluido, aunque no haya crueldad, también es una buena razón para intervenir y ayudar."
                 }
@@ -824,7 +824,7 @@
                   "outcome": [
                     "Alex decide que ayudar solo importa cuando alguien está siendo cruel.",
                     "La próxima vez que Alex ve a un niño solo en una banca en el recreo, sigue caminando.",
-                    "Ese niño pasa el recreo solo otra vez, sintiéndose invisible."
+                    "Ese niño pasa el recreo solo otra vez, sentado en la banca hasta que suena el timbre."
                   ],
                   "feedback": "Eso es demasiado limitado — notar a alguien excluido ya es razón suficiente."
                 },
@@ -886,7 +886,7 @@
                   "outcome": [
                     "Alex se une y anima al compañero junto con el grupo.",
                     "La presión se hace más fuerte, y el compañero sigue la corriente aunque no quiere.",
-                    "El compañero termina en problemas y se siente decepcionado, y Alex se siente incómodo por haber sido parte de eso."
+                    "El compañero termina en problemas con un maestro, y después ya no quiere sentarse con Alex ni con el grupo."
                   ],
                   "feedback": "Unirse aumenta la presión que el compañero ya está sintiendo — retirarse u ofrecer apoyo ayuda más."
                 },
@@ -901,7 +901,7 @@
                   "outcome": [
                     "Alex se queda callado y mira, como todos los demás.",
                     "Como nadie le ofrece otra opción, el compañero cede ante el grupo.",
-                    "El compañero se mete en problemas y se siente completamente solo, y Alex se va con un sentimiento pesado e incómodo."
+                    "El compañero se mete en problemas con un maestro, y después le dice a Alex: “Nadie intentó ayudarme.”"
                   ],
                   "feedback": "Mirar sin actuar es exactamente el “efecto espectador” — una pequeña acción, incluso una silenciosa, puede cambiar genuinamente lo que pasa después."
                 }
@@ -927,7 +927,7 @@
                   "outcome": [
                     "Alex no ofrece una alternativa y se une al grupo en su lugar.",
                     "El compañero mira a Alex, ve a una persona más presionándolo, y cede.",
-                    "El compañero termina en problemas y deja de confiar en Alex, y Alex se siente mal por eso."
+                    "El compañero termina en problemas, deja de confiar en Alex, y empieza a sentarse en otra mesa a la hora del almuerzo."
                   ],
                   "feedback": "Unirse habría aumentado la presión — ofrecer una alternativa fue mejor."
                 },
@@ -988,7 +988,7 @@
                   "outcome": [
                     "Alex le dice al adulto que solo una persona puede ayudar.",
                     "La próxima vez que alguien necesita ayuda en un grupo, Alex espera a que actúe “esa persona.”",
-                    "Todos esperan, nadie actúa, y Alex se siente paralizado y confundido."
+                    "Todos esperan, nadie actúa, y la persona que necesita ayuda sigue sola cuando el grupo se va."
                   ],
                   "feedback": "Eso no es lo que significa — cualquiera puede elegir actuar, sin importar los demás."
                 },
@@ -1017,7 +1017,7 @@
                   "outcome": [
                     "Alex está de acuerdo en que si todos solo están mirando, no es su lugar actuar.",
                     "La próxima vez que presionan a un compañero, Alex se queda paralizado con los demás.",
-                    "Nadie interviene, el compañero termina en problemas, y Alex se siente incómodo por días."
+                    "Nadie interviene, el compañero termina en problemas, y a la semana siguiente el mismo grupo presiona a otra persona."
                   ],
                   "feedback": "Ese es exactamente el efecto espectador — que todos supongan que no es su lugar es por qué nadie actúa."
                 },

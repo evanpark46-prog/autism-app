@@ -238,7 +238,7 @@
                   "outcome": [
                     "Alex asks Casey lots of questions right away.",
                     "Casey is tired and confused and can’t answer them.",
-                    "Casey feels upset and overwhelmed instead of getting to rest."
+                    "Casey turns away and starts to cry instead of getting to rest."
                   ],
                   "feedback": "Right after a seizure isn’t the time for lots of questions — give them space to rest first."
                 }
@@ -266,7 +266,7 @@
                   "outcome": [
                     "The next day, Alex jokes about Casey shaking.",
                     "Other kids laugh, and Casey hears them.",
-                    "Casey feels embarrassed and doesn’t want to come back to club."
+                    "The next week, Casey doesn’t come back to club."
                   ],
                   "feedback": "That’s not kind — seizures aren’t something to tease someone about."
                 }
@@ -317,7 +317,7 @@
                   "outcome": [
                     "Alex presses down on Morgan’s arms to try to stop the shaking.",
                     "The shaking doesn’t stop — holding someone down can’t end a seizure.",
-                    "Pushing against the movement could hurt Morgan’s arms or shoulders, and Alex feels even more panicked."
+                    "Pushing against the movement could hurt Morgan’s arms or shoulders, and nobody has started timing the seizure."
                   ],
                   "feedback": "Never hold someone down during a seizure — that can cause injury."
                 }
@@ -720,7 +720,7 @@
                   "outcome": [
                     "Alex le hace muchas preguntas a Casey de inmediato.",
                     "Casey está cansada y confundida, y no puede responder.",
-                    "Casey se siente molesta y abrumada en lugar de poder descansar."
+                    "Casey se voltea y empieza a llorar en lugar de poder descansar."
                   ],
                   "feedback": "Justo después de una convulsión no es momento de muchas preguntas — dale espacio para descansar primero."
                 }
@@ -748,7 +748,7 @@
                   "outcome": [
                     "Al día siguiente, Alex hace bromas sobre cuando Casey temblaba.",
                     "Otros niños se ríen, y Casey los escucha.",
-                    "Casey se siente avergonzada y ya no quiere volver al club."
+                    "La semana siguiente, Casey no vuelve al club."
                   ],
                   "feedback": "Eso no es amable — las convulsiones no son algo de qué burlarse."
                 }
@@ -799,7 +799,7 @@
                   "outcome": [
                     "Alex presiona los brazos de Morgan hacia abajo para detener el temblor.",
                     "El temblor no se detiene — sujetar a alguien no termina una convulsión.",
-                    "Empujar contra el movimiento podría lastimar los brazos u hombros de Morgan, y Alex siente aún más pánico."
+                    "Empujar contra el movimiento podría lastimar los brazos u hombros de Morgan, y nadie ha empezado a medir el tiempo de la convulsión."
                   ],
                   "feedback": "Nunca sujetes a alguien durante una convulsión — eso puede causar lesiones."
                 }

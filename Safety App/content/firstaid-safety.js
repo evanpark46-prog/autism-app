@@ -34,7 +34,7 @@
                   "outcome": [
                     "Alex sits quietly and watches Sam.",
                     "Sam keeps coughing. No grown-up knows.",
-                    "Sam looks scared, and help is not coming."
+                    "Time goes by, and no one gets help."
                   ],
                   "feedback": "Don’t just wait and watch — telling a grown-up right away is safer."
                 },
@@ -44,7 +44,7 @@
                   "outcome": [
                     "Alex pats Sam’s back really hard.",
                     "Sam jumps and coughs even more.",
-                    "Sam is upset, and still no grown-up is helping."
+                    "Sam pulls away, and still no grown-up is helping."
                   ],
                   "feedback": "That’s a grown-up’s job, not yours — go get help right away."
                 }
@@ -75,7 +75,7 @@
                   "outcome": [
                     "Alex thinks, “I should have helped more by myself.”",
                     "Next time, Alex tries to fix it alone and does not call anyone.",
-                    "The grown-up comes much later. Alex feels scared and stuck."
+                    "No grown-up knows, so help comes much later."
                   ],
                   "feedback": "Getting the grown-up was the right amount of help — that’s not something to do alone."
                 }
@@ -405,7 +405,7 @@
                   "outcome": [
                     "Alex believes the job is to handle emergencies alone so grown-ups don’t have to.",
                     "When a friend gets hurt, Alex tries to fix everything and doesn’t call anyone.",
-                    "Alex feels overwhelmed and scared, and real help arrives much later than it could have."
+                    "No one calls a grown-up, so real help arrives much later than it could have."
                   ],
                   "feedback": "That’s not the goal — getting help fast is what actually helps."
                 }
@@ -515,7 +515,7 @@
                   "outcome": [
                     "Alex se queda callado mirando a Sam.",
                     "Sam sigue tosiendo. Ningún adulto sabe.",
-                    "Sam se ve asustado, y la ayuda no viene."
+                    "Pasa el tiempo, y nadie busca ayuda."
                   ],
                   "feedback": "No solo esperes y observes — avisarle a un adulto de inmediato es más seguro."
                 },
@@ -525,7 +525,7 @@
                   "outcome": [
                     "Alex le da palmadas muy fuertes a Sam.",
                     "Sam se asusta y tose más.",
-                    "Sam está molesto, y todavía ningún adulto ayuda."
+                    "Sam se aleja, y todavía ningún adulto ayuda."
                   ],
                   "feedback": "Eso es trabajo de un adulto, no el tuyo — ve a buscar ayuda de inmediato."
                 }
@@ -556,7 +556,7 @@
                   "outcome": [
                     "Alex piensa: “Debí ayudar más yo solo.”",
                     "La próxima vez, Alex intenta arreglarlo solo y no llama a nadie.",
-                    "El adulto llega mucho después. Alex se siente asustado."
+                    "Ningún adulto sabe, así que la ayuda llega mucho después."
                   ],
                   "feedback": "Buscar al adulto fue la cantidad correcta de ayuda — eso no es algo para hacer solo."
                 }
@@ -887,7 +887,7 @@
                   "outcome": [
                     "Alex cree que su trabajo es encargarse de las emergencias solo, para que los adultos no tengan que hacerlo.",
                     "Cuando un amigo se lastima, Alex intenta arreglarlo todo y no llama a nadie.",
-                    "Alex se siente abrumado y asustado, y la ayuda real llega mucho más tarde de lo que pudo llegar."
+                    "Nadie llama a un adulto, así que la ayuda real llega mucho más tarde de lo que pudo llegar."
                   ],
                   "feedback": "Esa no es la meta — buscar ayuda rápido es lo que realmente ayuda."
                 }

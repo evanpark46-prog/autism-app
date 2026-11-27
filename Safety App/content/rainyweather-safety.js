@@ -44,7 +44,7 @@
                   "outcome": [
                     "Alex stands under a tall tree.",
                     "Lightning flashes close by.",
-                    "Alex feels scared and is not safe there."
+                    "Thunder booms, and Alex is still outside instead of safe inside."
                   ],
                   "feedback": "Tall trees can attract lightning — standing under one during a storm isn’t safe. Going inside is best."
                 }
@@ -269,7 +269,7 @@
                   "outcome": [
                     "Alex believes rain makes every car slow down.",
                     "Alex steps toward the street without looking carefully.",
-                    "A driver doesn’t see Alex in the rain and has to brake hard, and Alex feels scared."
+                    "A driver doesn’t see Alex in the rain and has to brake hard and honk."
                   ],
                   "feedback": "Rain doesn’t automatically make every driver slow down or notice pedestrians — staying visible is still important."
                 }
@@ -300,7 +300,7 @@
                   "outcome": [
                     "Alex believes cars can’t drive when it’s raining.",
                     "Alex walks right by the street without watching for cars.",
-                    "A car splashes past very close, and Alex jumps back, scared."
+                    "A car splashes past very close, and Alex gets soaked with muddy water."
                   ],
                   "feedback": "Cars can absolutely still drive in the rain — that’s exactly why staying visible matters."
                 }
@@ -398,7 +398,7 @@
                   "outcome": [
                     "Alex and the sibling slip out the door together to check the water.",
                     "The water is deeper than it looked, and the sibling trips on something hidden underneath.",
-                    "Now they’re both outside in rising water, scared, and Mom and Dad don’t know where they are."
+                    "Now they’re both outside in rising water while Mom and Dad search the house for them."
                   ],
                   "feedback": "Floodwater can be more dangerous than it looks — checking it yourselves isn’t safe."
                 },
@@ -469,7 +469,7 @@
                   "outcome": [
                     "Alex believes floodwater is always shallow and safe to check.",
                     "Alex guesses the depth by looking and steps off the porch.",
-                    "The water is much deeper than it looked, and Alex ends up soaked to the waist and scared."
+                    "The water is much deeper than it looked, and Alex ends up soaked to the waist and has to wade back to the porch."
                   ],
                   "feedback": "That’s not true — floodwater is often unpredictable and can hide real danger."
                 }
@@ -613,7 +613,7 @@
                   "outcome": [
                     "Alex se queda debajo de un árbol alto.",
                     "Un rayo brilla muy cerca.",
-                    "Alex siente miedo y ahí no está a salvo."
+                    "Truena fuerte, y Alex sigue afuera en vez de estar a salvo adentro."
                   ],
                   "feedback": "Los árboles altos pueden atraer los rayos — quedarse debajo de uno durante una tormenta no es seguro. Entrar es lo mejor."
                 }
@@ -838,7 +838,7 @@
                   "outcome": [
                     "Alex cree que la lluvia hace que todos los carros vayan más lento.",
                     "Alex se acerca a la calle sin mirar con cuidado.",
-                    "Un conductor no ve a Alex por la lluvia y tiene que frenar fuerte, y Alex se asusta."
+                    "Un conductor no ve a Alex por la lluvia y tiene que frenar fuerte y tocar la bocina."
                   ],
                   "feedback": "La lluvia no hace que todos los conductores vayan más lento o noten a los peatones automáticamente — seguir siendo visible sigue siendo importante."
                 }
@@ -869,7 +869,7 @@
                   "outcome": [
                     "Alex cree que los carros no pueden manejar cuando llueve.",
                     "Alex camina junto a la calle sin fijarse en los carros.",
-                    "Un carro pasa salpicando muy cerca, y Alex brinca hacia atrás, asustado."
+                    "Un carro pasa salpicando muy cerca, y Alex queda empapado de agua sucia."
                   ],
                   "feedback": "Los carros sí pueden seguir manejando en la lluvia — precisamente por eso ser visible importa."
                 }
@@ -967,7 +967,7 @@
                   "outcome": [
                     "Alex y su hermano salen juntos por la puerta a revisar el agua.",
                     "El agua es más profunda de lo que parecía, y el hermano se tropieza con algo escondido debajo.",
-                    "Ahora los dos están afuera en el agua que sube, asustados, y mamá y papá no saben dónde están."
+                    "Ahora los dos están afuera en el agua que sube, mientras mamá y papá los buscan por toda la casa."
                   ],
                   "feedback": "El agua de una inundación puede ser más peligrosa de lo que parece — revisarla ustedes mismos no es seguro."
                 },
@@ -1038,7 +1038,7 @@
                   "outcome": [
                     "Alex cree que el agua de la inundación siempre es poco profunda y segura de revisar.",
                     "Alex adivina la profundidad mirándola y baja del porche.",
-                    "El agua es mucho más profunda de lo que parecía, y Alex queda empapado hasta la cintura y asustado."
+                    "El agua es mucho más profunda de lo que parecía, y Alex queda empapado hasta la cintura y tiene que regresar con dificultad al porche."
                   ],
                   "feedback": "Eso no es cierto — el agua de una inundación suele ser impredecible y puede ocultar peligro real."
                 }

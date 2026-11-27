@@ -59,8 +59,8 @@
                   "correct": false,
                   "outcome": [
                     "Alex runs to tell the teacher.",
-                    "The classmate feels embarrassed and upset.",
-                    "Now both kids feel grumpy with each other."
+                    "The teacher stops the class to talk to the classmate.",
+                    "The classmate won’t play with Alex at recess."
                   ],
                   "feedback": "For something this small, trying words first is the better first step."
                 },
@@ -198,7 +198,7 @@
                   "outcome": [
                     "Alex tells a bunch of kids what happened.",
                     "The story spreads, and kids start whispering about the classmate.",
-                    "The classmate feels even more embarrassed, and still no grown-up knows."
+                    "The classmate sits alone at lunch, and still no grown-up knows."
                   ],
                   "feedback": "Spreading the story around doesn’t help the classmate — telling a trusted adult, quietly and directly, is more helpful."
                 }
@@ -224,7 +224,7 @@
                   "outcome": [
                     "Alex walks away without asking if the classmate is okay.",
                     "The classmate sits alone, still crying.",
-                    "The classmate feels like nobody cares."
+                    "No one tells a grown-up, so the classmate gets no help."
                   ],
                   "feedback": "Checking on someone who’s hurting is a caring thing to do, not overstepping."
                 },
@@ -362,7 +362,7 @@
                   "outcome": [
                     "In the middle of class, Alex loudly asks the classmate to explain everything.",
                     "Other students turn and stare, and the classmate’s face goes red.",
-                    "The classmate says, “It’s nothing,” shuts down, and now feels less safe sharing with anyone."
+                    "The classmate says, “It’s nothing,” and walks away, so no adult ever finds out what’s wrong."
                   ],
                   "feedback": "Asking in front of others could feel embarrassing or unsafe for the classmate — it’s better to quietly tell a trusted adult, who can handle it carefully."
                 }
@@ -632,8 +632,8 @@
                   "correct": false,
                   "outcome": [
                     "Alex corre a contarle a la maestra.",
-                    "El compañero se siente avergonzado y molesto.",
-                    "Ahora los dos están enojados entre sí."
+                    "La maestra detiene la clase para hablar con el compañero.",
+                    "El compañero no quiere jugar con Alex en el recreo."
                   ],
                   "feedback": "Para algo tan pequeño, intentar con palabras primero es el mejor primer paso."
                 },
@@ -771,7 +771,7 @@
                   "outcome": [
                     "Alex les cuenta a varios niños lo que pasó.",
                     "La historia se difunde, y los niños empiezan a cuchichear sobre el compañero.",
-                    "El compañero se siente todavía más avergonzado, y aún ningún adulto lo sabe."
+                    "El compañero se sienta solo en el almuerzo, y aún ningún adulto lo sabe."
                   ],
                   "feedback": "Difundir la historia no ayuda al compañero — contarle a un adulto de confianza, en silencio y directamente, es más útil."
                 }
@@ -797,7 +797,7 @@
                   "outcome": [
                     "Alex se aleja sin preguntarle al compañero si está bien.",
                     "El compañero se queda solo, todavía llorando.",
-                    "El compañero siente que a nadie le importa."
+                    "Nadie le avisa a un adulto, así que el compañero no recibe ayuda."
                   ],
                   "feedback": "Ver cómo está alguien que sufre es un gesto de cuidado, no meterse de más."
                 },
@@ -935,7 +935,7 @@
                   "outcome": [
                     "En plena clase, Alex le pide en voz alta al compañero que explique todo.",
                     "Los demás estudiantes voltean a mirar, y el compañero se pone rojo.",
-                    "El compañero dice: “No es nada,” se cierra, y ahora se siente menos seguro para hablar con cualquiera."
+                    "El compañero dice: “No es nada,” y se va, así que ningún adulto se entera de lo que pasa."
                   ],
                   "feedback": "Preguntar frente a otros podría sentirse vergonzoso o inseguro para el compañero — es mejor contarle en silencio a un adulto de confianza, quien puede manejarlo con cuidado."
                 }

@@ -29,7 +29,7 @@
                   "outcome": [
                     "Alex will not go into the room.",
                     "The doctor has to wait. Mom has to wait.",
-                    "Alex still feels scared, and the checkup can’t happen."
+                    "The doctor sees other kids. Alex has to come back another day."
                   ],
                   "feedback": "It’s okay to feel nervous, but there are ways to feel calmer instead of refusing to go in."
                 },
@@ -60,7 +60,7 @@
                   "outcome": [
                     "Alex thinks, “Next time, I won’t ask.”",
                     "At the next visit, the doctor does something new.",
-                    "Alex didn’t know it was coming and feels very scared."
+                    "Alex didn’t know it was coming, jumps, and the doctor has to stop and start over."
                   ],
                   "feedback": "Asking ahead of time helps a visit feel less scary than being surprised."
                 },
@@ -90,7 +90,7 @@
                   "outcome": [
                     "Alex stays quiet and holds very still.",
                     "The part that feels bad keeps going.",
-                    "Alex feels upset inside, and nobody knows."
+                    "Nobody knows, so the doctor doesn’t stop or slow down."
                   ],
                   "feedback": "You don’t have to just wait quietly — you can say something or ask for a short break."
                 },
@@ -121,7 +121,7 @@
                   "outcome": [
                     "Alex thinks asking for a break was wrong.",
                     "Next time, Alex doesn’t ask, even when it’s too much.",
-                    "Alex gets more and more upset, and nobody knows."
+                    "Alex starts crying, and the doctor has to stop the checkup."
                   ],
                   "feedback": "Asking for a break is always okay during a checkup."
                 },
@@ -183,7 +183,7 @@
                   "outcome": [
                     "Alex covers both ears and won’t sit in the dentist chair.",
                     "The dentist can’t check Alex’s teeth, and the visit stops.",
-                    "Alex still feels overwhelmed, and they have to come back another day."
+                    "Mom has to make a new appointment, and they go home with Alex’s teeth still not checked."
                   ],
                   "feedback": "It’s okay to feel overwhelmed, but there’s a way to get things adjusted instead of refusing entirely."
                 },
@@ -213,8 +213,8 @@
                   "correct": false,
                   "outcome": [
                     "Alex decides to stay quiet next time, even when sounds feel too loud.",
-                    "The buzzing and bright light keep going, and Alex feels more and more overwhelmed.",
-                    "Alex gets so upset that it’s hard to sit still, and the dentist doesn’t know why."
+                    "The buzzing and bright light keep going, and Alex starts squirming in the chair.",
+                    "The dentist doesn’t know why, so the cleaning keeps stopping and takes much longer."
                   ],
                   "feedback": "Speaking up about what felt like too much helped a lot."
                 },
@@ -244,7 +244,7 @@
                   "outcome": [
                     "Alex believes there’s no way to pause once the dentist starts.",
                     "When something feels like too much, Alex holds it in instead of raising a hand.",
-                    "Alex feels trapped and upset, and the visit feels much scarier than it needed to."
+                    "Alex grips the chair and pulls away, so the dentist has to stop without knowing why."
                   ],
                   "feedback": "That’s not true — you can ask to pause or slow down at almost any point."
                 },
@@ -275,7 +275,7 @@
                   "outcome": [
                     "Alex decides not to use the pause signal.",
                     "When the water spray feels strange, Alex keeps quiet and tenses up.",
-                    "Alex feels more and more stressed, and the dentist doesn’t know Alex needs a moment."
+                    "Alex jerks away, water sprays everywhere, and the dentist has to stop without knowing Alex needed a moment."
                   ],
                   "feedback": "A pause signal is a helpful tool Alex can use anytime."
                 },
@@ -368,7 +368,7 @@
                   "outcome": [
                     "Alex decides asking why was rude and stops asking questions.",
                     "At the next appointment, Alex goes along with things without understanding them.",
-                    "Alex feels uneasy and confused, and loses a simple way to tell what’s okay and what isn’t."
+                    "When a nurse does something Alex doesn’t understand, Alex doesn’t ask, so Alex can’t tell if it’s okay or not."
                   ],
                   "feedback": "Asking why is always a fair question to ask."
                 },
@@ -428,8 +428,8 @@
                   "correct": false,
                   "outcome": [
                     "Alex decides this checkup should have felt just like a warning-sign moment.",
-                    "Alex starts feeling alarmed at every doctor visit, even when everything is explained.",
-                    "Alex feels confused about what’s safe, and the real difference gets harder to notice."
+                    "Alex starts refusing to go into the exam room at every visit, even when everything is explained.",
+                    "Mom has to reschedule visits again and again, and Alex treats every normal exam like a warning sign."
                   ],
                   "feedback": "This moment was explained and had a trusted adult present, which makes it different."
                 },
@@ -457,8 +457,8 @@
                   "correct": false,
                   "outcome": [
                     "Alex stays quiet about the pinch, thinking anything goes at a doctor’s office.",
-                    "Alex leaves without knowing what the shot was for, and the sore arm feels worrying.",
-                    "Alex starts to think speaking up doesn’t matter there, which could make it harder to say something if anything ever feels truly wrong."
+                    "Alex leaves without knowing what the shot was for, and nobody explains why the arm is sore.",
+                    "Next time something hurts at a checkup, Alex stays quiet again, so the doctor never hears about it."
                   ],
                   "feedback": "Even at a checkup, it’s always okay to say if something hurts or feels wrong — that’s true no matter where you are."
                 },
@@ -568,7 +568,7 @@
                   "outcome": [
                     "Alex no quiere entrar al consultorio.",
                     "El médico tiene que esperar. Mamá también.",
-                    "Alex sigue con miedo, y el chequeo no puede pasar."
+                    "El médico atiende a otros niños. Alex tiene que volver otro día."
                   ],
                   "feedback": "Está bien sentirse nervioso, pero hay formas de sentirse más tranquilo en vez de negarse a entrar."
                 },
@@ -599,7 +599,7 @@
                   "outcome": [
                     "Alex piensa: “La próxima vez, no voy a preguntar.”",
                     "En la próxima visita, el médico hace algo nuevo.",
-                    "Alex no sabía que venía y siente mucho miedo."
+                    "Alex no sabía que venía, brinca, y el médico tiene que parar y empezar otra vez."
                   ],
                   "feedback": "Preguntar de antemano ayuda a que una visita se sienta menos aterradora que ser sorprendido."
                 },
@@ -629,7 +629,7 @@
                   "outcome": [
                     "Alex se queda callado y muy quieto.",
                     "La parte que se siente mal sigue.",
-                    "Alex se siente mal por dentro, y nadie lo sabe."
+                    "Nadie lo sabe, así que el médico no para ni va más despacio."
                   ],
                   "feedback": "No tienes que esperar en silencio — puedes decir algo o pedir un descanso corto."
                 },
@@ -660,7 +660,7 @@
                   "outcome": [
                     "Alex piensa que pedir un descanso estuvo mal.",
                     "La próxima vez, Alex no pide uno, aunque sea demasiado.",
-                    "Alex se siente cada vez peor, y nadie lo sabe."
+                    "Alex empieza a llorar, y el médico tiene que parar el chequeo."
                   ],
                   "feedback": "Pedir un descanso siempre está bien durante un chequeo."
                 },
@@ -722,7 +722,7 @@
                   "outcome": [
                     "Alex se cubre los oídos y no se quiere sentar en la silla.",
                     "El dentista no puede revisar los dientes de Alex, y la visita se detiene.",
-                    "Alex sigue abrumado, y tienen que volver otro día."
+                    "Mamá tiene que hacer otra cita, y se van a casa sin que revisen los dientes de Alex."
                   ],
                   "feedback": "Está bien sentirse abrumado, pero hay una manera de ajustar las cosas en vez de negarse por completo."
                 },
@@ -752,8 +752,8 @@
                   "correct": false,
                   "outcome": [
                     "Alex decide quedarse callado la próxima vez, aunque los sonidos sean muy fuertes.",
-                    "El zumbido y la luz brillante siguen, y Alex se siente cada vez más abrumado.",
-                    "Alex se altera tanto que le cuesta quedarse quieto, y el dentista no sabe por qué."
+                    "El zumbido y la luz brillante siguen, y Alex empieza a moverse en la silla.",
+                    "El dentista no sabe por qué, así que la limpieza se detiene una y otra vez y tarda mucho más."
                   ],
                   "feedback": "Hablar sobre lo que se sentía demasiado ayudó mucho."
                 },
@@ -783,7 +783,7 @@
                   "outcome": [
                     "Alex cree que no hay forma de pausar una vez que el dentista empieza.",
                     "Cuando algo se siente demasiado, Alex se aguanta en vez de levantar la mano.",
-                    "Alex se siente atrapado y molesto, y la visita se siente mucho más aterradora de lo necesario."
+                    "Alex aprieta la silla y se echa para atrás, así que el dentista tiene que parar sin saber por qué."
                   ],
                   "feedback": "Eso no es cierto — puedes pedir una pausa o ir más despacio casi en cualquier momento."
                 },
@@ -814,7 +814,7 @@
                   "outcome": [
                     "Alex decide no usar la señal de pausa.",
                     "Cuando el rocío de agua se siente raro, Alex se queda callado y se pone tenso.",
-                    "Alex se siente cada vez más estresado, y el dentista no sabe que Alex necesita un momento."
+                    "Alex se mueve de golpe, el agua salpica por todos lados, y el dentista tiene que parar sin saber que Alex necesitaba un momento."
                   ],
                   "feedback": "Una señal de pausa es una herramienta útil que Alex puede usar en cualquier momento."
                 },
@@ -907,7 +907,7 @@
                   "outcome": [
                     "Alex decide que preguntar por qué fue de mala educación y deja de hacer preguntas.",
                     "En la próxima cita, Alex acepta las cosas sin entenderlas.",
-                    "Alex se siente incómodo y confundido, y pierde una forma sencilla de saber qué está bien y qué no."
+                    "Cuando una enfermera hace algo que Alex no entiende, Alex no pregunta, así que no puede saber si está bien o no."
                   ],
                   "feedback": "Preguntar por qué siempre es una pregunta justa de hacer."
                 },
@@ -967,8 +967,8 @@
                   "correct": false,
                   "outcome": [
                     "Alex decide que este chequeo debería haberse sentido igual que un momento de señal de advertencia.",
-                    "Alex empieza a alarmarse en cada visita al médico, aunque todo se explique.",
-                    "Alex se siente confundido sobre qué es seguro, y la diferencia real se vuelve más difícil de notar."
+                    "Alex empieza a negarse a entrar al consultorio en cada visita, aunque todo se explique.",
+                    "Mamá tiene que cambiar las citas una y otra vez, y Alex trata cada revisión normal como una señal de advertencia."
                   ],
                   "feedback": "Este momento fue explicado y tuvo presente a un adulto de confianza, lo cual lo hace diferente."
                 },
@@ -996,8 +996,8 @@
                   "correct": false,
                   "outcome": [
                     "Alex se queda callado sobre el pinchazo, pensando que en el consultorio todo se permite.",
-                    "Alex se va sin saber para qué era la vacuna, y el brazo adolorido le preocupa.",
-                    "Alex empieza a pensar que hablar no importa ahí, lo que podría hacer más difícil decir algo si alguna vez algo se siente realmente mal."
+                    "Alex se va sin saber para qué era la vacuna, y nadie le explica por qué le duele el brazo.",
+                    "La próxima vez que algo duele en un chequeo, Alex se vuelve a quedar callado, y el médico nunca se entera."
                   ],
                   "feedback": "Incluso en un chequeo, siempre está bien decir si algo duele o se siente mal — eso es cierto sin importar dónde estés."
                 },

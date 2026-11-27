@@ -29,7 +29,7 @@
                   "outcome": [
                     "Alex walks all around the store.",
                     "Mom looks, but Alex has moved far away.",
-                    "Now Mom can’t find Alex. Both feel worried."
+                    "Mom calls Alex’s name, but Alex is too far away to hear."
                   ],
                   "feedback": "Walking all over can make it harder for Mom to find you — look for a safe helper instead."
                 },
@@ -60,7 +60,7 @@
                   "outcome": [
                     "Alex keeps walking alone.",
                     "Alex gets farther and farther from Mom.",
-                    "Mom can’t find Alex. Alex feels scared."
+                    "Mom searches every aisle but can’t find Alex."
                   ],
                   "feedback": "Walking alone makes it harder to be found — asking the worker was better."
                 },
@@ -214,7 +214,7 @@
                   "outcome": [
                     "Alex asks a random person walking by instead.",
                     "The person says, “Sorry, I’m busy,” and keeps walking.",
-                    "Alex is still alone and doesn’t know who to ask next."
+                    "Alex is still lost, and the family with kids who could have helped has walked away."
                   ],
                   "feedback": "Just any stranger isn’t a reliable choice — asking a parent with kids nearby was better."
                 },
@@ -578,7 +578,7 @@
                   "outcome": [
                     "Alex camina por toda la tienda.",
                     "Mamá busca, pero Alex ya se fue lejos.",
-                    "Ahora Mamá no encuentra a Alex. Los dos se preocupan."
+                    "Mamá llama a Alex, pero Alex está demasiado lejos para oír."
                   ],
                   "feedback": "Caminar por todos lados puede hacer que sea más difícil que Mamá te encuentre — busca a un ayudante seguro en su lugar."
                 },
@@ -609,7 +609,7 @@
                   "outcome": [
                     "Alex sigue caminando solo.",
                     "Alex se aleja más y más de Mamá.",
-                    "Mamá no encuentra a Alex. Alex siente miedo."
+                    "Mamá busca en cada pasillo, pero no encuentra a Alex."
                   ],
                   "feedback": "Caminar solo hace que sea más difícil ser encontrado — pedirle ayuda al trabajador fue mejor."
                 },
@@ -763,7 +763,7 @@
                   "outcome": [
                     "Alex le pregunta a un desconocido cualquiera que va pasando.",
                     "La persona dice: “Perdón, tengo prisa,” y sigue caminando.",
-                    "Alex sigue solo y no sabe a quién preguntarle después."
+                    "Alex sigue perdido, y la familia con niños que podía ayudar ya se fue."
                   ],
                   "feedback": "Cualquier desconocido no es una opción confiable — pedirle ayuda a un padre con hijos cerca fue mejor."
                 },

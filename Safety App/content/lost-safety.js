@@ -70,7 +70,7 @@
                   "outcome": [
                     "Alex walks past the cashier and looks in the same aisle.",
                     "Mom is not there. The aisle stays empty.",
-                    "Alex is still lost and starts to feel scared."
+                    "Mom is in another part of the store, and no one knows Alex is lost."
                   ],
                   "feedback": "Looking around alone doesn’t help as much as asking a worker directly."
                 },
@@ -132,7 +132,7 @@
                   "outcome": [
                     "Next time, Alex tries to find the way alone.",
                     "Alex walks up and down and gets more mixed up.",
-                    "Alex feels scared, and nobody is helping."
+                    "Alex ends up even farther from Mom, and nobody knows Alex is lost."
                   ],
                   "feedback": "Finding a worker is still the fastest, safest way — don’t try to handle it alone."
                 },
@@ -640,7 +640,7 @@
                   "outcome": [
                     "Alex pasa junto a la cajera y sigue mirando el mismo pasillo.",
                     "Su mamá no está ahí. El pasillo sigue vacío.",
-                    "Alex sigue perdido y empieza a sentir miedo."
+                    "Su mamá está en otra parte de la tienda, y nadie sabe que Alex está perdido."
                   ],
                   "feedback": "Mirar solo por tu cuenta no ayuda tanto como pedirle ayuda directamente a alguien del personal."
                 },
@@ -702,7 +702,7 @@
                   "outcome": [
                     "La próxima vez, Alex intenta encontrar el camino solo.",
                     "Alex camina de aquí para allá y se confunde más.",
-                    "Alex siente miedo, y nadie lo está ayudando."
+                    "Alex termina todavía más lejos de su mamá, y nadie sabe que está perdido."
                   ],
                   "feedback": "Buscar a alguien del personal sigue siendo la forma más rápida y segura — no intentes manejarlo solo."
                 },

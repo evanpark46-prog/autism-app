@@ -34,7 +34,7 @@
                   "outcome": [
                     "Alex lets the cousin come in.",
                     "Alex is still changing clothes.",
-                    "Alex feels embarrassed and uncomfortable."
+                    "The cousin walks right in before Alex is dressed."
                   ],
                   "feedback": "Even family should knock and respect your privacy — it’s okay to ask for that, every time."
                 }
@@ -60,7 +60,7 @@
                   "outcome": [
                     "Alex thinks family can always walk in.",
                     "Next time, Alex doesn’t ask them to knock.",
-                    "Alex never gets private time. Alex feels upset."
+                    "People keep walking in. Alex never gets private time."
                   ],
                   "feedback": "Even family should knock and wait — asking for privacy was fine."
                 },
@@ -95,7 +95,7 @@
                   "outcome": [
                     "Alex thinks doors must stay open.",
                     "Alex changes with the door open.",
-                    "People walk by. Alex feels uncomfortable."
+                    "People walk by and look in. Alex has no privacy."
                   ],
                   "feedback": "Not true — closing the door and asking for privacy in those moments is healthy and normal."
                 }
@@ -121,7 +121,7 @@
                   "outcome": [
                     "Alex thinks asking for space is wrong.",
                     "Alex stops closing the bathroom door.",
-                    "Alex feels embarrassed and has no private space."
+                    "People can walk in anytime. Alex has no private space."
                   ],
                   "feedback": "That’s not right — closing the door for privacy is healthy and normal."
                 },
@@ -274,8 +274,8 @@
                   "correct": false,
                   "outcome": [
                     "Alex decides every detail is just as private as an address.",
-                    "Alex won’t even say a favorite color or snack and feels nervous chatting at all.",
-                    "Alex feels stressed and left out, and it gets harder to tell which details really matter."
+                    "Alex won’t even say a favorite color or snack, and the chat goes quiet.",
+                    "Friends start chatting without Alex, and the next game invite goes to someone else."
                   ],
                   "feedback": "Not everything is equally private — a favorite color usually isn’t risky to share."
                 },
@@ -337,7 +337,7 @@
                   "outcome": [
                     "Alex lets the friend post the photo with the school name showing.",
                     "The public post gets shared around, and people Alex doesn’t know can see exactly which school Alex goes to.",
-                    "Alex feels uneasy knowing strangers can figure out where Alex spends every weekday, and the post is hard to take back."
+                    "Now strangers can figure out where Alex is every weekday, and the post has been copied too many times to fully take back."
                   ],
                   "feedback": "A public photo showing identifying details like a school name can reveal more than it seems — it’s worth asking your friend to check first or crop that part out."
                 },
@@ -351,7 +351,7 @@
                   "correct": false,
                   "outcome": [
                     "Alex gets upset and stops talking to the friend completely over the photo.",
-                    "The friend is confused and hurt, and other friends start taking sides.",
+                    "The friend keeps texting to ask what’s wrong, and other friends start taking sides.",
                     "Alex loses a friendship, and the photo question never actually gets worked out."
                   ],
                   "feedback": "That’s an extreme reaction — a calm conversation about asking first and being careful with identifying details works better."
@@ -413,7 +413,7 @@
                   "outcome": [
                     "Alex believes no photo with any background should ever be posted.",
                     "Alex starts refusing every photo — at birthdays, games, and school trips — and asks friends to delete harmless pictures.",
-                    "Alex feels stressed and left out, and friends get confused about what Alex actually wants."
+                    "Friends stop inviting Alex into group pictures, and Alex is missing from the class trip photos."
                   ],
                   "feedback": "That’s too strict — the specific concern is identifying details like a school name or address, not backgrounds in general."
                 }
@@ -583,7 +583,7 @@
                   "outcome": [
                     "Alex deja entrar al primo.",
                     "Alex todavía se está cambiando de ropa.",
-                    "Alex se siente avergonzado e incómodo."
+                    "El primo entra antes de que Alex esté vestido."
                   ],
                   "feedback": "Incluso la familia debería tocar la puerta y respetar tu privacidad — está bien pedir eso, siempre."
                 }
@@ -609,7 +609,7 @@
                   "outcome": [
                     "Alex cree que la familia siempre puede entrar.",
                     "La próxima vez, Alex no pide que toquen.",
-                    "Alex nunca tiene tiempo privado. Se siente mal."
+                    "La gente sigue entrando. Alex nunca tiene tiempo privado."
                   ],
                   "feedback": "Incluso la familia debería tocar y esperar — pedir privacidad estuvo bien."
                 },
@@ -644,7 +644,7 @@
                   "outcome": [
                     "Alex cree que la puerta debe estar abierta.",
                     "Alex se cambia con la puerta abierta.",
-                    "La gente pasa. Alex se siente incómodo."
+                    "La gente pasa y mira hacia adentro. Alex no tiene privacidad."
                   ],
                   "feedback": "No es cierto — cerrar la puerta y pedir privacidad en esos momentos es saludable y normal."
                 }
@@ -670,7 +670,7 @@
                   "outcome": [
                     "Alex cree que pedir espacio está mal.",
                     "Alex deja de cerrar la puerta del baño.",
-                    "Alex se siente avergonzado y sin espacio privado."
+                    "La gente puede entrar en cualquier momento. Alex no tiene espacio privado."
                   ],
                   "feedback": "Eso no es correcto — cerrar la puerta para privacidad es saludable y normal."
                 },
@@ -823,8 +823,8 @@
                   "correct": false,
                   "outcome": [
                     "Alex decide que cada detalle es tan privado como una dirección.",
-                    "Alex ni siquiera dice su color o botana favorita y se pone nervioso al chatear.",
-                    "Alex se siente estresado y excluido, y le cuesta más saber qué detalles realmente importan."
+                    "Alex ni siquiera dice su color o botana favorita, y el chat se queda en silencio.",
+                    "Los amigos empiezan a chatear sin Alex, y la próxima invitación a jugar es para otra persona."
                   ],
                   "feedback": "No todo es igualmente privado — un color favorito usualmente no es riesgoso de compartir."
                 },
@@ -886,7 +886,7 @@
                   "outcome": [
                     "Alex deja que el amigo publique la foto con el nombre de la escuela visible.",
                     "La publicación se comparte, y personas que Alex no conoce pueden ver exactamente a qué escuela va Alex.",
-                    "Alex se siente inquieto sabiendo que desconocidos pueden saber dónde pasa cada día de semana, y es difícil borrar la publicación."
+                    "Ahora desconocidos pueden saber dónde está Alex cada día de semana, y la publicación ya se copió tantas veces que no se puede borrar del todo."
                   ],
                   "feedback": "Una foto pública que muestra detalles identificables como el nombre de una escuela puede revelar más de lo que parece — vale la pena pedirle a tu amigo que revise primero o recorte esa parte."
                 },
@@ -900,7 +900,7 @@
                   "correct": false,
                   "outcome": [
                     "Alex se molesta y deja de hablarle al amigo por completo por la foto.",
-                    "El amigo se siente confundido y herido, y otros amigos empiezan a tomar partido.",
+                    "El amigo sigue mandando mensajes para preguntar qué pasa, y otros amigos empiezan a tomar partido.",
                     "Alex pierde una amistad, y el tema de la foto nunca se resuelve de verdad."
                   ],
                   "feedback": "Esa es una reacción extrema — una conversación calmada sobre preguntar primero y tener cuidado con los detalles identificables funciona mejor."
@@ -962,7 +962,7 @@
                   "outcome": [
                     "Alex cree que ninguna foto con fondo debería publicarse nunca.",
                     "Alex empieza a rechazar todas las fotos — en cumpleaños, partidos y excursiones — y pide borrar fotos inofensivas.",
-                    "Alex se siente estresado y excluido, y sus amigos se confunden sobre lo que Alex realmente quiere."
+                    "Los amigos dejan de invitar a Alex a las fotos de grupo, y Alex no aparece en las fotos de la excursión."
                   ],
                   "feedback": "Eso es demasiado estricto — la preocupación específica son los detalles identificables como el nombre de una escuela o dirección, no los fondos en general."
                 }

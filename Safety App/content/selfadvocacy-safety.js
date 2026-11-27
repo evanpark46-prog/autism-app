@@ -29,7 +29,7 @@
                   "outcome": [
                     "Alex stays quiet and keeps working.",
                     "The noise and lights feel bigger and bigger.",
-                    "Alex feels worse, and the teacher doesn’t know."
+                    "Alex puts down the pencil and can’t finish. The teacher doesn’t know why."
                   ],
                   "feedback": "You don’t have to just push through — telling a trusted adult how you’re feeling is always okay, and it helps them help you."
                 },
@@ -44,7 +44,7 @@
                   "outcome": [
                     "Alex gets upset and runs out of the room.",
                     "The teacher looks up and can’t see Alex.",
-                    "Everyone is worried. Alex is alone in the hall."
+                    "The teacher stops the lesson and hurries out to find Alex."
                   ],
                   "feedback": "Leaving without telling anyone can worry people and makes it harder for them to help — it’s better to say something first, even briefly."
                 }
@@ -70,7 +70,7 @@
                   "outcome": [
                     "Alex thinks, “I should have stayed quiet.”",
                     "Next time, Alex doesn’t ask for a break.",
-                    "Alex feels overwhelmed, and no one knows."
+                    "Alex covers both ears and stops working. No one knows why."
                   ],
                   "feedback": "Pushing through quietly wouldn’t have helped — speaking up was exactly the right move."
                 },
@@ -104,8 +104,8 @@
                   "correct": false,
                   "outcome": [
                     "Alex thinks staying quiet makes bad feelings go away.",
-                    "Alex stays quiet, but the feeling stays.",
-                    "Alex still feels bad. No grown-up can help."
+                    "Alex stays quiet. The noise keeps going.",
+                    "No grown-up knows, so the noise and lights stay the same."
                   ],
                   "feedback": "Uncomfortable feelings don’t always just disappear — speaking up is a more reliable way to get things to change."
                 }
@@ -131,7 +131,7 @@
                   "outcome": [
                     "Alex waits quietly for the teacher to notice.",
                     "The teacher is busy helping other kids.",
-                    "Alex keeps waiting and feels worse and worse."
+                    "Alex keeps waiting, and the teacher never comes over."
                   ],
                   "feedback": "Trusted adults can’t always tell how you’re feeling — it’s better to say it directly."
                 },
@@ -208,7 +208,7 @@
                   "outcome": [
                     "Alex teases the classmate back to make it even.",
                     "The classmate gets mad and teases Alex even more.",
-                    "Now both kids are upset, and Alex might get in trouble too."
+                    "The teacher only hears Alex’s tease, so Alex gets in trouble too."
                   ],
                   "feedback": "Teasing back usually makes things worse, not better — it’s more effective to say it’s not okay and get a trusted adult involved."
                 }
@@ -269,7 +269,7 @@
                   "outcome": [
                     "Alex decides to never tell a grown-up about anything.",
                     "When the teasing starts again, Alex keeps it a secret.",
-                    "The problem keeps growing, and Alex has to handle it all alone."
+                    "The teasing happens again and again, and no grown-up steps in to stop it."
                   ],
                   "feedback": "Avoiding trusted adults entirely usually leaves problems unresolved — most of the time, telling them helps more than it hurts."
                 }
@@ -295,7 +295,7 @@
                   "outcome": [
                     "Alex believes feeling worried means Alex should never tell.",
                     "Next time something bothers Alex, Alex hides it from the teacher.",
-                    "Alex feels stuck and alone with the problem."
+                    "The teacher never finds out, so the problem keeps happening every day."
                   ],
                   "feedback": "That worry is understandable, but avoiding adults entirely usually leaves problems unresolved."
                 },
@@ -357,7 +357,7 @@
                   "outcome": [
                     "Alex goes along with every decision the other student makes, saying nothing.",
                     "Alex’s part of the project ends up full of ideas that aren’t Alex’s.",
-                    "Alex feels frustrated and invisible for the rest of the project, and the teacher thinks everything is fine."
+                    "The teacher grades it as a team effort and never hears what Alex wanted to add."
                   ],
                   "feedback": "Going along with everything can leave you feeling unheard for the whole project — it’s okay to speak up even when no one is being mean."
                 },
@@ -433,7 +433,7 @@
                   "outcome": [
                     "Alex believes self-advocacy isn’t important unless it’s an emergency.",
                     "So Alex stays quiet in group work, in class, and with friends whenever something isn’t a big deal.",
-                    "Small things pile up, and Alex often feels unheard and unhappy without anyone knowing why."
+                    "Small problems pile up, like a seat by the noisy door that never gets changed, because no one knows Alex wants something different."
                   ],
                   "feedback": "Self-advocacy matters even when the situation isn’t an emergency — feeling heard and respected is important too."
                 }
@@ -459,7 +459,7 @@
                   "outcome": [
                     "Alex believes speaking up is only okay when someone is being mean.",
                     "The next time a friend talks over Alex, Alex stays quiet because the friend isn’t being mean.",
-                    "Alex keeps feeling left out, and the friend has no idea anything is wrong."
+                    "The friend keeps talking over Alex in every conversation, because the friend has no idea anything is wrong."
                   ],
                   "feedback": "Speaking up matters any time you feel unheard, whether or not anyone is being mean."
                 },
@@ -488,7 +488,7 @@
                   "outcome": [
                     "Alex agrees with the classmate that self-advocacy is only for emergencies.",
                     "Alex stops speaking up about everyday things, like needing more time or a quieter seat.",
-                    "Those everyday needs go unmet, and Alex feels more stressed at school day after day."
+                    "Alex runs out of time on tests and keeps sitting in the loud seat, and no teacher knows to change it."
                   ],
                   "feedback": "Self-advocacy matters in everyday moments too, not just emergencies."
                 },
@@ -668,7 +668,7 @@
                   "outcome": [
                     "Alex se queda callado y sigue trabajando.",
                     "El ruido y las luces se sienten cada vez más fuertes.",
-                    "Alex se siente peor, y el maestro no sabe."
+                    "Alex suelta el lápiz y no puede terminar. El maestro no sabe por qué."
                   ],
                   "feedback": "No tienes que simplemente aguantar — decirle a un adulto de confianza cómo te sientes siempre está bien, y les ayuda a ayudarte."
                 },
@@ -683,7 +683,7 @@
                   "outcome": [
                     "Alex se molesta y sale corriendo del salón.",
                     "El maestro levanta la vista y no ve a Alex.",
-                    "Todos se preocupan. Alex está solo en el pasillo."
+                    "El maestro detiene la clase y sale corriendo a buscar a Alex."
                   ],
                   "feedback": "Irse sin decirle a nadie puede preocupar a las personas y hace más difícil que te ayuden — es mejor decir algo primero, aunque sea breve."
                 }
@@ -709,7 +709,7 @@
                   "outcome": [
                     "Alex piensa: “Debí quedarme callado.”",
                     "La próxima vez, Alex no pide un descanso.",
-                    "Alex se siente abrumado, y nadie sabe."
+                    "Alex se tapa los oídos y deja de trabajar. Nadie sabe por qué."
                   ],
                   "feedback": "Aguantar en silencio no habría ayudado — hablar fue exactamente lo correcto."
                 },
@@ -743,8 +743,8 @@
                   "correct": false,
                   "outcome": [
                     "Alex cree que callarse hace que los sentimientos feos se vayan.",
-                    "Alex se queda callado, pero el sentimiento sigue.",
-                    "Alex todavía se siente mal. Ningún adulto puede ayudar."
+                    "Alex se queda callado. El ruido sigue y sigue.",
+                    "Ningún adulto sabe, así que el ruido y las luces siguen igual."
                   ],
                   "feedback": "Los sentimientos incómodos no siempre desaparecen solos — hablar es una forma más confiable de lograr que las cosas cambien."
                 }
@@ -770,7 +770,7 @@
                   "outcome": [
                     "Alex espera en silencio a que el maestro se dé cuenta.",
                     "El maestro está ocupado ayudando a otros niños.",
-                    "Alex sigue esperando y se siente cada vez peor."
+                    "Alex sigue esperando, y el maestro nunca se acerca."
                   ],
                   "feedback": "Los adultos de confianza no siempre pueden saber cómo te sientes — es mejor decirlo directamente."
                 },
@@ -847,7 +847,7 @@
                   "outcome": [
                     "Alex se burla del compañero también para estar a mano.",
                     "El compañero se enoja y se burla de Alex todavía más.",
-                    "Ahora los dos están molestos, y Alex también podría meterse en problemas."
+                    "El maestro solo escucha la burla de Alex, y Alex también se mete en problemas."
                   ],
                   "feedback": "Burlarse de vuelta usualmente empeora las cosas, no las mejora — es más efectivo decir que no está bien e involucrar a un adulto de confianza."
                 }
@@ -908,7 +908,7 @@
                   "outcome": [
                     "Alex decide nunca contarle nada a un adulto.",
                     "Cuando las burlas empiezan otra vez, Alex se lo guarda en secreto.",
-                    "El problema sigue creciendo, y Alex tiene que enfrentarlo completamente solo."
+                    "Las burlas pasan una y otra vez, y ningún adulto interviene para detenerlas."
                   ],
                   "feedback": "Evitar completamente a los adultos de confianza usualmente deja los problemas sin resolver — la mayoría de las veces, contarles ayuda más de lo que perjudica."
                 }
@@ -934,7 +934,7 @@
                   "outcome": [
                     "Alex cree que estar preocupado significa que nunca debe contar nada.",
                     "La próxima vez que algo le molesta, Alex se lo oculta al maestro.",
-                    "Alex se siente atrapado y solo con el problema."
+                    "El maestro nunca se entera, así que el problema sigue pasando todos los días."
                   ],
                   "feedback": "Esa preocupación es comprensible, pero evitar a los adultos por completo usualmente deja los problemas sin resolver."
                 },
@@ -996,7 +996,7 @@
                   "outcome": [
                     "Alex sigue la corriente en cada decisión del otro estudiante, sin decir nada.",
                     "La parte de Alex en el proyecto termina llena de ideas que no son suyas.",
-                    "Alex se siente frustrado e invisible durante el resto del proyecto, y el maestro cree que todo está bien."
+                    "El maestro lo califica como trabajo en equipo y nunca escucha lo que Alex quería aportar."
                   ],
                   "feedback": "Seguir la corriente en todo puede dejarte sintiéndote ignorado durante todo el proyecto — está bien hablar aunque nadie esté siendo malo."
                 },
@@ -1072,7 +1072,7 @@
                   "outcome": [
                     "Alex cree que la autodefensa no es importante a menos que sea una emergencia.",
                     "Entonces Alex se queda callado en el trabajo en grupo, en clase y con amigos cada vez que algo no parece grave.",
-                    "Las cosas pequeñas se acumulan, y Alex a menudo se siente ignorado e infeliz sin que nadie sepa por qué."
+                    "Los problemas pequeños se acumulan, como el asiento junto a la puerta ruidosa que nunca cambia, porque nadie sabe que Alex quiere algo diferente."
                   ],
                   "feedback": "La autodefensa importa incluso cuando la situación no es una emergencia — sentirse escuchado y respetado también es importante."
                 }
@@ -1098,7 +1098,7 @@
                   "outcome": [
                     "Alex cree que solo está bien hablar cuando alguien está siendo malo.",
                     "La próxima vez que un amigo no lo deja hablar, Alex se queda callado porque el amigo no está siendo malo.",
-                    "Alex sigue sintiéndose excluido, y el amigo no tiene idea de que algo anda mal."
+                    "El amigo sigue interrumpiendo a Alex en cada conversación, porque no tiene idea de que algo anda mal."
                   ],
                   "feedback": "Hablar importa cada vez que te sientes ignorado, sea que alguien esté siendo malo o no."
                 },
@@ -1127,7 +1127,7 @@
                   "outcome": [
                     "Alex le da la razón al compañero: la autodefensa es solo para emergencias.",
                     "Alex deja de hablar de cosas cotidianas, como necesitar más tiempo o un asiento más tranquilo.",
-                    "Esas necesidades cotidianas no se atienden, y Alex se siente más estresado en la escuela día tras día."
+                    "A Alex se le acaba el tiempo en los exámenes y sigue en el asiento ruidoso, y ningún maestro sabe que debe cambiarlo."
                   ],
                   "feedback": "La autodefensa importa en los momentos cotidianos también, no solo en emergencias."
                 },

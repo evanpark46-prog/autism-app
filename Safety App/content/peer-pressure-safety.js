@@ -29,7 +29,7 @@
                   "outcome": [
                     "Alex climbs up high with the kids.",
                     "Alex’s foot slips on the bar.",
-                    "Alex’s knee gets scraped. Alex feels scared."
+                    "Alex’s knee gets scraped. Alex has to stop playing."
                   ],
                   "feedback": "Doing something unsafe just to fit in isn’t worth it — it’s okay to say no, even if others are doing it."
                 },
@@ -95,7 +95,7 @@
                   "outcome": [
                     "Alex thinks Alex must copy the group.",
                     "The group climbs high, so Alex does too.",
-                    "A teacher calls Alex down. Alex feels upset."
+                    "A teacher calls Alex down. Alex has to sit on the bench."
                   ],
                   "feedback": "Not true — you always get to choose your own safe behavior, no matter what others are doing."
                 }
@@ -214,7 +214,7 @@
                   "outcome": [
                     "Alex starts thinking skipping would have been fine.",
                     "The next time friends say “everyone’s doing it,” Alex skips an assignment.",
-                    "Alex falls behind in class and feels stressed trying to catch up."
+                    "Alex falls behind in class and has to stay in at recess to catch up."
                   ],
                   "feedback": "That phrase often isn’t even true, and it doesn’t make skipping the responsible choice."
                 },
@@ -337,7 +337,7 @@
                   "outcome": [
                     "Alex gives in so the teasing will stop and goes along with the risky thing.",
                     "The group laughs for a second, then pushes Alex to do something even riskier next.",
-                    "Alex feels uneasy and unlike themself, and now it feels even harder to say no."
+                    "Now the group knows teasing works, so they use it on Alex again the very next day."
                   ],
                   "feedback": "Giving in to avoid teasing usually leads to a choice you didn’t actually want to make — the teasing itself is a pressure tactic, not a real reason to go along."
                 },
@@ -352,7 +352,7 @@
                   "outcome": [
                     "Alex starts a long argument, trying to prove everyone wrong.",
                     "Voices get louder, more kids crowd around, and the teasing gets worse instead of stopping.",
-                    "Alex is still stuck in the middle of the pressure, more upset than before, and nobody’s mind has changed."
+                    "Alex is still stuck in the middle, the teasing keeps going, and nobody’s mind has changed."
                   ],
                   "feedback": "Long arguments in the moment often don’t change anyone’s mind and can escalate things — a calm, firm no and stepping away is usually more effective."
                 }
@@ -378,7 +378,7 @@
                   "outcome": [
                     "Alex starts believing giving in would have been easier.",
                     "At the next party, when someone says “don’t be a baby,” Alex goes along with it right away.",
-                    "Alex ends up doing something Alex didn’t want to do, and feels bad about it afterward."
+                    "Alex ends up doing something Alex didn’t want to do, and the group expects the same thing at the next party."
                   ],
                   "feedback": "Giving in to avoid teasing leads to a choice you don’t actually want — finding another friend was better."
                 },
@@ -439,7 +439,7 @@
                   "outcome": [
                     "Alex decides “don’t be a baby” means the thing must be harmless.",
                     "The next time Alex hears it, Alex brushes off the uneasy feeling and goes along.",
-                    "Alex ends up somewhere risky, confused about how a harmless-sounding phrase led there."
+                    "Alex ends up with the group inside a closed-off construction site, where nobody is watching."
                   ],
                   "feedback": "They’re actually commonly used to pressure people into risky things — that’s the pattern to recognize."
                 },
@@ -578,7 +578,7 @@
                   "outcome": [
                     "Alex sube alto con los niños.",
                     "El pie de Alex se resbala de la barra.",
-                    "Alex se raspa la rodilla. Alex siente miedo."
+                    "Alex se raspa la rodilla. Alex tiene que dejar de jugar."
                   ],
                   "feedback": "Hacer algo inseguro solo para encajar no vale la pena — está bien decir que no, aunque otros lo estén haciendo."
                 },
@@ -644,7 +644,7 @@
                   "outcome": [
                     "Alex cree que debe copiar al grupo.",
                     "El grupo sube alto, y Alex también.",
-                    "Un maestro llama a Alex. Alex se siente mal."
+                    "Un maestro llama a Alex para que baje. Alex tiene que esperar en la banca."
                   ],
                   "feedback": "No es cierto — siempre puedes elegir tu propio comportamiento seguro, sin importar qué estén haciendo otros."
                 }
@@ -763,7 +763,7 @@
                   "outcome": [
                     "Alex empieza a pensar que saltarla habría estado bien.",
                     "La próxima vez que sus amigos dicen “todos lo hacen”, Alex se salta una tarea.",
-                    "Alex se atrasa en clase y se siente estresado tratando de ponerse al día."
+                    "Alex se atrasa en clase y tiene que quedarse en el recreo para ponerse al día."
                   ],
                   "feedback": "Esa frase a menudo ni siquiera es cierta, y no convierte saltarla en la decisión responsable."
                 },
@@ -886,7 +886,7 @@
                   "outcome": [
                     "Alex cede para que paren las burlas y hace la cosa riesgosa.",
                     "El grupo se ríe un momento, y luego presiona a Alex para hacer algo aún más riesgoso.",
-                    "Alex se siente incómodo y como si no fuera Alex mismo, y ahora se siente aún más difícil decir que no."
+                    "Ahora el grupo sabe que las burlas funcionan, así que las usan con Alex otra vez al día siguiente."
                   ],
                   "feedback": "Ceder para evitar burlas usualmente lleva a una decisión que en realidad no querías tomar — la burla misma es una táctica de presión, no una razón real para seguir la corriente."
                 },
@@ -901,7 +901,7 @@
                   "outcome": [
                     "Alex empieza una larga discusión, tratando de demostrar que todos están equivocados.",
                     "Las voces suben, más chicos se acercan, y las burlas empeoran en vez de parar.",
-                    "Alex sigue atrapado en medio de la presión, más molesto que antes, y nadie cambió de opinión."
+                    "Alex sigue atrapado en medio, las burlas continúan, y nadie cambió de opinión."
                   ],
                   "feedback": "Las discusiones largas en el momento a menudo no cambian la mente de nadie y pueden escalar las cosas — un no calmado y firme, y alejarse, suele ser más efectivo."
                 }
@@ -927,7 +927,7 @@
                   "outcome": [
                     "Alex empieza a creer que ceder habría sido más fácil.",
                     "En la próxima fiesta, cuando alguien dice “no seas bebé”, Alex le hace caso de inmediato.",
-                    "Alex termina haciendo algo que no quería hacer, y después se siente mal."
+                    "Alex termina haciendo algo que no quería hacer, y el grupo espera lo mismo en la próxima fiesta."
                   ],
                   "feedback": "Ceder para evitar burlas lleva a una decisión que en realidad no quieres — buscar a otro amigo fue mejor."
                 },
@@ -988,7 +988,7 @@
                   "outcome": [
                     "Alex decide que “no seas bebé” significa que la cosa debe ser inofensiva.",
                     "La próxima vez que lo escucha, Alex ignora el sentimiento incómodo y le sigue la corriente.",
-                    "Alex termina en algo riesgoso, confundido de cómo una frase que sonaba inofensiva lo llevó ahí."
+                    "Alex termina con el grupo dentro de una obra cerrada, donde nadie está vigilando."
                   ],
                   "feedback": "En realidad se usan comúnmente para presionar a la gente hacia cosas riesgosas — ese es el patrón a reconocer."
                 },

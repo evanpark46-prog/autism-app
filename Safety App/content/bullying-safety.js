@@ -60,7 +60,7 @@
                   "outcome": [
                     "Alex stays quiet and ignores it.",
                     "The bigger kid laughs and says it louder.",
-                    "Alex feels sad every day at recess."
+                    "No teacher hears about it, so it happens again the next day."
                   ],
                   "feedback": "Ignoring it usually doesn’t make bullying stop — speaking up and telling a teacher was right."
                 },
@@ -94,8 +94,8 @@
                   "correct": false,
                   "outcome": [
                     "Alex thinks it is Alex’s own fault.",
-                    "Alex feels too bad to tell a grown-up.",
-                    "The mean names keep coming. Alex feels sad inside."
+                    "Alex does not tell a grown-up.",
+                    "The mean names keep coming, every day at recess."
                   ],
                   "feedback": "That’s not true at all — bullying is a choice the bully makes, and it’s never the victim’s fault."
                 }
@@ -120,7 +120,7 @@
                   "correct": false,
                   "outcome": [
                     "Alex thinks Alex deserved the mean names.",
-                    "Alex starts to feel bad about Alex.",
+                    "Alex keeps it a secret from the teacher.",
                     "Alex stops playing and stays alone at recess."
                   ],
                   "feedback": "That’s not true — bullying is never the fault of the person being bullied."
@@ -183,7 +183,7 @@
                   "outcome": [
                     "Alex pushes into the game even though the group clearly doesn’t want Alex there.",
                     "The kids roll their eyes, quit the game, and whisper even more.",
-                    "Alex feels embarrassed and more left out than before."
+                    "No grown-up knows, and the next day they leave Alex out again."
                   ],
                   "feedback": "Trying to force your way in usually doesn’t fix the actual problem — it’s more effective to tell a trusted adult about the pattern."
                 },
@@ -198,7 +198,7 @@
                   "outcome": [
                     "Alex starts leaving the group out and whispering about them too.",
                     "The group gets mad, and now both sides are being mean every day.",
-                    "Recess feels worse for everyone, and Alex still feels hurt inside."
+                    "The recess teacher sees Alex whispering too, and Alex is the one who gets a talking-to."
                   ],
                   "feedback": "Excluding them back usually just continues the cycle — it doesn’t solve the real problem or make you feel better long-term."
                 }
@@ -224,7 +224,7 @@
                   "outcome": [
                     "Alex skips the counselor and tries to force a way into the group.",
                     "The group says, “Go away,” in front of everyone.",
-                    "Alex feels embarrassed, and the whispering keeps going with no grown-up helping."
+                    "The counselor never hears about it, so the whispering keeps going every day."
                   ],
                   "feedback": "Forcing their way in usually doesn’t fix anything — telling the counselor was the better move."
                 },
@@ -259,7 +259,7 @@
                   "outcome": [
                     "Alex believes being left out doesn’t count as real bullying.",
                     "Alex doesn’t tell anyone, because nobody hit Alex or called Alex names.",
-                    "The group keeps leaving Alex out every day, and Alex feels lonely and stuck."
+                    "The group keeps leaving Alex out every day, and no grown-up ever steps in to help."
                   ],
                   "feedback": "That’s not accurate — deliberately excluding someone, again and again, is a form of bullying too."
                 }
@@ -285,7 +285,7 @@
                   "outcome": [
                     "Alex decides being left out isn’t real bullying.",
                     "Next time kids leave Alex out on purpose, Alex doesn’t tell the counselor.",
-                    "Alex keeps feeling lonely, and the counselor never gets the chance to help."
+                    "The counselor never finds out, so Alex keeps eating lunch alone all month."
                   ],
                   "feedback": "That’s not accurate — exclusion is a real form of bullying too."
                 },
@@ -347,7 +347,7 @@
                   "outcome": [
                     "Alex looks away every time the group picks on the classmate.",
                     "The group notices nobody is stopping them, and it keeps getting worse.",
-                    "The classmate starts eating lunch alone and looks miserable, and Alex carries a heavy, guilty feeling about staying silent."
+                    "The classmate starts eating lunch alone and stops raising a hand in class, and no adult ever hears what is going on."
                   ],
                   "feedback": "Bystanders play a real role — staying silent can make bullying feel more accepted, even if you’re not the one doing it."
                 },
@@ -362,7 +362,7 @@
                   "outcome": [
                     "Alex laughs along with the group so Alex won’t become a target.",
                     "The classmate sees Alex laughing and looks even more hurt and alone.",
-                    "Alex feels guilty afterward, and the group now expects Alex to join in every time."
+                    "The next day, the group waves Alex over to join in again, and the classmate stops sitting near Alex."
                   ],
                   "feedback": "Joining in makes the situation worse and hurts the classmate more — it’s better to tell a trusted adult instead, even if it feels risky."
                 }
@@ -388,7 +388,7 @@
                   "outcome": [
                     "Alex decides to just join the group instead of telling the counselor.",
                     "The classmate who thanked Alex sees Alex with the group and stops talking to Alex.",
-                    "The classmate loses the one person who seemed kind, and Alex feels awful about it."
+                    "The classmate starts eating lunch alone, and the counselor never hears what the group is doing."
                   ],
                   "feedback": "Joining in would only hurt the classmate more — telling the counselor was the right move."
                 },
@@ -423,7 +423,7 @@
                   "outcome": [
                     "Alex believes bystanders can’t change anything about bullying.",
                     "Alex stays quiet the next time the group targets someone.",
-                    "The bullying keeps going because everyone watching thinks the same thing, and the target feels completely alone."
+                    "The bullying keeps going because everyone watching thinks the same thing, and the target starts skipping lunch to stay away from the group."
                   ],
                   "feedback": "That’s not accurate — bystanders often have more influence than they realize, especially by telling a trusted adult."
                 }
@@ -478,7 +478,7 @@
                   "outcome": [
                     "Alex agrees with the other bystander that it’s not their business.",
                     "Both of them keep quiet when the bullying happens again.",
-                    "The group keeps going, the classmate feels like nobody cares, and the adults who could step in never hear about it."
+                    "The group keeps going, the classmate starts sitting alone, and the adults who could step in never hear about it."
                   ],
                   "feedback": "Staying silent as a bystander can make bullying feel more accepted, even if it’s not happening to you."
                 },
@@ -619,7 +619,7 @@
                   "outcome": [
                     "Alex se queda callado y lo ignora.",
                     "El niño más grande se ríe y lo dice más fuerte.",
-                    "Alex se siente triste todos los días en el recreo."
+                    "La maestra no se entera, así que pasa otra vez al día siguiente."
                   ],
                   "feedback": "Ignorarlo usualmente no hace que el acoso se detenga — hablar y contarle a la maestra fue lo correcto."
                 },
@@ -653,8 +653,8 @@
                   "correct": false,
                   "outcome": [
                     "Alex cree que es su propia culpa.",
-                    "Alex se siente muy mal para contarle a un adulto.",
-                    "Los apodos feos siguen. Alex se siente triste por dentro."
+                    "Alex no le cuenta a ningún adulto.",
+                    "Los apodos feos siguen, todos los días en el recreo."
                   ],
                   "feedback": "Eso no es cierto en absoluto — el acoso es una decisión que toma quien acosa, y nunca es culpa de la víctima."
                 }
@@ -679,7 +679,7 @@
                   "correct": false,
                   "outcome": [
                     "Alex cree que se merecía los apodos.",
-                    "Alex empieza a sentirse mal consigo mismo.",
+                    "Alex no le cuenta nada a la maestra.",
                     "Alex deja de jugar y se queda solo en el recreo."
                   ],
                   "feedback": "Eso no es cierto — el acoso nunca es culpa de la persona que lo sufre."
@@ -742,7 +742,7 @@
                   "outcome": [
                     "Alex se mete al juego aunque el grupo claramente no quiere que esté ahí.",
                     "Los niños ponen los ojos en blanco, dejan de jugar, y susurran todavía más.",
-                    "Alex se siente avergonzado y más excluido que antes."
+                    "Ningún adulto sabe, y al día siguiente vuelven a dejar a Alex fuera."
                   ],
                   "feedback": "Intentar forzar tu entrada usualmente no resuelve el problema real — es más efectivo contarle a un adulto de confianza sobre el patrón."
                 },
@@ -757,7 +757,7 @@
                   "outcome": [
                     "Alex empieza a dejar fuera al grupo y a susurrar sobre ellos también.",
                     "El grupo se enoja, y ahora los dos lados son crueles todos los días.",
-                    "El recreo se siente peor para todos, y Alex sigue sintiéndose herido por dentro."
+                    "La maestra del recreo ve a Alex susurrando también, y es Alex quien recibe un regaño."
                   ],
                   "feedback": "Excluirlos también usualmente solo continúa el ciclo — no resuelve el problema real ni te hace sentir mejor a largo plazo."
                 }
@@ -783,7 +783,7 @@
                   "outcome": [
                     "Alex no le cuenta al consejero y trata de forzar su entrada al grupo.",
                     "El grupo le dice: “Vete,” frente a todos.",
-                    "Alex se siente avergonzado, y los susurros siguen sin que ningún adulto ayude."
+                    "El consejero nunca se entera, así que los susurros siguen todos los días."
                   ],
                   "feedback": "Forzar su entrada usualmente no resuelve nada — contarle al consejero fue la mejor decisión."
                 },
@@ -818,7 +818,7 @@
                   "outcome": [
                     "Alex cree que ser excluido no cuenta como acoso real.",
                     "Alex no le cuenta a nadie, porque nadie lo golpeó ni le dijo apodos.",
-                    "El grupo sigue dejando a Alex fuera todos los días, y Alex se siente solo y atrapado."
+                    "El grupo sigue dejando a Alex fuera todos los días, y ningún adulto interviene para ayudar."
                   ],
                   "feedback": "Eso no es exacto — excluir a alguien deliberadamente, una y otra vez, también es una forma de acoso."
                 }
@@ -844,7 +844,7 @@
                   "outcome": [
                     "Alex decide que ser excluido no es acoso real.",
                     "La próxima vez que lo dejan fuera a propósito, Alex no le cuenta al consejero.",
-                    "Alex sigue sintiéndose solo, y el consejero nunca tiene la oportunidad de ayudar."
+                    "El consejero nunca se entera, así que Alex sigue almorzando solo todo el mes."
                   ],
                   "feedback": "Eso no es exacto — la exclusión también es una forma real de acoso."
                 },
@@ -906,7 +906,7 @@
                   "outcome": [
                     "Alex mira hacia otro lado cada vez que el grupo molesta al compañero.",
                     "El grupo nota que nadie los detiene, y la situación sigue empeorando.",
-                    "El compañero empieza a almorzar solo y se ve muy triste, y Alex carga un sentimiento pesado de culpa por quedarse callado."
+                    "El compañero empieza a almorzar solo y deja de levantar la mano en clase, y ningún adulto se entera de lo que está pasando."
                   ],
                   "feedback": "Los testigos tienen un papel real — quedarse en silencio puede hacer que el acoso se sienta más aceptado, aunque no seas quien lo hace."
                 },
@@ -921,7 +921,7 @@
                   "outcome": [
                     "Alex se ríe con el grupo para no convertirse en un objetivo.",
                     "El compañero ve a Alex riéndose y se ve todavía más herido y solo.",
-                    "Alex se siente culpable después, y ahora el grupo espera que Alex se una cada vez."
+                    "Al día siguiente, el grupo llama a Alex para que se una otra vez, y el compañero deja de sentarse cerca de Alex."
                   ],
                   "feedback": "Unirse empeora la situación y lastima más al compañero — es mejor contarle a un adulto de confianza en su lugar, aunque se sienta arriesgado."
                 }
@@ -947,7 +947,7 @@
                   "outcome": [
                     "Alex decide simplemente unirse al grupo en lugar de contarle al consejero.",
                     "El compañero que le dio las gracias ve a Alex con el grupo y deja de hablarle.",
-                    "El compañero pierde a la única persona que parecía amable, y Alex se siente muy mal por eso."
+                    "El compañero empieza a almorzar solo, y el consejero nunca se entera de lo que hace el grupo."
                   ],
                   "feedback": "Unirse solo lastimaría más al compañero — contarle al consejero fue la decisión correcta."
                 },
@@ -982,7 +982,7 @@
                   "outcome": [
                     "Alex cree que los testigos no pueden cambiar nada sobre el acoso.",
                     "Alex se queda callado la próxima vez que el grupo molesta a alguien.",
-                    "El acoso sigue porque todos los que miran piensan lo mismo, y la persona acosada se siente completamente sola."
+                    "El acoso sigue porque todos los que miran piensan lo mismo, y la persona acosada empieza a saltarse el almuerzo para alejarse del grupo."
                   ],
                   "feedback": "Eso no es exacto — los testigos a menudo tienen más influencia de la que creen, especialmente al contarle a un adulto de confianza."
                 }
@@ -1037,7 +1037,7 @@
                   "outcome": [
                     "Alex está de acuerdo con el otro testigo en que no es asunto suyo.",
                     "Los dos se quedan callados cuando el acoso vuelve a pasar.",
-                    "El grupo sigue, el compañero siente que a nadie le importa, y los adultos que podrían intervenir nunca se enteran."
+                    "El grupo sigue, el compañero empieza a sentarse solo, y los adultos que podrían intervenir nunca se enteran."
                   ],
                   "feedback": "Quedarse en silencio como testigo puede hacer que el acoso se sienta más aceptado, aunque no te esté pasando a ti."
                 },

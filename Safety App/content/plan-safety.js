@@ -29,7 +29,7 @@
                   "outcome": [
                     "Alex goes to the friend’s house.",
                     "Alex’s grown-up comes to get Alex.",
-                    "Alex is not there. Everyone is worried."
+                    "Alex is not there. The grown-up searches everywhere."
                   ],
                   "feedback": "Going somewhere without asking first means your grown-up doesn’t know where you are — always ask permission before changing plans."
                 },
@@ -183,7 +183,7 @@
                   "outcome": [
                     "Alex gets in the car with the friend and goes.",
                     "At home, Alex’s parent waits and wonders why Alex isn’t back from school.",
-                    "Nobody knows where Alex is, so Alex’s parent gets very worried."
+                    "Nobody knows where Alex is, so Alex’s parent starts calling the school and other families."
                   ],
                   "feedback": "Even with a nice friend, going to a brand-new place with a new driver needs a grown-up’s permission and some details first."
                 },
@@ -352,7 +352,7 @@
                   "outcome": [
                     "Alex heads over, planning to mention it to a parent sometime later.",
                     "Meanwhile, Alex’s parent texts and calls to ask where Alex is after the game, but Alex doesn’t notice in the noise.",
-                    "Alex’s parent spends the evening worried and searching, and the next outing gets a lot harder to get permission for."
+                    "Alex’s parent spends the evening calling around and searching, and the next outing gets a lot harder to get permission for."
                   ],
                   "feedback": "Mentioning it later means your parent doesn’t actually know where you are during the time you’re there — asking first, even quickly, matters."
                 }
@@ -578,7 +578,7 @@
                   "outcome": [
                     "Alex va a la casa del amigo.",
                     "El adulto de Alex viene a buscarlo.",
-                    "Alex no está. Todos están preocupados."
+                    "Alex no está. El adulto lo busca por todos lados."
                   ],
                   "feedback": "Ir a algún lugar sin preguntar primero significa que tu adulto no sabe dónde estás — siempre pide permiso antes de cambiar de planes."
                 },
@@ -732,7 +732,7 @@
                   "outcome": [
                     "Alex sube al carro con el amigo y se va.",
                     "En casa, el padre de Alex espera y se pregunta por qué Alex no ha vuelto de la escuela.",
-                    "Nadie sabe dónde está Alex, así que su padre se preocupa mucho."
+                    "Nadie sabe dónde está Alex, así que su padre empieza a llamar a la escuela y a otras familias."
                   ],
                   "feedback": "Aunque el amigo sea agradable, ir a un lugar completamente nuevo con un conductor nuevo necesita el permiso de un adulto y algunos detalles primero."
                 },
@@ -901,7 +901,7 @@
                   "outcome": [
                     "Alex va, pensando mencionárselo a un padre en algún momento después.",
                     "Mientras tanto, el padre de Alex le escribe y lo llama para preguntar dónde está después del partido, pero Alex no lo nota por el ruido.",
-                    "El padre de Alex pasa la noche preocupado buscándolo, y la próxima salida va a ser mucho más difícil de conseguir permiso."
+                    "El padre de Alex pasa la noche llamando y buscándolo, y la próxima salida va a ser mucho más difícil de conseguir permiso."
                   ],
                   "feedback": "Mencionarlo después significa que tu padre no sabe realmente dónde estás durante el tiempo que estás ahí — preguntar primero, aunque sea rápido, importa."
                 }
